@@ -11,9 +11,9 @@ module.exports = {
   trailingSlash: 'never',
   polyfill: false,
   siteMetadata: {
-    title: `Minimal Gatsby Starter`,
-    description: `Description`,
-    domain: process.env.CF_PAGES_URL || 'starter.min.studio',
+    title: `Datawisp`,
+    description: `Datawisp is a no-code data exploration and analysis platform for web3 and web2. Our visual query builder lets you dig deep into your data and quickly find valuable insights to drive your business.`,
+    domain: process.env.CF_PAGES_URL || 'datawisp.min.studio',
   },
   plugins: [
     // https://www.gatsbyjs.com/plugins/gatsby-plugin-webpack-bundle-analyser-v2/

@@ -84,11 +84,11 @@ const SEO = ({ description, lang, meta, title, image }) => {
         },
         {
           name: 'msapplication-TileColor',
-          content: '#000000',
+          content: '#ffffff',
         },
         {
           name: 'theme-color',
-          content: '#000000',
+          content: '#ffffff',
         },
       ].concat(meta)}
     >
@@ -110,7 +110,7 @@ const SEO = ({ description, lang, meta, title, image }) => {
         href="/favicon-16x16.png"
       />
       <link rel="manifest" href="/site.webmanifest" />
-      <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000" />
+      <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#6901f8" />
     </Helmet>
   )
 }
