@@ -7,3 +7,65 @@ button {
   outline: none;
   appearance: none;
 }
+
+.btn {
+  padding-top: $btn-padding-y - 2px;
+  letter-spacing: -0.03em;
+
+  &-group {
+    display: inline-grid;
+    grid-auto-flow: column;
+    column-gap: 16px;
+  }
+
+  // Variant: primary
+  &-primary {
+    position: relative;
+    padding-top: $btn-padding-y + $btn-border-width - 2px;
+    padding-bottom: $btn-padding-y + $btn-border-width;
+    text-shadow: 0 0 2px rgba($gray-900, 0.2);
+    background-image: linear-gradient(
+      to right,
+      $pink 0%,
+      $indigo 25%,
+      $indigo 78%,
+      $pink 100%
+    );
+    background-position: 0 0;
+    background-size: 400% 100%;
+    isolation: isolate;
+    border: none;
+
+    &::before {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      content: '';
+      background-color: rgba($black, 0.2);
+      border-radius: inherit;
+      opacity: 0;
+      transition: opacity 0.25s ease-in-out;
+    }
+
+    &:hover {
+      background-position: 100% 0;
+    }
+
+    &:active::before {
+      opacity: 1;
+    }
+  }
+
+  // Variant: outline-secondary
+  &-outline-secondary {
+    color: $gray-900;
+
+    &:hover {
+      background-color: $gray-100;
+    }
+
+    &:active {
+      background-color: #eaeaea;
+    }
+  }
+}

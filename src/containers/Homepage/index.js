@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container } from 'react-bootstrap'
+import { Button, Container } from 'react-bootstrap'
 
 import Layout from '~components/Layout'
 import S from '~components/seo'
@@ -12,15 +12,19 @@ const Homepage = (props) => {
 
   return (
     <Layout {...rest}>
+      <S title="Home" />
       <Container className={s.container}>
-        <S title="Home" />
-        <h1>Discover Gems in Your Data2</h1>
+        <h1>Discover Gems in Your Data</h1>
         <p>
           Pre-packaged analytics can only get you so far. If you want valuable
           insights about your game, defi protocol, or whatever it is you&apos;re
           building, you need to get your hands dirty. Luckily, Datawisp is here
           to help.
         </p>
+        <div className="btn-group">
+          <Button variant="primary">Get Started</Button>
+          <Button variant="outline-secondary">Learn more</Button>
+        </div>
       </Container>
     </Layout>
   )

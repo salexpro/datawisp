@@ -1,3 +1,9 @@
 .container {
   min-height: 200vh; // TODO: remove
+
+  > * {
+    // TODO: remove
+    max-width: 480px;
+    margin-top: 32px;
+  }
 }
