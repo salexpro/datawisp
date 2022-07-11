@@ -27,7 +27,6 @@
     "gatsby-plugin-svgr-svgo": "2.0.0",
     "gatsby-source-filesystem": "4.18.0",
     "gatsby-transformer-sharp": "4.18.0",
-    "gsap": "3.10.4",
     "prop-types": "15.8.1",
     "react": "18.2.0",
     "react-bootstrap": "2.4.0",
