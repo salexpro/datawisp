@@ -2,13 +2,18 @@
   /* stylelint-disable-next-line scss/at-extend-no-missing-placeholder */
   @extend .container-fluid;
 
-  max-width: 1240px;
+  max-width: 1440px;
 
   &-fluid {
-    padding: 0 40px;
+    padding: 0 $container-padding-x;
     margin: auto;
-    @include media-breakpoint-down(sm) {
-      padding: 0 20px;
+
+    @include b-btw(md, xxl) {
+      padding: 0 $container-padding-x-md;
+    }
+
+    @include b-d(md) {
+      padding: 0 $container-padding-x-sm;
     }
   }
 }
