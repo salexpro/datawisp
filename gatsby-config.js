@@ -23,7 +23,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-minify-classnames`,
       options: {
-        enable: process.env.CF_PAGES_BRANCH === 'master',
+        enable:
+          // Cloudflare
+          process.env.CF_PAGES_BRANCH === 'master' ||
+          // Gatsby Cloud
+          process.env.BRANCH === 'master',
         prefix: rnd(),
         suffix: rnd(),
       },
