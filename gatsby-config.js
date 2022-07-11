@@ -1,9 +1,11 @@
 const rnd = () => Math.random().toString(36).substring(2, 3)
 
+const productionBranchNames = ['master', 'main']
+
 module.exports = {
   /*
   Experimental flags that increase DX and build times with different technics (may require to use `yarn clean` time to time)
-  Current avaliable flags: https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby/src/utils/flags.ts
+  Current available flags: https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby/src/utils/flags.ts
   */
   // flags: {
   //   FAST_DEV: true,
@@ -13,7 +15,12 @@ module.exports = {
   siteMetadata: {
     title: `Datawisp`,
     description: `Datawisp is a no-code data exploration and analysis platform for web3 and web2. Our visual query builder lets you dig deep into your data and quickly find valuable insights to drive your business.`,
-    domain: process.env.CF_PAGES_URL || 'datawisp.min.studio',
+    domain:
+      // Cloudflare
+      process.env.CF_PAGES_URL ||
+      // Vercel
+      process.env.GATSBY_VERCEL_URL ||
+      'datawisp.min.studio',
   },
   plugins: [
     // https://www.gatsbyjs.com/plugins/gatsby-plugin-webpack-bundle-analyser-v2/
@@ -25,9 +32,11 @@ module.exports = {
       options: {
         enable:
           // Cloudflare
-          process.env.CF_PAGES_BRANCH === 'master' ||
+          productionBranchNames.includes(process.env.CF_PAGES_BRANCH) ||
           // Gatsby Cloud
-          process.env.BRANCH === 'master',
+          productionBranchNames.includes(process.env.BRANCH) ||
+          // Vercel
+          process.env.GATSBY_VERCEL_ENV === 'production',
         prefix: rnd(),
         suffix: rnd(),
       },
