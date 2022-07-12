@@ -5,11 +5,11 @@
   grid-auto-flow: column;
   align-items: center;
   justify-content: space-between;
+  padding-top: 24px;
+  padding-bottom: 24px;
 
-  &__logo {
-    justify-self: start;
-  }
-  @include b-d(sm) {
-    // Code...
+  @include b-btw(md, lg) {
+    grid-template-columns: 1fr repeat(2, auto);
+    column-gap: 16px;
   }
 }

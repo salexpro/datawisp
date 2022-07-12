@@ -1,0 +1,68 @@
+@import '~styles/mixins';
+
+.hamb {
+  $this: &;
+
+  position: relative;
+  z-index: $zindex-dropdown + 5;
+  box-sizing: content-box;
+  width: 24px;
+  height: 24px;
+  padding: 12px;
+  background-color: $gray-100;
+  border-radius: 8px;
+  transition: background-color 0.25s;
+
+  &:hover,
+  &:focus {
+    background-color: darken($gray-100, 6%);
+  }
+
+  &[aria-expanded='true'] {
+    #{$this}_icon {
+      transform: rotate(45deg);
+    }
+
+    #{$this}_line {
+      &_top {
+        stroke-dashoffset: -24;
+      }
+
+      &_middle {
+        transform: rotate(90deg);
+      }
+
+      &_bottom {
+        stroke-dashoffset: -24;
+      }
+    }
+  }
+
+  &_icon {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s;
+  }
+
+  &_line {
+    stroke: $gray-900;
+    stroke-dashoffset: 0;
+    stroke-linecap: round;
+    stroke-width: 1.25;
+    transition: stroke-dashoffset 400ms;
+
+    &_top {
+      stroke-dasharray: 16 160;
+    }
+
+    &_middle {
+      stroke-dasharray: 16 160;
+      transition: transform 400ms;
+      transform-origin: 50%;
+    }
+
+    &_bottom {
+      stroke-dasharray: 16 160;
+    }
+  }
+}

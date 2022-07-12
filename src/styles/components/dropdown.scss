@@ -1,0 +1,24 @@
+.dropdown {
+  &-menu {
+    display: block !important;
+    padding-right: 120px;
+    visibility: hidden;
+    box-shadow: 0 7px 22px rgba($black, 0.2);
+    opacity: 0;
+    transition: opacity 0.25s, visibility 0.25s;
+
+    &.show {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  &-item {
+    font-weight: $font-weight-medium;
+    line-height: 1.286;
+  }
+
+  &-button-primary {
+    margin: 8px 0 16px 16px;
+  }
+}

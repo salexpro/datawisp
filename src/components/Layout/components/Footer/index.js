@@ -2,13 +2,13 @@ import React from 'react'
 import { Container } from 'react-bootstrap'
 import PropTypes from 'prop-types'
 
-import Menu from '../Menu'
+import Menu from '../NavMenu'
 
 import * as s from './Footer.module.scss'
 
-const Footer = ({ siteTitle }) => {
-  const currentYear = new Date().getFullYear()
+const currentYear = new Date().getFullYear()
 
+const Footer = ({ siteTitle }) => {
   return (
     <Container as="footer" className={s.footer}>
       <div className={s.footer__logo}>{siteTitle}</div>

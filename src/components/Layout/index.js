@@ -8,6 +8,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
+import SSRProvider from 'react-bootstrap/SSRProvider'
 
 import '~styles/app.scss'
 
@@ -28,13 +29,16 @@ const Layout = ({ children }) => {
     }
   `)
 
+  // TODO: SSRProvider in starter
   return (
-    <div className={layout}>
-      <Header siteTitle={data.site.siteMetadata?.title} />
-      <main className="main">{children}</main>
-      <Footer siteTitle={data.site.siteMetadata?.title} />
-      <SVGDefs />
-    </div>
+    <SSRProvider>
+      <div className={layout}>
+        <Header siteTitle={data.site.siteMetadata?.title} />
+        <main className="main">{children}</main>
+        <Footer siteTitle={data.site.siteMetadata?.title} />
+        <SVGDefs />
+      </div>
+    </SSRProvider>
   )
 }
 

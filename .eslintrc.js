@@ -32,6 +32,7 @@ module.exports = {
           ['~fonts', './src/assets/fonts'],
           ['~images', './src/images'],
           ['~utils', './src/utils'],
+          ['~constants', './src/constants'],
           ['~routes', './src/routes.js'],
         ],
         extensions: ['.ts', '.js', '.jsx', '.json'],
@@ -60,5 +61,6 @@ module.exports = {
         onlyDeclarations: false,
       },
     ],
+    'import/prefer-default-export': 'off',
   },
 }
