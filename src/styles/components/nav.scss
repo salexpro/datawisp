@@ -1,6 +1,45 @@
+@import '~styles/mixins';
+
 .nav {
+  $this: &;
+
   &-link {
     line-height: 1.286;
     letter-spacing: -0.01em;
+  }
+
+  &-footer {
+    @include b-d(md) {
+      flex-direction: column;
+      margin-top: -12px;
+      text-align: center;
+    }
+
+    #{$this}-link {
+      @include b-d(md) {
+        padding: 0.75rem 1rem;
+      }
+    }
+  }
+
+  &-footer-social {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 12px;
+
+    #{$this}-item {
+      background-color: #f8f8f8;
+      border: 1px solid $gray-200;
+      border-radius: 12px;
+
+      &:hover {
+        background-color: $gray-100;
+      }
+    }
+
+    #{$this}-link {
+      padding: 12px;
+      color: $primary;
+    }
   }
 }
