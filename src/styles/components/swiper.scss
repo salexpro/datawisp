@@ -1,0 +1,8 @@
+.swiper {
+  overflow: visible;
+
+  &-wrapper {
+    display: grid;
+    grid-auto-flow: column;
+  }
+}

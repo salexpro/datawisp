@@ -1,0 +1,112 @@
+@import '~styles/mixins';
+
+.sectionHowItWorks {
+  padding-top: 90px;
+  background-color: $gray-100;
+
+  @include b-btw(md, lg) {
+    padding-top: 64px;
+  }
+
+  @include b-d(md) {
+    padding-top: 48px;
+    overflow: hidden;
+  }
+}
+
+.gridHeading {
+  display: grid;
+  align-items: start;
+
+  @include b-up(lg) {
+    row-gap: 12px;
+  }
+
+  @include b-d(lg) {
+    row-gap: 8px;
+  }
+
+  @include b-up(md) {
+    grid-template-areas:
+      'heading heaidng'
+      'paragraph button';
+    grid-template-columns: 1fr auto;
+  }
+
+  @include b-d(md) {
+    grid-template-areas:
+      'heading'
+      'paragraph'
+      'button';
+    justify-items: start;
+  }
+}
+
+.heading {
+  grid-area: heading;
+}
+
+.paragraph {
+  grid-area: paragraph;
+  max-width: 674px;
+
+  @include b-btw(md, lg) {
+    max-width: 490px;
+  }
+}
+
+.btn {
+  grid-area: button;
+
+  @include b-d(md) {
+    margin-top: 16px;
+  }
+}
+
+.imgWrapper {
+  position: relative;
+  padding-top: 40px;
+  padding-bottom: 200px;
+
+  @include b-btw(md, lg) {
+    padding-bottom: 64px;
+  }
+
+  @include b-d(md) {
+    padding-top: 54px;
+    padding-bottom: 48px;
+  }
+}
+
+.img {
+  width: 80%;
+
+  @include b-d(md) {
+    width: 100%;
+  }
+}
+
+.gridSteps {
+  position: absolute;
+  top: -16px;
+  right: 0;
+  display: grid;
+  row-gap: 32px;
+
+  @include b-btw(md, lg) {
+    top: 8px;
+    row-gap: 16px;
+  }
+
+  @include b-d(md) {
+    display: none;
+  }
+}
+
+.swiper {
+  margin-top: 16px;
+
+  @include b-up(md) {
+    display: none;
+  }
+}

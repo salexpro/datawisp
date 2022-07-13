@@ -4,6 +4,7 @@ import Layout from '~components/Layout'
 import S from '~components/seo'
 
 import SectionHero from './components/SectionHero'
+import SectionHowItWorks from './components/SectionHowItWorks'
 import SectionFeatures from './components/SectionFeatures'
 
 const Homepage = (props) => {
@@ -14,6 +15,7 @@ const Homepage = (props) => {
     <Layout {...rest}>
       <S title="Home" />
       <SectionHero />
+      <SectionHowItWorks />
       <SectionFeatures />
       <div style={{ height: '100vh' }} />
     </Layout>
