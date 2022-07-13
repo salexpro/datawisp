@@ -4,6 +4,7 @@ import Layout from '~components/Layout'
 import S from '~components/seo'
 
 import SectionHero from './components/SectionHero'
+import SectionFeatures from './components/SectionFeatures'
 
 const Homepage = (props) => {
   // eslint-disable-next-line react/prop-types
@@ -13,6 +14,7 @@ const Homepage = (props) => {
     <Layout {...rest}>
       <S title="Home" />
       <SectionHero />
+      <SectionFeatures />
       <div style={{ height: '100vh' }} />
     </Layout>
   )

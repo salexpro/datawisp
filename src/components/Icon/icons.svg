@@ -16,4 +16,10 @@
     <path
       d="M10.666 11.25h2.084l.833-3.334h-2.917V6.249c0-.858 0-1.666 1.667-1.666h1.25v-2.8a23.474 23.474 0 0 0-2.38-.117c-2.263 0-3.87 1.38-3.87 3.917v2.333h-2.5v3.333h2.5v7.084h3.333v-7.084Z" fill="currentColor"/>
   </symbol>
+  <symbol id="icon-box" fill="none"  viewBox="0 0 20 20">
+    <path
+      d="M17.5 13.33V6.67a1.67 1.67 0 0 0-.83-1.45L10.83 1.9a1.67 1.67 0 0 0-1.66 0L3.33 5.22a1.67 1.67 0 0 0-.83 1.45v6.66a1.67 1.67 0 0 0 .83 1.44l5.84 3.34a1.67 1.67 0 0 0 1.66 0l5.84-3.34a1.67 1.67 0 0 0 .83-1.44Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path
+      d="M2.72 5.8 10 10l7.27-4.2M10 18.4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
 </svg>
