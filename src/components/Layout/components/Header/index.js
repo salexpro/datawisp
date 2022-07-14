@@ -14,16 +14,16 @@ import * as s from './Header.module.scss'
 const Header = ({ siteTitle }) => (
   <Container as="header" className={s.header}>
     <LogoLink siteTitle={siteTitle} />
-    <Menu className="hide-d-lg" />
+    <Menu className={s.navMenu} />
     <Button
       variant="primary"
       as={Link}
       to={RouteURL.BETA_APP}
-      className="hide-d-md"
+      className={s.btnPrimary}
     >
       Beta app
     </Button>
-    <MobileNavMenu className="hide-up-lg" />
+    <MobileNavMenu className={s.navMenuMobile} />
   </Container>
 )
 

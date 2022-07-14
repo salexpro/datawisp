@@ -20,5 +20,9 @@
 
   &-button-primary {
     margin: 8px 0 16px 16px;
+
+    @include b-up(md) {
+      display: none;
+    }
   }
 }

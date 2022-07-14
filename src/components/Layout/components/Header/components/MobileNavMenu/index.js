@@ -27,7 +27,7 @@ const MobileNavMenu = (props) => {
           as={Link}
           to={RouteURL.BETA_APP}
           variant="primary"
-          className="hide-up-md dropdown-button-primary"
+          className="dropdown-button-primary"
         >
           Beta app
         </Button>

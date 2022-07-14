@@ -8,8 +8,32 @@
   padding-top: 24px;
   padding-bottom: 24px;
 
+  @include b-up(lg) {
+    grid-template-columns: 1fr auto 1fr;
+  }
+
   @include b-btw(md, lg) {
     grid-template-columns: 1fr repeat(2, auto);
     column-gap: 16px;
+  }
+}
+
+.navMenu {
+  @include b-d(lg) {
+    display: none;
+  }
+}
+
+.navMenuMobile {
+  @include b-up(lg) {
+    display: none;
+  }
+}
+
+.btnPrimary {
+  justify-self: end;
+
+  @include b-d(md) {
+    display: none;
   }
 }
