@@ -6,6 +6,7 @@ import S from '~components/seo'
 import SectionHero from './components/SectionHero'
 import SectionHowItWorks from './components/SectionHowItWorks'
 import SectionFeatures from './components/SectionFeatures'
+import SectionRoadmap from './components/SectionRoadmap'
 
 const Homepage = (props) => {
   // eslint-disable-next-line react/prop-types
@@ -17,6 +18,7 @@ const Homepage = (props) => {
       <SectionHero />
       <SectionHowItWorks />
       <SectionFeatures />
+      <SectionRoadmap />
       <div style={{ height: '100vh' }} />
     </Layout>
   )

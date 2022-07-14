@@ -1,0 +1,104 @@
+@import '~styles/mixins';
+
+.heading {
+  grid-column: 1 / 3;
+  color: inherit;
+
+  @include b-d(md) {
+    grid-column: 1;
+    margin-bottom: 16px;
+  }
+}
+
+.listItem {
+  display: grid;
+  grid-template-columns: 6px auto;
+  gap: 14px;
+  font-size: 15px;
+
+  &::before {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin-top: 8px;
+    content: '';
+    background-color: $gray-100;
+    border-radius: 3px;
+  }
+}
+
+.roadmapItem {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: min-content;
+  gap: 24px 32px;
+  padding: 24px;
+  margin-top: 30px;
+  color: $gray-100;
+  border-radius: 0 16px 16px;
+
+  @include b-up(lg) {
+    margin-left: 16px;
+  }
+
+  @include b-d(md) {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  &::before {
+    position: absolute;
+    bottom: 100%;
+    padding: 6px 16px;
+    font-size: 14px;
+    font-weight: $font-weight-medium;
+    line-height: 1.3;
+    color: $white;
+    content: attr(data-phase);
+    border-radius: 8px 8px 0 0;
+  }
+
+  &.gray {
+    color: #191919;
+    background-color: $gray-100;
+
+    .heading {
+      color: $primary;
+    }
+
+    &::before {
+      color: $gray-900;
+      background-color: $gray-300;
+    }
+
+    .listItem {
+      &::before {
+        background-color: $primary;
+      }
+    }
+  }
+
+  &.purple {
+    background-color: $primary;
+
+    &::before {
+      background-color: #5500ca;
+    }
+  }
+
+  &.pink {
+    background-color: $pink;
+
+    &::before {
+      background-color: #d40374;
+    }
+  }
+}
+
+.listWrapper {
+  display: grid;
+  grid-auto-flow: row;
+  gap: 8px;
+  height: fit-content;
+}
