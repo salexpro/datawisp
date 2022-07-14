@@ -1,10 +1,10 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
+import { StaticImage } from 'gatsby-plugin-image'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 
 import FeaturesList from './components/FeaturesList'
-import featuresImg from './assets/illustration.svg'
 import * as s from './SectionFeatures.module.scss'
 
 const SectionFeatures = (props) => {
@@ -17,7 +17,14 @@ const SectionFeatures = (props) => {
       className={cn(s.sectionFeatures, className)}
     >
       <FeaturesList />
-      <img src={featuresImg} alt="features" width="100%" />
+      <StaticImage
+        src="./assets/illustration.webp"
+        alt="features"
+        quality={90}
+        height={662}
+        formats={['AUTO', 'PNG', 'AVIF']}
+        layout="fullWidth"
+      />
     </Container>
   )
 }

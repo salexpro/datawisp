@@ -13,6 +13,7 @@ const FooterSocialMedia = (props) => {
     <div {...rest} className={s.social}>
       {NavSocialMedia.map(({ iconName, title, href }) => (
         <a
+          key={title}
           href={href}
           title={title}
           aria-label={title}
