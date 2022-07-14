@@ -24,6 +24,7 @@ const SectionFeatures = (props) => {
         height={662}
         formats={['AUTO', 'PNG', 'AVIF']}
         layout="fullWidth"
+        placeholder="none"
       />
     </Container>
   )

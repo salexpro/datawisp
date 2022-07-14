@@ -12,8 +12,8 @@ const ListItem = (props) => {
   return (
     <div {...rest} className={cn(s.listItem, className)}>
       <Icon name="icon-box" size={20} className={s.icon} />
-      <h3 className="subtitle2">{heading}</h3>
-      <div>{text}</div>
+      <h3 className="h6">{heading}</h3>
+      <p>{text}</p>
     </div>
   )
 }
