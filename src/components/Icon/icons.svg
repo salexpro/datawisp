@@ -25,4 +25,8 @@
   <symbol id="icon-arrow-link" viewBox="0 0 20 20">
     <path d="m13.34 7.84-7.18 7.18L5 13.84l7.17-7.17H5.84V5H15v9.17h-1.66V7.84Z"/>
   </symbol>
+  <symbol id="icon-arrow-right" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+    <path
+      d="M13.887 10.842H3.744V9.176l10.143-.001-4.47-4.47 1.179-1.178 6.482 6.482-6.482 6.482-1.179-1.179 4.47-4.47Z" fill="currentColor"/>
+  </symbol>
 </svg>

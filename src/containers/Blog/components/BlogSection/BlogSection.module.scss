@@ -1,0 +1,17 @@
+@import '~styles/mixins';
+
+.blogSection {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 47px 32px;
+
+  @include b-d(lg) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 24px;
+  }
+
+  @include b-d(md) {
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+  }
+}
