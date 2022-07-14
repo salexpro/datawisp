@@ -1,0 +1,19 @@
+@import '~styles/mixins';
+
+.social {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 12px;
+}
+
+.socialLink {
+  padding: 12px;
+  color: $primary;
+  background-color: #f8f8f8;
+  border: 1px solid $gray-200;
+  border-radius: 12px;
+
+  &:hover {
+    background-color: $gray-100;
+  }
+}
