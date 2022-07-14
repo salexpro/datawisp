@@ -70,7 +70,7 @@
   "license": "0BSD",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop -H 0.0.0.0 -o",
+    "develop": "gatsby develop -H 0.0.0.0",
     "format": "prettier --ignore-path .gitignore --write \"**/*.{js,jsx,ts,tsx,json,mdx,md,css,scss}\"",
     "start": "yarn develop",
     "serve": "gatsby serve",

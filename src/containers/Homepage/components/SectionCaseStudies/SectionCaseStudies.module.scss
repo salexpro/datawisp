@@ -1,0 +1,81 @@
+@import '~styles/mixins';
+
+.sectionCaseStudies {
+  padding-bottom: 64px;
+  margin-top: 190px;
+  overflow: hidden;
+
+  @include b-btw(md, lg) {
+    margin-top: 72px;
+  }
+
+  @include b-d(md) {
+    margin-top: 80px;
+  }
+}
+
+.gridHeading {
+  display: grid;
+
+  @include b-up(lg) {
+    align-items: center;
+  }
+
+  @include b-d(lg) {
+    row-gap: 8px;
+  }
+
+  @include b-btw(md, lg) {
+    align-items: start;
+  }
+
+  @include b-up(md) {
+    grid-template-areas:
+      'heading heading'
+      'paragraph button';
+  }
+
+  @include b-d(md) {
+    grid-template-areas:
+      'heading'
+      'paragraph'
+      'button';
+    justify-items: start;
+  }
+}
+
+.heading {
+  grid-area: heading;
+}
+
+.paragraph {
+  grid-area: paragraph;
+
+  @include b-btw(md, lg) {
+    max-width: 232px;
+  }
+}
+
+.btn {
+  grid-area: button;
+
+  @include b-up(lg) {
+    margin-top: -12px;
+  }
+
+  @include b-up(md) {
+    justify-self: end;
+  }
+
+  @include b-d(md) {
+    margin-top: 16px;
+  }
+}
+
+.swiper {
+  margin-top: 32px;
+
+  @include b-d(md) {
+    margin-top: 40px;
+  }
+}

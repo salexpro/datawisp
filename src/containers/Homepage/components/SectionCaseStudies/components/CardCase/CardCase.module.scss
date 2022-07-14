@@ -1,0 +1,66 @@
+@import '~styles/mixins';
+
+.imgWrapper {
+  padding: 12px;
+  background-color: $white;
+  border-radius: 8px;
+  transition: background-color 0.25s;
+}
+
+.arrowLink {
+  align-self: end;
+  padding: 16px;
+  color: $gray-900;
+  border-radius: 100%;
+
+  &::after {
+    position: absolute;
+    inset: -1px;
+    z-index: -1;
+    content: '';
+    background-color: $white;
+    border-radius: inherit;
+    transition: opacity 0.25s;
+  }
+
+  &:focus {
+    color: $white;
+
+    &::after {
+      opacity: 0;
+    }
+  }
+}
+
+.cardCase {
+  display: grid;
+  grid-template-rows: repeat(3, auto) 1fr;
+  row-gap: 8px;
+  justify-items: start;
+  min-height: 322px;
+  padding: 32px 32px 40px;
+  background-color: $gray-100;
+  border-radius: 16px;
+  transition: background-color 0.25s, box-shadow 0.25s;
+
+  &:hover {
+    background-color: $white;
+    box-shadow: 0 26px 54px rgba(34, 18, 34, 5%);
+
+    .imgWrapper {
+      background-color: #fbfbfb;
+    }
+
+    .arrowLink {
+      color: $white;
+
+      &::after {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.heading {
+  margin-top: 16px;
+}

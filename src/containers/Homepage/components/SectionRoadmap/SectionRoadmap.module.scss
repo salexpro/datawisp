@@ -5,16 +5,16 @@
   grid-auto-flow: row;
   gap: 56px;
   justify-items: center;
-  margin-top: 144px;
+  margin-top: 80px;
 
   @include b-d(lg) {
     gap: 32px;
-    margin-top: 112px;
+    margin-top: 48px;
   }
 
   @include b-d(md) {
     gap: 24px;
-    margin-top: 100px;
+    margin-top: 36px;
   }
 }
 

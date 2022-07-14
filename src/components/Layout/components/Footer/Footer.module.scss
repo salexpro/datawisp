@@ -1,11 +1,10 @@
 @import '~styles/mixins';
 
 .footer {
-  padding-top: 40px;
+  padding-top: 100px;
   padding-bottom: 40px;
 
   @include b-d(md) {
-    padding-top: 24px;
     padding-bottom: 24px;
   }
 }

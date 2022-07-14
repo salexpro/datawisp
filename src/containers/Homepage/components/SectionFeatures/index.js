@@ -20,8 +20,7 @@ const SectionFeatures = (props) => {
       <StaticImage
         src="./assets/illustration.webp"
         alt="features"
-        quality={90}
-        height={662}
+        quality={80}
         formats={['AUTO', 'PNG', 'AVIF']}
         layout="fullWidth"
         placeholder="none"

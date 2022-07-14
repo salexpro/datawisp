@@ -22,4 +22,7 @@
     <path
       d="M2.72 5.8 10 10l7.27-4.2M10 18.4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
   </symbol>
+  <symbol id="icon-arrow-link" viewBox="0 0 20 20">
+    <path d="m13.34 7.84-7.18 7.18L5 13.84l7.17-7.17H5.84V5H15v9.17h-1.66V7.84Z"/>
+  </symbol>
 </svg>

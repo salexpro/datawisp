@@ -6,6 +6,7 @@ import S from '~components/seo'
 import SectionHero from './components/SectionHero'
 import SectionHowItWorks from './components/SectionHowItWorks'
 import SectionFeatures from './components/SectionFeatures'
+import SectionCaseStudies from './components/SectionCaseStudies'
 import SectionRoadmap from './components/SectionRoadmap'
 
 const Homepage = (props) => {
@@ -18,8 +19,8 @@ const Homepage = (props) => {
       <SectionHero />
       <SectionHowItWorks />
       <SectionFeatures />
+      <SectionCaseStudies />
       <SectionRoadmap />
-      <div style={{ height: '100vh' }} />
     </Layout>
   )
 }
