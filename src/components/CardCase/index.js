@@ -15,23 +15,28 @@ const CardCase = (props) => {
   const { className, name, description, file, url, ...rest } = props
 
   return (
-    <div {...rest} className={cn(s.cardCase, className)}>
-      <div className={s.imgWrapper}>
-        <GatsbyImage alt={name} image={getImage(file)} width={40} height={40} />
-      </div>
-      <h3 className={cn('h4', s.heading)}>{name}</h3>
+    <Link
+      {...rest}
+      className={cn(s.cardCase, className)}
+      to={url}
+      aria-label={LINK_TITLE}
+      title={LINK_TITLE}
+    >
+      <span className={s.imgWrapper}>
+        <GatsbyImage
+          as="span"
+          alt={name}
+          image={getImage(file)}
+          width={40}
+          height={40}
+        />
+      </span>
+      <h3 className="h4">{name}</h3>
       <p>{description}</p>
-      <Button
-        variant="primary"
-        className={s.arrowLink}
-        as={Link}
-        to="/"
-        aria-label={LINK_TITLE}
-        title={LINK_TITLE}
-      >
-        <Icon name="icon-arrow-link" size={20} />
+      <Button variant="primary" className={s.arrowLink}>
+        <Icon name="icon-arrow-link" size={20} className={s.arrowIcon} />
       </Button>
-    </div>
+    </Link>
   )
 }
 
@@ -43,6 +48,7 @@ CardCase.propTypes = {
   className: PropTypes.string,
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
 }
 
 export default CardCase

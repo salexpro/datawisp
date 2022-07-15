@@ -2,6 +2,7 @@
 
 .imgWrapper {
   padding: 12px;
+  margin-bottom: 16px;
   background-color: $white;
   border-radius: 8px;
   transition: background-color 0.25s;
@@ -10,7 +11,6 @@
 .arrowLink {
   align-self: end;
   padding: 16px;
-  color: $gray-900;
   border-radius: 100%;
 
   &::after {
@@ -30,6 +30,11 @@
       opacity: 0;
     }
   }
+}
+
+.arrowIcon {
+  color: $gray-900;
+  transition: color 0.25s;
 }
 
 .cardCase {
@@ -52,15 +57,13 @@
     }
 
     .arrowLink {
-      color: $white;
-
       &::after {
         opacity: 0;
       }
     }
-  }
-}
 
-.heading {
-  margin-top: 16px;
+    .arrowIcon {
+      color: $white;
+    }
+  }
 }

@@ -455,8 +455,8 @@ $utilities-bg-colors: map-loop(
 //
 // Style anchor elements.
 
-$link-color: $primary !default;
-$link-decoration: underline !default;
+$link-color: $body-color;
+$link-decoration: none;
 $link-shade-percentage: 20% !default;
 $link-hover-color: shift-color($link-color, $link-shade-percentage) !default;
 $link-hover-decoration: null !default;
@@ -1128,7 +1128,7 @@ $nav-link-padding-x: 1rem !default;
 $nav-link-font-size: 14px;
 $nav-link-font-weight: $font-weight-medium;
 $nav-link-color: $gray-800;
-$nav-link-hover-color: $link-hover-color !default;
+$nav-link-hover-color: $primary;
 $nav-link-transition: color 0.15s ease-in-out,
   background-color 0.15s ease-in-out, border-color 0.15s ease-in-out !default;
 $nav-link-disabled-color: $gray-600 !default;

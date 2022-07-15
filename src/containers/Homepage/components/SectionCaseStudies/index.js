@@ -6,9 +6,9 @@ import { graphql, Link, useStaticQuery } from 'gatsby'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 import RouteURL from '~routes'
+import CardCase from '~components/CardCase'
 
 import { CasesData } from './mocks'
-import CardCase from './components/CardCase'
 
 import * as s from './SectionCaseStudies.module.scss'
 
