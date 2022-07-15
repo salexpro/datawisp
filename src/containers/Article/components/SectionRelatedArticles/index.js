@@ -1,16 +1,15 @@
 import React from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
 import PropTypes from 'prop-types'
-import { Container } from 'react-bootstrap'
 import cn from 'classnames'
+import { Container } from 'react-bootstrap'
+import { graphql, useStaticQuery } from 'gatsby'
 
 import BlogItem from '~components/BlogItem'
+import BLOG_DATA from '~containers/Blog/components/BlogSection/mocks'
 
-import BLOG_DATA from './mocks'
+import * as s from './SectionRelatedArticles.module.scss'
 
-import * as s from './BlogSection.module.scss'
-
-const BlogSection = (props) => {
+const SectionRelatedArticles = (props) => {
   const { className, ...rest } = props
 
   const data = useStaticQuery(graphql`
@@ -18,6 +17,7 @@ const BlogSection = (props) => {
       allFile(
         filter: { relativeDirectory: { eq: "img/blog" } }
         sort: { fields: base, order: ASC }
+        limit: 3
       ) {
         nodes {
           base
@@ -40,27 +40,32 @@ const BlogSection = (props) => {
     }
   `)
 
-  const BlogWithImg = BLOG_DATA.map(({ fileName, ...blog }) => ({
+  const BlogWithImg = BLOG_DATA.slice(0, 3).map(({ fileName, ...blog }) => ({
     ...blog,
     file: data.allFile.nodes.find((file) => file.base === fileName),
   }))
 
   return (
-    <Container {...rest} className={cn(s.blogSection, className)}>
-      {BlogWithImg.map((blog, index) => (
-        // eslint-disable-next-line react/no-array-index-key
-        <BlogItem key={`blog${index}`} {...blog} />
-      ))}
-    </Container>
+    <section {...rest} className={cn(s.sectionRelatedArticles, className)}>
+      <Container>
+        <h2 className={s.heading}>Related Blog Articles</h2>
+        <div className={s.gridArticles}>
+          {BlogWithImg.map((blog, index) => (
+            // eslint-disable-next-line react/no-array-index-key
+            <BlogItem {...blog} key={`blog${index}`} className={s.blogItem} />
+          ))}
+        </div>
+      </Container>
+    </section>
   )
 }
 
-BlogSection.defaultProps = {
-  className: '',
+SectionRelatedArticles.defaultProps = {
+  className: undefined,
 }
 
-BlogSection.propTypes = {
+SectionRelatedArticles.propTypes = {
   className: PropTypes.string,
 }
 
-export default BlogSection
+export default SectionRelatedArticles

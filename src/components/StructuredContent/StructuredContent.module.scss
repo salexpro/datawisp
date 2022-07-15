@@ -1,0 +1,80 @@
+@import '~styles/mixins';
+
+.article {
+  max-width: 740px;
+  padding-top: 16px;
+  margin: 0 auto;
+  font-size: 15px;
+  line-height: 1.4667;
+  letter-spacing: -0.01em;
+
+  @include b-d(md) {
+    padding-top: 8px;
+  }
+
+  p {
+    margin-top: 22px;
+  }
+
+  h1 {
+    margin-top: 8px;
+    font-size: $h3-font-size;
+    font-weight: $font-weight-semi-bold;
+    line-height: 1.389;
+
+    @include b-d(md) {
+      margin-top: 16px;
+      font-size: $h4-font-size;
+      line-height: 1.333;
+    }
+
+    + p {
+      margin-top: 16px;
+    }
+  }
+
+  h2 {
+    margin-top: 32px;
+    font-size: $h5-font-size;
+    font-weight: $font-weight-bold;
+    line-height: 1.2;
+
+    + p {
+      margin-top: 12px;
+    }
+  }
+
+  h3 {
+    + p {
+      margin-top: 12px;
+    }
+  }
+}
+
+.navBlog {
+  margin-bottom: 16px;
+}
+
+.rowPostData {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+  font-size: 14px;
+  font-weight: $font-weight-medium;
+  line-height: 1.2857;
+
+  @include b-d(md) {
+    margin-top: 24px;
+  }
+}
+
+.colorPrimary {
+  color: $primary;
+}
+
+.imgHero {
+  @include fix-ios-border-radius;
+
+  border-radius: 12px;
+}

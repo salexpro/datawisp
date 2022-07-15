@@ -1,0 +1,16 @@
+.breadcrumb {
+  &-item {
+    display: flex;
+    align-items: center;
+
+    a:hover {
+      color: $primary;
+    }
+
+    &::before {
+      box-sizing: content-box;
+      width: 16px;
+      height: 16px;
+    }
+  }
+}

@@ -25,3 +25,8 @@
     @content;
   }
 }
+
+// Fix iOS Safari border-radius bug
+@mixin fix-ios-border-radius {
+  transform: translateZ(0);
+}

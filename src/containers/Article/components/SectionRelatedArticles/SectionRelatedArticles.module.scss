@@ -1,0 +1,47 @@
+@import '~styles/mixins';
+
+.sectionRelatedArticles {
+  padding-top: 74px;
+  margin-top: 74px;
+  border-top: 1px solid $gray-200;
+
+  @include b-d(lg) {
+    padding-top: 64px;
+    margin-top: 48px;
+  }
+
+  @include b-d(md) {
+    padding-top: 48px;
+  }
+}
+
+.heading {
+  text-align: center;
+}
+
+.gridArticles {
+  display: grid;
+  gap: 32px;
+  margin-top: 40px;
+
+  @include b-up(lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include b-d(lg) {
+    column-gap: 24px;
+
+    .blogItem:last-child {
+      display: none;
+    }
+  }
+
+  @include b-btw(md, lg) {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 48px;
+  }
+
+  @include b-d(md) {
+    margin-top: 32px;
+  }
+}

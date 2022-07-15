@@ -1,0 +1,35 @@
+@import '~styles/mixins';
+
+.breadcrumbs {
+  @include b-d(md) {
+    display: none;
+  }
+}
+
+.mobileNav {
+  @include b-up(md) {
+    display: none;
+  }
+}
+
+.btn {
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 8px;
+  align-items: center;
+  padding: 7px 15px 7px 7px;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+  border-radius: 100px;
+
+  &::before {
+    width: 16px;
+    height: 16px;
+    content: '';
+    background-image: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M10 12 6 8l4-4' stroke='%23353535' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+    transform: translateY(0.5px);
+  }
+}

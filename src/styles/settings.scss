@@ -1573,15 +1573,15 @@ $figure-caption-color: $gray-600 !default;
 // Breadcrumbs
 
 // scss-docs-start breadcrumb-variables
-$breadcrumb-font-size: null !default;
+$breadcrumb-font-size: null;
 $breadcrumb-padding-y: 0 !default;
 $breadcrumb-padding-x: 0 !default;
 $breadcrumb-item-padding-x: 0.5rem !default;
-$breadcrumb-margin-bottom: 1rem !default;
+$breadcrumb-margin-bottom: null;
 $breadcrumb-bg: null !default;
-$breadcrumb-divider-color: $gray-600 !default;
-$breadcrumb-active-color: $gray-600 !default;
-$breadcrumb-divider: quote('/') !default;
+$breadcrumb-divider-color: null;
+$breadcrumb-active-color: #aeaeae;
+$breadcrumb-divider: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath d='m6 12 4-4-4-4' stroke='%23AEAEAE' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
 $breadcrumb-divider-flipped: $breadcrumb-divider !default;
 $breadcrumb-border-radius: null !default;
 // scss-docs-end breadcrumb-variables

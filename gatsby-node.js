@@ -37,9 +37,23 @@ exports.onCreateWebpackConfig = ({ actions, getConfig }) => {
   actions.replaceWebpackConfig(config)
 }
 
-if (process.env.NODE_ENV === `development`) {
-  exports.createPages = async ({ actions }) => {
-    const { createPage } = actions
+const createArticlePages = (createPage) => {
+  const articleTemplate = path.resolve(`src/templates/article.js`)
+  const tempPath = '/blog/example'
+
+  createPage({
+    path: tempPath,
+    component: articleTemplate,
+  })
+}
+
+exports.createPages = async ({ actions }) => {
+  const { createPage } = actions
+
+  // Articles
+  createArticlePages(createPage)
+
+  if (process.env.NODE_ENV === `development`) {
     const productTemplate = path.resolve(`src/templates/SVGPreview/index.jsx`)
     createPage({
       path: `/___svg`,
