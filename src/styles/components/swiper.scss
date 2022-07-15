@@ -4,5 +4,6 @@
   &-wrapper {
     display: grid;
     grid-auto-flow: column;
+    counter-reset: step;
   }
 }

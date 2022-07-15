@@ -11,7 +11,7 @@ const PartnerItem = (props) => {
 
   return (
     <div {...rest} className={cn(s.partnerItem, className)} title={name}>
-      <GatsbyImage alt={name} image={getImage(file)} />
+      <GatsbyImage alt={name} image={getImage(file)} loading="eager" />
     </div>
   )
 }

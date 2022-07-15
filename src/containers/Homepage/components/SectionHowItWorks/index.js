@@ -29,7 +29,7 @@ const SectionHowItWorks = (props) => {
             formats: [JPG, WEBP, AVIF]
             placeholder: NONE
             sizes: "(max-width: 767.98px) calc(100vw - 24px * 2), (max-width: 1439.98px) calc((100vw - 40px * 2) * 0.8), 992px"
-            breakpoints: [327, 550, 654, 992, 1100, 1308, 1488, 1650, 1984]
+            breakpoints: [327, 654, 992, 1100, 1308, 1488, 1984]
           )
         }
       }
@@ -46,7 +46,7 @@ const SectionHowItWorks = (props) => {
               formats: [AUTO, WEBP, AVIF]
               placeholder: NONE
               sizes: "(max-width: 767.98px) 37vw, (max-width: 1023.98px) 197px, (max-width: 1199.98px) 281px, 352px"
-              breakpoints: [135, 270, 352, 405, 480, 540, 644, 704, 966]
+              breakpoints: [135, 197, 270, 352, 405, 528, 704]
             )
             blurHash {
               base64Image

@@ -92,6 +92,7 @@
   right: 0;
   display: grid;
   row-gap: 32px;
+  counter-reset: step;
 
   @include b-btw(md, lg) {
     top: 8px;

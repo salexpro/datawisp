@@ -2,17 +2,13 @@
 
 .cardStep {
   display: grid;
-  grid-template-areas:
-    'number text'
-    'image image';
-  grid-template-columns: auto 1fr;
   row-gap: 28px;
-  column-gap: 16px;
   padding: 28px 16px 16px;
   font-size: 16px;
   font-weight: $font-weight-semi-bold;
   line-height: 1.25;
   letter-spacing: $letter-spacing-base;
+  counter-increment: step;
   background-color: $white;
   border-radius: 16px;
   box-shadow: 0 26px 54px rgba(34, 18, 34, 5%);
@@ -24,7 +20,6 @@
 
   @include b-btw(md, lg) {
     row-gap: 14px;
-    column-gap: 8px;
     padding: 14px 10px 10px;
     font-size: 11px;
     border-radius: 8px;
@@ -32,42 +27,42 @@
 
   @include b-d(md) {
     row-gap: 10px;
-    column-gap: 4px;
     padding: 10px 6px 6px;
     font-size: 8px;
     border-radius: 6px;
   }
 }
 
-.number {
-  display: inline-block;
-  grid-area: number;
-  min-width: 56px;
-  color: #acacac;
-  text-align: center;
-
-  @include b-btw(lg, xl) {
-    min-width: 40px;
-  }
-
-  @include b-btw(md, lg) {
-    min-width: 24px;
-  }
-
-  @include b-d(md) {
-    min-width: 16px;
-  }
-}
-
 .text {
-  grid-area: text;
   color: $gray-800;
+
+  &::before {
+    display: inline-block;
+    min-width: 56px;
+    margin-right: 16px;
+    color: #acacac;
+    text-align: center;
+    content: counter(step);
+
+    @include b-btw(lg, xl) {
+      min-width: 40px;
+    }
+
+    @include b-btw(md, lg) {
+      min-width: 24px;
+      margin-right: 8px;
+    }
+
+    @include b-d(md) {
+      min-width: 16px;
+      margin-right: 4px;
+    }
+  }
 }
 
 .img {
   $step-img-width: 352px;
 
-  grid-area: image;
   width: $step-img-width;
 
   @include b-btw(lg, xl) {

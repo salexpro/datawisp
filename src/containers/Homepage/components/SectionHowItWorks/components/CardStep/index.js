@@ -12,7 +12,6 @@ const CardStep = (props) => {
 
   return (
     <div {...rest} className={cn(s.cardStep, className)}>
-      <span className={s.number}>{stepNumber}</span>
       <span className={s.text}>{text}</span>
       <GatsbyImage
         alt={`step ${1} image`}
