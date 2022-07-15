@@ -11,19 +11,11 @@
 }
 
 .listItem {
-  display: grid;
-  grid-template-columns: 6px auto;
-  gap: 14px;
   font-size: 15px;
 
-  &::before {
-    display: inline-block;
-    width: 6px;
-    height: 6px;
-    margin-top: 8px;
-    content: '';
-    background-color: $gray-100;
-    border-radius: 3px;
+  &::marker {
+    font-size: 19px;
+    line-height: 0.96;
   }
 }
 
@@ -55,7 +47,8 @@
     font-weight: $font-weight-medium;
     line-height: 1.3;
     color: $white;
-    content: attr(data-phase);
+    content: 'Phase ' counter(phase);
+    counter-increment: phase;
     border-radius: 8px 8px 0 0;
   }
 
@@ -73,8 +66,8 @@
     }
 
     .listItem {
-      &::before {
-        background-color: $primary;
+      &::marker {
+        color: $primary;
       }
     }
   }
@@ -83,7 +76,7 @@
     background-color: $primary;
 
     &::before {
-      background-color: #5500ca;
+      background-color: darken($primary, 10);
     }
   }
 
@@ -91,7 +84,7 @@
     background-color: $pink;
 
     &::before {
-      background-color: #d40374;
+      background-color: darken($pink, 8);
     }
   }
 }
@@ -101,4 +94,6 @@
   grid-auto-flow: row;
   gap: 8px;
   height: fit-content;
+  padding-left: 16px;
+  margin: 0;
 }

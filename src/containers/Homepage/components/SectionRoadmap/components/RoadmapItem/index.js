@@ -14,11 +14,11 @@ const RoadmapItem = (props) => {
     <div
       {...rest}
       className={cn(s.roadmapItem, { [s[variant]]: variant }, className)}
-      data-phase="Phase 1"
     >
       <h3 className={cn(s.heading, 'h5')}>{heading}</h3>
-      {parts.map((items) => (
-        <ul key={items.toString()} className={s.listWrapper}>
+      {parts.map((items, index) => (
+        // eslint-disable-next-line react/no-array-index-key
+        <ul key={`list${index}`} className={s.listWrapper}>
           {items.map((text) => (
             <li key={text} className={cn(s.listItem)}>
               {text}

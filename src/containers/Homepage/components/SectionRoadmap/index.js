@@ -22,7 +22,7 @@ const SectionRoadmap = (props) => {
           <RoadmapItem
             key={item.heading}
             {...item}
-            className={cn(s[`item${index}`])}
+            style={{ gridArea: `i${index}` }}
           />
         ))}
       </div>

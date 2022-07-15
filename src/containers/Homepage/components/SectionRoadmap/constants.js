@@ -1,7 +1,6 @@
 const ROADMAP = [
   {
     variant: 'gray',
-    phase: 'Phase 1',
     heading:
       'Improving things that directly impact existing & prospective clients',
     list: [
@@ -13,7 +12,6 @@ const ROADMAP = [
   },
   {
     variant: 'purple',
-    phase: 'Phase 2',
     heading: 'Improving the platform for enterprise clients',
     list: [
       'Comprehensive data imports',
@@ -24,7 +22,6 @@ const ROADMAP = [
   },
   {
     variant: 'pink',
-    phase: 'Phase 3',
     heading: 'Long term initiatives to make Datawisp a complete data solution',
     list: [
       'Datawisp data lake, custom backend',
