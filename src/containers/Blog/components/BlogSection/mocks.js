@@ -7,6 +7,7 @@ const BLOG_DATA = [
     heading: 'How To Do Your Own Research (“DYOR”)',
     text: 'You will frequently see some sort of recommendation followed by “DYOR – this does not constitute financial advice” disclaimer as a ...',
     href: `${RouteURL.BLOG}/example`,
+    tags: ['nft'],
   },
   {
     date: 'December 30, 2020',
@@ -21,6 +22,7 @@ const BLOG_DATA = [
     heading: 'What Makes NFTs an Eccentric New Trend?',
     text: 'NFTs are highly programmable artwork. The concept is fairly simple; the digital artwork owner can change the predefined conditions or regulations.',
     href: `${RouteURL.BLOG}/example`,
+    tags: ['nft'],
   },
   {
     date: 'January 2, 2022',
@@ -56,6 +58,7 @@ const BLOG_DATA = [
     heading: 'Conversations points for NFTs',
     text: 'My hope is that after reading this, you can confidently meet someone halfway on the subject. But no more than that...',
     href: `${RouteURL.BLOG}/example`,
+    tags: ['nft'],
   },
   {
     date: 'December 21, 2020',

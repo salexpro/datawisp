@@ -1,0 +1,11 @@
+@import '~styles/mixins';
+
+.heading {
+  margin: 74px 0;
+  text-align: center;
+
+  @include b-d(md) {
+    margin: 40px 0;
+    text-align: left;
+  }
+}

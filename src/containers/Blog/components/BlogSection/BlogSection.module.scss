@@ -4,6 +4,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 47px 32px;
+  margin-top: 32px;
 
   @include b-d(lg) {
     grid-template-columns: repeat(2, 1fr);
@@ -13,5 +14,6 @@
   @include b-d(md) {
     grid-template-columns: 1fr;
     row-gap: 30px;
+    margin-top: 24px;
   }
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
+import { useLocation } from '@gatsbyjs/reach-router'
 import PropTypes from 'prop-types'
 import { Container } from 'react-bootstrap'
 import cn from 'classnames'
@@ -40,14 +41,21 @@ const BlogSection = (props) => {
     }
   `)
 
-  const BlogWithImg = BLOG_DATA.map(({ fileName, ...blog }) => ({
+  const { hash } = useLocation()
+  const filter = hash.replace('#', '')
+
+  const filteredBlog = filter
+    ? BLOG_DATA.filter(({ tags }) => (tags ? tags.includes(filter) : false))
+    : BLOG_DATA
+
+  const blogWithImg = filteredBlog.map(({ fileName, ...blog }) => ({
     ...blog,
     file: data.allFile.nodes.find((file) => file.base === fileName),
   }))
 
   return (
     <Container {...rest} className={cn(s.blogSection, className)}>
-      {BlogWithImg.map((blog, index) => (
+      {blogWithImg.map((blog, index) => (
         // eslint-disable-next-line react/no-array-index-key
         <BlogItem key={`blog${index}`} {...blog} />
       ))}
