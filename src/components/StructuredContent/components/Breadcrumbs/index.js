@@ -5,6 +5,8 @@ import cn from 'classnames'
 import { Link } from 'gatsby'
 import { Breadcrumb, Button } from 'react-bootstrap'
 
+import RouteURL from '~routes'
+
 import * as s from './Breadcrumbs.module.scss'
 
 const Breadcrumbs = (props) => {
@@ -25,7 +27,12 @@ const Breadcrumbs = (props) => {
         ))}
       </Breadcrumb>
       <nav className={cn(s.mobileNav, className)}>
-        <Button variant="outline-secondary" className={s.btn}>
+        <Button
+          variant="outline-secondary"
+          className={s.btn}
+          as={Link}
+          to={RouteURL.BLOG}
+        >
           Back
         </Button>
       </nav>

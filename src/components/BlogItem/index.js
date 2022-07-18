@@ -21,7 +21,10 @@ const BlogItem = (props) => {
           className={s.blogImg}
         />
       </Link>
-      <p className={s.date}>{date}</p>
+      {/* TODO: correct dateTime format from Dato */}
+      <time className={s.date} dateTime={date}>
+        {date}
+      </time>
       <Link to={href} className={s.link}>
         <h4 className={s.heading}>{heading}</h4>
       </Link>

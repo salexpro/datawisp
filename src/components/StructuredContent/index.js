@@ -23,7 +23,9 @@ const StructuredContent = (props) => {
           className={s.imgHero}
         />
         <div className={s.rowPostData}>
-          <span className={s.colorPrimary}>January 2, 2022</span>
+          <time className={s.colorPrimary} dateTime="2022-01-02">
+            January 2, 2022
+          </time>
           <span>
             Posted by: <span className={s.colorPrimary}>K Matthew Coyle</span>
           </span>
