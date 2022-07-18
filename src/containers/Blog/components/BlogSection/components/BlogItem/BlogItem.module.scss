@@ -27,6 +27,10 @@
   color: $primary;
 }
 
+.heading {
+  color: inherit;
+}
+
 .text {
   margin-top: 16px;
   font-size: 15px;
@@ -46,9 +50,8 @@
 }
 
 .link {
-  transition: color 200ms;
-
-  &:hover {
+  &:hover,
+  &:focus {
     color: $primary;
   }
 }

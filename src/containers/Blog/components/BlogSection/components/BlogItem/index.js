@@ -22,8 +22,8 @@ const BlogItem = (props) => {
         />
       </Link>
       <p className={s.date}>{date}</p>
-      <Link to={href}>
-        <h4 className={s.link}>{heading}</h4>
+      <Link to={href} className={s.link}>
+        <h4 className={s.heading}>{heading}</h4>
       </Link>
       <p className={s.text}>{text}</p>
       <Link to={href} className={cn(s.readMore, s.link)}>
