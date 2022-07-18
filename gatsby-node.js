@@ -47,11 +47,22 @@ const createArticlePages = (createPage) => {
   })
 }
 
+const createCaseStudyPages = (createPage) => {
+  const caseTemplate = path.resolve(`src/templates/caseStudy.js`)
+  const tempPath = `/case-studies/example`
+
+  createPage({
+    path: tempPath,
+    component: caseTemplate,
+  })
+}
+
 exports.createPages = async ({ actions }) => {
   const { createPage } = actions
 
   // Articles
   createArticlePages(createPage)
+  createCaseStudyPages(createPage)
 
   if (process.env.NODE_ENV === `development`) {
     const productTemplate = path.resolve(`src/templates/SVGPreview/index.jsx`)

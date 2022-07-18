@@ -10,9 +10,7 @@ const Card = (props) => {
   return (
     <div {...rest} className={cn(s.card, className)}>
       {heading && (
-        <h3 className={s.heading}>
-          What is the value proposition of a project?
-        </h3>
+        <h3 className="h-card">What is the value proposition of a project?</h3>
       )}
       {children}
     </div>

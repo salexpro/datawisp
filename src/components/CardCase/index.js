@@ -33,7 +33,11 @@ const CardCase = (props) => {
       </span>
       <h3 className="h4">{name}</h3>
       <p>{description}</p>
-      <Button variant="primary" className={s.arrowLink}>
+      <Button
+        variant="primary"
+        className={s.arrowLink}
+        aria-label={`Learn more about ${name}`}
+      >
         <Icon name="icon-arrow-link" size={20} className={s.arrowIcon} />
       </Button>
     </Link>
