@@ -9,18 +9,18 @@ import Icon from '~components/Icon'
 
 import * as s from './CardCase.module.scss'
 
-const LINK_TITLE = 'Read more'
-
 const CardCase = (props) => {
   const { className, name, description, file, url, ...rest } = props
+
+  const linkTitle = `Learn more about ${name}`
 
   return (
     <Link
       {...rest}
       className={cn(s.cardCase, className)}
       to={url}
-      aria-label={LINK_TITLE}
-      title={LINK_TITLE}
+      aria-label={linkTitle}
+      title={linkTitle}
     >
       <span className={s.imgWrapper}>
         <GatsbyImage
@@ -33,11 +33,7 @@ const CardCase = (props) => {
       </span>
       <h3 className="h4">{name}</h3>
       <p>{description}</p>
-      <Button
-        variant="primary"
-        className={s.arrowLink}
-        aria-label={`Learn more about ${name}`}
-      >
+      <Button variant="primary" className={s.arrowLink} aria-label={linkTitle}>
         <Icon name="icon-arrow-link" size={20} className={s.arrowIcon} />
       </Button>
     </Link>

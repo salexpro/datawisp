@@ -81,10 +81,11 @@
   }
 
   &.pink {
-    background-color: $pink;
+    color: $white;
+    background-color: darken($pink, 5);
 
     &::before {
-      background-color: darken($pink, 8);
+      background-color: darken($pink, 12);
     }
   }
 }
