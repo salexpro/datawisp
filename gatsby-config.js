@@ -1,3 +1,5 @@
+require('dotenv-flow').config()
+
 const rnd = () => Math.random().toString(36).substring(2, 3)
 
 const productionBranchNames = ['master', 'main']
@@ -62,6 +64,12 @@ module.exports = {
             },
           },
         ],
+      },
+    },
+    {
+      resolve: `gatsby-source-datocms`,
+      options: {
+        apiToken: process.env.DATOCMS_API_TOKEN,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
