@@ -11,10 +11,7 @@ import * as s from './StructuredContent.module.scss'
 
 const StructuredContent = (props) => {
   // TODO: update props
-  const { breadcrumbs, content, imgFile, variant, ...rest } = props
-
-  const isArticle = variant === 'article'
-  const isCaseStudy = variant === 'caseStudy'
+  const { breadcrumbs, content, imgFile, badgeText, ...rest } = props
 
   return (
     <Container {...rest}>
@@ -29,13 +26,12 @@ const StructuredContent = (props) => {
           <time className={s.colorPrimary} dateTime="2022-01-02">
             January 2, 2022
           </time>
-          {isArticle && (
+          {badgeText ? (
+            <span className={s.caseStudyTag}>{badgeText}</span>
+          ) : (
             <span>
               Posted by: <span className={s.colorPrimary}>K Matthew Coyle</span>
             </span>
-          )}
-          {isCaseStudy && (
-            <span className={s.caseStudyTag}>Web3 Strategy Game</span>
           )}
         </div>
         {content}
@@ -46,12 +42,10 @@ const StructuredContent = (props) => {
 
 StructuredContent.defaultProps = {
   className: undefined,
-  variant: 'article',
 }
 
 StructuredContent.propTypes = {
   className: PropTypes.string,
-  variant: PropTypes.oneOf(['article', 'caseStudy']),
 }
 
 export default StructuredContent

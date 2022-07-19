@@ -87,14 +87,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 40px;
+  margin-top: 24px;
   font-size: 14px;
   font-weight: $font-weight-medium;
   line-height: 1.2857;
-
-  @include b-d(md) {
-    margin-top: 24px;
-  }
 }
 
 .colorPrimary {

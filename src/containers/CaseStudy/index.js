@@ -37,6 +37,7 @@ const CaseStudy = (props) => {
     <Layout {...rest}>
       <S title="Case Study" />
       <StructuredContent
+        badgeText="Web3 Strategy Game"
         variant="caseStudy"
         content={ARTICLE_CONTENT}
         imgFile={data.file}
