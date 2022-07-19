@@ -1,0 +1,20 @@
+@import '~styles/mixins';
+
+.sectionCases {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 82px;
+
+  @include b-d(lg) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 72px;
+  }
+
+  @include b-d(md) {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 64px;
+  }
+}

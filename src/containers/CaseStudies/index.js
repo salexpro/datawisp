@@ -5,6 +5,7 @@ import Layout from '~components/Layout'
 import S from '~components/seo'
 
 import SectionCaseHero from './components/SectionCaseHero'
+import SectionCases from './components/SectionCases'
 
 const CaseStudies = (props) => {
   const { className, ...rest } = props
@@ -13,6 +14,7 @@ const CaseStudies = (props) => {
     <Layout {...rest} className={className}>
       <S title="Case Studies" />
       <SectionCaseHero />
+      <SectionCases />
     </Layout>
   )
 }
