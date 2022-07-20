@@ -3,16 +3,14 @@ import { Nav } from 'react-bootstrap'
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 
-import NavMenuStructure from '~constants/navMenuStructure'
-
 const NavMenu = (props) => {
-  const { variant, ...rest } = props
+  const { navItems, variant, ...rest } = props
 
   return (
     <nav {...rest}>
       <Nav as="ul" variant={variant}>
-        {NavMenuStructure.map(({ text, url }) => (
-          <Nav.Item key={text} as="li">
+        {navItems?.map(({ id, text, url }) => (
+          <Nav.Item key={id} as="li">
             <Nav.Link as={Link} to={url}>
               {text}
             </Nav.Link>
@@ -25,10 +23,18 @@ const NavMenu = (props) => {
 
 NavMenu.defaultProps = {
   variant: 'header',
+  navItems: undefined,
 }
 
 NavMenu.propTypes = {
   variant: PropTypes.oneOf(['header', 'footer']),
+  navItems: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      text: PropTypes.string,
+      url: PropTypes.string,
+    })
+  ),
 }
 
 export default NavMenu

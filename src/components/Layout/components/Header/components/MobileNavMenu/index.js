@@ -3,14 +3,13 @@ import PropTypes from 'prop-types'
 import { Button, Dropdown } from 'react-bootstrap'
 import { Link } from 'gatsby'
 
-import RouteURL from '~routes'
-import NavMenuStructure from '~constants/navMenuStructure'
-
 import BtnAnimatedBurger from './components/BtnAnimatedBurger'
 
 const MobileNavMenu = (props) => {
+  const { buttonLink, navItems, ...rest } = props
+
   return (
-    <Dropdown {...props} as="nav" align="start">
+    <Dropdown {...rest} as="nav" align="start">
       <Dropdown.Toggle as={BtnAnimatedBurger} />
       <Dropdown.Menu
         align="start"
@@ -25,13 +24,13 @@ const MobileNavMenu = (props) => {
       >
         <Button
           as={Link}
-          to={RouteURL.BETA_APP}
+          to={buttonLink?.url}
           variant="primary"
           className="dropdown-button-primary"
         >
-          Beta app
+          {buttonLink?.text}
         </Button>
-        {NavMenuStructure.map(({ text, url }) => (
+        {navItems?.map(({ text, url }) => (
           <Dropdown.Item key={text} to={url} as={Link}>
             {text}
           </Dropdown.Item>
@@ -42,10 +41,23 @@ const MobileNavMenu = (props) => {
 }
 
 MobileNavMenu.defaultProps = {
+  navItems: undefined,
+  buttonLink: undefined,
   className: undefined,
 }
 
 MobileNavMenu.propTypes = {
+  navItems: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      text: PropTypes.string,
+      url: PropTypes.string,
+    })
+  ),
+  buttonLink: PropTypes.shape({
+    url: PropTypes.string,
+    text: PropTypes.string,
+  }),
   className: PropTypes.string,
 }
 

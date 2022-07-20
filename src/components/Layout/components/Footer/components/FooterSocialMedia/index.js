@@ -2,21 +2,20 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import Icon from '~components/Icon'
-import NavSocialMedia from '~constants/navSocialMedia'
 
 import * as s from './FooterSocialMedia.module.scss'
 
 const FooterSocialMedia = (props) => {
-  const { className, ...rest } = props
+  const { socialLinks, className, ...rest } = props
 
   return (
     <div {...rest} className={s.social}>
-      {NavSocialMedia.map(({ iconName, title, href }) => (
+      {socialLinks?.map(({ id, iconName, tooltip, url }) => (
         <a
-          key={title}
-          href={href}
-          title={title}
-          aria-label={title}
+          key={id}
+          href={url}
+          title={tooltip}
+          aria-label={tooltip}
           target="_blank"
           rel="nofollow noopener noreferrer"
           className={s.socialLink}
@@ -29,10 +28,19 @@ const FooterSocialMedia = (props) => {
 }
 
 FooterSocialMedia.defaultProps = {
+  socialLinks: undefined,
   className: '',
 }
 
 FooterSocialMedia.propTypes = {
+  socialLinks: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      iconName: PropTypes.string,
+      url: PropTypes.string,
+      tooltip: PropTypes.string,
+    })
+  ),
   className: PropTypes.string,
 }
 
