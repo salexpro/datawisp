@@ -59,6 +59,22 @@
     margin-top: 40px;
     text-align: center;
   }
+
+  p {
+    margin-top: -12px;
+
+    @include b-btw(md, lg) {
+      margin-top: -20px;
+    }
+
+    @include b-up(md) {
+      max-width: 89%;
+    }
+
+    @include b-d(md) {
+      margin-top: -8px;
+    }
+  }
 }
 
 .imgHero {
@@ -115,22 +131,6 @@
 .heading {
   @include b-d(md) {
     padding: 0 8px;
-  }
-}
-
-.paragraph {
-  margin-top: -12px;
-
-  @include b-btw(md, lg) {
-    margin-top: -20px;
-  }
-
-  @include b-up(md) {
-    max-width: 89%;
-  }
-
-  @include b-d(md) {
-    margin-top: -8px;
   }
 }
 

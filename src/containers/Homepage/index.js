@@ -10,13 +10,12 @@ import SectionCaseStudies from './components/SectionCaseStudies'
 import SectionRoadmap from './components/SectionRoadmap'
 
 const Homepage = (props) => {
-  // eslint-disable-next-line react/prop-types
-  const { datoCmsData, ...rest } = props
+  const { hero, ...rest } = props
 
   return (
     <Layout {...rest}>
       <S title="Home" />
-      <SectionHero />
+      <SectionHero {...hero} />
       <SectionHowItWorks />
       <SectionFeatures />
       <SectionCaseStudies />
