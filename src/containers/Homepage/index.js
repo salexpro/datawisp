@@ -10,16 +10,16 @@ import SectionCaseStudies from './components/SectionCaseStudies'
 import SectionRoadmap from './components/SectionRoadmap'
 
 const Homepage = (props) => {
-  const { hero, howItWork, ...rest } = props
+  const { hero, howItWork, features, roadmap, ...rest } = props
 
   return (
     <Layout {...rest}>
       <S title="Home" />
       <SectionHero {...hero} />
       <SectionHowItWorks {...howItWork} />
-      <SectionFeatures />
+      <SectionFeatures features={features} />
       <SectionCaseStudies />
-      <SectionRoadmap />
+      <SectionRoadmap {...roadmap} />
     </Layout>
   )
 }

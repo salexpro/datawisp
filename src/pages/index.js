@@ -20,6 +20,14 @@ const IndexPage = ({ data }) => {
     howItWorksButtonText,
     howItWorksButtonLink,
     steps,
+    featuresSectionHeading,
+    featuresSectionText,
+    featuresSectionImage,
+    featuresButtonText,
+    featuresButtonLink,
+    featuresList,
+    roadmapSectionHeading,
+    roadmapPhases,
   } = data.datoCmsHomePage
 
   return (
@@ -46,6 +54,18 @@ const IndexPage = ({ data }) => {
         buttonText: howItWorksButtonText,
         buttonLink: howItWorksButtonLink.url,
         steps,
+      }}
+      features={{
+        heading: featuresSectionHeading,
+        text: featuresSectionText,
+        image: featuresSectionImage,
+        buttonText: featuresButtonText,
+        buttonLink: featuresButtonLink.url,
+        featuresList,
+      }}
+      roadmap={{
+        heading: roadmapSectionHeading,
+        phases: roadmapPhases,
       }}
     />
   )
@@ -113,6 +133,43 @@ export const query = graphql`
             breakpoints: [135, 197, 270, 352, 405, 528, 704]
             imgixParams: { fit: "crop", auto: "compress,format" }
           )
+        }
+      }
+
+      featuresSectionHeading
+      featuresSectionText {
+        value
+      }
+      featuresSectionImage {
+        gatsbyImageData(
+          sizes: "(max-width: 767.98px) calc(100vw - 24px * 2), (max-width: 1023.98px) calc(100vw - 40px * 2), (max-width: 1439.98px) calc((100vw - 40px * 2) * 0.6), 780px"
+          breakpoints: [327, 688, 780, 981, 1170, 1376, 1560]
+          imgixParams: { fit: "crop", auto: "compress,format" }
+        )
+      }
+      featuresButtonText
+      featuresButtonLink {
+        url
+      }
+      featuresList {
+        id
+        heading
+        text {
+          value
+        }
+        iconName
+      }
+
+      roadmapSectionHeading
+      roadmapPhases {
+        id
+        variant
+        heading
+        listLeft {
+          value
+        }
+        listRight {
+          value
         }
       }
     }

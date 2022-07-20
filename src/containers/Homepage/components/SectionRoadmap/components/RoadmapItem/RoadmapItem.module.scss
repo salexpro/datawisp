@@ -10,15 +10,6 @@
   }
 }
 
-.listItem {
-  font-size: 15px;
-
-  &::marker {
-    font-size: 19px;
-    line-height: 0.96;
-  }
-}
-
 .roadmapItem {
   position: relative;
   display: grid;
@@ -29,6 +20,24 @@
   margin-top: 30px;
   color: $gray-100;
   border-radius: 0 16px 16px;
+
+  ul {
+    display: grid;
+    grid-auto-flow: row;
+    gap: 8px;
+    height: fit-content;
+    padding-left: 16px;
+    margin: 0;
+
+    li {
+      font-size: 15px;
+
+      &::marker {
+        font-size: 19px;
+        line-height: 0.96;
+      }
+    }
+  }
 
   @include b-up(lg) {
     margin-left: 16px;
@@ -65,7 +74,7 @@
       background-color: $gray-300;
     }
 
-    .listItem {
+    li {
       &::marker {
         color: $primary;
       }
@@ -88,13 +97,4 @@
       background-color: darken($pink, 12);
     }
   }
-}
-
-.listWrapper {
-  display: grid;
-  grid-auto-flow: row;
-  gap: 8px;
-  height: fit-content;
-  padding-left: 16px;
-  margin: 0;
 }

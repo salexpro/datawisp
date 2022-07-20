@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
-import { StaticImage } from 'gatsby-plugin-image'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 
@@ -8,7 +8,8 @@ import FeaturesList from './components/FeaturesList'
 import * as s from './SectionFeatures.module.scss'
 
 const SectionFeatures = (props) => {
-  const { className, ...rest } = props
+  const { features, className, ...rest } = props
+  const { image, ...list } = features
 
   return (
     <Container
@@ -16,15 +17,8 @@ const SectionFeatures = (props) => {
       as="section"
       className={cn(s.sectionFeatures, className)}
     >
-      <FeaturesList />
-      <StaticImage
-        src="./assets/illustration.webp"
-        alt="features"
-        quality={80}
-        formats={['AUTO', 'PNG', 'AVIF']}
-        layout="fullWidth"
-        placeholder="none"
-      />
+      <FeaturesList {...list} />
+      <GatsbyImage alt="features image" image={getImage(image)} />
     </Container>
   )
 }

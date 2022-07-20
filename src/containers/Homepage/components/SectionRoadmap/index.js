@@ -4,11 +4,10 @@ import { Container } from 'react-bootstrap'
 import cn from 'classnames'
 
 import RoadmapItem from './components/RoadmapItem'
-import ROADMAP from './constants'
 import * as s from './SectionRoadmap.module.scss'
 
 const SectionRoadmap = (props) => {
-  const { className, ...rest } = props
+  const { heading, phases, className, ...rest } = props
 
   return (
     <Container
@@ -16,14 +15,10 @@ const SectionRoadmap = (props) => {
       {...rest}
       className={cn(s.sectionRoadmap, className)}
     >
-      <h2>Roadmap</h2>
+      <h2>{heading}</h2>
       <div className={s.roadmapWrapper}>
-        {ROADMAP.map((item, index) => (
-          <RoadmapItem
-            key={item.heading}
-            {...item}
-            style={{ gridArea: `i${index}` }}
-          />
+        {phases.map(({ id, ...phase }, index) => (
+          <RoadmapItem key={id} {...phase} style={{ gridArea: `i${index}` }} />
         ))}
       </div>
     </Container>
@@ -35,6 +30,15 @@ SectionRoadmap.defaultProps = {
 }
 
 SectionRoadmap.propTypes = {
+  heading: PropTypes.string.isRequired,
+  phases: PropTypes.arrayOf(
+    PropTypes.shape({
+      variant: PropTypes.oneOf(['gray', 'purple', 'pink']),
+      heading: PropTypes.string.isRequired,
+      listLeft: PropTypes.object.isRequired,
+      listRight: PropTypes.object.isRequired,
+    })
+  ).isRequired,
   className: PropTypes.string,
 }
 

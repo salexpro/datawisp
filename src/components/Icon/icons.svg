@@ -29,4 +29,16 @@
     <path
       d="M13.887 10.842H3.744V9.176l10.143-.001-4.47-4.47 1.179-1.178 6.482 6.482-6.482 6.482-1.179-1.179 4.47-4.47Z" fill="currentColor"/>
   </symbol>
+  <symbol id="icon-arrows" fill="none" viewBox="0 0 20 20">
+    <path
+      d="M2 7 6.7 18.31 8.4 13.4l4.92-1.68L2 7ZM8.67 13.67l4 4M12.9 9.09l.32-.95L17 6.86 8.31 3.24l1.81 4.34M13.43 8.36l3.07 3.07" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="icon-upload-cloud" fill="none" viewBox="0 0 20 20">
+    <path
+      d="M13.333 13.333 10 10l-3.333 3.333M10 10v7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path
+      d="M16.992 15.325A4.168 4.168 0 0 0 15 7.5h-1.05A6.667 6.667 0 1 0 2.5 13.583" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path
+      d="M13.333 13.333 10 10l-3.333 3.333" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
 </svg>

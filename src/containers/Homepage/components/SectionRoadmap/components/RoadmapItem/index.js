@@ -1,14 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
-import { chunk } from 'lodash'
+import { StructuredText } from 'react-datocms'
 
 import * as s from './RoadmapItem.module.scss'
 
 const RoadmapItem = (props) => {
-  const { variant, heading, list, className, ...rest } = props
-
-  const parts = chunk(list, Math.ceil(list.length / 2))
+  const { variant, heading, listLeft, listRight, className, ...rest } = props
 
   return (
     <div
@@ -16,16 +14,8 @@ const RoadmapItem = (props) => {
       className={cn(s.roadmapItem, { [s[variant]]: variant }, className)}
     >
       <h3 className={cn(s.heading, 'h5')}>{heading}</h3>
-      {parts.map((items, index) => (
-        // eslint-disable-next-line react/no-array-index-key
-        <ul key={`list${index}`} className={s.listWrapper}>
-          {items.map((text) => (
-            <li key={text} className={cn(s.listItem)}>
-              {text}
-            </li>
-          ))}
-        </ul>
-      ))}
+      <StructuredText data={listLeft.value} />
+      <StructuredText data={listRight.value} />
     </div>
   )
 }
@@ -38,7 +28,8 @@ RoadmapItem.defaultProps = {
 RoadmapItem.propTypes = {
   variant: PropTypes.oneOf(['gray', 'purple', 'pink']),
   heading: PropTypes.string.isRequired,
-  list: PropTypes.arrayOf(PropTypes.string).isRequired,
+  listLeft: PropTypes.object.isRequired,
+  listRight: PropTypes.object.isRequired,
   className: PropTypes.string,
 }
 
