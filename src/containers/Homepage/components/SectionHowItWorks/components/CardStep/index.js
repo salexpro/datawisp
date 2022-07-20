@@ -1,9 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
-import { GatsbyImage } from 'gatsby-plugin-image'
-
-import getImgWithBlurHash from '~utils/getImgWithBlurHash'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 import * as s from './CardStep.module.scss'
 
@@ -15,7 +13,7 @@ const CardStep = (props) => {
       <span className={s.text}>{text}</span>
       <GatsbyImage
         alt={`step ${1} image`}
-        image={getImgWithBlurHash(file)}
+        image={getImage(file)}
         className={s.img}
       />
     </div>

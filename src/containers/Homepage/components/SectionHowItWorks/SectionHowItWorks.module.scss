@@ -43,19 +43,19 @@
       'button';
     justify-items: start;
   }
+
+  p {
+    grid-area: paragraph;
+    max-width: 674px;
+
+    @include b-btw(md, lg) {
+      max-width: 490px;
+    }
+  }
 }
 
 .heading {
   grid-area: heading;
-}
-
-.paragraph {
-  grid-area: paragraph;
-  max-width: 674px;
-
-  @include b-btw(md, lg) {
-    max-width: 490px;
-  }
 }
 
 .btn {
