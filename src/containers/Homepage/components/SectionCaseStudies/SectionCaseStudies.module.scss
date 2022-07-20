@@ -17,6 +17,14 @@
 .gridHeading {
   display: grid;
 
+  p {
+    grid-area: paragraph;
+
+    @include b-btw(md, lg) {
+      max-width: 232px;
+    }
+  }
+
   @include b-up(lg) {
     align-items: center;
   }
@@ -46,14 +54,6 @@
 
 .heading {
   grid-area: heading;
-}
-
-.paragraph {
-  grid-area: paragraph;
-
-  @include b-btw(md, lg) {
-    max-width: 232px;
-  }
 }
 
 .btn {

@@ -2,45 +2,17 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 import { Button, Container } from 'react-bootstrap'
-import { graphql, Link, useStaticQuery } from 'gatsby'
+import { Link } from 'gatsby'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { StructuredText } from 'react-datocms'
 
 import RouteURL from '~routes'
 import CardCase from '~components/CardCase'
 
-import { CasesData } from './mocks'
-
 import * as s from './SectionCaseStudies.module.scss'
 
 const SectionCaseStudies = (props) => {
-  const { className, ...rest } = props
-
-  const data = useStaticQuery(graphql`
-    {
-      allFile(
-        filter: { relativeDirectory: { eq: "img/cases" } }
-        sort: { fields: base, order: ASC }
-      ) {
-        nodes {
-          base
-          childImageSharp {
-            gatsbyImageData(
-              quality: 80
-              height: 40
-              formats: [AUTO, WEBP, AVIF]
-              placeholder: NONE
-              outputPixelDensities: [1, 1.5, 2, 3]
-            )
-          }
-        }
-      }
-    }
-  `)
-
-  const CasesDataWImg = CasesData.map((step, index) => ({
-    ...step,
-    file: data?.allFile?.nodes[index],
-  }))
+  const { heading, text, cases, className, ...rest } = props
 
   return (
     <Container
@@ -49,11 +21,8 @@ const SectionCaseStudies = (props) => {
       className={cn(s.sectionCaseStudies, className)}
     >
       <div className={s.gridHeading}>
-        <h2 className={s.heading}>Case Studies</h2>
-        <p className={s.paragraph}>
-          Here’s how a few companies are using Datawisp to better understand
-          their data.
-        </p>
+        <h2 className={s.heading}>{heading}</h2>
+        <StructuredText data={text.value} />
         <Button as={Link} to={RouteURL.CASE_STUDIES} className={s.btn}>
           Explore more
         </Button>
@@ -67,7 +36,7 @@ const SectionCaseStudies = (props) => {
         }}
         className={s.swiper}
       >
-        {CasesDataWImg.map(({ id, ...caseProps }) => (
+        {cases.map(({ id, ...caseProps }) => (
           <SwiperSlide key={id}>
             <CardCase {...caseProps} />
           </SwiperSlide>
@@ -82,6 +51,8 @@ SectionCaseStudies.defaultProps = {
 }
 
 SectionCaseStudies.propTypes = {
+  heading: PropTypes.string.isRequired,
+  text: PropTypes.object.isRequired,
   className: PropTypes.string,
 }
 

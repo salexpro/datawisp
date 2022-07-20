@@ -28,6 +28,9 @@ const IndexPage = ({ data }) => {
     featuresList,
     roadmapSectionHeading,
     roadmapPhases,
+    caseStudiesSectionHeading,
+    caseStudiesSectionText,
+    cases,
   } = data.datoCmsHomePage
 
   return (
@@ -62,6 +65,11 @@ const IndexPage = ({ data }) => {
         buttonText: featuresButtonText,
         buttonLink: featuresButtonLink.url,
         featuresList,
+      }}
+      cases={{
+        heading: caseStudiesSectionHeading,
+        text: caseStudiesSectionText,
+        cases,
       }}
       roadmap={{
         heading: roadmapSectionHeading,
@@ -171,6 +179,20 @@ export const query = graphql`
         listRight {
           value
         }
+      }
+
+      caseStudiesSectionHeading
+      caseStudiesSectionText {
+        value
+      }
+      cases {
+        id
+        heading
+        badgeText
+        postIcon {
+          url
+        }
+        slug
       }
     }
   }
