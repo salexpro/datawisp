@@ -10,7 +10,7 @@ import BLOG_DATA from '~containers/Blog/components/BlogSection/mocks'
 import * as s from './SectionRelatedArticles.module.scss'
 
 const SectionRelatedArticles = (props) => {
-  const { className, ...rest } = props
+  const { className, latestArticles, ...rest } = props
 
   const data = useStaticQuery(graphql`
     {

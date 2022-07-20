@@ -12,7 +12,15 @@ import { useStaticQuery, graphql } from 'gatsby'
 
 import ogImage from '~img/og-image.png'
 
-const SEO = ({ description, lang, meta, title, image }) => {
+const SEO = ({
+  description,
+  lang,
+  meta,
+  title,
+  image,
+  twitterCard,
+  ogType,
+}) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -32,6 +40,10 @@ const SEO = ({ description, lang, meta, title, image }) => {
   const domain = site.siteMetadata?.domain
   const titleTemplate = title ? `${title} – ${defaultTitle}` : defaultTitle
 
+  const ogImageUrl =
+    image ||
+    `${domain.includes('http') ? domain : `https://${domain}`}${ogImage}`
+
   return (
     <Helmet
       htmlAttributes={{
@@ -44,6 +56,10 @@ const SEO = ({ description, lang, meta, title, image }) => {
           content: metaDescription,
         },
         {
+          property: `og:locale`,
+          content: `en_EN`,
+        },
+        {
           property: `og:title`,
           content: titleTemplate,
         },
@@ -53,13 +69,11 @@ const SEO = ({ description, lang, meta, title, image }) => {
         },
         {
           property: `og:type`,
-          content: `website`,
+          content: ogType || `website`,
         },
         {
           property: `og:image`,
-          content: `${domain.includes('http') ? domain : `https://${domain}`}${
-            ogImage || image
-          }`,
+          content: ogImageUrl,
         },
         {
           property: `og:width`,
@@ -69,10 +83,13 @@ const SEO = ({ description, lang, meta, title, image }) => {
           property: `og:height`,
           content: `630`,
         },
-
+        {
+          property: `twitter:image`,
+          content: ogImageUrl,
+        },
         {
           name: `twitter:card`,
-          content: `summary_large_image`,
+          content: twitterCard || `summary_large_image`,
         },
         {
           name: `twitter:title`,

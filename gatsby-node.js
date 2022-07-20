@@ -5,6 +5,7 @@
  */
 
 const path = require('path')
+const RouteURL = require('./src/routes')
 
 exports.onCreateWebpackConfig = ({ actions, getConfig }) => {
   actions.setWebpackConfig({
@@ -37,32 +38,55 @@ exports.onCreateWebpackConfig = ({ actions, getConfig }) => {
   actions.replaceWebpackConfig(config)
 }
 
-const createArticlePages = (createPage) => {
+const createArticlePages = async ({ actions, graphql, reporter }) => {
+  const { createPage } = actions
+
+  const result = await graphql(`
+    query AllArticles {
+      allDatoCmsArticle {
+        edges {
+          node {
+            postType
+            slug
+            id
+          }
+        }
+      }
+    }
+  `)
+
+  // Handle errors
+  if (result.errors) {
+    reporter.panicOnBuild(
+      `createArticlePages: Error while running GraphQL query.`
+    )
+    return
+  }
+
   const articleTemplate = path.resolve(`src/templates/article.js`)
-  const tempPath = '/blog/example'
 
-  createPage({
-    path: tempPath,
-    component: articleTemplate,
+  result.data.allDatoCmsArticle.edges.forEach(({ node }) => {
+    const { postType, slug, id } = node
+    const isCaseStudy = postType === 'caseStudy'
+
+    createPage({
+      path: isCaseStudy
+        ? `${RouteURL.CASE_STUDIES}/${slug}`
+        : `${RouteURL.BLOG}/${slug}`,
+      component: articleTemplate,
+      context: {
+        id,
+        postType,
+      },
+    })
   })
 }
 
-const createCaseStudyPages = (createPage) => {
-  const caseTemplate = path.resolve(`src/templates/caseStudy.js`)
-  const tempPath = `/case-studies/example`
-
-  createPage({
-    path: tempPath,
-    component: caseTemplate,
-  })
-}
-
-exports.createPages = async ({ actions }) => {
+exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
 
   // Articles
-  createArticlePages(createPage)
-  createCaseStudyPages(createPage)
+  await createArticlePages({ actions, graphql, reporter })
 
   if (process.env.NODE_ENV === `development`) {
     const productTemplate = path.resolve(`src/templates/SVGPreview/index.jsx`)

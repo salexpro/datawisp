@@ -29,7 +29,7 @@ const BlogSection = (props) => {
               aspectRatio: 1.49
               formats: [AUTO, WEBP, AVIF]
               placeholder: NONE
-              sizes: "(max-width: 767.98) calc(100vw - 24 * 2), (max-width: 1023.98) calc(100vw - 40 * 2 - 24), (max-width: 1439.98)  calc(100vw - 40 * 2 - 24 * 2), 392px"
+              sizes: "(max-width: 767.98px) calc(100vw - 24px * 2), (max-width: 1023.98px) calc((100vw - 40px * 2 - 24px) / 2), (max-width: 1439.98px)  calc((100vw - 40px * 2 - 32px * 2) / 3), 392px"
               breakpoints: [327, 460, 784, 981, 1176, 1440]
             )
             blurHash {

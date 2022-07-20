@@ -1,30 +1,26 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
+import { StructuredText } from 'react-datocms'
 
 import * as s from './Card.module.scss'
 
 const Card = (props) => {
-  const { heading, className, children, ...rest } = props
+  const { className, content, ...rest } = props
 
   return (
-    <div {...rest} className={cn(s.card, className)}>
-      {heading && (
-        <h3 className="h-card">What is the value proposition of a project?</h3>
-      )}
-      {children}
+    <div {...rest} className={cn('article-card', s.card, className)}>
+      <StructuredText data={content} />
     </div>
   )
 }
 
 Card.defaultProps = {
   className: undefined,
-  heading: undefined,
 }
 
 Card.propTypes = {
   className: PropTypes.string,
-  heading: PropTypes.string,
 }
 
 export default Card

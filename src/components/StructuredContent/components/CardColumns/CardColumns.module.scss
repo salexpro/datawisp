@@ -15,10 +15,14 @@
     padding: 0;
     margin: 0;
     list-style-type: none;
-  }
 
-  + p {
-    margin-top: 32px;
+    + p {
+      margin-top: 32px;
+    }
+
+    p {
+      margin: 0;
+    }
   }
 }
 

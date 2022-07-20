@@ -8,4 +8,4 @@ const RouteURL = {
   BETA_APP: '/beta-app ',
 }
 
-export default RouteURL
+module.exports = RouteURL
