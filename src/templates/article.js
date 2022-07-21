@@ -62,6 +62,7 @@ export const pageQuery = graphql`
           image {
             ...ArticleImageData
           }
+          imageCaption
         }
         ... on DatoCmsArticleCard {
           id: originalId

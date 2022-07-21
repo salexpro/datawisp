@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-import { GatsbyImage } from 'gatsby-plugin-image'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import cn from 'classnames'
 import dayjs from 'dayjs'
 import { Image } from 'react-datocms'
@@ -10,17 +10,12 @@ import { range } from 'lodash'
 
 import RouteURL from '~routes'
 import Icon from '~components/Icon'
-import getImgWithBlurHash from '~utils/getImgWithBlurHash'
 
 import * as s from './BlogItem.module.scss'
 
 const BlogItem = (props) => {
   const {
-    date, // mock data
     heading,
-    file,
-    text, // mock data
-    href, // mock data
     className,
     seo,
     meta,
@@ -35,7 +30,7 @@ const BlogItem = (props) => {
 
   const publishedAtDate = dayjs(publishedAt)
 
-  const blogpostLink = `${RouteURL.BLOG}/${slug || href}`
+  const blogpostLink = `${RouteURL.BLOG}/${slug}`
 
   if (isPlaceholder)
     return (
@@ -66,11 +61,15 @@ const BlogItem = (props) => {
     <div {...rest} className={cn(s.blogItem, className)}>
       <Link to={blogpostLink} className={s.imgWrapper}>
         {responsiveImage ? (
-          <Image data={responsiveImage} objectFit="cover" />
+          <Image
+            data={responsiveImage}
+            objectFit="cover"
+            className={s.blogImg}
+          />
         ) : (
           <GatsbyImage
             alt={heading}
-            image={getImgWithBlurHash(file)}
+            image={getImage(heroImage)}
             className={s.blogImg}
           />
         )}
@@ -81,7 +80,7 @@ const BlogItem = (props) => {
       <Link to={blogpostLink} className={s.link}>
         <h4 className={s.heading}>{heading}</h4>
       </Link>
-      <p className={s.text}>{description || text}</p>
+      <p className={s.text}>{description}</p>
       <Link to={blogpostLink} className={cn(s.readMore, s.link)}>
         Read more <Icon name="icon-arrow-right" size={20} />
       </Link>

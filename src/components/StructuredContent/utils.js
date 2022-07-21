@@ -8,7 +8,14 @@ import CardColumns from './components/CardColumns'
 export const renderBlock = ({ record }) => {
   switch (record.__typename) {
     case 'DatoCmsArticleImage':
-      return <GatsbyImage alt="hero" image={getImage(record.image)} />
+      return (
+        <figure>
+          <GatsbyImage alt="hero" image={getImage(record.image)} />
+          {record.imageCaption && (
+            <figcaption>{record.imageCaption}</figcaption>
+          )}
+        </figure>
+      )
     case 'DatoCmsArticleCard':
       return <Card content={record.content} />
     case 'DatoCmsArticleColumnsCard':

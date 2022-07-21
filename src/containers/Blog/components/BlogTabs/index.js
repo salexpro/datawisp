@@ -4,23 +4,22 @@ import { useLocation } from '@gatsbyjs/reach-router'
 import { Link } from 'gatsby'
 import { Container, Nav } from 'react-bootstrap'
 
-import TABS from './constants'
 import * as s from './BlogTabs.module.scss'
 
 const BlogTabs = (props) => {
-  const { className, ...rest } = props
+  const { heading, tabs, className, ...rest } = props
 
   const { hash } = useLocation()
   const activeKey = hash.replace('#', '')
 
   return (
     <Container {...rest} className={className}>
-      <h1 className={s.heading}>Blog</h1>
+      <h1 className={s.heading}>{heading}</h1>
       <Nav variant="blog" as="ul" activeKey={activeKey}>
-        {TABS.map(({ key, text }) => (
-          <Nav.Item key={text} as="li">
-            <Nav.Link eventKey={key} as={Link} to={`#${key}`}>
-              {text}
+        {tabs.map(({ name, slug }) => (
+          <Nav.Item key={slug} as="li">
+            <Nav.Link eventKey={slug} as={Link} to={`#${slug}`}>
+              {name}
             </Nav.Link>
           </Nav.Item>
         ))}
