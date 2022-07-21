@@ -8,13 +8,13 @@ import SectionCaseHero from './components/SectionCaseHero'
 import SectionCases from './components/SectionCases'
 
 const CaseStudies = (props) => {
-  const { className, ...rest } = props
+  const { hero, cases, className, ...rest } = props
 
   return (
     <Layout {...rest} className={className}>
       <S title="Case Studies" />
-      <SectionCaseHero />
-      <SectionCases />
+      <SectionCaseHero {...hero} />
+      <SectionCases cases={cases} />
     </Layout>
   )
 }
