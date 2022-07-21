@@ -20,21 +20,66 @@
 }
 
 .date {
-  margin-top: 16px;
-  margin-bottom: 12px;
+  margin: 16px 0 12px;
   font-size: 14px;
   font-weight: $font-weight-medium;
-  line-height: 1.29;
+  line-height: 1.2857;
   color: $primary;
-}
 
-.heading {
-  color: inherit;
+  &.placeholder {
+    width: 88px;
+    margin: 18px 0 14px;
+  }
 }
 
 .text {
   margin-top: 16px;
   font-size: 15px;
+  line-height: 1.4667;
+}
+
+.headingPlaceholderGrid {
+  display: grid;
+
+  .heading {
+    margin: 4px 0;
+
+    &:last-child {
+      width: 160px;
+    }
+  }
+}
+
+.textPlaceholderGrid {
+  display: grid;
+  margin-top: 16px;
+
+  .text {
+    margin: 3.5px 0;
+
+    &:last-child {
+      width: 60%;
+    }
+  }
+}
+
+.linkPlaceholderGrid {
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 8px;
+  justify-content: start;
+  margin: 32px 0 2px;
+  font-size: 14px;
+
+  .placeholder {
+    &:first-child {
+      width: 72px;
+    }
+
+    &:last-child {
+      width: 14px;
+    }
+  }
 }
 
 .readMore {
@@ -46,7 +91,7 @@
   margin-top: 30px;
   font-size: 14px;
   font-weight: $font-weight-medium;
-  line-height: 1.29;
+  line-height: 1.2857;
   color: $dark;
 }
 

@@ -11,6 +11,7 @@ exports.onCreateWebpackConfig = ({ actions, getConfig }) => {
   actions.setWebpackConfig({
     resolve: {
       alias: {
+        '~api': path.resolve(__dirname, 'src/axios'),
         '~components': path.resolve(__dirname, 'src/components'),
         '~containers': path.resolve(__dirname, 'src/containers'),
         '~contexts': path.resolve(__dirname, 'src/contexts'),
@@ -49,6 +50,7 @@ const createArticlePages = async ({ actions, graphql, reporter }) => {
             postType
             slug
             id
+            originalId
           }
         }
       }
@@ -66,7 +68,7 @@ const createArticlePages = async ({ actions, graphql, reporter }) => {
   const articleTemplate = path.resolve(`src/templates/article.js`)
 
   result.data.allDatoCmsArticle.edges.forEach(({ node }) => {
-    const { postType, slug, id } = node
+    const { postType, slug, id, originalId } = node
     const isCaseStudy = postType === 'caseStudy'
 
     createPage({
@@ -76,6 +78,7 @@ const createArticlePages = async ({ actions, graphql, reporter }) => {
       component: articleTemplate,
       context: {
         id,
+        originalId,
         postType,
       },
     })

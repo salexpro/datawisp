@@ -6,6 +6,36 @@
   background-color: $white;
   border-radius: 8px;
   transition: background-color 0.25s;
+
+  &.placeholder {
+    box-sizing: content-box;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.placeholderImg {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+}
+
+.placeholderHeader {
+  width: 160px;
+  margin: 4px 0;
+}
+
+.placeholderText {
+  width: 200px;
+  margin: 4px 0;
+}
+
+.placeholderBtn {
+  align-self: end;
+  width: 52px;
+  height: 52px;
+  border-radius: 100%;
 }
 
 .arrowLink {
@@ -48,7 +78,7 @@
   border-radius: 16px;
   transition: background-color 0.25s, box-shadow 0.25s;
 
-  &:hover {
+  &:not(.placeholder):hover {
     background-color: $white;
     box-shadow: 0 26px 54px rgba(34, 18, 34, 5%);
 

@@ -4,7 +4,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 const ImageFormat = (props) => {
   const { file, alt, className, ...rest } = props
-  const { format, url } = file
+  const { format, url } = file || {}
 
   return format === 'svg' ? (
     <img {...rest} src={url} alt={alt} className={className} />

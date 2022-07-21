@@ -10,7 +10,7 @@ module.exports = {
   Current available flags: https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby/src/utils/flags.ts
   */
   flags: {
-    FAST_DEV: true,
+    FAST_DEV: false,
   },
   trailingSlash: 'never',
   polyfill: false,
@@ -69,7 +69,7 @@ module.exports = {
     {
       resolve: `gatsby-source-datocms`,
       options: {
-        apiToken: process.env.DATOCMS_API_TOKEN,
+        apiToken: process.env.GATSBY_DATOCMS_API_TOKEN,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

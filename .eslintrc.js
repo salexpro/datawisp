@@ -22,6 +22,7 @@ module.exports = {
     'import/resolver': {
       alias: {
         map: [
+          ['~api', './src/axios'],
           ['~components', './src/components'],
           ['~containers', './src/containers'],
           ['~contexts', './src/contexts'],

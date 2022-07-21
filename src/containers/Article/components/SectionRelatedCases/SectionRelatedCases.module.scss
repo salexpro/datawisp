@@ -1,6 +1,6 @@
 @import '~styles/mixins';
 
-.sectionRelatedArticles {
+.sectionRelatedCases {
   padding-top: 74px;
   margin-top: 74px;
   border-top: 1px solid $gray-200;
@@ -19,30 +19,30 @@
   text-align: center;
 }
 
-.gridArticles {
+.gridCases {
   display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 32px;
-  margin-top: 40px;
-
-  @include b-up(lg) {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  margin-top: 24px;
 
   @include b-d(lg) {
-    column-gap: 24px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 40px;
 
-    .blogItem:nth-child(3) {
+    .cardCase:nth-child(n + 5) {
       display: none;
     }
   }
 
-  @include b-btw(md, lg) {
-    grid-template-columns: repeat(2, 1fr);
-    margin-top: 48px;
-  }
-
   @include b-d(md) {
-    margin-top: 32px;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 30px;
+
+    .cardCase:nth-child(n + 4) {
+      display: none;
+    }
   }
 }
 
@@ -50,15 +50,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 512px;
-  margin-top: 40px;
+  height: 332px;
+  margin-top: 24px;
 
   @include b-btw(md, lg) {
-    margin-top: 48px;
+    margin-top: 40px;
   }
 
   @include b-d(md) {
-    margin-top: 32px;
+    margin-top: 30px;
   }
 
   a {
