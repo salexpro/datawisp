@@ -1,23 +1,24 @@
-import RouteURL from '~routes'
-
 const CasesData = [
   {
     id: 1,
-    name: 'LadderCaster',
-    description: 'Web3 Strategy Game',
-    url: `${RouteURL.CASE_STUDIES}/example`,
+    heading: 'LadderCaster',
+    badgeText: 'Web3 Strategy Game',
+    slug: `sharky-fi`,
+    postIcon: { format: 'svg', url: '' },
   },
   {
     id: 2,
-    name: 'Streamflow',
-    description: 'Token Distribution Platform',
-    url: `${RouteURL.CASE_STUDIES}/example`,
+    heading: 'Streamflow',
+    badgeText: 'Token Distribution Platform',
+    slug: `streamflow`,
+    postIcon: { format: 'svg', url: '' },
   },
   {
     id: 3,
-    name: 'Sharky.fi',
-    description: 'Marketplace for Loans Backed by NFTs',
-    url: `${RouteURL.CASE_STUDIES}/example`,
+    heading: 'Sharky.fi',
+    badgeText: 'Marketplace for Loans Backed by NFTs',
+    slug: `laddercaster`,
+    postIcon: { format: 'svg', url: '' },
   },
 ]
 

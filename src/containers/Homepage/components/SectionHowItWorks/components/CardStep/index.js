@@ -1,7 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+
+import ImageFormat from '~components/ImageFormat'
 
 import * as s from './CardStep.module.scss'
 
@@ -11,9 +12,11 @@ const CardStep = (props) => {
   return (
     <div {...rest} className={cn(s.cardStep, className)}>
       <span className={s.text}>{text}</span>
-      <GatsbyImage
-        alt={`step ${1} image`}
-        image={getImage(file)}
+      <ImageFormat
+        url={file.url}
+        alt={`step ${stepNumber} image`}
+        file={file}
+        format={file.format}
         className={s.img}
       />
     </div>

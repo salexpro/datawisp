@@ -1,8 +1,9 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
+
+import ImageFormat from '~components/ImageFormat'
 
 import FeaturesList from './components/FeaturesList'
 import * as s from './SectionFeatures.module.scss'
@@ -18,7 +19,12 @@ const SectionFeatures = (props) => {
       className={cn(s.sectionFeatures, className)}
     >
       <FeaturesList {...list} />
-      <GatsbyImage alt="features image" image={getImage(image)} />
+      <ImageFormat
+        url={image.url}
+        alt="features image"
+        file={image}
+        format={image.format}
+      />
     </Container>
   )
 }

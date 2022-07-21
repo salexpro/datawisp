@@ -6,6 +6,7 @@ import { Button } from 'react-bootstrap'
 
 import RouteURL from '~routes'
 import Icon from '~components/Icon'
+import ImageFormat from '~components/ImageFormat'
 
 import * as s from './CardCase.module.scss'
 
@@ -23,7 +24,14 @@ const CardCase = (props) => {
       title={linkTitle}
     >
       <span className={s.imgWrapper}>
-        <img alt={heading} src={postIcon?.url} width={40} height={40} />
+        <ImageFormat
+          width={40}
+          height={40}
+          url={postIcon.url}
+          alt={heading}
+          file={postIcon}
+          format={postIcon.format}
+        />
       </span>
       <h3 className="h4">{heading}</h3>
       <p>{badgeText}</p>

@@ -42,7 +42,7 @@ const SectionCases = (props) => {
   return (
     <Container {...rest} className={cn(s.sectionCases, className)}>
       {CasesDataImg.map((item) => (
-        <CardCase {...item} />
+        <CardCase key={item.slug} {...item} />
       ))}
     </Container>
   )

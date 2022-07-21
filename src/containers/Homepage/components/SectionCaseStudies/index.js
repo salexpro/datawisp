@@ -6,13 +6,13 @@ import { Link } from 'gatsby'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { StructuredText } from 'react-datocms'
 
-import RouteURL from '~routes'
 import CardCase from '~components/CardCase'
 
 import * as s from './SectionCaseStudies.module.scss'
 
 const SectionCaseStudies = (props) => {
-  const { heading, text, cases, className, ...rest } = props
+  const { heading, text, cases, buttonText, buttonLink, className, ...rest } =
+    props
 
   return (
     <Container
@@ -23,8 +23,8 @@ const SectionCaseStudies = (props) => {
       <div className={s.gridHeading}>
         <h2 className={s.heading}>{heading}</h2>
         <StructuredText data={text.value} />
-        <Button as={Link} to={RouteURL.CASE_STUDIES} className={s.btn}>
-          Explore more
+        <Button as={Link} to={buttonLink} className={s.btn}>
+          {buttonText}
         </Button>
       </div>
       <Swiper
@@ -53,6 +53,8 @@ SectionCaseStudies.defaultProps = {
 SectionCaseStudies.propTypes = {
   heading: PropTypes.string.isRequired,
   text: PropTypes.object.isRequired,
+  buttonText: PropTypes.string.isRequired,
+  buttonLink: PropTypes.string.isRequired,
   className: PropTypes.string,
 }
 

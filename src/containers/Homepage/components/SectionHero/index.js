@@ -5,8 +5,9 @@ import { Link } from 'gatsby'
 import { StructuredText } from 'react-datocms'
 import { Button, Container } from 'react-bootstrap'
 
-import PartnersMarquee from './components/PartnersMaruqee'
+import ImageFormat from '~components/ImageFormat'
 
+import PartnersMarquee from './components/PartnersMaruqee'
 import * as s from './SectionHero.module.scss'
 
 const SectionHero = (props) => {
@@ -41,9 +42,11 @@ const SectionHero = (props) => {
             </Button>
           </div>
         </div>
-        <img
-          src={image.url}
+        <ImageFormat
+          url={image.url}
           alt="hero"
+          file={image}
+          format={image.format}
           width={897}
           height={690}
           className={s.imgHero}

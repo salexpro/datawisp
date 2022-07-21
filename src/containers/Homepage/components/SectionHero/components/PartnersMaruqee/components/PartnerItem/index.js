@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import ImageFormat from '~components/ImageFormat'
 
 import * as s from './PartnerItem.module.scss'
 
@@ -11,7 +11,13 @@ const PartnerItem = (props) => {
 
   return (
     <div {...rest} className={cn(s.partnerItem, className)} title={name}>
-      <GatsbyImage alt={name} image={getImage(file)} loading="eager" />
+      <ImageFormat
+        url={file.url}
+        alt={name}
+        file={file}
+        format={file.format}
+        loading="eager"
+      />
     </div>
   )
 }

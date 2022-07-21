@@ -31,6 +31,8 @@ const IndexPage = ({ data }) => {
     caseStudiesSectionHeading,
     caseStudiesSectionText,
     cases,
+    caseStudiesButtonText,
+    caseStudiesButtonLink,
   } = data.datoCmsHomePage
 
   return (
@@ -70,6 +72,8 @@ const IndexPage = ({ data }) => {
         heading: caseStudiesSectionHeading,
         text: caseStudiesSectionText,
         cases,
+        buttonText: caseStudiesButtonText,
+        buttonLink: caseStudiesButtonLink.url,
       }}
       roadmap={{
         heading: roadmapSectionHeading,
@@ -87,7 +91,15 @@ export const query = graphql`
         value
       }
       heroSectionImage {
+        format
         url
+        gatsbyImageData(
+          width: 897
+          placeholder: NONE
+          sizes: "(max-width: 767.98px) 323px, (max-width: 1023.98px) 682px, (max-width: 1199.98px) 718px, 897px"
+          breakpoints: [323, 660, 718, 940, 1400, 1794]
+          imgixParams: { fit: "crop", auto: "compress,format" }
+        )
       }
 
       heroButtonPrimaryText
@@ -104,6 +116,8 @@ export const query = graphql`
         id
         title
         logoImage {
+          format
+          url
           gatsbyImageData(
             height: 24
             placeholder: NONE
@@ -118,6 +132,8 @@ export const query = graphql`
         value
       }
       howItWorksSectionImage {
+        format
+        url
         gatsbyImageData(
           width: 992
           placeholder: NONE
@@ -134,6 +150,8 @@ export const query = graphql`
         id
         heading
         image {
+          format
+          url
           gatsbyImageData(
             width: 352
             placeholder: BLURRED
@@ -149,6 +167,8 @@ export const query = graphql`
         value
       }
       featuresSectionImage {
+        format
+        url
         gatsbyImageData(
           sizes: "(max-width: 767.98px) calc(100vw - 24px * 2), (max-width: 1023.98px) calc(100vw - 40px * 2), (max-width: 1439.98px) calc((100vw - 40px * 2) * 0.6), 780px"
           breakpoints: [327, 688, 780, 981, 1170, 1376, 1560]
@@ -168,6 +188,31 @@ export const query = graphql`
         iconName
       }
 
+      caseStudiesSectionHeading
+      caseStudiesSectionText {
+        value
+      }
+      cases {
+        id
+        heading
+        badgeText
+        postIcon {
+          format
+          url
+          gatsbyImageData(
+            width: 40
+            height: 40
+            placeholder: NONE
+            imgixParams: { fit: "crop", auto: "compress,format" }
+          )
+        }
+        slug
+      }
+      caseStudiesButtonText
+      caseStudiesButtonLink {
+        url
+      }
+
       roadmapSectionHeading
       roadmapPhases {
         id
@@ -179,20 +224,6 @@ export const query = graphql`
         listRight {
           value
         }
-      }
-
-      caseStudiesSectionHeading
-      caseStudiesSectionText {
-        value
-      }
-      cases {
-        id
-        heading
-        badgeText
-        postIcon {
-          url
-        }
-        slug
       }
     }
   }

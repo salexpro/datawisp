@@ -4,11 +4,11 @@ import cn from 'classnames'
 import { Button, Container } from 'react-bootstrap'
 import { Link } from 'gatsby'
 import { StructuredText } from 'react-datocms'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-import CardStep from './components/CardStep'
+import ImageFormat from '~components/ImageFormat'
 
+import CardStep from './components/CardStep'
 import * as s from './SectionHowItWorks.module.scss'
 
 const SectionHowItWorks = (props) => {
@@ -34,7 +34,13 @@ const SectionHowItWorks = (props) => {
           </Button>
         </div>
         <div className={s.imgWrapper}>
-          <GatsbyImage alt="app" image={getImage(image)} className={s.img} />
+          <ImageFormat
+            url={image.url}
+            alt="app"
+            file={image}
+            format={image.format}
+            className={s.img}
+          />
           <div className={s.gridSteps}>
             {steps.map(
               ({ id, heading: stepHeading, image: stepImage }, index) => (
