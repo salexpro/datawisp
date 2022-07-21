@@ -13,10 +13,8 @@ const CardStep = (props) => {
     <div {...rest} className={cn(s.cardStep, className)}>
       <span className={s.text}>{text}</span>
       <ImageFormat
-        url={file.url}
         alt={`step ${stepNumber} image`}
         file={file}
-        format={file.format}
         className={s.img}
       />
     </div>

@@ -11,13 +11,7 @@ const PartnerItem = (props) => {
 
   return (
     <div {...rest} className={cn(s.partnerItem, className)} title={name}>
-      <ImageFormat
-        url={file.url}
-        alt={name}
-        file={file}
-        format={file.format}
-        loading="eager"
-      />
+      <ImageFormat alt={name} file={file} loading="eager" />
     </div>
   )
 }

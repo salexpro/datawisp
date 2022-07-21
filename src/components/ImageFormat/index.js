@@ -3,7 +3,8 @@ import PropTypes from 'prop-types'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 const ImageFormat = (props) => {
-  const { format, url, file, alt, className, ...rest } = props
+  const { file, alt, className, ...rest } = props
+  const { format, url } = file
 
   return format === 'svg' ? (
     <img {...rest} src={url} alt={alt} className={className} />
@@ -15,16 +16,11 @@ const ImageFormat = (props) => {
 }
 
 ImageFormat.defaultProps = {
-  url: undefined,
-  file: undefined,
   className: '',
 }
 
 ImageFormat.propTypes = {
-  format: PropTypes.string.isRequired,
-  alt: PropTypes.string.isRequired,
-  url: PropTypes.string,
-  file: PropTypes.object,
+  file: PropTypes.object.isRequired,
   className: PropTypes.string,
 }
 

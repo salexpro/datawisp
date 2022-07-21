@@ -52,7 +52,7 @@ const IndexPage = ({ data }) => {
         partnersHeading: partnersSectionHeading,
         partners,
       }}
-      howItWork={{
+      howItWorks={{
         heading: howItWorksSectionHeading,
         text: howItWorksSectionText,
         image: howItWorksSectionImage,

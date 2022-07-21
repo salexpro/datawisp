@@ -24,14 +24,7 @@ const CardCase = (props) => {
       title={linkTitle}
     >
       <span className={s.imgWrapper}>
-        <ImageFormat
-          width={40}
-          height={40}
-          url={postIcon.url}
-          alt={heading}
-          file={postIcon}
-          format={postIcon.format}
-        />
+        <ImageFormat width={40} height={40} alt={heading} file={postIcon} />
       </span>
       <h3 className="h4">{heading}</h3>
       <p>{badgeText}</p>

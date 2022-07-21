@@ -43,10 +43,8 @@ const SectionHero = (props) => {
           </div>
         </div>
         <ImageFormat
-          url={image.url}
           alt="hero"
           file={image}
-          format={image.format}
           width={897}
           height={690}
           className={s.imgHero}

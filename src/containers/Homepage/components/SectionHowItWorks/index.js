@@ -34,13 +34,7 @@ const SectionHowItWorks = (props) => {
           </Button>
         </div>
         <div className={s.imgWrapper}>
-          <ImageFormat
-            url={image.url}
-            alt="app"
-            file={image}
-            format={image.format}
-            className={s.img}
-          />
+          <ImageFormat alt="app" file={image} className={s.img} />
           <div className={s.gridSteps}>
             {steps.map(
               ({ id, heading: stepHeading, image: stepImage }, index) => (
