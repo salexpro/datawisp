@@ -9,9 +9,12 @@ const ImageFormat = (props) => {
   return format === 'svg' ? (
     <img {...rest} src={url} alt={alt} className={className} />
   ) : (
-    <div className={className}>
-      <GatsbyImage {...rest} alt={alt} image={getImage(file)} />
-    </div>
+    <GatsbyImage
+      {...rest}
+      alt={alt}
+      image={getImage(file)}
+      className={className}
+    />
   )
 }
 

@@ -61,7 +61,7 @@ $img-hero-height: 432px;
   }
 
   @include b-up(md) {
-    position: absolute;
+    position: absolute !important;
     top: 0;
     right: 40px;
   }

@@ -81,14 +81,6 @@
   }
 }
 
-.img {
-  width: 80%;
-
-  @include b-d(md) {
-    width: 100%;
-  }
-}
-
 .gridSteps {
   position: absolute;
   top: -16px;

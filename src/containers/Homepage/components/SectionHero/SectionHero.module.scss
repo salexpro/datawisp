@@ -116,7 +116,7 @@
   }
 
   @include b-up(md) {
-    position: absolute;
+    position: absolute !important;
     z-index: -1;
     transform: translateY(-50%);
   }

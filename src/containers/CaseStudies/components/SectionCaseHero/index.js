@@ -17,9 +17,7 @@ const SectionCaseHero = (props) => {
         <h1>{heading}</h1>
         <StructuredText data={text.value} />
       </div>
-      <div className={s.imgHero}>
-        <ImageFormat alt="hero" file={image} />
-      </div>
+      <ImageFormat alt="hero" file={image} className={s.imgHero} />
     </Container>
   )
 }

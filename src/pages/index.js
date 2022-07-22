@@ -137,7 +137,7 @@ export const query = graphql`
         gatsbyImageData(
           width: 992
           placeholder: NONE
-          sizes: "(max-width: 767.98px) calc(100vw - 24px * 2), (max-width: 1439.98px) calc((100vw - 40px * 2) * 0.8), 992px"
+          sizes: "(max-width: 767.98px) calc(100vw - 24px * 2), min(calc(100vw - 40px * 2), 992px)"
           breakpoints: [327, 654, 992, 1100, 1308, 1488, 1984]
           imgixParams: { fit: "crop", auto: "compress,format" }
         )

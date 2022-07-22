@@ -12,7 +12,7 @@ const SectionCases = (props) => {
 
   return (
     <Container {...rest} className={cn(s.sectionCases, className)}>
-      {cases.map((item) => (
+      {cases?.map((item) => (
         <CardCase key={item.slug} {...item} />
       ))}
     </Container>

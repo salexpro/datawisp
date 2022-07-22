@@ -4,8 +4,9 @@ import { graphql } from 'gatsby'
 import CaseStudies from '~containers/CaseStudies'
 
 const CaseStudiesPage = ({ data }) => {
-  const { heroSectionHeading, heroSectionText, heroSectionImage, cases } =
+  const { heroSectionHeading, heroSectionText, heroSectionImage } =
     data.datoCmsCaseStudiesPage
+  const cases = data.allDatoCmsArticle
 
   return (
     <CaseStudies
@@ -14,7 +15,7 @@ const CaseStudiesPage = ({ data }) => {
         text: heroSectionText,
         image: heroSectionImage,
       }}
-      cases={cases}
+      cases={cases?.nodes}
     />
   )
 }
@@ -32,12 +33,18 @@ export const query = graphql`
         gatsbyImageData(
           width: 716
           placeholder: NONE
-          sizes: "(max-width: 767.98px) calc(100vw - 24px * 2), (max-width: 1439.98) calc((100vw - 40px * 2) * 0.66), 716px"
-          breakpoints: [720, 1080, 1440]
+          sizes: "(max-width: 767.98px) calc(100vw - 24px * 2), (max-width: 1023.98px) 501px, (max-width: 1199.98px) 609px, 716px"
+          breakpoints: [550, 740, 1218, 1040, 1440]
           imgixParams: { fit: "crop", auto: "compress,format" }
         )
       }
-      cases {
+    }
+
+    allDatoCmsArticle(
+      filter: { postType: { eq: "caseStudy" } }
+      sort: { fields: meta___publishedAt, order: DESC }
+    ) {
+      nodes {
         id
         heading
         badgeText
