@@ -11,6 +11,14 @@
   transform: translateZ(0);
 }
 
+.heading {
+  transition: inherit;
+
+  &:hover {
+    color: $primary;
+  }
+}
+
 .blogImg {
   transition: transform 0.35s;
 

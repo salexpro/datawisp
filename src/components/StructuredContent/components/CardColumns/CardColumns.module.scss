@@ -2,12 +2,19 @@
 
 .cardColumns {
   display: grid;
-  grid-auto-columns: minmax(0, 1fr);
-  grid-auto-flow: column;
   padding: 24px 0;
   margin-top: 32px;
   border: 1px solid $gray-200;
   border-radius: 16px;
+
+  @include b-d(md) {
+    padding: 0 24px;
+  }
+
+  @include b-up(md) {
+    grid-auto-columns: minmax(0, 1fr);
+    grid-auto-flow: column;
+  }
 
   ul {
     display: grid;
@@ -29,7 +36,17 @@
 .column {
   padding: 0 24px;
 
+  @include b-d(md) {
+    padding: 24px 0;
+  }
+
   &:not(:first-child) {
-    border-left: 1px solid $gray-200;
+    @include b-up(md) {
+      border-left: 1px solid $gray-200;
+    }
+
+    @include b-d(md) {
+      border-top: 1px solid $gray-200;
+    }
   }
 }

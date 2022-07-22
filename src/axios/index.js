@@ -86,8 +86,8 @@ export const getRelatedArticles = (originalId) => {
                 imgixParams: {
                   fit: crop
                   auto: [compress, format]
-                  h: "576"
-                  w: "768"
+                  h: "540"
+                  w: "720"
                 }
                 sizes: "(max-width: 767.98px) calc(100vw - 24px * 2), (max-width: 1023.98px) calc((100vw - 40px * 2 - 24px) / 2), (max-width: 1439.98px)  calc((100vw - 40px * 2 - 32px * 2) / 3), 392px"
               ) {

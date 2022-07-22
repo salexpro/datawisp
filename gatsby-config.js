@@ -10,7 +10,7 @@ module.exports = {
   Current available flags: https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby/src/utils/flags.ts
   */
   flags: {
-    FAST_DEV: false,
+    FAST_DEV: true,
   },
   trailingSlash: 'never',
   polyfill: false,
