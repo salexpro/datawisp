@@ -59,6 +59,7 @@ button {
   // Variant: outline-secondary
   &-outline-secondary {
     color: $gray-900;
+    background-color: $white;
 
     &:hover {
       background-color: $gray-100;

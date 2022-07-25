@@ -1,0 +1,50 @@
+@import '~styles/mixins';
+
+.sectionBanner {
+  display: grid;
+  grid-template-columns: 1fr 660px;
+  align-items: center;
+  margin-top: 100px;
+  color: $white;
+  background: linear-gradient(to right, #ff008a 0%, #6901f8 100%);
+  border-radius: 16px;
+
+  @include b-d(lg) {
+    grid-template-columns: 1fr;
+    row-gap: 36px;
+    justify-items: center;
+  }
+}
+
+.infoWrapper {
+  display: grid;
+  align-self: center;
+  justify-items: start;
+  padding: 64px 0 64px 60px;
+
+  @include b-d(lg) {
+    justify-items: center;
+    padding: 48px 48px 0;
+  }
+}
+
+.heading {
+  color: inherit;
+
+  @include b-d(lg) {
+    font-size: 24px;
+    font-weight: $font-weight-extra-bold;
+    text-align: center;
+  }
+}
+
+.text {
+  max-width: 370px;
+  margin-top: 12px;
+  margin-bottom: 32px;
+  font-size: 15px;
+
+  @include b-d(lg) {
+    text-align: center;
+  }
+}
