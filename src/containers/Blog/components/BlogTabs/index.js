@@ -15,15 +15,17 @@ const BlogTabs = (props) => {
   return (
     <Container {...rest} className={className}>
       <h1 className={s.heading}>{heading}</h1>
-      <Nav variant="blog" as="ul" activeKey={activeKey}>
-        {tabs.map(({ name, slug }) => (
-          <Nav.Item key={slug} as="li">
-            <Nav.Link eventKey={slug} as={Link} to={`#${slug}`}>
-              {name}
-            </Nav.Link>
-          </Nav.Item>
-        ))}
-      </Nav>
+      <nav className="nav-blog-wrapper">
+        <Nav variant="blog" as="ul" activeKey={activeKey}>
+          {tabs.map(({ name, slug }) => (
+            <Nav.Item key={slug} as="li">
+              <Nav.Link eventKey={slug} as={Link} to={`#${slug}`}>
+                {name}
+              </Nav.Link>
+            </Nav.Item>
+          ))}
+        </Nav>
+      </nav>
     </Container>
   )
 }

@@ -11,7 +11,7 @@ const NavMenu = (props) => {
       <Nav as="ul" variant={variant}>
         {navItems?.map(({ id, text, url }) => (
           <Nav.Item key={id} as="li">
-            <Nav.Link as={Link} to={url}>
+            <Nav.Link as={Link} to={url} activeClassName="active">
               {text}
             </Nav.Link>
           </Nav.Item>

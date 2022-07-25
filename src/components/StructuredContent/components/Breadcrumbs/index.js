@@ -5,12 +5,12 @@ import cn from 'classnames'
 import { Link } from 'gatsby'
 import { Breadcrumb, Button } from 'react-bootstrap'
 
-import RouteURL from '~routes'
-
 import * as s from './Breadcrumbs.module.scss'
 
 const Breadcrumbs = (props) => {
   const { className, breadcrumbs, ...rest } = props
+
+  const baseBreadcrumb = breadcrumbs?.[0]
 
   return (
     <>
@@ -31,7 +31,7 @@ const Breadcrumbs = (props) => {
           variant="outline-secondary"
           className={s.btn}
           as={Link}
-          to={RouteURL.BLOG}
+          to={baseBreadcrumb?.url}
         >
           Back
         </Button>
