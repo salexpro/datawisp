@@ -17,6 +17,7 @@ const CardCase = (props) => {
     badgeText,
     postIcon,
     slug,
+    isProduct,
     isPlaceholder,
     ...rest
   } = props
@@ -36,23 +37,41 @@ const CardCase = (props) => {
 
   const linkTitle = `Learn more about ${heading}`
 
-  return (
-    <Link
-      {...rest}
-      className={cn(s.cardCase, className)}
-      to={`${RouteURL.CASE_STUDIES}/${slug}`}
-      aria-label={linkTitle}
-      title={linkTitle}
-    >
+  const componentProps = isProduct
+    ? { className: cn(s.cardCase, s.product, className) }
+    : {
+        className: cn(s.cardCase, s.home, className),
+        to: `${RouteURL.CASE_STUDIES}/${slug}`,
+        'aria-label': linkTitle,
+        title: linkTitle,
+      }
+
+  return React.createElement(
+    isProduct ? 'div' : Link,
+    {
+      ...rest,
+      ...componentProps,
+    },
+    <>
       <span className={s.imgWrapper}>
-        <ImageFormat width={40} height={40} alt={heading} file={postIcon} />
+        {!isProduct ? (
+          <ImageFormat width={40} height={40} alt={heading} file={postIcon} />
+        ) : (
+          <Icon name={postIcon} size={20} />
+        )}
       </span>
-      <h3 className="h4">{heading}</h3>
-      <p>{badgeText}</p>
-      <Button variant="primary" className={s.arrowLink} aria-label={linkTitle}>
-        <Icon name="icon-arrow-link" size={20} className={s.arrowIcon} />
-      </Button>
-    </Link>
+      <h3 className={cn('h4', s.heading)}>{heading}</h3>
+      <p className={s.text}>{badgeText}</p>
+      {!isProduct && (
+        <Button
+          variant="primary"
+          className={s.arrowLink}
+          aria-label={linkTitle}
+        >
+          <Icon name="icon-arrow-link" size={20} className={s.arrowIcon} />
+        </Button>
+      )}
+    </>
   )
 }
 
@@ -62,6 +81,7 @@ CardCase.defaultProps = {
   badgeText: undefined,
   postIcon: undefined,
   slug: undefined,
+  isProduct: false,
   isPlaceholder: false,
 }
 
@@ -69,8 +89,9 @@ CardCase.propTypes = {
   className: PropTypes.string,
   heading: PropTypes.string,
   badgeText: PropTypes.string,
-  postIcon: PropTypes.object,
+  postIcon: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   slug: PropTypes.string,
+  isProduct: PropTypes.bool,
   isPlaceholder: PropTypes.bool,
 }
 

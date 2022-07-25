@@ -78,22 +78,49 @@
   border-radius: 16px;
   transition: background-color 0.25s, box-shadow 0.25s;
 
-  &:not(.placeholder):hover {
-    background-color: $white;
-    box-shadow: 0 26px 54px rgba(34, 18, 34, 5%);
-
-    .imgWrapper {
-      background-color: #fbfbfb;
-    }
-
-    .arrowLink {
-      &::after {
-        opacity: 0;
+  &.product {
+    .heading {
+      @include b-d(md) {
+        font-size: 18px;
       }
     }
 
-    .arrowIcon {
-      color: $white;
+    .text {
+      margin-top: 4px;
+    }
+
+    .imgWrapper {
+      padding: 22px;
+      color: $pink;
+    }
+
+    @include b-btw(md, lg) {
+      &:last-child {
+        grid-column: 1/3;
+        justify-self: center;
+        width: calc(50% - 8px);
+      }
+    }
+  }
+
+  &.home {
+    &:not(.placeholder):hover {
+      background-color: $white;
+      box-shadow: 0 26px 54px rgba(34, 18, 34, 5%);
+
+      .imgWrapper {
+        background-color: #fbfbfb;
+      }
+
+      .arrowLink {
+        &::after {
+          opacity: 0;
+        }
+      }
+
+      .arrowIcon {
+        color: $white;
+      }
     }
   }
 }

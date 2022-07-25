@@ -15,7 +15,7 @@ const SectionIntegrations = (props) => {
       <h2 className={s.heading}>Integrations</h2>
       <div className={s.integrationsWrapper}>
         {INTEGRATION_DATA.map((item) => (
-          <IntegrationItem key={item.name} {...item} />
+          <IntegrationItem key={item.heading} {...item} />
         ))}
       </div>
     </Container>

@@ -1,0 +1,32 @@
+@import '~styles/mixins';
+
+.sectionFeatures {
+  display: grid;
+  margin-top: 100px;
+
+  @include b-up(lg) {
+    justify-items: center;
+  }
+}
+
+.featuresWrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 40px;
+
+  @include b-d(lg) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  @include b-d(md) {
+    grid-template-columns: 1fr;
+    margin-top: 32px;
+  }
+}
+
+.text {
+  max-width: 480px;
+  margin-top: 12px;
+}
