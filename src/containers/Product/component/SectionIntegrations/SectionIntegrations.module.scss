@@ -1,0 +1,18 @@
+@import '~styles/mixins';
+
+.heading {
+  margin-top: 140px;
+  text-align: center;
+}
+
+.integrationsWrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px 32px;
+  margin-top: 40px;
+
+  @include b-d(lg) {
+    grid-template-columns: 1fr;
+    margin-top: 32px;
+  }
+}
