@@ -104,7 +104,7 @@ export const query = graphql`
 
       heroButtonPrimaryText
       heroButtonPrimaryLink {
-        url
+        ...LinkExternalData
       }
       heroButtonSecondaryText
       heroButtonSecondaryLink {

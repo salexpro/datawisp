@@ -6,7 +6,7 @@ import { Link } from 'gatsby'
 import BtnAnimatedBurger from './components/BtnAnimatedBurger'
 
 const MobileNavMenu = (props) => {
-  const { buttonLink, navItems, ...rest } = props
+  const { btnLink, navItems, ...rest } = props
 
   return (
     <Dropdown {...rest} as="nav" align="start">
@@ -23,12 +23,14 @@ const MobileNavMenu = (props) => {
         }}
       >
         <Button
-          as={Link}
-          to={buttonLink?.url}
+          as="a"
+          href={btnLink?.url}
+          rel={btnLink?.rel}
+          target={btnLink?.target}
           variant="primary"
           className="dropdown-button-primary"
         >
-          {buttonLink?.text}
+          {btnLink?.text}
         </Button>
         {navItems?.map(({ text, url }) => (
           <Dropdown.Item key={text} to={url} as={Link}>

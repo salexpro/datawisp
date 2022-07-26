@@ -30,7 +30,13 @@ const SectionHero = (props) => {
           <h1 className={s.heading}>{heading}</h1>
           <StructuredText data={text.value} />
           <div className="btn-group">
-            <Button variant="primary" as={Link} to={primaryButton.url}>
+            <Button
+              variant="primary"
+              as="a"
+              href={primaryButton.url}
+              rel={primaryButton.rel}
+              target={primaryButton.target}
+            >
               {primaryButton.text}
             </Button>
             <Button

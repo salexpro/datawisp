@@ -30,8 +30,7 @@ const Footer = ({ siteTitle }) => {
           url
         }
         actionButtonLink {
-          text
-          url
+          ...LinkExternalData
         }
         socialLinks {
           id
@@ -60,7 +59,7 @@ const Footer = ({ siteTitle }) => {
           <Button
             variant="primary"
             as={Link}
-            to={actionButtonLink?.url}
+            href={actionButtonLink?.url}
             className={s.appButton}
           >
             {actionButtonLink?.text}

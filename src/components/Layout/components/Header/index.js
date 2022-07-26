@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, Container } from 'react-bootstrap'
 import PropTypes from 'prop-types'
-import { graphql, Link, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 
 import Menu from '../NavMenu'
 import LogoLink from '../LogoLink'
@@ -11,6 +11,18 @@ import * as s from './Header.module.scss'
 
 const Header = ({ siteTitle }) => {
   const data = useStaticQuery(graphql`
+    fragment LinkInternalData on DatoCmsLinkInternal {
+      text
+      url
+    }
+
+    fragment LinkExternalData on DatoCmsLinkExternal {
+      text
+      url
+      rel
+      target
+    }
+
     query HeaderNavigation {
       datoCmsHeader {
         logoImage {
@@ -19,8 +31,7 @@ const Header = ({ siteTitle }) => {
           height
         }
         logoLink {
-          url
-          text
+          ...LinkInternalData
         }
         navMenuItems {
           id
@@ -28,15 +39,18 @@ const Header = ({ siteTitle }) => {
           url
         }
         actionButtonLink {
-          text
-          url
+          ...LinkExternalData
         }
       }
     }
   `)
 
-  const { logoImage, logoLink, navMenuItems, actionButtonLink } =
-    data.datoCmsHeader
+  const {
+    logoImage,
+    logoLink,
+    navMenuItems,
+    actionButtonLink: btnLink,
+  } = data.datoCmsHeader
 
   return (
     <Container as="header" className={s.header}>
@@ -44,14 +58,16 @@ const Header = ({ siteTitle }) => {
       <Menu navItems={navMenuItems} className={s.navMenu} />
       <Button
         variant="primary"
-        as={Link}
-        to={actionButtonLink?.url}
+        as="a"
+        href={btnLink?.url}
+        target={btnLink?.target}
+        rel={btnLink?.rel}
         className={s.btnPrimary}
       >
-        {actionButtonLink?.text}
+        {btnLink?.text}
       </Button>
       <MobileNavMenu
-        buttonLink={actionButtonLink}
+        btnLink={btnLink}
         navItems={navMenuItems}
         className={s.navMenuMobile}
       />
