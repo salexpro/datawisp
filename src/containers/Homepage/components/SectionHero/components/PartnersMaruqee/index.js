@@ -8,15 +8,10 @@ import PartnerItem from './components/PartnerItem'
 const PartnersMarquee = (props) => {
   const { partners, className, ...rest } = props
 
-  const PartnersData = Array(8)
-    .fill(partners)
-    .flat(1)
-    .map(({ id, ...item }, index) => ({ ...item, id: `${id}-${index}` }))
-
   return (
     <div {...rest} className={cn('marquee-wrapper', className)}>
       <Marquee gradient={false} speed={32} direction="left">
-        {PartnersData.map(({ id, title, logoImage }) => (
+        {partners.map(({ id, title, logoImage }) => (
           <PartnerItem key={id} name={title} file={logoImage} />
         ))}
       </Marquee>

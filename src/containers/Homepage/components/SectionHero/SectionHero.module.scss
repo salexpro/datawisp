@@ -3,7 +3,6 @@
 .sectionHero {
   display: grid;
   grid-template-rows: 1fr auto;
-  row-gap: 64px;
   min-height: min(100vh, 940px);
   padding-top: 96px;
   padding-bottom: 32px;
@@ -137,6 +136,7 @@
 .blockPartners {
   display: grid;
   row-gap: 20px;
+  margin-top: 64px;
 
   @include b-d(md) {
     row-gap: 16px;

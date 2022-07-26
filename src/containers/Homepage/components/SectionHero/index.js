@@ -50,12 +50,14 @@ const SectionHero = (props) => {
           className={s.imgHero}
         />
       </Container>
-      <div className={s.blockPartners}>
-        <Container className={s.container}>
-          <span className={s.textPartners}>{partnersHeading}</span>
-        </Container>
-        <PartnersMarquee partners={partners} />
-      </div>
+      {!!partners?.length && (
+        <div className={s.blockPartners}>
+          <Container className={s.container}>
+            <span className={s.textPartners}>{partnersHeading}</span>
+          </Container>
+          <PartnersMarquee partners={partners} />
+        </div>
+      )}
     </section>
   )
 }
