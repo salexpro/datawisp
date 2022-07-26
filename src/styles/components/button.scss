@@ -59,6 +59,19 @@ button {
   // Variant: outline-secondary
   &-outline-secondary {
     color: $gray-900;
+
+    &:hover {
+      background-color: $gray-100;
+    }
+
+    &:active {
+      background-color: #eaeaea;
+    }
+  }
+
+  // Variant: secondary
+  &-secondary {
+    color: $gray-900;
     background-color: $white;
 
     &:hover {

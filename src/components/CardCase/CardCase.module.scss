@@ -79,6 +79,9 @@
   transition: background-color 0.25s, box-shadow 0.25s;
 
   &.product {
+    grid-template-rows: repeat(3, max-content);
+    min-height: auto;
+
     .heading {
       @include b-d(md) {
         font-size: 18px;
@@ -87,11 +90,16 @@
 
     .text {
       margin-top: 4px;
+      font-size: 15px;
     }
 
     .imgWrapper {
       padding: 22px;
       color: $pink;
+    }
+
+    @include b-d(lg) {
+      padding: 24px;
     }
 
     @include b-btw(md, lg) {

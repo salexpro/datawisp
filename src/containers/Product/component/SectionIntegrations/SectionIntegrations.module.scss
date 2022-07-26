@@ -1,7 +1,14 @@
 @import '~styles/mixins';
 
-.heading {
+.sectionIntegrations {
   margin-top: 140px;
+
+  @include b-d(lg) {
+    margin-top: 100px;
+  }
+}
+
+.heading {
   text-align: center;
 }
 

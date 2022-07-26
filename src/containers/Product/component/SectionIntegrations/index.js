@@ -11,7 +11,11 @@ const SectionIntegrations = (props) => {
   const { className, ...rest } = props
 
   return (
-    <Container as="section" {...rest} className={cn(className)}>
+    <Container
+      as="section"
+      {...rest}
+      className={cn(s.sectionIntegrations, className)}
+    >
       <h2 className={s.heading}>Integrations</h2>
       <div className={s.integrationsWrapper}>
         {INTEGRATION_DATA.map((item) => (

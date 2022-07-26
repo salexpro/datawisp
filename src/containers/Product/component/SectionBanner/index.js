@@ -21,7 +21,7 @@ const SectionBanner = (props) => {
             corpora singulis vel te ad invidunt.
           </p>
           <Button
-            variant="outline-secondary"
+            variant="secondary"
             as={Link}
             to={RouteURL.CASE_STUDIES}
             className={s.btnPrimary}
@@ -29,7 +29,7 @@ const SectionBanner = (props) => {
             Case studies
           </Button>
         </div>
-        <img src={illustration} alt="banner illustration" />
+        <img src={illustration} alt="banner illustration" className={s.image} />
       </div>
     </Container>
   )
