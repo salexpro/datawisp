@@ -1,0 +1,43 @@
+@import '~styles/mixins';
+
+.sectionHero {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 24px;
+  align-items: center;
+  margin-top: 64px;
+
+  @include b-btw(md, lg) {
+    margin-top: 88px;
+  }
+
+  @include b-d(lg) {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  @include b-d(md) {
+    gap: 40px;
+  }
+}
+
+.colLeft {
+  @include b-d(lg) {
+    display: grid;
+    justify-items: center;
+  }
+}
+
+.text {
+  margin-top: 20px;
+  margin-bottom: 32px;
+
+  @include b-d(lg) {
+    max-width: 500px;
+    text-align: center;
+  }
+
+  @include b-d(md) {
+    margin-top: 12px;
+  }
+}

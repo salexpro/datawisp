@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 
 import Layout from '~components/Layout'
 
+import SectionHero from './component/SectionHero'
 import SectionIntegrations from './component/SectionIntegrations'
 import SectionBanner from './component/SectionBanner'
 import SectionFeatures from './component/SectionFeatures'
@@ -12,10 +13,10 @@ const Product = (props) => {
 
   return (
     <Layout {...rest} className={className}>
+      <SectionHero />
       <SectionFeatures />
       <SectionIntegrations />
       <SectionBanner />
-      <div style={{ minHeight: '100vh' }} />
     </Layout>
   )
 }
