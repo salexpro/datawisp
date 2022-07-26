@@ -26,18 +26,18 @@
     display: grid;
     justify-items: center;
   }
-}
 
-.text {
-  margin-top: 20px;
-  margin-bottom: 32px;
+  p {
+    margin-top: 20px;
+    margin-bottom: 32px;
 
-  @include b-d(lg) {
-    max-width: 500px;
-    text-align: center;
-  }
+    @include b-d(lg) {
+      max-width: 500px;
+      text-align: center;
+    }
 
-  @include b-d(md) {
-    margin-top: 12px;
+    @include b-d(md) {
+      margin-top: 12px;
+    }
   }
 }

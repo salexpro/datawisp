@@ -9,12 +9,12 @@ import SectionBanner from './component/SectionBanner'
 import SectionFeatures from './component/SectionFeatures'
 
 const Product = (props) => {
-  const { className, ...rest } = props
+  const { hero, features, className, ...rest } = props
 
   return (
     <Layout {...rest} className={className}>
-      <SectionHero />
-      <SectionFeatures />
+      <SectionHero {...hero} />
+      <SectionFeatures {...features} />
       <SectionIntegrations />
       <SectionBanner />
     </Layout>

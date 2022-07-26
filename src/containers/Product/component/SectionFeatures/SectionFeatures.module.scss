@@ -7,6 +7,11 @@
   @include b-up(lg) {
     justify-items: center;
   }
+
+  p {
+    max-width: 480px;
+    margin-top: 12px;
+  }
 }
 
 .featuresWrapper {
@@ -24,9 +29,4 @@
     grid-template-columns: 1fr;
     margin-top: 32px;
   }
-}
-
-.text {
-  max-width: 480px;
-  margin-top: 12px;
 }

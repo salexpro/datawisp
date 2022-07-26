@@ -1,15 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Container } from 'react-bootstrap'
+import { StructuredText } from 'react-datocms'
 import cn from 'classnames'
 
 import CardCase from '~components/CardCase'
 
-import FEATURES_DATA from './mock'
 import * as s from './SectionFeatures.module.scss'
 
 const SectionFeatures = (props) => {
-  const { className, ...rest } = props
+  const { heading, text, items, className, ...rest } = props
 
   return (
     <Container
@@ -17,14 +17,17 @@ const SectionFeatures = (props) => {
       {...rest}
       className={cn(s.sectionFeatures, className)}
     >
-      <h2 className={s.heading}>Features</h2>
-      <p className={s.text}>
-        Datawisp comes packed with features to help everyone on your team work
-        effectively with data and drive your business forward.
-      </p>
+      <h2>{heading}</h2>
+      <StructuredText data={text.value} />
       <div className={s.featuresWrapper}>
-        {FEATURES_DATA.map((item) => (
-          <CardCase key={item.heading} {...item} isProduct />
+        {items.map((item) => (
+          <CardCase
+            key={item.id}
+            postIcon={item.iconName}
+            heading={item.heading}
+            badgeText={item.text}
+            isProduct
+          />
         ))}
       </div>
     </Container>
