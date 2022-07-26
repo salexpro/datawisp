@@ -3,12 +3,11 @@ import PropTypes from 'prop-types'
 import { Container } from 'react-bootstrap'
 import cn from 'classnames'
 
-import INTEGRATION_DATA from './mock'
 import IntegrationItem from './components/IntegrationItem'
 import * as s from './SectionIntegrations.module.scss'
 
 const SectionIntegrations = (props) => {
-  const { className, ...rest } = props
+  const { heading, integrations, className, ...rest } = props
 
   return (
     <Container
@@ -16,10 +15,10 @@ const SectionIntegrations = (props) => {
       {...rest}
       className={cn(s.sectionIntegrations, className)}
     >
-      <h2 className={s.heading}>Integrations</h2>
+      <h2 className={s.heading}>{heading}</h2>
       <div className={s.integrationsWrapper}>
-        {INTEGRATION_DATA.map((item) => (
-          <IntegrationItem key={item.heading} {...item} />
+        {integrations.map(({ id, ...integration }) => (
+          <IntegrationItem key={id} {...integration} />
         ))}
       </div>
     </Container>

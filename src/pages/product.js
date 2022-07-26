@@ -13,6 +13,13 @@ const ProductPage = ({ data }) => {
     featuresSectionHeading,
     featuresSectionText,
     featuresSectionFeatures,
+    integrationsSectionHeading,
+    integrations,
+    bannerSectionHeading,
+    bannerSectionText,
+    bannerSectionButtonText,
+    bannerSectionButtonLink,
+    bannerSectionImage,
   } = data.datoCmsProductPage
 
   return (
@@ -22,12 +29,23 @@ const ProductPage = ({ data }) => {
         text: heroSectionText,
         image: heroSectionImage,
         buttonText: heroButtonPrimaryText,
-        buttonLink: heroButtonPrimaryLink.url,
+        buttonLink: heroButtonPrimaryLink,
       }}
       features={{
         heading: featuresSectionHeading,
         text: featuresSectionText,
         items: featuresSectionFeatures,
+      }}
+      integrations={{
+        heading: integrationsSectionHeading,
+        integrations,
+      }}
+      banner={{
+        heading: bannerSectionHeading,
+        text: bannerSectionText,
+        buttonText: bannerSectionButtonText,
+        buttonLink: bannerSectionButtonLink.url,
+        image: bannerSectionImage,
       }}
     />
   )
@@ -54,6 +72,8 @@ export const query = graphql`
       heroButtonPrimaryText
       heroButtonPrimaryLink {
         url
+        rel
+        target
       }
 
       featuresSectionHeading
@@ -65,6 +85,45 @@ export const query = graphql`
         iconName
         heading
         text
+      }
+
+      integrationsSectionHeading
+      integrations {
+        id
+        heading
+        text {
+          value
+        }
+        image {
+          format
+          url
+          gatsbyImageData(
+            width: 160
+            placeholder: NONE
+            outputPixelDensities: [1, 1.5, 2, 3]
+            imgixParams: { fit: "crop", auto: "compress,format" }
+          )
+        }
+      }
+
+      bannerSectionHeading
+      bannerSectionText {
+        value
+      }
+      bannerSectionButtonText
+      bannerSectionButtonLink {
+        url
+      }
+      bannerSectionImage {
+        format
+        url
+        gatsbyImageData(
+          width: 660
+          placeholder: NONE
+          sizes: "(max-width: 767.98px) min(calc(100vw - 24px * 2), 660px), (max-width: 1023.98px) 464px, 660px"
+          breakpoints: [330, 464, 660, 990, 1320]
+          imgixParams: { fit: "crop", auto: "compress,format" }
+        )
       }
     }
   }

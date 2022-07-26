@@ -9,6 +9,10 @@
   background-color: $gray-100;
   border-radius: 16px;
 
+  p {
+    font-size: 15px;
+  }
+
   @include b-d(lg) {
     row-gap: 12px;
   }
@@ -33,15 +37,9 @@
   }
 }
 
-.text {
-  font-size: 15px;
-}
-
 .img {
   align-self: center;
   justify-self: center;
-  width: 160px;
-  height: 160px;
 
   @include b-up(md) {
     grid-row: 1 / 3;
