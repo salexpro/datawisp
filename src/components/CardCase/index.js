@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { createElement } from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 import { Link } from 'gatsby'
@@ -14,6 +14,7 @@ const CardCase = (props) => {
   const {
     className,
     heading,
+    headingAs,
     badgeText,
     postIcon,
     slug,
@@ -29,7 +30,7 @@ const CardCase = (props) => {
         className={cn('placeholder-glow', s.cardCase, s.placeholder, className)}
       >
         <Placeholder className={s.placeholderImg} />
-        <Placeholder as="h3" className={cn('h4', s.placeholderHeader)} />
+        <Placeholder as={headingAs} className={cn('h4', s.placeholderHeader)} />
         <Placeholder as="p" className={s.placeholderText} />
         <Placeholder className={s.placeholderBtn} />
       </div>
@@ -60,7 +61,7 @@ const CardCase = (props) => {
           <Icon name={postIcon} size={20} />
         )}
       </span>
-      <h3 className={cn('h4', s.heading)}>{heading}</h3>
+      {createElement(headingAs, { className: cn('h4', s.heading) }, heading)}
       <p className={s.text}>{badgeText}</p>
       {!isProduct && (
         <Button
@@ -83,6 +84,7 @@ CardCase.defaultProps = {
   slug: undefined,
   isProduct: false,
   isPlaceholder: false,
+  headingAs: 'h2',
 }
 
 CardCase.propTypes = {
@@ -93,6 +95,7 @@ CardCase.propTypes = {
   slug: PropTypes.string,
   isProduct: PropTypes.bool,
   isPlaceholder: PropTypes.bool,
+  headingAs: PropTypes.string,
 }
 
 export default CardCase

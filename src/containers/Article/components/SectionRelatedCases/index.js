@@ -30,6 +30,7 @@ const SectionRelatedCases = (props) => {
               ? relatedCases?.map(({ id, ...caseStudyProps }) => (
                   <CardCase
                     {...caseStudyProps}
+                    headingAs="h3"
                     key={id}
                     className={s.cardCase}
                   />

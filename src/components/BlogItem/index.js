@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { createElement } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
@@ -16,6 +16,7 @@ import * as s from './BlogItem.module.scss'
 const BlogItem = (props) => {
   const {
     heading,
+    headingAs,
     className,
     seo,
     meta,
@@ -41,7 +42,11 @@ const BlogItem = (props) => {
         <Placeholder className={cn(s.date, s.placeholder)} />
         <div className={s.headingPlaceholderGrid}>
           {range(2).map((n) => (
-            <Placeholder key={n} as="h4" className={s.heading} />
+            <Placeholder
+              key={n}
+              as={headingAs}
+              className={cn('h4', s.heading)}
+            />
           ))}
         </div>
         <div className={s.textPlaceholderGrid}>
@@ -59,7 +64,7 @@ const BlogItem = (props) => {
 
   return (
     <div {...rest} className={cn(s.blogItem, className)}>
-      <Link to={blogpostLink} className={s.imgWrapper}>
+      <Link to={blogpostLink} className={s.imgWrapper} aria-label={heading}>
         {responsiveImage ? (
           <Image
             data={responsiveImage}
@@ -78,7 +83,7 @@ const BlogItem = (props) => {
         {publishedAtDate.format('MMMM D, YYYY')}
       </time>
       <Link to={blogpostLink} className={s.link}>
-        <h4 className={s.heading}>{heading}</h4>
+        {createElement(headingAs, { className: cn('h4', s.heading) }, heading)}
       </Link>
       <p className={s.text}>{description}</p>
       <Link to={blogpostLink} className={cn(s.readMore, s.link)}>
@@ -90,10 +95,12 @@ const BlogItem = (props) => {
 
 BlogItem.defaultProps = {
   className: '',
+  headingAs: 'h2',
 }
 
 BlogItem.propTypes = {
   className: PropTypes.string,
+  headingAs: PropTypes.string,
 }
 
 export default BlogItem

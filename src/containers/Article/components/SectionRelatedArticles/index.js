@@ -32,6 +32,7 @@ const SectionRelatedArticles = (props) => {
                   // eslint-disable-next-line react/no-array-index-key
                   <BlogItem
                     {...blogProps}
+                    headingAs="h3"
                     meta={{ publishedAt: _publishedAt }}
                     key={id}
                     className={s.blogItem}
