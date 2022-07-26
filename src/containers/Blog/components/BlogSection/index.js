@@ -1,4 +1,5 @@
 import React from 'react'
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { useLocation } from '@gatsbyjs/reach-router'
 import PropTypes from 'prop-types'
 import { Container } from 'react-bootstrap'
