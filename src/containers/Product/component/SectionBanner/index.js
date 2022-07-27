@@ -18,12 +18,7 @@ const SectionBanner = (props) => {
         <div className={s.infoWrapper}>
           <h3 className={s.heading}>{heading}</h3>
           <StructuredText data={text.value} />
-          <Button
-            variant="secondary"
-            as={Link}
-            to={buttonLink}
-            className={s.btnPrimary}
-          >
+          <Button variant="secondary" as={Link} to={buttonLink}>
             {buttonText}
           </Button>
         </div>
