@@ -10,7 +10,7 @@ const FooterSocialMedia = (props) => {
 
   return (
     <div {...rest} className={s.social}>
-      {socialLinks?.map(({ id, iconName, tooltip, url }) => (
+      {socialLinks?.map(({ id, iconName, hoverColor, tooltip, url }) => (
         <a
           key={id}
           href={url}
@@ -18,6 +18,7 @@ const FooterSocialMedia = (props) => {
           aria-label={tooltip}
           target="_blank"
           rel="nofollow noopener noreferrer"
+          style={{ color: hoverColor.hex }}
           className={s.socialLink}
         >
           <Icon name={iconName} size={20} />

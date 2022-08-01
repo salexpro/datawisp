@@ -8,14 +8,20 @@
 
 .socialLink {
   padding: 12px;
-  color: #7e7e7e;
   background-color: #f8f8f8;
   border: 1px solid $gray-200;
   border-radius: 12px;
   transition: background-color 0.2s;
 
+  svg {
+    transition: color 0.2s;
+  }
+
+  &:not(:hover, :focus) svg {
+    color: #7e7e7e;
+  }
+
   &:hover {
-    color: #00a3ff;
     background-color: $white;
   }
 }

@@ -37,6 +37,9 @@ const Footer = ({ siteTitle }) => {
           iconName
           tooltip
           url
+          hoverColor {
+            hex
+          }
         }
       }
     }
