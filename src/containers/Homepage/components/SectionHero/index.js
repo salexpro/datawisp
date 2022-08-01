@@ -30,22 +30,26 @@ const SectionHero = (props) => {
           <h1 className={s.heading}>{heading}</h1>
           <StructuredText data={text.value} />
           <div className="btn-group">
-            <Button
-              variant="primary"
-              as="a"
-              href={primaryButton.url}
-              rel={primaryButton.rel}
-              target={primaryButton.target}
-            >
-              {primaryButton.text}
-            </Button>
-            <Button
-              variant="outline-secondary"
-              as={Link}
-              to={secondaryButton.url}
-            >
-              {secondaryButton.text}
-            </Button>
+            {!primaryButton.hide && (
+              <Button
+                variant="primary"
+                as="a"
+                href={primaryButton.url}
+                rel={primaryButton.rel}
+                target={primaryButton.target}
+              >
+                {primaryButton.text}
+              </Button>
+            )}
+            {!secondaryButton.hide && (
+              <Button
+                variant="outline-secondary"
+                as={Link}
+                to={secondaryButton.url}
+              >
+                {secondaryButton.text}
+              </Button>
+            )}
           </div>
         </div>
         <ImageFormat

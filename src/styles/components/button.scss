@@ -56,6 +56,14 @@ button {
     }
   }
 
+  // Variant: primary-header
+  &-primary-header {
+    @extend .btn-primary;
+
+    border-right: 1px solid transparent;
+    border-left: 1px solid transparent;
+  }
+
   // Variant: outline-secondary
   &-outline-secondary {
     color: $gray-900;

@@ -10,8 +10,10 @@ const IndexPage = ({ data }) => {
     heroSectionImage,
     heroButtonPrimaryText,
     heroButtonPrimaryLink,
+    heroButtonPrimaryHide,
     heroButtonSecondaryText,
     heroButtonSecondaryLink,
+    heroButtonSecondaryHide,
     partnersSectionHeading,
     partners,
     howItWorksSectionHeading,
@@ -19,17 +21,20 @@ const IndexPage = ({ data }) => {
     howItWorksSectionImage,
     howItWorksButtonText,
     howItWorksButtonLink,
+    howItWorksButtonHide,
     steps,
     featuresSectionHeading,
     featuresSectionText,
     featuresSectionImage,
     featuresButtonText,
     featuresButtonLink,
+    featuresButtonHide,
     featuresList,
     roadmapSectionHeading,
     roadmapPhases,
     caseStudiesSectionHeading,
     caseStudiesSectionText,
+    caseStudiesButtonHide,
     cases,
     caseStudiesButtonText,
     caseStudiesButtonLink,
@@ -43,11 +48,13 @@ const IndexPage = ({ data }) => {
         image: heroSectionImage,
         primaryButton: {
           text: heroButtonPrimaryText,
-          url: heroButtonPrimaryLink.url,
+          ...heroButtonPrimaryLink,
+          hide: heroButtonPrimaryHide,
         },
         secondaryButton: {
           text: heroButtonSecondaryText,
           url: heroButtonSecondaryLink.url,
+          hide: heroButtonSecondaryHide,
         },
         partnersHeading: partnersSectionHeading,
         partners,
@@ -58,6 +65,7 @@ const IndexPage = ({ data }) => {
         image: howItWorksSectionImage,
         buttonText: howItWorksButtonText,
         buttonLink: howItWorksButtonLink.url,
+        buttonHide: howItWorksButtonHide,
         steps,
       }}
       features={{
@@ -66,6 +74,7 @@ const IndexPage = ({ data }) => {
         image: featuresSectionImage,
         buttonText: featuresButtonText,
         buttonLink: featuresButtonLink.url,
+        buttonHide: featuresButtonHide,
         featuresList,
       }}
       cases={{
@@ -74,6 +83,7 @@ const IndexPage = ({ data }) => {
         cases,
         buttonText: caseStudiesButtonText,
         buttonLink: caseStudiesButtonLink.url,
+        buttonHide: caseStudiesButtonHide,
       }}
       roadmap={{
         heading: roadmapSectionHeading,
@@ -106,10 +116,12 @@ export const query = graphql`
       heroButtonPrimaryLink {
         ...LinkExternalData
       }
+      heroButtonPrimaryHide
       heroButtonSecondaryText
       heroButtonSecondaryLink {
         url
       }
+      heroButtonSecondaryHide
 
       partnersSectionHeading
       partners {
@@ -135,10 +147,9 @@ export const query = graphql`
         format
         url
         gatsbyImageData(
-          width: 992
+          width: 1240
           placeholder: NONE
-          sizes: "(max-width: 767.98px) calc(100vw - 24px * 2), min(calc(100vw - 40px * 2), 992px)"
-          breakpoints: [327, 654, 992, 1100, 1308, 1488, 1984]
+          outputPixelDensities: [1, 1.5, 2, 3]
           imgixParams: { fit: "crop", auto: "compress,format" }
         )
       }
@@ -146,6 +157,7 @@ export const query = graphql`
       howItWorksButtonLink {
         url
       }
+      howItWorksButtonHide
       steps {
         id
         heading
@@ -179,6 +191,7 @@ export const query = graphql`
       featuresButtonLink {
         url
       }
+      featuresButtonHide
       featuresList {
         id
         heading
@@ -212,6 +225,7 @@ export const query = graphql`
       caseStudiesButtonLink {
         url
       }
+      caseStudiesButtonHide
 
       roadmapSectionHeading
       roadmapPhases {

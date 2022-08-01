@@ -11,8 +11,16 @@ import CardCase from '~components/CardCase'
 import * as s from './SectionCaseStudies.module.scss'
 
 const SectionCaseStudies = (props) => {
-  const { heading, text, cases, buttonText, buttonLink, className, ...rest } =
-    props
+  const {
+    heading,
+    text,
+    cases,
+    buttonText,
+    buttonLink,
+    buttonHide,
+    className,
+    ...rest
+  } = props
 
   return (
     <Container
@@ -23,9 +31,11 @@ const SectionCaseStudies = (props) => {
       <div className={s.gridHeading}>
         <h2 className={s.heading}>{heading}</h2>
         <StructuredText data={text.value} />
-        <Button as={Link} to={buttonLink} className={s.btn}>
-          {buttonText}
-        </Button>
+        {!buttonHide && (
+          <Button as={Link} to={buttonLink} className={s.btn}>
+            {buttonText}
+          </Button>
+        )}
       </div>
       <Swiper
         spaceBetween={16}

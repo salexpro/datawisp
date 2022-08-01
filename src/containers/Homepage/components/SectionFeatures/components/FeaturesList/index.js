@@ -14,6 +14,7 @@ const FeaturesList = (props) => {
     text,
     buttonText,
     buttonLink,
+    buttonHide,
     featuresList,
     className,
     ...rest
@@ -28,9 +29,16 @@ const FeaturesList = (props) => {
           <ListItem key={id} {...item} />
         ))}
       </div>
-      <Button variant="primary" as={Link} to={buttonLink} className={s.button}>
-        {buttonText}
-      </Button>
+      {!buttonHide && (
+        <Button
+          variant="primary"
+          as={Link}
+          to={buttonLink}
+          className={s.button}
+        >
+          {buttonText}
+        </Button>
+      )}
     </div>
   )
 }

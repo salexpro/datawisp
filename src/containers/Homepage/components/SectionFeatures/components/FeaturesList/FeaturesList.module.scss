@@ -5,6 +5,7 @@
   grid-auto-flow: row;
   gap: 12px;
   align-content: start;
+  align-self: start;
   justify-items: start;
 
   @include b-btw(md, lg) {

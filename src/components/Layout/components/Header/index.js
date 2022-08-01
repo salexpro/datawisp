@@ -2,6 +2,7 @@ import React from 'react'
 import { Button, Container } from 'react-bootstrap'
 import PropTypes from 'prop-types'
 import { graphql, useStaticQuery } from 'gatsby'
+import cn from 'classnames'
 
 import Menu from '../NavMenu'
 import LogoLink from '../LogoLink'
@@ -9,7 +10,7 @@ import MobileNavMenu from './components/MobileNavMenu'
 
 import * as s from './Header.module.scss'
 
-const Header = ({ siteTitle }) => {
+const Header = ({ siteTitle, isScrolled }) => {
   const data = useStaticQuery(graphql`
     fragment LinkInternalData on DatoCmsLinkInternal {
       text
@@ -53,25 +54,27 @@ const Header = ({ siteTitle }) => {
   } = data.datoCmsHeader
 
   return (
-    <Container as="header" className={s.header}>
-      <LogoLink image={logoImage} link={logoLink} siteTitle={siteTitle} />
-      <Menu navItems={navMenuItems} className={s.navMenu} />
-      <Button
-        variant="primary"
-        as="a"
-        href={btnLink?.url}
-        target={btnLink?.target}
-        rel={btnLink?.rel}
-        className={s.btnPrimary}
-      >
-        {btnLink?.text}
-      </Button>
-      <MobileNavMenu
-        btnLink={btnLink}
-        navItems={navMenuItems}
-        className={s.navMenuMobile}
-      />
-    </Container>
+    <header className={cn(s.headerWrapper, { [s.active]: isScrolled })}>
+      <Container className={s.header}>
+        <LogoLink image={logoImage} link={logoLink} siteTitle={siteTitle} />
+        <Menu navItems={navMenuItems} className={s.navMenu} />
+        <Button
+          variant={isScrolled ? 'primary-header' : 'outline-secondary'}
+          as="a"
+          href={btnLink?.url}
+          target={btnLink?.target}
+          rel={btnLink?.rel}
+          className={s.btnPrimary}
+        >
+          {btnLink?.text}
+        </Button>
+        <MobileNavMenu
+          btnLink={btnLink}
+          navItems={navMenuItems}
+          className={s.navMenuMobile}
+        />
+      </Container>
+    </header>
   )
 }
 

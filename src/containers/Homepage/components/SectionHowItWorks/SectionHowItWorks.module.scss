@@ -67,42 +67,32 @@
 }
 
 .imgWrapper {
-  position: relative;
+  @include hide-scrollbar;
+
   padding-top: 40px;
   padding-bottom: 200px;
+  overflow: auto;
 
   @include b-btw(md, lg) {
-    padding-bottom: 64px;
+    margin: 0 -40px;
   }
 
   @include b-d(md) {
-    padding-top: 54px;
-    padding-bottom: 54px;
+    margin: 0 -24px;
   }
 }
 
-.gridSteps {
-  position: absolute;
-  top: -16px;
-  right: 0;
-  display: grid;
-  row-gap: 32px;
-  counter-reset: step;
+.imgInner {
+  width: 100%;
+  overflow: hidden;
 
   @include b-btw(md, lg) {
-    top: 8px;
-    row-gap: 16px;
+    min-width: calc(1240px + 40px * 2);
+    padding: 0 40px;
   }
 
   @include b-d(md) {
-    display: none;
-  }
-}
-
-.swiper {
-  margin-top: 16px;
-
-  @include b-up(md) {
-    display: none;
+    min-width: calc(1240px * 0.9 + 24px * 2);
+    padding: 0 24px;
   }
 }
