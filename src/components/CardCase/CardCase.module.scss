@@ -78,6 +78,14 @@
   border-radius: 16px;
   transition: background-color 0.25s, box-shadow 0.25s;
 
+  &[disabled] {
+    pointer-events: none;
+
+    .arrowIcon {
+      color: $gray-300;
+    }
+  }
+
   &.product {
     grid-template-rows: repeat(3, max-content);
     min-height: auto;
@@ -131,4 +139,23 @@
       }
     }
   }
+}
+
+.buttonWrapper {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  align-self: end;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.comingSoon {
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: $font-weight-medium;
+  line-height: 1.14;
+  color: $pink;
+  background-color: $white;
+  border-radius: 6px;
 }

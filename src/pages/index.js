@@ -47,8 +47,8 @@ const IndexPage = ({ data }) => {
         text: heroSectionText,
         image: heroSectionImage,
         primaryButton: {
-          text: heroButtonPrimaryText,
           ...heroButtonPrimaryLink,
+          text: heroButtonPrimaryText,
           hide: heroButtonPrimaryHide,
         },
         secondaryButton: {
@@ -158,21 +158,6 @@ export const query = graphql`
         url
       }
       howItWorksButtonHide
-      steps {
-        id
-        heading
-        image {
-          format
-          url
-          gatsbyImageData(
-            width: 352
-            placeholder: BLURRED
-            sizes: "(max-width: 767.98px) 37vw, (max-width: 1023.98px) 197px, (max-width: 1199.98px) 281px, 352px"
-            breakpoints: [135, 197, 270, 352, 405, 528, 704]
-            imgixParams: { fit: "crop", auto: "compress,format" }
-          )
-        }
-      }
 
       featuresSectionHeading
       featuresSectionText {
@@ -219,6 +204,7 @@ export const query = graphql`
             imgixParams: { fit: "crop", auto: "compress,format" }
           )
         }
+        comingSoon
         slug
       }
       caseStudiesButtonText

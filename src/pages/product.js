@@ -20,6 +20,7 @@ const ProductPage = ({ data }) => {
     bannerSectionButtonText,
     bannerSectionButtonLink,
     bannerSectionImage,
+    bannerHide,
   } = data.datoCmsProductPage
 
   return (
@@ -46,6 +47,7 @@ const ProductPage = ({ data }) => {
         buttonText: bannerSectionButtonText,
         buttonLink: bannerSectionButtonLink.url,
         image: bannerSectionImage,
+        hide: bannerHide,
       }}
     />
   )
@@ -125,6 +127,7 @@ export const query = graphql`
           imgixParams: { fit: "crop", auto: "compress,format" }
         )
       }
+      bannerHide
     }
   }
 `

@@ -18,6 +18,7 @@ const CardCase = (props) => {
     badgeText,
     postIcon,
     slug,
+    comingSoon,
     isProduct,
     isPlaceholder,
     ...rest
@@ -52,6 +53,7 @@ const CardCase = (props) => {
     {
       ...rest,
       ...componentProps,
+      disabled: comingSoon,
     },
     <>
       <span className={s.imgWrapper}>
@@ -64,13 +66,16 @@ const CardCase = (props) => {
       {createElement(headingAs, { className: cn('h4', s.heading) }, heading)}
       <p className={s.text}>{badgeText}</p>
       {!isProduct && (
-        <Button
-          variant="primary"
-          className={s.arrowLink}
-          aria-label={linkTitle}
-        >
-          <Icon name="icon-arrow-link" size={20} className={s.arrowIcon} />
-        </Button>
+        <div className={s.buttonWrapper}>
+          <Button
+            variant="primary"
+            className={s.arrowLink}
+            aria-label={linkTitle}
+          >
+            <Icon name="icon-arrow-link" size={20} className={s.arrowIcon} />
+          </Button>
+          {comingSoon && <p className={s.comingSoon}>Coming soon</p>}
+        </div>
       )}
     </>
   )
