@@ -1,0 +1,60 @@
+@import '~styles/mixins';
+
+.banner {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  padding: 64px 24px;
+  margin-top: 100px;
+  color: $white;
+  background: linear-gradient(135deg, $pink 0%, #9c01d3 66.04%, $indigo 100%);
+  isolation: isolate;
+  border-radius: 16px;
+
+  &::after {
+    position: absolute;
+    inset: 24px;
+    z-index: -1;
+    content: '';
+    background-image: radial-gradient(rgba($white, 20%) 1px, transparent 0);
+    background-size: 15px 15px;
+  }
+}
+
+.heading {
+  max-width: 662px;
+  font-size: 36px;
+  line-height: 1.39;
+  color: inherit;
+  text-align: center;
+
+  @include b-d(lg) {
+    max-width: 489px;
+  }
+
+  @include b-d(md) {
+    font-size: 24px;
+    font-weight: $font-weight-extra-bold;
+    line-height: 1.33;
+  }
+}
+
+.text {
+  max-width: 374px;
+  margin-top: 12px;
+  font-size: 15px;
+  line-height: 1.47;
+  text-align: center;
+
+  @include b-d(md) {
+    max-width: 211px;
+  }
+}
+
+.btn {
+  margin-top: 32px;
+
+  @include b-d(md) {
+    margin-top: 24px;
+  }
+}
