@@ -4,6 +4,11 @@
   padding-top: 96px;
   padding-bottom: 96px;
 
+  @include b-d(md) {
+    padding-top: 68px;
+    padding-bottom: 68px;
+  }
+
   h1 {
     max-width: 920px;
 

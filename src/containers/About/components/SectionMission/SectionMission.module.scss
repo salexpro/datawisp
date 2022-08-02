@@ -1,0 +1,46 @@
+@import '~styles/mixins';
+
+.sectionMission {
+  margin-top: 28px;
+
+  @include b-o(lg) {
+    margin-top: 44px;
+  }
+
+  @include b-d(md) {
+    margin-top: 32px;
+  }
+}
+
+.text {
+  max-width: 688px;
+  margin-top: 20px;
+
+  @include b-d(lg) {
+    margin-top: 12px;
+  }
+}
+
+.img {
+  @include fix-ios-border-radius;
+
+  margin-top: 40px;
+  border-radius: 16px;
+
+  @include b-d(lg) {
+    margin-top: 32px;
+    border-radius: 12px;
+  }
+
+  &.imgDesktop {
+    @include b-d(md) {
+      display: none !important;
+    }
+  }
+
+  &.imgMobile {
+    @include b-up(md) {
+      display: none !important;
+    }
+  }
+}

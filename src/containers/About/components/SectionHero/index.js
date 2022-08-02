@@ -11,8 +11,8 @@ const SectionHero = (props) => {
   return (
     <Container {...rest} as="section" className={cn(s.sectionHero, className)}>
       <h1>
-        <span className={s.textGradientPrimary}>Our mission</span>{' '}
-        is&nbsp;to&nbsp;make working with data as easy as sending an email
+        <span className={s.textGradientPrimary}>Our&nbsp;mission</span>{' '}
+        is&nbsp;to&nbsp;make working with data as easy as sending an&nbsp;email
       </h1>
     </Container>
   )
