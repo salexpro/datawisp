@@ -1,0 +1,20 @@
+@import '~styles/mixins';
+
+.sectionHero {
+  padding-top: 96px;
+  padding-bottom: 96px;
+
+  h1 {
+    max-width: 920px;
+
+    @include b-d(lg) {
+      max-width: 660px;
+    }
+  }
+}
+
+.textGradientPrimary {
+  color: transparent;
+  background: $primary-gradient;
+  background-clip: text;
+}
