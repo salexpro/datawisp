@@ -1,0 +1,78 @@
+@import '~styles/mixins';
+
+.foundersWrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 24px;
+
+  @include b-btw(md, lg) {
+    margin-top: 46px;
+  }
+
+  @include b-d(md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cardWrapper {
+  @include b-d(md) {
+    padding: 10px 0;
+    border-bottom: 1px solid #ececec;
+  }
+
+  &:nth-child(1) {
+    @include b-up(md) {
+      padding-right: 10px;
+      padding-bottom: 10px;
+      border-right: 1px solid #ececec;
+      border-bottom: 1px solid #ececec;
+    }
+
+    @include b-d(md) {
+      padding-top: 0;
+    }
+  }
+
+  &:nth-child(2) {
+    @include b-up(md) {
+      padding-bottom: 10px;
+      padding-left: 10px;
+      border-bottom: 1px solid #ececec;
+    }
+  }
+
+  &:nth-child(3) {
+    @include b-up(md) {
+      padding-top: 10px;
+      padding-right: 10px;
+      border-right: 1px solid #ececec;
+    }
+  }
+
+  &:nth-child(4) {
+    @include b-up(md) {
+      padding-top: 10px;
+      padding-left: 10px;
+    }
+
+    @include b-d(md) {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+  }
+}
+
+.heading {
+  margin-top: 140px;
+  text-align: center;
+
+  @include b-d(md) {
+    margin-top: 100px;
+  }
+}
+
+.text {
+  max-width: 400px;
+  margin: 12px auto 0;
+  text-align: center;
+}

@@ -6,6 +6,7 @@ import S from '~components/seo'
 
 import SectionHero from './components/SectionHero'
 import SectionMission from './components/SectionMission'
+import SectionFounders from './components/SectionFounders'
 
 const About = (props) => {
   return (
@@ -13,6 +14,7 @@ const About = (props) => {
       <S title="About us" />
       <SectionHero />
       <SectionMission />
+      <SectionFounders />
     </Layout>
   )
 }

@@ -1,0 +1,89 @@
+@import '~styles/mixins';
+
+.founderCard {
+  display: grid;
+  justify-items: center;
+  padding: 40px;
+  border-radius: 16px;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: $gray-100;
+  }
+
+  @include b-d(md) {
+    padding: 24px;
+  }
+}
+
+.img {
+  @include fix-ios-border-radius;
+
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+
+  @include b-d(md) {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+.heading {
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: $font-weight-semi-bold;
+  line-height: 1.25;
+
+  @include b-d(md) {
+    margin-top: 24px;
+    font-size: 20px;
+  }
+}
+
+.position {
+  padding: 8px 16px;
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: $font-weight-medium;
+  line-height: 1.29;
+  color: $primary;
+  background-color: rgba($primary, 6%);
+  border-radius: 10px;
+
+  @include b-d(md) {
+    margin-top: 8px;
+  }
+}
+
+.text {
+  max-width: 412px;
+  margin-top: 24px;
+  font-size: 15px;
+  line-height: 1.47;
+  color: $gray-800;
+  text-align: center;
+
+  @include b-d(md) {
+    margin-top: 16px;
+  }
+}
+
+.linkWrapper {
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 16px;
+  margin-top: 32px;
+
+  @include b-d(md) {
+    margin-top: 24px;
+  }
+
+  & > a {
+    color: #c0c0c0;
+
+    &:hover {
+      color: darken(#c0c0c0, 10);
+    }
+  }
+}
