@@ -14,6 +14,7 @@ const ProductPage = ({ data }) => {
     featuresSectionText,
     featuresSectionFeatures,
     integrationsSectionHeading,
+    integrationsSectionText,
     integrations,
     bannerSectionHeading,
     bannerSectionText,
@@ -39,6 +40,7 @@ const ProductPage = ({ data }) => {
       }}
       integrations={{
         heading: integrationsSectionHeading,
+        text: integrationsSectionText,
         integrations,
       }}
       banner={{
@@ -90,6 +92,9 @@ export const query = graphql`
       }
 
       integrationsSectionHeading
+      integrationsSectionText {
+        value
+      }
       integrations {
         id
         heading

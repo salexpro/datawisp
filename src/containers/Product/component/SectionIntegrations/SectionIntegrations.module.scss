@@ -6,10 +6,22 @@
   @include b-d(lg) {
     margin-top: 100px;
   }
+
+  & > p {
+    max-width: 480px;
+    margin-top: 12px;
+
+    @include b-up(md) {
+      margin: 12px auto 0;
+      text-align: center;
+    }
+  }
 }
 
 .heading {
-  text-align: center;
+  @include b-up(md) {
+    text-align: center;
+  }
 }
 
 .integrationsWrapper {
@@ -20,6 +32,5 @@
 
   @include b-d(lg) {
     grid-template-columns: 1fr;
-    margin-top: 32px;
   }
 }

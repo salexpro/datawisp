@@ -16,7 +16,7 @@ const Product = (props) => {
       <SectionHero {...hero} />
       <SectionFeatures {...features} />
       <SectionIntegrations {...integrations} />
-      {banner?.hide && <SectionBanner {...banner} />}
+      {!banner?.hide && <SectionBanner {...banner} />}
     </Layout>
   )
 }
