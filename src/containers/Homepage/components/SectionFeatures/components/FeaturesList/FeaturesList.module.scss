@@ -40,13 +40,6 @@
         'text .'
         'features features';
     }
-
-    @include b-d(md) {
-      grid-template-areas:
-        'heading'
-        'text'
-        'features';
-    }
   }
 }
 

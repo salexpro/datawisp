@@ -25,7 +25,7 @@ const FeaturesList = (props) => {
       {...rest}
       className={cn(
         s.featuresList,
-        { [s.buttonHidden]: !buttonHide },
+        { [s.buttonHidden]: buttonHide },
         className
       )}
     >

@@ -5,12 +5,8 @@
   margin-top: 156px;
   overflow: hidden;
 
-  @include b-btw(md, lg) {
+  @include b-d(lg) {
     margin-top: 120px;
-  }
-
-  @include b-d(md) {
-    margin-top: 100px;
   }
 }
 
