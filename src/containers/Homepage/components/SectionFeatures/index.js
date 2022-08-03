@@ -19,7 +19,7 @@ const SectionFeatures = (props) => {
       className={cn(s.sectionFeatures, className)}
     >
       <FeaturesList {...list} />
-      <ImageFormat alt="features image" file={image} />
+      <ImageFormat alt="features image" file={image} className={s.img} />
     </Container>
   )
 }

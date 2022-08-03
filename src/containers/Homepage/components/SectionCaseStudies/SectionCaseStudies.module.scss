@@ -2,15 +2,15 @@
 
 .sectionCaseStudies {
   padding-bottom: 64px;
-  margin-top: 190px;
+  margin-top: 156px;
   overflow: hidden;
 
   @include b-btw(md, lg) {
-    margin-top: 72px;
+    margin-top: 120px;
   }
 
   @include b-d(md) {
-    margin-top: 80px;
+    margin-top: 100px;
   }
 }
 

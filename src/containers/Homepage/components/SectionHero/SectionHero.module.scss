@@ -79,12 +79,13 @@
 .imgHero {
   $img-hero-width: 897px;
   $img-hero-height: 690px;
+  $aspect-ratio: calc($img-hero-width / $img-hero-height);
 
   user-select: none;
 
   @include b-up(lg) {
     top: calc(50% + 24px);
-    right: 140px;
+    right: 80px;
 
     @media (max-height: 880px) {
       width: $img-hero-width * 0.9;
@@ -95,10 +96,6 @@
       width: $img-hero-width * 0.76;
       height: $img-hero-height * 0.76;
     }
-  }
-
-  @include b-btw(xl, xxl) {
-    right: 80px;
   }
 
   @include b-btw(lg, xl) {
@@ -122,8 +119,8 @@
 
   @include b-d(md) {
     justify-self: center;
-    width: $img-hero-width * 0.36;
-    height: $img-hero-height * 0.36;
+    width: calc(100vw - $container-padding-x-sm * 2);
+    height: calc((100vw - $container-padding-x-sm * 2) * 1 / $aspect-ratio);
   }
 }
 

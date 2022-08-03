@@ -106,8 +106,8 @@ export const query = graphql`
         gatsbyImageData(
           width: 897
           placeholder: NONE
-          sizes: "(max-width: 767.98px) 323px, (max-width: 1023.98px) 682px, (max-width: 1199.98px) 718px, 897px"
-          breakpoints: [323, 660, 718, 940, 1400, 1794]
+          sizes: "(max-width: 767.98px) calc(100vw - 24px * 2), (max-width: 1023.98px) 682px, (max-width: 1199.98px) 718px, 897px"
+          breakpoints: [327, 655, 682, 718, 982, 1140, 1363, 1435, 1794]
           imgixParams: { fit: "crop", auto: "compress,format" }
         )
       }
@@ -149,7 +149,8 @@ export const query = graphql`
         gatsbyImageData(
           width: 1240
           placeholder: NONE
-          outputPixelDensities: [1, 1.5, 2, 3]
+          sizes: "(max-width: 767.98px) 1016px, min(calc(100vw - 40px * 2), 1240px)"
+          breakpoints: [688, 1016, 1376, 1680, 1860, 2032, 2480]
           imgixParams: { fit: "crop", auto: "compress,format" }
         )
       }
@@ -167,8 +168,9 @@ export const query = graphql`
         format
         url
         gatsbyImageData(
-          sizes: "(max-width: 767.98px) calc(100vw - 24px * 2), (max-width: 1023.98px) calc(100vw - 40px * 2), (max-width: 1439.98px) calc((100vw - 40px * 2) * 0.6), 780px"
-          breakpoints: [327, 688, 780, 981, 1170, 1376, 1560]
+          width: 940
+          sizes: "(max-width: 767.98px) calc(100vw - 24px * 2), (max-width: 1023.98px) calc(100vw - 40px * 2), 620px"
+          breakpoints: [327, 620, 654, 930, 981, 1240, 1376, 1880]
           imgixParams: { fit: "crop", auto: "compress,format" }
         )
       }

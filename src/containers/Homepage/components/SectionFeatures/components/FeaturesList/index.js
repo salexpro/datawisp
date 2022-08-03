@@ -21,9 +21,18 @@ const FeaturesList = (props) => {
   } = props
 
   return (
-    <div {...rest} className={cn(s.featuresList, className)}>
-      <h2>{heading}</h2>
-      <StructuredText data={text.value} />
+    <div
+      {...rest}
+      className={cn(
+        s.featuresList,
+        { [s.buttonHidden]: !buttonHide },
+        className
+      )}
+    >
+      <h2 className={s.heading}>{heading}</h2>
+      <div className={s.text}>
+        <StructuredText data={text.value} />
+      </div>
       <div className={s.listWrapper}>
         {featuresList?.map(({ id, ...item }) => (
           <ListItem key={id} {...item} />

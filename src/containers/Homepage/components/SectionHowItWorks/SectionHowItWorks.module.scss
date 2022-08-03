@@ -1,17 +1,17 @@
 @import '~styles/mixins';
 
 .sectionHowItWorks {
-  padding-top: 90px;
+  padding: 90px 0;
   margin-top: 88px;
   background-color: $gray-100;
 
   @include b-btw(md, lg) {
-    padding-top: 64px;
+    padding: 64px 0;
     margin-top: 64px;
   }
 
   @include b-d(md) {
-    padding-top: 48px;
+    padding: 48px 0 64px;
     margin-top: 84px;
     overflow: hidden;
   }
@@ -69,16 +69,15 @@
 .imgWrapper {
   @include hide-scrollbar;
 
-  padding-top: 40px;
-  padding-bottom: 200px;
+  margin-top: 64px;
   overflow: auto;
 
   @include b-btw(md, lg) {
-    margin: 0 -40px;
+    margin-top: 52px;
   }
 
   @include b-d(md) {
-    margin: 0 -24px;
+    margin: 64px -24px 0;
   }
 }
 
@@ -86,13 +85,8 @@
   width: 100%;
   overflow: hidden;
 
-  @include b-btw(md, lg) {
-    min-width: calc(1240px + 40px * 2);
-    padding: 0 40px;
-  }
-
   @include b-d(md) {
-    min-width: calc(1240px * 0.9 + 24px * 2);
+    min-width: 1016px;
     padding: 0 24px;
   }
 }
