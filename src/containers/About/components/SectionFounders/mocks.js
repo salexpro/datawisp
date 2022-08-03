@@ -8,10 +8,12 @@ const FOUNDERS_DATA = [
       {
         iconName: 'icon-twitter',
         url: 'https://twitter.com/',
+        hoverColor: { hex: '#00A3FF' },
       },
       {
         iconName: 'icon-linkedin',
         url: 'https://www.linkedin.com/',
+        hoverColor: { hex: '#0077B5' },
       },
     ],
   },
@@ -21,8 +23,16 @@ const FOUNDERS_DATA = [
     text: 'Developed the first analytics platform used by professional esports athletes in CS:GO',
     fileName: 'founder2.png',
     links: [
-      { iconName: 'icon-twitter', url: 'https://twitter.com/' },
-      { iconName: 'icon-linkedin', url: 'https://www.linkedin.com/' },
+      {
+        iconName: 'icon-twitter',
+        url: 'https://twitter.com/',
+        hoverColor: { hex: '#00A3FF' },
+      },
+      {
+        iconName: 'icon-linkedin',
+        url: 'https://www.linkedin.com/',
+        hoverColor: { hex: '#0077B5' },
+      },
     ],
   },
   {
@@ -31,8 +41,16 @@ const FOUNDERS_DATA = [
     text: '20-year gaming and esports industry veteran with a masters in applied research',
     fileName: 'founder3.png',
     links: [
-      { iconName: 'icon-twitter', url: 'https://twitter.com/' },
-      { iconName: 'icon-linkedin', url: 'https://www.linkedin.com/' },
+      {
+        iconName: 'icon-twitter',
+        url: 'https://twitter.com/',
+        hoverColor: { hex: '#00A3FF' },
+      },
+      {
+        iconName: 'icon-linkedin',
+        url: 'https://www.linkedin.com/',
+        hoverColor: { hex: '#0077B5' },
+      },
     ],
   },
   {
@@ -41,8 +59,16 @@ const FOUNDERS_DATA = [
     text: '10 years of experience developing software in the gaming industry and a masters in C.S.',
     fileName: 'founder4.png',
     links: [
-      { iconName: 'icon-twitter', url: 'https://twitter.com/' },
-      { iconName: 'icon-linkedin', url: 'https://www.linkedin.com/' },
+      {
+        iconName: 'icon-twitter',
+        url: 'https://twitter.com/',
+        hoverColor: { hex: '#00A3FF' },
+      },
+      {
+        iconName: 'icon-linkedin',
+        url: 'https://www.linkedin.com/',
+        hoverColor: { hex: '#0077B5' },
+      },
     ],
   },
 ]

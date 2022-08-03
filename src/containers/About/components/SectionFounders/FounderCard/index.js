@@ -17,8 +17,14 @@ const FounderCard = (props) => {
       <span className={s.position}>{position}</span>
       <p className={s.text}>{text}</p>
       <div className={s.linkWrapper}>
-        {links.map(({ iconName, url }) => (
-          <a rel="noreferrer" target="_blank" href={url} className={url}>
+        {links.map(({ iconName, url, hoverColor }) => (
+          <a
+            rel="noreferrer"
+            target="_blank"
+            href={url}
+            className={url}
+            style={{ color: hoverColor.hex }}
+          >
             <Icon name={iconName} size={24} />
           </a>
         ))}

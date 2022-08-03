@@ -1,18 +1,40 @@
 @import '~styles/mixins';
 
+.position {
+  padding: 8px 16px;
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: $font-weight-medium;
+  line-height: 1.29;
+  color: $primary;
+  background-color: rgba($primary, 6%);
+  border-radius: 10px;
+  transition: background-color 0.2s;
+
+  @include b-d(md) {
+    margin-top: 8px;
+  }
+}
+
 .founderCard {
   display: grid;
+  grid-template-rows: repeat(4, auto) 1fr;
   justify-items: center;
-  padding: 40px;
+  height: 100%;
+  padding: 40px 40px 32px;
   border-radius: 16px;
   transition: background-color 0.2s;
 
   &:hover {
     background-color: $gray-100;
+
+    .position {
+      background-color: $white;
+    }
   }
 
   @include b-d(md) {
-    padding: 24px;
+    padding: 24px 24px 16px;
   }
 }
 
@@ -41,21 +63,6 @@
   }
 }
 
-.position {
-  padding: 8px 16px;
-  margin-top: 12px;
-  font-size: 14px;
-  font-weight: $font-weight-medium;
-  line-height: 1.29;
-  color: $primary;
-  background-color: rgba($primary, 6%);
-  border-radius: 10px;
-
-  @include b-d(md) {
-    margin-top: 8px;
-  }
-}
-
 .text {
   max-width: 412px;
   margin-top: 24px;
@@ -72,18 +79,22 @@
 .linkWrapper {
   display: grid;
   grid-auto-flow: column;
-  column-gap: 16px;
-  margin-top: 32px;
+  align-self: end;
+  margin-top: 24px;
 
   @include b-d(md) {
     margin-top: 24px;
   }
 
   & > a {
-    color: #c0c0c0;
+    padding: 8px;
 
-    &:hover {
-      color: darken(#c0c0c0, 10);
+    svg {
+      transition: color 0.2s;
+    }
+
+    &:not(:hover, :focus) svg {
+      color: #7e7e7e;
     }
   }
 }
