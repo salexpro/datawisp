@@ -59,7 +59,7 @@ const Header = ({ siteTitle }) => {
 
   const buttonProps = {
     as: 'a',
-    href: btnLink?.target,
+    href: btnLink?.url,
     target: btnLink?.target,
     rel: btnLink?.rel,
     className: s.btnPrimary,

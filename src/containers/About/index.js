@@ -10,13 +10,15 @@ import SectionFounders from './components/SectionFounders'
 import SectionBanner from './components/SectionBanner'
 
 const About = (props) => {
+  const { heroSectionHeading, mission, founders, banner } = props
+
   return (
     <Layout {...props}>
       <S title="About us" />
-      <SectionHero />
-      <SectionMission />
-      <SectionFounders />
-      <SectionBanner />
+      <SectionHero heading={heroSectionHeading} />
+      <SectionMission {...mission} />
+      <SectionFounders {...founders} />
+      <SectionBanner {...banner} />
     </Layout>
   )
 }

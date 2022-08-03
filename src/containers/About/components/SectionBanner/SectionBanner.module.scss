@@ -19,6 +19,18 @@
     background-image: radial-gradient(rgba($white, 20%) 1px, transparent 0);
     background-size: 15px 15px;
   }
+
+  p {
+    max-width: 374px;
+    margin-top: 12px;
+    font-size: 15px;
+    line-height: 1.47;
+    text-align: center;
+
+    @include b-d(md) {
+      max-width: 211px;
+    }
+  }
 }
 
 .heading {
@@ -36,18 +48,6 @@
     font-size: 24px;
     font-weight: $font-weight-extra-bold;
     line-height: 1.33;
-  }
-}
-
-.text {
-  max-width: 374px;
-  margin-top: 12px;
-  font-size: 15px;
-  line-height: 1.47;
-  text-align: center;
-
-  @include b-d(md) {
-    max-width: 211px;
   }
 }
 

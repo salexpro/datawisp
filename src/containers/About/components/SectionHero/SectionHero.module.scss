@@ -16,10 +16,11 @@
       max-width: 660px;
     }
   }
-}
 
-.textGradientPrimary {
-  color: transparent;
-  background: $primary-gradient;
-  background-clip: text;
+  mark {
+    padding: 0;
+    color: transparent;
+    background: $primary-gradient;
+    background-clip: text;
+  }
 }

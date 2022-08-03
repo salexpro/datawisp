@@ -36,6 +36,19 @@
   @include b-d(md) {
     padding: 24px 24px 16px;
   }
+
+  & > p {
+    max-width: 412px;
+    margin-top: 24px;
+    font-size: 15px;
+    line-height: 1.47;
+    color: $gray-800;
+    text-align: center;
+
+    @include b-d(md) {
+      margin-top: 16px;
+    }
+  }
 }
 
 .img {
@@ -60,19 +73,6 @@
   @include b-d(md) {
     margin-top: 24px;
     font-size: 20px;
-  }
-}
-
-.text {
-  max-width: 412px;
-  margin-top: 24px;
-  font-size: 15px;
-  line-height: 1.47;
-  color: $gray-800;
-  text-align: center;
-
-  @include b-d(md) {
-    margin-top: 16px;
   }
 }
 

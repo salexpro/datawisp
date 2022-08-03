@@ -1,28 +1,27 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import { Button, Container } from 'react-bootstrap'
+import { StructuredText } from 'react-datocms'
 
 import * as s from './SectionBanner.module.scss'
 
 const SectionBanner = (props) => {
-  const { className, ...rest } = props
+  const { heading, text, buttonText, buttonLink, className, ...rest } = props
 
   return (
     <Container as="section" {...rest} className={className}>
       <div className={s.banner}>
-        <h3 className={s.heading}>You wont to make your process simple?</h3>
-        <p className={s.text}>
-          Lorem ipsum dolor sit amet, eu viris admodum nam, ea sea blandit,
-          corpora singulis vel te ad invidunt.
-        </p>
+        <h3 className={s.heading}>{heading}</h3>
+        <StructuredText data={text.value} />
         <Button
-          as={Link}
-          to="https://app.datawisp.io/"
+          as="a"
           variant="secondary"
+          href={buttonLink.url}
+          rel={buttonLink.rel}
+          target={buttonLink.target}
           className={s.btn}
         >
-          Get to Beta App
+          {buttonText}
         </Button>
       </div>
     </Container>

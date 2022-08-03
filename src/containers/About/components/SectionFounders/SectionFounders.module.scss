@@ -1,5 +1,13 @@
 @import '~styles/mixins';
 
+.sectionFounders {
+  & > p {
+    max-width: 400px;
+    margin: 12px auto 0;
+    text-align: center;
+  }
+}
+
 .foundersWrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -69,10 +77,4 @@
   @include b-d(md) {
     margin-top: 100px;
   }
-}
-
-.text {
-  max-width: 400px;
-  margin: 12px auto 0;
-  text-align: center;
 }

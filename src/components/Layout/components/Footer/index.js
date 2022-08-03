@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql, Link, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import { Button, Container } from 'react-bootstrap'
 import PropTypes from 'prop-types'
 
@@ -61,8 +61,10 @@ const Footer = ({ siteTitle }) => {
           <Menu variant="footer" navItems={navMenuItems} className={s.menu} />
           <Button
             variant="primary"
-            as={Link}
+            as="a"
             href={actionButtonLink?.url}
+            target={actionButtonLink?.target}
+            rel={actionButtonLink?.rel}
             className={s.appButton}
           >
             {actionButtonLink?.text}

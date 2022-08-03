@@ -44,7 +44,7 @@ const MobileNavMenu = (props) => {
 
 MobileNavMenu.defaultProps = {
   navItems: undefined,
-  buttonLink: undefined,
+  btnLink: undefined,
   className: undefined,
 }
 
@@ -56,7 +56,7 @@ MobileNavMenu.propTypes = {
       url: PropTypes.string,
     })
   ),
-  buttonLink: PropTypes.shape({
+  btnLink: PropTypes.shape({
     url: PropTypes.string,
     text: PropTypes.string,
   }),

@@ -10,14 +10,14 @@
   @include b-d(md) {
     margin-top: 32px;
   }
-}
 
-.text {
-  max-width: 688px;
-  margin-top: 20px;
+  & > p {
+    max-width: 688px;
+    margin-top: 20px;
 
-  @include b-d(lg) {
-    margin-top: 12px;
+    @include b-d(lg) {
+      margin-top: 12px;
+    }
   }
 }
 
