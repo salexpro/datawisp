@@ -2,7 +2,7 @@ import React from 'react'
 import { Container } from 'react-bootstrap'
 import { StructuredText } from 'react-datocms'
 import PropTypes from 'prop-types'
-import cn from 'classnames'
+import clsx from 'clsx'
 
 import ImageFormat from '~components/ImageFormat'
 
@@ -12,7 +12,7 @@ const SectionCaseHero = (props) => {
   const { heading, text, image, className, ...rest } = props
 
   return (
-    <Container {...rest} className={cn(s.sectionCaseHero, className)}>
+    <Container {...rest} className={clsx(s.sectionCaseHero, className)}>
       <div className={s.colLeft}>
         <h1>{heading}</h1>
         <StructuredText data={text.value} />

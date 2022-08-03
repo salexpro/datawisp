@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Container } from 'react-bootstrap'
 import { StructuredText } from 'react-datocms'
-import cn from 'classnames'
+import clsx from 'clsx'
 
 import IntegrationItem from './components/IntegrationItem'
 import * as s from './SectionIntegrations.module.scss'
@@ -14,7 +14,7 @@ const SectionIntegrations = (props) => {
     <Container
       as="section"
       {...rest}
-      className={cn(s.sectionIntegrations, className)}
+      className={clsx(s.sectionIntegrations, className)}
     >
       <h2 className={s.heading}>{heading}</h2>
       <StructuredText data={text.value} />

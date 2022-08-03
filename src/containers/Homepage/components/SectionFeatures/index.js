@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
 import PropTypes from 'prop-types'
-import cn from 'classnames'
+import clsx from 'clsx'
 
 import ImageFormat from '~components/ImageFormat'
 
@@ -16,7 +16,7 @@ const SectionFeatures = (props) => {
     <Container
       {...rest}
       as="section"
-      className={cn(s.sectionFeatures, className)}
+      className={clsx(s.sectionFeatures, className)}
     >
       <FeaturesList {...list} />
       <ImageFormat alt="features image" file={image} className={s.img} />

@@ -2,7 +2,7 @@ import React from 'react'
 import { Button, Container } from 'react-bootstrap'
 import PropTypes from 'prop-types'
 import { graphql, useStaticQuery } from 'gatsby'
-import cn from 'classnames'
+import clsx from 'clsx'
 
 import useScrolled from '~hooks/useScrolled'
 
@@ -66,7 +66,7 @@ const Header = ({ siteTitle }) => {
   }
 
   return (
-    <header className={cn(s.headerWrapper, { [s.active]: isScrolled })}>
+    <header className={clsx(s.headerWrapper, { [s.active]: isScrolled })}>
       <Container className={s.header}>
         <LogoLink image={logoImage} link={logoLink} siteTitle={siteTitle} />
         <Menu navItems={navMenuItems} className={s.navMenu} />

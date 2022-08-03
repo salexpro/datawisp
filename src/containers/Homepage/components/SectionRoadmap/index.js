@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Container } from 'react-bootstrap'
-import cn from 'classnames'
+import clsx from 'clsx'
 
 import RoadmapItem from './components/RoadmapItem'
 import * as s from './SectionRoadmap.module.scss'
@@ -13,7 +13,7 @@ const SectionRoadmap = (props) => {
     <Container
       as="section"
       {...rest}
-      className={cn(s.sectionRoadmap, className)}
+      className={clsx(s.sectionRoadmap, className)}
     >
       <h2>{heading}</h2>
       <div className={s.roadmapWrapper}>

@@ -2,7 +2,7 @@ import React, { createElement } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import cn from 'classnames'
+import clsx from 'clsx'
 import dayjs from 'dayjs'
 import { Image } from 'react-datocms'
 import { Placeholder, Ratio } from 'react-bootstrap'
@@ -35,17 +35,20 @@ const BlogItem = (props) => {
 
   if (isPlaceholder)
     return (
-      <div {...rest} className={cn('placeholder-glow', s.blogItem, className)}>
+      <div
+        {...rest}
+        className={clsx('placeholder-glow', s.blogItem, className)}
+      >
         <Ratio aspectRatio="4x3" className={s.imgWrapper}>
           <Placeholder />
         </Ratio>
-        <Placeholder className={cn(s.date, s.placeholder)} />
+        <Placeholder className={clsx(s.date, s.placeholder)} />
         <div className={s.headingPlaceholderGrid}>
           {range(2).map((n) => (
             <Placeholder
               key={n}
               as={headingAs}
-              className={cn('h4', s.heading)}
+              className={clsx('h4', s.heading)}
             />
           ))}
         </div>
@@ -63,7 +66,7 @@ const BlogItem = (props) => {
     )
 
   return (
-    <div {...rest} className={cn(s.blogItem, className)}>
+    <div {...rest} className={clsx(s.blogItem, className)}>
       <Link to={blogpostLink} className={s.imgWrapper} aria-label={heading}>
         {responsiveImage ? (
           <Image
@@ -83,10 +86,14 @@ const BlogItem = (props) => {
         {publishedAtDate.format('MMMM D, YYYY')}
       </time>
       <Link to={blogpostLink} className={s.link}>
-        {createElement(headingAs, { className: cn('h4', s.heading) }, heading)}
+        {createElement(
+          headingAs,
+          { className: clsx('h4', s.heading) },
+          heading
+        )}
       </Link>
       <p className={s.text}>{description}</p>
-      <Link to={blogpostLink} className={cn(s.readMore, s.link)}>
+      <Link to={blogpostLink} className={clsx(s.readMore, s.link)}>
         Read more <Icon name="icon-arrow-right" size={20} />
       </Link>
     </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import cn from 'classnames'
+import clsx from 'clsx'
 import { StructuredText } from 'react-datocms'
 
 import * as s from './RoadmapItem.module.scss'
@@ -11,9 +11,9 @@ const RoadmapItem = (props) => {
   return (
     <div
       {...rest}
-      className={cn(s.roadmapItem, { [s[variant]]: variant }, className)}
+      className={clsx(s.roadmapItem, { [s[variant]]: variant }, className)}
     >
-      <h3 className={cn(s.heading, 'h5')}>{heading}</h3>
+      <h3 className={clsx(s.heading, 'h5')}>{heading}</h3>
       <StructuredText data={listLeft.value} />
       <StructuredText data={listRight.value} />
     </div>

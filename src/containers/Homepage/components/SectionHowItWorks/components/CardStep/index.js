@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import cn from 'classnames'
+import clsx from 'clsx'
 
 import ImageFormat from '~components/ImageFormat'
 
@@ -10,7 +10,7 @@ const CardStep = (props) => {
   const { className, stepNumber, text, file, ...rest } = props
 
   return (
-    <div {...rest} className={cn(s.cardStep, className)}>
+    <div {...rest} className={clsx(s.cardStep, className)}>
       <span className={s.text}>{text}</span>
       <ImageFormat
         alt={`step ${stepNumber} image`}

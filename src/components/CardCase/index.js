@@ -1,6 +1,6 @@
 import React, { createElement } from 'react'
 import PropTypes from 'prop-types'
-import cn from 'classnames'
+import clsx from 'clsx'
 import { Link } from 'gatsby'
 import { Button, Placeholder } from 'react-bootstrap'
 
@@ -28,10 +28,18 @@ const CardCase = (props) => {
     return (
       <div
         {...rest}
-        className={cn('placeholder-glow', s.cardCase, s.placeholder, className)}
+        className={clsx(
+          'placeholder-glow',
+          s.cardCase,
+          s.placeholder,
+          className
+        )}
       >
         <Placeholder className={s.placeholderImg} />
-        <Placeholder as={headingAs} className={cn('h4', s.placeholderHeader)} />
+        <Placeholder
+          as={headingAs}
+          className={clsx('h4', s.placeholderHeader)}
+        />
         <Placeholder as="p" className={s.placeholderText} />
         <Placeholder className={s.placeholderBtn} />
       </div>
@@ -40,9 +48,9 @@ const CardCase = (props) => {
   const linkTitle = `Learn more about ${heading}`
 
   const componentProps = isProduct
-    ? { className: cn(s.cardCase, s.product, className) }
+    ? { className: clsx(s.cardCase, s.product, className) }
     : {
-        className: cn(s.cardCase, s.home, className),
+        className: clsx(s.cardCase, s.home, className),
         to: `${RouteURL.CASE_STUDIES}/${slug}`,
         'aria-label': linkTitle,
         title: linkTitle,
@@ -63,7 +71,7 @@ const CardCase = (props) => {
           <Icon name={postIcon} size={20} />
         )}
       </span>
-      {createElement(headingAs, { className: cn('h4', s.heading) }, heading)}
+      {createElement(headingAs, { className: clsx('h4', s.heading) }, heading)}
       <p className={s.text}>{badgeText}</p>
       {!isProduct && (
         <div className={s.buttonWrapper}>

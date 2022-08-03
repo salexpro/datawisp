@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import cn from 'classnames'
+import clsx from 'clsx'
 import { Link } from 'gatsby'
 import { StructuredText } from 'react-datocms'
 import { Button, Container } from 'react-bootstrap'
@@ -24,8 +24,8 @@ const SectionHero = (props) => {
   } = props
 
   return (
-    <section {...rest} className={cn(s.sectionHero, className)}>
-      <Container className={cn(s.container, s.containerMain)}>
+    <section {...rest} className={clsx(s.sectionHero, className)}>
+      <Container className={clsx(s.container, s.containerMain)}>
         <div className={s.colLeft}>
           <h1 className={s.heading}>{heading}</h1>
           <StructuredText data={text.value} />

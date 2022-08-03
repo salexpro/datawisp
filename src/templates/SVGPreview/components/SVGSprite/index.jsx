@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import classNames from 'classnames'
+import clsx from 'clsx'
 import { parse } from 'svg-parser'
 
 import svgSrc from '~components/Icon/icons.svg'
@@ -40,11 +40,7 @@ const SVGSprite = (props) => {
   return (
     <table
       {...rest}
-      className={classNames(
-        style.table,
-        { [style[variant]]: variant },
-        className
-      )}
+      className={clsx(style.table, { [style[variant]]: variant }, className)}
     >
       <thead>
         <tr>

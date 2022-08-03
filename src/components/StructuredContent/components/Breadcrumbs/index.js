@@ -1,7 +1,7 @@
 /* eslint-disable react/no-array-index-key */
 import React from 'react'
 import PropTypes from 'prop-types'
-import cn from 'classnames'
+import clsx from 'clsx'
 import { Link } from 'gatsby'
 import { Breadcrumb, Button } from 'react-bootstrap'
 
@@ -14,7 +14,7 @@ const Breadcrumbs = (props) => {
 
   return (
     <>
-      <Breadcrumb {...rest} className={cn(s.breadcrumbs, className)}>
+      <Breadcrumb {...rest} className={clsx(s.breadcrumbs, className)}>
         {breadcrumbs.map(({ text, url, isActive }, index) => (
           <Breadcrumb.Item
             key={index}
@@ -26,7 +26,7 @@ const Breadcrumbs = (props) => {
           </Breadcrumb.Item>
         ))}
       </Breadcrumb>
-      <nav className={cn(s.mobileNav, className)}>
+      <nav className={clsx(s.mobileNav, className)}>
         <Button
           variant="outline-secondary"
           className={s.btn}

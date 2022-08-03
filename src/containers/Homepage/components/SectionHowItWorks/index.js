@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import cn from 'classnames'
+import clsx from 'clsx'
 import { Button, Container } from 'react-bootstrap'
 import { Link } from 'gatsby'
 import { StructuredText } from 'react-datocms'
@@ -23,7 +23,7 @@ const SectionHowItWorks = (props) => {
   } = props
 
   return (
-    <section {...rest} className={cn(s.sectionHowItWorks, className)}>
+    <section {...rest} className={clsx(s.sectionHowItWorks, className)}>
       <Container>
         <div className={s.gridHeading}>
           <h2 className={s.heading}>{heading}</h2>

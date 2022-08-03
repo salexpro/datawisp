@@ -2,7 +2,7 @@ import React from 'react'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { StructuredText } from 'react-datocms'
 import PropTypes from 'prop-types'
-import cn from 'classnames'
+import clsx from 'clsx'
 
 import Icon from '~components/Icon'
 
@@ -20,7 +20,7 @@ const FounderCard = (props) => {
   } = props
 
   return (
-    <div {...rest} className={cn(s.founderCard, className)}>
+    <div {...rest} className={clsx(s.founderCard, className)}>
       <GatsbyImage alt={name} image={getImage(image)} className={s.img} />
       <h3 className={s.heading}>{name}</h3>
       <span className={s.position}>{founderPosition}</span>

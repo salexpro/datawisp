@@ -3,7 +3,7 @@ import React from 'react'
 import { useLocation } from '@gatsbyjs/reach-router'
 import PropTypes from 'prop-types'
 import { Container } from 'react-bootstrap'
-import cn from 'classnames'
+import clsx from 'clsx'
 
 import BlogItem from '~components/BlogItem'
 
@@ -20,7 +20,7 @@ const BlogSection = (props) => {
     : blogs
 
   return (
-    <Container {...rest} className={cn(s.blogSection, className)}>
+    <Container {...rest} className={clsx(s.blogSection, className)}>
       {filteredBlog?.map(({ id, ...blog }) => (
         <BlogItem key={id} {...blog} />
       ))}

@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import cn from 'classnames'
+import clsx from 'clsx'
 import { Button, Container } from 'react-bootstrap'
 import { Link } from 'gatsby'
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -26,7 +26,7 @@ const SectionCaseStudies = (props) => {
     <Container
       {...rest}
       as="section"
-      className={cn(s.sectionCaseStudies, className)}
+      className={clsx(s.sectionCaseStudies, className)}
     >
       <div className={s.gridHeading}>
         <h2 className={s.heading}>{heading}</h2>

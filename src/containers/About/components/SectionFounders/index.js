@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import cn from 'classnames'
+import clsx from 'clsx'
 import { Container } from 'react-bootstrap'
 import { StructuredText } from 'react-datocms'
 
@@ -15,7 +15,7 @@ const SectionFounders = (props) => {
     <Container
       as="section"
       {...rest}
-      className={cn(s.sectionFounders, className)}
+      className={clsx(s.sectionFounders, className)}
     >
       <h2 className={s.heading}>{heading}</h2>
       <StructuredText data={text.value} />
