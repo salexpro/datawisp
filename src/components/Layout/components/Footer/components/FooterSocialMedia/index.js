@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import cn from 'classnames'
 
 import Icon from '~components/Icon'
 
@@ -9,7 +10,7 @@ const FooterSocialMedia = (props) => {
   const { socialLinks, className, ...rest } = props
 
   return (
-    <div {...rest} className={s.social}>
+    <div {...rest} className={cn(s.social, className)}>
       {socialLinks?.map(({ id, iconName, hoverColor, tooltip, url }) => (
         <a
           key={id}

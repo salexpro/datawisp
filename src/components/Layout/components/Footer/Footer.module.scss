@@ -84,8 +84,37 @@
   }
 }
 
-.copy {
+.copyWrapper {
+  display: grid;
+  row-gap: 2px;
   font-size: 12px;
   font-weight: $font-weight-normal;
+  line-height: 1.333;
   color: #717171;
+  letter-spacing: -0.01em;
+
+  @include b-d(md) {
+    text-align: center;
+  }
+}
+
+.textDeveloper {
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: 0;
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+
+    &:hover {
+      color: $gray-900;
+    }
+  }
+}
+
+.footerSocial {
+  @include b-d(md) {
+    justify-self: center;
+  }
 }
