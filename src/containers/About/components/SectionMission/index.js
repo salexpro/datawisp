@@ -17,8 +17,10 @@ const SectionMission = (props) => {
       as="section"
       className={clsx(s.sectionMission, className)}
     >
-      <h2>{heading}</h2>
-      <StructuredText data={text.value} />
+      <div className={s.textWrapper}>
+        <h2>{heading}</h2>
+        <StructuredText data={text.value} />
+      </div>
       <ImageFormat
         alt="strucute"
         file={imageDesktop}

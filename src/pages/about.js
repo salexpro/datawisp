@@ -57,10 +57,10 @@ export const query = graphql`
         format
         url
         gatsbyImageData(
-          width: 1360
+          width: 943
           placeholder: BLURRED
-          sizes: "(max-width: 1439.98px) calc(100vw - 40px * 2), 1240px"
-          breakpoints: [688, 1032, 1240, 1860, 2064, 2480]
+          sizes: "(max-width: 1439.98px) calc(100vw - 40px * 2), min(calc(100vw - 40px * 2 - 400px - 64px), 720px)"
+          breakpoints: [688, 720, 943, 1032, 1080, 1376, 1440, 1886]
           imgixParams: { fit: "crop", auto: "compress,format" }
         )
       }
