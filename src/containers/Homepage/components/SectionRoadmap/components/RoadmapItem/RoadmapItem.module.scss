@@ -78,10 +78,10 @@
   }
 
   &.purple {
-    background-color: $primary;
+    background-color: #4a23eb;
 
     &::before {
-      background-color: darken($primary, 10);
+      background-color: #2c05cd;
     }
   }
 

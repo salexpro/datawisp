@@ -101,6 +101,9 @@ export const query = graphql`
         text {
           value
         }
+        supports {
+          text
+        }
         image {
           format
           url

@@ -1456,12 +1456,12 @@ $toast-header-border-color: rgba($black, 0.05) !default;
 // Badges
 
 // scss-docs-start badge-variables
-$badge-font-size: 0.75em !default;
-$badge-font-weight: $font-weight-bold !default;
-$badge-color: $white !default;
-$badge-padding-y: 0.35em !default;
-$badge-padding-x: 0.65em !default;
-$badge-border-radius: $border-radius !default;
+$badge-font-size: 0.875rem;
+$badge-font-weight: $font-weight-medium;
+$badge-color: darken($pink, 5%);
+$badge-padding-y: 8px;
+$badge-padding-x: 14px;
+$badge-border-radius: 6px;
 // scss-docs-end badge-variables
 
 // Modals

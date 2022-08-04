@@ -8,6 +8,7 @@ import { StructuredText } from 'react-datocms'
 
 import CardCase from '~components/CardCase'
 
+import ComingSoonCase from './components/ComingSoonCase'
 import * as s from './SectionCaseStudies.module.scss'
 
 const SectionCaseStudies = (props) => {
@@ -21,6 +22,11 @@ const SectionCaseStudies = (props) => {
     className,
     ...rest
   } = props
+
+  const allCases = [
+    ...cases,
+    ...Array.from({ length: 3 - cases.length }, () => ({ isComingSoon: true })),
+  ]
 
   return (
     <Container
@@ -46,9 +52,9 @@ const SectionCaseStudies = (props) => {
         }}
         className={s.swiper}
       >
-        {cases.map(({ id, ...caseProps }) => (
+        {allCases.map(({ id, isComingSoon, ...caseProps }) => (
           <SwiperSlide key={id}>
-            <CardCase {...caseProps} />
+            {!isComingSoon ? <CardCase {...caseProps} /> : <ComingSoonCase />}
           </SwiperSlide>
         ))}
       </Swiper>

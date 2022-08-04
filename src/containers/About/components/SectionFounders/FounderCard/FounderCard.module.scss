@@ -1,14 +1,7 @@
 @import '~styles/mixins';
 
 .position {
-  padding: 8px 16px;
   margin-top: 12px;
-  font-size: 14px;
-  font-weight: $font-weight-medium;
-  line-height: 1.29;
-  color: $primary;
-  background-color: rgba($primary, 6%);
-  border-radius: 10px;
   transition: background-color 0.2s;
 
   @include b-d(md) {

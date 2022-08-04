@@ -2,7 +2,7 @@ import React, { createElement } from 'react'
 import PropTypes from 'prop-types'
 import clsx from 'clsx'
 import { Link } from 'gatsby'
-import { Button, Placeholder } from 'react-bootstrap'
+import { Badge, Button, Placeholder } from 'react-bootstrap'
 
 import RouteURL from '~routes'
 import Icon from '~components/Icon'
@@ -82,7 +82,7 @@ const CardCase = (props) => {
           >
             <Icon name="icon-arrow-link" size={20} className={s.arrowIcon} />
           </Button>
-          {comingSoon && <p className={s.comingSoon}>Coming soon</p>}
+          {comingSoon && <Badge>Coming Soon</Badge>}
         </div>
       )}
     </>

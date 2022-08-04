@@ -2,20 +2,21 @@
 
 .integrationItem {
   display: grid;
+  grid-template-rows: 160px max-content 1fr repeat(2, max-content);
   align-content: start;
   padding: 40px 32px 32px;
   background-color: $gray-100;
   border-radius: 16px;
 
   @include b-btw(md, lg) {
-    grid-template-rows: max-content 1fr;
+    grid-template-rows: max-content 1fr repeat(2, max-content);
     grid-template-columns: 270px 160px;
     justify-content: space-between;
-    padding: 40px;
+    padding: 32px 40px;
   }
 
   @include b-d(md) {
-    padding: 32px 24px;
+    padding: 32px 24px 24px;
   }
 
   p {
@@ -50,7 +51,20 @@
   width: 160px;
 
   @include b-btw(md, lg) {
-    grid-row: 1 / 3;
+    grid-row: 1 / 5;
     grid-column: 2 / 3;
   }
+}
+
+.supportedHeading {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.supportedWrapper {
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 4px;
+  justify-content: start;
+  margin-top: 8px;
 }

@@ -1,0 +1,33 @@
+@import '~styles/mixins';
+
+.badge {
+  line-height: 1.1429;
+  letter-spacing: -0.01em;
+  background-color: $white;
+}
+
+.bg {
+  &-secondary {
+    padding: 8px 16px;
+    line-height: 1.29;
+    color: #4a23eb;
+    background-color: #f3f0ff;
+    border-radius: 10px;
+  }
+
+  &-article {
+    color: darken($pink, 6.2%);
+    background-color: #fff7f7;
+  }
+
+  &-integration {
+    padding: 10px;
+    line-height: 1.29;
+    color: #4a23eb;
+    border-radius: 12px;
+  }
+
+  &-disabled {
+    color: #7e7e7e;
+  }
+}

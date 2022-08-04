@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import { Container } from 'react-bootstrap'
+import { Container, Badge } from 'react-bootstrap'
 import { StructuredText } from 'react-datocms'
 import dayjs from 'dayjs'
 
@@ -64,7 +64,7 @@ const StructuredContent = (props) => {
             {publishedAtDate.format('MMMM D, YYYY')}
           </time>
           {badgeText ? (
-            <span className={s.caseStudyTag}>{badgeText}</span>
+            <Badge bg="article">{badgeText}</Badge>
           ) : (
             !!author && (
               <span>

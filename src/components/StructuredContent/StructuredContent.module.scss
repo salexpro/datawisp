@@ -154,11 +154,3 @@
 .colorPrimary {
   color: $primary;
 }
-
-.caseStudyTag {
-  padding: 8px 14px;
-  line-height: 1.1429;
-  color: darken($pink, 6.2%); // contrast ration >4.5
-  background-color: #fff7f7;
-  border-radius: 6px;
-}

@@ -29,7 +29,7 @@
 @import '~bootstrap/scss/breadcrumb';
 @import '~bootstrap/scss/placeholders';
 // @import "~bootstrap/scss/pagination";
-// @import "~bootstrap/scss/badge";
+@import '~bootstrap/scss/badge';
 // @import "~bootstrap/scss/jumbotron";
 // @import "~bootstrap/scss/alert";
 // @import "~bootstrap/scss/progress";
@@ -57,7 +57,7 @@
 @import 'components/dropdown';
 @import 'components/placeholders';
 // @import 'components/table';
-// @import 'components/badge';
+@import 'components/badge';
 // @import 'components/modal';
 
 @import 'components/marquee';
