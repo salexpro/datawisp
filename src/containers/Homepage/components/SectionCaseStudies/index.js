@@ -25,7 +25,10 @@ const SectionCaseStudies = (props) => {
 
   const allCases = [
     ...cases,
-    ...Array.from({ length: 3 - cases.length }, () => ({ isComingSoon: true })),
+    ...Array.from({ length: 3 - cases.length }, (_, i) => ({
+      id: i,
+      isComingSoon: true,
+    })),
   ]
 
   return (

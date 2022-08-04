@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 const ImageFormat = (props) => {
-  const { file, alt, className, ...rest } = props
+  const { file, alt, className, objectFit, ...rest } = props
   const { format, url } = file || {}
 
   return format === 'svg' ? (
@@ -14,6 +14,7 @@ const ImageFormat = (props) => {
       alt={alt}
       image={getImage(file)}
       className={className}
+      objectFit={objectFit}
     />
   )
 }

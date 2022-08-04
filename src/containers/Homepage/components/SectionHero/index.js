@@ -58,6 +58,7 @@ const SectionHero = (props) => {
           width={897}
           height={690}
           className={s.imgHero}
+          objectFit="contain"
         />
       </Container>
       {!!partners?.length && (

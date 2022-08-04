@@ -18,8 +18,11 @@ const IntegrationItem = (props) => {
       <StructuredText data={text.value} />
       <h4 className={s.supportedHeading}>Supported</h4>
       <div className={s.supportedWrapper}>
-        {supports.map((badge) => (
-          <Badge bg="integration">{badge.text}</Badge>
+        {supports.map((badge, index) => (
+          // eslint-disable-next-line react/no-array-index-key
+          <Badge key={index} bg="integration">
+            {badge.text}
+          </Badge>
         ))}
       </div>
     </div>

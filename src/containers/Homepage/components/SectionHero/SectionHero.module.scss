@@ -82,6 +82,7 @@
   $aspect-ratio: calc($img-hero-width / $img-hero-height);
 
   user-select: none;
+  object-fit: contain;
 
   @include b-up(lg) {
     top: calc(50% + 24px);
