@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 
 const useScrolled = () => {
-  const SCROLL_OFFSET = 150
+  const SCROLL_OFFSET = 80
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {

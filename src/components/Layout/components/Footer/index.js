@@ -20,9 +20,9 @@ const Footer = ({ siteTitle }) => {
           width
           height
         }
+        logoDesiredHeight
         logoLink {
-          url
-          text
+          ...LinkInternalData
         }
         navMenuItems {
           id
@@ -45,8 +45,14 @@ const Footer = ({ siteTitle }) => {
     }
   `)
 
-  const { logoImage, logoLink, navMenuItems, actionButtonLink, socialLinks } =
-    data.datoCmsFooter
+  const {
+    logoImage,
+    logoDesiredHeight,
+    logoLink,
+    navMenuItems,
+    actionButtonLink,
+    socialLinks,
+  } = data.datoCmsFooter
 
   return (
     <Container as="footer" className={s.footer}>
@@ -57,6 +63,7 @@ const Footer = ({ siteTitle }) => {
             link={logoLink}
             className={s.logo}
             siteTitle={siteTitle}
+            height={logoDesiredHeight}
           />
           <Menu variant="footer" navItems={navMenuItems} className={s.menu} />
           <Button

@@ -5,7 +5,9 @@ import { Link } from 'gatsby'
 import * as s from './LogoLink.module.scss'
 
 const LogoLink = (props) => {
-  const { image, link, siteTitle, ...rest } = props
+  const { image, link, siteTitle, height, ...rest } = props
+
+  const { width: imgWidth = 134, height: imgHeight = 24 } = image || {}
 
   return (
     <Link
@@ -17,8 +19,8 @@ const LogoLink = (props) => {
     >
       <img
         src={image?.url}
-        width={image?.width}
-        height={image?.height}
+        width={height * (imgWidth / imgHeight)}
+        height={height}
         alt={siteTitle}
       />
     </Link>
@@ -37,6 +39,7 @@ LogoLink.propTypes = {
     width: PropTypes.number,
     height: PropTypes.number,
   }),
+  height: PropTypes.number.isRequired,
   link: PropTypes.shape({ url: PropTypes.string, text: PropTypes.string }),
   className: PropTypes.string,
   siteTitle: PropTypes.string.isRequired,

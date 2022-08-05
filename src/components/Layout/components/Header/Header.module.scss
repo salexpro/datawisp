@@ -5,9 +5,11 @@
   top: 0;
   z-index: $zindex-sticky;
   background-color: $body-bg;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.25s;
 
   &.active {
-    border-bottom: 1px solid $gray-200;
+    border-color: $gray-200;
   }
 }
 

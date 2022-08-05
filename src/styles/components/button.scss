@@ -8,6 +8,26 @@ button {
   appearance: none;
 }
 
+%pseudo {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  content: '';
+  border-radius: inherit;
+}
+
+%btn-primary-bg {
+  background-image: linear-gradient(
+    to right,
+    $pink 0%,
+    $indigo 25%,
+    $indigo 78%,
+    $pink 100%
+  );
+  background-position: 0 0;
+  background-size: 400% 100%;
+}
+
 .btn {
   padding-top: $btn-padding-y - 2px;
   letter-spacing: -0.03em;
@@ -20,48 +40,34 @@ button {
 
   // Variant: primary
   &-primary {
+    @extend %btn-primary-bg;
+
     position: relative;
-    padding-top: $btn-padding-y + $btn-border-width - 2px;
-    padding-bottom: $btn-padding-y + $btn-border-width;
+
+    /* prettier-ignore */
+    padding:
+      $btn-padding-y + $btn-border-width - 2px
+      $btn-padding-x + $btn-border-width
+      $btn-padding-y + $btn-border-width;
     text-shadow: 0 0 2px rgba($gray-900, 0.2);
-    background-image: linear-gradient(
-      to right,
-      $pink 0%,
-      $indigo 25%,
-      $indigo 78%,
-      $pink 100%
-    );
-    background-position: 0 0;
-    background-size: 400% 100%;
     isolation: isolate;
     border: none;
-
-    &::before {
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-      content: '';
-      background-color: rgba($black, 0.2);
-      border-radius: inherit;
-      opacity: 0;
-      transition: opacity 0.25s ease-in-out;
-    }
 
     &:hover {
       background-position: 100% 0;
     }
 
-    &:active::before {
+    &::after {
+      @extend %pseudo;
+
+      background-color: rgba($black, 0.2);
+      opacity: 0;
+      transition: opacity 0.25s ease-in-out;
+    }
+
+    &:active::after {
       opacity: 1;
     }
-  }
-
-  // Variant: primary-header
-  &-primary-header {
-    @extend .btn-primary;
-
-    border-right: 1px solid transparent;
-    border-left: 1px solid transparent;
   }
 
   // Variant: outline-secondary
@@ -88,6 +94,57 @@ button {
 
     &:active {
       background-color: #eaeaea;
+    }
+  }
+
+  // Variant: primary-header
+  &-primary-header {
+    /* stylelint-disable-next-line scss/at-extend-no-missing-placeholder */
+    @extend .btn-outline-secondary;
+
+    position: relative;
+    isolation: isolate;
+
+    &::before {
+      @extend %pseudo;
+      @extend %btn-primary-bg;
+
+      inset: -1px;
+      opacity: 0;
+      transition: opacity 0.25s ease-in-out,
+        background-position 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    }
+
+    &.scrolled {
+      --bs-btn-focus-shadow-rgb: #{to-rgb(
+          mix(color-contrast($primary), $primary, 15%)
+        )};
+
+      color: $white;
+      border-color: transparent;
+
+      &::before {
+        opacity: 1;
+      }
+
+      &:hover {
+        &::before {
+          background-position: 100% 0;
+        }
+      }
+
+      &::after {
+        @extend %pseudo;
+
+        inset: -1px;
+        background-color: rgba($black, 0.2);
+        opacity: 0;
+        transition: opacity 0.25s ease-in-out;
+      }
+
+      &:active::after {
+        opacity: 1;
+      }
     }
   }
 }

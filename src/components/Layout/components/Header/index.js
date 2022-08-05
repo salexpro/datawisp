@@ -35,6 +35,7 @@ const Header = ({ siteTitle }) => {
           width
           height
         }
+        logoDesiredHeight
         logoLink {
           ...LinkInternalData
         }
@@ -52,6 +53,7 @@ const Header = ({ siteTitle }) => {
 
   const {
     logoImage,
+    logoDesiredHeight,
     logoLink,
     navMenuItems,
     actionButtonLink: btnLink,
@@ -62,24 +64,27 @@ const Header = ({ siteTitle }) => {
     href: btnLink?.url,
     target: btnLink?.target,
     rel: btnLink?.rel,
-    className: s.btnPrimary,
   }
 
   return (
     <header className={clsx(s.headerWrapper, { [s.active]: isScrolled })}>
       <Container className={s.header}>
-        <LogoLink image={logoImage} link={logoLink} siteTitle={siteTitle} />
+        <LogoLink
+          image={logoImage}
+          link={logoLink}
+          siteTitle={siteTitle}
+          height={logoDesiredHeight}
+        />
         <Menu navItems={navMenuItems} className={s.navMenu} />
-        {isScrolled && (
-          <Button {...buttonProps} variant="primary-header">
+        <div className={s.btnWrapper}>
+          <Button
+            {...buttonProps}
+            variant="primary-header"
+            className={clsx(s.btnPrimary, { scrolled: isScrolled })}
+          >
             {btnLink?.text}
           </Button>
-        )}
-        {!isScrolled && (
-          <Button {...buttonProps} variant="outline-secondary">
-            {btnLink?.text}
-          </Button>
-        )}
+        </div>
         <MobileNavMenu
           btnLink={btnLink}
           navItems={navMenuItems}
