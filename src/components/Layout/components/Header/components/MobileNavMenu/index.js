@@ -1,12 +1,22 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react'
 import PropTypes from 'prop-types'
+import { useLocation } from '@gatsbyjs/reach-router'
 import { Button, Dropdown } from 'react-bootstrap'
 import { Link } from 'gatsby'
+import { trim } from 'lodash'
 
 import BtnAnimatedBurger from './components/BtnAnimatedBurger'
 
 const MobileNavMenu = (props) => {
   const { btnLink, navItems, ...rest } = props
+
+  const { pathname } = useLocation()
+
+  const handleClick = (e, anchor) => {
+    e.preventDefault()
+    document.querySelector(anchor)?.scrollIntoView({ behavior: 'smooth' })
+  }
 
   return (
     <Dropdown {...rest} as="nav" align="start">
@@ -32,11 +42,26 @@ const MobileNavMenu = (props) => {
         >
           {btnLink?.text}
         </Button>
-        {navItems?.map(({ text, url }) => (
-          <Dropdown.Item key={text} to={url} as={Link}>
-            {text}
-          </Dropdown.Item>
-        ))}
+        {navItems?.map(({ id, text, url, anchor, ownerPage, __typename }) => {
+          const isAnchorLink = __typename === 'DatoCmsLinkAnchor'
+          const isAnchorOnActivePage =
+            trim(ownerPage?.url, '/') === trim(pathname, '/')
+
+          return (
+            <Dropdown.Item
+              key={id}
+              to={isAnchorLink ? `${ownerPage.url}${anchor}` : url}
+              as={Link}
+              onClick={
+                isAnchorLink && isAnchorOnActivePage
+                  ? (e) => handleClick(e, anchor)
+                  : null
+              }
+            >
+              {text}
+            </Dropdown.Item>
+          )
+        })}
       </Dropdown.Menu>
     </Dropdown>
   )

@@ -17,15 +17,26 @@ const Header = ({ siteTitle }) => {
 
   const data = useStaticQuery(graphql`
     fragment LinkInternalData on DatoCmsLinkInternal {
+      id
       text
       url
     }
 
     fragment LinkExternalData on DatoCmsLinkExternal {
+      id
       text
       url
       rel
       target
+    }
+
+    fragment LinkAnchorData on DatoCmsLinkAnchor {
+      id
+      text
+      anchor
+      ownerPage {
+        url
+      }
     }
 
     query HeaderNavigation {
@@ -40,9 +51,13 @@ const Header = ({ siteTitle }) => {
           ...LinkInternalData
         }
         navMenuItems {
-          id
-          text
-          url
+          __typename
+          ... on DatoCmsLinkInternal {
+            ...LinkInternalData
+          }
+          ... on DatoCmsLinkAnchor {
+            ...LinkAnchorData
+          }
         }
         actionButtonLink {
           ...LinkExternalData
@@ -76,15 +91,14 @@ const Header = ({ siteTitle }) => {
           height={logoDesiredHeight}
         />
         <Menu navItems={navMenuItems} className={s.navMenu} />
-        <div className={s.btnWrapper}>
-          <Button
-            {...buttonProps}
-            variant="primary-header"
-            className={clsx(s.btnPrimary, { scrolled: isScrolled })}
-          >
-            {btnLink?.text}
-          </Button>
-        </div>
+        <Button
+          {...buttonProps}
+          variant="primary-header"
+          className={clsx(s.btnPrimary, { scrolled: isScrolled })}
+        >
+          {btnLink?.text}
+        </Button>
+
         <MobileNavMenu
           btnLink={btnLink}
           navItems={navMenuItems}

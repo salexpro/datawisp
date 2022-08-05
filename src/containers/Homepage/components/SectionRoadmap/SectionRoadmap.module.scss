@@ -6,6 +6,7 @@
   gap: 56px;
   justify-items: center;
   margin-top: 140px;
+  scroll-margin: 100px;
 
   @include b-d(lg) {
     gap: 32px;

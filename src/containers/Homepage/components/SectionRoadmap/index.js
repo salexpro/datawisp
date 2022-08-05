@@ -14,6 +14,7 @@ const SectionRoadmap = (props) => {
       as="section"
       {...rest}
       className={clsx(s.sectionRoadmap, className)}
+      id="roadmap"
     >
       <h2>{heading}</h2>
       <div className={s.roadmapWrapper}>

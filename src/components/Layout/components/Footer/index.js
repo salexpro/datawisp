@@ -25,9 +25,13 @@ const Footer = ({ siteTitle }) => {
           ...LinkInternalData
         }
         navMenuItems {
-          id
-          text
-          url
+          __typename
+          ... on DatoCmsLinkInternal {
+            ...LinkInternalData
+          }
+          ... on DatoCmsLinkAnchor {
+            ...LinkAnchorData
+          }
         }
         actionButtonLink {
           ...LinkExternalData
