@@ -8,6 +8,7 @@
 
 .bg {
   &-primary-gray {
+    color: darken($pink, 6.8%);
     background-color: $gray-100;
   }
 
