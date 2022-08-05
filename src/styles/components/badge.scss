@@ -7,6 +7,10 @@
 }
 
 .bg {
+  &-primary-gray {
+    background-color: $gray-100;
+  }
+
   &-secondary {
     padding: 8px 16px;
     line-height: 1.29;
@@ -29,5 +33,6 @@
 
   &-disabled {
     color: #717171;
+    background-color: $gray-100;
   }
 }

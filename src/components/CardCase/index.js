@@ -18,9 +18,10 @@ const CardCase = (props) => {
     badgeText,
     postIcon,
     slug,
-    comingSoon,
-    isProduct,
+    comingSoon: isComingSoon,
+    isFeatureCard,
     isPlaceholder,
+    variant,
     ...rest
   } = props
 
@@ -28,12 +29,7 @@ const CardCase = (props) => {
     return (
       <div
         {...rest}
-        className={clsx(
-          'placeholder-glow',
-          s.cardCase,
-          s.placeholder,
-          className
-        )}
+        className={clsx('placeholder-glow', s.card, s.placeholder, className)}
       >
         <Placeholder className={s.placeholderImg} />
         <Placeholder
@@ -47,42 +43,46 @@ const CardCase = (props) => {
 
   const linkTitle = `Learn more about ${heading}`
 
-  const componentProps = isProduct
-    ? { className: clsx(s.cardCase, s.product, className) }
+  const componentProps = isFeatureCard
+    ? { className: clsx(s.card, s.featureCard, className) }
     : {
-        className: clsx(s.cardCase, s.home, className),
+        className: clsx(s.card, { [s[variant]]: variant }, className),
         to: `${RouteURL.CASE_STUDIES}/${slug}`,
         'aria-label': linkTitle,
         title: linkTitle,
+        disabled: isComingSoon,
       }
 
   return React.createElement(
-    isProduct ? 'div' : Link,
+    isFeatureCard ? 'div' : Link,
     {
       ...rest,
       ...componentProps,
-      disabled: comingSoon,
     },
     <>
-      <span className={s.imgWrapper}>
-        {!isProduct ? (
+      <span className={clsx(s.imgWrapper, { [s[variant]]: variant })}>
+        {!isFeatureCard ? (
           <ImageFormat width={40} height={40} alt={heading} file={postIcon} />
         ) : (
           <Icon name={postIcon} size={20} />
         )}
       </span>
       {createElement(headingAs, { className: clsx('h4', s.heading) }, heading)}
-      <p className={s.text}>{badgeText}</p>
-      {!isProduct && (
+      <p>{badgeText}</p>
+      {!isFeatureCard && (
         <div className={s.buttonWrapper}>
           <Button
             variant="primary"
-            className={s.arrowLink}
+            className={clsx(s.arrowLink, { [s[variant]]: variant })}
             aria-label={linkTitle}
           >
             <Icon name="icon-arrow-link" size={20} className={s.arrowIcon} />
           </Button>
-          {comingSoon && <Badge>Coming Soon</Badge>}
+          {isComingSoon && (
+            <Badge bg={clsx({ [`primary-gray`]: variant === 'white' })}>
+              Coming Soon
+            </Badge>
+          )}
         </div>
       )}
     </>
@@ -95,9 +95,10 @@ CardCase.defaultProps = {
   badgeText: undefined,
   postIcon: undefined,
   slug: undefined,
-  isProduct: false,
+  isFeatureCard: false,
   isPlaceholder: false,
   headingAs: 'h2',
+  variant: undefined,
 }
 
 CardCase.propTypes = {
@@ -106,9 +107,10 @@ CardCase.propTypes = {
   badgeText: PropTypes.string,
   postIcon: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   slug: PropTypes.string,
-  isProduct: PropTypes.bool,
+  isFeatureCard: PropTypes.bool,
   isPlaceholder: PropTypes.bool,
   headingAs: PropTypes.string,
+  variant: PropTypes.oneOf(['white']),
 }
 
 export default CardCase

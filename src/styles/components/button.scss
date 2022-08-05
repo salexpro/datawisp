@@ -57,7 +57,7 @@ button {
       background-position: 100% 0;
     }
 
-    &::after {
+    &::before {
       @extend %pseudo;
 
       background-color: rgba($black, 0.2);
@@ -65,7 +65,7 @@ button {
       transition: opacity 0.25s ease-in-out;
     }
 
-    &:active::after {
+    &:active::before {
       opacity: 1;
     }
   }

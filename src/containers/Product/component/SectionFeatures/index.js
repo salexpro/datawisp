@@ -26,7 +26,7 @@ const SectionFeatures = (props) => {
             postIcon={item.iconName}
             heading={item.heading}
             badgeText={item.text}
-            isProduct
+            isFeatureCard
           />
         ))}
       </div>
