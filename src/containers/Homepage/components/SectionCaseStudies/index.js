@@ -7,8 +7,8 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { StructuredText } from 'react-datocms'
 
 import CardCase from '~components/CardCase'
+import ComingSoonCase from '~components/ComingSoonCase'
 
-import ComingSoonCase from './components/ComingSoonCase'
 import * as s from './SectionCaseStudies.module.scss'
 
 const SectionCaseStudies = (props) => {

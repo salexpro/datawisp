@@ -14,11 +14,16 @@ const Article = (props) => {
   const { dataCms, pageContext, data, ...rest } = props
 
   const { postType, originalId } = pageContext
-  const { datoCmsArticle } = data
+  const {
+    datoCmsArticle,
+    datoCmsCaseStudiesPage: { disableCaseStudiesPage },
+    datoCmsBlogPage: { disableBlogPage },
+  } = data
 
   const isCaseStudy = postType === 'caseStudy'
+  const isDisabled = isCaseStudy ? disableCaseStudiesPage : disableBlogPage
 
-  const topLevelPage = TOP_LEVEL_PAGE[+isCaseStudy]
+  const topLevelPage = TOP_LEVEL_PAGE[(+isCaseStudy + 1) * +!isDisabled]
 
   // eslint-disable-next-line no-unused-vars
   const [relatedCases, setRelatedCases] = useState()

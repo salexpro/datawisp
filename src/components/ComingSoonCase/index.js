@@ -6,20 +6,25 @@ import clsx from 'clsx'
 import * as s from './ComingSoonCase.module.scss'
 
 const ComingSoonCase = (props) => {
-  const { className, ...rest } = props
+  const { isRelated, className, ...rest } = props
 
   return (
-    <div {...rest} className={clsx(s.comingSoonCase, className)}>
-      <Badge bg="disabled">Coming Soon</Badge>
+    <div
+      {...rest}
+      className={clsx(s.comingSoonCase, { [s.related]: isRelated }, className)}
+    >
+      <Badge bg={isRelated ? 'disabled2' : 'disabled'}>Coming Soon</Badge>
     </div>
   )
 }
 
 ComingSoonCase.defaultProps = {
+  isRelated: false,
   className: '',
 }
 
 ComingSoonCase.propTypes = {
+  isRelated: PropTypes.bool,
   className: PropTypes.string,
 }
 

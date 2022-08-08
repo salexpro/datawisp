@@ -87,5 +87,11 @@ export const pageQuery = graphql`
     datoCmsArticle(id: { eq: $id }) {
       ...ArticleData
     }
+    datoCmsCaseStudiesPage {
+      disableCaseStudiesPage
+    }
+    datoCmsBlogPage {
+      disableBlogPage
+    }
   }
 `

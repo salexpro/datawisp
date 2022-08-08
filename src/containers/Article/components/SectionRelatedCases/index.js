@@ -6,6 +6,7 @@ import { Link } from 'gatsby'
 import { range } from 'lodash'
 
 import CardCase from '~components/CardCase'
+import ComingSoonCase from '~components/ComingSoonCase'
 import RouteURL from '~routes'
 
 import * as s from './SectionRelatedCases.module.scss'
@@ -26,7 +27,7 @@ const SectionRelatedCases = (props) => {
           </div>
         ) : (
           <div className={s.gridCases}>
-            {relatedCases
+            {relatedCases?.length > 0
               ? relatedCases?.map(({ id, ...caseStudyProps }) => (
                   <CardCase
                     {...caseStudyProps}
@@ -35,9 +36,13 @@ const SectionRelatedCases = (props) => {
                     className={s.cardCase}
                   />
                 ))
-              : range(5).map((n) => (
-                  <CardCase key={n} isPlaceholder className={s.cardCase} />
-                ))}
+              : range(3).map((n) =>
+                  relatedCases ? (
+                    <ComingSoonCase key={n} isRelated />
+                  ) : (
+                    <CardCase key={n} isPlaceholder className={s.cardCase} />
+                  )
+                )}
           </div>
         )}
       </Container>

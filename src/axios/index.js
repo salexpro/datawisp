@@ -30,6 +30,7 @@ export const getRelatedCases = (originalId) => {
             filter: {
               id: { neq: $originalId }
               postType: { eq: "caseStudy" }
+              comingSoon: { eq: false }
               _publishedAt: { lte: $publishedBefore }
             }
             first: 6
@@ -76,6 +77,7 @@ export const getRelatedArticles = (originalId) => {
             filter: {
               id: { neq: $originalId }
               postType: { eq: "blogpost" }
+              comingSoon: { eq: false }
               _publishedAt: { lte: $publishedBefore }
             }
             first: 3

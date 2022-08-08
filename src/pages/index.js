@@ -34,11 +34,12 @@ const IndexPage = ({ data }) => {
     roadmapPhases,
     caseStudiesSectionHeading,
     caseStudiesSectionText,
-    caseStudiesButtonHide,
     cases,
     caseStudiesButtonText,
     caseStudiesButtonLink,
   } = data.datoCmsHomePage
+
+  const caseStudiesPage = data.datoCmsCaseStudiesPage
 
   return (
     <Homepage
@@ -83,7 +84,7 @@ const IndexPage = ({ data }) => {
         cases,
         buttonText: caseStudiesButtonText,
         buttonLink: caseStudiesButtonLink.url,
-        buttonHide: caseStudiesButtonHide,
+        buttonHide: caseStudiesPage.disableCaseStudiesPage,
       }}
       roadmap={{
         heading: roadmapSectionHeading,
@@ -213,7 +214,6 @@ export const query = graphql`
       caseStudiesButtonLink {
         url
       }
-      caseStudiesButtonHide
 
       roadmapSectionHeading
       roadmapPhases {
@@ -227,6 +227,9 @@ export const query = graphql`
           value
         }
       }
+    }
+    datoCmsCaseStudiesPage {
+      disableCaseStudiesPage
     }
   }
 `
