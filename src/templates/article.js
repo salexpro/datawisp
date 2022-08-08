@@ -43,6 +43,7 @@ export const pageQuery = graphql`
       slug
     }
     heading
+    detailedHeading
     author {
       name
     }

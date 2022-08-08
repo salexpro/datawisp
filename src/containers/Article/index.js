@@ -5,8 +5,8 @@ import Layout from '~components/Layout'
 import S from '~components/seo'
 import StructuredContent from '~components/StructuredContent'
 
-import SectionRelatedArticles from './components/SectionRelatedArticles'
-import SectionRelatedCases from './components/SectionRelatedCases'
+// import SectionRelatedArticles from './components/SectionRelatedArticles'
+// import SectionRelatedCases from './components/SectionRelatedCases'
 import { TOP_LEVEL_PAGE } from './constants'
 
 const Article = (props) => {
@@ -25,10 +25,11 @@ const Article = (props) => {
 
   const topLevelPage = TOP_LEVEL_PAGE[(+isCaseStudy + 1) * +!isDisabled]
 
-  // eslint-disable-next-line no-unused-vars
+  /* eslint-disable no-unused-vars */
   const [relatedCases, setRelatedCases] = useState()
   const [relatedArticles, setRelatedArticles] = useState()
   const [requestError, setRequestError] = useState()
+  /* eslint-enable no-unused-vars */
 
   useEffect(() => {
     import(/* webpackChunkName: "axios-requests" */ './utils').then(
@@ -50,17 +51,17 @@ const Article = (props) => {
         articleData={datoCmsArticle}
         topLevelPage={topLevelPage}
       />
-      {isCaseStudy ? (
-        <SectionRelatedCases
-          relatedCases={relatedCases}
-          requestError={requestError}
-        />
-      ) : (
-        <SectionRelatedArticles
-          relatedArticles={relatedArticles}
-          requestError={requestError}
-        />
-      )}
+      {/* {isCaseStudy ? ( */}
+      {/*  <SectionRelatedCases */}
+      {/*    relatedCases={relatedCases} */}
+      {/*    requestError={requestError} */}
+      {/*  /> */}
+      {/* ) : ( */}
+      {/*  <SectionRelatedArticles */}
+      {/*    relatedArticles={relatedArticles} */}
+      {/*    requestError={requestError} */}
+      {/*  /> */}
+      {/* )} */}
     </Layout>
   )
 }

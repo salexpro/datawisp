@@ -18,6 +18,7 @@ const StructuredContent = (props) => {
 
   const {
     heading,
+    detailedHeading,
     badgeText,
     heroImage,
     content,
@@ -73,7 +74,7 @@ const StructuredContent = (props) => {
             )
           )}
         </div>
-        <h1>{heading}</h1>
+        <h1>{detailedHeading || heading}</h1>
         <StructuredText data={content} renderBlock={renderBlock} />
       </section>
     </Container>
