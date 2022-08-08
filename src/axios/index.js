@@ -37,10 +37,12 @@ export const getRelatedCases = (originalId) => {
           ) {
             id
             heading
-            badgeText
             postIcon {
               format
               url
+            }
+            seo {
+              description
             }
             slug
           }

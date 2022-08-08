@@ -47,7 +47,6 @@ export const query = graphql`
       nodes {
         id
         heading
-        badgeText
         postIcon {
           format
           url
@@ -57,6 +56,9 @@ export const query = graphql`
             placeholder: NONE
             imgixParams: { fit: "crop", auto: "compress,format" }
           )
+        }
+        seo {
+          description
         }
         slug
       }

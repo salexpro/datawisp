@@ -15,7 +15,7 @@ const CardCase = (props) => {
     className,
     heading,
     headingAs,
-    badgeText,
+    seo,
     postIcon,
     slug,
     comingSoon: isComingSoon,
@@ -53,6 +53,8 @@ const CardCase = (props) => {
         disabled: isComingSoon,
       }
 
+  const { description } = seo || {}
+
   return React.createElement(
     isFeatureCard ? 'div' : Link,
     {
@@ -68,7 +70,7 @@ const CardCase = (props) => {
         )}
       </span>
       {createElement(headingAs, { className: clsx('h4', s.heading) }, heading)}
-      <p>{badgeText}</p>
+      <p>{description}</p>
       {!isFeatureCard && (
         <div className={s.buttonWrapper}>
           <Button

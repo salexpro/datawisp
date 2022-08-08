@@ -25,7 +25,7 @@ const SectionFeatures = (props) => {
             key={item.id}
             postIcon={item.iconName}
             heading={item.heading}
-            badgeText={item.text}
+            seo={{ description: item.text }}
             isFeatureCard
           />
         ))}
