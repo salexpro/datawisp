@@ -1,3 +1,5 @@
+@import '~styles/mixins';
+
 html,
 body {
   -webkit-overflow-scrolling: touch;
@@ -41,6 +43,14 @@ body {
 
 a {
   transition: color 200ms;
+}
+
+p > a {
+  color: $primary;
+
+  &:hover {
+    color: darken($primary, 10);
+  }
 }
 
 .js-off-canvas-overlay {
