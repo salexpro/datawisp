@@ -21,7 +21,7 @@ const SectionHero = (props) => {
       className={clsx(s.sectionHero, className)}
     >
       <div className={s.colLeft}>
-        <h1>{heading}</h1>
+        <h1 className={s.heading}>{heading}</h1>
         <StructuredText data={text.value} />
         <Button variant="primary" as="a" href={url} {...linkProps}>
           {buttonText}

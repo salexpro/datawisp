@@ -21,6 +21,10 @@
   }
 }
 
+.heading {
+  text-align: center;
+}
+
 .colLeft {
   @include b-d(lg) {
     display: grid;
