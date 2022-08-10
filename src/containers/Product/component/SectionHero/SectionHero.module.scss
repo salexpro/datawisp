@@ -22,7 +22,9 @@
 }
 
 .heading {
-  text-align: center;
+  @include b-d(lg) {
+    text-align: center;
+  }
 }
 
 .colLeft {
