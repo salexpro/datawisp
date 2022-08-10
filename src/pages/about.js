@@ -5,6 +5,8 @@ import { graphql } from 'gatsby'
 const AboutPage = ({ data }) => {
   const {
     heroSectionHeading,
+    heroButtonText,
+    heroButtonLink,
     missionSectionHeading,
     missionSectionText,
     missionImageDesktop,
@@ -20,7 +22,11 @@ const AboutPage = ({ data }) => {
 
   return (
     <About
-      heroSectionHeading={heroSectionHeading}
+      hero={{
+        heading: heroSectionHeading,
+        buttonText: heroButtonText,
+        buttonLink: heroButtonLink,
+      }}
       mission={{
         heading: missionSectionHeading,
         text: missionSectionText,
@@ -48,6 +54,8 @@ export const query = graphql`
       heroSectionHeading {
         value
       }
+      heroButtonText
+      heroButtonLink
 
       missionSectionHeading
       missionSectionText {

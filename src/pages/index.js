@@ -31,6 +31,7 @@ const IndexPage = ({ data }) => {
     featuresButtonHide,
     featuresList,
     roadmapSectionHeading,
+    roadmapSectionText,
     roadmapPhases,
     caseStudiesSectionHeading,
     caseStudiesSectionText,
@@ -88,6 +89,7 @@ const IndexPage = ({ data }) => {
       }}
       roadmap={{
         heading: roadmapSectionHeading,
+        text: roadmapSectionText,
         phases: roadmapPhases,
       }}
     />
@@ -218,6 +220,9 @@ export const query = graphql`
       }
 
       roadmapSectionHeading
+      roadmapSectionText {
+        value
+      }
       roadmapPhases {
         id
         variant

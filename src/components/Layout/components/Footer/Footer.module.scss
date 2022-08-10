@@ -42,13 +42,13 @@
   grid-auto-flow: column;
   align-items: center;
   justify-content: space-between;
-  padding-top: 25px;
+  padding-top: 24px;
 
   @include b-d(md) {
     grid-auto-flow: row;
     gap: 32px;
     justify-content: center;
-    padding-top: 33px;
+    padding-top: 32px;
   }
 
   &::before {
@@ -85,12 +85,10 @@
 }
 
 .copyWrapper {
-  display: grid;
-  row-gap: 2px;
   font-size: 12px;
   font-weight: $font-weight-normal;
   line-height: 1.333;
-  color: #717171;
+  color: #969696;
   letter-spacing: -0.01em;
 
   @include b-d(md) {

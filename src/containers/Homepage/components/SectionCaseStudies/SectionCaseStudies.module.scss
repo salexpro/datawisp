@@ -27,6 +27,7 @@
 
 .text {
   grid-area: paragraph;
+  max-width: 700px;
 
   @include b-d(lg) {
     max-width: 380px;

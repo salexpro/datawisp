@@ -2,12 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import clsx from 'clsx'
 import { StructuredText } from 'react-datocms'
-import { Container } from 'react-bootstrap'
+import { Button, Container } from 'react-bootstrap'
 
 import * as s from './SectionHero.module.scss'
 
 const SectionHero = (props) => {
-  const { heading, className, ...rest } = props
+  const { heading, buttonText, buttonLink, className, ...rest } = props
 
   return (
     <Container
@@ -16,6 +16,9 @@ const SectionHero = (props) => {
       className={clsx(s.sectionHero, className)}
     >
       <StructuredText data={heading.value} />
+      <Button variant="primary" as="a" href={buttonLink} className={s.button}>
+        {buttonText}
+      </Button>
     </Container>
   )
 }

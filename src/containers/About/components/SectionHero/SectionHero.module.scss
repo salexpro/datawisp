@@ -2,11 +2,15 @@
 
 .sectionHero {
   padding-top: 96px;
-  padding-bottom: 96px;
+  padding-bottom: 48px;
+
+  @include b-d(lg) {
+    padding-top: 68px;
+    padding-bottom: 26px;
+  }
 
   @include b-d(md) {
-    padding-top: 68px;
-    padding-bottom: 68px;
+    padding-bottom: 20px;
   }
 
   h1 {
@@ -22,5 +26,13 @@
     color: transparent;
     background: $primary-gradient;
     background-clip: text;
+  }
+}
+
+.button {
+  margin-top: 48px;
+
+  @include b-d(lg) {
+    margin-top: 24px;
   }
 }

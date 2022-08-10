@@ -21,11 +21,15 @@
   }
 
   p {
-    max-width: 374px;
+    max-width: 600px;
     margin-top: 12px;
     font-size: 15px;
     line-height: 1.47;
     text-align: center;
+
+    @include b-d(lg) {
+      max-width: 375px;
+    }
 
     @include b-d(md) {
       max-width: 211px;

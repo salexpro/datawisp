@@ -4,13 +4,17 @@
   display: grid;
   margin-top: 100px;
 
-  @include b-up(lg) {
+  @include b-up(md) {
     justify-items: center;
   }
 
   > p {
-    max-width: 480px;
+    max-width: 700px;
     margin-top: 12px;
+
+    @include b-up(md) {
+      text-align: center;
+    }
   }
 }
 

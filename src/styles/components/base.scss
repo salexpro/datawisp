@@ -46,10 +46,15 @@ a {
 }
 
 p > a {
-  color: $primary;
+  font-weight: $font-weight-semi-bold;
+  color: transparent;
+  background: $primary-gradient;
+  background-clip: text;
 
   &:hover {
-    color: darken($primary, 10);
+    color: transparent;
+    background: $primary-gradient;
+    background-clip: text;
   }
 }
 

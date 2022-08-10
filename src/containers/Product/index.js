@@ -3,10 +3,10 @@ import PropTypes from 'prop-types'
 
 import Layout from '~components/Layout'
 import S from '~components/seo'
+import SectionBanner from '~components/SectionBanner'
 
 import SectionHero from './component/SectionHero'
 import SectionIntegrations from './component/SectionIntegrations'
-import SectionBanner from './component/SectionBanner'
 import SectionFeatures from './component/SectionFeatures'
 
 const Product = (props) => {

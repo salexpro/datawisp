@@ -36,6 +36,10 @@ $img-hero-height: 432px;
   display: grid;
   row-gap: 20px;
 
+  @include b-btw(md, xl) {
+    align-self: end;
+  }
+
   @include b-d(md) {
     row-gap: 12px;
   }

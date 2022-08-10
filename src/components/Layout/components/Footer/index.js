@@ -82,20 +82,9 @@ const Footer = ({ siteTitle }) => {
           </Button>
         </div>
         <div className={s.footerBottom}>
-          <div className={s.copyWrapper}>
-            <span>Copyright {currentYear} Datawisp, Inc.</span>
-            <span className={s.textDeveloper}>
-              Design and Development by{' '}
-              <a
-                href="https://min.studio/"
-                target="_blank"
-                rel="nofollow noopener noreferrer"
-                title="Minimal Studio"
-              >
-                Min.studio
-              </a>
-            </span>
-          </div>
+          <span className={s.copyWrapper}>
+            Copyright {currentYear} Datawisp, Inc.
+          </span>
           <FooterSocialMedia
             socialLinks={socialLinks}
             className={s.footerSocial}
