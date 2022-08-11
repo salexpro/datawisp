@@ -94,7 +94,6 @@ const CardCase = (props) => {
 CardCase.defaultProps = {
   className: undefined,
   heading: undefined,
-  badgeText: undefined,
   postIcon: undefined,
   slug: undefined,
   isFeatureCard: false,
@@ -106,7 +105,6 @@ CardCase.defaultProps = {
 CardCase.propTypes = {
   className: PropTypes.string,
   heading: PropTypes.string,
-  badgeText: PropTypes.string,
   postIcon: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   slug: PropTypes.string,
   isFeatureCard: PropTypes.bool,

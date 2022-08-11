@@ -36,7 +36,7 @@ SectionRoadmap.defaultProps = {
 
 SectionRoadmap.propTypes = {
   heading: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
+  text: PropTypes.object.isRequired,
   phases: PropTypes.arrayOf(
     PropTypes.shape({
       variant: PropTypes.oneOf(['gray', 'purple', 'pink']),

@@ -11,6 +11,7 @@ import SectionFeatures from './component/SectionFeatures'
 
 const Product = (props) => {
   const { hero, features, integrations, banner, className, ...rest } = props
+  const { hide: bannerHide, ...bannerProps } = banner
 
   return (
     <Layout {...rest} className={className}>
@@ -18,7 +19,7 @@ const Product = (props) => {
       <SectionHero {...hero} />
       <SectionFeatures {...features} />
       <SectionIntegrations {...integrations} />
-      {!banner?.hide && <SectionBanner {...banner} />}
+      {!bannerHide && <SectionBanner {...bannerProps} />}
     </Layout>
   )
 }

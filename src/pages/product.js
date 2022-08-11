@@ -47,7 +47,7 @@ const ProductPage = ({ data }) => {
         heading: bannerSectionHeading,
         text: bannerSectionText,
         buttonText: bannerSectionButtonText,
-        buttonLink: bannerSectionButtonLink.url,
+        buttonLink: bannerSectionButtonLink,
         image: bannerSectionImage,
         hide: bannerHide,
       }}
@@ -123,17 +123,6 @@ export const query = graphql`
       bannerSectionButtonText
       bannerSectionButtonLink {
         url
-      }
-      bannerSectionImage {
-        format
-        url
-        gatsbyImageData(
-          width: 660
-          placeholder: NONE
-          sizes: "(max-width: 767.98px) min(calc(100vw - 24px * 2), 660px), (max-width: 1023.98px) 464px, 660px"
-          breakpoints: [330, 464, 660, 990, 1320]
-          imgixParams: { fit: "crop", auto: "compress,format" }
-        )
       }
       bannerHide
     }
