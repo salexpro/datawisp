@@ -11,7 +11,7 @@
     }
   ],
   "dependencies": {
-    "@fontsource/inter": "4.5.11",
+    "@fontsource/inter": "4.5.12",
     "@gvrs/gatsby-transformer-blurhash": "1.0.4",
     "@percy/cli": "1.8.0",
     "@svgr/webpack": "6.3.1",
