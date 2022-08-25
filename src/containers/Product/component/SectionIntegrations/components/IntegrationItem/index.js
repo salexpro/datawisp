@@ -4,17 +4,19 @@ import clsx from 'clsx'
 import { Badge } from 'react-bootstrap'
 import { StructuredText } from 'react-datocms'
 
-import ImageFormat from '~components/ImageFormat'
+import Icon from '~components/Icon'
 
 import * as s from './IntegrationItem.module.scss'
 
 const IntegrationItem = (props) => {
-  const { heading, text, image, supports, className, ...rest } = props
+  const { heading, iconName, text, image, supports, className, ...rest } = props
 
   return (
     <div {...rest} className={clsx(s.integrationItem, className)}>
-      <ImageFormat file={image} alt={heading} className={s.img} />
-      <h3 className={s.heading}>{heading}</h3>
+      <span className={s.iconWrapper}>
+        <Icon name={iconName} size={20} />
+      </span>
+      <h4 className={s.heading}>{heading}</h4>
       <StructuredText data={text.value} />
       <h4 className={s.supportedHeading}>Supported</h4>
       <div className={s.supportedWrapper}>

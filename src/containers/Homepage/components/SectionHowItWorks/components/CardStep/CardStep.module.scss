@@ -1,79 +1,60 @@
 @import '~styles/mixins';
 
 .cardStep {
-  display: grid;
-  row-gap: 28px;
-  padding: 28px 16px 16px;
-  font-size: 16px;
-  font-weight: $font-weight-semi-bold;
-  line-height: 1.25;
-  letter-spacing: $letter-spacing-base;
-  counter-increment: step;
+  padding: 16px;
   background-color: $white;
   border-radius: 16px;
-  box-shadow: 0 26px 54px rgba(34, 18, 34, 5%);
 
-  @include b-btw(lg, xl) {
-    row-gap: 24px;
-    padding: 24px 14px 14px;
-  }
-
-  @include b-btw(md, lg) {
-    row-gap: 14px;
-    padding: 14px 10px 10px;
-    font-size: 11px;
-    border-radius: 8px;
+  @include b-d(lg) {
+    padding: 10px;
+    border-radius: 9px;
   }
 
   @include b-d(md) {
-    row-gap: 10px;
-    padding: 10px 6px 6px;
-    font-size: 8px;
-    border-radius: 6px;
+    padding: 14px;
+    border-radius: 14px;
   }
 }
 
 .text {
-  color: $gray-800;
+  display: block;
+  font-size: 16px;
+  font-weight: $font-weight-semi-bold;
+  line-height: 1.25;
 
-  &::before {
-    display: inline-block;
-    min-width: 56px;
-    margin-right: 16px;
-    color: #acacac;
-    text-align: center;
-    content: counter(step);
-
-    @include b-btw(lg, xl) {
-      min-width: 40px;
-    }
-
-    @include b-btw(md, lg) {
-      min-width: 24px;
-      margin-right: 8px;
-    }
-
-    @include b-d(md) {
-      min-width: 16px;
-      margin-right: 4px;
-    }
-  }
-}
-
-.img {
-  $step-img-width: 352px;
-
-  width: $step-img-width;
-
-  @include b-btw(lg, xl) {
-    width: $step-img-width * 0.8;
-  }
-
-  @include b-btw(md, lg) {
-    width: $step-img-width * 0.56;
+  @include b-d(lg) {
+    font-size: 12px;
   }
 
   @include b-d(md) {
-    width: 100%;
+    font-size: 14px;
+  }
+
+  &::before {
+    color: $primary;
+    content: 'Step ' counter(step) ' ';
+    counter-increment: step;
+  }
+}
+
+.imageWrapper {
+  position: relative;
+  margin-top: 18px;
+  background-color: #f2f2f2;
+  isolation: isolate;
+  border-radius: 12px;
+
+  @include b-d(lg) {
+    margin-top: 12px;
+    border-radius: 10px;
+  }
+
+  &::after {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    content: '';
+    background-image: radial-gradient(#e0e1e5 1px, transparent 0);
+    background-size: 15px 15px;
   }
 }

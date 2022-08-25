@@ -5,15 +5,13 @@ import { Button, Container } from 'react-bootstrap'
 import { Link } from 'gatsby'
 import { StructuredText } from 'react-datocms'
 
-import ImageFormat from '~components/ImageFormat'
-
+import CardStep from './components/CardStep'
 import * as s from './SectionHowItWorks.module.scss'
 
 const SectionHowItWorks = (props) => {
   const {
     heading,
     text,
-    image,
     buttonText,
     buttonLink,
     buttonHide,
@@ -39,10 +37,10 @@ const SectionHowItWorks = (props) => {
             </Button>
           )}
         </div>
-        <div className={s.imgWrapper}>
-          <div className={s.imgInner}>
-            <ImageFormat alt="app" file={image} />
-          </div>
+        <div className={s.stepsWrapper}>
+          {steps.map(({ id, ...step }) => (
+            <CardStep key={id} {...step} />
+          ))}
         </div>
       </Container>
     </section>

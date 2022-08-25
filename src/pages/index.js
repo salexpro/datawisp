@@ -146,16 +146,19 @@ export const query = graphql`
       howItWorksSectionText {
         value
       }
-      howItWorksSectionImage {
-        format
-        url
-        gatsbyImageData(
-          width: 1240
-          placeholder: NONE
-          sizes: "(max-width: 767.98px) 1016px, min(calc(100vw - 40px * 2), 1240px)"
-          breakpoints: [688, 1016, 1376, 1680, 1860, 2032, 2480]
-          imgixParams: { fit: "crop", auto: "compress,format" }
-        )
+      steps {
+        id
+        heading
+        image {
+          format
+          url
+          gatsbyImageData(
+            sizes: "(max-width: 767.98px) calc(100vw - 24px * 2 - 14px * 2), (max-width: 1023.98px) calc((100vw - 188px) / 3), (max-width: 1439.98px) calc((100vw - 288px) / 3), 352px"
+            breakpoints: [200, 352, 528, 654, 700, 1400]
+            placeholder: BLURRED
+            imgixParams: { fit: "crop", auto: "compress,format" }
+          )
+        }
       }
       howItWorksButtonText
       howItWorksButtonLink {

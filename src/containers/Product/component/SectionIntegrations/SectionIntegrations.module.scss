@@ -27,10 +27,16 @@
 .integrationsWrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px 32px;
+  gap: 32px;
   margin-top: 40px;
 
   @include b-d(lg) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  @include b-d(md) {
     grid-template-columns: 1fr;
+    margin-top: 32px;
   }
 }

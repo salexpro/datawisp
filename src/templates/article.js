@@ -80,6 +80,19 @@ export const pageQuery = graphql`
             }
           }
         }
+        ... on DatoCmsArticleTable {
+          id: originalId
+          tableCaption {
+            value
+          }
+          tableRows {
+            cells {
+              cell {
+                value
+              }
+            }
+          }
+        }
       }
     }
   }

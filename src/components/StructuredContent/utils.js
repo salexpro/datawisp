@@ -4,6 +4,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 import Card from './components/Card'
 import CardColumns from './components/CardColumns'
+import ArticleTable from './components/ArticleTable'
 
 export const renderBlock = ({ record }) => {
   switch (record.__typename) {
@@ -20,6 +21,10 @@ export const renderBlock = ({ record }) => {
       return <Card content={record.content} />
     case 'DatoCmsArticleColumnsCard':
       return <CardColumns columns={record.columns} />
+    case 'DatoCmsArticleTable':
+      return (
+        <ArticleTable caption={record.tableCaption} rows={record.tableRows} />
+      )
     default:
       return null
   }

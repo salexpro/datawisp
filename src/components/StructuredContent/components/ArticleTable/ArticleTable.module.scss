@@ -1,0 +1,75 @@
+@import '~styles/mixins';
+
+$scrollbar-bg: #d9d9d9;
+$thumb-bg: #fff;
+
+.tableScroll {
+  width: 100%;
+  margin-top: 32px;
+  overflow: hidden;
+}
+
+.caption {
+  padding: 0 0 16px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: $primary;
+  caption-side: top;
+
+  p {
+    margin: 0 !important;
+  }
+}
+
+.tableWrap {
+  width: 100%;
+  padding-bottom: 16px;
+  overflow: auto;
+  font-size: 14px;
+  font-weight: $font-weight-medium;
+  line-height: 1.285;
+  color: $gray-900;
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    padding: 2px;
+    background-color: $thumb-bg;
+    border: 2px solid $scrollbar-bg;
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $scrollbar-bg;
+    border-radius: 8px;
+  }
+
+  table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: separate;
+    border: 1px solid #e2e2e2;
+    border-radius: 8px;
+  }
+
+  td {
+    min-width: 220px;
+    padding: 8px 8px 12px;
+
+    p {
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  td:not(:last-child) {
+    border-right: 1px solid #e2e2e2;
+  }
+
+  tr:not(:last-child) > td {
+    border-bottom: 1px solid #e2e2e2;
+  }
+}

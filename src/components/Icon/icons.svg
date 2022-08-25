@@ -41,4 +41,14 @@
     <path
       d="M13.333 13.333 10 10l-3.333 3.333" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
   </symbol>
+  <symbol id='icon-database' fill="none" viewBox="0 0 20 20">
+    <path d="m17.48 9.68-.56-4.96a2.5 2.5 0 0 0-2.49-2.22H5.57a2.5 2.5 0 0 0-2.49 2.22l-.56 4.96" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path clip-rule="evenodd" d="M15 12.5H5A2.5 2.5 0 0 0 2.5 15v0A2.5 2.5 0 0 0 5 17.5h10a2.5 2.5 0 0 0 2.5-2.5v0a2.5 2.5 0 0 0-2.5-2.5ZM15 7.5H5A2.5 2.5 0 0 0 2.5 10v0A2.5 2.5 0 0 0 5 12.5h10a2.5 2.5 0 0 0 2.5-2.5v0A2.5 2.5 0 0 0 15 7.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M9.17 10H15M5.03 9.97a.04.04 0 1 1-.06.06.04.04 0 0 1 .06-.06M9.22 15h5.84M5.08 14.97a.04.04 0 1 1-.05.06.04.04 0 0 1 .05-.06" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id='icon-file-excel' fill="none" viewBox="0 0 20 20">
+    <path d="M16.67 6.67h-3.34a.83.83 0 0 1-.83-.84V2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M5 6.67v-2.5c0-.93.74-1.67 1.66-1.67h5.98c.45 0 .87.17 1.18.49l2.36 2.35c.31.32.49.74.49 1.18v9.32c0 .92-.75 1.66-1.67 1.66H6.66c-.92 0-1.66-.74-1.66-1.66V15M7.97 12.3l-2.5-2.93M5.47 12.3l2.5-2.93" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="2.5" y="6.67" width="8.34" height="8.34" rx="3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
 </svg>

@@ -98,6 +98,7 @@ export const query = graphql`
       integrations {
         id
         heading
+        iconName
         text {
           value
         }
