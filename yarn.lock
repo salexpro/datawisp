@@ -12457,15 +12457,16 @@ react-bootstrap@2.5.0:
     uncontrollable "^7.2.1"
     warning "^4.0.3"
 
-react-datocms@3.0.15:
-  version "3.0.15"
-  resolved "https://registry.yarnpkg.com/react-datocms/-/react-datocms-3.0.15.tgz#f08171cd563fa562c41072bad8de5ab86777ecff"
-  integrity sha512-2i/5UGTSdN8dRj91RVpSDF4sR26c4I4HAmzdx6HL/GQXCMNWKLm18rPfFsQ3JfNYWWpOyzKSQzbd53BJYvgNJA==
+react-datocms@3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/react-datocms/-/react-datocms-3.1.0.tgz#2c4d9ff84c653e42ec1e6c639b309d1db667ce99"
+  integrity sha512-a+sAfhsuBTuC0+E2YtJzxOBa7QxXRI+7sdHNJKBKPQIB9DA5Yc/atbspOjZw6DlWnTtEouAE37wHQBJW6616Aw==
   dependencies:
     datocms-listen "^0.1.9"
     datocms-structured-text-generic-html-renderer "^2.0.1"
     datocms-structured-text-utils "^2.0.1"
     react-intersection-observer "^8.33.1"
+    react-string-replace "^1.1.0"
     universal-base64 "^2.1.0"
     use-deep-compare-effect "^1.6.1"
 
@@ -12561,6 +12562,11 @@ react-side-effect@^2.1.0:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/react-side-effect/-/react-side-effect-2.1.1.tgz#66c5701c3e7560ab4822a4ee2742dee215d72eb3"
   integrity sha512-2FoTQzRNTncBVtnzxFOk2mCpcfxQpenBMbk5kSVBg5UcPqV9fRbgY2zhb7GTWWOlpFmAxhClBDlIq8Rsubz1yQ==
+
+react-string-replace@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/react-string-replace/-/react-string-replace-1.1.0.tgz#a3f7b458e697e77d70b0ea663caf38ab38f7cc17"
+  integrity sha512-N6RalSDFGbOHs0IJi1H611WbZsvk3ZT47Jl2JEXFbiS3kTwsdCYij70Keo/tWtLy7sfhDsYm7CwNM/WmjXIaMw==
 
 react-transition-group@^4.4.2:
   version "4.4.2"
