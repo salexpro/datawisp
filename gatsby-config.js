@@ -72,6 +72,20 @@ module.exports = {
         apiToken: process.env.GATSBY_DATOCMS_API_TOKEN,
       },
     },
+    {
+      resolve: 'gatsby-plugin-matomo',
+      options: {
+        siteId: '1',
+        matomoUrl: 'https://datawisp.matomo.cloud',
+        siteUrl: 'https://datawisp.io',
+      },
+    },
+    {
+      resolve: `gatsby-plugin-plausible`,
+      options: {
+        domain: `datawisp.io`,
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
