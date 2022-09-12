@@ -7795,7 +7795,7 @@ gatsby-plugin-image@2.22.0:
     objectFitPolyfill "^2.3.5"
     prop-types "^15.8.1"
 
-gatsby-plugin-matomo@^0.13.0:
+gatsby-plugin-matomo@0.13.0:
   version "0.13.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-matomo/-/gatsby-plugin-matomo-0.13.0.tgz#abf1bd561f3ca35c57b8bbbd5d8e87579ba17886"
   integrity sha512-zwmxcwOoDi3hjNQoUJehoC5XwQKgR+bArAAvArGJWHlJqv7G688tlmKgbIGqEUj3aFSdyWAzAM7QhEt68buMNw==
@@ -7838,7 +7838,7 @@ gatsby-plugin-page-creator@^4.22.0:
     globby "^11.1.0"
     lodash "^4.17.21"
 
-gatsby-plugin-plausible@^0.0.7:
+gatsby-plugin-plausible@0.0.7:
   version "0.0.7"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-plausible/-/gatsby-plugin-plausible-0.0.7.tgz#6f8c922bbc672a73bd8e9a39add61fb62ec96566"
   integrity sha512-pWCXsrWal8lWMmZ1wJ2dolbwZZR1CZU1LVR/K1rYC8NeA+uqTLY8h3uH3hFgP5n8jmRRenOSJ9SjWM9OIdCjOA==
