@@ -82,12 +82,8 @@ $dark: $gray-900 !default;
 $theme-colors: (
   'primary': $primary,
   'secondary': $secondary,
-) !default;
+);
 // scss-docs-end theme-colors-map
-
-// scss-docs-start theme-colors-rgb
-$theme-colors-rgb: map-loop($theme-colors, to-rgb, '$value') !default;
-// scss-docs-end theme-colors-rgb
 
 // The contrast ratio to reach against white, to determine if color changes from "light" to "dark". Acceptable values for WCAG 2.0 are 3, 4.5 and 7.
 // See https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast
@@ -409,49 +405,6 @@ $body-bg: #fdfdfd;
 $body-color: $gray-800;
 $body-text-align: null !default;
 
-// Utilities maps
-//
-// Extends the default `$theme-colors` maps to help create our utilities.
-
-// Come v6, we'll de-dupe these variables. Until then, for backward compatibility, we keep them to reassign.
-// scss-docs-start utilities-colors
-$utilities-colors: $theme-colors-rgb !default;
-// scss-docs-end utilities-colors
-
-// scss-docs-start utilities-text-colors
-$utilities-text: map-merge(
-  $utilities-colors,
-  (
-    'black': to-rgb($black),
-    'white': to-rgb($white),
-    'body': to-rgb($body-color),
-  )
-) !default;
-$utilities-text-colors: map-loop(
-  $utilities-text,
-  rgba-css-var,
-  '$key',
-  'text'
-) !default;
-// scss-docs-end utilities-text-colors
-
-// scss-docs-start utilities-bg-colors
-$utilities-bg: map-merge(
-  $utilities-colors,
-  (
-    'black': to-rgb($black),
-    'white': to-rgb($white),
-    'body': to-rgb($body-bg),
-  )
-) !default;
-$utilities-bg-colors: map-loop(
-  $utilities-bg,
-  rgba-css-var,
-  '$key',
-  'bg'
-) !default;
-// scss-docs-end utilities-bg-colors
-
 // Links
 //
 // Style anchor elements.
@@ -487,8 +440,8 @@ $grid-breakpoints: (
 ) !default;
 // scss-docs-end grid-breakpoints
 
-@include _assert-ascending($grid-breakpoints, '$grid-breakpoints');
-@include _assert-starts-at-zero($grid-breakpoints, '$grid-breakpoints');
+// @include _assert-ascending($grid-breakpoints, '$grid-breakpoints');
+// @include _assert-starts-at-zero($grid-breakpoints, '$grid-breakpoints');
 
 // Grid containers
 //
@@ -504,7 +457,7 @@ $container-max-widths: (
 ) !default;
 // scss-docs-end container-max-widths
 
-@include _assert-ascending($container-max-widths, '$container-max-widths');
+// @include _assert-ascending($container-max-widths, '$container-max-widths');
 
 // Grid columns
 //
@@ -827,8 +780,8 @@ $btn-focus-box-shadow: $input-btn-focus-box-shadow !default;
 $btn-disabled-opacity: 0.65 !default;
 $btn-active-box-shadow: inset 0 3px 5px rgba($black, 0.125) !default;
 
-$btn-link-color: $link-color !default;
-$btn-link-hover-color: $link-hover-color !default;
+$btn-link-color: var(--#{$prefix}link-color);
+$btn-link-hover-color: var(--#{$prefix}link-hover-color);
 $btn-link-disabled-color: $gray-600 !default;
 
 // Allows for customizing button radius independently from global border radius

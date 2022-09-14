@@ -119,6 +119,8 @@ button {
       --bs-btn-focus-shadow-rgb: #{to-rgb(
           mix(color-contrast($primary), $primary, 15%)
         )};
+      --#{$prefix}btn-hover-color: #{$white};
+      --#{$prefix}btn-active-color: #{$white};
 
       color: $white;
       border-color: transparent;
