@@ -20,7 +20,7 @@
     "clsx": "1.2.1",
     "dayjs": "1.11.5",
     "dotenv-flow": "3.2.0",
-    "gatsby": "4.24.1",
+    "gatsby": "4.24.4",
     "gatsby-plugin-image": "2.24.0",
     "gatsby-plugin-matomo": "0.13.0",
     "gatsby-plugin-minify-classnames": "4.1.3",
