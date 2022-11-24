@@ -43,7 +43,7 @@
     "react-helmet": "6.1.0",
     "sass": "1.56.1",
     "svg-parser": "2.0.4",
-    "swiper": "8.4.4"
+    "swiper": "8.4.5"
   },
   "devDependencies": {
     "@commitlint/cli": "17.2.0",
