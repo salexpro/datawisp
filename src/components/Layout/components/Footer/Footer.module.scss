@@ -64,6 +64,36 @@
     content: '';
     background-color: $gray-200;
   }
+
+  &_left {
+    display: grid;
+    grid-auto-flow: column;
+    row-gap: 8px;
+    column-gap: 4px;
+    align-items: center;
+
+    @include b-d(md) {
+      grid-auto-flow: row;
+    }
+  }
+}
+
+.links {
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 4px;
+  align-items: center;
+}
+
+.footerLink {
+  font-size: 12px;
+  line-height: 1.333;
+  color: $gray-800;
+  transition: color 0.15s ease-in-out;
+
+  &:hover {
+    color: $primary;
+  }
 }
 
 .logo {

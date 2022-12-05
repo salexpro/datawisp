@@ -1,13 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import clsx from 'clsx'
-import { Link } from 'gatsby'
 import { StructuredText } from 'react-datocms'
 import { Button, Container } from 'react-bootstrap'
 
 import ImageFormat from '~components/ImageFormat'
 
 import PartnersMarquee from './components/PartnersMaruqee'
+import ModalRequestDemo from '../ModalRequestDemo'
 import * as s from './SectionHero.module.scss'
 
 const SectionHero = (props) => {
@@ -23,6 +23,8 @@ const SectionHero = (props) => {
     ...rest
   } = props
 
+  const [showRequestDemoModal, setShowRequestDemoModal] = useState(false)
+
   return (
     <section {...rest} className={clsx(s.sectionHero, className)}>
       <Container className={clsx(s.container, s.containerMain)}>
@@ -33,10 +35,7 @@ const SectionHero = (props) => {
             {!primaryButton.hide && (
               <Button
                 variant="primary"
-                as="a"
-                href={primaryButton.url}
-                rel={primaryButton.rel}
-                target={primaryButton.target}
+                onClick={() => setShowRequestDemoModal(true)}
               >
                 {primaryButton.text}
               </Button>
@@ -44,8 +43,10 @@ const SectionHero = (props) => {
             {!secondaryButton.hide && (
               <Button
                 variant="outline-secondary"
-                as={Link}
-                to={secondaryButton.url}
+                as="a"
+                href={secondaryButton.url}
+                rel={secondaryButton.rel}
+                target={secondaryButton.target}
               >
                 {secondaryButton.text}
               </Button>
@@ -69,6 +70,11 @@ const SectionHero = (props) => {
           <PartnersMarquee partners={partners} />
         </div>
       )}
+
+      <ModalRequestDemo
+        show={showRequestDemoModal}
+        onHide={setShowRequestDemoModal}
+      />
     </section>
   )
 }

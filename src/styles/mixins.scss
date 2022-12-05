@@ -1,3 +1,4 @@
+@use 'sass:selector';
 @import 'settings';
 @import '~bootstrap/scss/mixins';
 
@@ -55,4 +56,10 @@
 
   // There used to be a CSS rule that could hide scrollbars in Firefox, but it has since been deprecated.
   scrollbar-width: none !important;
+}
+
+@mixin unify-parent($child) {
+  @at-root #{selector.unify(&, $child)} {
+    @content;
+  }
 }

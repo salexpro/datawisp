@@ -25,8 +25,6 @@ CardStep.defaultProps = {
 
 CardStep.propTypes = {
   className: PropTypes.string,
-  stepNumber: PropTypes.number.isRequired,
-  text: PropTypes.string.isRequired,
 }
 
 export default CardStep

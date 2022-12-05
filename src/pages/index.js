@@ -54,8 +54,8 @@ const IndexPage = ({ data }) => {
           hide: heroButtonPrimaryHide,
         },
         secondaryButton: {
+          ...heroButtonSecondaryLink,
           text: heroButtonSecondaryText,
-          url: heroButtonSecondaryLink.url,
           hide: heroButtonSecondaryHide,
         },
         partnersHeading: partnersSectionHeading,
@@ -122,7 +122,7 @@ export const query = graphql`
       heroButtonPrimaryHide
       heroButtonSecondaryText
       heroButtonSecondaryLink {
-        url
+        ...LinkExternalData
       }
       heroButtonSecondaryHide
 

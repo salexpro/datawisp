@@ -1,0 +1,28 @@
+@import '~styles/mixins';
+
+.submitButton {
+  width: 100%;
+  margin-top: 5px;
+}
+
+.text {
+  margin-top: 12px;
+  font-size: 13px;
+  line-height: 1.38;
+  color: $gray-400;
+  text-align: center;
+  letter-spacing: -0.01em;
+
+  a {
+    color: $primary;
+
+    &:hover {
+      color: darken($primary, 10);
+    }
+  }
+
+  @include b-d(md) {
+    display: flex;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,52 @@
+.form {
+  &-group {
+    position: relative;
+    padding-bottom: 15px;
+    margin-top: 5px;
+  }
+
+  &-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 13px;
+    line-height: 1;
+    color: $pink;
+  }
+
+  &-label {
+    line-height: 1.29;
+    letter-spacing: -0.01em;
+  }
+
+  &-control {
+    letter-spacing: -0.02em;
+
+    @include unify-parent('textarea') {
+      min-height: 120px;
+      resize: none;
+    }
+
+    &::placeholder {
+      transition: opacity 150ms;
+    }
+
+    &:focus {
+      &::placeholder {
+        opacity: 0.5;
+      }
+    }
+
+    &:hover:not(:focus) {
+      border-color: $gray-400;
+    }
+
+    &.error {
+      border-color: $pink;
+
+      &:hover {
+        border-color: $pink;
+      }
+    }
+  }
+}

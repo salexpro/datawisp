@@ -45,6 +45,12 @@ const Footer = ({ siteTitle }) => {
             hex
           }
         }
+        termsConditionsLink {
+          ...LinkExternalData
+        }
+        privacyPolicyLink {
+          ...LinkExternalData
+        }
       }
     }
   `)
@@ -56,6 +62,8 @@ const Footer = ({ siteTitle }) => {
     navMenuItems,
     actionButtonLink,
     socialLinks,
+    termsConditionsLink,
+    privacyPolicyLink,
   } = data.datoCmsFooter
 
   return (
@@ -82,9 +90,29 @@ const Footer = ({ siteTitle }) => {
           </Button>
         </div>
         <div className={s.footerBottom}>
-          <span className={s.copyWrapper}>
-            Copyright {currentYear} Datawisp, Inc.
-          </span>
+          <div className={s.footerBottom_left}>
+            <span className={s.copyWrapper}>
+              Copyright {currentYear} Datawisp, Inc.
+            </span>
+            <div className={s.links}>
+              <a
+                href={termsConditionsLink.url}
+                rel={termsConditionsLink.rel}
+                target={termsConditionsLink.target}
+                className={s.footerLink}
+              >
+                {termsConditionsLink.text}.
+              </a>
+              <a
+                href={privacyPolicyLink.url}
+                rel={privacyPolicyLink.rel}
+                target={privacyPolicyLink.target}
+                className={s.footerLink}
+              >
+                {privacyPolicyLink.text}
+              </a>
+            </div>
+          </div>
           <FooterSocialMedia
             socialLinks={socialLinks}
             className={s.footerSocial}
