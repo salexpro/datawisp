@@ -30,7 +30,7 @@
     "gatsby-plugin-sass": "5.24.0",
     "gatsby-plugin-sharp": "4.24.0",
     "gatsby-plugin-svgr-svgo": "2.0.0",
-    "gatsby-source-datocms": "4.0.5",
+    "gatsby-source-datocms": "5.0.0",
     "gatsby-source-filesystem": "4.24.0",
     "gatsby-transformer-sharp": "4.24.0",
     "lodash": "4.17.21",
