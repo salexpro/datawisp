@@ -42,7 +42,7 @@ export const query = graphql`
 
     allDatoCmsArticle(
       filter: { postType: { eq: "caseStudy" } }
-      sort: { fields: meta___publishedAt, order: DESC }
+      sort: { fields: meta___createdAt, order: DESC }
     ) {
       nodes {
         id

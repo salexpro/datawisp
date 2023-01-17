@@ -25,7 +25,10 @@ export const query = graphql`
       defaultCategoryName
     }
 
-    allDatoCmsArticle(filter: { postType: { eq: "blogpost" } }) {
+    allDatoCmsArticle(
+      sort: { fields: meta___createdAt, order: DESC }
+      filter: { postType: { eq: "blogpost" } }
+    ) {
       nodes {
         id
         heroImage {

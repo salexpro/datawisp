@@ -28,11 +28,11 @@ const StructuredContent = (props) => {
     seo,
   } = articleData
 
-  const { publishedAt, updatedAt } = meta
+  const { createdAt, updatedAt } = meta
 
   const { title, description, image, twitterCard } = seo || {}
 
-  const publishedAtDate = dayjs(publishedAt)
+  const createdAtDate = dayjs(createdAt)
 
   const breadcrumbs = [
     topLevelPage,
@@ -43,7 +43,7 @@ const StructuredContent = (props) => {
   ]
 
   const extraMeta = [
-    { name: 'article:published_time', content: publishedAt },
+    { name: 'article:published_time', content: createdAt },
     { name: 'article:modified_time', content: updatedAt },
   ]
 
@@ -61,8 +61,8 @@ const StructuredContent = (props) => {
         <Breadcrumbs className={s.navBlog} breadcrumbs={breadcrumbs} />
         {!!heroImage && <GatsbyImage alt="hero" image={getImage(heroImage)} />}
         <div className={s.rowPostData}>
-          <time className={s.colorPrimary} dateTime={publishedAt}>
-            {publishedAtDate.format('MMMM D, YYYY')}
+          <time className={s.colorPrimary} dateTime={createdAt}>
+            {createdAtDate.format('MMMM D, YYYY')}
           </time>
           {badgeText ? (
             <Badge bg="article">{badgeText}</Badge>

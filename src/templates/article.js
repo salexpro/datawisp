@@ -35,7 +35,7 @@ export const pageQuery = graphql`
       }
     }
     meta {
-      publishedAt
+      createdAt
       updatedAt
     }
     category {

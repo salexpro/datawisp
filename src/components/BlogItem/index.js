@@ -26,10 +26,10 @@ const BlogItem = (props) => {
     ...rest
   } = props
   const { description } = seo || {}
-  const { publishedAt } = meta || {}
+  const { createdAt } = meta || {}
   const { responsiveImage } = heroImage || {}
 
-  const publishedAtDate = dayjs(publishedAt)
+  const createdAtDate = dayjs(createdAt)
 
   const blogpostLink = `${RouteURL.BLOG}/${slug}`
 
@@ -82,8 +82,8 @@ const BlogItem = (props) => {
           />
         )}
       </Link>
-      <time className={s.date} dateTime={publishedAt}>
-        {publishedAtDate.format('MMMM D, YYYY')}
+      <time className={s.date} dateTime={createdAt}>
+        {createdAtDate.format('MMMM D, YYYY')}
       </time>
       <Link to={blogpostLink} className={s.link}>
         {createElement(
