@@ -1,0 +1,39 @@
+@import '~styles/mixins';
+
+.image {
+  clear: both;
+
+  @include b-d(md) {
+    max-width: 100% !important;
+  }
+
+  &.center {
+    text-align: center;
+  }
+
+  &.right {
+    text-align: right;
+  }
+
+  &.wrappingLeft {
+    @include b-up(md) {
+      float: right;
+      margin-right: 20px;
+    }
+  }
+
+  &.wrappingRight {
+    @include b-up(md) {
+      float: left;
+      margin-left: 20px;
+    }
+  }
+
+  &_inner {
+    display: inline-block;
+  }
+}
+
+p:empty {
+  clear: both;
+}
