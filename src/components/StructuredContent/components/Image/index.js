@@ -19,7 +19,10 @@ const Image = (props) => {
       )}
     >
       <div className={s.image_inner} style={{ maxWidth: width || null }}>
-        <GatsbyImage alt={caption} image={getImage(image)} />
+        <GatsbyImage
+          alt={image.alt || image.basename}
+          image={getImage(image)}
+        />
 
         {caption && <figcaption>{caption}</figcaption>}
       </div>

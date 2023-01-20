@@ -10,8 +10,6 @@ export default ArticleTemplate
 export const pageQuery = graphql`
   fragment ArticleImageData on DatoCmsFileField {
     gatsbyImageData(
-      sizes: "(max-width: 767.98px) calc(100vw - 24px * 2), (max-width: 820px) calc(100vw - 40px * 2), 740px"
-      breakpoints: [327, 654, 740, 981, 1110, 1376, 1480]
       placeholder: BLURRED
       forceBlurhash: true
       imgixParams: { fit: "crop", auto: "compress,format" }
@@ -48,6 +46,8 @@ export const pageQuery = graphql`
     }
     badgeText
     heroImage {
+      alt
+      basename
       gatsbyImageData(
         width: 740
         sizes: "(max-width: 767.98px) calc(100vw - 24px * 2), (max-width: 820px) calc(100vw - 40px * 2), 740px"
@@ -67,6 +67,8 @@ export const pageQuery = graphql`
         ... on DatoCmsArticleImage {
           id: originalId
           image {
+            alt
+            basename
             ...ArticleImageData
           }
           imageCaption

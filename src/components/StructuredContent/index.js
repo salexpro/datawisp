@@ -59,7 +59,12 @@ const StructuredContent = (props) => {
       />
       <section className={s.article}>
         <Breadcrumbs className={s.navBlog} breadcrumbs={breadcrumbs} />
-        {!!heroImage && <GatsbyImage alt="hero" image={getImage(heroImage)} />}
+        {!!heroImage && (
+          <GatsbyImage
+            alt={heroImage.alt || heroImage.basename}
+            image={getImage(heroImage)}
+          />
+        )}
         <div className={s.rowPostData}>
           <time className={s.colorPrimary} dateTime={createdAt}>
             {createdAtDate.format('MMMM D, YYYY')}
