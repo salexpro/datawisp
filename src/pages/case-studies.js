@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import CaseStudies from '~containers/CaseStudies'
 
 const CaseStudiesPage = ({ data }) => {
-  const { heroSectionHeading, heroSectionText, heroSectionImage } =
+  const { heroSectionHeading, heroSectionText, heroSectionImage, seo } =
     data.datoCmsCaseStudiesPage
   const cases = data.allDatoCmsArticle
 
@@ -16,6 +16,7 @@ const CaseStudiesPage = ({ data }) => {
         image: heroSectionImage,
       }}
       cases={cases?.nodes}
+      seo={seo}
     />
   )
 }
@@ -23,6 +24,20 @@ const CaseStudiesPage = ({ data }) => {
 export const query = graphql`
   query CasesPage {
     datoCmsCaseStudiesPage {
+      seo {
+        title
+        description
+        twitterCard
+        image {
+          fixed(
+            width: 1200
+            height: 630
+            imgixParams: { fit: "crop", auto: "compress,format" }
+          ) {
+            src
+          }
+        }
+      }
       heroSectionHeading
       heroSectionText {
         value

@@ -2,19 +2,19 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import Layout from '~components/Layout'
-import S from '~components/seo'
 import SectionBanner from '~components/SectionBanner'
+import SeoDatoCms from '~components/SeoDatoCms'
 
 import SectionHero from './components/SectionHero'
 import SectionMission from './components/SectionMission'
 import SectionFounders from './components/SectionFounders'
 
 const About = (props) => {
-  const { hero, mission, founders, banner } = props
+  const { seo, hero, mission, founders, banner } = props
 
   return (
     <Layout {...props}>
-      <S title="About us" />
+      <SeoDatoCms seo={seo} />
       <SectionHero {...hero} />
       <SectionMission {...mission} />
       <SectionFounders {...founders} />

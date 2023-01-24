@@ -18,10 +18,12 @@ const AboutPage = ({ data }) => {
     bannerSectionText,
     bannerSectionButtonText,
     bannerSectionButtonLink,
+    seo,
   } = data.datoCmsAboutPage
 
   return (
     <About
+      seo={seo}
       hero={{
         heading: heroSectionHeading,
         buttonText: heroButtonText,
@@ -51,6 +53,20 @@ const AboutPage = ({ data }) => {
 export const query = graphql`
   query AboutPage {
     datoCmsAboutPage {
+      seo {
+        title
+        description
+        twitterCard
+        image {
+          fixed(
+            width: 1200
+            height: 630
+            imgixParams: { fit: "crop", auto: "compress,format" }
+          ) {
+            src
+          }
+        }
+      }
       heroSectionHeading {
         value
       }

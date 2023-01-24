@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import Blog from '~containers/Blog'
 
 const BlogPage = ({ data }) => {
-  const { blogSectionHeading, defaultCategoryName } = data.datoCmsBlogPage
+  const { blogSectionHeading, defaultCategoryName, seo } = data.datoCmsBlogPage
   const blogs = data.allDatoCmsArticle?.nodes
   const tabs = data.allDatoCmsCategory?.nodes
 
@@ -15,12 +15,28 @@ const BlogPage = ({ data }) => {
       ]
     : tabs
 
-  return <Blog heading={blogSectionHeading} tabs={allTabs} blogs={blogs} />
+  return (
+    <Blog heading={blogSectionHeading} tabs={allTabs} blogs={blogs} seo={seo} />
+  )
 }
 
 export const query = graphql`
   query BlogPage {
     datoCmsBlogPage {
+      seo {
+        title
+        description
+        twitterCard
+        image {
+          fixed(
+            width: 1200
+            height: 630
+            imgixParams: { fit: "crop", auto: "compress,format" }
+          ) {
+            src
+          }
+        }
+      }
       blogSectionHeading
       defaultCategoryName
     }

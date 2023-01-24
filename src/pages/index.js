@@ -38,12 +38,14 @@ const IndexPage = ({ data }) => {
     cases,
     caseStudiesButtonText,
     caseStudiesButtonLink,
+    seo,
   } = data.datoCmsHomePage
 
   const caseStudiesPage = data.datoCmsCaseStudiesPage
 
   return (
     <Homepage
+      seo={seo}
       hero={{
         heading: heroSectionHeading,
         text: heroSectionText,
@@ -99,6 +101,20 @@ const IndexPage = ({ data }) => {
 export const query = graphql`
   query Homepage {
     datoCmsHomePage {
+      seo {
+        title
+        description
+        twitterCard
+        image {
+          fixed(
+            width: 1200
+            height: 630
+            imgixParams: { fit: "crop", auto: "compress,format" }
+          ) {
+            src
+          }
+        }
+      }
       heroSectionHeading
       heroSectionText {
         value

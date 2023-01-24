@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 
 import Layout from '~components/Layout'
-import S from '~components/seo'
 import StructuredContent from '~components/StructuredContent'
 
 // import SectionRelatedArticles from './components/SectionRelatedArticles'
@@ -46,7 +45,6 @@ const Article = (props) => {
 
   return (
     <Layout {...rest}>
-      <S title="Article" />
       <StructuredContent
         articleData={datoCmsArticle}
         topLevelPage={topLevelPage}

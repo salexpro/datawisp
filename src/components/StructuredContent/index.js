@@ -5,7 +5,7 @@ import { Container, Badge } from 'react-bootstrap'
 import { StructuredText } from 'react-datocms'
 import dayjs from 'dayjs'
 
-import SEO from '~components/seo'
+import SeoDatoCms from '~components/SeoDatoCms'
 
 import Breadcrumbs from './components/Breadcrumbs'
 import { renderBlock } from './utils'
@@ -28,9 +28,7 @@ const StructuredContent = (props) => {
     seo,
   } = articleData
 
-  const { createdAt, updatedAt } = meta
-
-  const { title, description, image, twitterCard } = seo || {}
+  const { createdAt } = meta
 
   const createdAtDate = dayjs(createdAt)
 
@@ -42,21 +40,9 @@ const StructuredContent = (props) => {
     { text: heading, isActive: true },
   ]
 
-  const extraMeta = [
-    { name: 'article:published_time', content: createdAt },
-    { name: 'article:modified_time', content: updatedAt },
-  ]
-
   return (
     <Container {...rest}>
-      <SEO
-        title={title || heading}
-        description={description}
-        image={image?.fixed?.src || heroImage?.fixed?.src}
-        twitterCard={twitterCard}
-        meta={extraMeta}
-        ogType="article"
-      />
+      <SeoDatoCms seo={seo} meta={meta} isArticle />
       <section className={s.article}>
         <Breadcrumbs className={s.navBlog} breadcrumbs={breadcrumbs} />
         {!!heroImage && (
