@@ -104,6 +104,10 @@ export const pageQuery = graphql`
             }
           }
         }
+        ... on DatoCmsArticleHtmlEmbed {
+          id: originalId
+          htmlEmbed
+        }
       }
     }
   }

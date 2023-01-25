@@ -25,6 +25,8 @@ export const renderBlock = ({ record }) => {
       return (
         <ArticleTable caption={record.tableCaption} rows={record.tableRows} />
       )
+    case 'DatoCmsArticleHtmlEmbed':
+      return <div dangerouslySetInnerHTML={{ __html: record.htmlEmbed }} />
     default:
       return null
   }
