@@ -23,6 +23,7 @@ module.exports = {
       // Vercel
       process.env.GATSBY_VERCEL_URL ||
       'datawisp.min.studio',
+    siteUrl: `https://datawisp.io`,
   },
   plugins: [
     // https://www.gatsbyjs.com/plugins/gatsby-plugin-webpack-bundle-analyser-v2/
@@ -86,6 +87,15 @@ module.exports = {
         domain: `datawisp.io`,
       },
     },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://datawisp.io',
+        sitemap: 'https://datawisp.io/sitemap/sitemap-index.xml',
+        policy: [{ userAgent: '*', allow: '/' }],
+      },
+    },
+    `gatsby-plugin-sitemap`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
