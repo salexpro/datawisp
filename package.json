@@ -16,7 +16,7 @@
     "@gvrs/gatsby-transformer-blurhash": "1.0.4",
     "@percy/cli": "1.17.0",
     "@svgr/webpack": "6.5.1",
-    "axios": "1.2.4",
+    "axios": "1.2.5",
     "bootstrap": "5.2.3",
     "clsx": "1.2.1",
     "dayjs": "1.11.7",
