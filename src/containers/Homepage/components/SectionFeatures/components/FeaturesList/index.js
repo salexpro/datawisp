@@ -5,7 +5,8 @@ import { StructuredText } from 'react-datocms'
 import PropTypes from 'prop-types'
 import clsx from 'clsx'
 
-import ListItem from './components/ListItem'
+import CardFeature from './components/CardFeature'
+
 import * as s from './FeaturesList.module.scss'
 
 const FeaturesList = (props) => {
@@ -33,9 +34,9 @@ const FeaturesList = (props) => {
       <div className={s.text}>
         <StructuredText data={text.value} />
       </div>
-      <div className={s.listWrapper}>
+      <div className={s.gridFeatures}>
         {featuresList?.map(({ id, ...item }) => (
-          <ListItem key={id} {...item} />
+          <CardFeature key={id} {...item} />
         ))}
       </div>
       {!buttonHide && (

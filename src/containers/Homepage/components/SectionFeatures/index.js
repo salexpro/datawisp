@@ -3,9 +3,8 @@ import { Container } from 'react-bootstrap'
 import PropTypes from 'prop-types'
 import clsx from 'clsx'
 
-import ImageFormat from '~components/ImageFormat'
-
 import FeaturesList from './components/FeaturesList'
+
 import * as s from './SectionFeatures.module.scss'
 
 const SectionFeatures = (props) => {
@@ -19,7 +18,6 @@ const SectionFeatures = (props) => {
       className={clsx(s.sectionFeatures, className)}
     >
       <FeaturesList {...list} />
-      <ImageFormat alt="features image" file={image} className={s.img} />
     </Container>
   )
 }

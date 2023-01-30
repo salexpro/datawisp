@@ -1,0 +1,29 @@
+@import '~styles/mixins';
+
+.cardFeature {
+  display: grid;
+  row-gap: 16px;
+  align-content: start;
+  padding: 24px;
+  font-size: 15px;
+  line-height: calc(22 / 15);
+  letter-spacing: -0.01em;
+  background-color: $white;
+  border-radius: 16px;
+  box-shadow: 0 6px 44px rgba(0, 0, 0, 10%);
+}
+
+.gridHeading {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  column-gap: 12px;
+  align-items: center;
+}
+
+.icon {
+  color: $pink;
+}
+
+.img {
+  border-radius: 8px;
+}

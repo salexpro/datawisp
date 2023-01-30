@@ -186,16 +186,6 @@ export const query = graphql`
       featuresSectionText {
         value
       }
-      featuresSectionImage {
-        format
-        url
-        gatsbyImageData(
-          width: 940
-          sizes: "(max-width: 767.98px) calc(100vw - 24px * 2), (max-width: 1023.98px) calc(100vw - 40px * 2), 620px"
-          breakpoints: [327, 620, 654, 930, 981, 1240, 1376, 1880]
-          imgixParams: { fit: "crop", auto: "compress,format" }
-        )
-      }
       featuresButtonText
       featuresButtonLink {
         url
@@ -208,6 +198,17 @@ export const query = graphql`
           value
         }
         iconName
+        image {
+          format
+          url
+          gatsbyImageData(
+            width: 691
+            placeholder: NONE
+            sizes: "(max-width: 767.98px) calc(100vw - 24px * 2 - 24px * 2), (max-width: 1023.98px) calc((100vw - 40px * 2 - 16px - 24px * 2 * 2) / 2), (max-width: 1199.98px) calc((100vw - 40px * 2 - 16px * 2 - 24px * 2 * 3) / 3), (max-width: 1320px) calc((100vw - 40px * 2 - 32px * 2 - 24px * 2 * 3) / 3), 344px"
+            breakpoints: [299, 344, 448, 516, 598, 688, 897, 1056, 1382]
+            imgixParams: { fit: "crop", auto: "compress,format" }
+          )
+        }
       }
 
       caseStudiesSectionHeading
