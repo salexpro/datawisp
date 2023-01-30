@@ -10,11 +10,11 @@
 
 .foundersWrapper {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   margin-top: 24px;
 
-  @include b-btw(md, lg) {
-    margin-top: 46px;
+  @include b-btw(md, xl) {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   @include b-d(md) {
@@ -23,49 +23,72 @@
 }
 
 .cardWrapper {
-  @include b-d(md) {
-    padding: 10px 0;
-    border-bottom: 1px solid #ececec;
-  }
+  padding: 10px;
+  border-bottom: 1px solid #ececec;
 
-  &:nth-child(1) {
-    @include b-up(md) {
-      padding-right: 10px;
-      padding-bottom: 10px;
-      border-right: 1px solid #ececec;
-      border-bottom: 1px solid #ececec;
-    }
+  @include b-up(lg) {
+    border-right: 1px solid #ececec;
 
-    @include b-d(md) {
+    // First row
+    &:nth-child(-n + 4) {
       padding-top: 0;
     }
-  }
 
-  &:nth-child(2) {
-    @include b-up(md) {
-      padding-bottom: 10px;
-      padding-left: 10px;
-      border-bottom: 1px solid #ececec;
-    }
-  }
-
-  &:nth-child(3) {
-    @include b-up(md) {
-      padding-top: 10px;
-      padding-right: 10px;
-      border-right: 1px solid #ececec;
-    }
-  }
-
-  &:nth-child(4) {
-    @include b-up(md) {
-      padding-top: 10px;
-      padding-left: 10px;
-    }
-
-    @include b-d(md) {
+    // Last row
+    &:nth-last-child(-n + 4) {
       padding-bottom: 0;
       border-bottom: none;
+    }
+
+    // First col
+    &:nth-child(4n-3) {
+      padding-left: 0;
+    }
+
+    // Last col
+    &:nth-child(4n) {
+      padding-right: 0;
+      border-right: none;
+    }
+  }
+
+  @include b-btw(md, xl) {
+    // First row
+    &:nth-child(-n + 2) {
+      padding-top: 0;
+    }
+
+    // First col
+    &:nth-child(2n-1) {
+      padding-left: 0;
+      border-right: 1px solid #ececec;
+    }
+
+    // Last col
+    &:nth-child(2n) {
+      padding-right: 0;
+    }
+
+    // Last row
+    &:nth-last-child(-n + 2) {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+  }
+
+  @include b-d(md) {
+    padding-right: 0;
+    padding-left: 0;
+
+    // First row
+    &:first-child {
+      padding-top: 0;
+    }
+
+    // Last row
+    &:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
     }
   }
 }
