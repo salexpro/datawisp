@@ -8,9 +8,11 @@ import SectionHowItWorks from './components/SectionHowItWorks'
 import SectionFeatures from './components/SectionFeatures'
 import SectionCaseStudies from './components/SectionCaseStudies'
 import SectionRoadmap from './components/SectionRoadmap'
+import SectionUseCases from './components/SectionUseCases'
 
 const Homepage = (props) => {
-  const { hero, howItWorks, features, cases, roadmap, seo, ...rest } = props
+  const { hero, howItWorks, features, useCases, cases, roadmap, seo, ...rest } =
+    props
 
   return (
     <Layout {...rest}>
@@ -18,6 +20,7 @@ const Homepage = (props) => {
       <SectionHero {...hero} />
       <SectionHowItWorks {...howItWorks} />
       <SectionFeatures features={features} />
+      <SectionUseCases {...useCases} />
       <SectionCaseStudies {...cases} />
       <SectionRoadmap {...roadmap} />
     </Layout>

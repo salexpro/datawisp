@@ -30,6 +30,9 @@ const IndexPage = ({ data }) => {
     featuresButtonLink,
     featuresButtonHide,
     featuresList,
+    useCasesSectionHeading,
+    useCasesSectionText,
+    useCasesSectionUseCases,
     roadmapSectionHeading,
     roadmapSectionText,
     roadmapPhases,
@@ -80,6 +83,11 @@ const IndexPage = ({ data }) => {
         buttonLink: featuresButtonLink.url,
         buttonHide: featuresButtonHide,
         featuresList,
+      }}
+      useCases={{
+        heading: useCasesSectionHeading,
+        text: useCasesSectionText,
+        useCases: useCasesSectionUseCases,
       }}
       cases={{
         heading: caseStudiesSectionHeading,
@@ -208,6 +216,19 @@ export const query = graphql`
             breakpoints: [299, 344, 448, 516, 598, 688, 897, 1056, 1382]
             imgixParams: { fit: "crop", auto: "compress,format" }
           )
+        }
+      }
+
+      useCasesSectionHeading
+      useCasesSectionText {
+        value
+      }
+      useCasesSectionUseCases {
+        id
+        iconName
+        heading
+        text {
+          value
         }
       }
 

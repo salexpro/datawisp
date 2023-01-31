@@ -1,4 +1,5 @@
 @use 'sass:selector';
+@use 'sass:math';
 @import 'settings';
 @import '~bootstrap/scss/mixins';
 
@@ -61,5 +62,42 @@
 @mixin unify-parent($child) {
   @at-root #{selector.unify(&, $child)} {
     @content;
+  }
+}
+
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return math.div($number, ($number * 0 + 1));
+  }
+
+  @return $number;
+}
+
+@function clamp-builder(
+  $lower,
+  $upper,
+  $min-size,
+  $max-size,
+  $breakpoints: $grid-breakpoints
+) {
+  $min-size: strip-unit($min-size);
+  $max-size: strip-unit($max-size);
+  $min-width: strip-unit(map-get($breakpoints, $lower));
+  $max-width: strip-unit(map-get($breakpoints, $upper) - 0.02);
+  $slope: calc(($max-size - $min-size) / ($max-width - $min-width));
+  $y-axis-intersection: -$min-width * $slope + $min-size;
+
+  @if $max-size >= $min-size {
+    @return clamp(
+      #{$min-size}px,
+      #{$y-axis-intersection}px + #{$slope * 100}vw,
+      #{$max-size}px
+    );
+  } @else {
+    @return clamp(
+      #{$max-size}px,
+      #{$y-axis-intersection}px + #{$slope * 100}vw,
+      #{$min-size}px
+    );
   }
 }

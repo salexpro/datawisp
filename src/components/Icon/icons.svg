@@ -61,4 +61,20 @@
   <symbol id="icon-share" fill="none" viewBox="0 0 24 24">
     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM18 22a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM6 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM15.4 17.5l-6.8-4m6.8-7-6.8 4 6.8-4Z"/>
   </symbol>
+  <symbol id="icon-tiles" viewBox="0 0 72 72">
+    <rect width="24" height="24" x="10" y="10" rx="6"/>
+    <rect width="24" height="24" x="10" y="38" rx="6"/>
+    <rect width="22" height="3.5" x="51.8" y="39" rx="1.8" transform="rotate(90 51.8 39)"/>
+    <rect width="22" height="3.5" x="61" y="51.8" rx="1.8" transform="rotate(-180 61 51.8)"/>
+    <rect width="24" height="24" x="38" y="10" rx="6"/>
+  </symbol>
+  <symbol id="icon-bars" viewBox="0 0 72 72">
+    <path d="M9 36h6v27H9V36Zm48-12h6v39h-6V24ZM33 6h6v57h-6V6Z"/>
+  </symbol>
+  <symbol id="icon-dollar" viewBox="0 0 72 72">
+    <path d="M47.7 36a11.7 11.7 0 1 1-23.4 0 11.7 11.7 0 0 1 23.4 0Zm-13.4-3.4v6.7h-.8c-1 0-1.7.7-1.7 1.7 0 .9.8 1.6 1.7 1.6h5c1 0 1.7-.7 1.7-1.6 0-1-.8-1.7-1.7-1.7h-.8V31c0-1-.8-1.7-1.7-1.7h-1.7c-.9 0-1.6.7-1.6 1.7 0 .9.7 1.6 1.6 1.6ZM6 22.6C6 19 9 16 12.7 16h46.6c3.7 0 6.7 3 6.7 6.6v26.7c0 3.7-3 6.7-6.7 6.7H12.7C9 56 6 53 6 49.3V22.6Zm5 5v16.7c3.7 0 6.7 3 6.7 6.7h36.6c0-3.7 3-6.7 6.7-6.7V27.6c-3.7 0-6.7-3-6.7-6.6H17.7c0 3.6-3 6.6-6.7 6.6Z"/>
+  </symbol>
+  <symbol id="icon-briefcase" viewBox="0 0 72 72">
+    <path d="M23 18v-7.8a2.6 2.6 0 0 1 2.7-2.6h20.6a2.6 2.6 0 0 1 2.6 2.6v7.7h10.4a2.6 2.6 0 0 1 2.5 2.6v36.2a2.6 2.6 0 0 1-2.5 2.6H12.8a2.6 2.6 0 0 1-2.6-2.6V20.5a2.6 2.6 0 0 1 2.6-2.6H23Zm-7.7 28.3v7.8h41.4v-7.8H15.3Zm0-5.1h41.4V23H15.3v18Zm13-28.4v5.1h15.4v-5.1H28.3Zm5.1 20.6h5.2v5.2h-5.2v-5.2Z"/>
+  </symbol>
 </svg>

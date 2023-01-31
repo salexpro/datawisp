@@ -1,0 +1,48 @@
+@import '~styles/mixins';
+
+.cardUseCase {
+  display: grid;
+  row-gap: 8px;
+  align-content: start;
+  padding: 24px;
+  font-size: 15px;
+  line-height: calc(22 / 15);
+  letter-spacing: -0.01em;
+  background-color: $white;
+  border-radius: 16px;
+  box-shadow: 0 6px 44px rgba(0, 0, 0, 10%);
+}
+
+.imageBlock {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 25 / 12;
+  margin-bottom: 8px;
+  background-color: $gray-100;
+  border-radius: 8px;
+}
+
+.icon {
+  color: $pink;
+}
+
+.placeholderText {
+  height: 18px;
+  margin: 3px 0;
+  background-color: $gray-100;
+  border-radius: 100px;
+}
+
+.gridPlaceholders {
+  display: grid;
+
+  .placeholderText {
+    &:nth-child(2) {
+      width: 83%;
+    }
+
+    &:nth-child(3) {
+      width: 36%;
+    }
+  }
+}

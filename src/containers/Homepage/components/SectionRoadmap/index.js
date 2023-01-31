@@ -11,22 +11,23 @@ const SectionRoadmap = (props) => {
   const { heading, text, phases, className, ...rest } = props
 
   return (
-    <Container
-      as="section"
-      {...rest}
-      className={clsx(s.sectionRoadmap, className)}
-      id="roadmap"
-    >
-      <h2>{heading}</h2>
-      <div className={s.text}>
-        <StructuredText data={text.value} />
-      </div>
-      <div className={s.roadmapWrapper}>
-        {phases.map(({ id, ...phase }, index) => (
-          <RoadmapItem key={id} {...phase} style={{ gridArea: `i${index}` }} />
-        ))}
-      </div>
-    </Container>
+    <section className={clsx(s.sectionRoadmap, className)}>
+      <Container {...rest} id="roadmap" className={s.container}>
+        <h2>{heading}</h2>
+        <div className={s.text}>
+          <StructuredText data={text.value} />
+        </div>
+        <div className={s.roadmapWrapper}>
+          {phases.map(({ id, ...phase }, index) => (
+            <RoadmapItem
+              key={id}
+              {...phase}
+              style={{ gridArea: `i${index}` }}
+            />
+          ))}
+        </div>
+      </Container>
+    </section>
   )
 }
 

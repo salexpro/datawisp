@@ -1,0 +1,100 @@
+@import '~styles/mixins';
+
+.sectionUseCasesBg {
+  margin-top: 80px;
+  background-color: $gray-100;
+
+  @include b-d(lg) {
+    margin-top: 60px;
+  }
+}
+
+.sectionUseCasesWrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.sectionUseCases {
+  display: grid;
+  align-content: start;
+  max-width: clamp-builder(container, xxl, 1320, 1380);
+  margin-left: auto;
+
+  @include b-up(xl) {
+    grid-template-columns: 320px 1fr;
+    grid-auto-flow: column;
+  }
+}
+
+.gridHeading {
+  display: grid;
+  row-gap: 12px;
+  align-content: start;
+  padding: 80px 0 80px $container-padding-x;
+
+  @include b-d(xl) {
+    padding: 60px 0 0 $container-padding-x;
+  }
+
+  @include b-d(md) {
+    padding: 60px 0 0 $container-padding-x-sm;
+  }
+
+  > p {
+    max-width: 410px;
+  }
+}
+
+.cardsScrollContainer {
+  @include hide-scrollbar;
+
+  mask-image: linear-gradient(-90deg, transparent 20px, white 210px);
+  overflow-x: hidden;
+
+  @include b-btw(md, xl) {
+    width: 100%;
+    min-width: 0;
+    mask-image: linear-gradient(-90deg, transparent 5px, white 64px);
+  }
+
+  @include b-d(md) {
+    grid-auto-columns: 300px;
+    overflow-x: scroll;
+    mask-image: linear-gradient(-90deg, transparent 5px, white 24px);
+  }
+}
+
+.gridCards {
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  grid-auto-flow: column;
+  gap: 32px;
+  align-content: start;
+  padding: 80px 0 80px 100px;
+
+  @include b-d(xxl) {
+    gap: 24px;
+    padding-left: 72px;
+  }
+
+  @include b-d(xl) {
+    gap: 16px;
+    padding: 32px 0 60px $container-padding-x;
+  }
+
+  @include b-up(md) {
+    grid-template-rows: repeat(2, auto);
+  }
+
+  @include b-d(md) {
+    display: inline-grid;
+    grid-auto-columns: 300px;
+    padding: 32px $container-padding-x-sm 60px;
+  }
+}
+
+.hideMobile {
+  @include b-d(md) {
+    display: none;
+  }
+}

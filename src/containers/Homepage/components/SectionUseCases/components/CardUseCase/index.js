@@ -1,0 +1,30 @@
+import React from 'react'
+import clsx from 'clsx'
+import { StructuredText } from 'react-datocms'
+import Icon from '~components/Icon'
+
+import * as s from './CardUseCase.module.scss'
+
+const CardUseCase = ({ isPlaceholder, iconName, heading, text, className }) => (
+  <div className={clsx(s.cardUseCase, className)}>
+    <div className={s.imageBlock}>
+      {!isPlaceholder && <Icon name={iconName} size={72} className={s.icon} />}
+    </div>
+    {isPlaceholder ? (
+      <div className={clsx(s.placeholderText, s.heading)} />
+    ) : (
+      <h3 className="h4">{heading}</h3>
+    )}
+    {isPlaceholder ? (
+      <div className={s.gridPlaceholders}>
+        <div className={s.placeholderText} />
+        <div className={s.placeholderText} />
+        <div className={s.placeholderText} />
+      </div>
+    ) : (
+      <StructuredText data={text} />
+    )}
+  </div>
+)
+
+export default CardUseCase

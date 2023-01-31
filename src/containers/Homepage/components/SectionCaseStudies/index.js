@@ -32,40 +32,38 @@ const SectionCaseStudies = (props) => {
   ]
 
   return (
-    <section {...rest} className={clsx(s.sectionCaseStudies, className)}>
-      <Container className={s.container}>
-        <div className={clsx(s.gridHeading, { [s.buttonHide]: buttonHide })}>
-          <h2 className={s.heading}>{heading}</h2>
-          <div className={s.text}>
-            <StructuredText data={text.value} />
-          </div>
-          {!buttonHide && (
-            <Button as={Link} to={buttonLink} className={s.btn}>
-              {buttonText}
-            </Button>
-          )}
+    <Container {...rest} as="section" className={clsx(s.container, className)}>
+      <div className={clsx(s.gridHeading, { [s.buttonHide]: buttonHide })}>
+        <h2 className={s.heading}>{heading}</h2>
+        <div className={s.text}>
+          <StructuredText data={text.value} />
         </div>
-        <Swiper
-          spaceBetween={16}
-          slidesPerView={1.1}
-          breakpoints={{
-            768: { slidesPerView: 2.05 },
-            1024: { slidesPerView: 3, spaceBetween: 32 },
-          }}
-          className={s.swiper}
-        >
-          {allCases.map(({ id, isComingSoon, ...caseProps }) => (
-            <SwiperSlide key={id}>
-              {!isComingSoon ? (
-                <CardCase {...caseProps} variant="white" />
-              ) : (
-                <ComingSoonCase />
-              )}
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </Container>
-    </section>
+        {!buttonHide && (
+          <Button as={Link} to={buttonLink} className={s.btn}>
+            {buttonText}
+          </Button>
+        )}
+      </div>
+      <Swiper
+        spaceBetween={16}
+        slidesPerView={1.1}
+        breakpoints={{
+          768: { slidesPerView: 2.05 },
+          1024: { slidesPerView: 3, spaceBetween: 32 },
+        }}
+        className={s.swiper}
+      >
+        {allCases.map(({ id, isComingSoon, ...caseProps }) => (
+          <SwiperSlide key={id}>
+            {!isComingSoon ? (
+              <CardCase {...caseProps} />
+            ) : (
+              <ComingSoonCase isRelated />
+            )}
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </Container>
   )
 }
 
