@@ -16,7 +16,14 @@ const SectionHero = (props) => {
       className={clsx(s.sectionHero, className)}
     >
       <StructuredText data={heading.value} />
-      <Button variant="primary" as="a" href={buttonLink} className={s.button}>
+      <Button
+        variant="primary"
+        as="a"
+        href={buttonLink}
+        target="_blank"
+        rel="noreferrer"
+        className={s.button}
+      >
         {buttonText}
       </Button>
     </Container>
