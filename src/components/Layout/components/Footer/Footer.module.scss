@@ -1,10 +1,11 @@
 @import '~styles/mixins';
 
 .footer {
-  padding-top: 100px;
+  padding-top: 40px;
   padding-bottom: 40px;
 
   @include b-d(md) {
+    padding-top: 24px;
     padding-bottom: 24px;
   }
 }
@@ -89,6 +90,7 @@
   font-size: 12px;
   line-height: 1.333;
   color: $gray-800;
+  white-space: nowrap;
   transition: color 0.15s ease-in-out;
 
   &:hover {
@@ -99,6 +101,10 @@
 .logo {
   @include b-up(md) {
     justify-self: start;
+  }
+
+  @include b-d(md) {
+    justify-self: center;
   }
 }
 
@@ -127,6 +133,7 @@
   line-height: 1.333;
   color: #969696;
   letter-spacing: -0.01em;
+  white-space: nowrap;
 
   @include b-d(md) {
     text-align: center;

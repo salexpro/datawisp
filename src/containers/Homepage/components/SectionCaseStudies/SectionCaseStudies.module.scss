@@ -1,18 +1,13 @@
 @import '~styles/mixins';
 
 .container {
-  padding-top: 96px;
+  padding-top: 80px;
   padding-bottom: 80px;
   overflow: hidden;
 
-  @include b-btw(md, lg) {
-    padding-top: 76px;
-    padding-bottom: 76px;
-  }
-
-  @include b-d(md) {
-    padding-top: 60px;
-    padding-bottom: 60px;
+  @include b-d(lg) {
+    padding-top: 64px;
+    padding-bottom: 64px;
   }
 }
 

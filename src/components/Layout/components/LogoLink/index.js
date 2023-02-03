@@ -1,11 +1,12 @@
 import React from 'react'
+import clsx from 'clsx'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
 import * as s from './LogoLink.module.scss'
 
 const LogoLink = (props) => {
-  const { image, link, siteTitle, height, ...rest } = props
+  const { image, link, siteTitle, height, className, ...rest } = props
 
   const { width: imgWidth = 134, height: imgHeight = 24 } = image || {}
 
@@ -13,7 +14,7 @@ const LogoLink = (props) => {
     <Link
       {...rest}
       to={link?.url}
-      className={s.logoLink}
+      className={clsx(s.logoLink, className)}
       title={siteTitle}
       aria-label={link?.text}
     >

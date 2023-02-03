@@ -1,18 +1,16 @@
 @import '~styles/mixins';
 
 .sectionHowItWorks {
-  padding: 90px 0;
-  margin-top: 88px;
+  padding: 80px 0;
+  margin-top: 80px;
   background-color: $gray-100;
 
-  @include b-btw(md, lg) {
+  @include b-d(lg) {
     padding: 64px 0;
-    margin-top: 64px;
+    margin-top: 52px;
   }
 
   @include b-d(md) {
-    padding: 48px 0 64px;
-    margin-top: 84px;
     overflow: hidden;
   }
 }

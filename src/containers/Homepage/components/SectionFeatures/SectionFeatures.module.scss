@@ -2,10 +2,10 @@
 
 .sectionFeatures {
   display: grid;
-  margin-top: 120px;
+  margin-top: 80px;
 
   @include b-d(lg) {
-    margin-top: 72px;
+    margin-top: 64px;
   }
 
   @include b-d(md) {

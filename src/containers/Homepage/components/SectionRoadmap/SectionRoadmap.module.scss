@@ -5,11 +5,7 @@
   background-color: $gray-100;
 
   @include b-d(lg) {
-    padding: 60px 0;
-  }
-
-  @include b-d(lg) {
-    padding: 40px 0;
+    padding: 64px 0;
   }
 }
 
