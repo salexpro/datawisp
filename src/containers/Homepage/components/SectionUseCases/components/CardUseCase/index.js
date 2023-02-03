@@ -11,7 +11,7 @@ const CardUseCase = ({ isPlaceholder, iconName, heading, text, className }) => (
       {!isPlaceholder && <Icon name={iconName} size={72} className={s.icon} />}
     </div>
     {isPlaceholder ? (
-      <div className={clsx(s.placeholderText, s.heading)} />
+      <div className={s.placeholderText} />
     ) : (
       <h3 className="h4">{heading}</h3>
     )}

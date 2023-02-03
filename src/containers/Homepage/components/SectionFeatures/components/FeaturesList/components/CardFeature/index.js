@@ -13,7 +13,7 @@ const CardFeature = (props) => {
 
   return (
     <div {...rest} className={clsx(s.cardFeature, className)}>
-      <ImageFormat file={image} className={s.img} />
+      <ImageFormat alt={heading} file={image} className={s.img} />
       <div className={s.gridHeading}>
         <Icon name={iconName} size={24} className={s.icon} />
         <h3 className="h6">{heading}</h3>
