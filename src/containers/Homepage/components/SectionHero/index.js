@@ -1,6 +1,8 @@
-import React, { useState } from 'react'
+/* eslint-disable import/no-extraneous-dependencies */
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import clsx from 'clsx'
+import { useLocation } from '@gatsbyjs/reach-router'
 import { StructuredText } from 'react-datocms'
 import { Button, Container } from 'react-bootstrap'
 
@@ -23,7 +25,14 @@ const SectionHero = (props) => {
     ...rest
   } = props
 
+  const { hash } = useLocation()
+  const isModal = hash === '#request-demo'
+
   const [showRequestDemoModal, setShowRequestDemoModal] = useState(false)
+
+  useEffect(() => {
+    setShowRequestDemoModal(isModal)
+  }, [])
 
   return (
     <section {...rest} className={clsx(s.sectionHero, className)}>
