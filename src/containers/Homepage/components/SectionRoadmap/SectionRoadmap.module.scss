@@ -32,7 +32,7 @@
     '. . i2 i2';
   grid-template-columns: repeat(4, 1fr);
   row-gap: 24px;
-  padding: 32px 0;
+  padding-top: 32px;
   margin-top: 36px;
   counter-reset: phase;
   background: repeating-linear-gradient(

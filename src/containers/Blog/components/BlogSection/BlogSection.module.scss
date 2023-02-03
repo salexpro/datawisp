@@ -5,6 +5,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 47px 32px;
   margin-top: 32px;
+  margin-bottom: 52px;
 
   @include b-d(lg) {
     grid-template-columns: repeat(2, 1fr);
