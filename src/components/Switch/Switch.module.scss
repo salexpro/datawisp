@@ -1,0 +1,79 @@
+@import '~styles/mixins';
+
+.switchWrapper {
+  position: relative;
+  padding: 4px;
+}
+
+.labelWrapper {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  justify-items: center;
+}
+
+.first,
+.second {
+  padding: 10px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+  user-select: none;
+  transition: color 300ms ease;
+}
+
+.first {
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 8px;
+  align-items: center;
+  color: $white;
+
+  &.hasDiscount {
+    &::after {
+      display: block;
+      padding: 1px 6px;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 1.5;
+      color: $pink;
+      letter-spacing: -0.01em;
+      content: attr(data-discount);
+      background-color: #fdeef6;
+      border-radius: 10px;
+    }
+  }
+}
+
+.second {
+  color: $gray-900;
+}
+
+.switchInput {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none'%3E%3Crect width='100%25' height='40' fill='%23191919' rx='6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: left 4px top 3px;
+  background-size: calc(50% - 6px) 40px;
+  border: 1px solid $gray-300;
+  border-radius: 8px;
+  transition: background-position ease-in-out 300ms;
+  appearance: none;
+
+  &:checked {
+    background-position: right 4px top 3px;
+  }
+
+  &:checked + .labelWrapper {
+    .first {
+      color: $gray-900;
+    }
+
+    .second {
+      color: $white;
+    }
+  }
+}
