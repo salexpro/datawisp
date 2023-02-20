@@ -1,0 +1,153 @@
+@import '~styles/mixins';
+
+.cell {
+  height: 100%;
+
+  &.selected {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      top: -8px;
+      right: -1px;
+      left: -1px;
+      height: 8px;
+      content: '';
+      background-color: $indigo;
+      border-radius: 8px 8px 0 0;
+    }
+  }
+}
+
+.headerWrapper {
+  display: grid;
+  grid-template:
+    'tag tag' 36px
+    'title title' auto
+    'subTitle subTitle' 1fr
+    'price price' 70px
+    'previousPrice currentPrice' 26px / auto auto;
+  column-gap: 8px;
+  justify-items: center;
+  height: 100%;
+  text-align: center;
+
+  @include b-d(lg) {
+    grid-template:
+      'tag' 32px
+      'title' auto
+      'subTitle' 1fr
+      'price' 44px
+      'currentPrice' 22px
+      'previousPrice' 16px;
+  }
+}
+
+.tag {
+  display: flex;
+  grid-area: tag;
+  align-items: center;
+  padding: 5px 12px;
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.286;
+  color: $indigo;
+  background: $gray-100;
+  border-radius: 6px;
+
+  &.isComingSoon {
+    color: $pink;
+  }
+
+  @include b-d(lg) {
+    font-size: 14px;
+    line-height: 1.667;
+  }
+}
+
+.title {
+  grid-area: title;
+  margin-top: 12px;
+  font-size: 20px;
+  line-height: 1.2;
+  color: $gray-900;
+
+  @include b-d(lg) {
+    font-size: 18px;
+    line-height: 1.333;
+  }
+}
+
+.subTitle {
+  grid-area: subTitle;
+  margin-top: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.286;
+  color: $gray-400;
+  letter-spacing: -0.01em;
+}
+
+.price {
+  grid-area: price;
+  margin-top: 20px;
+  font-size: 36px;
+  line-height: 1.389;
+  color: $gray-900;
+
+  span {
+    color: $gray-400;
+  }
+
+  @include b-d(lg) {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+}
+
+.button {
+  grid-area: price;
+  align-self: end;
+  margin-bottom: -5px;
+
+  @include b-d(lg) {
+    margin-bottom: -11px;
+  }
+}
+
+.previousPrice,
+.currentPrice {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.286;
+  letter-spacing: -0.01em;
+
+  @include b-d(lg) {
+    font-size: 12px;
+    line-height: 1.167;
+  }
+}
+
+.previousPrice {
+  grid-area: previousPrice;
+  margin-top: 2px;
+  color: $gray-400;
+  text-decoration: line-through;
+
+  @include b-up(lg) {
+    justify-self: right;
+    margin-top: 8px;
+  }
+}
+
+.currentPrice {
+  grid-area: currentPrice;
+  margin-top: 8px;
+  color: $pink;
+
+  @include b-up(lg) {
+    justify-self: left;
+    margin-top: 8px;
+  }
+}

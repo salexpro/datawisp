@@ -49,4 +49,9 @@
       }
     }
   }
+
+  &-check-input {
+    pointer-events: none;
+    background-size: 12px;
+  }
 }
