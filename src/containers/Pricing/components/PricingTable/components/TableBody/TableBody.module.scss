@@ -1,5 +1,21 @@
 @import '~styles/mixins';
 
+.subTitleContent {
+  padding: 40px 12px 12px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.333;
+  color: $indigo;
+}
+
+.subTitle:first-child .subTitleContent {
+  padding-top: 24px;
+
+  @include b-d(md) {
+    padding-top: 16px;
+  }
+}
+
 .row {
   transition: background-color 250ms;
 
@@ -9,18 +25,6 @@
 
   &:hover {
     background-color: $gray-200;
-  }
-}
-
-.subTitle {
-  padding: 40px 12px 12px;
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 1.333;
-  color: $indigo;
-
-  &:nth-child(1) {
-    padding: 24px 12px 12px;
   }
 }
 

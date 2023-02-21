@@ -1,24 +1,5 @@
 @import '~styles/mixins';
 
-.cell {
-  height: 100%;
-
-  &.selected {
-    position: relative;
-
-    &::before {
-      position: absolute;
-      top: -8px;
-      right: -1px;
-      left: -1px;
-      height: 8px;
-      content: '';
-      background-color: $indigo;
-      border-radius: 8px 8px 0 0;
-    }
-  }
-}
-
 .headerWrapper {
   display: grid;
   grid-template:
@@ -30,6 +11,7 @@
   column-gap: 8px;
   justify-items: center;
   height: 100%;
+  padding: 0 5px;
   text-align: center;
 
   @include b-d(lg) {
@@ -70,11 +52,13 @@
   grid-area: title;
   margin-top: 12px;
   font-size: 20px;
+  font-weight: 700;
   line-height: 1.2;
   color: $gray-900;
 
   @include b-d(lg) {
     font-size: 18px;
+    font-weight: 600;
     line-height: 1.333;
   }
 }
@@ -149,5 +133,45 @@
   @include b-up(lg) {
     justify-self: left;
     margin-top: 8px;
+  }
+}
+
+.cell {
+  height: 100%;
+
+  &.selected {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      top: -8px;
+      right: -1px;
+      left: -1px;
+      height: 8px;
+      content: '';
+      background-color: $indigo;
+      border-radius: 8px 8px 0 0;
+    }
+  }
+
+  &.mobile {
+    .headerWrapper {
+      grid-template:
+        'tag' 32px
+        'title' auto
+        'subTitle' 1fr
+        'price' 40px
+        'currentPrice' 22px
+        'previousPrice' 16px;
+      min-height: 154px;
+    }
+
+    .subTitle {
+      margin-top: 8px;
+    }
+
+    .price {
+      margin-top: 16px;
+    }
   }
 }

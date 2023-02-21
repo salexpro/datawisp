@@ -2,15 +2,66 @@
 
 .wrapper {
   display: grid;
-  justify-items: right;
-  margin-top: -88px;
+  grid-template-areas:
+    'tabs'
+    'switchButton'
+    'pricingTable';
+
+  @include b-up(md) {
+    grid-template-areas:
+      'switchButton'
+      'pricingTable';
+    justify-items: right;
+    margin-top: -88px;
+  }
+}
+
+.tabs {
+  position: sticky;
+  top: 97px;
+  grid-area: tabs;
+
+  @include b-up(md) {
+    display: none;
+  }
+}
+
+.switchButton {
+  grid-area: switchButton;
+
+  @include b-d(md) {
+    margin-top: 16px;
+  }
 }
 
 .pricingTable {
+  grid-area: pricingTable;
   width: 100%;
   height: 1px;
-  margin-top: 40px;
+  margin-top: 48px;
+  margin-bottom: 56px;
   table-layout: fixed;
+
+  &.desktop {
+    @include b-d(md) {
+      display: none;
+    }
+  }
+
+  &.mobile {
+    @include b-up(md) {
+      display: none;
+    }
+  }
+
+  @include b-d(lg) {
+    margin-bottom: 8px;
+  }
+
+  @include b-d(md) {
+    margin-top: 16px;
+    margin-bottom: 24px;
+  }
 }
 
 .selected {

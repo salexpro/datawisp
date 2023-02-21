@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import React from 'react'
 import clsx from 'clsx'
 
@@ -8,16 +9,19 @@ const TableBody = ({ body, selectedColNumber }) => {
   return (
     <tbody>
       {body.map(({ title, rows }, i) => (
-        <>
-          <tr key={title}>
+        <React.Fragment key={title}>
+          <tr className={s.subTitle}>
             {rows[0].map((_, j) => (
-              <td className={s.subTitle}>{j === 0 && title}</td>
+              <td key={`${title}-${j}`}>
+                {j === 0 && <div className={s.subTitleContent}>{title}</div>}
+              </td>
             ))}
           </tr>
           {rows.map((row, j) => (
-            <tr className={s.row}>
+            <tr key={`row-${j}`} className={s.row}>
               {row.map((cell, k) => (
                 <td
+                  key={`${cell.type}-${k}`}
                   className={clsx(s.cell, {
                     [s.cellTitle]: k === 0,
                     [s.selected]:
@@ -31,7 +35,7 @@ const TableBody = ({ body, selectedColNumber }) => {
               ))}
             </tr>
           ))}
-        </>
+        </React.Fragment>
       ))}
     </tbody>
   )

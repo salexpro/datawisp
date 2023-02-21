@@ -4,7 +4,7 @@ import { Button } from 'react-bootstrap'
 
 import * as s from './TableHeader.module.scss'
 
-const TableHeader = ({ header }) => {
+const TableHeader = ({ header, isMobile }) => {
   return (
     <thead>
       <tr>
@@ -22,7 +22,10 @@ const TableHeader = ({ header }) => {
           }) => (
             <th
               key={title}
-              className={clsx(s.cell, { [s.selected]: isSelected })}
+              className={clsx(s.cell, {
+                [s.selected]: isSelected,
+                [s.mobile]: isMobile,
+              })}
             >
               <div className={s.headerWrapper}>
                 {tag && (
@@ -35,7 +38,7 @@ const TableHeader = ({ header }) => {
                   </div>
                 )}
 
-                <div className={s.title}>{title}</div>
+                {!isMobile && <div className={s.title}>{title}</div>}
                 <p className={s.subTitle}>{subTitle}</p>
 
                 {price && (

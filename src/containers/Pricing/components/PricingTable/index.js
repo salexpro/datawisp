@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Container } from 'react-bootstrap'
+import { Container, Tabs, Tab } from 'react-bootstrap'
 import clsx from 'clsx'
 
 import Switch from '~components/Switch'
@@ -17,6 +17,8 @@ const PricingTable = () => {
   const [selectedPlan, setSelectedPlan] = useState(annual)
   const header = headers[selectedPlan]
 
+  const [activeTab, setActiveTab] = useState(header[0].title)
+
   const selectedColNumber = header.findIndex(({ isSelected }) => isSelected)
 
   return (
@@ -26,12 +28,41 @@ const PricingTable = () => {
         second={monthly}
         discount="20% off"
         onChange={setSelectedPlan}
+        className={s.switchButton}
       />
-      <table className={s.pricingTable}>
+
+      <Tabs className={s.tabs} activeKey={activeTab} onSelect={setActiveTab}>
+        {header.map(({ title, isSelected }) => (
+          <Tab key={title} eventKey={title} title={title}>
+            <table className={clsx(s.pricingTable, s.mobile)}>
+              <colgroup>
+                <col />
+                <col className={clsx({ [s.selected]: isSelected })} />
+              </colgroup>
+              <TableHeader
+                header={[header.find(({ title: item }) => item === activeTab)]}
+                isMobile
+              />
+              <TableBody
+                body={body.map(({ rows, ...rest }) => ({
+                  ...rest,
+                  rows: rows.map((row) => [row[0], row[1]]),
+                }))}
+                selectedColNumber={isSelected ? 1 : null}
+              />
+            </table>
+          </Tab>
+        ))}
+      </Tabs>
+
+      <table className={clsx(s.pricingTable, s.desktop)}>
         <colgroup>
           <col />
-          {header.map(({ isSelected }) => (
-            <col className={clsx({ [s.selected]: isSelected })} />
+          {header.map(({ title, isSelected }) => (
+            <col
+              key={`col-${title}`}
+              className={clsx({ [s.selected]: isSelected })}
+            />
           ))}
         </colgroup>
         <TableHeader header={header} />

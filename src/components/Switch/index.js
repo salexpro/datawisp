@@ -3,11 +3,11 @@ import clsx from 'clsx'
 
 import * as s from './Switch.module.scss'
 
-const Switch = ({ first, second, discount, onChange }) => {
+const Switch = ({ first, second, discount, onChange, className }) => {
   const id = `id-${first}-${second}`
 
   return (
-    <div className={s.switchWrapper}>
+    <div className={clsx(s.switchWrapper, className)}>
       <input
         id={id}
         type="checkbox"
