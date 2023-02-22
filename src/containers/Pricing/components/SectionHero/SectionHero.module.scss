@@ -19,7 +19,7 @@
   display: flex;
   flex-flow: row wrap;
   gap: 8px;
-  margin: 16px 0 32px;
+  margin-top: 16px;
 }
 
 .tag {
@@ -37,4 +37,8 @@
   svg {
     color: $pink;
   }
+}
+
+.button {
+  margin-top: 32px;
 }

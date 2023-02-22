@@ -3,28 +3,36 @@ import { Container, Button } from 'react-bootstrap'
 
 import Icon from '~components/Icon'
 
-import { TAGS } from './mocks'
 import * as s from './SectionHero.module.scss'
 
-const SectionHero = () => {
+const SectionHero = ({ heroSection }) => {
+  const { heading, description, tags, buttonText, buttonLink } = heroSection
   return (
     <Container className={s.sectionHero}>
-      <h1>Ready to Sign Up?</h1>
-      <p className={s.description}>
-        Datawisp will continue to be free while in beta. Once our open beta
-        ends, we expect the following pricing to take effect.
-      </p>
+      <h1>{heading}</h1>
+      <p className={s.description}>{description}</p>
 
-      <div className={s.tagsWrapper}>
-        {TAGS.map(({ icon, name }) => (
-          <div key={name} className={s.tag}>
-            <Icon name={icon} size={20} />
-            <div>{name}</div>
-          </div>
-        ))}
-      </div>
+      {tags.length > 0 && (
+        <div className={s.tagsWrapper}>
+          {tags.map(({ id, iconName, tagText }) => (
+            <div key={id} className={s.tag}>
+              <Icon name={iconName} size={20} />
+              <div>{tagText}</div>
+            </div>
+          ))}
+        </div>
+      )}
 
-      <Button>Contact us</Button>
+      {buttonText && buttonLink && (
+        <Button
+          href={buttonLink}
+          target="_blank"
+          rel="noreferrer"
+          className={s.button}
+        >
+          {buttonText}
+        </Button>
+      )}
     </Container>
   )
 }
