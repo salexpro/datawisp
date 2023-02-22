@@ -7,7 +7,7 @@
 
 import React from 'react'
 import PropTypes from 'prop-types'
-import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql, Script } from 'gatsby'
 import SSRProvider from 'react-bootstrap/SSRProvider'
 
 import '~styles/app.scss'
@@ -38,6 +38,19 @@ const Layout = ({ children }) => {
         <Footer siteTitle={data.site.siteMetadata?.title} />
         <SVGDefs />
       </div>
+
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-KQ66FE4RFZ"
+        strategy="post-hydrate"
+      />
+      <Script id="gtag-config" strategy="post-hydrate" forward={[`gtag`]}>
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)};
+          gtag('js', new Date());
+          gtag('config', 'G-KQ66FE4RFZ')
+      `}
+      </Script>
     </SSRProvider>
   )
 }

@@ -17,6 +17,7 @@ const TableBody = ({ tables, isSelected, selectedColNumbers }) => {
                 )}
               </td>
             ))}
+            <td> </td>
           </tr>
           {rows.map(({ id: rowId, title: rowTitle, cells }, j) => (
             <tr key={rowId} className={s.row}>

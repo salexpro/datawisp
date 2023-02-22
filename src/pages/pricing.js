@@ -15,10 +15,12 @@ const PricingPage = ({ data }) => {
     switchAnnualDiscount,
     pricingPlans,
     plansComparison,
+    seo,
   } = data.datoCmsPricingPage
 
   return (
     <Pricing
+      seo={seo}
       heroSection={{ heading, description, tags, buttonText, buttonLink }}
       switchButton={{
         annual: switchAnnualText,
@@ -34,6 +36,21 @@ const PricingPage = ({ data }) => {
 export const query = graphql`
   query PricingPage {
     datoCmsPricingPage {
+      seo {
+        title
+        description
+        twitterCard
+        image {
+          fixed(
+            width: 1200
+            height: 630
+            imgixParams: { fit: "crop", auto: "compress,format" }
+          ) {
+            src
+          }
+        }
+      }
+
       heading
       description
       tags {

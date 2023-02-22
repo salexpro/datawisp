@@ -24,7 +24,7 @@
 .footerTop {
   display: grid;
   grid-template-columns: auto 1fr auto;
-  gap: 48px;
+  gap: 48px 32px;
   align-items: center;
   padding-bottom: 24px;
 
@@ -35,7 +35,7 @@
 
   @include b-d(md) {
     grid-template-columns: auto;
-    gap: 40px;
+    row-gap: 40px;
     justify-items: center;
     padding-bottom: 36px;
   }
