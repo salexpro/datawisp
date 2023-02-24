@@ -24,7 +24,7 @@ const SectionHero = () => {
         ))}
       </div>
 
-      <Button as="a">Contact us</Button>
+      <Button>Contact us</Button>
     </Container>
   )
 }

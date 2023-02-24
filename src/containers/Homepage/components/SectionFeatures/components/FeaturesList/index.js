@@ -3,7 +3,7 @@ import { Button } from 'react-bootstrap'
 import { Link } from 'gatsby'
 import { StructuredText } from 'react-datocms'
 import PropTypes from 'prop-types'
-import clsx from 'clsx'
+import classNames from 'classnames'
 
 import CardFeature from './components/CardFeature'
 
@@ -24,7 +24,7 @@ const FeaturesList = (props) => {
   return (
     <div
       {...rest}
-      className={clsx(
+      className={classNames(
         s.featuresList,
         { [s.buttonHidden]: buttonHide },
         className

@@ -1,5 +1,5 @@
 import React from 'react'
-import clsx from 'clsx'
+import classNames from 'classnames'
 import { Button } from 'react-bootstrap'
 
 import * as s from './TableHeader.module.scss'
@@ -22,7 +22,7 @@ const TableHeader = ({ header, isMobile }) => {
           }) => (
             <th
               key={title}
-              className={clsx(s.cell, {
+              className={classNames(s.cell, {
                 [s.selected]: isSelected,
                 [s.mobile]: isMobile,
               })}
@@ -30,7 +30,7 @@ const TableHeader = ({ header, isMobile }) => {
               <div className={s.headerWrapper}>
                 {tag && (
                   <div
-                    className={clsx(s.tag, {
+                    className={classNames(s.tag, {
                       [s.isComingSoon]: isComingSoon,
                     })}
                   >

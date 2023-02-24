@@ -1,7 +1,7 @@
 /* eslint-disable no-nested-ternary */
 import React from 'react'
 import PropTypes from 'prop-types'
-import clsx from 'clsx'
+import classNames from 'classnames'
 import { Container } from 'react-bootstrap'
 import { Link } from 'gatsby'
 import { range } from 'lodash'
@@ -15,7 +15,10 @@ const SectionRelatedArticles = (props) => {
   const { className, relatedArticles, requestError, ...rest } = props
 
   return (
-    <section {...rest} className={clsx(s.sectionRelatedArticles, className)}>
+    <section
+      {...rest}
+      className={classNames(s.sectionRelatedArticles, className)}
+    >
       <Container>
         <h2 className={s.heading}>Related Blog Articles</h2>
         {requestError ? (

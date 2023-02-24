@@ -2,7 +2,7 @@ import React, { createElement } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import clsx from 'clsx'
+import classNames from 'classnames'
 import dayjs from 'dayjs'
 import { Image } from 'react-datocms'
 import { Placeholder, Ratio } from 'react-bootstrap'
@@ -37,18 +37,18 @@ const BlogItem = (props) => {
     return (
       <div
         {...rest}
-        className={clsx('placeholder-glow', s.blogItem, className)}
+        className={classNames('placeholder-glow', s.blogItem, className)}
       >
         <Ratio aspectRatio="4x3" className={s.imgWrapper}>
           <Placeholder />
         </Ratio>
-        <Placeholder className={clsx(s.date, s.placeholder)} />
+        <Placeholder className={classNames(s.date, s.placeholder)} />
         <div className={s.headingPlaceholderGrid}>
           {range(2).map((n) => (
             <Placeholder
               key={n}
               as={headingAs}
-              className={clsx('h4', s.heading)}
+              className={classNames('h4', s.heading)}
             />
           ))}
         </div>
@@ -66,7 +66,7 @@ const BlogItem = (props) => {
     )
 
   return (
-    <div {...rest} className={clsx(s.blogItem, className)}>
+    <div {...rest} className={classNames(s.blogItem, className)}>
       <Link to={blogpostLink} className={s.imgWrapper} aria-label={heading}>
         {responsiveImage ? (
           <Image
@@ -88,12 +88,12 @@ const BlogItem = (props) => {
       <Link to={blogpostLink} className={s.link}>
         {createElement(
           headingAs,
-          { className: clsx('h4', s.heading) },
+          { className: classNames('h4', s.heading) },
           heading
         )}
       </Link>
       <p className={s.text}>{description}</p>
-      <Link to={blogpostLink} className={clsx(s.readMore, s.link)}>
+      <Link to={blogpostLink} className={classNames(s.readMore, s.link)}>
         Read more <Icon name="icon-arrow-right" size={20} />
       </Link>
     </div>

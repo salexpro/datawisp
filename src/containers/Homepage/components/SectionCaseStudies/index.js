@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import clsx from 'clsx'
+import classNames from 'classnames'
 import { Button, Container } from 'react-bootstrap'
 import { Link } from 'gatsby'
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -32,8 +32,14 @@ const SectionCaseStudies = (props) => {
   ]
 
   return (
-    <Container {...rest} as="section" className={clsx(s.container, className)}>
-      <div className={clsx(s.gridHeading, { [s.buttonHide]: buttonHide })}>
+    <Container
+      {...rest}
+      as="section"
+      className={classNames(s.container, className)}
+    >
+      <div
+        className={classNames(s.gridHeading, { [s.buttonHide]: buttonHide })}
+      >
         <h2 className={s.heading}>{heading}</h2>
         <div className={s.text}>
           <StructuredText data={text.value} />

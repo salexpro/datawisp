@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
 import PropTypes from 'prop-types'
-import clsx from 'clsx'
+import classNames from 'classnames'
 
 import FeaturesList from './components/FeaturesList'
 
@@ -15,7 +15,7 @@ const SectionFeatures = (props) => {
     <Container
       {...rest}
       as="section"
-      className={clsx(s.sectionFeatures, className)}
+      className={classNames(s.sectionFeatures, className)}
     >
       <FeaturesList {...list} />
     </Container>

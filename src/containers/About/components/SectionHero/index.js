@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import clsx from 'clsx'
+import classNames from 'classnames'
 import { StructuredText } from 'react-datocms'
 import { Button, Container } from 'react-bootstrap'
 
@@ -13,7 +13,7 @@ const SectionHero = (props) => {
     <Container
       {...rest}
       as="section"
-      className={clsx(s.sectionHero, className)}
+      className={classNames(s.sectionHero, className)}
     >
       <StructuredText data={heading.value} />
       <Button

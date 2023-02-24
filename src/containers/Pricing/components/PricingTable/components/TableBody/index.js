@@ -1,6 +1,6 @@
 /* eslint-disable react/no-array-index-key */
 import React from 'react'
-import clsx from 'clsx'
+import classNames from 'classnames'
 
 import { getCellByType } from './utils'
 import * as s from './TableBody.module.scss'
@@ -22,7 +22,7 @@ const TableBody = ({ body, selectedColNumber }) => {
               {row.map((cell, k) => (
                 <td
                   key={`${cell.type}-${k}`}
-                  className={clsx(s.cell, {
+                  className={classNames(s.cell, {
                     [s.cellTitle]: k === 0,
                     [s.selected]:
                       i === body.length - 1 &&

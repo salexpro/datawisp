@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import clsx from 'clsx'
+import classNames from 'classnames'
 
 import ImageFormat from '~components/ImageFormat'
 
@@ -10,7 +10,7 @@ const CardStep = (props) => {
   const { className, heading, image, ...rest } = props
 
   return (
-    <div {...rest} className={clsx(s.cardStep, className)}>
+    <div {...rest} className={classNames(s.cardStep, className)}>
       <span className={s.text}>{heading}</span>
       <div className={s.imageWrapper}>
         <ImageFormat alt="step 1" file={image} />

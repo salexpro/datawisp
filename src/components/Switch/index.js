@@ -1,5 +1,5 @@
 import React from 'react'
-import clsx from 'clsx'
+import classNames from 'classnames'
 
 import * as s from './Switch.module.scss'
 
@@ -7,7 +7,7 @@ const Switch = ({ first, second, discount, onChange, className }) => {
   const id = `id-${first}-${second}`
 
   return (
-    <div className={clsx(s.switchWrapper, className)}>
+    <div className={classNames(s.switchWrapper, className)}>
       <input
         id={id}
         type="checkbox"
@@ -16,7 +16,7 @@ const Switch = ({ first, second, discount, onChange, className }) => {
       />
       <label htmlFor={id} className={s.labelWrapper}>
         <span
-          className={clsx(s.first, { [s.hasDiscount]: discount })}
+          className={classNames(s.first, { [s.hasDiscount]: discount })}
           data-discount={discount}
         >
           {first}

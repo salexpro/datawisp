@@ -1,6 +1,6 @@
 import React, { createElement } from 'react'
 import PropTypes from 'prop-types'
-import clsx from 'clsx'
+import classNames from 'classnames'
 import { Link } from 'gatsby'
 import { Badge, Button, Placeholder } from 'react-bootstrap'
 
@@ -29,12 +29,17 @@ const CardCase = (props) => {
     return (
       <div
         {...rest}
-        className={clsx('placeholder-glow', s.card, s.placeholder, className)}
+        className={classNames(
+          'placeholder-glow',
+          s.card,
+          s.placeholder,
+          className
+        )}
       >
         <Placeholder className={s.placeholderImg} />
         <Placeholder
           as={headingAs}
-          className={clsx('h4', s.placeholderHeader)}
+          className={classNames('h4', s.placeholderHeader)}
         />
         <Placeholder as="p" className={s.placeholderText} />
         <Placeholder className={s.placeholderBtn} />
@@ -44,9 +49,9 @@ const CardCase = (props) => {
   const linkTitle = `Learn more about ${heading}`
 
   const componentProps = isFeatureCard
-    ? { className: clsx(s.card, s.featureCard, className) }
+    ? { className: classNames(s.card, s.featureCard, className) }
     : {
-        className: clsx(s.card, { [s[variant]]: variant }, className),
+        className: classNames(s.card, { [s[variant]]: variant }, className),
         to: `${RouteURL.CASE_STUDIES}/${slug}`,
         'aria-label': linkTitle,
         title: linkTitle,
@@ -62,26 +67,30 @@ const CardCase = (props) => {
       ...componentProps,
     },
     <>
-      <span className={clsx(s.imgWrapper, { [s[variant]]: variant })}>
+      <span className={classNames(s.imgWrapper, { [s[variant]]: variant })}>
         {!isFeatureCard ? (
           <ImageFormat width={40} height={40} alt={heading} file={postIcon} />
         ) : (
           <Icon name={postIcon} size={20} />
         )}
       </span>
-      {createElement(headingAs, { className: clsx('h4', s.heading) }, heading)}
+      {createElement(
+        headingAs,
+        { className: classNames('h4', s.heading) },
+        heading
+      )}
       <p>{description}</p>
       {!isFeatureCard && (
         <div className={s.buttonWrapper}>
           <Button
             variant="primary"
-            className={clsx(s.arrowLink, { [s[variant]]: variant })}
+            className={classNames(s.arrowLink, { [s[variant]]: variant })}
             aria-label={linkTitle}
           >
             <Icon name="icon-arrow-link" size={20} className={s.arrowIcon} />
           </Button>
           {isComingSoon && (
-            <Badge bg={clsx({ [`primary-gray`]: variant === 'white' })}>
+            <Badge bg={classNames({ [`primary-gray`]: variant === 'white' })}>
               Coming Soon
             </Badge>
           )}

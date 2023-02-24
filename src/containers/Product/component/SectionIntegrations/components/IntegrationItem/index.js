@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import clsx from 'clsx'
+import classNames from 'classnames'
 import { Badge } from 'react-bootstrap'
 import { StructuredText } from 'react-datocms'
 
@@ -12,7 +12,7 @@ const IntegrationItem = (props) => {
   const { heading, iconName, text, image, supports, className, ...rest } = props
 
   return (
-    <div {...rest} className={clsx(s.integrationItem, className)}>
+    <div {...rest} className={classNames(s.integrationItem, className)}>
       <span className={s.iconWrapper}>
         <Icon name={iconName} size={20} />
       </span>

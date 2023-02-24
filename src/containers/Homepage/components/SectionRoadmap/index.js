@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Container } from 'react-bootstrap'
-import clsx from 'clsx'
+import classNames from 'classnames'
 import { StructuredText } from 'react-datocms'
 
 import RoadmapItem from './components/RoadmapItem'
@@ -11,7 +11,7 @@ const SectionRoadmap = (props) => {
   const { heading, text, phases, className, ...rest } = props
 
   return (
-    <section className={clsx(s.sectionRoadmap, className)}>
+    <section className={classNames(s.sectionRoadmap, className)}>
       <Container {...rest} id="roadmap" className={s.container}>
         <h2>{heading}</h2>
         <div className={s.text}>

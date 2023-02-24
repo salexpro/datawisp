@@ -1,5 +1,5 @@
 import React from 'react'
-import clsx from 'clsx'
+import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
@@ -14,7 +14,7 @@ const LogoLink = (props) => {
     <Link
       {...rest}
       to={link?.url}
-      className={clsx(s.logoLink, className)}
+      className={classNames(s.logoLink, className)}
       title={siteTitle}
       aria-label={link?.text}
     >

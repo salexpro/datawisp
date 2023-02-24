@@ -2,7 +2,7 @@ import React from 'react'
 import { Modal, Form, Button } from 'react-bootstrap'
 import { useForm } from 'react-hook-form'
 import { useForm as useFormSpree } from '@formspree/react'
-import clsx from 'clsx'
+import classNames from 'classnames'
 
 import { EMAIL_RULE } from './constants'
 import * as s from './ModalRequestDemo.module.scss'
@@ -50,7 +50,7 @@ const ModalRequestDemo = (props) => {
                   message: 'Invalid email address',
                 },
               })}
-              className={clsx({ error: errors?.email })}
+              className={classNames({ error: errors?.email })}
             />
             {errors?.email && <Form.Text>{errors?.email?.message}</Form.Text>}
           </Form.Group>

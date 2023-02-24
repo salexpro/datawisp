@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import clsx from 'clsx'
+import classNames from 'classnames'
 
 import Icon from '~components/Icon'
 
@@ -10,7 +10,7 @@ const FooterSocialMedia = (props) => {
   const { socialLinks, className, ...rest } = props
 
   return (
-    <div {...rest} className={clsx(s.social, className)}>
+    <div {...rest} className={classNames(s.social, className)}>
       {socialLinks?.map(({ id, iconName, hoverColor, tooltip, url }) => (
         <a
           key={id}

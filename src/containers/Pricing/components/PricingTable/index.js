@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Container, Tabs, Tab } from 'react-bootstrap'
-import clsx from 'clsx'
+import classNames from 'classnames'
 
 import Switch from '~components/Switch'
 
@@ -34,10 +34,10 @@ const PricingTable = () => {
       <Tabs className={s.tabs} activeKey={activeTab} onSelect={setActiveTab}>
         {header.map(({ title, isSelected }) => (
           <Tab key={title} eventKey={title} title={title}>
-            <table className={clsx(s.pricingTable, s.mobile)}>
+            <table className={classNames(s.pricingTable, s.mobile)}>
               <colgroup>
                 <col />
-                <col className={clsx({ [s.selected]: isSelected })} />
+                <col className={classNames({ [s.selected]: isSelected })} />
               </colgroup>
               <TableHeader
                 header={[header.find(({ title: item }) => item === activeTab)]}
@@ -55,13 +55,13 @@ const PricingTable = () => {
         ))}
       </Tabs>
 
-      <table className={clsx(s.pricingTable, s.desktop)}>
+      <table className={classNames(s.pricingTable, s.desktop)}>
         <colgroup>
           <col />
           {header.map(({ title, isSelected }) => (
             <col
               key={`col-${title}`}
-              className={clsx({ [s.selected]: isSelected })}
+              className={classNames({ [s.selected]: isSelected })}
             />
           ))}
         </colgroup>

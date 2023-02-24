@@ -2,7 +2,7 @@ import React from 'react'
 import { Button, Container } from 'react-bootstrap'
 import PropTypes from 'prop-types'
 import { graphql, useStaticQuery } from 'gatsby'
-import clsx from 'clsx'
+import classNames from 'classnames'
 
 import useScrolled from '~hooks/useScrolled'
 
@@ -82,7 +82,7 @@ const Header = ({ siteTitle }) => {
   }
 
   return (
-    <header className={clsx(s.headerWrapper, { [s.active]: isScrolled })}>
+    <header className={classNames(s.headerWrapper, { [s.active]: isScrolled })}>
       <Container className={s.header}>
         <LogoLink
           image={logoImage}
@@ -94,7 +94,7 @@ const Header = ({ siteTitle }) => {
         <Button
           {...buttonProps}
           variant="primary-header"
-          className={clsx(s.btnPrimary, { scrolled: isScrolled })}
+          className={classNames(s.btnPrimary, { scrolled: isScrolled })}
         >
           {btnLink?.text}
         </Button>

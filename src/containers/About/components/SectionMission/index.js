@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import clsx from 'clsx'
+import classNames from 'classnames'
 import { Container } from 'react-bootstrap'
 import { StructuredText } from 'react-datocms'
 
@@ -15,7 +15,7 @@ const SectionMission = (props) => {
     <Container
       {...rest}
       as="section"
-      className={clsx(s.sectionMission, className)}
+      className={classNames(s.sectionMission, className)}
     >
       <div className={s.textWrapper}>
         <h2>{heading}</h2>
@@ -24,12 +24,12 @@ const SectionMission = (props) => {
       <ImageFormat
         alt="strucute"
         file={imageDesktop}
-        className={clsx(s.img, s.imgDesktop)}
+        className={classNames(s.img, s.imgDesktop)}
       />
       <ImageFormat
         alt="strucute"
         file={imageMobile}
-        className={clsx(s.img, s.imgMobile)}
+        className={classNames(s.img, s.imgMobile)}
       />
     </Container>
   )
