@@ -8,7 +8,10 @@ import { processMobileTableData } from '../../utils'
 import * as s from '../../PlansComparison.module.scss'
 
 const TableMobile = ({ header, plansComparison }) => {
-  const [activeTab, setActiveTab] = useState(0)
+  const [activeTab, setActiveTab] = useState(() => {
+    const index = header.findIndex((item) => item.isSelected)
+    return index === -1 ? 0 : index
+  })
 
   return (
     <Tabs className={s.tabs} activeKey={activeTab} onSelect={setActiveTab}>
