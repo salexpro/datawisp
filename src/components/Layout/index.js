@@ -40,7 +40,7 @@ const Layout = ({ children }) => {
       </div>
 
       <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-KQ66FE4RFZ"
+        src="https://www.googletagmanager.com/gtag/js?id=G-0TN5EWHPVY"
         strategy="post-hydrate"
       />
       <Script id="gtag-config" strategy="post-hydrate" forward={[`gtag`]}>
@@ -48,7 +48,7 @@ const Layout = ({ children }) => {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments)};
           gtag('js', new Date());
-          gtag('config', 'G-KQ66FE4RFZ')
+          gtag('config', 'G-0TN5EWHPVY')
       `}
       </Script>
     </SSRProvider>
