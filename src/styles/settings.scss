@@ -1390,20 +1390,20 @@ $popover-arrow-outer-color: fade-in($popover-border-color, 0.05) !default;
 // Toasts
 
 // scss-docs-start toast-variables
-$toast-max-width: 350px !default;
-$toast-padding-x: 0.75rem !default;
-$toast-padding-y: 0.5rem !default;
-$toast-font-size: 0.875rem !default;
+$toast-max-width: 646px;
+$toast-padding-x: 0;
+$toast-padding-y: 0;
+$toast-font-size: 1rem;
 $toast-color: null !default;
-$toast-background-color: rgba($white, 0.85) !default;
-$toast-border-width: 1px !default;
+$toast-background-color: $white;
+$toast-border-width: 0;
 $toast-border-color: rgba($black, 0.1) !default;
-$toast-border-radius: $border-radius !default;
-$toast-box-shadow: $box-shadow !default;
+$toast-border-radius: 1rem;
+$toast-box-shadow: 0px 6px 44px rgba(0, 0, 0, 0.1);
 $toast-spacing: $container-padding-x !default;
 
-$toast-header-color: $gray-600 !default;
-$toast-header-background-color: rgba($white, 0.85) !default;
+$toast-header-color: $black;
+$toast-header-background-color: $white;
 $toast-header-border-color: rgba($black, 0.05) !default;
 // scss-docs-end toast-variables
 

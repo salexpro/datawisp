@@ -1,0 +1,52 @@
+.toast {
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 32px;
+  padding: 24px;
+
+  @include b-d(md) {
+    grid-auto-flow: row;
+    row-gap: 24px;
+    width: 545px;
+  }
+
+  &-container {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    padding: 24px 40px;
+    transform: translateX(-50%);
+
+    @include b-d(md) {
+      padding: 24px;
+    }
+  }
+
+  &-header {
+    display: grid;
+    grid-template-columns: 48px auto;
+    column-gap: 16px;
+    align-items: start;
+    border-radius: 16px;
+
+    a {
+      color: inherit;
+      text-decoration: underline;
+      text-underline-position: under;
+
+      &:hover {
+        color: $primary;
+      }
+    }
+
+    .btn-close {
+      display: none;
+    }
+  }
+
+  &-body {
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 16px;
+  }
+}

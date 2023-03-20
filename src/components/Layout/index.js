@@ -7,9 +7,10 @@
 
 import React from 'react'
 import PropTypes from 'prop-types'
-import { useStaticQuery, graphql, Script } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 import SSRProvider from 'react-bootstrap/SSRProvider'
 
+import CookieBanner from '~components/CookieBanner'
 import '~styles/app.scss'
 
 import Header from './components/Header'
@@ -39,18 +40,7 @@ const Layout = ({ children }) => {
         <SVGDefs />
       </div>
 
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-0TN5EWHPVY"
-        strategy="post-hydrate"
-      />
-      <Script id="gtag-config" strategy="post-hydrate" forward={[`gtag`]}>
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments)};
-          gtag('js', new Date());
-          gtag('config', 'G-0TN5EWHPVY')
-      `}
-      </Script>
+      <CookieBanner />
     </SSRProvider>
   )
 }
