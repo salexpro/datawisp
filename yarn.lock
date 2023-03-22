@@ -2555,14 +2555,16 @@
   resolved "https://registry.yarnpkg.com/@graphql-typed-document-node/core/-/core-3.2.0.tgz#5f3d96ec6b2354ad6d8a28bf216a1d97b5426861"
   integrity sha512-mB9oAsNCm9aM3/SOv4YtBMqZbYj10R7dkq8byBqxGY/ncFwhf2oQzMV+LCRlWoDSEBJ3COiR1yeDvMtsoOsuFQ==
 
-"@gvrs/gatsby-transformer-blurhash@1.0.4":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@gvrs/gatsby-transformer-blurhash/-/gatsby-transformer-blurhash-1.0.4.tgz#8e723241fef7efc695fea27fbbf0059e83eec943"
-  integrity sha512-UVUvlpD69/d79RdPOe8l1lPRKJBJHlNj4XC1pYpHsxlSUJawxsbUr4EWEfXgXmiohZEuZ9OiB0pf9qlCDK9iPg==
+"@gvrs/gatsby-transformer-blurhash@2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@gvrs/gatsby-transformer-blurhash/-/gatsby-transformer-blurhash-2.0.0.tgz#46de818ef2b50861b79049f9b701befb07c2ddbd"
+  integrity sha512-pEWgrUSNA2/gLsc0d4GkdSZyy9U0KtGyI4zCMiutuyUHgOQ+ZecZ4PAzNRcFmWELghlSKbU4TPlDfcqPgj9BGA==
   dependencies:
     blurhash "^1.1.5"
     debug "^4.3.3"
+    gatsby-core-utils "^4.2.0"
     p-queue "^6.6.2"
+    sharp "^0.31.2"
 
 "@hapi/address@2.x.x":
   version "2.1.4"
@@ -7911,6 +7913,28 @@ gatsby-core-utils@^3.1.0:
     tmp "^0.2.1"
     xdg-basedir "^4.0.0"
 
+gatsby-core-utils@^4.2.0:
+  version "4.8.0"
+  resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-4.8.0.tgz#b9baac9f9434d0c789e470e8caf8003edf91d7ac"
+  integrity sha512-C2uOZBd9j6AYIyiB+DdxRtbQgAa3kMDRsKR5eCwALp0Bkg3W5I/YiXhSF7zQxVckaqNXzXvmedJESKCJNIvO7w==
+  dependencies:
+    "@babel/runtime" "^7.20.13"
+    ci-info "2.0.0"
+    configstore "^5.0.1"
+    fastq "^1.13.0"
+    file-type "^16.5.3"
+    fs-extra "^11.1.0"
+    got "^11.8.5"
+    hash-wasm "^4.9.0"
+    import-from "^4.0.0"
+    lmdb "2.5.3"
+    lock "^1.1.0"
+    node-object-hash "^2.3.10"
+    proper-lockfile "^4.1.2"
+    resolve-from "^5.0.0"
+    tmp "^0.2.1"
+    xdg-basedir "^4.0.0"
+
 gatsby-core-utils@^4.7.0:
   version "4.7.0"
   resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-4.7.0.tgz#f2c9d74da334979b0ae847bc6cfe283670c2f752"
@@ -12847,7 +12871,7 @@ shallow-compare@^1.2.2:
   resolved "https://registry.yarnpkg.com/shallow-compare/-/shallow-compare-1.2.2.tgz#fa4794627bf455a47c4f56881d8a6132d581ffdb"
   integrity sha512-LUMFi+RppPlrHzbqmFnINTrazo0lPNwhcgzuAXVVcfy/mqPDrQmHAyz5bvV0gDAuRFrk804V0HpQ6u9sZ0tBeg==
 
-sharp@^0.31.3:
+sharp@^0.31.2, sharp@^0.31.3:
   version "0.31.3"
   resolved "https://registry.yarnpkg.com/sharp/-/sharp-0.31.3.tgz#60227edc5c2be90e7378a210466c99aefcf32688"
   integrity sha512-XcR4+FCLBFKw1bdB+GEhnUNXNXvnt0tDo4WsBsraKymuo/IAuPuCBVAL2wIkUw2r/dwFW5Q5+g66Kwl2dgDFVg==
