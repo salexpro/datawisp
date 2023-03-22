@@ -10,6 +10,7 @@ const ProductPage = ({ data }) => {
     heroSectionImage,
     heroButtonPrimaryText,
     heroButtonPrimaryLink,
+    heroButtonSecond,
     featuresSectionHeading,
     featuresSectionText,
     featuresSectionFeatures,
@@ -34,6 +35,7 @@ const ProductPage = ({ data }) => {
         image: heroSectionImage,
         buttonText: heroButtonPrimaryText,
         buttonLink: heroButtonPrimaryLink,
+        buttonSecond: heroButtonSecond,
       }}
       features={{
         heading: featuresSectionHeading,
@@ -94,6 +96,10 @@ export const query = graphql`
         url
         rel
         target
+      }
+
+      heroButtonSecond {
+        ...LinkExternalData
       }
 
       featuresSectionHeading

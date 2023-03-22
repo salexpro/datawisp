@@ -9,8 +9,16 @@ import ImageFormat from '~components/ImageFormat'
 import * as s from './SectionHero.module.scss'
 
 const SectionHero = (props) => {
-  const { heading, text, image, buttonText, buttonLink, className, ...rest } =
-    props
+  const {
+    heading,
+    text,
+    image,
+    buttonText,
+    buttonLink,
+    buttonSecond,
+    className,
+    ...rest
+  } = props
 
   const { url, ...linkProps } = buttonLink
 
@@ -23,9 +31,19 @@ const SectionHero = (props) => {
       <div className={s.colLeft}>
         <h1 className={s.heading}>{heading}</h1>
         <StructuredText data={text.value} />
-        <Button variant="primary" as="a" href={url} {...linkProps}>
-          {buttonText}
-        </Button>
+        <div className={s.buttonWrapper}>
+          <Button variant="primary" as="a" href={url} {...linkProps}>
+            {buttonText}
+          </Button>
+          <Button
+            variant="outline-secondary"
+            href={buttonSecond.url}
+            target={buttonSecond.target}
+            rel={buttonSecond.rel}
+          >
+            {buttonSecond.text}
+          </Button>
+        </div>
       </div>
       <ImageFormat file={image} alt="Product hero" />
     </Container>

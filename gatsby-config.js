@@ -1,6 +1,6 @@
 require('dotenv-flow').config()
 
-const rnd = () => Math.random().toString(36).substring(2, 3)
+const rnd = () => Math.random().toString(36).substring(3, 4)
 
 const productionBranchNames = ['master', 'main']
 
