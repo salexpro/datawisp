@@ -29,9 +29,13 @@
   justify-content: start;
   margin-top: 16px;
 
-  > h3 {
+  &__header {
     font-size: 16px;
     line-height: 1.25;
+  }
+
+  &__icon {
+    color: $pink;
   }
 }
 

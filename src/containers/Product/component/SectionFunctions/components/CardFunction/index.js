@@ -14,8 +14,8 @@ const CardFunction = (props) => {
     <div className={s.cardFunction}>
       <GatsbyImage alt={title} image={getImage(image)} className={s.image} />
       <div className={s.title}>
-        <Icon name={icon} />
-        <h3>{title}</h3>
+        <Icon name={icon} className={s.title__icon} />
+        <h3 className={s.title__header}>{title}</h3>
       </div>
       <p className={s.description}>{description}</p>
       {!!videoUrl && (

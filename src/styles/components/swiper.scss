@@ -29,7 +29,14 @@
         transition: visibility 250ms, opacity 250ms, background-color 250ms;
 
         @include b-d(md) {
-          top: calc(50% - 42px);
+          top: calc(50% - 36px);
+          width: 40px;
+          height: 40px;
+
+          svg {
+            width: 20px;
+            height: 20px;
+          }
         }
       }
 
@@ -51,7 +58,7 @@
         }
 
         @include b-d(md) {
-          left: 0;
+          left: 10px;
         }
 
         svg {
@@ -75,7 +82,7 @@
         }
 
         @include b-d(md) {
-          right: 0;
+          right: 10px;
         }
       }
 
