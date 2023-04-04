@@ -43,17 +43,11 @@
       &-prev {
         left: calc(((100% - 1240px) / 2) - 26px);
 
-        &.end {
-          @include b-btw(xl, xxl) {
-            left: calc(((100% - 1240px) / 2) + (100% / 3.2 / 5 - 26px));
-          }
-        }
-
         @include b-up(xxl) {
           left: 74px;
         }
 
-        @include b-d(xl) {
+        @include b-d(container) {
           left: 14px;
         }
 
