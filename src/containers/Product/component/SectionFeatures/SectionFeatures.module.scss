@@ -4,33 +4,32 @@
   display: grid;
   margin-top: 100px;
 
-  @include b-up(md) {
-    justify-items: center;
+  @include b-d(lg) {
+    margin-top: 40px;
+  }
+
+  @include b-d(md) {
+    margin-top: 64px;
   }
 
   > p {
-    max-width: 700px;
+    max-width: 482px;
     margin-top: 12px;
-
-    @include b-up(md) {
-      text-align: center;
-    }
   }
 }
 
 .featuresWrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+  gap: 32px 48px;
   margin-top: 40px;
 
   @include b-d(lg) {
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    column-gap: 40px;
   }
 
   @include b-d(md) {
     grid-template-columns: 1fr;
-    margin-top: 32px;
   }
 }

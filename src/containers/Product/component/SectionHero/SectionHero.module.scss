@@ -21,16 +21,9 @@
   }
 }
 
-.heading {
-  @include b-d(lg) {
-    text-align: center;
-  }
-}
-
 .colLeft {
   @include b-d(lg) {
     display: grid;
-    justify-items: center;
   }
 
   p {
@@ -39,7 +32,6 @@
 
     @include b-d(lg) {
       max-width: 500px;
-      text-align: center;
     }
 
     @include b-d(md) {

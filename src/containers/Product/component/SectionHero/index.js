@@ -29,7 +29,7 @@ const SectionHero = (props) => {
       className={classNames(s.sectionHero, className)}
     >
       <div className={s.colLeft}>
-        <h1 className={s.heading}>{heading}</h1>
+        <h1>{heading}</h1>
         <StructuredText data={text.value} />
         <div className={s.buttonWrapper}>
           <Button variant="primary" as="a" href={url} {...linkProps}>

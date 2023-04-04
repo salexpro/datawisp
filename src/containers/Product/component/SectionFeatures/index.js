@@ -4,8 +4,7 @@ import { Container } from 'react-bootstrap'
 import { StructuredText } from 'react-datocms'
 import classNames from 'classnames'
 
-import CardCase from '~components/CardCase'
-
+import Feature from './components/Feature'
 import * as s from './SectionFeatures.module.scss'
 
 const SectionFeatures = (props) => {
@@ -21,12 +20,11 @@ const SectionFeatures = (props) => {
       <StructuredText data={text.value} />
       <div className={s.featuresWrapper}>
         {items.map((item) => (
-          <CardCase
+          <Feature
             key={item.id}
-            postIcon={item.iconName}
+            iconName={item.iconName}
             heading={item.heading}
-            seo={{ description: item.text }}
-            isFeatureCard
+            text={item.text}
           />
         ))}
       </div>

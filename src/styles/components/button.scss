@@ -73,6 +73,11 @@ button {
 
   // Variant: outline-secondary
   &-outline-secondary {
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 10px;
+    align-items: center;
+    justify-content: center;
     color: $gray-900;
 
     &:hover {
