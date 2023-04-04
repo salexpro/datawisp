@@ -6735,13 +6735,6 @@ gatsby-plugin-matomo@0.15.0:
   resolved "https://registry.yarnpkg.com/gatsby-plugin-matomo/-/gatsby-plugin-matomo-0.15.0.tgz#f9d42f55b746b2dd9de3b33b32e8ce8caf388780"
   integrity sha512-Bw5G+9xlAEp/8t7suqnWH/PzBBhFB/4X8aS8y/Jf6k2ncaRhKr83mbYR5Ffk8qcVelURcM4FEx1Usal5FBDTyQ==
 
-gatsby-plugin-minify-classnames@5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-minify-classnames/-/gatsby-plugin-minify-classnames-5.0.0.tgz#77fb6d3fb9e2b58463ea15ab911398ad4edf66f5"
-  integrity sha512-cwHnMsnefMVu8wneiNyfW17MgoRfRaTg8gjvinorsdAIl5Y+UbRIqV1VQ5BJ5AaOlswaF8dCyZNIjKpbGyt+8A==
-  dependencies:
-    incstr "^1.2.3"
-
 gatsby-plugin-offline@6.8.0:
   version "6.8.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-offline/-/gatsby-plugin-offline-6.8.0.tgz#bf2348c36a70389d25b05d6b0d4291248a4c1118"
@@ -7783,11 +7776,6 @@ imurmurhash@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/imurmurhash/-/imurmurhash-0.1.4.tgz#9218b9b2b928a238b13dc4fb6b6d576f231453ea"
   integrity sha512-JmXMZ6wuvDmLiHEml9ykzqO6lwFbof0GG4IkcGaENdCRDDmMVnny7s5HsIgHCbaq0w2MyPhDqkhTUgS2LU2PHA==
-
-incstr@^1.2.3:
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/incstr/-/incstr-1.2.3.tgz#8f105bbec9bebe5fa777e52b3f516cee071c67cf"
-  integrity sha512-ySi29Lzdc3QnB1LzZgRf5kl59m5tPucNagrAyJJ9rWz4+Pa6IxAHSNyUHYvEvaj6QPwWAY2/thi3Rxt45qi3HQ==
 
 indent-string@^4.0.0:
   version "4.0.0"

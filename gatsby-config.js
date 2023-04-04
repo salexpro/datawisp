@@ -1,9 +1,5 @@
 require('dotenv-flow').config()
 
-const rnd = () => Math.random().toString(36).substring(3, 4)
-
-const productionBranchNames = ['master', 'main']
-
 module.exports = {
   /*
   Experimental flags that increase DX and build times with different technics (may require to use `yarn clean` time to time)
@@ -30,20 +26,6 @@ module.exports = {
     // `gatsby-plugin-webpack-bundle-analyser-v2`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
-    {
-      resolve: `gatsby-plugin-minify-classnames`,
-      options: {
-        enable:
-          // Cloudflare
-          productionBranchNames.includes(process.env.CF_PAGES_BRANCH) ||
-          // Gatsby Cloud
-          productionBranchNames.includes(process.env.BRANCH) ||
-          // Vercel
-          process.env.GATSBY_VERCEL_ENV === 'production',
-        prefix: rnd(),
-        suffix: rnd(),
-      },
-    },
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
