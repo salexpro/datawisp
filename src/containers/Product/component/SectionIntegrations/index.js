@@ -16,7 +16,7 @@ const SectionIntegrations = (props) => {
       {...rest}
       className={classNames(s.sectionIntegrations, className)}
     >
-      <h2 className={s.heading}>{heading}</h2>
+      <h2>{heading}</h2>
       <StructuredText data={text.value} />
       <div className={s.integrationsWrapper}>
         {integrations.map(({ id, ...integration }) => (
