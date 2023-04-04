@@ -17,6 +17,9 @@ const ProductPage = ({ data }) => {
     integrationsSectionHeading,
     integrationsSectionText,
     integrations,
+    functionsSectionHeading,
+    functionsSectionDescription,
+    functions,
     bannerSectionHeading,
     bannerSectionText,
     bannerSectionButtonText,
@@ -46,6 +49,11 @@ const ProductPage = ({ data }) => {
         heading: integrationsSectionHeading,
         text: integrationsSectionText,
         integrations,
+      }}
+      functions={{
+        heading: functionsSectionHeading,
+        description: functionsSectionDescription,
+        functions,
       }}
       banner={{
         heading: bannerSectionHeading,
@@ -125,6 +133,7 @@ export const query = graphql`
           value
         }
         supports {
+          id
           text
         }
         image {
@@ -134,6 +143,27 @@ export const query = graphql`
             width: 160
             placeholder: NONE
             outputPixelDensities: [1, 1.5, 2, 3]
+            imgixParams: { fit: "crop", auto: "compress,format" }
+          )
+        }
+      }
+
+      functionsSectionHeading
+      functionsSectionDescription {
+        value
+      }
+      functions {
+        id
+        icon
+        title
+        description
+        videoUrl
+        image {
+          gatsbyImageData(
+            aspectRatio: 1.686
+            placeholder: BLURRED
+            sizes: "(max-width: 767.98px) calc(100vw - 24px * 2 - 16 * 2), (max-width: 1199.98px) calc((100vw - 40px * 2 - 24px) / 2), 344px"
+            breakpoints: [295, 687, 885, 1300]
             imgixParams: { fit: "crop", auto: "compress,format" }
           )
         }
