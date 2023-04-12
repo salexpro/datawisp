@@ -2,28 +2,38 @@ import React, { useState, useEffect } from 'react'
 import { Toast, Button, ToastContainer } from 'react-bootstrap'
 import { StaticImage } from 'gatsby-plugin-image'
 import { useCookies } from 'react-cookie'
-import { useLocation } from '@reach/router'
-import { initializeAndTrack } from 'gatsby-plugin-gdpr-cookies'
 
-import { GOOGLE_ANALYTIC_COOKIE_KEY, PRIVACY_POLICY_LINK } from './constants'
-import { isGDPR } from './utils'
+import { GOOGLE_ANALYTIC_COOKIE_KEY, GOOGLE_ADS_COOKIE_KEY } from '~constants'
+
+import { PRIVACY_POLICY_LINK } from './constants'
+import { hasCookies, isGDPR } from './utils'
 
 const CookieBanner = () => {
-  const location = useLocation()
-  const [cookies, setCookie] = useCookies([GOOGLE_ANALYTIC_COOKIE_KEY])
+  const [cookies, setCookie] = useCookies([
+    GOOGLE_ANALYTIC_COOKIE_KEY,
+    GOOGLE_ADS_COOKIE_KEY,
+  ])
   const [showBanner, setShowBanner] = useState(false)
 
-  const handleOnClick = (value) => {
+  const setAllCookies = (value) => {
     const expires = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000)
 
     setCookie(GOOGLE_ANALYTIC_COOKIE_KEY, value, { expires })
+    setCookie(GOOGLE_ADS_COOKIE_KEY, value, { expires })
+  }
+
+  const handleOnClick = (value) => {
+    setAllCookies(value)
     setShowBanner(false)
-    initializeAndTrack(location)
   }
 
   const initializeBanner = async () => {
+    if (hasCookies(cookies)) return
+
     const res = await isGDPR()
-    setShowBanner(cookies[GOOGLE_ANALYTIC_COOKIE_KEY] === undefined && res)
+
+    if (res) setShowBanner(true)
+    else setAllCookies(true)
   }
 
   useEffect(() => {

@@ -1,5 +1,7 @@
 import axios from 'axios'
 
+import { GOOGLE_ANALYTIC_COOKIE_KEY, GOOGLE_ADS_COOKIE_KEY } from '~constants'
+
 import { GDPR_COUNTRIES } from './constants'
 
 export const isGDPR = async () => {
@@ -14,3 +16,7 @@ export const isGDPR = async () => {
     return true
   }
 }
+
+export const hasCookies = (cookies) =>
+  cookies[GOOGLE_ANALYTIC_COOKIE_KEY] !== undefined &&
+  cookies[GOOGLE_ADS_COOKIE_KEY] !== undefined

@@ -11,6 +11,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import SSRProvider from 'react-bootstrap/SSRProvider'
 
 import CookieBanner from '~components/CookieBanner'
+import Metrics from '~components/Metrics'
 import '~styles/app.scss'
 
 import Header from './components/Header'
@@ -41,6 +42,7 @@ const Layout = ({ children }) => {
       </div>
 
       <CookieBanner />
+      <Metrics />
     </SSRProvider>
   )
 }

@@ -1,8 +1,6 @@
 export const PRIVACY_POLICY_LINK =
   'https://app.datawisp.io/assets/privacy_v0.pdf'
 
-export const GOOGLE_ANALYTIC_COOKIE_KEY = 'gatsby-gdpr-google-analytics'
-
 export const GDPR_COUNTRIES = [
   'Austria',
   'Belgium',
