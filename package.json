@@ -25,7 +25,7 @@
     "gatsby": "5.8.1",
     "gatsby-plugin-gdpr-cookies": "^2.0.9",
     "gatsby-plugin-image": "3.8.0",
-    "gatsby-plugin-matomo": "0.15.0",
+    "gatsby-plugin-matomo": "0.15.1",
     "gatsby-plugin-offline": "6.8.0",
     "gatsby-plugin-plausible": "0.0.7",
     "gatsby-plugin-react-helmet": "6.8.0",
