@@ -3,8 +3,11 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import { Button, Container } from 'react-bootstrap'
 import { StructuredText } from 'react-datocms'
+import { useCookies } from 'react-cookie'
 
 import ImageFormat from '~components/ImageFormat'
+import { GOOGLE_ADS_COOKIE_KEY, GOOGLE_ANALYTIC_COOKIE_KEY } from '~constants'
+import { gtagReportConversion } from '~utils/analytics'
 
 import * as s from './SectionHero.module.scss'
 
@@ -20,7 +23,10 @@ const SectionHero = (props) => {
     ...rest
   } = props
 
-  const { url, ...linkProps } = buttonLink
+  const [cookies] = useCookies([
+    GOOGLE_ANALYTIC_COOKIE_KEY,
+    GOOGLE_ADS_COOKIE_KEY,
+  ])
 
   return (
     <Container
@@ -32,7 +38,13 @@ const SectionHero = (props) => {
         <h1>{heading}</h1>
         <StructuredText data={text.value} />
         <div className={s.buttonWrapper}>
-          <Button variant="primary" as="a" href={url} {...linkProps}>
+          <Button
+            variant="primary"
+            href={buttonLink.url}
+            target={buttonLink.target}
+            rel={buttonLink.rel}
+            onClick={() => gtagReportConversion(cookies)}
+          >
             {buttonText}
           </Button>
           <Button

@@ -4,9 +4,10 @@ import { StaticImage } from 'gatsby-plugin-image'
 import { useCookies } from 'react-cookie'
 
 import { GOOGLE_ANALYTIC_COOKIE_KEY, GOOGLE_ADS_COOKIE_KEY } from '~constants'
+import { hasCookies } from '~utils/analytics'
 
 import { PRIVACY_POLICY_LINK } from './constants'
-import { hasCookies, isGDPR } from './utils'
+import { isGDPR } from './utils'
 
 const CookieBanner = () => {
   const [cookies, setCookie] = useCookies([

@@ -5,8 +5,11 @@ import classNames from 'classnames'
 import { useLocation } from '@gatsbyjs/reach-router'
 import { StructuredText } from 'react-datocms'
 import { Button, Container } from 'react-bootstrap'
+import { useCookies } from 'react-cookie'
 
 import ImageFormat from '~components/ImageFormat'
+import { GOOGLE_ADS_COOKIE_KEY, GOOGLE_ANALYTIC_COOKIE_KEY } from '~constants'
+import { gtagReportConversion } from '~utils/analytics'
 
 import PartnersMarquee from './components/PartnersMaruqee'
 import ModalRequestDemo from '../ModalRequestDemo'
@@ -25,6 +28,10 @@ const SectionHero = (props) => {
     ...rest
   } = props
 
+  const [cookies] = useCookies([
+    GOOGLE_ANALYTIC_COOKIE_KEY,
+    GOOGLE_ADS_COOKIE_KEY,
+  ])
   const { hash } = useLocation()
   const isModal = hash === '#request-demo'
 
@@ -34,6 +41,11 @@ const SectionHero = (props) => {
     setShowRequestDemoModal(isModal)
   }, [])
 
+  const handeRequestDemo = () => {
+    gtagReportConversion(cookies)
+    setShowRequestDemoModal(true)
+  }
+
   return (
     <section {...rest} className={classNames(s.sectionHero, className)}>
       <Container className={classNames(s.container, s.containerMain)}>
@@ -42,20 +54,17 @@ const SectionHero = (props) => {
           <StructuredText data={text.value} />
           <div className="btn-group">
             {!primaryButton.hide && (
-              <Button
-                variant="primary"
-                onClick={() => setShowRequestDemoModal(true)}
-              >
+              <Button variant="primary" onClick={handeRequestDemo}>
                 {primaryButton.text}
               </Button>
             )}
             {!secondaryButton.hide && (
               <Button
                 variant="outline-secondary"
-                as="a"
                 href={secondaryButton.url}
                 rel={secondaryButton.rel}
                 target={secondaryButton.target}
+                onClick={() => gtagReportConversion(cookies)}
               >
                 {secondaryButton.text}
               </Button>

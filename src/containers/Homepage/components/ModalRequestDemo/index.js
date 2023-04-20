@@ -3,12 +3,20 @@ import { Modal, Form, Button } from 'react-bootstrap'
 import { useForm } from 'react-hook-form'
 import { useForm as useFormSpree } from '@formspree/react'
 import classNames from 'classnames'
+import { useCookies } from 'react-cookie'
+
+import { GOOGLE_ADS_COOKIE_KEY, GOOGLE_ANALYTIC_COOKIE_KEY } from '~constants'
+import { gtagReportConversion } from '~utils/analytics'
 
 import { EMAIL_RULE } from './constants'
 import * as s from './ModalRequestDemo.module.scss'
 
 const ModalRequestDemo = (props) => {
   const { show, onHide } = props
+  const [cookies] = useCookies([
+    GOOGLE_ANALYTIC_COOKIE_KEY,
+    GOOGLE_ADS_COOKIE_KEY,
+  ])
   const {
     register,
     handleSubmit,
@@ -21,6 +29,7 @@ const ModalRequestDemo = (props) => {
   )
 
   const onSubmit = (data) => {
+    gtagReportConversion(cookies)
     handleSendData(data)
     reset()
     onHide()

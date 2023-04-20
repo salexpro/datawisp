@@ -3,8 +3,11 @@ import { Button, Container } from 'react-bootstrap'
 import PropTypes from 'prop-types'
 import { graphql, useStaticQuery } from 'gatsby'
 import classNames from 'classnames'
+import { useCookies } from 'react-cookie'
 
 import useScrolled from '~hooks/useScrolled'
+import { GOOGLE_ADS_COOKIE_KEY, GOOGLE_ANALYTIC_COOKIE_KEY } from '~constants'
+import { gtagReportConversion } from '~utils/analytics'
 
 import Menu from '../NavMenu'
 import LogoLink from '../LogoLink'
@@ -14,6 +17,10 @@ import * as s from './Header.module.scss'
 
 const Header = ({ siteTitle }) => {
   const isScrolled = useScrolled()
+  const [cookies] = useCookies([
+    GOOGLE_ANALYTIC_COOKIE_KEY,
+    GOOGLE_ADS_COOKIE_KEY,
+  ])
 
   const data = useStaticQuery(graphql`
     fragment LinkInternalData on DatoCmsLinkInternal {
@@ -94,6 +101,7 @@ const Header = ({ siteTitle }) => {
         <Button
           {...buttonProps}
           variant="primary-header"
+          onClick={() => gtagReportConversion(cookies)}
           className={classNames(s.btnPrimary, { scrolled: isScrolled })}
         >
           {btnLink?.text}
