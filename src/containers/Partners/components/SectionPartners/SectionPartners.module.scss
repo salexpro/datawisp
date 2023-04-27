@@ -1,0 +1,88 @@
+@import '~styles/mixins';
+
+.sectionPartners {
+  display: grid;
+  row-gap: 32px;
+  padding-top: 50px;
+  padding-bottom: 40px;
+
+  @include b-up(md) {
+    padding-top: 40px;
+  }
+
+  @include b-d(md) {
+    padding-top: 32px;
+    padding-bottom: 40px;
+  }
+}
+
+.partner {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  column-gap: 40px;
+  align-items: center;
+  padding: 24px;
+  background-color: $gray-100;
+  border-radius: 16px;
+
+  @include b-up(lg) {
+    min-height: 448px;
+  }
+
+  @include b-d(lg) {
+    grid-template-columns: 288px 1fr;
+    column-gap: 24px;
+  }
+
+  @include b-d(md) {
+    grid-template-columns: 1fr;
+  }
+
+  &__logoWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    @include b-d(md) {
+      min-height: 264px;
+    }
+
+    &__logo {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+  }
+
+  &__title {
+    line-height: 1.364;
+
+    @include b-up(md) {
+      font-size: 24px;
+      line-height: 1.333;
+    }
+
+    @include b-d(md) {
+      margin-top: 24px;
+      font-size: 20px;
+      line-height: 1.2;
+    }
+  }
+
+  &__description {
+    margin-top: 12px;
+
+    b {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.333;
+    }
+  }
+
+  &__button {
+    margin-top: 32px;
+  }
+}
