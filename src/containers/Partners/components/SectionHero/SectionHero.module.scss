@@ -1,0 +1,67 @@
+@import '~styles/mixins';
+
+.sectionHero {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 32px;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 8px;
+  padding-bottom: 50px;
+  overflow: hidden;
+
+  @include b-btw(md, lg) {
+    grid-template-columns: 1fr clamp-builder(md, lg, 243px, 432px);
+    padding-bottom: 40px;
+  }
+
+  @include b-d(md) {
+    grid-template-columns: 1fr;
+    padding-top: 68px;
+    padding-bottom: 32px;
+  }
+
+  &__description {
+    max-width: 443px;
+    margin-top: 20px;
+
+    @include b-d(lg) {
+      max-width: 413px;
+    }
+  }
+
+  &__button {
+    margin-top: 40px;
+
+    @include b-d(lg) {
+      margin-top: 32px;
+    }
+  }
+
+  &__imgWrapper {
+    position: relative;
+
+    @include b-up(lg) {
+      min-height: 500px;
+      max-height: 500px;
+    }
+
+    @include b-btw(md, lg) {
+      min-height: 440px;
+    }
+
+    &__img {
+      width: 100%;
+
+      @include b-btw(md, lg) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 532px;
+        max-width: 532px;
+        max-height: 440px;
+      }
+    }
+  }
+}
