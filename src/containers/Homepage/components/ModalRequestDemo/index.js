@@ -5,10 +5,13 @@ import { useForm as useFormSpree } from '@formspree/react'
 import classNames from 'classnames'
 import { useCookies } from 'react-cookie'
 
-import { GOOGLE_ADS_COOKIE_KEY, GOOGLE_ANALYTIC_COOKIE_KEY } from '~constants'
+import {
+  GOOGLE_ADS_COOKIE_KEY,
+  GOOGLE_ANALYTIC_COOKIE_KEY,
+  EMAIL_RULE,
+} from '~constants'
 import { gtagReportConversion } from '~utils/analytics'
 
-import { EMAIL_RULE } from './constants'
 import * as s from './ModalRequestDemo.module.scss'
 
 const ModalRequestDemo = (props) => {

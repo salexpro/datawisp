@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Button, Container } from 'react-bootstrap'
 
 import HeroImg from './assets/hero.svg'
+import ModalBecomePartner from '../ModalBecomePartner'
 import * as s from './SectionHero.module.scss'
 
 const SectionHero = () => {
+  const [showModal, setShowModal] = useState(false)
+
   return (
     <Container className={s.sectionHero}>
       <div>
@@ -15,7 +18,12 @@ const SectionHero = () => {
           partner to make it easier for their customers to find insights in
           their data.
         </p>
-        <Button className={s.sectionHero__button}>Become a partner</Button>
+        <Button
+          className={s.sectionHero__button}
+          onClick={() => setShowModal(true)}
+        >
+          Become a partner
+        </Button>
       </div>
       <div className={s.sectionHero__imgWrapper}>
         <img
@@ -24,6 +32,8 @@ const SectionHero = () => {
           className={s.sectionHero__imgWrapper__img}
         />
       </div>
+
+      <ModalBecomePartner show={showModal} onHide={() => setShowModal(false)} />
     </Container>
   )
 }
