@@ -119,4 +119,26 @@
   <symbol id="icon-table" viewBox="0 0 24 24" fill="none">
     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 3H5a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2ZM15 15h-2.25M15 12.75V15v-2.25ZM15 15v2.25V15Zm0 0h2.25H15ZM3 9h18M9 21V9"/>
   </symbol>
+  <symbol id="icon-toast_success" viewBox="0 0 48 48" fill="none">
+    <g stroke="#26D638" stroke-width="2" clip-path="url(#a)">
+      <circle cx="24" cy="24" r="23" fill="#EEFDF2"/>
+      <path d="m17 23.5 5 5 9.5-9.5"/>
+    </g>
+    <defs>
+      <clipPath id="a">
+        <path fill="#fff" d="M0 0h48v48H0z"/>
+      </clipPath>
+    </defs>
+  </symbol>
+  <symbol id='icon-toast_error' viewBox="0 0 48 48" fill="none">
+    <g stroke="#EE3131" stroke-width="2" clip-path="url(#a)">
+      <circle cx="24" cy="24" r="23" fill="#FDEEEE"/>
+      <path d="m19 28.5 9.5-9.5M28.5 28.5 19 19"/>
+    </g>
+    <defs>
+      <clipPath id="a">
+        <path fill="#fff" d="M0 0h48v48H0z"/>
+      </clipPath>
+    </defs>
+  </symbol>
 </svg>

@@ -1,12 +1,23 @@
 import React, { useState } from 'react'
 import { Button, Container } from 'react-bootstrap'
 
+import DWToast from '~components/DWToast'
+
 import HeroImg from './assets/hero.svg'
+import { TOAST_TITLE } from './constants'
 import ModalBecomePartner from '../ModalBecomePartner'
 import * as s from './SectionHero.module.scss'
 
 const SectionHero = () => {
   const [showModal, setShowModal] = useState(false)
+  const [toast, setToast] = useState({ show: false, variant: 'success' })
+
+  const handleToast = (variant) => {
+    setToast({ show: true, variant })
+    setTimeout(() => {
+      setToast({ show: false, variant })
+    }, 3000)
+  }
 
   return (
     <Container className={s.sectionHero}>
@@ -33,7 +44,18 @@ const SectionHero = () => {
         />
       </div>
 
-      <ModalBecomePartner show={showModal} onHide={() => setShowModal(false)} />
+      <ModalBecomePartner
+        show={showModal}
+        onHide={() => setShowModal(false)}
+        onResult={handleToast}
+      />
+
+      <DWToast
+        show={toast.show}
+        variant={toast.variant}
+        onHide={() => setToast({ show: false, variant: toast.variant })}
+        title={TOAST_TITLE[toast.variant]}
+      />
     </Container>
   )
 }

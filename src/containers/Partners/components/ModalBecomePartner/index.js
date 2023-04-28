@@ -7,7 +7,7 @@ import classNames from 'classnames'
 import { PARTNER_FORM_DATA } from './constants'
 
 const ModalBecomePartner = (props) => {
-  const { show, onHide } = props
+  const { show, onHide, onResult } = props
 
   const [state, handleSendData] = useFormSpree(
     process.env.GATSBY_FORM_SPREE_BECOME_PARTNER_TOKEN || 'mzbqynog'
@@ -22,6 +22,17 @@ const ModalBecomePartner = (props) => {
 
   const onSubmit = (data) => {
     handleSendData(data)
+      .then((res) => {
+        if (res?.body.ok) {
+          onResult('success')
+          return
+        }
+        onResult('error')
+      })
+      .catch(() => {
+        onResult('error')
+      })
+
     reset()
     onHide()
   }
