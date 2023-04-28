@@ -5,11 +5,11 @@ import Layout from '~components/Layout'
 import SectionHero from './components/SectionHero'
 import SectionPartners from './components/SectionPartners'
 
-const Partners = () => {
+const Partners = ({ hero, partners }) => {
   return (
     <Layout>
-      <SectionHero />
-      <SectionPartners />
+      <SectionHero {...hero} />
+      <SectionPartners partners={partners} />
     </Layout>
   )
 }

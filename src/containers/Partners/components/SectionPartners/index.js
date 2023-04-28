@@ -1,25 +1,34 @@
 import React from 'react'
 import { Button, Container } from 'react-bootstrap'
+import { StructuredText } from 'react-datocms'
 
-import { PARTNERS } from './mocks'
+import ImageFormat from '~components/ImageFormat'
+
 import * as s from './SectionPartners.module.scss'
 
-const SectionPartners = () => {
+const SectionPartners = ({ partners }) => {
   return (
     <Container className={s.sectionPartners}>
-      {PARTNERS.map(({ id, title, description, logo, link }) => (
+      {partners.map(({ id, title, description, name, logo, link }) => (
         <div key={id} className={s.partner}>
           <div className={s.partner__logoWrapper}>
-            <img
-              src={logo}
-              alt={title}
+            <ImageFormat
+              alt={name}
+              file={logo}
               className={s.partner__logoWrapper__logo}
             />
           </div>
           <div>
             <h2 className={s.partner__title}>{title}</h2>
-            <p className={s.partner__description}>{description}</p>
-            <Button href={link} target="_blank" className={s.partner__button}>
+            <div className={s.partner__description}>
+              <StructuredText data={description.value} />
+            </div>
+            <Button
+              href={link}
+              target="_blank"
+              rel="noreferrer"
+              className={s.partner__button}
+            >
               Sign up now
             </Button>
           </div>

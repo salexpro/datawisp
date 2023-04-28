@@ -80,7 +80,8 @@
       line-height: 1.467;
     }
 
-    b {
+    strong {
+      font-size: 18px;
       font-weight: 600;
 
       @include b-up(md) {
