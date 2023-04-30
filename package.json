@@ -24,7 +24,7 @@
     "dotenv-flow": "3.2.0",
     "gatsby": "5.9.0",
     "gatsby-plugin-image": "3.9.0",
-    "gatsby-plugin-matomo": "0.15.1",
+    "gatsby-plugin-matomo": "0.15.2",
     "gatsby-plugin-offline": "6.9.0",
     "gatsby-plugin-plausible": "0.0.7",
     "gatsby-plugin-react-helmet": "6.9.0",

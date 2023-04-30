@@ -6734,10 +6734,10 @@ gatsby-plugin-image@3.9.0:
     objectFitPolyfill "^2.3.5"
     prop-types "^15.8.1"
 
-gatsby-plugin-matomo@0.15.1:
-  version "0.15.1"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-matomo/-/gatsby-plugin-matomo-0.15.1.tgz#cbcc854f29b3a12be69de6c812a0eacef375d41d"
-  integrity sha512-89Ac8jyBtt61C3+eNX8oSTCessssZi4lJEifb276drppquqTop6FKhpJbuQJ5O04S5GixYsGs5rkS3Crsl1YIQ==
+gatsby-plugin-matomo@0.15.2:
+  version "0.15.2"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-matomo/-/gatsby-plugin-matomo-0.15.2.tgz#0e0b55008faa7592bd815006b2b3da07e27b9559"
+  integrity sha512-KOv4h+HEWPceAeOuEXNB/n6uV6sN2ru2RycN2Xq/u81SrgkXh7Jf4uRUmqj78Gm6QryPnyCOFYJNmBJlsrK2tg==
 
 gatsby-plugin-offline@6.9.0:
   version "6.9.0"
