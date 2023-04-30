@@ -41,7 +41,7 @@
     "react": "18.2.0",
     "react-bootstrap": "2.7.4",
     "react-cookie": "^4.1.1",
-    "react-datocms": "4.0.10",
+    "react-datocms": "4.0.11",
     "react-dom": "18.2.0",
     "react-fast-marquee": "1.5.2",
     "react-helmet": "6.1.0",
