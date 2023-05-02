@@ -3,39 +3,38 @@
 .sectionPartners {
   display: grid;
   row-gap: 32px;
-  padding-top: 50px;
   padding-bottom: 40px;
 
-  @include b-up(md) {
+  @include b-up(lg) {
+    padding-top: 50px;
+  }
+
+  @include b-btw(md, lg) {
     padding-top: 40px;
   }
 
   @include b-d(md) {
     padding-top: 32px;
-    padding-bottom: 40px;
   }
 }
 
 .partner {
   display: grid;
-  grid-template-columns: 400px 1fr;
-  column-gap: 40px;
+  row-gap: 24px;
   align-items: center;
   padding: 24px;
   background-color: $gray-100;
   border-radius: 16px;
 
   @include b-up(lg) {
+    grid-template-columns: 400px 1fr;
+    column-gap: 40px;
     min-height: 448px;
   }
 
-  @include b-d(lg) {
+  @include b-btw(md, lg) {
     grid-template-columns: 288px 1fr;
     column-gap: 24px;
-  }
-
-  @include b-d(md) {
-    grid-template-columns: 1fr;
   }
 
   &__logoWrapper {
@@ -58,15 +57,16 @@
   }
 
   &__title {
-    line-height: 1.364;
+    @include b-up(lg) {
+      line-height: 1.364;
+    }
 
-    @include b-up(md) {
+    @include b-btw(md, lg) {
       font-size: 24px;
       line-height: 1.333;
     }
 
     @include b-d(md) {
-      margin-top: 24px;
       font-size: 20px;
       line-height: 1.2;
     }
@@ -75,10 +75,21 @@
   &__description {
     margin-top: 12px;
 
+    @include b-d(md) {
+      font-size: 15px;
+      line-height: 1.467;
+    }
+
     b {
-      font-size: 18px;
       font-weight: 600;
-      line-height: 1.333;
+
+      @include b-up(md) {
+        font-size: 18px;
+      }
+
+      @include b-d(md) {
+        font-size: 16px;
+      }
     }
   }
 
