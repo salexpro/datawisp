@@ -3,16 +3,20 @@
 .sectionHero {
   position: relative;
   display: grid;
-  grid-template-columns: 1fr auto;
   gap: 32px;
   align-items: center;
   justify-content: space-between;
-  padding-top: 8px;
-  padding-bottom: 50px;
   overflow: hidden;
+
+  @include b-up(lg) {
+    grid-template-columns: 1fr auto;
+    padding-top: 8px;
+    padding-bottom: 50px;
+  }
 
   @include b-btw(md, lg) {
     grid-template-columns: 1fr clamp-builder(md, lg, 243px, 432px);
+    padding-top: 8px;
     padding-bottom: 40px;
   }
 
@@ -23,16 +27,21 @@
   }
 
   &__description {
-    max-width: 443px;
-    margin-top: 20px;
+    @include b-up(lg) {
+      max-width: 443px;
+      margin-top: 20px;
+    }
 
     @include b-d(lg) {
       max-width: 413px;
+      margin-top: 12px;
     }
   }
 
   &__button {
-    margin-top: 40px;
+    @include b-up(lg) {
+      margin-top: 40px;
+    }
 
     @include b-d(lg) {
       margin-top: 32px;
