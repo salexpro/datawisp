@@ -11,7 +11,7 @@ import * as s from './SectionFunctions.module.scss'
 
 const SectionFunctions = ({ heading, description, functions }) => {
   return (
-    <section className={s.wrapper}>
+    <section id="functions" className={s.wrapper}>
       <Container className={s.heading}>
         <h2>{heading}</h2>
         <StructuredText data={description.value} />

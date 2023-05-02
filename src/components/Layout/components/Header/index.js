@@ -27,6 +27,7 @@ const Header = ({ siteTitle }) => {
       id
       text
       url
+      iconName
     }
 
     fragment LinkExternalData on DatoCmsLinkExternal {
@@ -35,14 +36,33 @@ const Header = ({ siteTitle }) => {
       url
       rel
       target
+      iconName
     }
 
     fragment LinkAnchorData on DatoCmsLinkAnchor {
       id
       text
       anchor
+      iconName
       ownerPage {
         url
+      }
+    }
+
+    fragment LinkContainerData on DatoCmsLinkContainer {
+      id
+      text
+      subLinks {
+        __typename
+        ... on DatoCmsLinkInternal {
+          ...LinkInternalData
+        }
+        ... on DatoCmsLinkExternal {
+          ...LinkExternalData
+        }
+        ... on DatoCmsLinkAnchor {
+          ...LinkAnchorData
+        }
       }
     }
 
@@ -59,6 +79,9 @@ const Header = ({ siteTitle }) => {
         }
         navMenuItems {
           __typename
+          ... on DatoCmsLinkContainer {
+            ...LinkContainerData
+          }
           ... on DatoCmsLinkInternal {
             ...LinkInternalData
           }

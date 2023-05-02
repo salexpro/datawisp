@@ -1184,8 +1184,8 @@ $dropdown-link-color: $gray-800 !default;
 $dropdown-link-hover-color: $primary;
 $dropdown-link-hover-bg: none;
 
-$dropdown-link-active-color: null;
-$dropdown-link-active-bg: null;
+$dropdown-link-active-color: none;
+$dropdown-link-active-bg: none;
 
 $dropdown-link-disabled-color: $gray-500 !default;
 
@@ -1361,15 +1361,12 @@ $form-feedback-tooltip-border-radius: $tooltip-border-radius !default;
 // scss-docs-start popover-variables
 $popover-font-size: $font-size-sm !default;
 $popover-bg: $white !default;
-$popover-max-width: 276px !default;
+$popover-max-width: 236px;
 $popover-border-width: $border-width !default;
-$popover-border-color: rgba($black, 0.2) !default;
+$popover-border-color: $gray-100;
 $popover-border-radius: $border-radius-lg !default;
-$popover-inner-border-radius: subtract(
-  $popover-border-radius,
-  $popover-border-width
-) !default;
-$popover-box-shadow: $box-shadow !default;
+$popover-inner-border-radius: 8px;
+$popover-box-shadow: 0 6px 44px rgba(0, 0, 0, 0.1);
 
 $popover-header-bg: shade-color($popover-bg, 6%) !default;
 $popover-header-color: $headings-color !default;
@@ -1377,11 +1374,11 @@ $popover-header-padding-y: 0.5rem !default;
 $popover-header-padding-x: $spacer !default;
 
 $popover-body-color: $body-color !default;
-$popover-body-padding-y: $spacer !default;
-$popover-body-padding-x: $spacer !default;
+$popover-body-padding-y: 8px;
+$popover-body-padding-x: 8px;
 
-$popover-arrow-width: 1rem !default;
-$popover-arrow-height: 0.5rem !default;
+$popover-arrow-width: 0;
+$popover-arrow-height: 0;
 $popover-arrow-color: $popover-bg !default;
 
 $popover-arrow-outer-color: fade-in($popover-border-color, 0.05) !default;

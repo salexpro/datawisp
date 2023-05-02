@@ -12,6 +12,7 @@ const SectionIntegrations = (props) => {
 
   return (
     <Container
+      id="integrations"
       as="section"
       {...rest}
       className={classNames(s.sectionIntegrations, className)}

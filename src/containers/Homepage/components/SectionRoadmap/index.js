@@ -11,8 +11,8 @@ const SectionRoadmap = (props) => {
   const { heading, text, phases, className, ...rest } = props
 
   return (
-    <section className={classNames(s.sectionRoadmap, className)}>
-      <Container {...rest} id="roadmap" className={s.container}>
+    <section id="roadmap" className={classNames(s.sectionRoadmap, className)}>
+      <Container {...rest} className={s.container}>
         <h2>{heading}</h2>
         <div className={s.text}>
           <StructuredText data={text.value} />

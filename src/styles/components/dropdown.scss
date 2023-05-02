@@ -1,4 +1,26 @@
 .dropdown {
+  $this: &;
+
+  &-toggle {
+    display: grid;
+    grid-template-columns: auto 18px;
+    column-gap: 2px;
+    align-items: center;
+
+    &-icon {
+      filter: grayscale(1);
+      transition: transform 250ms, filter 250ms;
+      transform: scaleY(-1);
+    }
+
+    &.show {
+      #{$this}-toggle-icon {
+        filter: grayscale(0);
+        transform: scaleY(1);
+      }
+    }
+  }
+
   &-menu {
     display: block !important;
     padding-right: 120px;
@@ -10,6 +32,33 @@
     &.show {
       visibility: visible;
       opacity: 1;
+    }
+
+    &-header {
+      padding: 8px;
+      border-radius: 8px;
+
+      #{$this}-item {
+        display: grid;
+        grid-template-columns: 24px auto;
+        column-gap: 12px;
+        align-items: center;
+        padding: 12px;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.286;
+        color: $gray-800;
+        border-radius: 4px;
+        transition: background-color 250ms;
+
+        &:hover {
+          background-color: $gray-100;
+        }
+
+        > svg {
+          color: $pink;
+        }
+      }
     }
   }
 

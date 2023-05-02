@@ -35,6 +35,22 @@ const SVGDefs = (props) => {
           </linearGradient>
         </defs>
       </symbol>
+      <symbol id="icon-chevron_top" viewBox="0 0 18 18" fill="none">
+        <path fill="url(#b)" d="m9 7-4 4h8L9 7Z" />
+        <defs>
+          <linearGradient
+            id="b"
+            x1="5"
+            x2="13.5"
+            y1="11"
+            y2="8.9"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stopColor="#FF008A" />
+            <stop offset="1" stopColor="#6901F8" />
+          </linearGradient>
+        </defs>
+      </symbol>
     </svg>
   )
 }
