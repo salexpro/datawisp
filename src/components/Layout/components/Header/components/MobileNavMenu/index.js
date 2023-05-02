@@ -1,69 +1,77 @@
-/* eslint-disable import/no-extraneous-dependencies */
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import { useLocation } from '@gatsbyjs/reach-router'
-import { Button, Dropdown } from 'react-bootstrap'
-import { Link } from 'gatsby'
-import { trim } from 'lodash'
+import { useLocation } from '@reach/router'
+import { Offcanvas, Button, Accordion } from 'react-bootstrap'
+
+import NavLink from '~components/Layout/components/NavLink'
 
 import BtnAnimatedBurger from './components/BtnAnimatedBurger'
 
 const MobileNavMenu = (props) => {
   const { btnLink, navItems, ...rest } = props
+  const [showMenu, setShowMenu] = useState(false)
 
   const { pathname } = useLocation()
 
-  const handleClick = (e, anchor) => {
-    e.preventDefault()
-    document.querySelector(anchor)?.scrollIntoView({ behavior: 'smooth' })
-  }
+  const defaultActiveKey = navItems.find(({ subLinks }) =>
+    subLinks
+      ? subLinks.find(
+          ({ url, ownerPage }) =>
+            url === pathname || ownerPage?.url === pathname
+        )
+      : false
+  )?.id
+
+  const handleShowMenu = () => setShowMenu((prev) => !prev)
 
   return (
-    <Dropdown {...rest} as="nav" align="start">
-      <Dropdown.Toggle as={BtnAnimatedBurger} />
-      <Dropdown.Menu
-        align="start"
-        popperConfig={{
-          modifiers: [
-            {
-              name: 'offset',
-              options: { offset: [16, -48 - 16] },
-            },
-          ],
-        }}
-      >
-        <Button
-          as="a"
-          href={btnLink?.url}
-          rel={btnLink?.rel}
-          target={btnLink?.target}
-          variant="primary"
-          className="dropdown-button-primary"
-        >
-          {btnLink?.text}
-        </Button>
-        {navItems?.map(({ id, text, url, anchor, ownerPage, __typename }) => {
-          const isAnchorLink = __typename === 'DatoCmsLinkAnchor'
-          const isAnchorOnActivePage =
-            trim(ownerPage?.url, '/') === trim(pathname, '/')
+    <div {...rest}>
+      <BtnAnimatedBurger onClick={handleShowMenu} aria-expanded={showMenu} />
 
-          return (
-            <Dropdown.Item
-              key={id}
-              to={isAnchorLink ? `${ownerPage.url}${anchor}` : url}
-              as={Link}
-              onClick={
-                isAnchorLink && isAnchorOnActivePage
-                  ? (e) => handleClick(e, anchor)
-                  : null
-              }
-            >
-              {text}
-            </Dropdown.Item>
-          )
-        })}
-      </Dropdown.Menu>
-    </Dropdown>
+      <Offcanvas show={showMenu} placement="top" backdrop={false}>
+        <Offcanvas.Body>
+          <Button
+            href={btnLink?.url}
+            rel={btnLink?.rel}
+            target={btnLink?.target}
+            variant="primary"
+          >
+            {btnLink?.text}
+          </Button>
+
+          <Accordion defaultActiveKey={defaultActiveKey}>
+            {navItems.map((link) => {
+              return (
+                <Accordion.Item key={link.id} eventKey={link.id}>
+                  {link?.subLinks ? (
+                    <>
+                      <Accordion.Header>{link.text}</Accordion.Header>
+                      <Accordion.Body>
+                        {link.subLinks.map((subLink) => (
+                          <NavLink
+                            key={subLink.id}
+                            {...subLink}
+                            isSubLink
+                            onClick={handleShowMenu}
+                            className="accordion-subLink"
+                          />
+                        ))}
+                      </Accordion.Body>
+                    </>
+                  ) : (
+                    <NavLink
+                      {...link}
+                      className="accordion-link"
+                      onClick={handleShowMenu}
+                    />
+                  )}
+                </Accordion.Item>
+              )
+            })}
+          </Accordion>
+        </Offcanvas.Body>
+      </Offcanvas>
+    </div>
   )
 }
 

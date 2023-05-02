@@ -1,8 +1,10 @@
 @import '~styles/mixins';
 
 .headerWrapper {
-  position: sticky;
+  position: fixed;
   top: 0;
+  right: 0;
+  left: 0;
   z-index: $zindex-sticky;
   background-color: $body-bg;
   border-bottom: 1px solid transparent;
@@ -26,9 +28,14 @@
     column-gap: 24px;
   }
 
+  @include b-d(lg) {
+    min-height: 96px;
+  }
+
   @include b-btw(md, lg) {
-    grid-template-columns: 1fr repeat(2, auto);
+    grid-template-columns: 1fr auto;
     column-gap: 16px;
+    padding-right: 104px;
   }
 }
 
@@ -43,8 +50,20 @@
 }
 
 .navMenuMobile {
+  position: fixed;
+  top: 24px;
+  z-index: $zindex-offcanvas + 5;
+
   @include b-up(lg) {
     display: none;
+  }
+
+  @include b-up(md) {
+    right: 40px;
+  }
+
+  @include b-d(md) {
+    right: 24px;
   }
 }
 

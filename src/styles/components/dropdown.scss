@@ -66,12 +66,4 @@
     font-weight: $font-weight-medium;
     line-height: 1.286;
   }
-
-  &-button-primary {
-    margin: 8px 0 16px 16px;
-
-    @include b-up(md) {
-      display: none;
-    }
-  }
 }

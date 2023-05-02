@@ -1,0 +1,47 @@
+.accordion {
+  margin-top: 24px;
+
+  &-body {
+    padding-bottom: 4px;
+  }
+
+  &-item {
+    border-right: none;
+    border-left: none;
+  }
+
+  &-button,
+  &-link {
+    padding: 18px 0;
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -0.03em;
+
+    &:hover {
+      color: $indigo;
+    }
+  }
+
+  &-subLink {
+    display: grid;
+    grid-template-columns: 24px auto;
+    column-gap: 12px;
+    align-items: center;
+    padding: 12px 0;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.286px;
+
+    &:hover {
+      color: $indigo;
+    }
+
+    > svg {
+      color: $pink;
+    }
+  }
+
+  &-button:not(.collapsed) {
+    box-shadow: none;
+  }
+}

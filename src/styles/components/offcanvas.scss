@@ -1,0 +1,7 @@
+.offcanvas {
+  &-body {
+    @include b-d(md) {
+      padding: 24px;
+    }
+  }
+}

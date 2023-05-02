@@ -17,6 +17,8 @@ const NavLink = ({
   iconName,
   __typename,
   isSubLink,
+  onClick,
+  ...rest
 }) => {
   const { pathname } = useLocation()
 
@@ -27,6 +29,7 @@ const NavLink = ({
   const handleClick = (e) => {
     e.preventDefault()
 
+    if (onClick) onClick()
     const element = document.querySelector(anchor)
     const y = element.getBoundingClientRect().top + window.scrollY - 96
 
@@ -45,11 +48,12 @@ const NavLink = ({
   return React.createElement(
     as,
     {
+      ...rest,
       ...linkProps,
       rel,
       target,
       onClick:
-        isAnchorLink && isAnchorOnActivePage ? (e) => handleClick(e) : null,
+        isAnchorLink && isAnchorOnActivePage ? (e) => handleClick(e) : onClick,
     },
     <>
       {isSubLink && <Icon name={iconName} />}

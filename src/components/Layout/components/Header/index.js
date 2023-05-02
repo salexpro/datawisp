@@ -112,31 +112,35 @@ const Header = ({ siteTitle }) => {
   }
 
   return (
-    <header className={classNames(s.headerWrapper, { [s.active]: isScrolled })}>
-      <Container className={s.header}>
-        <LogoLink
-          image={logoImage}
-          link={logoLink}
-          siteTitle={siteTitle}
-          height={logoDesiredHeight}
-        />
-        <Menu navItems={navMenuItems} className={s.navMenu} />
-        <Button
-          {...buttonProps}
-          variant="primary-header"
-          onClick={() => gtagReportConversion(cookies)}
-          className={classNames(s.btnPrimary, { scrolled: isScrolled })}
-        >
-          {btnLink?.text}
-        </Button>
+    <>
+      <header
+        className={classNames(s.headerWrapper, { [s.active]: isScrolled })}
+      >
+        <Container className={s.header}>
+          <LogoLink
+            image={logoImage}
+            link={logoLink}
+            siteTitle={siteTitle}
+            height={logoDesiredHeight}
+          />
+          <Menu navItems={navMenuItems} className={s.navMenu} />
+          <Button
+            {...buttonProps}
+            variant="primary-header"
+            onClick={() => gtagReportConversion(cookies)}
+            className={classNames(s.btnPrimary, { scrolled: isScrolled })}
+          >
+            {btnLink?.text}
+          </Button>
+        </Container>
+      </header>
 
-        <MobileNavMenu
-          btnLink={btnLink}
-          navItems={navMenuItems}
-          className={s.navMenuMobile}
-        />
-      </Container>
-    </header>
+      <MobileNavMenu
+        btnLink={btnLink}
+        navItems={navMenuItems}
+        className={s.navMenuMobile}
+      />
+    </>
   )
 }
 

@@ -45,6 +45,8 @@
 // @import "~bootstrap/scss/utilities"; // import custom utilities if needed
 // @import "~bootstrap/scss/print";
 // @import "~bootstrap/scss/images";
+@import '~bootstrap/scss/offcanvas';
+@import '~bootstrap/scss/accordion';
 @import '~bootstrap/scss/helpers/ratio';
 
 // Components
@@ -62,6 +64,8 @@
 @import 'components/toasts';
 @import 'components/form';
 @import 'components/close';
+@import 'components/offcanvas';
+@import 'components/accordion';
 
 @import 'components/marquee';
 @import 'components/swiper';
