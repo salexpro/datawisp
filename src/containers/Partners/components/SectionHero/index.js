@@ -19,6 +19,10 @@ const SectionHero = () => {
     }, 3000)
   }
 
+  const hideToast = () => {
+    setToast((prevState) => ({ ...prevState, show: false }))
+  }
+
   return (
     <Container className={s.sectionHero}>
       <div>
@@ -53,7 +57,7 @@ const SectionHero = () => {
       <DWToast
         show={toast.show}
         variant={toast.variant}
-        onHide={() => setToast({ show: false, variant: toast.variant })}
+        onHide={hideToast}
         title={TOAST_TITLE[toast.variant]}
       />
     </Container>

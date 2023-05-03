@@ -1,3 +1,5 @@
 version: 2
+env:
+  GATSBY_FORM_SPREE_BECOME_PARTNER_TOKEN: mzbqynog
 snapshot:
   widths: [375, 768, 1440]
