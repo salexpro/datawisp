@@ -1,4 +1,4 @@
-import { EMAIL_RULE } from '~constants'
+import { EMAIL_RULE, URL_RULE } from '~constants'
 
 export const PARTNER_FORM_DATA = [
   {
@@ -19,6 +19,10 @@ export const PARTNER_FORM_DATA = [
     required: {
       value: true,
       message: 'Please provide a company website',
+    },
+    pattern: {
+      value: URL_RULE,
+      message: 'Please enter a valid company website',
     },
   },
   {
