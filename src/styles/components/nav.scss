@@ -41,6 +41,7 @@
   &-footer {
     @include b-d(md) {
       flex-direction: column;
+      align-items: center;
       margin-top: -12px;
       text-align: center;
     }

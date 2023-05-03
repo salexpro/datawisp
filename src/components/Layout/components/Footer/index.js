@@ -26,6 +26,9 @@ const Footer = ({ siteTitle }) => {
         }
         navMenuItems {
           __typename
+          ... on DatoCmsLinkContainer {
+            ...LinkContainerData
+          }
           ... on DatoCmsLinkInternal {
             ...LinkInternalData
           }

@@ -7,15 +7,18 @@ import Icon from '~components/Icon'
 
 import NavLink from '../NavLink'
 
-const MenuDropdown = ({ text, subLinks }) => {
+const MenuDropdown = ({ text, subLinks, variant }) => {
   const { pathname } = useLocation()
 
   const isActive = subLinks.some(
     (item) => item.url === pathname || item?.ownerPage?.url === pathname
   )
 
+  const dropDownPosition =
+    variant === 'footer' ? 'up-centered' : 'down-centered'
+
   return (
-    <Dropdown drop="down-centered">
+    <Dropdown drop={dropDownPosition}>
       <Dropdown.Toggle as={Nav.Link} className={cn({ active: isActive })}>
         {text}
         <Icon

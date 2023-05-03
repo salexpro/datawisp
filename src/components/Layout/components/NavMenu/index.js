@@ -17,7 +17,7 @@ const NavMenu = (props) => {
               <NavLink {...link} />
             </Nav.Item>
           ) : (
-            <MenuDropdown key={link.id} {...link} />
+            <MenuDropdown key={link.id} {...link} variant={variant} />
           )
         })}
       </Nav>
