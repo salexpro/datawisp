@@ -32,13 +32,7 @@ const ModalBecomePartner = (props) => {
   }
 
   return (
-    <Modal
-      centered
-      backdrop="static"
-      show={show}
-      onHide={handleHide}
-      className="partner"
-    >
+    <Modal centered backdrop="static" show={show} onHide={handleHide}>
       <Modal.Header closeButton>
         <Modal.Title>Become a partner</Modal.Title>
         <p className="modal-subtitle">
@@ -47,12 +41,7 @@ const ModalBecomePartner = (props) => {
         </p>
       </Modal.Header>
       <Modal.Body>
-        <Form
-          onSubmit={handleSubmit(onSubmit)}
-          className="partner"
-          autoComplete="off"
-          noValidate
-        >
+        <Form onSubmit={handleSubmit(onSubmit)} autoComplete="off" noValidate>
           {PARTNER_FORM_DATA.map(
             ({ id, label, required, pattern, ...rest }) => (
               <Form.Group controlId={id} className="form-group">

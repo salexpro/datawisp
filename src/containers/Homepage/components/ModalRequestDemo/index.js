@@ -49,7 +49,7 @@ const ModalRequestDemo = (props) => {
         <Modal.Title>Request demo</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <Form noValidate onSubmit={handleSubmit(onSubmit)}>
+        <Form noValidate onSubmit={handleSubmit(onSubmit)} autoComplete="off">
           <Form.Group controlId="formEmail" className="form-group">
             <Form.Label>Email address *</Form.Label>
             <Form.Control
@@ -90,7 +90,7 @@ const ModalRequestDemo = (props) => {
             type="submit"
             variant="primary"
             disabled={state.submitting}
-            className={s.submitButton}
+            className="form-submit full"
           >
             Request demo
           </Button>

@@ -2,67 +2,39 @@
   $this: &;
 
   &-dialog {
-    @include b-d(md) {
-      max-width: 343px;
-    }
+    max-width: clamp-builder(sm, md, 327px, 464px);
+  }
+
+  &-header {
+    display: grid;
+    grid-template:
+      'title btn-close' auto
+      'subtitle .' auto / 1fr auto;
+    column-gap: 48px;
+    border-bottom: 1px solid $gray-200;
   }
 
   &-content {
     box-shadow: 0 32px 80px rgba(34, 18, 34, 0.2%);
   }
 
-  /* Variant for partner modal */
-  &.partner {
-    #{$this}-dialog {
-      max-width: clamp-builder(sm, md, 327px, 464px);
-    }
+  .btn-close {
+    grid-area: btn-close;
+    margin: -12px;
+  }
 
-    #{$this}-content {
-      border-radius: 8px;
-    }
+  #{$this}-title {
+    grid-area: title;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
 
-    #{$this}-header {
-      display: grid;
-      grid-template:
-        'title btn-close' auto
-        'subtitle .' auto / 1fr auto;
-      gap: 8px 48px;
-      padding: 16px 16px 24px 32px;
-      border-bottom: 1px solid $gray-200;
-
-      @include b-d(md) {
-        padding-left: 24px;
-      }
-    }
-
-    #{$this}-body {
-      padding: 24px 32px 20px;
-
-      @include b-d(md) {
-        padding: 24px;
-      }
-    }
-
-    #{$this}-title {
-      grid-area: title;
-      margin-top: 8px;
-      font-size: 20px;
-      font-weight: 700;
-      line-height: 1.2;
-    }
-
-    #{$this}-subtitle {
-      grid-area: subtitle;
-      font-size: 15px;
-      line-height: 1.467;
-      color: $gray-900;
-    }
-
-    .btn-close {
-      grid-area: btn-close;
-      padding: 8px;
-      margin: -8px;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Cpath stroke='%23C9C9C9' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M18 6 6 18M6 6l12 12'/%3E%3C/svg%3E");
-    }
+  #{$this}-subtitle {
+    grid-area: subtitle;
+    margin-top: 8px;
+    font-size: 15px;
+    line-height: 1.467;
+    color: $gray-900;
   }
 }

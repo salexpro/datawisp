@@ -1421,7 +1421,7 @@ $badge-border-radius: 6px;
 // Modals
 
 // scss-docs-start modal-variables
-$modal-inner-padding: 8px 24px 28px;
+$modal-inner-padding: 19px 24px 24px;
 
 $modal-footer-margin-between: 0.5rem !default;
 
@@ -1434,7 +1434,7 @@ $modal-content-color: null !default;
 $modal-content-bg: $white !default;
 $modal-content-border-color: rgba($black, 0.2) !default;
 $modal-content-border-width: 0;
-$modal-content-border-radius: $border-radius-xl;
+$modal-content-border-radius: 8px;
 $modal-content-inner-border-radius: subtract(
   $modal-content-border-radius,
   $modal-content-border-width
@@ -1448,9 +1448,9 @@ $modal-header-border-color: $border-color !default;
 $modal-footer-border-color: $modal-header-border-color !default;
 $modal-header-border-width: $modal-content-border-width !default;
 $modal-footer-border-width: $modal-header-border-width !default;
-$modal-header-padding-y: 28px;
+$modal-header-padding-y: 24px;
 $modal-header-padding-x: 24px;
-$modal-header-padding: $modal-header-padding-y $modal-header-padding-x 7px; // Keep this for backwards compatibility
+$modal-header-padding: $modal-header-padding-y $modal-header-padding-x; // Keep this for backwards compatibility
 
 $modal-sm: 404px;
 $modal-md: 500px !default;
@@ -1615,9 +1615,9 @@ $btn-close-height: $btn-close-width !default;
 $btn-close-padding-x: 0.25em !default;
 $btn-close-padding-y: $btn-close-padding-x !default;
 $btn-close-color: $black !default;
-$btn-close-bg: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M18 6 6 18M6 6l12 12' stroke='#{$btn-close-color}' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+$btn-close-bg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Cpath stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M18 6 6 18M6 6l12 12'/%3E%3C/svg%3E");
 $btn-close-focus-shadow: none;
-$btn-close-opacity: 1;
+$btn-close-opacity: 0.35;
 $btn-close-hover-opacity: 0.65;
 $btn-close-focus-opacity: $btn-close-hover-opacity;
 $btn-close-disabled-opacity: 0.25 !default;
