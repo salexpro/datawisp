@@ -10,9 +10,11 @@ const PartnersPage = ({ data }) => {
     heroSectionImage,
     becomePartnerButtonText,
     partners,
+    seo,
   } = data.datoCmsPartnersPage
   return (
     <Partners
+      seo={seo}
       hero={{
         title: heroSectionTitle,
         description: heroSectionDescription,
@@ -27,6 +29,21 @@ const PartnersPage = ({ data }) => {
 export const query = graphql`
   query PartnersPage {
     datoCmsPartnersPage {
+      seo {
+        title
+        description
+        twitterCard
+        image {
+          fixed(
+            width: 1200
+            height: 630
+            imgixParams: { fit: "crop", auto: "compress,format" }
+          ) {
+            src
+          }
+        }
+      }
+
       heroSectionTitle
       heroSectionDescription
       becomePartnerButtonText
