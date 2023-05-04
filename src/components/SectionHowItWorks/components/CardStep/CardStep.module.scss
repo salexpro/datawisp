@@ -4,6 +4,7 @@
   padding: 16px;
   background-color: $white;
   border-radius: 16px;
+  box-shadow: 0 14px 29px rgba(34, 18, 34, 5%);
 
   @include b-d(lg) {
     padding: 10px;

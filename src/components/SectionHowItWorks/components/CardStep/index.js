@@ -7,13 +7,13 @@ import ImageFormat from '~components/ImageFormat'
 import * as s from './CardStep.module.scss'
 
 const CardStep = (props) => {
-  const { className, heading, image, ...rest } = props
+  const { className, heading, step, image, ...rest } = props
 
   return (
     <div {...rest} className={classNames(s.cardStep, className)}>
       <span className={s.text}>{heading}</span>
       <div className={s.imageWrapper}>
-        <ImageFormat alt="step 1" file={image} />
+        <ImageFormat alt={`step ${step}`} file={image} />
       </div>
     </div>
   )

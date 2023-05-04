@@ -10,6 +10,7 @@ import * as s from './SectionHowItWorks.module.scss'
 
 const SectionHowItWorks = (props) => {
   const {
+    variant,
     heading,
     text,
     buttonText,
@@ -21,15 +22,22 @@ const SectionHowItWorks = (props) => {
   } = props
 
   return (
-    <section {...rest} className={classNames(s.sectionHowItWorks, className)}>
+    <section
+      {...rest}
+      className={classNames(
+        s.sectionHowItWorks,
+        { [s[variant]]: variant, [s.hasButton]: !buttonHide },
+        className
+      )}
+    >
       <Container>
         <div className={s.gridHeading}>
-          <h2 className={s.heading}>{heading}</h2>
+          <h2 className={s.gridHeading__heading}>{heading}</h2>
           <StructuredText data={text.value} />
           {!buttonHide && (
             <Button
               variant="primary"
-              className={s.btn}
+              className={s.gridHeading__btn}
               as={Link}
               to={buttonLink}
             >
@@ -37,9 +45,9 @@ const SectionHowItWorks = (props) => {
             </Button>
           )}
         </div>
-        <div className={s.stepsWrapper}>
-          {steps.map(({ id, ...step }) => (
-            <CardStep key={id} {...step} />
+        <div className={s.sectionHowItWorks__stepsWrapper}>
+          {steps.map(({ id, ...step }, i) => (
+            <CardStep key={id} step={i + 1} {...step} />
           ))}
         </div>
       </Container>

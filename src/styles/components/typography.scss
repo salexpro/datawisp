@@ -25,6 +25,10 @@ h5 {
 }
 
 h2 {
+  @include b-up(lg) {
+    line-height: 1.3638;
+  }
+
   @include b-btw(md, lg) {
     font-size: 32px;
     line-height: 1.25;

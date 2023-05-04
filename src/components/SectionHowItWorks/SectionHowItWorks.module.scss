@@ -1,0 +1,101 @@
+@import '~styles/mixins';
+
+.gridHeading {
+  display: grid;
+  align-items: start;
+
+  @include b-up(lg) {
+    row-gap: 12px;
+  }
+
+  @include b-d(lg) {
+    row-gap: 8px;
+  }
+
+  @include b-up(md) {
+    grid-template-areas:
+      'heading'
+      'paragraph';
+  }
+
+  @include b-d(md) {
+    grid-template-areas:
+      'heading'
+      'paragraph';
+    justify-items: start;
+  }
+
+  p {
+    grid-area: paragraph;
+    max-width: 674px;
+
+    @include b-btw(md, lg) {
+      max-width: 490px;
+    }
+  }
+
+  &__heading {
+    grid-area: heading;
+  }
+
+  &__btn {
+    grid-area: button;
+
+    @include b-d(md) {
+      margin-top: 16px;
+    }
+  }
+}
+
+.sectionHowItWorks {
+  padding: 80px 0;
+  margin-top: 80px;
+
+  &.home {
+    background-color: $gray-100;
+  }
+
+  &.hasButton {
+    .gridHeading {
+      @include b-up(md) {
+        grid-template-areas:
+          'heading heaidng'
+          'paragraph button';
+        grid-template-columns: 1fr auto;
+      }
+
+      @include b-d(md) {
+        grid-template-areas:
+          'heading'
+          'paragraph'
+          'button';
+      }
+    }
+  }
+
+  @include b-d(lg) {
+    padding: 64px 0;
+    margin-top: 52px;
+  }
+
+  @include b-d(md) {
+    overflow: hidden;
+  }
+
+  &__stepsWrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 44px;
+    margin-top: 56px;
+    counter-reset: step;
+
+    @include b-d(lg) {
+      gap: 24px;
+    }
+
+    @include b-d(md) {
+      grid-template-columns: 1fr;
+      margin-top: 48px;
+    }
+  }
+}
