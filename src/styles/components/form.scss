@@ -3,6 +3,16 @@
     position: relative;
     padding-bottom: 17px;
     margin-top: 5px;
+
+    &.demo {
+      display: grid;
+      grid-auto-flow: row;
+      gap: 8px;
+
+      @include b-up(md) {
+        grid-template-columns: 356px 156px;
+      }
+    }
   }
 
   &-text {

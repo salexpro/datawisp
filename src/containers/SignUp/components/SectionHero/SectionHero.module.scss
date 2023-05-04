@@ -1,0 +1,79 @@
+@import '~styles/mixins';
+
+.heroSection {
+  display: grid;
+  gap: 100px 17px;
+  align-items: center;
+
+  @include b-up(lg) {
+    grid-template-columns: 520px 1fr;
+    justify-content: space-between;
+    padding-top: 108px;
+    padding-bottom: 75px;
+  }
+
+  @include b-btw(md, lg) {
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+
+  @include b-d(md) {
+    padding-top: 48px;
+    padding-bottom: 20px;
+  }
+
+  &__description {
+    @include b-up(lg) {
+      max-width: 400px;
+    }
+
+    @include b-d(lg) {
+      max-width: 510px;
+    }
+
+    @include b-up(md) {
+      margin-top: 20px;
+    }
+
+    @include b-d(md) {
+      margin-top: 12px;
+    }
+  }
+
+  &__form {
+    margin-top: 27px;
+  }
+
+  &__img {
+    width: 100%;
+  }
+}
+
+.badgeWrapper {
+  display: grid;
+  gap: 8px;
+  margin-top: 15px;
+
+  @include b-up(md) {
+    grid-auto-flow: column;
+    justify-content: start;
+  }
+
+  &__badge {
+    display: grid;
+    grid-template-columns: 20px auto;
+    column-gap: 12px;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.285;
+    background-color: $gray-100;
+    border-radius: 22px;
+
+    &__icon {
+      color: $pink;
+    }
+  }
+}
