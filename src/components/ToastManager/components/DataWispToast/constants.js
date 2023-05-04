@@ -1,0 +1,2 @@
+export const TOAST_AUTOHIDE_DELAY = 5_000
+export const TOAST_CLEANUP_DELAY = 1_000

@@ -5,6 +5,23 @@
   grid-auto-flow: column;
   column-gap: 32px;
   padding: 24px;
+  margin-top: var(--bs-toast-spacing);
+
+  &.fade {
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.25s;
+    transition-property: opacity, transform, height, margin-top;
+  }
+
+  &.slideFromRight {
+    transform: translateX(16px);
+  }
+
+  &.collapseVertically {
+    height: 0 !important;
+    margin-top: 0;
+    overflow: hidden;
+  }
 
   @include b-d(md) {
     grid-auto-flow: row;
@@ -13,14 +30,21 @@
   }
 
   &-container {
-    position: fixed;
-    bottom: 0;
-    left: 50%;
-    padding: 24px 40px;
-    transform: translateX(-50%);
+    padding: 0 24px 24px;
 
-    @include b-d(md) {
-      padding: 24px;
+    &.top-end {
+      top: 0;
+      right: 0;
+    }
+
+    &.bottom-middle {
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    > #{$this}:not(:last-child) {
+      margin-bottom: 0;
     }
   }
 
@@ -53,11 +77,14 @@
   }
 
   &.form {
-    --bs-toast-max-width: 520px;
+    --bs-toast-max-width: 327px;
+
+    padding: 0;
 
     #{$this}-header {
       grid-template-columns: 48px auto 24px;
       align-items: center;
+      padding: 24px;
       font-size: 15px;
       line-height: 1.467;
     }

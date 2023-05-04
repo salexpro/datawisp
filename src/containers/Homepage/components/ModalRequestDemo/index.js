@@ -1,5 +1,5 @@
 import React from 'react'
-import { Modal, Form, Button } from 'react-bootstrap'
+import { Modal, Form, Button, Spinner } from 'react-bootstrap'
 import { useForm } from 'react-hook-form'
 import { useForm as useFormSpree } from '@formspree/react'
 import classNames from 'classnames'
@@ -9,8 +9,10 @@ import {
   GOOGLE_ADS_COOKIE_KEY,
   GOOGLE_ANALYTIC_COOKIE_KEY,
   EMAIL_RULE,
+  TOAST_TITLE,
 } from '~constants'
 import { gtagReportConversion } from '~utils/analytics'
+import { addToastToStack } from '~components/ToastManager'
 
 import * as s from './ModalRequestDemo.module.scss'
 
@@ -33,9 +35,20 @@ const ModalRequestDemo = (props) => {
 
   const onSubmit = (data) => {
     gtagReportConversion(cookies)
+
     handleSendData(data)
-    reset()
-    onHide()
+      .then((res) => {
+        if (res?.body.ok) {
+          addToastToStack({ variant: 'success', content: TOAST_TITLE.success })
+          reset()
+          onHide()
+          return
+        }
+        addToastToStack({ variant: 'error', content: TOAST_TITLE.error })
+      })
+      .catch(() => {
+        addToastToStack({ variant: 'error', content: TOAST_TITLE.error })
+      })
   }
 
   const handleHide = () => {
@@ -92,7 +105,11 @@ const ModalRequestDemo = (props) => {
             disabled={state.submitting}
             className="form-submit full"
           >
-            Request demo
+            {!state.submitting ? (
+              'Request demo'
+            ) : (
+              <Spinner animation="border" size="sm" />
+            )}
           </Button>
           <div className={s.text}>
             By submitting this form you agree to our{' '}

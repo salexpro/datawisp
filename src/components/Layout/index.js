@@ -12,6 +12,7 @@ import SSRProvider from 'react-bootstrap/SSRProvider'
 
 import CookieBanner from '~components/CookieBanner'
 import Metrics from '~components/Metrics'
+import ToastManager from '~components/ToastManager'
 import '~styles/app.scss'
 
 import Header from './components/Header'
@@ -41,6 +42,7 @@ const Layout = ({ children }) => {
         <SVGDefs />
       </div>
 
+      <ToastManager />
       <CookieBanner />
       <Metrics />
     </SSRProvider>

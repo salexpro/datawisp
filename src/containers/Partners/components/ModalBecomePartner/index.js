@@ -1,13 +1,16 @@
 import React from 'react'
-import { Button, Form, Modal } from 'react-bootstrap'
+import { Button, Form, Modal, Spinner } from 'react-bootstrap'
 import { useForm } from 'react-hook-form'
 import { useForm as useFormSpree } from '@formspree/react'
 import classNames from 'classnames'
 
+import { addToastToStack } from '~components/ToastManager'
+import { TOAST_TITLE } from '~constants'
+
 import { PARTNER_FORM_DATA } from './constants'
 
 const ModalBecomePartner = (props) => {
-  const { show, onHide, onResult } = props
+  const { show, onHide } = props
 
   const [state, handleSendData] = useFormSpree(
     process.env.GATSBY_FORM_SPREE_BECOME_PARTNER_TOKEN || 'mzbqynog'
@@ -24,17 +27,16 @@ const ModalBecomePartner = (props) => {
     handleSendData(data)
       .then((res) => {
         if (res?.body.ok) {
-          onResult('success')
+          addToastToStack({ variant: 'success', content: TOAST_TITLE.success })
+          reset()
+          onHide()
           return
         }
-        onResult('error')
+        addToastToStack({ variant: 'error', content: TOAST_TITLE.error })
       })
       .catch(() => {
-        onResult('error')
+        addToastToStack({ variant: 'error', content: TOAST_TITLE.error })
       })
-
-    reset()
-    onHide()
   }
 
   const handleHide = () => {
@@ -76,7 +78,11 @@ const ModalBecomePartner = (props) => {
             disabled={state.submitting}
             className="form-submit"
           >
-            Send an offer
+            {!state?.submitting ? (
+              'Send an offer'
+            ) : (
+              <Spinner animation="border" size="sm" />
+            )}
           </Button>
         </Form>
       </Modal.Body>
