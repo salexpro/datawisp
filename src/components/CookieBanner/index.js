@@ -42,7 +42,7 @@ const CookieBanner = () => {
   }, [])
 
   return (
-    <ToastContainer>
+    <ToastContainer className="bottom-middle">
       <Toast show={showBanner}>
         <Toast.Header>
           <StaticImage

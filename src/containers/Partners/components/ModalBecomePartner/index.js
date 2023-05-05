@@ -57,7 +57,7 @@ const ModalBecomePartner = (props) => {
         <Form onSubmit={handleSubmit(onSubmit)} autoComplete="off" noValidate>
           {PARTNER_FORM_DATA.map(
             ({ id, label, required, pattern, ...rest }) => (
-              <Form.Group controlId={id} className="form-group">
+              <Form.Group controlId={id} key={id} className="form-group">
                 <Form.Label>{label}</Form.Label>
                 <Form.Control
                   {...rest}
