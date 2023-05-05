@@ -63,7 +63,10 @@ export const query = graphql`
         id
         title
         name
-        link
+        btn {
+          url
+          label
+        }
         description {
           value
         }

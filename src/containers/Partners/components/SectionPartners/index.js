@@ -7,9 +7,10 @@ import ImageFormat from '~components/ImageFormat'
 import * as s from './SectionPartners.module.scss'
 
 const SectionPartners = ({ partners }) => {
+  console.log({ partners })
   return (
     <Container className={s.sectionPartners}>
-      {partners.map(({ id, title, description, name, logo, link }) => (
+      {partners.map(({ id, title, description, name, logo, btn }) => (
         <div key={id} className={s.partner}>
           <div className={s.partner__logoWrapper}>
             <ImageFormat
@@ -23,14 +24,17 @@ const SectionPartners = ({ partners }) => {
             <div className={s.partner__description}>
               <StructuredText data={description.value} />
             </div>
-            <Button
-              href={link}
-              target="_blank"
-              rel="noreferrer"
-              className={s.partner__button}
-            >
-              Sign up now
-            </Button>
+
+            {btn?.length && (
+              <Button
+                href={btn[0].url}
+                target="_blank"
+                rel="noreferrer"
+                className={s.partner__button}
+              >
+                {btn[0].label}
+              </Button>
+            )}
           </div>
         </div>
       ))}
