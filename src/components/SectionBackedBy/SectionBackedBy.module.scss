@@ -1,0 +1,58 @@
+@import '~styles/mixins';
+
+.bakedBy {
+  @include b-up(lg) {
+    padding-top: 75px;
+    padding-bottom: 84px;
+  }
+
+  @include b-btw(md, lg) {
+    padding-top: 38px;
+    padding-bottom: 43px;
+  }
+
+  @include b-d(md) {
+    padding-top: 20px;
+    padding-bottom: 36px;
+  }
+
+  &__title {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.286;
+    color: $gray-400;
+
+    @include b-up(lg) {
+      text-align: center;
+    }
+  }
+}
+
+.marquee {
+  @include b-up(lg) {
+    margin-top: 38px;
+  }
+
+  @include b-d(lg) {
+    margin-top: 16px;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 32px;
+
+    &__img {
+      object-fit: contain;
+
+      @include b-up(lg) {
+        height: 56px;
+      }
+
+      @include b-d(lg) {
+        height: 37px;
+      }
+    }
+  }
+}

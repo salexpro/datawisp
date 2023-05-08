@@ -1,4 +1,6 @@
 .marquee {
+  $this: &;
+
   &-wrapper {
     width: 100%;
     max-width: 1720px;
@@ -12,5 +14,24 @@
       white 94%,
       transparent 100%
     );
+
+    &.baked {
+      .initial-child-container {
+        @include b-up(xl) {
+          margin: 0 auto;
+        }
+      }
+
+      #{$this} {
+        @include b-up(xl) {
+          animation-play-state: paused;
+          animation-iteration-count: 0;
+        }
+
+        @include b-d(xl) {
+          min-width: auto;
+        }
+      }
+    }
   }
 }

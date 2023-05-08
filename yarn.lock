@@ -6756,7 +6756,7 @@ gatsby-plugin-matomo@0.15.2:
   resolved "https://registry.yarnpkg.com/gatsby-plugin-matomo/-/gatsby-plugin-matomo-0.15.2.tgz#0e0b55008faa7592bd815006b2b3da07e27b9559"
   integrity sha512-KOv4h+HEWPceAeOuEXNB/n6uV6sN2ru2RycN2Xq/u81SrgkXh7Jf4uRUmqj78Gm6QryPnyCOFYJNmBJlsrK2tg==
 
-gatsby-plugin-minify-classnames@^5.0.0:
+gatsby-plugin-minify-classnames@5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-minify-classnames/-/gatsby-plugin-minify-classnames-5.0.0.tgz#77fb6d3fb9e2b58463ea15ab911398ad4edf66f5"
   integrity sha512-cwHnMsnefMVu8wneiNyfW17MgoRfRaTg8gjvinorsdAIl5Y+UbRIqV1VQ5BJ5AaOlswaF8dCyZNIjKpbGyt+8A==
