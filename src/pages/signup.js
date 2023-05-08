@@ -11,6 +11,9 @@ const SignUpPage = ({ data }) => {
     featuresSectionHeading,
     featuresSectionText,
     featuresList,
+    integrationsSectionHeading,
+    integrationsSectionText,
+    integrations,
   } = data.datoCmsLeadGenerationPage
 
   return (
@@ -24,6 +27,11 @@ const SignUpPage = ({ data }) => {
         heading: featuresSectionHeading,
         text: featuresSectionText,
         featuresList,
+      }}
+      integrations={{
+        heading: integrationsSectionHeading,
+        text: integrationsSectionText,
+        integrations,
       }}
     />
   )
@@ -70,6 +78,33 @@ export const query = graphql`
             placeholder: NONE
             sizes: "(max-width: 767.98px) calc(100vw - 24px * 2 - 24px * 2), (max-width: 1023.98px) calc((100vw - 40px * 2 - 16px - 24px * 2 * 2) / 2), (max-width: 1199.98px) calc((100vw - 40px * 2 - 16px * 2 - 24px * 2 * 3) / 3), (max-width: 1320px) calc((100vw - 40px * 2 - 32px * 2 - 24px * 2 * 3) / 3), 344px"
             breakpoints: [299, 344, 448, 516, 598, 688, 897, 1056, 1382]
+            imgixParams: { fit: "crop", auto: "compress,format" }
+          )
+        }
+      }
+
+      integrationsSectionHeading
+      integrationsSectionText {
+        value
+      }
+      integrations {
+        id
+        heading
+        iconName
+        text {
+          value
+        }
+        supports {
+          id
+          text
+        }
+        image {
+          format
+          url
+          gatsbyImageData(
+            width: 160
+            placeholder: NONE
+            outputPixelDensities: [1, 1.5, 2, 3]
             imgixParams: { fit: "crop", auto: "compress,format" }
           )
         }

@@ -19,6 +19,12 @@
   gap: 32px;
   margin-top: 40px;
 
+  &.twoColumns {
+    @include b-up(md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
   @include b-d(lg) {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;

@@ -9,23 +9,43 @@ import Icon from '~components/Icon'
 import * as s from './IntegrationItem.module.scss'
 
 const IntegrationItem = (props) => {
-  const { heading, iconName, text, image, supports, className, ...rest } = props
+  const {
+    heading,
+    iconName,
+    text,
+    image,
+    supports,
+    isThreeColumn,
+    className,
+    ...rest
+  } = props
 
   return (
-    <div {...rest} className={classNames(s.integrationItem, className)}>
+    <div
+      {...rest}
+      className={classNames(
+        s.integrationItem,
+        { [s.threeColumn]: isThreeColumn },
+        className
+      )}
+    >
       <span className={s.iconWrapper}>
         <Icon name={iconName} size={20} />
       </span>
       <h4 className={s.heading}>{heading}</h4>
       <StructuredText data={text.value} />
-      <h4 className={s.supportedHeading}>Supported</h4>
-      <div className={s.supportedWrapper}>
-        {supports.map((badge) => (
-          <Badge key={badge.id} bg="integration">
-            {badge.text}
-          </Badge>
-        ))}
-      </div>
+      {!!supports?.length && (
+        <>
+          <h4 className={s.supportedHeading}>Supported</h4>
+          <div className={s.supportedWrapper}>
+            {supports.map((badge) => (
+              <Badge key={badge.id} bg="integration">
+                {badge.text}
+              </Badge>
+            ))}
+          </div>
+        </>
+      )}
     </div>
   )
 }

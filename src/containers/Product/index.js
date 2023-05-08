@@ -4,9 +4,9 @@ import PropTypes from 'prop-types'
 import Layout from '~components/Layout'
 import SectionBanner from '~components/SectionBanner'
 import SeoDatoCms from '~components/SeoDatoCms'
+import SectionIntegrations from '~components/SectionIntegrations'
 
 import SectionHero from './component/SectionHero'
-import SectionIntegrations from './component/SectionIntegrations'
 import SectionFeatures from './component/SectionFeatures'
 import SectionFunctions from './component/SectionFunctions'
 
