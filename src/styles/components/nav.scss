@@ -4,6 +4,11 @@
   &-link {
     line-height: 1.2857;
     letter-spacing: -0.01em;
+
+    &:hover,
+    &:focus-visible {
+      color: $primary;
+    }
   }
 
   /* Variant: header */
@@ -25,6 +30,10 @@
       &.active::after {
         box-shadow: 0 2px $pink;
       }
+    }
+
+    .dropdown-toggle::after {
+      inset: 0 calc($nav-link-padding-x + 20px) 6px $nav-link-padding-x;
     }
   }
 
