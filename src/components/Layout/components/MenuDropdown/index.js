@@ -32,7 +32,7 @@ const MenuDropdown = ({ text, subLinks }) => {
           modifiers: [
             {
               name: 'offset',
-              options: { offset: [0, 14] },
+              options: { offset: [0, 6] },
             },
           ],
         }}
