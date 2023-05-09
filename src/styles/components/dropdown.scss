@@ -7,24 +7,50 @@
     column-gap: 2px;
     align-items: center;
 
+    &.footer {
+      #{$this}-toggle-icon {
+        transform: scaleY(1);
+      }
+
+      &.show {
+        #{$this}-toggle-icon {
+          transform: scaleY(-1);
+        }
+      }
+
+      &.active {
+        color: $primary;
+      }
+    }
+
+    &.header {
+      #{$this}-toggle-icon {
+        transform: scaleY(-1);
+      }
+
+      &.show {
+        #{$this}-toggle-icon {
+          transform: scaleY(1);
+        }
+      }
+    }
+
     &-icon {
       filter: grayscale(1);
       transition: transform 250ms, filter 250ms;
-      transform: scaleY(-1);
     }
 
     &.show {
       #{$this}-toggle-icon {
         filter: grayscale(0);
-        transform: scaleY(1);
       }
     }
   }
 
   &-menu {
-    display: block !important;
-    padding-right: 120px;
+    padding: 8px;
     visibility: hidden;
+    border-radius: 8px;
     box-shadow: 0 7px 22px rgba($black, 0.2);
     opacity: 0;
     transition: opacity 0.25s, visibility 0.25s;
@@ -34,30 +60,29 @@
       opacity: 1;
     }
 
-    &-header {
-      padding: 8px;
-      border-radius: 8px;
+    #{$this}-item {
+      display: grid;
+      grid-template-columns: 24px auto;
+      column-gap: 12px;
+      align-items: center;
+      padding: 12px;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.286;
+      color: $gray-800;
+      border-radius: 4px;
+      transition: background-color 250ms;
 
-      #{$this}-item {
-        display: grid;
-        grid-template-columns: 24px auto;
-        column-gap: 12px;
-        align-items: center;
-        padding: 12px;
-        font-size: 14px;
-        font-weight: 500;
-        line-height: 1.286;
-        color: $gray-800;
-        border-radius: 4px;
-        transition: background-color 250ms;
+      &.active {
+        color: $primary;
+      }
 
-        &:hover {
-          background-color: $gray-100;
-        }
+      &:hover {
+        background-color: $gray-100;
+      }
 
-        > svg {
-          color: $pink;
-        }
+      > svg {
+        color: $pink;
       }
     }
   }

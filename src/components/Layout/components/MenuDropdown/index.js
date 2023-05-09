@@ -1,5 +1,5 @@
-import React from 'react'
-import { Dropdown, Nav } from 'react-bootstrap'
+import React, { useState } from 'react'
+import { Dropdown } from 'react-bootstrap'
 import { useLocation } from '@reach/router'
 import cn from 'classnames'
 
@@ -8,10 +8,13 @@ import Icon from '~components/Icon'
 import NavLink from '../NavLink'
 
 const MenuDropdown = ({ text, subLinks, variant }) => {
-  const { pathname } = useLocation()
+  const { pathname, hash } = useLocation()
+  const [activeAnchorLink, setActiveAnchorLink] = useState('')
 
   const isActive = subLinks.some(
-    (item) => item.url === pathname || item?.ownerPage?.url === pathname
+    ({ url, anchor }) =>
+      url === pathname ||
+      (activeAnchorLink ? anchor === activeAnchorLink : anchor === hash)
   )
 
   const dropDownPosition =
@@ -19,7 +22,10 @@ const MenuDropdown = ({ text, subLinks, variant }) => {
 
   return (
     <Dropdown drop={dropDownPosition}>
-      <Dropdown.Toggle as={Nav.Link} className={cn({ active: isActive })}>
+      <Dropdown.Toggle
+        as="button"
+        className={cn({ active: isActive, [variant]: variant }, 'nav-link')}
+      >
         {text}
         <Icon
           name="icon-chevron_top"
@@ -30,7 +36,6 @@ const MenuDropdown = ({ text, subLinks, variant }) => {
       </Dropdown.Toggle>
 
       <Dropdown.Menu
-        variant="header"
         popperConfig={{
           modifiers: [
             {
@@ -40,9 +45,24 @@ const MenuDropdown = ({ text, subLinks, variant }) => {
           ],
         }}
       >
-        {subLinks.map((item) => (
-          <NavLink {...item} key={item.id} as={Dropdown.Item} isSubLink />
-        ))}
+        {subLinks.map((subLink) => {
+          const isSubLinkActive =
+            subLink?.url === pathname ||
+            (activeAnchorLink
+              ? subLink.anchor === activeAnchorLink
+              : subLink.anchor === hash)
+
+          return (
+            <NavLink
+              {...subLink}
+              key={subLink.id}
+              as={Dropdown.Item}
+              isSubLink
+              onAnchorClick={setActiveAnchorLink}
+              className={cn({ active: isSubLinkActive })}
+            />
+          )
+        })}
       </Dropdown.Menu>
     </Dropdown>
   )
