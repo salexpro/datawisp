@@ -1,4 +1,19 @@
 .offcanvas {
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+  @include b-up(lg) {
+    display: none;
+  }
+
+  &.offcanvas-top {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  &.show:not(.hiding) {
+    opacity: 1;
+  }
+
   &-body {
     @include b-d(md) {
       padding: 24px;

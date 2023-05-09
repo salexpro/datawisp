@@ -18,6 +18,7 @@ const NavLink = ({
   __typename,
   isSubLink,
   onClick,
+  onAnchorClick,
   ...rest
 }) => {
   const { pathname } = useLocation()
@@ -32,7 +33,7 @@ const NavLink = ({
     if (onClick) onClick()
     const element = document.querySelector(anchor)
     const y = element.getBoundingClientRect().top + window.scrollY - 96
-
+    if (onAnchorClick) onAnchorClick(anchor)
     window.scrollTo({ top: y, behavior: 'smooth' })
   }
 
