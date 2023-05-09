@@ -2,8 +2,7 @@ import React from 'react'
 import { Container } from 'react-bootstrap'
 
 import Icon from '~components/Icon'
-
-import RequestDemoForm from '../RequestDemoForm'
+import RequestDemoForm from '~components/RequestDemoForm'
 
 import { BADGE_MOCKS } from './mocks'
 import HeroImg from './assets/hero.svg'

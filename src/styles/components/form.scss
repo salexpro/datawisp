@@ -52,6 +52,21 @@
       border-color: $gray-400;
     }
 
+    &.secondary {
+      color: $white;
+      background-color: #df5fce;
+      border-color: #ffadfb;
+
+      &::placeholder {
+        color: rgba(255, 242, 253, 60%);
+      }
+
+      &:hover,
+      &:focus:not(.error) {
+        border-color: #fff8ff;
+      }
+    }
+
     &.error {
       border-color: $pink;
 

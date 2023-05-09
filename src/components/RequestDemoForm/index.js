@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Button, Form } from 'react-bootstrap'
 import { useForm } from 'react-hook-form'
 
 import { EMAIL_RULE } from '~constants'
 import cn from 'classnames'
 
-const RequestDemoForm = ({ className }) => {
+const RequestDemoForm = ({ className, variant, handleMessage }) => {
   const {
     register,
     handleSubmit,
@@ -13,8 +13,20 @@ const RequestDemoForm = ({ className }) => {
     reset,
   } = useForm()
 
+  useEffect(() => {
+    if (handleMessage)
+      handleMessage({
+        text: errors?.email?.message,
+        isError: !!errors?.email?.message,
+      })
+  }, [errors?.email])
+
   const onSubmit = (data) => {
     console.log(data)
+    handleMessage({
+      text: 'Thank you! Check your email to schedule your demo',
+      isError: false,
+    })
     reset()
   }
 
@@ -39,10 +51,14 @@ const RequestDemoForm = ({ className }) => {
               message: 'Please enter a valid email address',
             },
           })}
-          className={cn({ error: errors?.email })}
+          className={cn({ error: errors?.email }, variant)}
         />
-        <Button type="submit">Request Demo</Button>
-        {errors?.email && <Form.Text>{errors.email?.message}</Form.Text>}
+        <Button variant={variant || 'primary'} type="submit">
+          Request Demo
+        </Button>
+        {errors?.email && !variant && (
+          <Form.Text>{errors.email?.message}</Form.Text>
+        )}
       </Form.Group>
     </Form>
   )

@@ -1,15 +1,140 @@
 @import '~styles/mixins';
 
 .banner {
+  $this: &;
+
   position: relative;
   display: grid;
   justify-items: center;
   padding: 64px 24px;
   margin: 100px 0 60px;
+  overflow: hidden;
   color: $white;
   background: linear-gradient(135deg, $pink 0%, #9c01d3 66.04%, $indigo 100%);
   isolation: isolate;
   border-radius: 16px;
+
+  &__heading {
+    color: inherit;
+    text-align: center;
+
+    @include b-up(lg) {
+      max-width: 662px;
+    }
+
+    @include b-d(lg) {
+      max-width: 489px;
+    }
+
+    @include b-up(md) {
+      font-size: 36px;
+      line-height: 1.39;
+    }
+
+    @include b-d(md) {
+      font-size: 24px;
+      font-weight: $font-weight-extra-bold;
+      line-height: 1.33;
+    }
+  }
+
+  &__btn {
+    @include b-up(md) {
+      margin-top: 32px;
+    }
+
+    @include b-d(md) {
+      margin-top: 24px;
+    }
+  }
+
+  &__notification {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 5px;
+    font-size: 15px;
+    line-height: 1.467;
+    text-align: center;
+    background-color: rgba($white, 0.2);
+    transition: background-color 300ms;
+
+    strong {
+      font-weight: 600;
+    }
+
+    &.error {
+      background-color: $pink;
+    }
+
+    &.message {
+      font-weight: 600;
+    }
+  }
+
+  &__form {
+    @include b-d(md) {
+      width: 100%;
+    }
+  }
+
+  &__text {
+    margin-top: 12px;
+    font-size: 15px;
+    line-height: 1.467;
+    text-align: center;
+
+    @include b-up(lg) {
+      max-width: 600px;
+    }
+
+    @include b-btw(md, lg) {
+      max-width: 375px;
+    }
+
+    @include b-d(md) {
+      max-width: 211px;
+    }
+  }
+
+  &.withForm {
+    @include b-up(lg) {
+      padding: 56px 24px 67px;
+      margin: 160px 0 120px;
+    }
+
+    @include b-btw(md, lg) {
+      padding: 56px 24px 63px;
+    }
+
+    @include b-d(md) {
+      padding: 48px 24px 59px;
+    }
+
+    #{$this}__heading {
+      @include b-up(lg) {
+        max-width: 694px;
+      }
+
+      @include b-d(lg) {
+        max-width: 500px;
+      }
+    }
+
+    #{$this}__text {
+      max-width: 356px;
+      margin-bottom: 19px;
+
+      @include b-up(lg) {
+        margin-top: 8px;
+      }
+
+      @include b-d(lg) {
+        margin-top: 12px;
+      }
+    }
+  }
 
   @include b-d(md) {
     margin-bottom: 76px;
@@ -22,47 +147,5 @@
     content: '';
     background-image: radial-gradient(rgba($white, 20%) 1px, transparent 0);
     background-size: 15px 15px;
-  }
-
-  p {
-    max-width: 600px;
-    margin-top: 12px;
-    font-size: 15px;
-    line-height: 1.47;
-    text-align: center;
-
-    @include b-d(lg) {
-      max-width: 375px;
-    }
-
-    @include b-d(md) {
-      max-width: 211px;
-    }
-  }
-}
-
-.heading {
-  max-width: 662px;
-  font-size: 36px;
-  line-height: 1.39;
-  color: inherit;
-  text-align: center;
-
-  @include b-d(lg) {
-    max-width: 489px;
-  }
-
-  @include b-d(md) {
-    font-size: 24px;
-    font-weight: $font-weight-extra-bold;
-    line-height: 1.33;
-  }
-}
-
-.btn {
-  margin-top: 32px;
-
-  @include b-d(md) {
-    margin-top: 24px;
   }
 }

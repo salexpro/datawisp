@@ -14,6 +14,9 @@ const SignUpPage = ({ data }) => {
     integrationsSectionHeading,
     integrationsSectionText,
     integrations,
+    bannerSectionHeading,
+    bannerSectionText,
+    bannerSectionNotificationText,
   } = data.datoCmsLeadGenerationPage
 
   return (
@@ -32,6 +35,11 @@ const SignUpPage = ({ data }) => {
         heading: integrationsSectionHeading,
         text: integrationsSectionText,
         integrations,
+      }}
+      banner={{
+        heading: bannerSectionHeading,
+        text: bannerSectionText,
+        notificationText: bannerSectionNotificationText,
       }}
     />
   )
@@ -108,6 +116,14 @@ export const query = graphql`
             imgixParams: { fit: "crop", auto: "compress,format" }
           )
         }
+      }
+
+      bannerSectionHeading
+      bannerSectionText {
+        value
+      }
+      bannerSectionNotificationText {
+        value
       }
     }
   }
