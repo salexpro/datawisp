@@ -25,7 +25,7 @@ const SectionHero = () => {
           {BADGE_MOCKS.map(({ id, iconName, text }) => (
             <div key={id} className={s.badgeWrapper__badge}>
               <Icon
-                name={iconName}
+                name={`icon-${iconName}`}
                 size={20}
                 className={s.badgeWrapper__badge__icon}
               />

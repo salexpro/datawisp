@@ -6,7 +6,6 @@
 
     &.demo {
       display: grid;
-      grid-auto-flow: row;
       gap: 8px;
 
       @include b-up(md) {
