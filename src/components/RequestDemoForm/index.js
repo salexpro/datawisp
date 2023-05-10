@@ -52,7 +52,6 @@ const RequestDemoForm = ({ className, variant, handleMessage }) => {
         addToastToStack({ variant: 'error', content: TOAST_TITLE.error })
         handleResponseMessage(TOAST_TITLE.error, true)
       })
-    reset()
   }
 
   return (
@@ -83,11 +82,7 @@ const RequestDemoForm = ({ className, variant, handleMessage }) => {
           disabled={state.submitting}
           type="submit"
         >
-          {!state.submitting ? (
-            'Request demo'
-          ) : (
-            <Spinner animation="border" size="sm" />
-          )}
+          {!state.submitting ? 'Request demo' : <Spinner size="sm" />}
         </Button>
         {errors?.email && !variant && (
           <Form.Text>{errors.email?.message}</Form.Text>
