@@ -1,6 +1,8 @@
 @import '~styles/mixins';
 
 .headerWrapper {
+  $this: &;
+
   position: fixed;
   top: 0;
   right: 0;
@@ -13,39 +15,63 @@
   &.active {
     border-color: $gray-200;
   }
-}
 
-.header {
-  display: grid;
-  grid-auto-flow: column;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 24px;
-  padding-bottom: 24px;
+  &.withMenu {
+    #{$this}__header {
+      @include b-up(lg) {
+        grid-template-columns: auto 1fr auto;
+      }
 
-  @include b-up(lg) {
-    grid-template-columns: auto 1fr auto;
-    column-gap: 24px;
+      @include b-btw(md, lg) {
+        grid-template-columns: 1fr auto;
+        padding-right: 104px;
+      }
+
+      &__btnPrimary {
+        @include b-d(md) {
+          display: none;
+        }
+      }
+    }
   }
 
-  @include b-d(lg) {
-    min-height: 96px;
-  }
+  &__header {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 24px;
+    padding-bottom: 24px;
 
-  @include b-btw(md, lg) {
-    grid-template-columns: 1fr auto;
-    column-gap: 16px;
-    padding-right: 104px;
-  }
-}
+    @include b-up(lg) {
+      column-gap: 24px;
+    }
 
-.navMenu {
-  @include b-up(lg) {
-    justify-self: end;
-  }
+    @include b-d(lg) {
+      min-height: 96px;
+    }
 
-  @include b-d(lg) {
-    display: none;
+    @include b-btw(md, lg) {
+      column-gap: 16px;
+    }
+
+    @include b-d(md) {
+      column-gap: 35px;
+    }
+
+    &__btnPrimary {
+      justify-self: end;
+    }
+
+    &__navMenu {
+      @include b-up(lg) {
+        justify-self: end;
+      }
+
+      @include b-d(lg) {
+        display: none;
+      }
+    }
   }
 }
 
@@ -64,13 +90,5 @@
 
   @include b-d(md) {
     right: 24px;
-  }
-}
-
-.btnPrimary {
-  justify-self: end;
-
-  @include b-d(md) {
-    display: none;
   }
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, Container } from 'react-bootstrap'
 import PropTypes from 'prop-types'
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql, Link, useStaticQuery } from 'gatsby'
 import cn from 'classnames'
 import { useCookies } from 'react-cookie'
 
@@ -15,14 +15,14 @@ import MobileNavMenu from './components/MobileNavMenu'
 
 import * as s from './Header.module.scss'
 
-const Header = ({ siteTitle }) => {
+const Header = ({ siteTitle, headerPageData }) => {
   const isScrolled = useScrolled()
   const [cookies] = useCookies([
     GOOGLE_ANALYTIC_COOKIE_KEY,
     GOOGLE_ADS_COOKIE_KEY,
   ])
 
-  const data = useStaticQuery(graphql`
+  const headerData = useStaticQuery(graphql`
     fragment LinkInternalData on DatoCmsLinkInternal {
       id
       text
@@ -96,48 +96,79 @@ const Header = ({ siteTitle }) => {
     }
   `)
 
+  const data = headerPageData || headerData.datoCmsHeader
+
   const {
     logoImage,
     logoDesiredHeight,
     logoLink,
     navMenuItems,
     actionButtonLink: btnLink,
-  } = data.datoCmsHeader
+  } = data
 
-  const buttonProps = {
-    as: 'a',
-    href: btnLink?.url,
-    target: btnLink?.target,
-    rel: btnLink?.rel,
+  const handleClick = (e) => {
+    e.preventDefault()
+    const element = document.querySelector(btnLink?.anchor)
+    const y = element.getBoundingClientRect().top + window.scrollY - 96
+    window.scrollTo({ top: y, behavior: 'smooth' })
   }
+
+  // eslint-disable-next-line no-underscore-dangle
+  const isAnchorButton = btnLink?.__typename === 'DatoCmsLinkAnchor'
+
+  const buttonProps = isAnchorButton
+    ? {
+        as: Link,
+        to: `${btnLink?.ownerPage?.url}${btnLink?.anchor}`,
+        text: btnLink?.text,
+        onClick: handleClick,
+      }
+    : {
+        as: 'a',
+        href: btnLink?.url,
+        target: btnLink?.target,
+        rel: btnLink?.rel,
+        onClick: () => gtagReportConversion(cookies),
+      }
 
   return (
     <>
-      <header className={cn(s.headerWrapper, { [s.active]: isScrolled })}>
-        <Container className={s.header}>
+      <header className={cn(s.headerWrapper, {
+          [s.active]: isScrolled,
+          [s.withMenu]: !!navMenuItems,
+        })}>
+        <Container className={s.headerWrapper__header}>
           <LogoLink
             image={logoImage}
             link={logoLink}
             siteTitle={siteTitle}
             height={logoDesiredHeight}
           />
-          <Menu navItems={navMenuItems} className={s.navMenu} />
+          {!!navMenuItems && (
+            <Menu
+              navItems={navMenuItems}
+              className={s.headerWrapper__header__navMenu}
+            />
+          )}
           <Button
             {...buttonProps}
             variant="primary-header"
-            onClick={() => gtagReportConversion(cookies)}
-            className={cn(s.btnPrimary, { scrolled: isScrolled })}
+            className={cn(s.headerWrapper__header__btnPrimary, {
+              scrolled: isScrolled,
+            })}
           >
             {btnLink?.text}
           </Button>
         </Container>
       </header>
 
-      <MobileNavMenu
-        btnLink={btnLink}
-        navItems={navMenuItems}
-        className={s.navMenuMobile}
-      />
+      {!!navMenuItems && (
+        <MobileNavMenu
+          btnLink={btnLink}
+          navItems={navMenuItems}
+          className={s.navMenuMobile}
+        />
+      )}
     </>
   )
 }
