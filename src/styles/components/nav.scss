@@ -39,6 +39,8 @@
 
   /* Variant: footer */
   &-footer {
+    flex-wrap: nowrap;
+
     @include b-d(md) {
       flex-direction: column;
       align-items: center;

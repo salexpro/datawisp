@@ -21,22 +21,47 @@ const SignUp = ({ howItWorks, features, integrations, banner }) => {
         }
         logoDesiredHeight
         logoLink {
-          id
-          text
+          ...LinkInternalData
+        }
+      }
+
+      datoCmsFooter {
+        logoImage {
           url
+          width
+          height
+        }
+        logoDesiredHeight
+        logoLink {
+          ...LinkInternalData
+        }
+        socialLinks {
+          id
           iconName
+          tooltip
+          url
+          hoverColor {
+            hex
+          }
+        }
+        termsConditionsLink {
+          ...LinkExternalData
+        }
+        privacyPolicyLink {
+          ...LinkExternalData
         }
       }
 
       datoCmsLeadGenerationPage {
         actionButtonLink {
           __typename
-          id
-          text
-          anchor
-          iconName
-          ownerPage {
-            url
+          ...LinkAnchorData
+        }
+
+        navMenuItems {
+          __typename
+          ... on DatoCmsLinkAnchor {
+            ...LinkAnchorData
           }
         }
       }
@@ -47,14 +72,21 @@ const SignUp = ({ howItWorks, features, integrations, banner }) => {
     <Layout
       headerPageData={{
         ...data?.datoCmsHeader,
-        ...data?.datoCmsLeadGenerationPage,
+        actionButtonLink: data?.datoCmsLeadGenerationPage?.actionButtonLink,
+      }}
+      footerPageData={{
+        ...data?.datoCmsFooter,
+        navMenuItems: data?.datoCmsLeadGenerationPage?.navMenuItems,
       }}
     >
       <SectionHero />
       <SectionBackedBy />
-      <SectionHowItWorks {...howItWorks} buttonHide />
-      <SectionFeatures features={{ ...features, buttonHide: true }} />
-      <SectionIntegrations {...integrations} />
+      <SectionHowItWorks id="howItWorks" {...howItWorks} buttonHide />
+      <SectionFeatures
+        id="features"
+        features={{ ...features, buttonHide: true }}
+      />
+      <SectionIntegrations id="privacy" {...integrations} />
       <SectionBanner id="bookDemo" {...banner} withForm />
     </Layout>
   )

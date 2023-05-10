@@ -21,7 +21,7 @@ import SVGDefs from './components/SVGDefs'
 
 import { layout } from './Layout.module.scss'
 
-const Layout = ({ children, headerPageData }) => {
+const Layout = ({ children, headerPageData, footerPageData }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -41,7 +41,10 @@ const Layout = ({ children, headerPageData }) => {
           headerPageData={headerPageData}
         />
         <main className="main">{children}</main>
-        <Footer siteTitle={data.site.siteMetadata?.title} />
+        <Footer
+          siteTitle={data.site.siteMetadata?.title}
+          footerPageData={footerPageData}
+        />
         <SVGDefs />
       </div>
 
