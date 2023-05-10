@@ -51,11 +51,14 @@ p > a {
   color: transparent;
   background: $primary-gradient;
   background-clip: text;
+  background-size: 100% 100%;
+  transition: background 250ms;
 
   &:hover {
     color: transparent;
-    background: $primary-gradient;
+    background: $primary-gradient right;
     background-clip: text;
+    background-size: 400% 100%;
   }
 }
 
