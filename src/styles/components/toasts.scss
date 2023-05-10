@@ -24,9 +24,10 @@
   }
 
   @include b-d(md) {
+    --bs-toast-max-width: 545px;
+
     grid-auto-flow: row;
     row-gap: 24px;
-    width: 545px;
   }
 
   &-container {

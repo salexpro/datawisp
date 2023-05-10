@@ -9,6 +9,31 @@
     counter-reset: step;
   }
 
+  &-pagination {
+    &-horizontal {
+      display: grid;
+      grid-auto-flow: column;
+      column-gap: 4px;
+      justify-content: center;
+      margin-top: 12px;
+
+      @include b-up(xl) {
+        display: none;
+      }
+    }
+
+    &-bullet {
+      width: 8px;
+      height: 8px;
+      background: #c9c9c9;
+      border-radius: 4px;
+
+      &-active {
+        background: $primary-gradient;
+      }
+    }
+  }
+
   &.features {
     position: relative;
 

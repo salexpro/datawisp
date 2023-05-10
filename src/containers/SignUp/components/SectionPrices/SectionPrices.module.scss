@@ -1,0 +1,114 @@
+@import '~styles/mixins';
+
+.sectionPrices {
+  background-color: $gray-100;
+  border-radius: 16px;
+
+  @include b-up(lg) {
+    margin-top: 120px;
+    margin-bottom: 40px;
+  }
+
+  @include b-btw(md, lg) {
+    margin-top: 80px;
+    margin-bottom: 0;
+  }
+
+  @include b-up(xl) {
+    padding: 80px 24px 24px;
+  }
+
+  @include b-btw(md, xl) {
+    padding: 54px 24px 12px;
+  }
+
+  @include b-d(md) {
+    padding: 40px 24px 12px;
+    margin-top: 80px;
+    margin-bottom: 16px;
+  }
+}
+
+.header {
+  display: grid;
+  justify-content: center;
+  text-align: center;
+
+  &__title {
+    @include b-up(lg) {
+      font-size: 36px;
+      line-height: 1.389;
+    }
+  }
+
+  &__description {
+    justify-self: center;
+    max-width: 354px;
+
+    @include b-up(lg) {
+      margin-top: 12px;
+    }
+
+    @include b-btw(md, lg) {
+      margin-top: 16px;
+    }
+
+    @include b-d(md) {
+      margin-top: 8px;
+      font-size: 15px;
+      line-height: 1.467;
+    }
+  }
+
+  &__form {
+    @include b-up(lg) {
+      justify-self: center;
+      margin-top: 20px;
+    }
+
+    @include b-btw(md, lg) {
+      justify-self: center;
+      margin-top: 24px;
+    }
+
+    @include b-d(md) {
+      margin-top: 32px;
+    }
+  }
+
+  &__trialText {
+    font-size: 15px;
+    line-height: 1.467;
+    color: $gray-400;
+
+    @include b-up(md) {
+      margin-top: 15px;
+    }
+
+    @include b-d(md) {
+      margin-top: 23px;
+    }
+  }
+
+  &__priceList {
+    padding-right: 24px;
+    padding-left: 24px;
+    margin-right: -24px;
+    margin-left: -24px;
+    mask-image: linear-gradient(
+      90deg,
+      transparent 0%,
+      white 24px,
+      white calc(100% - 24px),
+      transparent 100%
+    );
+
+    @include b-up(lg) {
+      margin-top: 52px;
+    }
+
+    @include b-d(lg) {
+      margin-top: 40px;
+    }
+  }
+}

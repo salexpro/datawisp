@@ -10,6 +10,7 @@ import SectionBackedBy from '~components/SectionBackedBy'
 import SectionBanner from '~components/SectionBanner'
 
 import SectionHero from './components/SectionHero'
+import SectionPrices from './components/SectionPrices'
 
 const SignUp = ({ seo, howItWorks, features, integrations, banner }) => {
   const data = useStaticQuery(graphql`
@@ -88,6 +89,7 @@ const SignUp = ({ seo, howItWorks, features, integrations, banner }) => {
         id="features"
         features={{ ...features, buttonHide: true }}
       />
+      <SectionPrices />
       <SectionIntegrations id="privacy" {...integrations} />
       <SectionBanner id="bookDemo" {...banner} withForm />
     </Layout>

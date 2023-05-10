@@ -1,0 +1,98 @@
+@import '~styles/mixins';
+
+.priceItem {
+  display: grid;
+  grid-template:
+    'badge' 28px
+    'title' 36px
+    'description' 22px
+    'price' auto
+    'discount' 26px
+    'imports' minmax(206px, auto)
+    'analysis' minmax(190px, auto)
+    'storage' 86px
+    'exportsharing' 168px / 1fr;
+  justify-items: center;
+  height: 100%;
+  padding: 24px;
+  background-color: $white;
+  border-radius: 16px;
+
+  @include b-up(md) {
+    min-width: 256px;
+  }
+
+  @include b-d(md) {
+    min-width: 270px;
+  }
+
+  &__badge {
+    grid-area: badge;
+    padding: 5px 12px;
+    font-size: 14px;
+    line-height: 1.286;
+    color: $primary;
+    background-color: $gray-100;
+    border-radius: 6px;
+  }
+
+  &__title {
+    grid-area: title;
+    margin-top: 12px;
+    font-size: 20px;
+  }
+
+  &__description {
+    grid-area: description;
+    margin-top: 4px;
+    font-size: 14px;
+    line-height: 1.286;
+    color: $gray-400;
+  }
+
+  &__price {
+    grid-area: price;
+    margin-top: 24px;
+
+    span {
+      color: $gray-400;
+    }
+
+    @include b-up(md) {
+      font-size: 36px;
+      font-weight: 600;
+      line-height: 1.389;
+    }
+
+    @include b-d(md) {
+      font-size: 32px;
+      font-weight: 800;
+      line-height: 1.1;
+    }
+  }
+
+  &__contactUsBtn {
+    grid-area: price;
+    margin-top: 27px;
+  }
+
+  &__discount {
+    display: grid;
+    grid-area: discount;
+    grid-auto-flow: column;
+    column-gap: 8px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.286;
+
+    &__prev {
+      color: $gray-400;
+      text-decoration: line-through;
+    }
+
+    &__cur {
+      color: $pink;
+    }
+  }
+}
