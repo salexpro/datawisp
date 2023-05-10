@@ -5,6 +5,7 @@ import { graphql } from 'gatsby'
 
 const SignUpPage = ({ data }) => {
   const {
+    seo,
     howItWorksSectionHeading,
     howItWorksSectionText,
     steps,
@@ -21,6 +22,7 @@ const SignUpPage = ({ data }) => {
 
   return (
     <SignUp
+      seo={seo}
       howItWorks={{
         heading: howItWorksSectionHeading,
         text: howItWorksSectionText,
@@ -48,6 +50,20 @@ const SignUpPage = ({ data }) => {
 export const query = graphql`
   query SignUpPage {
     datoCmsLeadGenerationPage {
+      seo {
+        title
+        description
+        twitterCard
+        image {
+          fixed(
+            width: 1200
+            height: 630
+            imgixParams: { fit: "crop", auto: "compress,format" }
+          ) {
+            src
+          }
+        }
+      }
       howItWorksSectionHeading
       howItWorksSectionText {
         value
