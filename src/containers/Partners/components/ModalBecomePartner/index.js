@@ -2,7 +2,7 @@ import React from 'react'
 import { Button, Form, Modal, Spinner } from 'react-bootstrap'
 import { useForm } from 'react-hook-form'
 import { useForm as useFormSpree } from '@formspree/react'
-import classNames from 'classnames'
+import cn from 'classnames'
 
 import { addToastToStack } from '~components/ToastManager'
 import { TOAST_TITLE } from '~constants'
@@ -65,7 +65,7 @@ const ModalBecomePartner = (props) => {
                     required,
                     pattern,
                   })}
-                  className={classNames({ error: errors?.[id] })}
+                  className={cn({ error: errors?.[id] })}
                 />
                 {errors?.[id] && <Form.Text>{errors?.[id]?.message}</Form.Text>}
               </Form.Group>

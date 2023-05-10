@@ -1,5 +1,5 @@
 import React from 'react'
-import classNames from 'classnames'
+import cn from 'classnames'
 
 import TableHeader from '../TableHeader'
 import TableBody from '../TableBody'
@@ -12,13 +12,13 @@ const TableDesktop = ({ header, plansComparison }) => {
   }, [])
 
   return (
-    <table className={classNames(s.pricingTable, s.desktop)}>
+    <table className={cn(s.pricingTable, s.desktop)}>
       <colgroup>
         <col />
         {header.map(({ id, isSelected }) => (
           <col
             key={`colgroup-${id}`}
-            className={classNames({ [s.selected]: isSelected })}
+            className={cn({ [s.selected]: isSelected })}
           />
         ))}
       </colgroup>

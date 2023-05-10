@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Badge } from 'react-bootstrap'
-import classNames from 'classnames'
+import cn from 'classnames'
 
 import * as s from './ComingSoonCase.module.scss'
 
@@ -11,11 +11,7 @@ const ComingSoonCase = (props) => {
   return (
     <div
       {...rest}
-      className={classNames(
-        s.comingSoonCase,
-        { [s.related]: isRelated },
-        className
-      )}
+      className={cn(s.comingSoonCase, { [s.related]: isRelated }, className)}
     >
       <Badge bg={isRelated ? 'disabled2' : 'disabled'}>Coming Soon</Badge>
     </div>

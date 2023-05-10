@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import classNames from 'classnames'
+import cn from 'classnames'
 import { Button, Container } from 'react-bootstrap'
 import { Link } from 'gatsby'
 import { StructuredText } from 'react-datocms'
@@ -24,7 +24,7 @@ const SectionHowItWorks = (props) => {
   return (
     <section
       {...rest}
-      className={classNames(
+      className={cn(
         s.sectionHowItWorks,
         { [s[variant]]: variant, [s.hasButton]: !buttonHide },
         className

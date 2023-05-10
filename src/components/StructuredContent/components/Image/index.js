@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import classNames from 'classnames'
+import cn from 'classnames'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import * as s from './Image.module.scss'
 
@@ -11,7 +11,7 @@ const Image = (props) => {
   return (
     <figure
       {...rest}
-      className={classNames(
+      className={cn(
         s.image,
         { [s[position]]: position },
         { [s[wrapping]]: wrapping },

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
 import PropTypes from 'prop-types'
-import classNames from 'classnames'
+import cn from 'classnames'
 
 import FeaturesList from './components/FeaturesList'
 
@@ -15,7 +15,7 @@ const SectionFeatures = (props) => {
     <Container
       {...rest}
       as="section"
-      className={classNames(s.sectionFeatures, className)}
+      className={cn(s.sectionFeatures, className)}
     >
       <FeaturesList {...list} />
     </Container>

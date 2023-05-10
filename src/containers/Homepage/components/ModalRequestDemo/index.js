@@ -2,7 +2,7 @@ import React from 'react'
 import { Modal, Form, Button, Spinner } from 'react-bootstrap'
 import { useForm } from 'react-hook-form'
 import { useForm as useFormSpree } from '@formspree/react'
-import classNames from 'classnames'
+import cn from 'classnames'
 import { useCookies } from 'react-cookie'
 
 import {
@@ -75,7 +75,7 @@ const ModalRequestDemo = (props) => {
                   message: 'Invalid email address',
                 },
               })}
-              className={classNames({ error: errors?.email })}
+              className={cn({ error: errors?.email })}
             />
             {errors?.email && <Form.Text>{errors?.email?.message}</Form.Text>}
           </Form.Group>

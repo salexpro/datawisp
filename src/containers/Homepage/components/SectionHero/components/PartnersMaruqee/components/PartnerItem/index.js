@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import classNames from 'classnames'
+import cn from 'classnames'
 
 import ImageFormat from '~components/ImageFormat'
 
@@ -10,11 +10,7 @@ const PartnerItem = (props) => {
   const { className, name, file, ...rest } = props
 
   return (
-    <div
-      {...rest}
-      className={classNames(s.partnerItem, className)}
-      title={name}
-    >
+    <div {...rest} className={cn(s.partnerItem, className)} title={name}>
       <ImageFormat alt={name} file={file} loading="eager" />
     </div>
   )

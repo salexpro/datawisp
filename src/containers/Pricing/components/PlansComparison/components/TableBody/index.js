@@ -1,5 +1,5 @@
 import React from 'react'
-import classNames from 'classnames'
+import cn from 'classnames'
 
 import { getCellByType } from '../../utils'
 import * as s from './TableBody.module.scss'
@@ -21,11 +21,11 @@ const TableBody = ({ tables, isSelected, selectedColNumbers }) => {
           </tr>
           {rows.map(({ id: rowId, title: rowTitle, cells }, j) => (
             <tr key={rowId} className={s.row}>
-              <td className={classNames(s.cell, s.cellTitle)}>{rowTitle}</td>
+              <td className={cn(s.cell, s.cellTitle)}>{rowTitle}</td>
               {cells.map(({ id: cellId, cellType, text }, k) => (
                 <td
                   key={cellId}
-                  className={classNames(s.cell, {
+                  className={cn(s.cell, {
                     [s.selected]:
                       // Last table, last row, selected column
                       i === tables.length - 1 &&

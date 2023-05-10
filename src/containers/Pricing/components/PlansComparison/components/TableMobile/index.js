@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Tab, Tabs } from 'react-bootstrap'
-import classNames from 'classnames'
+import cn from 'classnames'
 
 import TableHeader from '../TableHeader'
 import TableBody from '../TableBody'
@@ -17,10 +17,10 @@ const TableMobile = ({ header, plansComparison }) => {
     <Tabs className={s.tabs} activeKey={activeTab} onSelect={setActiveTab}>
       {header.map(({ id, title, isSelected }, i) => (
         <Tab key={id} eventKey={i} title={title}>
-          <table className={classNames(s.pricingTable, s.mobile)}>
+          <table className={cn(s.pricingTable, s.mobile)}>
             <colgroup>
               <col />
-              <col className={classNames({ [s.selected]: isSelected })} />
+              <col className={cn({ [s.selected]: isSelected })} />
             </colgroup>
             <TableHeader header={[header[activeTab]]} isMobile />
             <TableBody

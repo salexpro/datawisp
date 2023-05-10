@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import classNames from 'classnames'
+import cn from 'classnames'
 
 import * as style from './SVGDefs.module.scss'
 
@@ -10,7 +10,7 @@ const SVGDefs = (props) => {
   return (
     <svg
       {...rest}
-      className={classNames(style.svgDefs, className)}
+      className={cn(style.svgDefs, className)}
       aria-hidden="true"
       focusable="false"
       tabIndex={-1}

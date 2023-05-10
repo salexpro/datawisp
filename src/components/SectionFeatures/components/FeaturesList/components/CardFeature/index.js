@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import classNames from 'classnames'
+import cn from 'classnames'
 import { StructuredText } from 'react-datocms'
 
 import Icon from '~components/Icon'
@@ -12,7 +12,7 @@ const CardFeature = (props) => {
   const { heading, text, iconName, className, image, ...rest } = props
 
   return (
-    <div {...rest} className={classNames(s.cardFeature, className)}>
+    <div {...rest} className={cn(s.cardFeature, className)}>
       <ImageFormat alt={heading} file={image} className={s.img} />
       <div className={s.gridHeading}>
         <Icon name={iconName} size={24} className={s.icon} />

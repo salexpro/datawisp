@@ -3,7 +3,7 @@ import { Button, Form } from 'react-bootstrap'
 import { useForm } from 'react-hook-form'
 
 import { EMAIL_RULE } from '~constants'
-import classNames from 'classnames'
+import cn from 'classnames'
 
 const RequestDemoForm = ({ className }) => {
   const {
@@ -39,7 +39,7 @@ const RequestDemoForm = ({ className }) => {
               message: 'Please enter a valid email address',
             },
           })}
-          className={classNames({ error: errors?.email })}
+          className={cn({ error: errors?.email })}
         />
         <Button type="submit">Request Demo</Button>
         {errors?.email && <Form.Text>{errors.email?.message}</Form.Text>}

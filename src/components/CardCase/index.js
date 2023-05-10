@@ -1,6 +1,6 @@
 import React, { createElement } from 'react'
 import PropTypes from 'prop-types'
-import classNames from 'classnames'
+import cn from 'classnames'
 import { Link } from 'gatsby'
 import { Badge, Button, Placeholder } from 'react-bootstrap'
 
@@ -29,18 +29,10 @@ const CardCase = (props) => {
     return (
       <div
         {...rest}
-        className={classNames(
-          'placeholder-glow',
-          s.card,
-          s.placeholder,
-          className
-        )}
+        className={cn('placeholder-glow', s.card, s.placeholder, className)}
       >
         <Placeholder className={s.placeholderImg} />
-        <Placeholder
-          as={headingAs}
-          className={classNames('h4', s.placeholderHeader)}
-        />
+        <Placeholder as={headingAs} className={cn('h4', s.placeholderHeader)} />
         <Placeholder as="p" className={s.placeholderText} />
         <Placeholder className={s.placeholderBtn} />
       </div>
@@ -49,9 +41,9 @@ const CardCase = (props) => {
   const linkTitle = `Learn more about ${heading}`
 
   const componentProps = isFeatureCard
-    ? { className: classNames(s.card, s.featureCard, className) }
+    ? { className: cn(s.card, s.featureCard, className) }
     : {
-        className: classNames(s.card, { [s[variant]]: variant }, className),
+        className: cn(s.card, { [s[variant]]: variant }, className),
         to: `${RouteURL.CASE_STUDIES}/${slug}`,
         'aria-label': linkTitle,
         title: linkTitle,
@@ -67,30 +59,26 @@ const CardCase = (props) => {
       ...componentProps,
     },
     <>
-      <span className={classNames(s.imgWrapper, { [s[variant]]: variant })}>
+      <span className={cn(s.imgWrapper, { [s[variant]]: variant })}>
         {!isFeatureCard ? (
           <ImageFormat width={40} height={40} alt={heading} file={postIcon} />
         ) : (
           <Icon name={postIcon} size={20} />
         )}
       </span>
-      {createElement(
-        headingAs,
-        { className: classNames('h4', s.heading) },
-        heading
-      )}
+      {createElement(headingAs, { className: cn('h4', s.heading) }, heading)}
       <p>{description}</p>
       {!isFeatureCard && (
         <div className={s.buttonWrapper}>
           <Button
             variant="primary"
-            className={classNames(s.arrowLink, { [s[variant]]: variant })}
+            className={cn(s.arrowLink, { [s[variant]]: variant })}
             aria-label={linkTitle}
           >
             <Icon name="icon-arrow-link" size={20} className={s.arrowIcon} />
           </Button>
           {isComingSoon && (
-            <Badge bg={classNames({ [`primary-gray`]: variant === 'white' })}>
+            <Badge bg={cn({ [`primary-gray`]: variant === 'white' })}>
               Coming Soon
             </Badge>
           )}

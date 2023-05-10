@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import classNames from 'classnames'
+import cn from 'classnames'
 import { Button, Container } from 'react-bootstrap'
 import { StructuredText } from 'react-datocms'
 import { useCookies } from 'react-cookie'
@@ -29,11 +29,7 @@ const SectionHero = (props) => {
   ])
 
   return (
-    <Container
-      as="section"
-      {...rest}
-      className={classNames(s.sectionHero, className)}
-    >
+    <Container as="section" {...rest} className={cn(s.sectionHero, className)}>
       <div className={s.colLeft}>
         <h1>{heading}</h1>
         <StructuredText data={text.value} />

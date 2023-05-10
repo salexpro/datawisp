@@ -1,5 +1,5 @@
 import React from 'react'
-import classNames from 'classnames'
+import cn from 'classnames'
 import { Button } from 'react-bootstrap'
 
 import * as s from './TableHeader.module.scss'
@@ -25,7 +25,7 @@ const TableHeader = ({ header, isMobile }) => (
         }) => (
           <th
             key={id}
-            className={classNames(s.cell, {
+            className={cn(s.cell, {
               [s.selected]: isSelected,
               [s.mobile]: isMobile,
             })}
@@ -33,7 +33,7 @@ const TableHeader = ({ header, isMobile }) => (
             <div className={s.headerWrapper}>
               {tagText && (
                 <div
-                  className={classNames(s.tag, {
+                  className={cn(s.tag, {
                     [s.isComingSoon]: isComingSoon,
                   })}
                 >

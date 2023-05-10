@@ -2,7 +2,7 @@ import React from 'react'
 import { Button, Container } from 'react-bootstrap'
 import PropTypes from 'prop-types'
 import { graphql, useStaticQuery } from 'gatsby'
-import classNames from 'classnames'
+import cn from 'classnames'
 import { useCookies } from 'react-cookie'
 
 import useScrolled from '~hooks/useScrolled'
@@ -113,9 +113,7 @@ const Header = ({ siteTitle }) => {
 
   return (
     <>
-      <header
-        className={classNames(s.headerWrapper, { [s.active]: isScrolled })}
-      >
+      <header className={cn(s.headerWrapper, { [s.active]: isScrolled })}>
         <Container className={s.header}>
           <LogoLink
             image={logoImage}
@@ -128,7 +126,7 @@ const Header = ({ siteTitle }) => {
             {...buttonProps}
             variant="primary-header"
             onClick={() => gtagReportConversion(cookies)}
-            className={classNames(s.btnPrimary, { scrolled: isScrolled })}
+            className={cn(s.btnPrimary, { scrolled: isScrolled })}
           >
             {btnLink?.text}
           </Button>
