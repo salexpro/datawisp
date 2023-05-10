@@ -30,6 +30,7 @@
   }
 
   &-container {
+    position: fixed;
     padding: 0 24px 24px;
 
     &.top-end {
@@ -38,7 +39,6 @@
     }
 
     &.bottom-middle {
-      position: fixed;
       bottom: 0;
       left: 50%;
       transform: translateX(-50%);

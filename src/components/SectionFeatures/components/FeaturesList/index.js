@@ -54,14 +54,16 @@ const FeaturesList = (props) => {
 }
 
 FeaturesList.defaultProps = {
+  buttonText: '',
+  buttonLink: '',
   className: '',
 }
 
 FeaturesList.propTypes = {
   heading: PropTypes.string.isRequired,
   text: PropTypes.object.isRequired,
-  buttonText: PropTypes.string.isRequired,
-  buttonLink: PropTypes.string.isRequired,
+  buttonText: PropTypes.string,
+  buttonLink: PropTypes.string,
   featuresList: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,

@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react'
-import { Button, Form } from 'react-bootstrap'
+import { Button, Form, Spinner } from 'react-bootstrap'
 import { useForm } from 'react-hook-form'
-
-import { EMAIL_RULE } from '~constants'
 import cn from 'classnames'
+import { useForm as useFormSpree } from '@formspree/react'
+
+import { addToastToStack } from '~components/ToastManager'
+import { EMAIL_RULE, TOAST_TITLE } from '~constants'
 
 const RequestDemoForm = ({ className, variant, handleMessage }) => {
   const {
@@ -13,6 +15,8 @@ const RequestDemoForm = ({ className, variant, handleMessage }) => {
     reset,
   } = useForm()
 
+  const [state, handleSendData] = useFormSpree('xzbqwbpz')
+
   useEffect(() => {
     if (handleMessage)
       handleMessage({
@@ -21,12 +25,33 @@ const RequestDemoForm = ({ className, variant, handleMessage }) => {
       })
   }, [errors?.email])
 
+  const handleResponseMessage = (text, ok) => {
+    if (handleMessage)
+      handleMessage({
+        text,
+        isError: ok,
+      })
+  }
+
   const onSubmit = (data) => {
-    console.log(data)
-    handleMessage({
-      text: 'Thank you! Check your email to schedule your demo',
-      isError: false,
-    })
+    handleSendData(data)
+      .then((res) => {
+        if (res?.body.ok) {
+          addToastToStack({ variant: 'success', content: TOAST_TITLE.success })
+          handleResponseMessage(
+            'Thank you! Check your email to schedule your demo',
+            false
+          )
+          reset()
+          return
+        }
+        addToastToStack({ variant: 'error', content: TOAST_TITLE.error })
+        handleResponseMessage(TOAST_TITLE.error, true)
+      })
+      .catch(() => {
+        addToastToStack({ variant: 'error', content: TOAST_TITLE.error })
+        handleResponseMessage(TOAST_TITLE.error, true)
+      })
     reset()
   }
 
@@ -53,8 +78,16 @@ const RequestDemoForm = ({ className, variant, handleMessage }) => {
           })}
           className={cn({ error: errors?.email }, variant)}
         />
-        <Button variant={variant || 'primary'} type="submit">
-          Request Demo
+        <Button
+          variant={variant || 'primary'}
+          disabled={state.submitting}
+          type="submit"
+        >
+          {!state.submitting ? (
+            'Request demo'
+          ) : (
+            <Spinner animation="border" size="sm" />
+          )}
         </Button>
         {errors?.email && !variant && (
           <Form.Text>{errors.email?.message}</Form.Text>
