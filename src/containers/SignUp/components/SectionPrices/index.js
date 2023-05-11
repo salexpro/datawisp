@@ -33,12 +33,12 @@ const SectionPrices = () => {
           pagination={{
             el: '#swiper-pagination',
             clickable: true,
-            type: 'bullets',
           }}
           breakpoints={{
-            1200: { slidesPerView: 4 },
+            768: { slidesPerView: 'auto', spaceBetween: 16 },
+            1200: { slidesPerView: 4, spaceBetween: 16 },
           }}
-          spaceBetween={16}
+          spaceBetween={12}
           className={s.header__priceList}
         >
           {PRICE_DATA.map((item) => (
