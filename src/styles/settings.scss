@@ -1331,18 +1331,18 @@ $accordion-button-active-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.
 // Tooltips
 
 // scss-docs-start tooltip-variables
-$tooltip-font-size: $font-size-sm !default;
-$tooltip-max-width: 200px !default;
-$tooltip-color: $white !default;
-$tooltip-bg: $black !default;
-$tooltip-border-radius: $border-radius !default;
-$tooltip-opacity: 0.9 !default;
-$tooltip-padding-y: $spacer * 0.25 !default;
-$tooltip-padding-x: $spacer * 0.5 !default;
+$tooltip-font-size: 15px;
+$tooltip-max-width: 228px !default;
+$tooltip-color: $white;
+$tooltip-bg: #494949;
+$tooltip-border-radius: 8px;
+$tooltip-opacity: 1;
+$tooltip-padding-y: 8px;
+$tooltip-padding-x: 12px;
 $tooltip-margin: 0 !default;
 
-$tooltip-arrow-width: 0.8rem !default;
-$tooltip-arrow-height: 0.4rem !default;
+$tooltip-arrow-width: 12px;
+$tooltip-arrow-height: 7px;
 $tooltip-arrow-color: $tooltip-bg !default;
 // scss-docs-end tooltip-variables
 

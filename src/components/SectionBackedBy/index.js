@@ -11,7 +11,7 @@ const Section = () => {
   return (
     <section className={s.bakedBy}>
       <Container>
-        <h2 className={s.bakedBy__title}>Baked by</h2>
+        <h2 className={s.bakedBy__title}>Backed by</h2>
       </Container>
 
       <div className={cn(s.marquee, 'marquee-wrapper baked')}>

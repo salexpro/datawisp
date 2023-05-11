@@ -1,0 +1,11 @@
+.tooltip {
+  line-height: 1.467;
+
+  &-arrow {
+    transform: translate3d(20px, 0, 0) !important;
+  }
+
+  &-inner {
+    box-shadow: 0 10px 21px rgba(5, 5, 5, 18%);
+  }
+}
