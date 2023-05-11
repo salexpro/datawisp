@@ -17,6 +17,7 @@ const FeaturesList = (props) => {
     buttonLink,
     buttonHide,
     featuresList,
+    variant,
     className,
     ...rest
   } = props
@@ -27,6 +28,7 @@ const FeaturesList = (props) => {
       className={cn(
         s.featuresList,
         { [s.buttonHidden]: buttonHide },
+        { [s[variant]]: variant },
         className
       )}
     >

@@ -87,10 +87,11 @@ const SignUp = ({ seo, howItWorks, features, integrations, banner }) => {
       <SectionHowItWorks id="howItWorks" {...howItWorks} buttonHide />
       <SectionFeatures
         id="features"
+        variant="signUp"
         features={{ ...features, buttonHide: true }}
       />
       <SectionPrices />
-      <SectionIntegrations id="privacy" {...integrations} />
+      <SectionIntegrations id="privacy" variant="signUp" {...integrations} />
       <SectionBanner id="bookDemo" {...banner} withForm />
     </Layout>
   )

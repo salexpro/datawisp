@@ -8,7 +8,7 @@ import IntegrationItem from './components/IntegrationItem'
 import * as s from './SectionIntegrations.module.scss'
 
 const SectionIntegrations = (props) => {
-  const { heading, text, integrations, className, ...rest } = props
+  const { variant, heading, text, integrations, className, ...rest } = props
 
   const isTwoColumn = integrations?.length === 2
 
@@ -17,7 +17,11 @@ const SectionIntegrations = (props) => {
       id="integrations"
       as="section"
       {...rest}
-      className={cn(s.sectionIntegrations, className)}
+      className={cn(
+        s.sectionIntegrations,
+        { [s[variant]]: variant },
+        className
+      )}
     >
       <h2>{heading}</h2>
       <StructuredText data={text.value} />

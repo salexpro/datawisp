@@ -35,6 +35,7 @@ const SectionBanner = (props) => {
         </div>
         {withForm ? (
           <RequestDemoForm
+            id="banner"
             variant="secondary"
             handleMessage={setMessage}
             className={s.banner__form}

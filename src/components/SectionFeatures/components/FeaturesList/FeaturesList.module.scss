@@ -1,5 +1,20 @@
 @import '~styles/mixins';
 
+.heading {
+  grid-area: heading;
+  max-width: 557px;
+}
+
+.text {
+  grid-area: text;
+  max-width: 488px;
+  margin-top: 12px;
+
+  @include b-d(lg) {
+    margin-top: 8px;
+  }
+}
+
 .featuresList {
   display: grid;
   grid-template-areas:
@@ -28,6 +43,28 @@
       'features';
   }
 
+  &.signUp {
+    .heading {
+      @include b-up(lg) {
+        max-width: 557px;
+      }
+
+      @include b-d(lg) {
+        max-width: 441px;
+      }
+    }
+
+    .text {
+      @include b-up(lg) {
+        max-width: 641px;
+      }
+
+      @include b-d(lg) {
+        max-width: 100%;
+      }
+    }
+  }
+
   &.buttonHidden {
     grid-template-areas:
       'heading'
@@ -36,25 +73,10 @@
 
     @include b-btw(md, lg) {
       grid-template-areas:
-        'heading .'
-        'text .'
+        'heading heading'
+        'text text'
         'features features';
     }
-  }
-}
-
-.heading {
-  grid-area: heading;
-  max-width: 557px;
-}
-
-.text {
-  grid-area: text;
-  max-width: 488px;
-  margin-top: 12px;
-
-  @include b-d(lg) {
-    margin-top: 8px;
   }
 }
 

@@ -11,7 +11,7 @@ import * as s from './SectionPrices.module.scss'
 
 const SectionPrices = () => {
   return (
-    <Container>
+    <Container id="prices">
       <section className={s.sectionPrices}>
         <div className={s.header}>
           <h2 className={s.header__title}>
@@ -21,7 +21,7 @@ const SectionPrices = () => {
             Open up new opportunities in working with data for yourself and your
             team
           </p>
-          <RequestDemoForm className={s.header__form} />
+          <RequestDemoForm id="price" className={s.header__form} />
           <p className={s.header__trialText}>
             And get a <u>free</u> trial after the demo
           </p>

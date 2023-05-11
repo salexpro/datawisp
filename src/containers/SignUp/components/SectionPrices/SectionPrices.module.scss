@@ -11,7 +11,7 @@
 
   @include b-btw(md, lg) {
     margin-top: 80px;
-    margin-bottom: 0;
+    margin-bottom: 48px;
   }
 
   @include b-up(xl) {
@@ -25,7 +25,7 @@
   @include b-d(md) {
     padding: 40px 24px 12px;
     margin-top: 80px;
-    margin-bottom: 16px;
+    margin-bottom: 56px;
   }
 }
 
@@ -35,9 +35,19 @@
   text-align: center;
 
   &__title {
+    justify-self: center;
+
     @include b-up(lg) {
       font-size: 36px;
       line-height: 1.389;
+    }
+
+    @include b-btw(md, lg) {
+      max-width: 487px;
+    }
+
+    @include b-d(md) {
+      max-width: 278px;
     }
   }
 

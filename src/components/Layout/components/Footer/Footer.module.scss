@@ -52,6 +52,7 @@
 
     #{$this}__menu {
       justify-self: center;
+      margin-right: 0;
 
       @include b-btw(md, lg) {
         grid-row: 2 / 3;
@@ -77,6 +78,7 @@
   &__menu {
     @include b-up(md) {
       justify-self: end;
+      margin-right: -16px;
     }
 
     @include b-d(md) {

@@ -1,11 +1,11 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
+import { StaticImage } from 'gatsby-plugin-image'
 
 import Icon from '~components/Icon'
 import RequestDemoForm from '~components/RequestDemoForm'
 
 import { BADGE_MOCKS } from './mocks'
-import HeroImg from './assets/hero.svg'
 import * as s from './SectionHero.module.scss'
 
 const SectionHero = () => {
@@ -18,7 +18,7 @@ const SectionHero = () => {
           in your organization make use of your valuable data.
         </p>
 
-        <RequestDemoForm className={s.heroSection__form} />
+        <RequestDemoForm id="hero" className={s.heroSection__form} />
 
         <div className={s.badgeWrapper}>
           {BADGE_MOCKS.map(({ id, iconName, text }) => (
@@ -33,7 +33,18 @@ const SectionHero = () => {
           ))}
         </div>
       </div>
-      <img src={HeroImg} alt="hero" className={s.heroSection__img} />
+      <StaticImage
+        width={943}
+        height={376}
+        quality={100}
+        loading="eager"
+        layout="constrained"
+        sizes="(max-width: 767.98px) calc(100vw - 24px * 2), (max-width: 1023.98px) calc(100vw - 40px * 2), min(calc(100vw - 520px - 17px - 40px * 2), 703px)"
+        placeholder="none"
+        src="./assets/hero.svg"
+        alt="hero"
+        className={s.heroSection__img}
+      />
     </Container>
   )
 }

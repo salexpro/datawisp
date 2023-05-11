@@ -6,8 +6,16 @@
 
   &.withForm {
     @include b-up(lg) {
-      margin-top: 160px;
+      margin-top: 80px;
       margin-bottom: 120px;
+    }
+
+    @include b-btw(md, lg) {
+      margin-top: 70px;
+    }
+
+    @include b-d(md) {
+      margin-top: 76px;
     }
   }
 
@@ -114,6 +122,10 @@
   }
 
   &.withForm {
+    &::after {
+      bottom: 32px;
+    }
+
     @include b-up(lg) {
       padding: 56px 24px 67px;
     }

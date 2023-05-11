@@ -33,7 +33,7 @@ const PricePlan = (props) => {
       )}
 
       {sections.map((section) => (
-        <ServicesList key={title} {...section} />
+        <ServicesList key={`${title}-${section.title}`} {...section} />
       ))}
     </div>
   )

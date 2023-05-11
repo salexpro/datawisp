@@ -27,10 +27,13 @@
 
   p {
     grid-area: paragraph;
-    max-width: 674px;
 
-    @include b-btw(md, lg) {
-      max-width: 490px;
+    @include b-up(lg) {
+      max-width: 616px;
+    }
+
+    @include b-d(lg) {
+      max-width: 100%;
     }
   }
 
@@ -62,6 +65,18 @@
 
   &.home {
     background-color: $gray-100;
+
+    .gridHeading {
+      p {
+        @include b-up(lg) {
+          max-width: 674px;
+        }
+
+        @include b-btw(md, lg) {
+          max-width: 475px;
+        }
+      }
+    }
 
     @include b-up(lg) {
       padding: 80px 0;

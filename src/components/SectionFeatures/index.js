@@ -8,7 +8,7 @@ import FeaturesList from './components/FeaturesList'
 import * as s from './SectionFeatures.module.scss'
 
 const SectionFeatures = (props) => {
-  const { features, className, ...rest } = props
+  const { variant, features, className, ...rest } = props
   const { image, ...list } = features
 
   return (
@@ -17,7 +17,7 @@ const SectionFeatures = (props) => {
       as="section"
       className={cn(s.sectionFeatures, className)}
     >
-      <FeaturesList {...list} />
+      <FeaturesList {...list} variant={variant} />
     </Container>
   )
 }

@@ -3,13 +3,39 @@
 .sectionIntegrations {
   padding-top: 80px;
 
-  @include b-d(md) {
-    padding-top: 64px;
-  }
-
-  & > p {
+  p {
     max-width: 488px;
     margin-top: 12px;
+  }
+
+  &.signUp {
+    @include b-up(lg) {
+      padding-bottom: 80px;
+    }
+
+    @include b-btw(md, lg) {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+
+    @include b-d(md) {
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+
+    p {
+      @include b-up(lg) {
+        max-width: 616px;
+      }
+
+      @include b-d(lg) {
+        max-width: 521px;
+      }
+    }
+  }
+
+  @include b-d(md) {
+    padding-top: 64px;
   }
 }
 

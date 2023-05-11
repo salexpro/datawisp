@@ -13,11 +13,19 @@ const ServicesList = ({ title, items }) => {
       <ul className={s.list}>
         {items.map(({ title: itemText, isNotReady }) => {
           return isNotReady ? (
-            <OverlayTooltip text="To get this feature, you need to contact us">
+            <OverlayTooltip
+              key={`${title}-${itemText}`}
+              text="To get this feature, you need to contact us"
+            >
               <li className={cn(s.list__item, s.note)}>{itemText}</li>
             </OverlayTooltip>
           ) : (
-            <li className={cn(s.list__item, s.check)}>{itemText}</li>
+            <li
+              key={`${title}-${itemText}`}
+              className={cn(s.list__item, s.check)}
+            >
+              {itemText}
+            </li>
           )
         })}
       </ul>

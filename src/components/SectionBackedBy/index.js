@@ -19,7 +19,7 @@ const Section = () => {
           {BAKED_BY_MOCKS.map((logo) => (
             <div key={logo.alt} className={s.marquee__logo}>
               {/* eslint-disable jsx-a11y/alt-text */}
-              <img {...logo} className={s.marquee__logo__img} />
+              <img {...logo} height={56} className={s.marquee__logo__img} />
             </div>
           ))}
         </Marquee>

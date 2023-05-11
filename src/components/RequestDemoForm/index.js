@@ -7,7 +7,7 @@ import { useForm as useFormSpree } from '@formspree/react'
 import { addToastToStack } from '~components/ToastManager'
 import { EMAIL_RULE, TOAST_TITLE } from '~constants'
 
-const RequestDemoForm = ({ className, variant, handleMessage }) => {
+const RequestDemoForm = ({ id, className, variant, handleMessage }) => {
   const {
     register,
     handleSubmit,
@@ -61,7 +61,10 @@ const RequestDemoForm = ({ className, variant, handleMessage }) => {
       className={className}
       onSubmit={handleSubmit(onSubmit)}
     >
-      <Form.Group controlId="requestDemo" className="form-group demo">
+      <Form.Group
+        controlId={`request-demo-form-${id}`}
+        className="form-group demo"
+      >
         <Form.Control
           type="email"
           placeholder="Enter your email address"
