@@ -1,5 +1,21 @@
 @import '~styles/mixins';
 
+.bannerWrapper {
+  margin-top: 100px;
+  margin-bottom: 60px;
+
+  &.withForm {
+    @include b-up(lg) {
+      margin-top: 160px;
+      margin-bottom: 120px;
+    }
+  }
+
+  @include b-d(md) {
+    margin-bottom: 76px;
+  }
+}
+
 .banner {
   $this: &;
 
@@ -7,7 +23,6 @@
   display: grid;
   justify-items: center;
   padding: 64px 24px;
-  margin: 100px 0 60px;
   overflow: hidden;
   color: $white;
   background: linear-gradient(135deg, $pink 0%, #9c01d3 66.04%, $indigo 100%);
@@ -101,7 +116,6 @@
   &.withForm {
     @include b-up(lg) {
       padding: 56px 24px 67px;
-      margin: 160px 0 120px;
     }
 
     @include b-btw(md, lg) {
@@ -134,10 +148,6 @@
         margin-top: 12px;
       }
     }
-  }
-
-  @include b-d(md) {
-    margin-bottom: 76px;
   }
 
   &::after {

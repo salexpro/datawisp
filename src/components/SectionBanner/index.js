@@ -23,7 +23,11 @@ const SectionBanner = (props) => {
   const [message, setMessage] = useState({ text: '', isError: false })
 
   return (
-    <Container as="section" {...rest} className={className}>
+    <Container
+      as="section"
+      {...rest}
+      className={cn(s.bannerWrapper, { [s.withForm]: withForm }, className)}
+    >
       <div className={cn(s.banner, { [s.withForm]: withForm })}>
         <h3 className={s.banner__heading}>{heading}</h3>
         <div className={s.banner__text}>
