@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" viewBox="0 0 56 56">
+  <defs>
+    <path id="a" fill="#000" d="m20.7 56-1.55-4.68h-8.86L8.71 56H1.99l9.35-25.24h7.28L27.87 56h-7.18Zm-5.91-17.93-2.7 8.02h5.34l-2.64-8.02Z"/>
+    <path id="c" fill="#000" d="M46.69 46.5V56h-6.65v-9.5l-8.82-15.74h7.17l5.2 9.67 5.31-9.67h6.68l-8.9 15.75Z"/>
+    <path id="e" fill="#000" d="M15.55 17.54h-3.2v7.7H5.71V0h9.84c6.61 0 10.58 2.95 10.58 8.61 0 5.7-3.97 8.93-10.58 8.93ZM15.52 5.6h-3.17v6.36h3.17c2.63 0 4-1.33 4-3.27 0-1.97-1.37-3.1-4-3.1Z"/>
+    <path id="g" fill="#000" d="M52.26 25.24H35V0h6.65v19.23h10.61v6.01Z"/>
+  </defs>
+  <mask id="b" width="27" height="26" x="1" y="30" maskUnits="userSpaceOnUse" style="mask-type:alpha">
+    <use xlink:href="#a"/>
+  </mask>
+  <g mask="url(#b)">
+    <use xlink:href="#a"/>
+    <path fill="#088490" d="M10.86 41.7V29.21l16.47-2.83L10.86 41.7Z"/>
+    <path fill="#1CA5BB" d="M10.86 41.7h14.2l2.27-15.32L10.86 41.7Z"/>
+    <path fill="#681889" d="M10.86 41.7V29.21L2.92 49.65l7.94-7.95Z"/>
+    <path fill="#2E3E99" d="M10.86 41.7h10.79L1.78 59.87l1.14-10.22 7.94-7.95Z"/>
+    <path fill="#4AB7D3" d="M21.65 51.35V41.7L1.78 59.87h12.03l7.84-8.52Z"/>
+    <path fill="#2CABCD" d="M21.65 51.35V41.7h13.06v9.65H21.65Z"/>
+    <path fill="#1897C3" d="m21.65 51.35-7.38 7.95h20.44v-7.95H21.65Z"/>
+  </g>
+  <mask id="d" width="25" height="26" x="31" y="30" maskUnits="userSpaceOnUse" style="mask-type:alpha">
+    <use xlink:href="#c"/>
+  </mask>
+  <g mask="url(#d)">
+    <use xlink:href="#c"/>
+    <path fill="#E71A64" d="M48.33 28.65 31.3 42.84v-14.2h17.03Z"/>
+    <path fill="#7A1C89" d="m55.14 40.57-19.87-1.14 2.27 15.9 17.6-14.76Z"/>
+    <path fill="#9D268F" d="m35.27 39.43 15.9-13.05h5.67l-1.7 14.19-19.87-1.14Z"/>
+    <path fill="#681889" d="m55.14 40.57-17.6 14.75v2.28h17.6V40.57Z"/>
+  </g>
+  <mask id="f" width="22" height="26" x="5" y="0" maskUnits="userSpaceOnUse" style="mask-type:alpha">
+    <use xlink:href="#e"/>
+  </mask>
+  <g mask="url(#f)">
+    <use xlink:href="#e"/>
+    <path fill="#7A1C89" d="m6.32 21.27-3.4-.57V2.54l3.4.56 2.84 3.98-2.84 14.19Z"/>
+    <path fill="#D71C62" d="m23.92 20.13-9.08-8.51-5.68-4.54 3.98 13.62 10.78-.57Z"/>
+    <path fill="#088490" d="M14.84 22.97-.5 19l7.4 11.92 6.81-2.84 1.14-5.11Z"/>
+    <path fill="#9D268F" d="m13.13 22.97 1.7-11.35-5.67-4.54L6.32 20.7l6.81 2.27Z"/>
+    <path fill="#ED407A" d="M8.03-1.44 5.19-2l3.4-7.38L29.03 17.3l-7.38 1.14L8.03-1.44Z"/>
+    <path fill="#E71A64" d="M5.76 3.67 2.92 3.1l4.54-7.38L22.22 17.3l-7.95-1.7L5.76 3.67Z"/>
+    <path fill="#C21C1D" d="M14.27-1.44 12-2l3.4-7.38L35.85 17.3l-7.95-1.13-13.62-17.6Z"/>
+  </g>
+  <mask id="h" width="18" height="26" x="35" y="0" maskUnits="userSpaceOnUse" style="mask-type:alpha">
+    <use xlink:href="#g"/>
+  </mask>
+  <g mask="url(#h)">
+    <use xlink:href="#g"/>
+    <path fill="#F7D932" d="m44.69-14.5 5.8 5.81L28.01 13.8 22.21 8z"/>
+    <path fill="#F7990E" d="m44.69-3.14 5.8 5.8-22.47 22.48-5.8-5.8z"/>
+    <path fill="#F75622" d="m44.7 8.2 5.8 5.81L28.02 36.5l-5.8-5.8z"/>
+    <path fill="#C21C1D" d="m56.05 8.21 8.15 8.15-22.48 22.48-8.15-8.15z"/>
+  </g>
+</svg>

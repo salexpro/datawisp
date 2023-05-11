@@ -1,6 +1,6 @@
-import coinFund from './assets/coinFund.png'
-import play from './assets/play.png'
-import spartanCapital from './assets/spartanCapital.png'
+import coinFund from './assets/coinFund.svg'
+import play from './assets/play.svg'
+import spartanCapital from './assets/spartanCapital.svg'
 import mirana from './assets/mirana.svg'
 import web3 from './assets/web3.svg'
 

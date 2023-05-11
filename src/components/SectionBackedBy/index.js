@@ -13,6 +13,7 @@ const Section = () => {
       <Container>
         <h2 className={s.bakedBy__title}>Baked by</h2>
       </Container>
+
       <div className={cn(s.marquee, 'marquee-wrapper baked')}>
         <Marquee>
           {BAKED_BY_MOCKS.map((logo) => (

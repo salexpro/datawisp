@@ -48,11 +48,30 @@
 }
 
 .sectionHowItWorks {
-  padding: 80px 0;
-  margin-top: 80px;
+  @include b-up(lg) {
+    padding: 84px 0 100px;
+  }
+
+  @include b-btw(md, lg) {
+    padding: 43px 0 36px;
+  }
+
+  @include b-d(md) {
+    padding: 36px 0 16px;
+  }
 
   &.home {
     background-color: $gray-100;
+
+    @include b-up(lg) {
+      padding: 80px 0;
+      margin-top: 80px;
+    }
+
+    @include b-d(lg) {
+      padding: 64px 0;
+      margin-top: 52px;
+    }
   }
 
   &.hasButton {
@@ -71,11 +90,6 @@
           'button';
       }
     }
-  }
-
-  @include b-d(lg) {
-    padding: 64px 0;
-    margin-top: 52px;
   }
 
   @include b-d(md) {

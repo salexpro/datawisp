@@ -4,7 +4,6 @@
   &-wrapper {
     width: 100%;
     max-width: 1720px;
-    min-height: 48px;
     margin: 0 auto;
     overflow: hidden;
     mask-image: linear-gradient(
@@ -16,6 +15,14 @@
     );
 
     &.baked {
+      @include b-up(lg) {
+        min-height: 56px;
+      }
+
+      @include b-d(lg) {
+        min-height: 39px;
+      }
+
       .initial-child-container {
         @include b-up(xl) {
           margin: 0 auto;
