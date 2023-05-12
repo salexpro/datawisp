@@ -33,6 +33,21 @@ const Metrics = () => {
               gtag('js', new Date());
               gtag('config', 'G-0TN5EWHPVY');`}
           </Script>
+
+          <Script id="signup">{`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-TF5Z68D');`}</Script>
+          <noscript>
+            <iframe
+              title="signup"
+              src="https://www.googletagmanager.com/ns.html?id=GTM-TF5Z68D"
+              height="0"
+              width="0"
+              style={{ display: 'none', visibility: 'hidden' }}
+            />
+          </noscript>
         </>
       )}
     </>
