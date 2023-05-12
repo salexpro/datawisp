@@ -6,6 +6,7 @@
   column-gap: 32px;
   padding: 24px;
   margin-top: var(--bs-toast-spacing);
+  text-align: left;
 
   &.withTransform {
     &.fade {
@@ -35,6 +36,16 @@
   &-container {
     position: fixed;
     padding: 0 24px 24px;
+
+    &.absolute {
+      position: absolute;
+      z-index: $zindex-sticky - 5;
+      padding: 0;
+    }
+
+    &.top-0 {
+      bottom: calc(100% + 8px);
+    }
 
     &.top-end {
       top: 0;
@@ -92,11 +103,20 @@
       font-size: 15px;
       line-height: 1.467;
 
+      @include b-d(md) {
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+
       &-title {
         margin-bottom: 5px;
         font-size: 16px;
         font-weight: 600;
         line-height: 1.25;
+
+        @include b-d(md) {
+          margin-bottom: 2px;
+        }
       }
     }
 

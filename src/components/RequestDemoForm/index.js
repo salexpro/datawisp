@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { Button, Form, Spinner, Overlay, Toast } from 'react-bootstrap'
+import { Button, Form, Spinner, Toast, ToastContainer } from 'react-bootstrap'
 import { useForm } from 'react-hook-form'
 import cn from 'classnames'
 import { useForm as useFormSpree } from '@formspree/react'
@@ -63,62 +63,46 @@ const RequestDemoForm = ({ id, className, variant, handleMessage }) => {
   }
 
   return (
-    <>
-      <Form
-        noValidate
-        autoComplete="off"
-        className={className}
-        onSubmit={handleSubmit(onSubmit)}
-        ref={formRef}
+    <Form
+      noValidate
+      autoComplete="off"
+      className={className}
+      onSubmit={handleSubmit(onSubmit)}
+      ref={formRef}
+    >
+      <Form.Group
+        controlId={`request-demo-form-${id}`}
+        className="form-group demo"
       >
-        <Form.Group
-          controlId={`request-demo-form-${id}`}
-          className="form-group demo"
-        >
-          <Form.Control
-            type="email"
-            placeholder="Enter your email address"
-            {...register('email', {
-              required: {
-                value: true,
-                message: 'Please provide an email address',
-              },
-              pattern: {
-                value: EMAIL_RULE,
-                message: 'Please enter a valid email address',
-              },
-            })}
-            className={cn({ error: errors?.email }, variant)}
-          />
-          <Button
-            variant={variant || 'primary'}
-            disabled={state.submitting}
-            type="submit"
-          >
-            {!state.submitting ? 'Request demo' : <Spinner size="sm" />}
-          </Button>
-          {errors?.email && !variant && (
-            <Form.Text>{errors.email?.message}</Form.Text>
-          )}
-        </Form.Group>
-      </Form>
-
-      <Overlay
-        target={formRef.current}
-        show={!!overlayState}
-        placement="top-start"
-        popperConfig={{
-          modifiers: [
-            {
-              name: 'offset',
-              options: { offset: [0, 8] },
+        <Form.Control
+          type="email"
+          placeholder="Enter your email address"
+          {...register('email', {
+            required: {
+              value: true,
+              message: 'Please provide an email address',
             },
-          ],
-        }}
-      >
-        {(props) => (
+            pattern: {
+              value: EMAIL_RULE,
+              message: 'Please enter a valid email address',
+            },
+          })}
+          className={cn({ error: errors?.email }, variant)}
+        />
+        <Button
+          variant={variant || 'primary'}
+          disabled={state.submitting}
+          type="submit"
+        >
+          {!state.submitting ? 'Request demo' : <Spinner size="sm" />}
+        </Button>
+        {errors?.email && !variant && (
+          <Form.Text>{errors.email?.message}</Form.Text>
+        )}
+
+        <ToastContainer position="top-start" className="absolute">
           <Toast
-            {...props}
+            show={!!overlayState}
             className={cn('form', {
               [overlayState?.variant]: overlayState?.variant,
             })}
@@ -134,9 +118,9 @@ const RequestDemoForm = ({ id, className, variant, handleMessage }) => {
               </div>
             </Toast.Header>
           </Toast>
-        )}
-      </Overlay>
-    </>
+        </ToastContainer>
+      </Form.Group>
+    </Form>
   )
 }
 
