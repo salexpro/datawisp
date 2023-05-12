@@ -60,11 +60,14 @@ const DataWispToast = (props) => {
       show={isToastVisible}
       onClose={hideToast}
       transition={ToastTransition}
-      className={cn('form', { [variant]: variant })}
+      className={cn('form withTransform', { [variant]: variant })}
     >
       <Toast.Header>
         <Icon name={`icon-toast_${variant}`} size={48} />
-        {children}
+        <div>
+          <div className="toast-header-title">{header}</div>
+          <div>{children}</div>
+        </div>
       </Toast.Header>
     </Toast>
   )

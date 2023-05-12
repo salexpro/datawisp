@@ -6,7 +6,7 @@ import { StructuredText } from 'react-datocms'
 import { useCookies } from 'react-cookie'
 
 import ImageFormat from '~components/ImageFormat'
-import { GOOGLE_ADS_COOKIE_KEY, GOOGLE_ANALYTIC_COOKIE_KEY } from '~constants'
+import { GOOGLE_TAG_KEY } from '~constants'
 import { gtagReportConversion } from '~utils/analytics'
 
 import * as s from './SectionHero.module.scss'
@@ -23,10 +23,7 @@ const SectionHero = (props) => {
     ...rest
   } = props
 
-  const [cookies] = useCookies([
-    GOOGLE_ANALYTIC_COOKIE_KEY,
-    GOOGLE_ADS_COOKIE_KEY,
-  ])
+  const [cookies] = useCookies([GOOGLE_TAG_KEY])
 
   return (
     <Container as="section" {...rest} className={cn(s.sectionHero, className)}>

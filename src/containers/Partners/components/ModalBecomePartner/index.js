@@ -27,15 +27,15 @@ const ModalBecomePartner = (props) => {
     handleSendData(data)
       .then((res) => {
         if (res?.body.ok) {
-          addToastToStack({ variant: 'success', content: TOAST_TITLE.success })
+          addToastToStack(TOAST_TITLE.success)
           reset()
           onHide()
           return
         }
-        addToastToStack({ variant: 'error', content: TOAST_TITLE.error })
+        addToastToStack(TOAST_TITLE.error)
       })
       .catch(() => {
-        addToastToStack({ variant: 'error', content: TOAST_TITLE.error })
+        addToastToStack(TOAST_TITLE.error)
       })
   }
 

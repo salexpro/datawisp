@@ -6,7 +6,7 @@ import cn from 'classnames'
 import { useCookies } from 'react-cookie'
 
 import useScrolled from '~hooks/useScrolled'
-import { GOOGLE_ADS_COOKIE_KEY, GOOGLE_ANALYTIC_COOKIE_KEY } from '~constants'
+import { GOOGLE_TAG_KEY } from '~constants'
 import { gtagReportConversion } from '~utils/analytics'
 
 import Menu from '../NavMenu'
@@ -17,10 +17,7 @@ import * as s from './Header.module.scss'
 
 const Header = ({ siteTitle, headerPageData }) => {
   const isScrolled = useScrolled()
-  const [cookies] = useCookies([
-    GOOGLE_ANALYTIC_COOKIE_KEY,
-    GOOGLE_ADS_COOKIE_KEY,
-  ])
+  const [cookies] = useCookies([GOOGLE_TAG_KEY])
 
   const headerData = useStaticQuery(graphql`
     fragment LinkInternalData on DatoCmsLinkInternal {
@@ -133,10 +130,12 @@ const Header = ({ siteTitle, headerPageData }) => {
 
   return (
     <>
-      <header className={cn(s.headerWrapper, {
+      <header
+        className={cn(s.headerWrapper, {
           [s.active]: isScrolled,
           [s.withMenu]: !!navMenuItems,
-        })}>
+        })}
+      >
         <Container className={s.headerWrapper__header}>
           <LogoLink
             image={logoImage}

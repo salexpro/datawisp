@@ -7,20 +7,22 @@
   padding: 24px;
   margin-top: var(--bs-toast-spacing);
 
-  &.fade {
-    transition-timing-function: ease-in-out;
-    transition-duration: 0.25s;
-    transition-property: opacity, transform, height, margin-top;
-  }
+  &.withTransform {
+    &.fade {
+      transition-timing-function: ease-in-out;
+      transition-duration: 0.25s;
+      transition-property: opacity, transform, height, margin-top;
+    }
 
-  &.slideFromRight {
-    transform: translateX(16px);
-  }
+    &.slideFromRight {
+      transform: translateX(16px);
+    }
 
-  &.collapseVertically {
-    height: 0 !important;
-    margin-top: 0;
-    overflow: hidden;
+    &.collapseVertically {
+      height: 0 !important;
+      margin-top: 0;
+      overflow: hidden;
+    }
   }
 
   @include b-d(md) {
@@ -79,9 +81,8 @@
   }
 
   &.form {
-    --bs-toast-max-width: 327px;
+    --bs-toast-max-width: 520px;
 
-    height: 96px;
     padding: 0;
 
     #{$this}-header {
@@ -90,6 +91,13 @@
       padding: 24px;
       font-size: 15px;
       line-height: 1.467;
+
+      &-title {
+        margin-bottom: 5px;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.25;
+      }
     }
 
     .btn-close {

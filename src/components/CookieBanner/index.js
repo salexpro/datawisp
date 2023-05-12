@@ -3,24 +3,20 @@ import { Toast, Button, ToastContainer } from 'react-bootstrap'
 import { StaticImage } from 'gatsby-plugin-image'
 import { useCookies } from 'react-cookie'
 
-import { GOOGLE_ANALYTIC_COOKIE_KEY, GOOGLE_ADS_COOKIE_KEY } from '~constants'
+import { GOOGLE_TAG_KEY } from '~constants'
 import { hasCookies } from '~utils/analytics'
 
 import { PRIVACY_POLICY_LINK } from './constants'
 import { isGDPR } from './utils'
 
 const CookieBanner = () => {
-  const [cookies, setCookie] = useCookies([
-    GOOGLE_ANALYTIC_COOKIE_KEY,
-    GOOGLE_ADS_COOKIE_KEY,
-  ])
+  const [cookies, setCookie] = useCookies([GOOGLE_TAG_KEY])
   const [showBanner, setShowBanner] = useState(false)
 
   const setAllCookies = (value) => {
     const expires = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000)
 
-    setCookie(GOOGLE_ANALYTIC_COOKIE_KEY, value, { expires })
-    setCookie(GOOGLE_ADS_COOKIE_KEY, value, { expires })
+    setCookie(GOOGLE_TAG_KEY, value, { expires })
   }
 
   const handleOnClick = (value) => {

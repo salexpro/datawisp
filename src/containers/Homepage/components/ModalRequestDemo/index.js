@@ -5,12 +5,7 @@ import { useForm as useFormSpree } from '@formspree/react'
 import cn from 'classnames'
 import { useCookies } from 'react-cookie'
 
-import {
-  GOOGLE_ADS_COOKIE_KEY,
-  GOOGLE_ANALYTIC_COOKIE_KEY,
-  EMAIL_RULE,
-  TOAST_TITLE,
-} from '~constants'
+import { GOOGLE_TAG_KEY, EMAIL_RULE, TOAST_TITLE } from '~constants'
 import { gtagReportConversion } from '~utils/analytics'
 import { addToastToStack } from '~components/ToastManager'
 
@@ -18,10 +13,7 @@ import * as s from './ModalRequestDemo.module.scss'
 
 const ModalRequestDemo = (props) => {
   const { show, onHide } = props
-  const [cookies] = useCookies([
-    GOOGLE_ANALYTIC_COOKIE_KEY,
-    GOOGLE_ADS_COOKIE_KEY,
-  ])
+  const [cookies] = useCookies([GOOGLE_TAG_KEY])
   const {
     register,
     handleSubmit,
@@ -39,15 +31,15 @@ const ModalRequestDemo = (props) => {
     handleSendData(data)
       .then((res) => {
         if (res?.body.ok) {
-          addToastToStack({ variant: 'success', content: TOAST_TITLE.success })
+          addToastToStack(TOAST_TITLE.success)
           reset()
           onHide()
           return
         }
-        addToastToStack({ variant: 'error', content: TOAST_TITLE.error })
+        addToastToStack(TOAST_TITLE.error)
       })
       .catch(() => {
-        addToastToStack({ variant: 'error', content: TOAST_TITLE.error })
+        addToastToStack(TOAST_TITLE.error)
       })
   }
 

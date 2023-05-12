@@ -8,7 +8,7 @@ import { Button, Container } from 'react-bootstrap'
 import { useCookies } from 'react-cookie'
 
 import ImageFormat from '~components/ImageFormat'
-import { GOOGLE_ADS_COOKIE_KEY, GOOGLE_ANALYTIC_COOKIE_KEY } from '~constants'
+import { GOOGLE_TAG_KEY } from '~constants'
 import { gtagReportConversion } from '~utils/analytics'
 
 import PartnersMarquee from './components/PartnersMaruqee'
@@ -28,10 +28,7 @@ const SectionHero = (props) => {
     ...rest
   } = props
 
-  const [cookies] = useCookies([
-    GOOGLE_ANALYTIC_COOKIE_KEY,
-    GOOGLE_ADS_COOKIE_KEY,
-  ])
+  const [cookies] = useCookies([GOOGLE_TAG_KEY])
   const { hash } = useLocation()
   const isModal = hash === '#request-demo'
 

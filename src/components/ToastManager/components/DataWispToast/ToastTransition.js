@@ -10,10 +10,23 @@ const fadeStyles = {
 }
 
 const ToastTransition = React.forwardRef((props, ref) => {
-  const { children, ...rest } = props
+  const { children, onEntered, ...rest } = props
+
+  const handleEntered = (node, isAppearing) => {
+    // Set explicit height to make collapse animation work
+    // eslint-disable-next-line no-param-reassign
+    if (node) node.style.height = `${node.getBoundingClientRect().height}px`
+
+    onEntered?.(node, isAppearing)
+  }
 
   return (
-    <Fade {...rest} ref={ref} transitionClasses={fadeStyles}>
+    <Fade
+      {...rest}
+      ref={ref}
+      transitionClasses={fadeStyles}
+      onEntered={handleEntered}
+    >
       {children}
     </Fade>
   )
