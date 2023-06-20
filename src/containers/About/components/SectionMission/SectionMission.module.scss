@@ -7,15 +7,11 @@
     column-gap: 64px;
     align-items: center;
     justify-content: space-between;
-    margin-top: 56px;
+    margin-top: 40px;
   }
 
   @include b-d(lg) {
-    margin-top: 30px;
-  }
-
-  @include b-d(md) {
-    margin-top: 28px;
+    margin-top: 32px;
   }
 }
 
@@ -33,11 +29,9 @@
 .img {
   @include fix-ios-border-radius;
 
-  margin-top: 40px;
   border-radius: 16px;
 
   @include b-d(lg) {
-    margin-top: 32px;
     border-radius: 12px;
   }
 

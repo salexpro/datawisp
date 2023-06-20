@@ -94,10 +94,10 @@
 }
 
 .heading {
-  margin-top: 140px;
+  margin-top: 160px;
   text-align: center;
 
-  @include b-d(md) {
-    margin-top: 100px;
+  @include b-d(lg) {
+    margin-top: 128px;
   }
 }

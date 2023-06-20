@@ -1,16 +1,16 @@
 @import '~styles/mixins';
 
 .sectionHero {
-  padding-top: 96px;
-  padding-bottom: 48px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 
-  @include b-d(lg) {
-    padding-top: 68px;
-    padding-bottom: 26px;
+  @include b-up(xl) {
+    margin-top: 40px;
   }
 
-  @include b-d(md) {
-    padding-bottom: 20px;
+  @include b-d(lg) {
+    padding-top: 32px;
+    padding-bottom: 32px;
   }
 
   h1 {

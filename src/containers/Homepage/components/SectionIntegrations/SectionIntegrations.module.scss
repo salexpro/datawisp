@@ -46,7 +46,7 @@
       overflow: hidden;
     }
 
-    @include b-btw(md, xl) {
+    @include b-o(md) {
       max-height: 168px;
       mask: linear-gradient(180deg, #fff 56px, transparent calc(100% - 21px));
     }

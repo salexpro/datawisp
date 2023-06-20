@@ -1,14 +1,16 @@
 @import '~styles/mixins';
 
 .footer {
-  @include b-up(md) {
+  @include b-up(lg) {
     padding-top: 40px;
     padding-bottom: 40px;
+    margin-top: 40px;
   }
 
-  @include b-d(md) {
-    padding-top: 24px;
-    padding-bottom: 24px;
+  @include b-d(lg) {
+    padding-top: 32px;
+    padding-bottom: 32px;
+    margin-top: 32px;
   }
 }
 

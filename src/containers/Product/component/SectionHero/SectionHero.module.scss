@@ -5,10 +5,13 @@
   grid-template-columns: 400px 1fr;
   gap: 24px;
   align-items: center;
-  margin-top: 64px;
 
-  @include b-btw(md, lg) {
-    margin-top: 88px;
+  @include b-d(lg) {
+    margin-top: 64px;
+  }
+
+  @include b-d(lg) {
+    margin-top: 32px;
   }
 
   @include b-d(lg) {

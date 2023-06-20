@@ -28,7 +28,7 @@ $img-hero-height: 432px;
   @include b-d(md) {
     grid-template-columns: 1fr;
     row-gap: 64px;
-    margin-top: 40px;
+    margin-top: 32px;
   }
 }
 

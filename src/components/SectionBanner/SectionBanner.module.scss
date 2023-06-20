@@ -1,8 +1,8 @@
 @import '~styles/mixins';
 
 .bannerWrapper {
-  margin-top: 100px;
-  margin-bottom: 60px;
+  margin-top: 160px;
+  margin-bottom: 40px;
 
   &.withForm {
     @include b-up(lg) {
@@ -19,8 +19,9 @@
     }
   }
 
-  @include b-d(md) {
-    margin-bottom: 76px;
+  @include b-d(lg) {
+    margin-top: 128px;
+    margin-bottom: 32px;
   }
 }
 

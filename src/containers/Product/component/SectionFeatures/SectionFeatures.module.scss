@@ -2,13 +2,12 @@
 
 .sectionFeatures {
   display: grid;
-  margin-top: 100px;
 
-  @include b-d(lg) {
-    margin-top: 40px;
+  @include b-up(lg) {
+    margin-top: 80px;
   }
 
-  @include b-d(md) {
+  @include b-d(lg) {
     margin-top: 64px;
   }
 
