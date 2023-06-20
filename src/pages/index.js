@@ -14,6 +14,11 @@ const IndexPage = ({ data }) => {
     heroButtonSecondaryText,
     heroButtonSecondaryLink,
     heroButtonSecondaryHide,
+    integrationsSectionHeading,
+    integrationsSectionList,
+    integrationsSectionSubheading,
+    integrationsSectionButtonText,
+    integrationsSectionButtonLink,
     partnersSectionHeading,
     partners,
     howItWorksSectionHeading,
@@ -65,6 +70,13 @@ const IndexPage = ({ data }) => {
         },
         partnersHeading: partnersSectionHeading,
         partners,
+      }}
+      integrations={{
+        heading: integrationsSectionHeading,
+        list: integrationsSectionList,
+        subheading: integrationsSectionSubheading,
+        buttonText: integrationsSectionButtonText,
+        buttonLink: integrationsSectionButtonLink,
       }}
       howItWorks={{
         heading: howItWorksSectionHeading,
@@ -149,6 +161,27 @@ export const query = graphql`
         ...LinkExternalData
       }
       heroButtonSecondaryHide
+
+      integrationsSectionHeading
+      integrationsSectionList {
+        icon {
+          alt
+          format
+          url
+          gatsbyImageData(
+            width: 40
+            placeholder: NONE
+            outputPixelDensities: [1, 1.5, 2, 3]
+            imgixParams: { fit: "crop", auto: "compress,format" }
+          )
+        }
+        name
+      }
+      integrationsSectionSubheading
+      integrationsSectionButtonText
+      integrationsSectionButtonLink {
+        url
+      }
 
       partnersSectionHeading
       partners {

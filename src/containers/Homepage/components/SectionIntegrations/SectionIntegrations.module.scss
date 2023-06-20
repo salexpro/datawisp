@@ -1,0 +1,99 @@
+@import '~styles/mixins';
+
+.section {
+  display: grid;
+  justify-items: center;
+
+  @include b-up(xl) {
+    row-gap: 24px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  @include b-d(xl) {
+    row-gap: 16px;
+  }
+
+  @include b-d(xl) {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  @include b-d(md) {
+    margin-top: 40px;
+  }
+
+  &_title {
+    font-size: 14px;
+    line-height: 1.286;
+    color: $gray-400;
+  }
+
+  &_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1040px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    @include b-up(md) {
+      gap: 8px;
+    }
+
+    @include b-d(xl) {
+      overflow: hidden;
+    }
+
+    @include b-btw(md, xl) {
+      max-height: 168px;
+      mask: linear-gradient(180deg, #fff 56px, transparent calc(100% - 21px));
+    }
+
+    @include b-d(md) {
+      gap: 4px;
+      max-height: 204px;
+      mask: linear-gradient(180deg, #fff 100px, transparent 100%);
+    }
+  }
+
+  &_item {
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 8px;
+    align-items: center;
+    justify-content: start;
+    padding: 12px 16px 12px 12px;
+    font-weight: 500;
+    background-color: $gray-100;
+    border-radius: 16px;
+
+    @include b-btw(md, xl) {
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+  }
+
+  &_pic {
+    @include b-btw(md, xl) {
+      width: 32px;
+      height: 32px;
+    }
+
+    @include b-d(md) {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &_cta {
+    display: grid;
+    row-gap: 12px;
+    justify-items: center;
+  }
+
+  &_subtitle {
+    color: $gray-400;
+  }
+}
