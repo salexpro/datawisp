@@ -6,7 +6,7 @@ import SectionHowItWorks from '~components/SectionHowItWorks'
 import SectionFeatures from '~components/SectionFeatures'
 
 import SectionHero from './components/SectionHero'
-import SectionIntegrations from './components/SectionIntegrations'
+import SectionIntegrationsPreview from '../../components/SectionIntegrationsPreview'
 import SectionCaseStudies from './components/SectionCaseStudies'
 import SectionRoadmap from './components/SectionRoadmap'
 import SectionUseCases from './components/SectionUseCases'
@@ -28,7 +28,7 @@ const Homepage = (props) => {
     <Layout {...rest}>
       <SeoDatoCms seo={seo} />
       <SectionHero {...hero} />
-      <SectionIntegrations {...integrations} />
+      <SectionIntegrationsPreview {...integrations} />
       <SectionHowItWorks variant="home" {...howItWorks} />
       <SectionFeatures features={features} />
       <SectionUseCases {...useCases} />

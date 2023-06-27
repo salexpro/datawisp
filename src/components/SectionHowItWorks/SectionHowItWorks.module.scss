@@ -52,15 +52,11 @@
 
 .sectionHowItWorks {
   @include b-up(lg) {
-    padding: 84px 0 100px;
+    padding: 80px 0;
   }
 
-  @include b-btw(md, lg) {
-    padding: 43px 0 36px;
-  }
-
-  @include b-d(md) {
-    padding: 36px 0 16px;
+  @include b-d(lg) {
+    padding: 64px 0;
   }
 
   &.home {
@@ -79,12 +75,10 @@
     }
 
     @include b-up(lg) {
-      padding: 80px 0;
       margin-top: 80px;
     }
 
     @include b-d(lg) {
-      padding: 64px 0;
       margin-top: 52px;
     }
   }

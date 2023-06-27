@@ -11,24 +11,26 @@ const SectionFeatures = (props) => {
   const { heading, text, items, className, ...rest } = props
 
   return (
-    <Container
-      as="section"
-      {...rest}
-      className={cn(s.sectionFeatures, className)}
-    >
-      <h2>{heading}</h2>
-      <StructuredText data={text.value} />
-      <div className={s.featuresWrapper}>
-        {items.map((item) => (
-          <Feature
-            key={item.id}
-            iconName={item.iconName}
-            heading={item.heading}
-            text={item.text}
-          />
-        ))}
-      </div>
-    </Container>
+    <section className={s.wrapper}>
+      <Container
+        as="section"
+        {...rest}
+        className={cn(s.sectionFeatures, className)}
+      >
+        <h2>{heading}</h2>
+        <StructuredText data={text.value} />
+        <div className={s.featuresWrapper}>
+          {items.map((item) => (
+            <Feature
+              key={item.id}
+              iconName={item.iconName}
+              heading={item.heading}
+              text={item.text}
+            />
+          ))}
+        </div>
+      </Container>
+    </section>
   )
 }
 

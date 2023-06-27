@@ -33,6 +33,13 @@ const SignUpPage = ({ data }) => {
         text: featuresSectionText,
         featuresList,
       }}
+      integrationsPreview={{
+        heading: data.datoCmsHomePage.integrationsSectionHeading,
+        list: data.datoCmsHomePage.integrationsSectionList,
+        subheading: data.datoCmsHomePage.integrationsSectionSubheading,
+        buttonText: data.datoCmsHomePage.integrationsSectionButtonText,
+        buttonLink: data.datoCmsHomePage.integrationsSectionButtonLink,
+      }}
       integrations={{
         heading: integrationsSectionHeading,
         text: integrationsSectionText,
@@ -140,6 +147,29 @@ export const query = graphql`
       }
       bannerSectionNotificationText {
         value
+      }
+    }
+
+    datoCmsHomePage {
+      integrationsSectionHeading
+      integrationsSectionList {
+        icon {
+          alt
+          format
+          url
+          gatsbyImageData(
+            width: 40
+            placeholder: NONE
+            outputPixelDensities: [1, 1.5, 2, 3]
+            imgixParams: { fit: "crop", auto: "compress,format" }
+          )
+        }
+        name
+      }
+      integrationsSectionSubheading
+      integrationsSectionButtonText
+      integrationsSectionButtonLink {
+        url
       }
     }
   }

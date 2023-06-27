@@ -1,14 +1,20 @@
 @import '~styles/mixins';
 
+.wrapper {
+  background-color: $gray-100;
+}
+
 .sectionFeatures {
   display: grid;
 
   @include b-up(lg) {
-    margin-top: 80px;
+    padding-top: 80px;
+    padding-bottom: 80px;
   }
 
   @include b-d(lg) {
-    margin-top: 64px;
+    padding-top: 64px;
+    padding-bottom: 64px;
   }
 
   > p {

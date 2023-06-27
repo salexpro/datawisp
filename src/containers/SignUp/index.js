@@ -6,13 +6,19 @@ import SeoDatoCms from '~components/SeoDatoCms'
 import SectionHowItWorks from '~components/SectionHowItWorks'
 import SectionFeatures from '~components/SectionFeatures'
 import SectionIntegrations from '~components/SectionIntegrations'
-import SectionBackedBy from '~components/SectionBackedBy'
 import SectionBanner from '~components/SectionBanner'
-
+import SectionIntegrationsPreview from '~components/SectionIntegrationsPreview'
 import SectionHero from './components/SectionHero'
 import SectionPrices from './components/SectionPrices'
 
-const SignUp = ({ seo, howItWorks, features, integrations, banner }) => {
+const SignUp = ({
+  seo,
+  howItWorks,
+  features,
+  integrations,
+  banner,
+  integrationsPreview,
+}) => {
   const data = useStaticQuery(graphql`
     query SignUp {
       datoCmsHeader {
@@ -83,7 +89,7 @@ const SignUp = ({ seo, howItWorks, features, integrations, banner }) => {
     >
       <SeoDatoCms seo={seo} />
       <SectionHero />
-      <SectionBackedBy />
+      <SectionIntegrationsPreview {...integrationsPreview} />
       <SectionHowItWorks id="howItWorks" {...howItWorks} buttonHide />
       <SectionFeatures
         id="features"

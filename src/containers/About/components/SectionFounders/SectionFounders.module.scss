@@ -1,6 +1,16 @@
 @import '~styles/mixins';
 
 .sectionFounders {
+  @include b-up(lg) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  @include b-d(lg) {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
   & > p {
     max-width: 600px;
     margin: 12px auto 0;
@@ -94,10 +104,5 @@
 }
 
 .heading {
-  margin-top: 160px;
   text-align: center;
-
-  @include b-d(lg) {
-    margin-top: 128px;
-  }
 }

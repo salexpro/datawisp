@@ -26,7 +26,7 @@ const SectionBanner = (props) => {
     <Container
       as="section"
       {...rest}
-      className={cn(s.bannerWrapper, { [s.withForm]: withForm }, className)}
+      className={cn(s.bannerWrapper, className)}
     >
       <div className={cn(s.banner, { [s.withForm]: withForm })}>
         <h3 className={s.banner__heading}>{heading}</h3>

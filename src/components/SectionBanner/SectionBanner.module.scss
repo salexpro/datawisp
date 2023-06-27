@@ -1,26 +1,13 @@
 @import '~styles/mixins';
 
 .bannerWrapper {
-  margin-top: 160px;
-  margin-bottom: 40px;
-
-  &.withForm {
-    @include b-up(lg) {
-      margin-top: 80px;
-      margin-bottom: 120px;
-    }
-
-    @include b-btw(md, lg) {
-      margin-top: 70px;
-    }
-
-    @include b-d(md) {
-      margin-top: 76px;
-    }
+  @include b-up(lg) {
+    margin-top: 80px;
+    margin-bottom: 40px;
   }
 
   @include b-d(lg) {
-    margin-top: 128px;
+    margin-top: 64px;
     margin-bottom: 32px;
   }
 }

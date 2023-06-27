@@ -27,9 +27,9 @@ const Product = (props) => {
     <Layout {...rest} className={className}>
       <SeoDatoCms seo={seo} />
       <SectionHero {...hero} />
+      <SectionIntegrations {...integrations} />
       <SectionFeatures {...features} />
       <SectionFunctions {...functions} />
-      <SectionIntegrations {...integrations} />
       {!bannerHide && <SectionBanner {...bannerProps} />}
     </Layout>
   )

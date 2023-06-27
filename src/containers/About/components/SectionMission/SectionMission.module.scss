@@ -7,11 +7,13 @@
     column-gap: 64px;
     align-items: center;
     justify-content: space-between;
-    margin-top: 40px;
+    padding-top: 80px;
+    padding-bottom: 80px;
   }
 
   @include b-d(lg) {
-    margin-top: 32px;
+    padding-top: 64px;
+    padding-bottom: 64px;
   }
 }
 

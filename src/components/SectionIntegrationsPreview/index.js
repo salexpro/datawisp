@@ -3,9 +3,9 @@ import React from 'react'
 import { Button, Container } from 'react-bootstrap'
 import { Link } from 'gatsby'
 import ImageFormat from '~components/ImageFormat'
-import * as s from './SectionIntegrations.module.scss'
+import * as s from './SectionIntegrationsPreview.module.scss'
 
-const SectionIntegrations = ({
+const SectionIntegrationsPreview = ({
   heading,
   list,
   subheading,
@@ -42,4 +42,4 @@ const SectionIntegrations = ({
   )
 }
 
-export default SectionIntegrations
+export default SectionIntegrationsPreview
