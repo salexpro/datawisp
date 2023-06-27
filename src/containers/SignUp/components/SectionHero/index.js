@@ -5,10 +5,11 @@ import { StaticImage } from 'gatsby-plugin-image'
 import Icon from '~components/Icon'
 import RequestDemoForm from '~components/RequestDemoForm'
 
+import TryBtn from '~containers/SignUp/TryBtn'
 import { BADGE_MOCKS } from './mocks'
 import * as s from './SectionHero.module.scss'
 
-const SectionHero = () => {
+const SectionHero = ({ isSecondaryLP }) => {
   return (
     <Container className={s.heroSection}>
       <div>
@@ -18,7 +19,13 @@ const SectionHero = () => {
           in your organization make use of your valuable data.
         </p>
 
-        <RequestDemoForm id="hero" className={s.heroSection__form} />
+        {isSecondaryLP ? (
+          <div className={s.heroSection__btn}>
+            <TryBtn />
+          </div>
+        ) : (
+          <RequestDemoForm id="hero" className={s.heroSection__form} />
+        )}
 
         <div className={s.badgeWrapper}>
           {BADGE_MOCKS.map(({ id, iconName, text }) => (

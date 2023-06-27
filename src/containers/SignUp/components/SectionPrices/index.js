@@ -4,26 +4,48 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination } from 'swiper'
 
 import RequestDemoForm from '~components/RequestDemoForm'
+import TryBtn from '~containers/SignUp/TryBtn'
 
 import { PRICE_DATA } from './mocks'
 import PricePlan from './components/PricePlan'
 import * as s from './SectionPrices.module.scss'
 
-const SectionPrices = () => {
+const data = [
+  {
+    title: 'Book a demo to see Datawisp for yourself',
+    cta: <RequestDemoForm id="price" className={s.header__form} />,
+    trialText: (
+      <>
+        And get a <u>free</u> trial after the demo
+      </>
+    ),
+  },
+  {
+    title: 'Try it now and see Datawisp for yourself',
+    cta: (
+      <div className={s.sectionPrices__btn}>
+        <TryBtn />
+      </div>
+    ),
+    trialText: 'Free for 60 days. No credit card required',
+  },
+]
+
+const SectionPrices = ({ isSecondaryLP }) => {
   return (
     <Container id="prices">
       <section className={s.sectionPrices}>
         <div className={s.header}>
-          <h2 className={s.header__title}>
-            Book a demo to see Datawisp for yourself
-          </h2>
+          <h2 className={s.header__title}>{data[+!!isSecondaryLP]?.title}</h2>
           <p className={s.header__description}>
             Open up new opportunities in working with data for yourself and your
             team
           </p>
-          <RequestDemoForm id="price" className={s.header__form} />
+
+          {data[+!!isSecondaryLP]?.cta}
+
           <p className={s.header__trialText}>
-            And get a <u>free</u> trial after the demo
+            {data[+!!isSecondaryLP]?.trialText}
           </p>
         </div>
 
