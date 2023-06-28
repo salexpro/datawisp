@@ -15,7 +15,7 @@ const IndexPage = ({ data }) => {
     heroButtonSecondaryLink,
     heroButtonSecondaryHide,
     integrationsSectionHeading,
-    integrationsSectionList,
+    integrationsList,
     integrationsSectionSubheading,
     integrationsSectionButtonText,
     integrationsSectionButtonLink,
@@ -73,7 +73,7 @@ const IndexPage = ({ data }) => {
       }}
       integrations={{
         heading: integrationsSectionHeading,
-        list: integrationsSectionList,
+        list: integrationsList,
         subheading: integrationsSectionSubheading,
         buttonText: integrationsSectionButtonText,
         buttonLink: integrationsSectionButtonLink,
@@ -164,6 +164,20 @@ export const query = graphql`
 
       integrationsSectionHeading
       integrationsSectionList {
+        icon {
+          alt
+          format
+          url
+          gatsbyImageData(
+            width: 40
+            placeholder: NONE
+            outputPixelDensities: [1, 1.5, 2, 3]
+            imgixParams: { fit: "crop", auto: "compress,format" }
+          )
+        }
+        name
+      }
+      integrationsList {
         icon {
           alt
           format

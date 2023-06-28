@@ -16,6 +16,7 @@ const ServicesList = ({ title, items }) => {
             <OverlayTooltip
               key={`${title}-${itemText}`}
               text="To get this feature, you need to contact us"
+              placement="top-start"
             >
               <li className={cn(s.list__item, s.note)}>{itemText}</li>
             </OverlayTooltip>

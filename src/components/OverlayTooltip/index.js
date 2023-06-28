@@ -1,9 +1,9 @@
 import React from 'react'
 import { OverlayTrigger, Tooltip } from 'react-bootstrap'
 
-const OverlayTooltip = ({ children, text }) => {
+const OverlayTooltip = ({ children, text, ...rest }) => {
   return (
-    <OverlayTrigger placement="top" overlay={<Tooltip>{text}</Tooltip>}>
+    <OverlayTrigger {...rest} overlay={<Tooltip>{text}</Tooltip>}>
       {children}
     </OverlayTrigger>
   )

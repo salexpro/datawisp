@@ -132,9 +132,19 @@ export const query = graphql`
         text {
           value
         }
-        supports {
-          id
-          text
+        supportsList {
+          icon {
+            alt
+            format
+            url
+            gatsbyImageData(
+              width: 40
+              placeholder: NONE
+              outputPixelDensities: [1, 1.5, 2, 3]
+              imgixParams: { fit: "crop", auto: "compress,format" }
+            )
+          }
+          name
         }
         image {
           format

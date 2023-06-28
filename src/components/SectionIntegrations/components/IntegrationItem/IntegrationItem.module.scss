@@ -8,6 +8,14 @@
   transition: background-color 0.25s;
 }
 
+.supportedIcon {
+  padding: 6px;
+  cursor: pointer;
+  background-color: $white;
+  border-radius: 12px;
+  transition: background-color 0.25s;
+}
+
 .integrationItem {
   display: grid;
   grid-template-rows: 64px max-content 1fr repeat(2, max-content);
@@ -23,22 +31,24 @@
     box-shadow: 0 26px 54px rgba(34, 18, 34, 5%);
 
     .iconWrapper {
-      background-color: #fbfbfb;
+      background-color: $gray-100;
     }
 
-    .supportedWrapper > span {
-      background-color: #fbfbfb;
+    .supportedIcon {
+      background-color: $gray-100;
     }
   }
 
   &.threeColumn {
-    padding: 40px 32px 32px;
-
     @include b-btw(md, lg) {
       &:last-child {
         grid-column: 1/3;
         justify-self: center;
         width: calc(50% - 8px);
+
+        .supportedWrapper {
+          min-height: unset;
+        }
       }
     }
 
@@ -74,9 +84,14 @@
 .supportedWrapper {
   display: flex;
   flex-wrap: wrap;
-  gap: 4px;
+  gap: 8px;
   justify-content: start;
   margin-top: 8px;
+
+  @include b-up(md) {
+    align-items: flex-start;
+    min-height: 108px;
+  }
 
   @include b-d(lg) {
     margin-top: 12px;

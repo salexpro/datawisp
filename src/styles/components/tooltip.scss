@@ -1,8 +1,14 @@
 .tooltip {
+  $this: &;
+
   line-height: 1.467;
 
-  &-arrow {
-    transform: translate3d(20px, 0, 0) !important;
+  &[data-popper-placement='top-start'] {
+    margin-left: -18px;
+
+    #{$this}-arrow {
+      transform: translate3d(20px, 0, 0) !important;
+    }
   }
 
   &-inner {
