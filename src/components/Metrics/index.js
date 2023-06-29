@@ -37,6 +37,10 @@ const Metrics = () => {
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
           })(window,document,'script','dataLayer','GTM-TF5Z68D');`}</Script>
         {/* Signup end */}
+
+        {/* Google Optimize start */}
+        <Script src="https://www.googleoptimize.com/optimize.js?id=OPT-K5C9NXH" />
+        {/* Google Optimize end */}
       </>
     )
   )
