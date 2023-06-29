@@ -412,7 +412,7 @@ $body-text-align: null !default;
 $link-color: $body-color;
 $link-decoration: none;
 $link-shade-percentage: 20% !default;
-$link-hover-color: shift-color($link-color, $link-shade-percentage) !default;
+$link-hover-color: transparentize($link-color, 0.2);
 $link-hover-decoration: null !default;
 
 $stretched-link-pseudo-element: after !default;
