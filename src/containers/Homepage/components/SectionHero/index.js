@@ -24,6 +24,7 @@ const SectionHero = (props) => {
     secondaryButton,
     partnersHeading,
     partners,
+    popup,
     className,
     ...rest
   } = props
@@ -89,6 +90,7 @@ const SectionHero = (props) => {
       <ModalRequestDemo
         show={showRequestDemoModal}
         onHide={setShowRequestDemoModal}
+        {...popup}
       />
     </section>
   )

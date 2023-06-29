@@ -3,6 +3,7 @@ import { Button, Form, Spinner, Toast, ToastContainer } from 'react-bootstrap'
 import { useForm } from 'react-hook-form'
 import cn from 'classnames'
 import { useForm as useFormSpree } from '@formspree/react'
+import { graphql, useStaticQuery } from 'gatsby'
 
 import { addToastToStack } from '~components/ToastManager'
 import { EMAIL_RULE, TOAST_TITLE } from '~constants'
@@ -10,6 +11,24 @@ import Icon from '~components/Icon'
 import useMatchMedia from '~hooks/useMatchMedia'
 
 const RequestDemoForm = ({ id, className, variant, handleMessage }) => {
+  const formData = useStaticQuery(graphql`
+    query Form {
+      datoCmsLeadGenerationPage {
+        emailInputPlaceholder
+        emailInputErrorMessage
+        emailInputRequiredErrorMessage
+        submitButtonText
+      }
+    }
+  `)
+
+  const {
+    emailInputPlaceholder,
+    emailInputErrorMessage,
+    emailInputRequiredErrorMessage,
+    submitButtonText,
+  } = formData.datoCmsLeadGenerationPage
+
   const {
     register,
     handleSubmit,
@@ -76,15 +95,15 @@ const RequestDemoForm = ({ id, className, variant, handleMessage }) => {
       >
         <Form.Control
           type="email"
-          placeholder="Enter your email address"
+          placeholder={emailInputPlaceholder}
           {...register('email', {
             required: {
               value: true,
-              message: 'Please provide an email address',
+              message: emailInputRequiredErrorMessage,
             },
             pattern: {
               value: EMAIL_RULE,
-              message: 'Please enter a valid email address',
+              message: emailInputErrorMessage,
             },
           })}
           className={cn({ error: errors?.email }, variant)}
@@ -94,7 +113,7 @@ const RequestDemoForm = ({ id, className, variant, handleMessage }) => {
           disabled={state.submitting}
           type="submit"
         >
-          {!state.submitting ? 'Request demo' : <Spinner size="sm" />}
+          {!state.submitting ? submitButtonText : <Spinner size="sm" />}
         </Button>
         {errors?.email && !variant && (
           <Form.Text>{errors.email?.message}</Form.Text>

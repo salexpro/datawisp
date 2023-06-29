@@ -148,6 +148,11 @@ export const query = graphql`
       bannerSectionNotificationText {
         value
       }
+
+      emailInputPlaceholder
+      emailInputErrorMessage
+      emailInputRequiredErrorMessage
+      submitButtonText
     }
 
     datoCmsHomePage {

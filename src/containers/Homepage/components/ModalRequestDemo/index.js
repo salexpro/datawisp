@@ -12,7 +12,22 @@ import { addToastToStack } from '~components/ToastManager'
 import * as s from './ModalRequestDemo.module.scss'
 
 const ModalRequestDemo = (props) => {
-  const { show, onHide } = props
+  const {
+    show,
+    onHide,
+    heading,
+    emailLabel,
+    emailPlaceholder,
+    emailError,
+    emailRequiredError,
+    optionLabel,
+    optionPlaceholder,
+    textareaLabel,
+    textareaPlaceholder,
+    submitButtonText,
+    footerText,
+    footerLink,
+  } = props
   const [cookies] = useCookies([GOOGLE_TAG_KEY])
   const {
     register,
@@ -51,20 +66,20 @@ const ModalRequestDemo = (props) => {
   return (
     <Modal size="sm" backdrop="static" centered show={show} onHide={handleHide}>
       <Modal.Header closeButton>
-        <Modal.Title>Request demo</Modal.Title>
+        <Modal.Title>{heading}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form noValidate onSubmit={handleSubmit(onSubmit)} autoComplete="off">
           <Form.Group controlId="formEmail" className="form-group">
-            <Form.Label>Email address *</Form.Label>
+            <Form.Label>{emailLabel}</Form.Label>
             <Form.Control
               type="email"
-              placeholder="Enter your email address"
+              placeholder={emailPlaceholder}
               {...register('email', {
-                required: 'Required',
+                required: emailRequiredError,
                 pattern: {
                   value: EMAIL_RULE,
-                  message: 'Invalid email address',
+                  message: emailError,
                 },
               })}
               className={cn({ error: errors?.email })}
@@ -72,10 +87,10 @@ const ModalRequestDemo = (props) => {
             {errors?.email && <Form.Text>{errors?.email?.message}</Form.Text>}
           </Form.Group>
           <Form.Group controlId="formWorkForYou" className="form-group">
-            <Form.Label>Give us a few times that work for you</Form.Label>
+            <Form.Label>{optionLabel}</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Option"
+              placeholder={optionPlaceholder}
               {...register('work_for_you')}
             />
           </Form.Group>
@@ -83,11 +98,11 @@ const ModalRequestDemo = (props) => {
             controlId="formBiggestDataChallenge"
             className="form-group"
           >
-            <Form.Label>Biggest data challenge you need help with?</Form.Label>
+            <Form.Label>{textareaLabel}</Form.Label>
             <Form.Control
               as="textarea"
               rows={3}
-              placeholder="Option"
+              placeholder={textareaPlaceholder}
               {...register('data_challenge')}
             />
           </Form.Group>
@@ -98,19 +113,15 @@ const ModalRequestDemo = (props) => {
             className="form-submit full"
           >
             {!state.submitting ? (
-              'Request demo'
+              submitButtonText
             ) : (
               <Spinner animation="border" size="sm" />
             )}
           </Button>
           <div className={s.text}>
-            By submitting this form you agree to our{' '}
-            <a
-              href="https://app.datawisp.io/assets/privacy_v0.pdf"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Privacy Policy
+            {footerText}{' '}
+            <a href={footerLink.url} target="_blank" rel="noreferrer">
+              {footerLink.text}
             </a>
           </div>
         </Form>

@@ -46,6 +46,18 @@ const IndexPage = ({ data }) => {
     cases,
     caseStudiesButtonText,
     caseStudiesButtonLink,
+    requestDemoHeading,
+    emailInputLabel,
+    emailInputPlaceholder,
+    emailInputErrorMessage,
+    emailInputRequiredErrorMessage,
+    optionInputLabel,
+    optionInputPlaceholder,
+    textareaLabel,
+    textareaPlaceholder,
+    submitButtonText,
+    footerText,
+    footerLink,
     seo,
   } = data.datoCmsHomePage
 
@@ -113,6 +125,20 @@ const IndexPage = ({ data }) => {
         heading: roadmapSectionHeading,
         text: roadmapSectionText,
         phases: roadmapPhases,
+      }}
+      popup={{
+        heading: requestDemoHeading,
+        emailLabel: emailInputLabel,
+        emailPlaceholder: emailInputPlaceholder,
+        emailError: emailInputErrorMessage,
+        emailRequiredError: emailInputRequiredErrorMessage,
+        optionLabel: optionInputLabel,
+        optionPlaceholder: optionInputPlaceholder,
+        textareaLabel,
+        textareaPlaceholder,
+        submitButtonText,
+        footerText,
+        footerLink,
       }}
     />
   )
@@ -321,6 +347,22 @@ export const query = graphql`
         listRight {
           value
         }
+      }
+
+      requestDemoHeading
+      emailInputLabel
+      emailInputPlaceholder
+      emailInputErrorMessage
+      emailInputRequiredErrorMessage
+      optionInputLabel
+      optionInputPlaceholder
+      textareaLabel
+      textareaPlaceholder
+      submitButtonText
+      footerText
+      footerLink {
+        text
+        url
       }
     }
     datoCmsCaseStudiesPage {

@@ -14,6 +14,7 @@ import SectionUseCases from './components/SectionUseCases'
 const Homepage = (props) => {
   const {
     hero,
+    popup,
     integrations,
     howItWorks,
     features,
@@ -27,7 +28,7 @@ const Homepage = (props) => {
   return (
     <Layout {...rest}>
       <SeoDatoCms seo={seo} />
-      <SectionHero {...hero} />
+      <SectionHero {...hero} popup={popup} />
       <SectionIntegrationsPreview {...integrations} />
       <SectionHowItWorks variant="home" {...howItWorks} />
       <SectionFeatures features={features} />
