@@ -7,7 +7,6 @@ import ImageFormat from '~components/ImageFormat'
 import * as s from './SectionPartners.module.scss'
 
 const SectionPartners = ({ partners }) => {
-  console.log({ partners })
   return (
     <Container className={s.sectionPartners}>
       {partners.map(({ id, title, description, name, logo, btn }) => (

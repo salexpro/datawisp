@@ -37,7 +37,7 @@ const TryNowPage = ({ data }) => {
       }}
       integrationsPreview={{
         heading: data.datoCmsHomePage.integrationsSectionHeading,
-        list: data.datoCmsHomePage.integrationsSectionList,
+        list: data.datoCmsHomePage.integrationsList,
         subheading: data.datoCmsHomePage.integrationsSectionSubheading,
         buttonText: data.datoCmsHomePage.integrationsSectionButtonText,
         buttonLink: data.datoCmsHomePage.integrationsSectionButtonLink,
@@ -130,9 +130,19 @@ export const query = graphql`
         text {
           value
         }
-        supports {
-          id
-          text
+        supportsList {
+          icon {
+            alt
+            format
+            url
+            gatsbyImageData(
+              width: 40
+              placeholder: NONE
+              outputPixelDensities: [1, 1.5, 2, 3]
+              imgixParams: { fit: "crop", auto: "compress,format" }
+            )
+          }
+          name
         }
         image {
           format
@@ -163,7 +173,7 @@ export const query = graphql`
 
     datoCmsHomePage {
       integrationsSectionHeading
-      integrationsSectionList {
+      integrationsList {
         icon {
           alt
           format
