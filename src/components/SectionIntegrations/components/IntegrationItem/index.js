@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
-import OverlayTooltip from '~components/OverlayTooltip'
 import { StructuredText } from 'react-datocms'
 
 import ImageFormat from '~components/ImageFormat'
@@ -30,31 +29,34 @@ const IntegrationItem = (props) => {
         className
       )}
     >
-      <span className={s.iconWrapper}>
-        <Icon name={iconName} size={20} />
-      </span>
-      <h4 className={s.heading}>{heading}</h4>
-      <StructuredText data={text.value} />
+      <div className={s.integrationHeading}>
+        <span className={s.iconWrapper}>
+          <Icon name={iconName} size={20} />
+        </span>
+        <h4 className={s.heading}>{heading}</h4>
+        <StructuredText data={text.value} />
+      </div>
 
-      {!!supportsList?.length && (
-        <>
-          <h4 className={s.supportedHeading}>Supported</h4>
-          <div className={s.supportedWrapper}>
-            {supportsList.map(({ icon, name }) => (
-              <OverlayTooltip key={name} text={name} placement="bottom">
-                <div className={s.supportedIcon}>
+      <div>
+        {!!supportsList?.length && (
+          <>
+            <h4 className={s.supportedHeading}>Supported</h4>
+            <ul className={s.supportedList}>
+              {supportsList.map(({ icon, name }) => (
+                <li key={name} className={s.supportedItem}>
                   <ImageFormat
                     alt={icon.alt || name}
                     file={icon}
-                    width={40}
-                    height={40}
+                    width={24}
+                    height={24}
                   />
-                </div>
-              </OverlayTooltip>
-            ))}
-          </div>
-        </>
-      )}
+                  {name}
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
+      </div>
     </div>
   )
 }

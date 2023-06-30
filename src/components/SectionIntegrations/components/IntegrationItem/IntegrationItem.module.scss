@@ -1,6 +1,9 @@
 @import '~styles/mixins';
 
 .iconWrapper {
+  display: block;
+  width: 64px;
+  height: 64px;
   padding: 22px;
   color: $pink;
   background-color: $white;
@@ -8,32 +11,54 @@
   transition: background-color 0.25s;
 }
 
-.supportedIcon {
-  padding: 6px;
+.supportedItem {
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 8px;
+  align-items: center;
+  justify-content: start;
+  padding: 12px 16px 12px 12px;
+  font-weight: 500;
   background-color: $white;
-  border-radius: 12px;
+  border-radius: 16px;
   transition: background-color 0.25s;
+
+  @include b-btw(md, xl) {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+}
+
+.integrationHeading {
+  @include b-up(md) {
+    min-height: 220px;
+  }
 }
 
 .integrationItem {
   display: grid;
-  grid-template-rows: 64px max-content 1fr repeat(2, max-content);
   align-content: start;
   justify-items: start;
-  padding: 32px;
+  padding: 24px;
   background-color: $gray-100;
   border-radius: 16px;
   transition: background-color 0.25s, box-shadow 0.25s;
+
+  @include b-up(lg) {
+    row-gap: 40px;
+  }
+
+  @include b-d(lg) {
+    row-gap: 24px;
+  }
 
   &:hover {
     background-color: $white;
     box-shadow: 0 26px 54px rgba(34, 18, 34, 5%);
 
-    .iconWrapper {
-      background-color: $gray-100;
-    }
-
-    .supportedIcon {
+    .iconWrapper,
+    .supportedIcon,
+    .supportedItem {
       background-color: $gray-100;
     }
   }
@@ -45,7 +70,7 @@
         justify-self: center;
         width: calc(50% - 8px);
 
-        .supportedWrapper {
+        .supporteList {
           min-height: unset;
         }
       }
@@ -71,28 +96,27 @@
 }
 
 .supportedHeading {
-  margin-top: 42px;
   font-size: 18px;
 
   @include b-d(lg) {
-    margin-top: 24px;
     font-size: 16px;
   }
 }
 
-.supportedWrapper {
+.supportedList {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
   justify-content: start;
-  margin-top: 8px;
+  padding: 0;
+  margin: 8px 0 0;
+  list-style: none;
 
   @include b-up(md) {
     align-items: flex-start;
-    min-height: 108px;
   }
 
   @include b-d(lg) {
-    margin-top: 12px;
+    margin: 12px 0 0;
   }
 }
