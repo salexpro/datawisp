@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation } from 'swiper'
+import { Navigation } from 'swiper/modules'
 import { StructuredText } from 'react-datocms'
 import cn from 'classnames'
 
