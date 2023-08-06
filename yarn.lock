@@ -1459,19 +1459,19 @@
   resolved "https://registry.yarnpkg.com/@fontsource-variable/inter/-/inter-5.0.6.tgz#f448750e313b119e524b8bc6b49c8b6671951b11"
   integrity sha512-mFU2iEcG0pWKVA3hZ26tEyZj0wd6qaXIFE9+MK5B36GuzfqZFgm7L2+g6zjbLWfggU1G1NDU46ZwX0hPIVieoQ==
 
-"@formspree/core@^2.8.3":
-  version "2.8.3"
-  resolved "https://registry.yarnpkg.com/@formspree/core/-/core-2.8.3.tgz#b97bfc8090fdaef90858026f4217d0c49055e8c4"
-  integrity sha512-fyBWtzl3rD+SL8b7fHFDK0jUpYK5b20Pt8jIn2QRcJ8wZacEnINFFY+BaSrnHfMxHmCTLmjfJNktL1fBxmfhMg==
+"@formspree/core@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@formspree/core/-/core-3.0.0.tgz#ea316305aab74ec0790eeb234b0445915d0caa44"
+  integrity sha512-bDvM8c+AtIZOmgZq+Buk3DEmspEJU7kdpUrQTWZdyEjM4KRgNPYTd+LWVMchNX4q73F+DaY1mBG0hO0ioB6MjQ==
   dependencies:
     "@stripe/stripe-js" "^1.35.0"
 
 "@formspree/react@^2.4.1":
-  version "2.4.4"
-  resolved "https://registry.yarnpkg.com/@formspree/react/-/react-2.4.4.tgz#cc2640f2c900a8ed1253e287793961dcb6dbf3dc"
-  integrity sha512-jHvrEGQyt+jTPWCBl/alhI9MkzOqazMLLF3IoXN33D4WHiii4PJUoH0d68LsS1oSaVJNTMKebthhrL3MseLYAQ==
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/@formspree/react/-/react-2.5.0.tgz#b66eb8a1e4757e69274ed252221663ecedc8d21f"
+  integrity sha512-R2UyaKXAEaaV5lRnE7fUw1xr+Cp+TEzfIyT1r2iH4/hUdcg2od35kU33LOOZo4CPEk2KEuF2RPblnJWSPOvBCw==
   dependencies:
-    "@formspree/core" "^2.8.3"
+    "@formspree/core" "^3.0.0"
     "@stripe/react-stripe-js" "^1.7.1"
     "@stripe/stripe-js" "^1.35.0"
 
@@ -2547,9 +2547,9 @@
     prop-types "^15.7.2"
 
 "@stripe/stripe-js@^1.35.0":
-  version "1.54.1"
-  resolved "https://registry.yarnpkg.com/@stripe/stripe-js/-/stripe-js-1.54.1.tgz#e298b80c2963d9e622ea355db6c35df48e08cd89"
-  integrity sha512-smEXPu1GKMcAj9g2luT16+oXfg2jAwyc68t2Dm5wdtYl3p8PqQaZEiI8tQmboaQAjgF8pIGma6byz1T1vgmpbA==
+  version "1.54.2"
+  resolved "https://registry.yarnpkg.com/@stripe/stripe-js/-/stripe-js-1.54.2.tgz#0665848e22cbda936cfd05256facdfbba121438d"
+  integrity sha512-R1PwtDvUfs99cAjfuQ/WpwJ3c92+DAMy9xGApjqlWQMj0FKQabUAys2swfTRNzuYAYJh7NqK2dzcYVNkKLEKUg==
 
 "@svgr/babel-plugin-add-jsx-attribute@8.0.0":
   version "8.0.0"
