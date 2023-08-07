@@ -14,7 +14,7 @@
     "@fontsource-variable/inter": "5.0.7",
     "@formspree/react": "^2.4.1",
     "@gvrs/gatsby-transformer-blurhash": "2.0.0",
-    "@percy/cli": "1.26.2",
+    "@percy/cli": "1.26.3",
     "@reach/router": "^1.3.4",
     "@svgr/webpack": "8.0.1",
     "axios": "1.4.0",
