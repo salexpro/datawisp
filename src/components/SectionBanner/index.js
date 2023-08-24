@@ -45,8 +45,9 @@ const SectionBanner = (props) => {
             as="a"
             variant="secondary"
             href={buttonLink.url}
-            rel={buttonLink.rel}
+            rel={buttonLink.rel || null}
             target={buttonLink.target}
+            id={`${buttonLink.linkId}-cta`}
             className={s.banner__btn}
           >
             {buttonText}

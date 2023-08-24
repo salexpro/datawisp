@@ -34,6 +34,7 @@ const Header = ({ siteTitle, headerPageData }) => {
       rel
       target
       iconName
+      linkId
     }
 
     fragment LinkAnchorData on DatoCmsLinkAnchor {
@@ -125,6 +126,7 @@ const Header = ({ siteTitle, headerPageData }) => {
         href: btnLink?.url,
         target: btnLink?.target,
         rel: btnLink?.rel,
+        id: btnLink?.linkId ? `${btnLink.linkId}-header` : null,
         onClick: () => gtagReportConversion(cookies),
       }
 

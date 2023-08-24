@@ -3,7 +3,7 @@ import React from 'react'
 import SignUp from '~containers/SignUp'
 import { graphql } from 'gatsby'
 
-const SignUpPage = ({ data }) => {
+const TryNowPage = ({ data }) => {
   const {
     seo,
     howItWorksSectionHeading,
@@ -15,9 +15,11 @@ const SignUpPage = ({ data }) => {
     integrationsSectionHeading,
     integrationsSectionText,
     integrations,
-    bannerSectionHeading,
+    bannerSectionHeadingSecondary,
     bannerSectionText,
-    bannerSectionNotificationText,
+    bannerSectionNotificationTextSecondary,
+    bannerSectionButtonText,
+    bannerSectionButtonLink,
   } = data.datoCmsLeadGenerationPage
 
   return (
@@ -46,10 +48,13 @@ const SignUpPage = ({ data }) => {
         integrations,
       }}
       banner={{
-        heading: bannerSectionHeading,
+        heading: bannerSectionHeadingSecondary,
         text: bannerSectionText,
-        notificationText: bannerSectionNotificationText,
+        notificationText: bannerSectionNotificationTextSecondary,
+        buttonText: bannerSectionButtonText,
+        buttonLink: bannerSectionButtonLink,
       }}
+      isSecondaryLP
     />
   )
 }
@@ -151,18 +156,20 @@ export const query = graphql`
         }
       }
 
-      bannerSectionHeading
+      bannerSectionHeadingSecondary
       bannerSectionText {
         value
       }
-      bannerSectionNotificationText {
+      bannerSectionNotificationTextSecondary {
         value
       }
-
-      emailInputPlaceholder
-      emailInputErrorMessage
-      emailInputRequiredErrorMessage
-      submitButtonText
+      bannerSectionButtonText
+      bannerSectionButtonLink {
+        url
+        rel
+        target
+        linkId
+      }
     }
 
     datoCmsHomePage {
@@ -190,4 +197,4 @@ export const query = graphql`
   }
 `
 
-export default SignUpPage
+export default TryNowPage

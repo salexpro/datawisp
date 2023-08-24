@@ -21,7 +21,7 @@ const SectionHero = ({ isSecondaryLP }) => {
 
         {isSecondaryLP ? (
           <div className={s.heroSection__btn}>
-            <TryBtn />
+            <TryBtn variant="hero" />
           </div>
         ) : (
           <RequestDemoForm id="hero" className={s.heroSection__form} />

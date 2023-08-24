@@ -24,7 +24,7 @@ const data = [
     title: 'Try it now and see Datawisp for yourself',
     cta: (
       <div className={s.sectionPrices__btn}>
-        <TryBtn />
+        <TryBtn variant="prices" />
       </div>
     ),
     trialText: 'Free for 60 days. No credit card required',
