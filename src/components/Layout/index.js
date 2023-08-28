@@ -8,7 +8,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
-import SSRProvider from 'react-bootstrap/SSRProvider'
 
 import CookieBanner from '~components/CookieBanner'
 import Metrics from '~components/Metrics'
@@ -34,7 +33,7 @@ const Layout = ({ children, headerPageData, footerPageData }) => {
 
   // TODO: SSRProvider in starter
   return (
-    <SSRProvider>
+    <>
       <div className={layout}>
         <Header
           siteTitle={data.site.siteMetadata?.title}
@@ -51,7 +50,7 @@ const Layout = ({ children, headerPageData, footerPageData }) => {
       <ToastManager />
       <CookieBanner />
       <Metrics />
-    </SSRProvider>
+    </>
   )
 }
 

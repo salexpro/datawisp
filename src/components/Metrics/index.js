@@ -8,7 +8,7 @@ const Metrics = () => {
   const [cookies] = useCookies([GOOGLE_TAG_KEY])
 
   return (
-    cookies[GOOGLE_TAG_KEY] === 'true' && (
+    cookies[GOOGLE_TAG_KEY] && (
       <>
         {/* Google ads start */}
         <Script src="https://www.googletagmanager.com/gtag/js?id=AW-11145057970" />
