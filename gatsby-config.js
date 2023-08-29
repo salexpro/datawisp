@@ -57,14 +57,6 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-matomo',
-      options: {
-        siteId: '1',
-        matomoUrl: 'https://datawisp.matomo.cloud',
-        siteUrl: 'https://datawisp.io',
-      },
-    },
-    {
       resolve: `gatsby-plugin-plausible`,
       options: {
         domain: `datawisp.io`,
