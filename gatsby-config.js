@@ -63,6 +63,16 @@ module.exports = {
       },
     },
     {
+      resolve: `@tmttn/gatsby-plugin-linkedin-insight`,
+      options: {
+        partnerId: `5320778`,
+
+        // Include LinkedIn Insight in development.
+        // Defaults to false meaning LinkedIn Insight will only be loaded in production.
+        includeInDevelopment: false,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         host: 'https://datawisp.io',
