@@ -9,9 +9,9 @@ import TryBtn from '~containers/SignUp/TryBtn'
 import { BADGE_MOCKS } from './mocks'
 import * as s from './SectionHero.module.scss'
 
-const SectionHero = ({ isSecondaryLP }) => {
+const SectionHero = ({ isSecondaryLP, utm }) => {
   return (
-    <Container className={s.heroSection}>
+    <Container as="section" className={s.heroSection}>
       <div>
         <h1>Data Done Differently</h1>
         <p className={s.heroSection__description}>
@@ -21,7 +21,7 @@ const SectionHero = ({ isSecondaryLP }) => {
 
         {isSecondaryLP ? (
           <div className={s.heroSection__btn}>
-            <TryBtn variant="hero" />
+            <TryBtn variant="hero" utm={utm} />
           </div>
         ) : (
           <RequestDemoForm id="hero" className={s.heroSection__form} />

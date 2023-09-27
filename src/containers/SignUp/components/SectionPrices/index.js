@@ -13,7 +13,7 @@ import * as s from './SectionPrices.module.scss'
 const data = [
   {
     title: 'Book a demo to see Datawisp for yourself',
-    cta: <RequestDemoForm id="price" className={s.header__form} />,
+    cta: () => <RequestDemoForm id="price" className={s.header__form} />,
     trialText: (
       <>
         And get a <u>free</u> trial after the demo
@@ -22,19 +22,19 @@ const data = [
   },
   {
     title: 'Try it now and see Datawisp for yourself',
-    cta: (
+    cta: (utm) => (
       <div className={s.sectionPrices__btn}>
-        <TryBtn variant="prices" />
+        <TryBtn variant="prices" utm={utm} />
       </div>
     ),
     trialText: 'Free for 60 days. No credit card required',
   },
 ]
 
-const SectionPrices = ({ isSecondaryLP }) => {
+const SectionPrices = ({ isSecondaryLP, utm }) => {
   return (
-    <Container id="prices">
-      <section className={s.sectionPrices}>
+    <Container as="section" id="prices">
+      <div className={s.sectionPrices}>
         <div className={s.header}>
           <h2 className={s.header__title}>{data[+!!isSecondaryLP]?.title}</h2>
           <p className={s.header__description}>
@@ -42,7 +42,7 @@ const SectionPrices = ({ isSecondaryLP }) => {
             team
           </p>
 
-          {data[+!!isSecondaryLP]?.cta}
+          {data[+!!isSecondaryLP]?.cta(utm)}
 
           <p className={s.header__trialText}>
             {data[+!!isSecondaryLP]?.trialText}
@@ -71,7 +71,7 @@ const SectionPrices = ({ isSecondaryLP }) => {
         </Swiper>
 
         <div id="swiper-pagination" />
-      </section>
+      </div>
     </Container>
   )
 }

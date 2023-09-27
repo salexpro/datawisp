@@ -20,6 +20,7 @@ const SectionCaseStudies = (props) => {
     buttonLink,
     buttonHide,
     className,
+    utm,
     ...rest
   } = props
 

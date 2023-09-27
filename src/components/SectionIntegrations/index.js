@@ -8,7 +8,8 @@ import IntegrationItem from './components/IntegrationItem'
 import * as s from './SectionIntegrations.module.scss'
 
 const SectionIntegrations = (props) => {
-  const { variant, heading, text, integrations, className, ...rest } = props
+  const { variant, heading, text, integrations, className, utm, ...rest } =
+    props
 
   const isTwoColumn = integrations?.length === 2
 

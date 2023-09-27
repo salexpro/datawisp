@@ -17,9 +17,9 @@ const SectionUseCases = ({ heading, text, useCases }) => {
   }, [isUpMd])
 
   return (
-    <div className={s.sectionUseCasesBg}>
+    <section className={s.sectionUseCasesBg}>
       <div className={s.sectionUseCasesWrapper}>
-        <section className={s.sectionUseCases}>
+        <div className={s.sectionUseCases}>
           <div className={s.gridHeading}>
             <h2>{heading}</h2>
             <StructuredText data={text} />
@@ -40,9 +40,9 @@ const SectionUseCases = ({ heading, text, useCases }) => {
               <CardUseCase isPlaceholder className={s.hideMobile} />
             </div>
           </div>
-        </section>
+        </div>
       </div>
-    </div>
+    </section>
   )
 }
 

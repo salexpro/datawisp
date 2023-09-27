@@ -8,7 +8,7 @@ import FeaturesList from './components/FeaturesList'
 import * as s from './SectionFeatures.module.scss'
 
 const SectionFeatures = (props) => {
-  const { variant, features, className, ...rest } = props
+  const { variant, features, className, utm, ...rest } = props
   const { image, ...list } = features
 
   return (

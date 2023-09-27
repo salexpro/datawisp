@@ -9,7 +9,8 @@ import ImageFormat from '~components/ImageFormat'
 import * as s from './SectionMission.module.scss'
 
 const SectionMission = (props) => {
-  const { heading, text, imageDesktop, imageMobile, className, ...rest } = props
+  const { heading, text, imageDesktop, imageMobile, className, utm, ...rest } =
+    props
 
   return (
     <Container

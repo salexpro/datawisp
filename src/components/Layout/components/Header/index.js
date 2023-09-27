@@ -15,7 +15,7 @@ import MobileNavMenu from './components/MobileNavMenu'
 
 import * as s from './Header.module.scss'
 
-const Header = ({ siteTitle, headerPageData }) => {
+const Header = ({ siteTitle, headerPageData, utm }) => {
   const isScrolled = useScrolled()
   const [cookies] = useCookies([GOOGLE_TAG_KEY])
 
@@ -123,7 +123,7 @@ const Header = ({ siteTitle, headerPageData }) => {
       }
     : {
         as: 'a',
-        href: btnLink?.url,
+        href: `${btnLink.url}${utm ? `?${utm}` : ''}`,
         target: btnLink?.target,
         rel: btnLink?.rel,
         id: btnLink?.linkId ? `${btnLink.linkId}-header` : null,

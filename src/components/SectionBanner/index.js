@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import { Button, Container } from 'react-bootstrap'
 import { StructuredText } from 'react-datocms'
@@ -17,10 +18,26 @@ const SectionBanner = (props) => {
     withForm,
     notificationText,
     className,
+    utm,
     ...rest
   } = props
 
   const [message, setMessage] = useState({ text: '', isError: false })
+
+  const isExternalLink = buttonLink?.target
+
+  const buttonProps = !isExternalLink
+    ? {
+        as: Link,
+        to: buttonLink.url,
+      }
+    : {
+        as: 'a',
+        href: `${buttonLink.url}${utm && `?${utm}`}`,
+        target: buttonLink?.target,
+        rel: buttonLink?.rel || null,
+        id: buttonLink?.linkId ? `${buttonLink.linkId}-cta` : null,
+      }
 
   return (
     <Container
@@ -42,12 +59,8 @@ const SectionBanner = (props) => {
           />
         ) : (
           <Button
-            as="a"
+            {...buttonProps}
             variant="secondary"
-            href={buttonLink.url}
-            rel={buttonLink.rel || null}
-            target={buttonLink.target}
-            id={`${buttonLink.linkId}-cta`}
             className={s.banner__btn}
           >
             {buttonText}

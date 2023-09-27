@@ -22,6 +22,7 @@ const Homepage = (props) => {
     cases,
     roadmap,
     seo,
+    utm,
     ...rest
   } = props
 

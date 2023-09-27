@@ -5,9 +5,10 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
+import { useLocation } from '@reach/router'
 
 import CookieBanner from '~components/CookieBanner'
 import Metrics from '~components/Metrics'
@@ -31,18 +32,43 @@ const Layout = ({ children, headerPageData, footerPageData }) => {
     }
   `)
 
-  // TODO: SSRProvider in starter
+  const { search } = useLocation()
+
+  const [utm, setUtm] = useState('')
+
+  useEffect(() => {
+    const params = new URLSearchParams(search)
+
+    const filtered = [...params.entries()]
+      .filter(([k]) => k.includes('utm_'))
+      .map(([k, v]) => `${k}=${v}`)
+      .join('&')
+
+    setUtm(filtered)
+  }, [search])
+
+  const childrenArray = Array.isArray(children) ? children : [children]
+
   return (
     <>
       <div className={layout}>
         <Header
           siteTitle={data.site.siteMetadata?.title}
           headerPageData={headerPageData}
+          utm={utm}
         />
-        <main className="main">{children}</main>
+        <main className="main">
+          {childrenArray.map((c, i) => (
+            // eslint-disable-next-line react/no-array-index-key
+            <React.Fragment key={`c${i}`}>
+              {React.cloneElement(c, { utm })}
+            </React.Fragment>
+          ))}
+        </main>
         <Footer
           siteTitle={data.site.siteMetadata?.title}
           footerPageData={footerPageData}
+          utm={utm}
         />
         <SVGDefs />
       </div>

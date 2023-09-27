@@ -9,7 +9,7 @@ import FounderCard from './FounderCard'
 import * as s from './SectionFounders.module.scss'
 
 const SectionFounders = (props) => {
-  const { heading, text, founders, className, ...rest } = props
+  const { heading, text, founders, className, utm, ...rest } = props
 
   return (
     <Container

@@ -20,6 +20,7 @@ const SectionHero = (props) => {
     buttonLink,
     buttonSecond,
     className,
+    utm,
     ...rest
   } = props
 
@@ -33,7 +34,7 @@ const SectionHero = (props) => {
         <div className={s.buttonWrapper}>
           <Button
             variant="primary"
-            href={buttonLink.url}
+            href={`${buttonLink.url}${utm && `?${utm}`}`}
             target={buttonLink.target}
             rel={buttonLink.rel}
             onClick={() => gtagReportConversion(cookies)}

@@ -7,7 +7,7 @@ import { Button, Container } from 'react-bootstrap'
 import * as s from './SectionHero.module.scss'
 
 const SectionHero = (props) => {
-  const { heading, buttonText, buttonLink, className, ...rest } = props
+  const { heading, buttonText, buttonLink, className, utm, ...rest } = props
 
   return (
     <Container {...rest} as="section" className={cn(s.sectionHero, className)}>

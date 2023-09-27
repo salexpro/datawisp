@@ -18,6 +18,7 @@ const SectionHowItWorks = (props) => {
     buttonHide,
     steps,
     className,
+    utm,
     ...rest
   } = props
 

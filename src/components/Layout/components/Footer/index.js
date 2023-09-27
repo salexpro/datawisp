@@ -12,7 +12,7 @@ import * as s from './Footer.module.scss'
 
 const currentYear = new Date().getFullYear()
 
-const Footer = ({ siteTitle, footerPageData }) => {
+const Footer = ({ siteTitle, footerPageData, utm }) => {
   const footerData = useStaticQuery(graphql`
     query FooterNavigation {
       datoCmsFooter {
@@ -94,7 +94,7 @@ const Footer = ({ siteTitle, footerPageData }) => {
             <Button
               variant="primary"
               as="a"
-              href={actionButtonLink?.url}
+              href={`${actionButtonLink?.url}${utm && `?${utm}`}`}
               target={actionButtonLink?.target}
               rel={actionButtonLink?.rel}
               className={s.footerTop__appButton}

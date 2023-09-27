@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
-import { useLocation } from '@gatsbyjs/reach-router'
+import { useLocation } from '@reach/router'
 import { StructuredText } from 'react-datocms'
 import { Button, Container } from 'react-bootstrap'
 import { useCookies } from 'react-cookie'
@@ -26,6 +26,7 @@ const SectionHero = (props) => {
     partners,
     popup,
     className,
+    utm,
     ...rest
   } = props
 
@@ -59,7 +60,7 @@ const SectionHero = (props) => {
             {!secondaryButton.hide && (
               <Button
                 variant="outline-secondary"
-                href={secondaryButton.url}
+                href={`${secondaryButton.url}${utm && `?${utm}`}`}
                 rel={secondaryButton.rel}
                 target={secondaryButton.target}
                 onClick={() => gtagReportConversion(cookies)}

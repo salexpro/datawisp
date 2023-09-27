@@ -2,7 +2,7 @@ import React from 'react'
 import { Button } from 'react-bootstrap'
 import { graphql, useStaticQuery } from 'gatsby'
 
-const TryBtn = ({ variant }) => {
+const TryBtn = ({ variant, utm }) => {
   const btnData = useStaticQuery(graphql`
     query TryBtn {
       datoCmsLeadGenerationPage {
@@ -20,7 +20,7 @@ const TryBtn = ({ variant }) => {
 
   return (
     <Button
-      href={heroButtonLink.url}
+      href={`${heroButtonLink.url}${utm ? `?${utm}` : ''}`}
       target="_blank"
       rel="nofollow noopener noreferrer"
       id={`${heroButtonLink.linkId}-${variant}`}
