@@ -50,7 +50,7 @@
     "react-transition-group": "^4.4.5",
     "sass": "1.68.0",
     "svg-parser": "2.0.4",
-    "swiper": "10.3.0"
+    "swiper": "10.3.1"
   },
   "devDependencies": {
     "@commitlint/cli": "17.7.1",
