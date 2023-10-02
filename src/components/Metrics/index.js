@@ -41,6 +41,9 @@ const Metrics = () => {
         {/* Google Optimize start */}
         <Script src="https://www.googleoptimize.com/optimize.js?id=OPT-K5C9NXH" />
         {/* Google Optimize end */}
+
+        {/* GetKoala */}
+        <Script id="getkoala">{`!function(t){if(window.ko)return;window.ko=[],["identify","track","removeListeners","open","on","off","qualify","ready"].forEach(function(t){ko[t]=function(){var n=[].slice.call(arguments);return n.unshift(t),ko.push(n),ko}});var n=document.createElement("script");n.async=!0,n.setAttribute("src","https://cdn.getkoala.com/v1/pk_03100c29cc53f7c61970cfeb38ba8e4488d2/sdk.js"),(document.body || document.head).appendChild(n)}();`}</Script>
       </>
     )
   )
