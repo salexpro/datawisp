@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import { Button, Container } from 'react-bootstrap'
 import { StructuredText } from 'react-datocms'
-import cn from 'classnames'
+import cn from 'clsx'
 
 import RequestDemoForm from '~components/RequestDemoForm'
 

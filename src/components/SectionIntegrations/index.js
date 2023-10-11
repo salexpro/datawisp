@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Container } from 'react-bootstrap'
 import { StructuredText } from 'react-datocms'
-import cn from 'classnames'
+import cn from 'clsx'
 
 import IntegrationItem from './components/IntegrationItem'
 import * as s from './SectionIntegrations.module.scss'

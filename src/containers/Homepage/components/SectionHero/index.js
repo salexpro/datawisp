@@ -1,7 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
-import cn from 'classnames'
+import cn from 'clsx'
 import { useLocation } from '@reach/router'
 import { StructuredText } from 'react-datocms'
 import { Button, Container } from 'react-bootstrap'
@@ -11,7 +11,6 @@ import ImageFormat from '~components/ImageFormat'
 import { GOOGLE_TAG_KEY } from '~constants'
 import { gtagReportConversion } from '~utils/analytics'
 
-import PartnersMarquee from './components/PartnersMaruqee'
 import ModalRequestDemo from '../ModalRequestDemo'
 import * as s from './SectionHero.module.scss'
 
@@ -20,10 +19,8 @@ const SectionHero = (props) => {
     heading,
     text,
     image,
-    primaryButton,
-    secondaryButton,
-    partnersHeading,
-    partners,
+    caption,
+    button,
     popup,
     className,
     utm,
@@ -47,46 +44,26 @@ const SectionHero = (props) => {
 
   return (
     <section {...rest} className={cn(s.sectionHero, className)}>
-      <Container className={cn(s.container, s.containerMain)}>
-        <div className={s.colLeft}>
+      <Container className={s.container}>
+        <div className={s.content}>
           <h1 className={s.heading}>{heading}</h1>
-          <StructuredText data={text.value} />
-          <div className="btn-group">
-            {!primaryButton.hide && (
-              <Button variant="primary" onClick={handeRequestDemo}>
-                {primaryButton.text}
-              </Button>
-            )}
-            {!secondaryButton.hide && (
-              <Button
-                variant="outline-secondary"
-                href={`${secondaryButton.url}${utm && `?${utm}`}`}
-                rel={secondaryButton.rel}
-                target={secondaryButton.target}
-                onClick={() => gtagReportConversion(cookies)}
-              >
-                {secondaryButton.text}
-              </Button>
-            )}
+          <div className={s.lead}>
+            <StructuredText data={text.value} />
           </div>
+          <div className={cn('btn-group', s.buttons)}>
+            <Button variant="primary" onClick={handeRequestDemo}>
+              {button.text}
+            </Button>
+          </div>
+          <span className={s.caption}>{caption}</span>
         </div>
         <ImageFormat
           alt="hero"
           file={image}
-          width={897}
-          height={690}
           className={s.imgHero}
           objectFit="contain"
         />
       </Container>
-      {!!partners?.length && (
-        <div className={s.blockPartners}>
-          <Container className={s.container}>
-            <span className={s.textPartners}>{partnersHeading}</span>
-          </Container>
-          <PartnersMarquee partners={partners} />
-        </div>
-      )}
 
       <ModalRequestDemo
         show={showRequestDemoModal}

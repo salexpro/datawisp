@@ -1,6 +1,6 @@
 import React, { createElement } from 'react'
 import PropTypes from 'prop-types'
-import cn from 'classnames'
+import cn from 'clsx'
 import { Link } from 'gatsby'
 import { Badge, Button, Placeholder } from 'react-bootstrap'
 

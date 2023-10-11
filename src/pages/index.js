@@ -8,19 +8,14 @@ const IndexPage = ({ data }) => {
     heroSectionHeading,
     heroSectionText,
     heroSectionImage,
+    heroSectionCaption,
     heroButtonPrimaryText,
     heroButtonPrimaryLink,
-    heroButtonPrimaryHide,
-    heroButtonSecondaryText,
-    heroButtonSecondaryLink,
-    heroButtonSecondaryHide,
     integrationsSectionHeading,
     integrationsList,
-    integrationsSectionSubheading,
     integrationsSectionButtonText,
     integrationsSectionButtonLink,
-    partnersSectionHeading,
-    partners,
+    personaItems,
     howItWorksSectionHeading,
     howItWorksSectionText,
     howItWorksSectionImage,
@@ -28,24 +23,14 @@ const IndexPage = ({ data }) => {
     howItWorksButtonLink,
     howItWorksButtonHide,
     steps,
-    featuresSectionHeading,
-    featuresSectionText,
-    featuresSectionImage,
-    featuresButtonText,
-    featuresButtonLink,
-    featuresButtonHide,
+    featuresHeading,
+    featuresText,
     featuresList,
-    useCasesSectionHeading,
-    useCasesSectionText,
-    useCasesSectionUseCases,
+    featuresButtons,
+    featuresCaption,
     roadmapSectionHeading,
     roadmapSectionText,
     roadmapPhases,
-    caseStudiesSectionHeading,
-    caseStudiesSectionText,
-    cases,
-    caseStudiesButtonText,
-    caseStudiesButtonLink,
     requestDemoHeading,
     emailInputLabel,
     emailInputPlaceholder,
@@ -61,7 +46,7 @@ const IndexPage = ({ data }) => {
     seo,
   } = data.datoCmsHomePage
 
-  const caseStudiesPage = data.datoCmsCaseStudiesPage
+  // const caseStudiesPage = data.datoCmsCaseStudiesPage
 
   return (
     <Homepage
@@ -69,24 +54,17 @@ const IndexPage = ({ data }) => {
       hero={{
         heading: heroSectionHeading,
         text: heroSectionText,
-        image: heroSectionImage,
-        primaryButton: {
+        caption: heroSectionCaption,
+        button: {
           ...heroButtonPrimaryLink,
           text: heroButtonPrimaryText,
-          hide: heroButtonPrimaryHide,
         },
-        secondaryButton: {
-          ...heroButtonSecondaryLink,
-          text: heroButtonSecondaryText,
-          hide: heroButtonSecondaryHide,
-        },
-        partnersHeading: partnersSectionHeading,
-        partners,
+        image: heroSectionImage,
       }}
+      personas={personaItems}
       integrations={{
         heading: integrationsSectionHeading,
         list: integrationsList,
-        subheading: integrationsSectionSubheading,
         buttonText: integrationsSectionButtonText,
         buttonLink: integrationsSectionButtonLink,
       }}
@@ -100,26 +78,11 @@ const IndexPage = ({ data }) => {
         steps,
       }}
       features={{
-        heading: featuresSectionHeading,
-        text: featuresSectionText,
-        image: featuresSectionImage,
-        buttonText: featuresButtonText,
-        buttonLink: featuresButtonLink.url,
-        buttonHide: featuresButtonHide,
-        featuresList,
-      }}
-      useCases={{
-        heading: useCasesSectionHeading,
-        text: useCasesSectionText,
-        useCases: useCasesSectionUseCases,
-      }}
-      cases={{
-        heading: caseStudiesSectionHeading,
-        text: caseStudiesSectionText,
-        cases,
-        buttonText: caseStudiesButtonText,
-        buttonLink: caseStudiesButtonLink.url,
-        buttonHide: caseStudiesPage.disableCaseStudiesPage,
+        heading: featuresHeading,
+        text: featuresText,
+        items: featuresList,
+        buttons: featuresButtons,
+        caption: featuresCaption,
       }}
       roadmap={{
         heading: roadmapSectionHeading,
@@ -165,14 +128,15 @@ export const query = graphql`
       heroSectionText {
         value
       }
+      heroSectionCaption
       heroSectionImage {
         format
         url
         gatsbyImageData(
-          width: 897
-          placeholder: NONE
-          sizes: "(max-width: 767.98px) calc(100vw - 24px * 2), (max-width: 1023.98px) 682px, (max-width: 1199.98px) 718px, 897px"
+          width: 1030
+          sizes: "(max-width: 767.98px) calc(100vw - 24px * 2), (max-width: 1023.98px) 682px, (max-width: 1199.98px) 718px, 1030px"
           breakpoints: [327, 655, 682, 718, 982, 1140, 1363, 1435, 1794]
+          placeholder: NONE
           imgixParams: { fit: "crop", auto: "compress,format" }
         )
       }
@@ -181,12 +145,6 @@ export const query = graphql`
       heroButtonPrimaryLink {
         ...LinkExternalData
       }
-      heroButtonPrimaryHide
-      heroButtonSecondaryText
-      heroButtonSecondaryLink {
-        ...LinkExternalData
-      }
-      heroButtonSecondaryHide
 
       integrationsSectionHeading
       integrationsList {
@@ -195,7 +153,7 @@ export const query = graphql`
           format
           url
           gatsbyImageData(
-            width: 40
+            width: 32
             placeholder: NONE
             outputPixelDensities: [1, 1.5, 2, 3]
             imgixParams: { fit: "crop", auto: "compress,format" }
@@ -203,25 +161,20 @@ export const query = graphql`
         }
         name
       }
-      integrationsSectionSubheading
       integrationsSectionButtonText
       integrationsSectionButtonLink {
         url
       }
 
-      partnersSectionHeading
-      partners {
+      personaItems {
         id
         title
-        logoImage {
-          format
+        description {
+          value
+        }
+        iconName
+        link {
           url
-          gatsbyImageData(
-            height: 24
-            placeholder: NONE
-            outputPixelDensities: [1, 1.5, 2, 3]
-            imgixParams: { fit: "crop", auto: "compress,format" }
-          )
         }
       }
 
@@ -236,11 +189,13 @@ export const query = graphql`
           format
           url
           gatsbyImageData(
-            sizes: "(max-width: 767.98px) calc(100vw - 24px * 2 - 14px * 2), (max-width: 1023.98px) calc((100vw - 188px) / 3), (max-width: 1439.98px) calc((100vw - 288px) / 3), 352px"
-            breakpoints: [200, 352, 528, 654, 700, 1400]
+            sizes: "(max-width: 767.98px) 300px, 400px"
             placeholder: BLURRED
             imgixParams: { fit: "crop", auto: "compress,format" }
           )
+        }
+        description {
+          value
         }
       }
       howItWorksButtonText
@@ -249,75 +204,40 @@ export const query = graphql`
       }
       howItWorksButtonHide
 
-      featuresSectionHeading
-      featuresSectionText {
-        value
-      }
-      featuresButtonText
-      featuresButtonLink {
-        url
-      }
-      featuresButtonHide
+      featuresHeading
+      featuresText
       featuresList {
         id
         heading
-        text {
-          value
-        }
+        text
         iconName
-        image {
-          format
-          url
-          gatsbyImageData(
-            width: 691
-            placeholder: NONE
-            sizes: "(max-width: 767.98px) calc(100vw - 24px * 2 - 24px * 2), (max-width: 1023.98px) calc((100vw - 40px * 2 - 16px - 24px * 2 * 2) / 2), (max-width: 1199.98px) calc((100vw - 40px * 2 - 16px * 2 - 24px * 2 * 3) / 3), (max-width: 1320px) calc((100vw - 40px * 2 - 32px * 2 - 24px * 2 * 3) / 3), 344px"
-            breakpoints: [299, 344, 448, 516, 598, 688, 897, 1056, 1382]
-            imgixParams: { fit: "crop", auto: "compress,format" }
-          )
-        }
       }
-
-      useCasesSectionHeading
-      useCasesSectionText {
-        value
-      }
-      useCasesSectionUseCases {
+      featuresButtons {
         id
-        iconName
-        heading
-        text {
-          value
+        link {
+          ... on DatoCmsLinkInternal {
+            url
+            internal {
+              type
+            }
+          }
+          ... on DatoCmsLinkExternal {
+            url
+            internal {
+              type
+            }
+          }
+          ... on DatoCmsLinkAnchor {
+            anchor
+            internal {
+              type
+            }
+          }
         }
+        label
+        variant
       }
-
-      caseStudiesSectionHeading
-      caseStudiesSectionText {
-        value
-      }
-      cases {
-        id
-        heading
-        postIcon {
-          format
-          url
-          gatsbyImageData(
-            width: 40
-            height: 40
-            placeholder: NONE
-            imgixParams: { fit: "crop", auto: "compress,format" }
-          )
-        }
-        seo {
-          description
-        }
-        comingSoon
-        slug
-      }
-      caseStudiesButtonText
-      caseStudiesButtonLink {
-        url
-      }
+      featuresCaption
 
       roadmapSectionHeading
       roadmapSectionText {

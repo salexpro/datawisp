@@ -1,5 +1,5 @@
 import React from 'react'
-import cn from 'classnames'
+import cn from 'clsx'
 import { Button } from 'react-bootstrap'
 
 import * as s from './TableHeader.module.scss'

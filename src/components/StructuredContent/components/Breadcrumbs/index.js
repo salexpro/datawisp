@@ -1,7 +1,7 @@
 /* eslint-disable react/no-array-index-key */
 import React from 'react'
 import PropTypes from 'prop-types'
-import cn from 'classnames'
+import cn from 'clsx'
 import { Link } from 'gatsby'
 import { Breadcrumb, Button } from 'react-bootstrap'
 

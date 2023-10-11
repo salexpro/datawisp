@@ -1,5 +1,5 @@
 import React from 'react'
-import cn from 'classnames'
+import cn from 'clsx'
 import { StructuredText } from 'react-datocms'
 import Icon from '~components/Icon'
 

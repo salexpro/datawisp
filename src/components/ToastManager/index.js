@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { ToastContainer } from 'react-bootstrap'
-import cn from 'classnames'
+import cn from 'clsx'
 
 import { EVENT_KEYS } from './constants'
 import { events } from './api'

@@ -3,7 +3,7 @@ import React from 'react'
 import { useLocation } from '@reach/router'
 import PropTypes from 'prop-types'
 import { Container } from 'react-bootstrap'
-import cn from 'classnames'
+import cn from 'clsx'
 
 import BlogItem from '~components/BlogItem'
 

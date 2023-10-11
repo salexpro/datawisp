@@ -10,7 +10,7 @@ const Feature = (props) => {
 
   return (
     <div className={s.feature}>
-      <Icon name={iconName} />
+      <Icon name={iconName} size={48} className={s.icon} />
       <h3 className="h6">{heading}</h3>
       <p className={s.text}>{text}</p>
     </div>

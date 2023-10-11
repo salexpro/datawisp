@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import cn from 'classnames'
+import cn from 'clsx'
 import { StructuredText } from 'react-datocms'
 import { Button, Container } from 'react-bootstrap'
 

@@ -42,7 +42,9 @@
   padding: 24px;
   background-color: $gray-100;
   border-radius: 16px;
-  transition: background-color 0.25s, box-shadow 0.25s;
+  transition:
+    background-color 0.25s,
+    box-shadow 0.25s;
 
   @include b-up(lg) {
     row-gap: 40px;

@@ -1,0 +1,16 @@
+@import '~styles/mixins';
+
+.feature {
+  display: grid;
+  gap: 24px;
+  justify-items: center;
+}
+
+.icon {
+  color: $pink;
+}
+
+.text {
+  font-size: 15px;
+  line-height: 1.467;
+}

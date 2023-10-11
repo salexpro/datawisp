@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Marquee from 'react-fast-marquee'
-import cn from 'classnames'
+import cn from 'clsx'
 
 import PartnerItem from './components/PartnerItem'
 

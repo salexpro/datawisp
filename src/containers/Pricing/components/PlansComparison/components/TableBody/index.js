@@ -1,5 +1,5 @@
 import React from 'react'
-import cn from 'classnames'
+import cn from 'clsx'
 
 import { getCellByType } from '../../utils'
 import * as s from './TableBody.module.scss'

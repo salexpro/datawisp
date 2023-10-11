@@ -2,7 +2,7 @@ import React from 'react'
 import { Button, Container } from 'react-bootstrap'
 import PropTypes from 'prop-types'
 import { graphql, Link, useStaticQuery } from 'gatsby'
-import cn from 'classnames'
+import cn from 'clsx'
 import { useCookies } from 'react-cookie'
 
 import useScrolled from '~hooks/useScrolled'
@@ -168,6 +168,7 @@ const Header = ({ siteTitle, headerPageData, utm }) => {
           btnLink={btnLink}
           navItems={navMenuItems}
           className={s.navMenuMobile}
+          utm={utm}
         />
       )}
     </>

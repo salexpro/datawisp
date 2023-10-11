@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Tab, Tabs } from 'react-bootstrap'
-import cn from 'classnames'
+import cn from 'clsx'
 
 import TableHeader from '../TableHeader'
 import TableBody from '../TableBody'

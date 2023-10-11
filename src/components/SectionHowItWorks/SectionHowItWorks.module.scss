@@ -2,7 +2,7 @@
 
 .gridHeading {
   display: grid;
-  align-items: start;
+  justify-content: center;
 
   @include b-up(lg) {
     row-gap: 12px;
@@ -12,22 +12,7 @@
     row-gap: 8px;
   }
 
-  @include b-up(md) {
-    grid-template-areas:
-      'heading'
-      'paragraph';
-  }
-
-  @include b-d(md) {
-    grid-template-areas:
-      'heading'
-      'paragraph';
-    justify-items: start;
-  }
-
   p {
-    grid-area: paragraph;
-
     @include b-up(lg) {
       max-width: 616px;
     }
@@ -38,68 +23,60 @@
   }
 
   &__heading {
-    grid-area: heading;
-  }
-
-  &__btn {
-    grid-area: button;
-
-    @include b-d(md) {
-      margin-top: 16px;
-    }
   }
 }
 
 .sectionHowItWorks {
+  text-align: center;
   @include b-up(lg) {
-    padding: 80px 0;
+    padding: 80px 0 54px;
   }
 
   @include b-d(lg) {
     padding: 64px 0;
   }
 
-  &.home {
-    background-color: $gray-100;
+  // &.home {
+  //   background-color: $gray-100;
 
-    .gridHeading {
-      p {
-        @include b-up(lg) {
-          max-width: 674px;
-        }
+  //   .gridHeading {
+  //     p {
+  //       @include b-up(lg) {
+  //         max-width: 674px;
+  //       }
 
-        @include b-btw(md, lg) {
-          max-width: 475px;
-        }
-      }
-    }
+  //       @include b-btw(md, lg) {
+  //         max-width: 475px;
+  //       }
+  //     }
+  //   }
 
-    @include b-up(lg) {
-      margin-top: 80px;
-    }
+  //   @include b-up(lg) {
+  //     margin-top: 80px;
+  //   }
 
-    @include b-d(lg) {
-      margin-top: 52px;
-    }
-  }
+  //   @include b-d(lg) {
+  //     margin-top: 52px;
+  //   }
+  // }
 
-  &.hasButton {
-    .gridHeading {
-      @include b-up(md) {
-        grid-template-areas:
-          'heading heaidng'
-          'paragraph button';
-        grid-template-columns: 1fr auto;
-      }
+  // &.hasButton {
+  //   .gridHeading {
+  //     @include b-up(md) {
+  //       grid-template-areas:
+  //         'heading heaidng'
+  //         'paragraph button';
+  //       grid-template-columns: 1fr auto;
+  //     }
 
-      @include b-d(md) {
-        grid-template-areas:
-          'heading'
-          'paragraph'
-          'button';
-      }
-    }
-  }
+  //     @include b-d(md) {
+  //       grid-template-areas:
+  //         'heading'
+  //         'paragraph'
+  //         'button';
+  //     }
+  //   }
+  // }
 
   @include b-d(md) {
     overflow: hidden;
@@ -108,8 +85,8 @@
   &__stepsWrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 44px;
-    margin-top: 56px;
+    gap: 23px;
+    margin-top: 62px;
     counter-reset: step;
 
     @include b-d(lg) {

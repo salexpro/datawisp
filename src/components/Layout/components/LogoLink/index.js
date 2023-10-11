@@ -1,5 +1,5 @@
 import React from 'react'
-import cn from 'classnames'
+import cn from 'clsx'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 

@@ -7,19 +7,17 @@ import SectionFeatures from '~components/SectionFeatures'
 
 import SectionHero from './components/SectionHero'
 import SectionIntegrationsPreview from '../../components/SectionIntegrationsPreview'
-import SectionCaseStudies from './components/SectionCaseStudies'
+import SectionPersonas from './components/SectionPersonas'
 import SectionRoadmap from './components/SectionRoadmap'
-import SectionUseCases from './components/SectionUseCases'
 
 const Homepage = (props) => {
   const {
     hero,
     popup,
     integrations,
+    personas,
     howItWorks,
     features,
-    useCases,
-    cases,
     roadmap,
     seo,
     utm,
@@ -31,10 +29,9 @@ const Homepage = (props) => {
       <SeoDatoCms seo={seo} />
       <SectionHero {...hero} popup={popup} />
       <SectionIntegrationsPreview {...integrations} />
-      <SectionHowItWorks variant="home" {...howItWorks} />
-      <SectionFeatures features={features} />
-      <SectionUseCases {...useCases} />
-      <SectionCaseStudies {...cases} />
+      <SectionPersonas personas={personas} />
+      <SectionHowItWorks {...howItWorks} />
+      <SectionFeatures {...features} />
       <SectionRoadmap {...roadmap} />
     </Layout>
   )

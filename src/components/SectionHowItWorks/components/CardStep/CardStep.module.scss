@@ -1,28 +1,6 @@
 @import '~styles/mixins';
 
-.cardStep {
-  padding: 16px;
-  background-color: $white;
-  border-radius: 16px;
-  box-shadow: 0 14px 29px rgba(34, 18, 34, 5%);
-
-  @include b-d(lg) {
-    padding: 10px;
-    border-radius: 9px;
-  }
-
-  @include b-d(md) {
-    padding: 14px;
-    border-radius: 14px;
-  }
-}
-
-.text {
-  display: block;
-  font-size: 16px;
-  font-weight: $font-weight-semi-bold;
-  line-height: 1.25;
-
+.title {
   @include b-d(lg) {
     font-size: 12px;
   }
@@ -33,14 +11,16 @@
 
   &::before {
     color: $primary;
-    content: 'Step ' counter(step) ' ';
+    content: 'Step ' counter(step) ': ';
     counter-increment: step;
   }
 }
 
 .imageWrapper {
   position: relative;
-  margin-top: 18px;
+  margin-top: 20px;
+  pointer-events: none;
+  user-select: none;
   background-color: #f2f2f2;
   isolation: isolate;
   border-radius: 12px;
@@ -58,4 +38,9 @@
     background-image: radial-gradient(#e0e1e5 1px, transparent 0);
     background-size: 15px 15px;
   }
+}
+
+.description {
+  margin: 16px 1px;
+  font-size: 15px;
 }

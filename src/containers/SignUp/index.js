@@ -18,7 +18,6 @@ const SignUp = ({
   integrations,
   banner,
   integrationsPreview,
-  isSecondaryLP,
 }) => {
   const data = useStaticQuery(graphql`
     query SignUp {
@@ -86,9 +85,8 @@ const SignUp = ({
     <Layout
       headerPageData={{
         ...data?.datoCmsHeader,
-        actionButtonLink: isSecondaryLP
-          ? data?.datoCmsLeadGenerationPage?.actionButtonLinkSecondary
-          : data?.datoCmsLeadGenerationPage?.actionButtonLink,
+        actionButtonLink:
+          data?.datoCmsLeadGenerationPage?.actionButtonLinkSecondary,
       }}
       footerPageData={{
         ...data?.datoCmsFooter,
@@ -96,17 +94,13 @@ const SignUp = ({
       }}
     >
       <SeoDatoCms seo={seo} />
-      <SectionHero isSecondaryLP={isSecondaryLP} />
+      <SectionHero isSecondaryLP />
       <SectionIntegrationsPreview {...integrationsPreview} />
-      <SectionHowItWorks id="howItWorks" {...howItWorks} buttonHide />
-      <SectionFeatures
-        id="features"
-        variant="signUp"
-        features={{ ...features, buttonHide: true }}
-      />
-      <SectionPrices isSecondaryLP={isSecondaryLP} />
+      <SectionHowItWorks id="howItWorks" {...howItWorks} />
+      <SectionFeatures id="features" {...features} />
+      <SectionPrices isSecondaryLP />
       <SectionIntegrations id="privacy" variant="signUp" {...integrations} />
-      <SectionBanner id="bookDemo" {...banner} withForm={!isSecondaryLP} />
+      <SectionBanner id="bookDemo" {...banner} />
     </Layout>
   )
 }

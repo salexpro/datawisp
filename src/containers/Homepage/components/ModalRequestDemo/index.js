@@ -2,7 +2,7 @@ import React from 'react'
 import { Modal, Form, Button, Spinner } from 'react-bootstrap'
 import { useForm } from 'react-hook-form'
 import { useForm as useFormSpree } from '@formspree/react'
-import cn from 'classnames'
+import cn from 'clsx'
 import { useCookies } from 'react-cookie'
 
 import { GOOGLE_TAG_KEY, EMAIL_RULE, TOAST_TITLE } from '~constants'

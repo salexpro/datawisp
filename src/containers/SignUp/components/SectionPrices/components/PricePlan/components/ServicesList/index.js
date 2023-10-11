@@ -1,5 +1,5 @@
 import React from 'react'
-import cn from 'classnames'
+import cn from 'clsx'
 
 import OverlayTooltip from '~components/OverlayTooltip'
 

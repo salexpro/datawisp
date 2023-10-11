@@ -10,8 +10,10 @@ const TryNowPage = ({ data }) => {
     howItWorksSectionText,
     steps,
     featuresSectionHeading,
-    featuresSectionText,
+    featuresText,
     featuresList,
+    featuresButtons,
+    featuresCaption,
     integrationsSectionHeading,
     integrationsSectionText,
     integrations,
@@ -32,13 +34,15 @@ const TryNowPage = ({ data }) => {
       }}
       features={{
         heading: featuresSectionHeading,
-        text: featuresSectionText,
-        featuresList,
+        text: featuresText,
+        items: featuresList,
+        buttons: featuresButtons,
+        caption: featuresCaption,
       }}
       integrationsPreview={{
         heading: data.datoCmsHomePage.integrationsSectionHeading,
         list: data.datoCmsHomePage.integrationsList,
-        subheading: data.datoCmsHomePage.integrationsSectionSubheading,
+        // subheading: data.datoCmsHomePage.integrationsSectionSubheading,
         buttonText: data.datoCmsHomePage.integrationsSectionButtonText,
         buttonLink: data.datoCmsHomePage.integrationsSectionButtonLink,
       }}
@@ -54,7 +58,6 @@ const TryNowPage = ({ data }) => {
         buttonText: bannerSectionButtonText,
         buttonLink: bannerSectionButtonLink,
       }}
-      isSecondaryLP
     />
   )
 }
@@ -96,28 +99,39 @@ export const query = graphql`
       }
 
       featuresSectionHeading
-      featuresSectionText {
-        value
-      }
+      featuresText
       featuresList {
         id
         heading
-        text {
-          value
-        }
+        text
         iconName
-        image {
-          format
-          url
-          gatsbyImageData(
-            width: 691
-            placeholder: NONE
-            sizes: "(max-width: 767.98px) calc(100vw - 24px * 2 - 24px * 2), (max-width: 1023.98px) calc((100vw - 40px * 2 - 16px - 24px * 2 * 2) / 2), (max-width: 1199.98px) calc((100vw - 40px * 2 - 16px * 2 - 24px * 2 * 3) / 3), (max-width: 1320px) calc((100vw - 40px * 2 - 32px * 2 - 24px * 2 * 3) / 3), 344px"
-            breakpoints: [299, 344, 448, 516, 598, 688, 897, 1056, 1382]
-            imgixParams: { fit: "crop", auto: "compress,format" }
-          )
-        }
       }
+      featuresButtons {
+        id
+        link {
+          ... on DatoCmsLinkInternal {
+            url
+            internal {
+              type
+            }
+          }
+          ... on DatoCmsLinkExternal {
+            url
+            internal {
+              type
+            }
+          }
+          ... on DatoCmsLinkAnchor {
+            anchor
+            internal {
+              type
+            }
+          }
+        }
+        label
+        variant
+      }
+      featuresCaption
 
       integrationsSectionHeading
       integrationsSectionText {
@@ -188,7 +202,6 @@ export const query = graphql`
         }
         name
       }
-      integrationsSectionSubheading
       integrationsSectionButtonText
       integrationsSectionButtonLink {
         url

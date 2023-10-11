@@ -3,11 +3,22 @@
 .section {
   display: grid;
   justify-items: center;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 263px;
+    right: 0;
+    background: linear-gradient(180deg, rgba($white, 0) 0%, $white 100%);
+    z-index: 1;
+  }
 
   @include b-up(xl) {
-    row-gap: 24px;
     padding-top: 40px;
-    padding-bottom: 40px;
+    padding-bottom: 48px;
   }
 
   @include b-d(xl) {
@@ -24,9 +35,8 @@
   }
 
   &_title {
-    font-size: 14px;
-    line-height: 1.286;
-    color: $gray-400;
+    font-size: 18px;
+    line-height: 1.334;
   }
 
   &_list {
@@ -37,6 +47,7 @@
     padding: 0;
     margin: 0;
     list-style: none;
+    margin-top: 26px;
 
     @include b-up(md) {
       gap: 8px;
@@ -61,13 +72,12 @@
   &_item {
     display: grid;
     grid-auto-flow: column;
-    column-gap: 8px;
-    align-items: center;
     justify-content: start;
-    padding: 12px 16px 12px 12px;
-    font-weight: 500;
+    padding: 8px 16px 8px 8px;
+    align-items: center;
+    gap: 4px;
     background-color: $gray-100;
-    border-radius: 16px;
+    border-radius: 40px;
 
     @include b-btw(md, xl) {
       padding-top: 8px;
@@ -90,10 +100,12 @@
   &_cta {
     display: grid;
     row-gap: 12px;
-    justify-items: center;
-  }
-
-  &_subtitle {
-    color: $gray-400;
+    width: 100%;
+    margin-top: -24px;
+    z-index: 2;
+    max-width: 200px;
+    :global(.btn) {
+      backdrop-filter: blur(8px);
+    }
   }
 }

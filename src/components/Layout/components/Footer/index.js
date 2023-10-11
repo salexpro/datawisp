@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import { Button, Container } from 'react-bootstrap'
 import PropTypes from 'prop-types'
-import cn from 'classnames'
+import cn from 'clsx'
 
 import Menu from '../NavMenu'
 import LogoLink from '../LogoLink'

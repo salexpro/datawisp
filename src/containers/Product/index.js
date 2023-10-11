@@ -7,7 +7,7 @@ import SeoDatoCms from '~components/SeoDatoCms'
 import SectionIntegrations from '~components/SectionIntegrations'
 
 import SectionHero from './component/SectionHero'
-import SectionFeatures from './component/SectionFeatures'
+import SectionFeatures from '../../components/SectionFeatures'
 import SectionFunctions from './component/SectionFunctions'
 
 const Product = (props) => {
@@ -28,7 +28,7 @@ const Product = (props) => {
       <SeoDatoCms seo={seo} />
       <SectionHero {...hero} />
       <SectionIntegrations {...integrations} />
-      <SectionFeatures {...features} />
+      <SectionFeatures {...features} variant="long" />
       <SectionFunctions {...functions} />
       {!bannerHide && <SectionBanner {...bannerProps} />}
     </Layout>

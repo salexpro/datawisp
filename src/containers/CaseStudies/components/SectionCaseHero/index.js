@@ -2,7 +2,7 @@ import React from 'react'
 import { Container } from 'react-bootstrap'
 import { StructuredText } from 'react-datocms'
 import PropTypes from 'prop-types'
-import cn from 'classnames'
+import cn from 'clsx'
 
 import ImageFormat from '~components/ImageFormat'
 

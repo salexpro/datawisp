@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Dropdown } from 'react-bootstrap'
 import { useLocation } from '@reach/router'
-import cn from 'classnames'
+import cn from 'clsx'
 
 import Icon from '~components/Icon'
 

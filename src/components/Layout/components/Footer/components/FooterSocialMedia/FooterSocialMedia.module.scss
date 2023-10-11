@@ -18,7 +18,7 @@
   }
 
   &:not(:hover, :focus) svg {
-    color: #7e7e7e;
+    color: $gray-400;
   }
 
   &:hover {

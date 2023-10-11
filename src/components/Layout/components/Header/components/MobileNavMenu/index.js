@@ -2,14 +2,14 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { useLocation } from '@reach/router'
 import { Offcanvas, Button, Accordion } from 'react-bootstrap'
-import cn from 'classnames'
+import cn from 'clsx'
 
 import NavLink from '~components/Layout/components/NavLink'
 
 import BtnAnimatedBurger from './components/BtnAnimatedBurger'
 
 const MobileNavMenu = (props) => {
-  const { btnLink, navItems, ...rest } = props
+  const { btnLink, navItems, utm, ...rest } = props
   const [showMenu, setShowMenu] = useState(false)
   const [activeAnchorLink, setActiveAnchorLink] = useState('')
 
@@ -34,7 +34,7 @@ const MobileNavMenu = (props) => {
       <Offcanvas show={showMenu} placement="top" backdrop={false}>
         <Offcanvas.Body>
           <Button
-            href={btnLink?.url}
+            href={`${btnLink?.url}${utm ? `?${utm}` : ''}`}
             rel={btnLink?.rel}
             target={btnLink?.target}
             variant="primary"

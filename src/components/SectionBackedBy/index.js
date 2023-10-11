@@ -1,7 +1,7 @@
 import React from 'react'
 import Marquee from 'react-fast-marquee'
 import { Container } from 'react-bootstrap'
-import cn from 'classnames'
+import cn from 'clsx'
 
 import { BAKED_BY_MOCKS } from './mocks'
 import * as s from './SectionBackedBy.module.scss'

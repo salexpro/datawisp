@@ -12,7 +12,7 @@ const ProductPage = ({ data }) => {
     heroButtonPrimaryLink,
     heroButtonSecond,
     featuresSectionHeading,
-    featuresSectionText,
+    featuresText,
     featuresSectionFeatures,
     integrationsSectionHeading,
     integrationsSectionText,
@@ -42,7 +42,7 @@ const ProductPage = ({ data }) => {
       }}
       features={{
         heading: featuresSectionHeading,
-        text: featuresSectionText,
+        text: featuresText,
         items: featuresSectionFeatures,
       }}
       integrations={{
@@ -111,9 +111,7 @@ export const query = graphql`
       }
 
       featuresSectionHeading
-      featuresSectionText {
-        value
-      }
+      featuresText
       featuresSectionFeatures {
         id
         iconName

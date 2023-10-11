@@ -82,7 +82,10 @@
         border: 1px solid $gray-300;
         border-radius: 50%;
         box-shadow: 0 6px 44px rgba(0, 0, 0, 10%);
-        transition: visibility 250ms, opacity 250ms, background-color 250ms;
+        transition:
+          visibility 250ms,
+          opacity 250ms,
+          background-color 250ms;
 
         @include b-d(md) {
           top: calc(50% - 36px);

@@ -117,7 +117,8 @@ button {
 
       inset: -1px;
       opacity: 0;
-      transition: opacity 0.25s ease-in-out,
+      transition:
+        opacity 0.25s ease-in-out,
         background-position 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86);
     }
 

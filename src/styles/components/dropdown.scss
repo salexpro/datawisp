@@ -37,7 +37,9 @@
 
     &-icon {
       filter: grayscale(1);
-      transition: transform 250ms, filter 250ms;
+      transition:
+        transform 250ms,
+        filter 250ms;
     }
 
     &.show {
@@ -53,7 +55,9 @@
     border-radius: 8px;
     box-shadow: 0 7px 22px rgba($black, 0.2);
     opacity: 0;
-    transition: opacity 0.25s, visibility 0.25s;
+    transition:
+      opacity 0.25s,
+      visibility 0.25s;
 
     &.show {
       visibility: visible;

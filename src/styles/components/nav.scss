@@ -112,7 +112,9 @@
       font-size: 15px;
       line-height: 1.467;
       text-align: center;
-      transition: box-shadow 250ms, font-weight 250ms;
+      transition:
+        box-shadow 250ms,
+        font-weight 250ms;
 
       &:hover,
       &:focus {

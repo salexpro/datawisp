@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import cn from 'classnames'
+import cn from 'clsx'
 import { parse } from 'svg-parser'
 
 import svgSrc from '~components/Icon/icons.svg'

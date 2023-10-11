@@ -3,7 +3,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { StructuredText } from 'react-datocms'
 import PropTypes from 'prop-types'
 import { Badge } from 'react-bootstrap'
-import cn from 'classnames'
+import cn from 'clsx'
 
 import Icon from '~components/Icon'
 

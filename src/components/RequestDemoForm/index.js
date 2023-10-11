@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Button, Form, Spinner, Toast, ToastContainer } from 'react-bootstrap'
 import { useForm } from 'react-hook-form'
-import cn from 'classnames'
+import cn from 'clsx'
 import { useForm as useFormSpree } from '@formspree/react'
 import { graphql, useStaticQuery } from 'gatsby'
 

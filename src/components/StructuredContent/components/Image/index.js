@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import cn from 'classnames'
+import cn from 'clsx'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import * as s from './Image.module.scss'
 

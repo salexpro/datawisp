@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Container } from 'react-bootstrap'
-import cn from 'classnames'
+import cn from 'clsx'
 import { StructuredText } from 'react-datocms'
 
 import RoadmapItem from './components/RoadmapItem'
