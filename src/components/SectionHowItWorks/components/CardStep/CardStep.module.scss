@@ -1,14 +1,6 @@
 @import '~styles/mixins';
 
 .title {
-  @include b-d(lg) {
-    font-size: 12px;
-  }
-
-  @include b-d(md) {
-    font-size: 14px;
-  }
-
   &::before {
     color: $primary;
     content: 'Step ' counter(step) ': ';
@@ -25,11 +17,6 @@
   isolation: isolate;
   border-radius: 12px;
 
-  @include b-d(lg) {
-    margin-top: 12px;
-    border-radius: 10px;
-  }
-
   &::after {
     position: absolute;
     inset: 0;
@@ -43,4 +30,8 @@
 .description {
   margin: 16px 1px;
   font-size: 15px;
+
+  @include b-d(lg) {
+    text-align: left;
+  }
 }

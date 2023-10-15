@@ -56,7 +56,11 @@
     }
 
     @include b-d(md) {
+      grid-template-columns: 160px auto;
       column-gap: 35px;
+      min-height: 80px;
+      padding-top: 16px;
+      padding-bottom: 16px;
     }
 
     &__btnPrimary {
@@ -89,6 +93,7 @@
   }
 
   @include b-d(md) {
+    top: 16px;
     right: 24px;
   }
 }

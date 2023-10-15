@@ -19,9 +19,6 @@ const IndexPage = ({ data }) => {
     howItWorksSectionHeading,
     howItWorksSectionText,
     howItWorksSectionImage,
-    howItWorksButtonText,
-    howItWorksButtonLink,
-    howItWorksButtonHide,
     steps,
     featuresHeading,
     featuresText,
@@ -72,9 +69,6 @@ const IndexPage = ({ data }) => {
         heading: howItWorksSectionHeading,
         text: howItWorksSectionText,
         image: howItWorksSectionImage,
-        buttonText: howItWorksButtonText,
-        buttonLink: howItWorksButtonLink.url,
-        buttonHide: howItWorksButtonHide,
         steps,
       }}
       features={{
@@ -191,6 +185,7 @@ export const query = graphql`
           gatsbyImageData(
             sizes: "(max-width: 767.98px) 300px, 400px"
             placeholder: BLURRED
+            forceBlurhash: true
             imgixParams: { fit: "crop", auto: "compress,format" }
           )
         }
@@ -198,11 +193,6 @@ export const query = graphql`
           value
         }
       }
-      howItWorksButtonText
-      howItWorksButtonLink {
-        url
-      }
-      howItWorksButtonHide
 
       featuresHeading
       featuresText

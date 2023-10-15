@@ -42,7 +42,7 @@ export const query = graphql`
     }
 
     allDatoCmsArticle(
-      sort: { fields: meta___createdAt, order: DESC }
+      sort: { meta: { createdAt: DESC } }
       filter: { postType: { eq: "blogpost" } }
     ) {
       nodes {

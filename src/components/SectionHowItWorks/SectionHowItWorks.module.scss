@@ -1,85 +1,12 @@
 @import '~styles/mixins';
 
-.gridHeading {
-  display: grid;
-  justify-content: center;
-
-  @include b-up(lg) {
-    row-gap: 12px;
-  }
-
-  @include b-d(lg) {
-    row-gap: 8px;
-  }
-
-  p {
-    @include b-up(lg) {
-      max-width: 616px;
-    }
-
-    @include b-d(lg) {
-      max-width: 100%;
-    }
-  }
-
-  &__heading {
-  }
-}
-
 .sectionHowItWorks {
+  padding: 80px 0 54px;
   text-align: center;
-  @include b-up(lg) {
-    padding: 80px 0 54px;
-  }
-
-  @include b-d(lg) {
-    padding: 64px 0;
-  }
-
-  // &.home {
-  //   background-color: $gray-100;
-
-  //   .gridHeading {
-  //     p {
-  //       @include b-up(lg) {
-  //         max-width: 674px;
-  //       }
-
-  //       @include b-btw(md, lg) {
-  //         max-width: 475px;
-  //       }
-  //     }
-  //   }
-
-  //   @include b-up(lg) {
-  //     margin-top: 80px;
-  //   }
-
-  //   @include b-d(lg) {
-  //     margin-top: 52px;
-  //   }
-  // }
-
-  // &.hasButton {
-  //   .gridHeading {
-  //     @include b-up(md) {
-  //       grid-template-areas:
-  //         'heading heaidng'
-  //         'paragraph button';
-  //       grid-template-columns: 1fr auto;
-  //     }
-
-  //     @include b-d(md) {
-  //       grid-template-areas:
-  //         'heading'
-  //         'paragraph'
-  //         'button';
-  //     }
-  //   }
-  // }
 
   @include b-d(md) {
-    overflow: hidden;
+    padding-top: 48px;
+    padding-bottom: 52px;
   }
 
   &__stepsWrapper {
@@ -90,12 +17,30 @@
     counter-reset: step;
 
     @include b-d(lg) {
-      gap: 24px;
+      grid-template-columns: minmax(100px, 400px);
+      gap: 20px;
+      justify-content: center;
+      margin-top: 58px;
     }
 
     @include b-d(md) {
-      grid-template-columns: 1fr;
-      margin-top: 48px;
+      margin-top: 36px;
+    }
+  }
+}
+
+.gridHeading {
+  display: grid;
+  row-gap: 12px;
+  justify-content: center;
+
+  p {
+    @include b-up(lg) {
+      max-width: 616px;
+    }
+
+    @include b-d(lg) {
+      max-width: 100%;
     }
   }
 }

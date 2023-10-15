@@ -6,15 +6,15 @@
   position: relative;
   z-index: $zindex-dropdown + 5;
   box-sizing: content-box;
-  width: 24px;
-  height: 24px;
-  padding: 12px;
+  width: 30px;
+  height: 30px;
+  padding: 9px;
   background-color: $gray-100;
   border-radius: 8px;
   transition: background-color 0.25s;
 
   &:hover,
-  &:focus {
+  &:focus-visible {
     background-color: darken($gray-100, 6%);
   }
 

@@ -7,6 +7,10 @@
   max-width: 1110px;
   padding-top: 48px;
   padding-bottom: 48px;
+
+  @include b-d(lg) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .chevron {
@@ -28,22 +32,31 @@
   transition-duration: 0.2s;
   transition-property: box-shadow, background-color;
 
-  &:hover,
-  &:focus-visible {
-    background-color: $gray-100;
-    box-shadow: 0 0 0 1px $gray-100;
-
-    .chevron {
-      color: $gray-400;
-      transform: translateX(0);
-    }
+  @include b-o(md) {
+    margin: 0 40px;
   }
+
+  // &:hover,
+  // &:focus-visible {
+  //   background-color: $gray-100;
+  //   box-shadow: 0 0 0 1px $gray-100;
+
+  //   .chevron {
+  //     color: $gray-400;
+  //     transform: translateX(0);
+  //   }
+  // }
 
   &__top {
     display: grid;
     grid-template-columns: auto 1fr auto;
     gap: 16px;
     align-items: center;
+  }
+
+  p {
+    font-size: 15px;
+    line-height: 1.467;
   }
 }
 

@@ -19,6 +19,7 @@ const NavLink = ({
   isSubLink,
   onClick,
   onAnchorClick,
+  id,
   ...rest
 }) => {
   const { pathname } = useLocation()
