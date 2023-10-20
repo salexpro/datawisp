@@ -236,6 +236,7 @@ export const query = graphql`
       roadmapPhases {
         id
         variant
+        title
         heading
         listLeft {
           value

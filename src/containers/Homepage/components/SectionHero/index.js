@@ -39,7 +39,7 @@ const SectionHero = (props) => {
 
   const handeRequestDemo = () => {
     gtagReportConversion(cookies)
-    setShowRequestDemoModal(true)
+    // setShowRequestDemoModal(true)
   }
 
   return (
@@ -51,7 +51,13 @@ const SectionHero = (props) => {
             <StructuredText data={text.value} />
           </div>
           <div className={cn('btn-group', s.buttons)}>
-            <Button variant="primary" onClick={handeRequestDemo}>
+            <Button
+              variant="primary"
+              as="a"
+              target="_blank"
+              href="https://app.datawisp.io/"
+              onClick={handeRequestDemo}
+            >
               {button.text}
             </Button>
           </div>

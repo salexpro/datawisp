@@ -6,13 +6,15 @@ import { StructuredText } from 'react-datocms'
 import * as s from './RoadmapItem.module.scss'
 
 const RoadmapItem = (props) => {
-  const { variant, heading, listLeft, listRight, className, ...rest } = props
+  const { variant, title, heading, listLeft, listRight, className, ...rest } =
+    props
 
   return (
     <div
       {...rest}
       className={cn(s.roadmapItem, { [s[variant]]: variant }, className)}
     >
+      <p className={s.title}>{title}</p>
       <h3 className={cn(s.heading, 'h5')}>{heading}</h3>
       <StructuredText data={listLeft.value} />
       <StructuredText data={listRight.value} />

@@ -13,7 +13,7 @@
 .roadmapItem {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, calc(50% - 16px));
   grid-auto-rows: min-content;
   gap: 24px 32px;
   padding: 24px;
@@ -40,7 +40,8 @@
   }
 
   @include b-up(lg) {
-    margin-left: 16px;
+    margin-right: 8px;
+    margin-left: 8px;
   }
 
   @include b-d(md) {
@@ -48,7 +49,7 @@
     gap: 8px;
   }
 
-  &::before {
+  .title {
     position: absolute;
     bottom: 100%;
     padding: 6px 16px;
@@ -56,7 +57,6 @@
     font-weight: $font-weight-medium;
     line-height: 1.3;
     color: $white;
-    content: 'Phase ' counter(phase);
     counter-increment: phase;
     border-radius: 8px 8px 0 0;
   }
@@ -65,7 +65,7 @@
     color: #191919;
     background-color: $gray-300;
 
-    &::before {
+    .title {
       color: $gray-900;
       background-color: #c9c9c9;
     }
@@ -80,16 +80,16 @@
   &.purple {
     background-color: $primary;
 
-    &::before {
+    .title {
       background-color: saturate(darken($primary, 12%), 12%);
     }
   }
 
   &.pink {
     color: $white;
-    background-color: darken($pink, 5);
+    background-color: darken($pink, 2);
 
-    &::before {
+    .title {
       background-color: darken($pink, 12);
     }
   }

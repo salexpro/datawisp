@@ -40,7 +40,7 @@
     $gray-200,
     $gray-200 1px,
     transparent 1px,
-    transparent 1px calc(25% - 1px)
+    transparent 1px calc(25% - 0.2px)
   );
 
   @include b-d(lg) {
@@ -69,14 +69,14 @@
     background: linear-gradient(
       to right,
       $gray-200 1px,
-      transparent 1px calc(25% - 1px),
-      $gray-200 calc(25% - 1px) 25%,
-      transparent 25% calc(50% - 1px),
-      $gray-200 calc(50% - 1px) 50%,
-      transparent 50% calc(75% - 1px),
-      $gray-200 calc(75% - 1px) 75%,
-      transparent 75% calc(100% - 1px),
-      $gray-200 calc(100% - 1px) 100%
+      transparent 1px calc(25% - 0.2px),
+      $gray-200 calc(25% - 0.2px) 25%,
+      transparent 25% calc(50% - 0.2px),
+      $gray-200 calc(50% - 0.2px) 50%,
+      transparent 50% calc(75% - 0.2px),
+      $gray-200 calc(75% - 0.2px) 75%,
+      transparent 75% calc(100% - 0.2px),
+      $gray-200 calc(100% - 0.2px) 100%
     );
 
     @include b-d(md) {
