@@ -88,8 +88,10 @@ const SectionHero = (props) => {
             <Button
               variant="primary"
               as="a"
-              target="_blank"
-              href="https://app.datawisp.io/"
+              id={button.linkId}
+              target={button.target}
+              rel={button.rel || null}
+              href={`${button.url}${utm ? `?${utm}` : ''}`}
               onClick={handeRequestDemo}
             >
               {button.text}

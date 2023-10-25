@@ -9,6 +9,7 @@ import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 import { useLocation } from '@reach/router'
+import { LiveChatWidget } from '@livechat/widget-react'
 
 import CookieBanner from '~components/CookieBanner'
 import Metrics from '~components/Metrics'
@@ -76,6 +77,7 @@ const Layout = ({ children, headerPageData, footerPageData }) => {
       <ToastManager />
       <CookieBanner />
       <Metrics />
+      <LiveChatWidget license="16023825" group="0" />
     </>
   )
 }
