@@ -5,6 +5,7 @@ import Homepage from '~containers/Homepage'
 
 const IndexPage = ({ data }) => {
   const {
+    heroMessage,
     heroSectionHeading,
     heroSectionText,
     heroSectionImage,
@@ -49,6 +50,7 @@ const IndexPage = ({ data }) => {
     <Homepage
       seo={seo}
       hero={{
+        message: heroMessage,
         heading: heroSectionHeading,
         text: heroSectionText,
         caption: heroSectionCaption,
@@ -118,6 +120,9 @@ export const query = graphql`
           }
         }
       }
+      heroMessage {
+        value
+      }
       heroSectionHeading
       heroSectionText {
         value
@@ -127,11 +132,11 @@ export const query = graphql`
         format
         url
         gatsbyImageData(
-          width: 1030
+          width: 1300
           sizes: "(max-width: 767.98px) calc(100vw - 24px * 2), (max-width: 1023.98px) 682px, (max-width: 1199.98px) 718px, 1030px"
           breakpoints: [327, 655, 682, 718, 982, 1140, 1363, 1435, 1794]
           placeholder: NONE
-          imgixParams: { fit: "crop", auto: "compress,format" }
+          imgixParams: { fit: "crop", auto: "compress,format", q: 100 }
         )
       }
 

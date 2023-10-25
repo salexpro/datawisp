@@ -9,9 +9,9 @@ import * as s from './SectionPersonas.module.scss'
 const SectionPersonas = ({ personas }) => {
   return (
     <Container as="section" className={s.section}>
-      {personas.map(({ iconName, title, description /* , link */ }) => (
+      {personas.map(({ id, iconName, title, description /* , link */ }) => (
         // <Link to={link?.url} className={s.persona}>
-        <div className={s.persona}>
+        <div className={s.persona} key={id}>
           <div className={s.persona__top}>
             <Icon name={iconName} className={s.icon} />
             <h3 className="h5">{title}</h3>

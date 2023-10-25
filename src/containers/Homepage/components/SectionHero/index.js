@@ -1,5 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 import cn from 'clsx'
 import { useLocation } from '@reach/router'
@@ -16,6 +16,7 @@ import * as s from './SectionHero.module.scss'
 
 const SectionHero = (props) => {
   const {
+    message,
     heading,
     text,
     image,
@@ -33,8 +34,34 @@ const SectionHero = (props) => {
 
   const [showRequestDemoModal, setShowRequestDemoModal] = useState(false)
 
+  const sectionRef = useRef(null)
+  const requestRef = useRef(null)
+
   useEffect(() => {
     setShowRequestDemoModal(isModal)
+
+    let [currentScale, velocity] = [0.83, 0]
+    const drag = 0
+    const strength = 0.1
+
+    const zoomImage = () => {
+      const position = window.scrollY / (sectionRef.current.offsetHeight / 4)
+
+      const targetScale = Math.min(1, 0.83 + position * (1 - 0.83))
+
+      const diff = targetScale - currentScale
+
+      velocity *= drag
+      velocity += diff * strength
+      currentScale += velocity
+
+      sectionRef.current.style.setProperty('--scale', currentScale.toFixed(4))
+      requestRef.current = requestAnimationFrame(zoomImage)
+    }
+
+    requestRef.current = requestAnimationFrame(zoomImage)
+
+    return () => cancelAnimationFrame(requestRef.current)
   }, [])
 
   const handeRequestDemo = () => {
@@ -43,9 +70,16 @@ const SectionHero = (props) => {
   }
 
   return (
-    <section {...rest} className={cn(s.sectionHero, className)}>
+    <section
+      {...rest}
+      className={cn(s.sectionHero, className)}
+      ref={sectionRef}
+    >
       <Container className={s.container}>
         <div className={s.content}>
+          <div className={s.message}>
+            <StructuredText data={message.value} />
+          </div>
           <h1 className={s.heading}>{heading}</h1>
           <div className={s.lead}>
             <StructuredText data={text.value} />

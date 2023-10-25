@@ -6,12 +6,10 @@ const ImageFormat = (props) => {
   const { file, alt, ...rest } = props
   const { format, url } = file || {}
 
-  console.log()
-
   return format === 'svg' ? (
     <img {...rest} src={url} alt={alt} />
   ) : (
-    <GatsbyImage alt={alt} image={getImage(file)} width="10" {...rest} />
+    <GatsbyImage alt={alt} image={getImage(file)} {...rest} />
   )
 }
 

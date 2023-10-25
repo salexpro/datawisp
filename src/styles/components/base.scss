@@ -46,19 +46,26 @@ a {
   transition: color 200ms;
 }
 
-p > a {
-  font-weight: $font-weight-semi-bold;
-  color: transparent;
-  background: $primary-gradient;
-  background-clip: text;
-  background-size: 100% 100%;
-  transition: background 250ms;
-
-  &:hover {
+p {
+  > a,
+  > mark {
+    padding: 0;
+    font-weight: $font-weight-bold;
     color: transparent;
-    background: $primary-gradient right;
+    background: $primary-gradient;
     background-clip: text;
-    background-size: 400% 100%;
+    background-size: 100% 100%;
+    transition: background 250ms;
+  }
+
+  > a {
+    &:hover,
+    &:focus-visible {
+      color: transparent;
+      background: $primary-gradient right;
+      background-clip: text;
+      background-size: 400% 100%;
+    }
   }
 }
 

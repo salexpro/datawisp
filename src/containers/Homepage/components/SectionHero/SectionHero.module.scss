@@ -28,7 +28,15 @@
 .content {
   display: grid;
   justify-content: center;
-  padding: 73px 0;
+  padding: 73px 0 23px;
+
+  @include b-d(lg) {
+    padding: 113px 0 45px;
+  }
+
+  @include b-d(md) {
+    padding-top: 106px;
+  }
 }
 
 .imgHero {
@@ -42,9 +50,46 @@
     0 40px 24px 0 rgba(0, 0, 0, 5%),
     0 80px 40px -48px rgba(0, 0, 0, 4%),
     0 100px 80px 0 rgba(0, 0, 0, 6%);
+  // transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  // transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  transform: scale(var(--scale, 0.83));
 
   @include b-d(md) {
     border-radius: 8px;
+  }
+}
+
+.message {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  padding: 12px 20px;
+  background: $gray-100;
+  border-radius: 24px;
+  transform: translate(-50%, 0);
+  animation: reveal 600ms ease 350ms both;
+
+  @include b-up(md) {
+    white-space: nowrap;
+  }
+
+  @include b-d(md) {
+    width: calc(100% - 45px);
+    padding: 12px 15px;
+    letter-spacing: -0.03em;
+  }
+}
+
+@keyframes reveal {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 60%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0);
   }
 }
 
