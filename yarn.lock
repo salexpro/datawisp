@@ -7075,12 +7075,12 @@ gatsby-plugin-image@3.12.3:
     prop-types "^15.8.1"
 
 gatsby-plugin-mini-css-class-name@^6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-mini-css-class-name/-/gatsby-plugin-mini-css-class-name-6.0.0.tgz#2cdc71955e971cac336693009589a987fd0a836c"
-  integrity sha512-bHK7mNKTyXn/mb4KjSkFQXEE+VfW1wU/NxgxqAcfAVBZk9lgIJ+1swicLnC9KJO6IBr4MbqpTz6+IdeDpVCYRg==
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-mini-css-class-name/-/gatsby-plugin-mini-css-class-name-6.1.0.tgz#a59e350f46deea24375e2efcbfc9a365575d6120"
+  integrity sha512-RHrgJc5hvm7mKf4Nfw7jmjQiIOA2ONDu6vncoxb4RIKDOYm00nM8HlIYLMXqiityclbl532iAaxH1tqw50pWww==
   dependencies:
     lodash "^4.17.21"
-    mini-css-class-name "^0.13.2"
+    mini-css-class-name "^0.15.0"
 
 gatsby-plugin-page-creator@^5.12.3:
   version "5.12.3"
@@ -9495,10 +9495,10 @@ min-indent@^1.0.0, min-indent@^1.0.1:
   resolved "https://registry.yarnpkg.com/min-indent/-/min-indent-1.0.1.tgz#a63f681673b30571fbe8bc25686ae746eefa9869"
   integrity sha512-I9jwMn07Sy/IwOj3zVkVik2JTvgpaykDZEigL6Rx6N9LbMywwUSMtxET+7lVoDLLd3O3IXwJwvuuns8UB/HeAg==
 
-mini-css-class-name@^0.13.2:
-  version "0.13.2"
-  resolved "https://registry.yarnpkg.com/mini-css-class-name/-/mini-css-class-name-0.13.2.tgz#cd6379aef119c361a390613cc9ea3214d95296b9"
-  integrity sha512-YiWXQjuBs303ZHTi/WYnHWPFg5XkXheRoBwBBldjCGlLdM2Rw+Bkr1WQ0PkOK1KeZrO+2Go7rXD6noTL78sdaw==
+mini-css-class-name@^0.15.0:
+  version "0.15.0"
+  resolved "https://registry.yarnpkg.com/mini-css-class-name/-/mini-css-class-name-0.15.0.tgz#6ee66a8fe63d4c1924a13f48d8a663d7abda9a13"
+  integrity sha512-pHVrGgt8EXpGWapBbMRqz4pEWRQ25Rm9NnHo9Lzv/8mD3CKoEqtwWWtkRRajxgV1B620vCsFGZn3p+0dblDhZQ==
 
 mini-css-extract-plugin@1.6.2:
   version "1.6.2"
