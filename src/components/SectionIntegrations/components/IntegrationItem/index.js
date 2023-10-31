@@ -35,26 +35,24 @@ const IntegrationItem = (props) => {
       </h3>
       <StructuredText data={text.value} />
 
-      <div>
-        {!!supportsList?.length && (
-          <>
-            <h4 className={s.supportedHeading}>Supported</h4>
-            <ul className={s.supportedList}>
-              {supportsList.map(({ icon, name }) => (
-                <li key={name} className={s.supportedItem}>
-                  <ImageFormat
-                    alt={icon.alt || name}
-                    file={icon}
-                    width={32}
-                    height={32}
-                  />
-                  {name}
-                </li>
-              ))}
-            </ul>
-          </>
-        )}
-      </div>
+      {!!supportsList?.length && (
+        <div>
+          <h4 className={s.supportedHeading}>Supported</h4>
+          <ul className={s.supportedList}>
+            {supportsList.map(({ icon, name }) => (
+              <li key={name} className={s.supportedItem}>
+                <ImageFormat
+                  alt={icon.alt || name}
+                  file={icon}
+                  width={32}
+                  height={32}
+                />
+                {name}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   )
 }

@@ -9,7 +9,7 @@ import Feature from './components/Feature'
 import * as s from './SectionFeatures.module.scss'
 
 const SectionFeatures = (props) => {
-  const { heading, text, items, buttons, caption, variant } = props
+  const { heading, text, items, buttons, caption, variant, utm } = props
 
   return (
     <Container
@@ -26,7 +26,9 @@ const SectionFeatures = (props) => {
           <Feature key={item.id} {...item} variant={variant} />
         ))}
       </div>
-      {buttons && <ButtonGroup className={s.buttons} data={buttons} />}
+      {buttons && (
+        <ButtonGroup className={s.buttons} data={buttons} utm={utm} />
+      )}
       {caption && <span className={s.caption}>{caption}</span>}
     </Container>
   )

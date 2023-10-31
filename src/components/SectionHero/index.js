@@ -11,7 +11,7 @@ import ImageFormat from '~components/ImageFormat'
 import { GOOGLE_TAG_KEY } from '~constants'
 import { gtagReportConversion } from '~utils/analytics'
 
-import ModalRequestDemo from '../ModalRequestDemo'
+import ModalRequestDemo from '../../containers/Homepage/components/ModalRequestDemo'
 import * as s from './SectionHero.module.scss'
 
 const SectionHero = (props) => {
@@ -77,9 +77,11 @@ const SectionHero = (props) => {
     >
       <Container className={s.container}>
         <div className={s.content}>
-          <div className={s.message}>
-            <StructuredText data={message.value} />
-          </div>
+          {message && (
+            <div className={s.message}>
+              <StructuredText data={message.value} />
+            </div>
+          )}
           <h1 className={s.heading}>{heading}</h1>
           <div className={s.lead}>
             <StructuredText data={text.value} />
@@ -107,11 +109,13 @@ const SectionHero = (props) => {
         />
       </Container>
 
-      <ModalRequestDemo
-        show={showRequestDemoModal}
-        onHide={setShowRequestDemoModal}
-        {...popup}
-      />
+      {popup && (
+        <ModalRequestDemo
+          show={showRequestDemoModal}
+          onHide={setShowRequestDemoModal}
+          {...popup}
+        />
+      )}
     </section>
   )
 }

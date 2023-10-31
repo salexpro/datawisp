@@ -150,11 +150,10 @@ export const query = graphql`
         videoUrl
         image {
           gatsbyImageData(
-            aspectRatio: 1.686
-            placeholder: BLURRED
+            placeholder: NONE
             sizes: "(max-width: 767.98px) calc(100vw - 24px * 2 - 16 * 2), (max-width: 1199.98px) calc((100vw - 40px * 2 - 24px) / 2), 344px"
             breakpoints: [295, 687, 885, 1300]
-            imgixParams: { fit: "crop", auto: "compress,format" }
+            imgixParams: { fit: "crop", auto: "format" }
           )
         }
       }

@@ -19,7 +19,6 @@ const IndexPage = ({ data }) => {
     personaItems,
     howItWorksSectionHeading,
     howItWorksSectionText,
-    howItWorksSectionImage,
     steps,
     featuresHeading,
     featuresText,
@@ -70,7 +69,6 @@ const IndexPage = ({ data }) => {
       howItWorks={{
         heading: howItWorksSectionHeading,
         text: howItWorksSectionText,
-        image: howItWorksSectionImage,
         steps,
       }}
       features={{
@@ -159,9 +157,9 @@ export const query = graphql`
         url
         gatsbyImageData(
           width: 1300
+          placeholder: NONE
           sizes: "(max-width: 767.98px) calc(100vw - 24px * 2), (max-width: 1023.98px) 682px, (max-width: 1199.98px) 718px, 1030px"
           breakpoints: [327, 655, 682, 718, 982, 1140, 1363, 1435, 1794]
-          forceBlurhash: true
           imgixParams: { fit: "crop", auto: "compress,format", q: 100 }
         )
       }

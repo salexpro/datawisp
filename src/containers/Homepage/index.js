@@ -3,10 +3,10 @@ import React from 'react'
 import SeoDatoCms from '~components/SeoDatoCms'
 import SectionHowItWorks from '~components/SectionHowItWorks'
 import SectionFeatures from '~components/SectionFeatures'
+import SectionHero from '~components/SectionHero'
+import SectionIntegrationsPreview from '~components/SectionIntegrationsPreview'
 import Layout from '../Layout'
 
-import SectionHero from './components/SectionHero'
-import SectionIntegrationsPreview from '../../components/SectionIntegrationsPreview'
 import SectionPersonas from './components/SectionPersonas'
 import SectionRoadmap from './components/SectionRoadmap'
 

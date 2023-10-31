@@ -1,18 +1,19 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 
+import Layout from '~containers/Layout'
 import SeoDatoCms from '~components/SeoDatoCms'
+import SectionHero from '~components/SectionHero'
 import SectionHowItWorks from '~components/SectionHowItWorks'
 import SectionFeatures from '~components/SectionFeatures'
 import SectionIntegrations from '~components/SectionIntegrations'
 import SectionBanner from '~components/SectionBanner'
 import SectionIntegrationsPreview from '~components/SectionIntegrationsPreview'
-import Layout from '../Layout'
-import SectionHero from './components/SectionHero'
 import SectionPrices from './components/SectionPrices'
 
 const SignUp = ({
   seo,
+  hero,
   howItWorks,
   features,
   integrations,
@@ -94,7 +95,7 @@ const SignUp = ({
       }}
     >
       <SeoDatoCms seo={seo} />
-      <SectionHero isSecondaryLP />
+      <SectionHero {...hero} />
       <SectionIntegrationsPreview {...integrationsPreview} />
       <SectionHowItWorks id="howItWorks" {...howItWorks} />
       <SectionFeatures id="features" {...features} />

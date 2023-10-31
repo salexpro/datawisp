@@ -27,7 +27,7 @@
   }
 
   &__btn {
-    padding-bottom: 17px;
+    padding-bottom: 16px;
     margin-top: 27px;
   }
 }
@@ -55,9 +55,6 @@
   }
 
   &__description {
-    justify-self: center;
-    max-width: 354px;
-
     @include b-up(lg) {
       margin-top: 12px;
     }
@@ -90,17 +87,9 @@
   }
 
   &__trialText {
-    font-size: 15px;
+    font-size: 12px;
     line-height: 1.467;
     color: $gray-400;
-
-    @include b-up(md) {
-      margin-top: 15px;
-    }
-
-    @include b-d(md) {
-      margin-top: 23px;
-    }
   }
 
   &__priceList {

@@ -78,6 +78,11 @@
   }
 }
 
+.text {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
 .featuresWrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

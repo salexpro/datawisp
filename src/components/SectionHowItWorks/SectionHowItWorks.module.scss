@@ -33,14 +33,4 @@
   display: grid;
   row-gap: 12px;
   justify-content: center;
-
-  p {
-    @include b-up(lg) {
-      max-width: 616px;
-    }
-
-    @include b-d(lg) {
-      max-width: 100%;
-    }
-  }
 }
