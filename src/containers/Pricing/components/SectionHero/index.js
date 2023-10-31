@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container, Button } from 'react-bootstrap'
 
-import Icon from '~components/Icon'
+import Icon from '~components/ui/Icon'
 
 import * as s from './SectionHero.module.scss'
 

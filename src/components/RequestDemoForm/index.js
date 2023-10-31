@@ -7,7 +7,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 
 import { addToastToStack } from '~components/ToastManager'
 import { EMAIL_RULE, TOAST_TITLE } from '~constants'
-import Icon from '~components/Icon'
+import Icon from '~components/ui/Icon'
 import useMatchMedia from '~hooks/useMatchMedia'
 
 const RequestDemoForm = ({ id, className, variant, handleMessage }) => {

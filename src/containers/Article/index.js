@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 
-import Layout from '~components/Layout'
 import StructuredContent from '~components/StructuredContent'
+import Layout from '../Layout'
 
 // import SectionRelatedArticles from './components/SectionRelatedArticles'
 // import SectionRelatedCases from './components/SectionRelatedCases'

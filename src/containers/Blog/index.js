@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Layout from '~components/Layout'
 import SeoDatoCms from '~components/SeoDatoCms'
+import Layout from '../Layout'
 
 import BlogTabs from './components/BlogTabs'
 import BlogSection from './components/BlogSection'

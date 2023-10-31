@@ -4,7 +4,7 @@ import cn from 'clsx'
 import { StructuredText } from 'react-datocms'
 
 import ImageFormat from '~components/ImageFormat'
-import Icon from '~components/Icon'
+import Icon from '~components/ui/Icon'
 
 import * as s from './IntegrationItem.module.scss'
 
@@ -29,13 +29,11 @@ const IntegrationItem = (props) => {
         className
       )}
     >
-      <div className={s.integrationHeading}>
-        <span className={s.iconWrapper}>
-          <Icon name={iconName} size={20} />
-        </span>
-        <h4 className={s.heading}>{heading}</h4>
-        <StructuredText data={text.value} />
-      </div>
+      <h3 className={cn('h5', s.heading)}>
+        <Icon name={iconName} size={24} />
+        {heading}
+      </h3>
+      <StructuredText data={text.value} />
 
       <div>
         {!!supportsList?.length && (
@@ -47,8 +45,8 @@ const IntegrationItem = (props) => {
                   <ImageFormat
                     alt={icon.alt || name}
                     file={icon}
-                    width={24}
-                    height={24}
+                    width={32}
+                    height={32}
                   />
                   {name}
                 </li>

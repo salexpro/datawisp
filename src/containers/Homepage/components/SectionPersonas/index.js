@@ -2,7 +2,7 @@ import React from 'react'
 // import { Link } from 'gatsby'
 import { Container } from 'react-bootstrap'
 import { StructuredText } from 'react-datocms'
-import Icon from '~components/Icon'
+import Icon from '~components/ui/Icon'
 
 import * as s from './SectionPersonas.module.scss'
 

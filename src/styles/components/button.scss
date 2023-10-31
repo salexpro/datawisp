@@ -2,10 +2,10 @@ button {
   display: block;
   padding: 0;
   color: inherit;
+  appearance: none;
   background: none;
   border: 0;
   outline: none;
-  appearance: none;
 }
 
 %pseudo {
@@ -34,9 +34,15 @@ button {
   white-space: nowrap;
 
   &-group {
-    display: inline-grid;
-    grid-auto-flow: column;
-    column-gap: 16px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 240px));
+    gap: 16px;
+    justify-content: center;
+    width: 100%;
+
+    @include b-d(md) {
+      grid-auto-flow: row;
+    }
   }
 
   // Variant: primary

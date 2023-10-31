@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import cn from 'clsx'
 import { parse } from 'svg-parser'
 
-import svgSrc from '~components/Icon/icons.svg'
-import Icon from '~components/Icon'
+import svgSrc from '~components/ui/Icon/icons.svg'
+import Icon from '~components/ui/Icon'
 
 import * as style from './SVGSprite.module.scss'
 

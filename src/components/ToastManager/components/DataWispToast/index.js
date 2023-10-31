@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { Toast } from 'react-bootstrap'
 import cn from 'clsx'
 
-import Icon from '~components/Icon'
+import Icon from '~components/ui/Icon'
 
 import { EVENT_KEYS } from '../../constants'
 import { events } from '../../api'

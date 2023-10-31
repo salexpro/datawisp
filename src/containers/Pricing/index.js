@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Layout from '~components/Layout'
 import SeoDatoCms from '~components/SeoDatoCms'
+import Layout from '../Layout'
 
 import SectionHero from './components/SectionHero'
 import PlansComparison from './components/PlansComparison'

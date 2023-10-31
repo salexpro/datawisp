@@ -1,36 +1,25 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import Layout from '~components/Layout'
-import SectionBanner from '~components/SectionBanner'
 import SeoDatoCms from '~components/SeoDatoCms'
 import SectionIntegrations from '~components/SectionIntegrations'
 
-import SectionHero from './component/SectionHero'
-import SectionFeatures from '../../components/SectionFeatures'
-import SectionFunctions from './component/SectionFunctions'
+import SectionFeatures from '~components/SectionFeatures'
+import Layout from '../Layout'
+import SectionHero from './components/SectionHero'
+import SectionFunctions from './components/SectionFunctions'
 
 const Product = (props) => {
-  const {
-    hero,
-    features,
-    integrations,
-    functions,
-    banner,
-    className,
-    seo,
-    ...rest
-  } = props
-  const { hide: bannerHide, ...bannerProps } = banner
+  const { hero, features, integrations, functions, className, seo, ...rest } =
+    props
 
   return (
     <Layout {...rest} className={className}>
       <SeoDatoCms seo={seo} />
       <SectionHero {...hero} />
+      <SectionFunctions {...functions} />
       <SectionIntegrations {...integrations} />
       <SectionFeatures {...features} variant="long" />
-      <SectionFunctions {...functions} />
-      {!bannerHide && <SectionBanner {...bannerProps} />}
     </Layout>
   )
 }

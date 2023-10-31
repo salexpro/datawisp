@@ -2,7 +2,7 @@ import React from 'react'
 import { Container } from 'react-bootstrap'
 import { StaticImage } from 'gatsby-plugin-image'
 
-import Icon from '~components/Icon'
+import Icon from '~components/ui/Icon'
 import RequestDemoForm from '~components/RequestDemoForm'
 
 import TryBtn from '~containers/SignUp/TryBtn'

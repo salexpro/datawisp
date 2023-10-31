@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Container } from 'react-bootstrap'
 
-import Switch from '~components/Switch'
+import Switch from '~components/ui/Switch'
 
 import { processHeaderData } from './utils'
 import TableDesktop from './components/TableDesktop'

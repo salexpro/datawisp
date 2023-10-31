@@ -1,7 +1,7 @@
 import React from 'react'
 import cn from 'clsx'
 
-import OverlayTooltip from '~components/OverlayTooltip'
+import OverlayTooltip from '~components/ui/OverlayTooltip'
 
 import { getGridArea } from './utils'
 import * as s from './ServicesList.module.scss'

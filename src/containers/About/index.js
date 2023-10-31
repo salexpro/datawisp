@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import Layout from '~components/Layout'
 import SectionBanner from '~components/SectionBanner'
 import SeoDatoCms from '~components/SeoDatoCms'
+import Layout from '../Layout'
 
 import SectionHero from './components/SectionHero'
 import SectionMission from './components/SectionMission'

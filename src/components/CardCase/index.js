@@ -5,7 +5,7 @@ import { Link } from 'gatsby'
 import { Badge, Button, Placeholder } from 'react-bootstrap'
 
 import RouteURL from '~routes'
-import Icon from '~components/Icon'
+import Icon from '~components/ui/Icon'
 import ImageFormat from '~components/ImageFormat'
 
 import * as s from './CardCase.module.scss'

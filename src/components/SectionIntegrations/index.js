@@ -4,6 +4,7 @@ import { Container } from 'react-bootstrap'
 import { StructuredText } from 'react-datocms'
 import cn from 'clsx'
 
+import { Link } from '@reach/router'
 import IntegrationItem from './components/IntegrationItem'
 import * as s from './SectionIntegrations.module.scss'
 
@@ -24,8 +25,15 @@ const SectionIntegrations = (props) => {
         className
       )}
     >
-      <h2>{heading}</h2>
-      <StructuredText data={text.value} />
+      <div className={s.heading}>
+        <h2>{heading}</h2>
+        <StructuredText
+          data={text}
+          renderLinkToRecord={({ record, children }) => (
+            <Link to={record.url}>{children}</Link>
+          )}
+        />
+      </div>
       <div
         className={cn(s.integrationsWrapper, {
           [s.twoColumns]: isTwoColumn,

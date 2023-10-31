@@ -1,7 +1,7 @@
 import React from 'react'
 import { Form } from 'react-bootstrap'
 
-import Icon from '~components/Icon'
+import Icon from '~components/ui/Icon'
 
 import { CELL_TYPE } from './constants'
 import { empty } from './PlansComparison.module.scss'

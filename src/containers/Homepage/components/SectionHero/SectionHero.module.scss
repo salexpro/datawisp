@@ -3,15 +3,7 @@
 .sectionHero {
   display: grid;
   grid-template-rows: 1fr auto;
-  // min-height: min(100vh, 940px);
-  padding-top: 96px;
-  margin-top: -96px;
   text-align: center;
-
-  @include b-d(md) {
-    padding-top: 80px;
-    margin-top: -80px;
-  }
 }
 
 .container {

@@ -56,6 +56,7 @@ module.exports = {
         environment: process.env.GATSBY_DATOCMS_ENVIRONMENT || 'main',
       },
     },
+    // 'gatsby-plugin-extract-schema',
     {
       resolve: `gatsby-plugin-plausible`,
       options: {

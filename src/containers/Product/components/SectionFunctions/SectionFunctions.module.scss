@@ -1,0 +1,44 @@
+@import '~styles/mixins';
+
+.wrapper {
+  @include b-up(lg) {
+    padding-top: 64px;
+  }
+
+  @include b-d(lg) {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+}
+
+.heading {
+  display: grid;
+  gap: 17px;
+  margin-bottom: 58px;
+  text-align: center;
+}
+
+.swiperWrapper {
+  max-width: 1440px;
+  padding: 0 calc((100% - 1240px) / 2) 40px;
+  margin: 0 auto;
+
+  @include b-up(xxl) {
+    padding: 0 100px;
+    mask-image: linear-gradient(
+      to right,
+      transparent 20px,
+      white 100px,
+      white calc(100% - 100px),
+      transparent 100%
+    );
+  }
+
+  @include b-d(container) {
+    padding: 0 40px;
+  }
+
+  @include b-d(md) {
+    padding: 0 24px;
+  }
+}

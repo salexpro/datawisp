@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import { Badge } from 'react-bootstrap'
 import cn from 'clsx'
 
-import Icon from '~components/Icon'
+import Icon from '~components/ui/Icon'
 
 import * as s from './FounderCard.module.scss'
 

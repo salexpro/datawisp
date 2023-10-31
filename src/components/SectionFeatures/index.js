@@ -1,15 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Container, Button } from 'react-bootstrap'
-import { Link } from 'gatsby'
+import { Container } from 'react-bootstrap'
 import cn from 'clsx'
 
+import ButtonGroup from '~components/ui/ButtonGroup'
 import Feature from './components/Feature'
 
 import * as s from './SectionFeatures.module.scss'
 
 const SectionFeatures = (props) => {
-  const { heading, text, items, buttons, caption, variant, utm } = props
+  const { heading, text, items, buttons, caption, variant } = props
 
   return (
     <Container
@@ -17,36 +17,16 @@ const SectionFeatures = (props) => {
       id="features"
       className={cn(s.sectionFeatures, { [s[variant]]: variant })}
     >
-      <h2>{heading}</h2>
-      <p className={s.text}>{text}</p>
+      <div className={s.heading}>
+        <h2>{heading}</h2>
+        <p className={s.text}>{text}</p>
+      </div>
       <div className={s.featuresWrapper}>
         {items.map((item) => (
           <Feature key={item.id} {...item} variant={variant} />
         ))}
       </div>
-      {buttons && (
-        <div className={cn('btn-group', s.buttons)}>
-          {buttons.map(({ id, label, link, variant: v }) => {
-            const isExternal = link?.internal?.type === 'DatoCmsLinkExternal'
-
-            const linkProps = isExternal
-              ? {
-                  as: 'a',
-                  href: `${link.url}${utm ? `?${utm}` : ''}`,
-                  target: '_blank',
-                }
-              : {
-                  as: Link,
-                  to: link?.url || link?.anchor,
-                }
-            return (
-              <Button {...linkProps} variant={v} className={s.button} key={id}>
-                {label}
-              </Button>
-            )
-          })}
-        </div>
-      )}
+      {buttons && <ButtonGroup className={s.buttons} data={buttons} />}
       {caption && <span className={s.caption}>{caption}</span>}
     </Container>
   )

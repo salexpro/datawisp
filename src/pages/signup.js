@@ -103,7 +103,9 @@ export const query = graphql`
       featuresList {
         id
         heading
-        text
+        text {
+          value
+        }
         iconName
       }
       featuresButtons {
@@ -135,6 +137,11 @@ export const query = graphql`
 
       integrationsSectionHeading
       integrationsSectionText {
+        links {
+          id: originalId
+          text
+          url
+        }
         value
       }
       integrations {
@@ -157,16 +164,6 @@ export const query = graphql`
             )
           }
           name
-        }
-        image {
-          format
-          url
-          gatsbyImageData(
-            width: 160
-            placeholder: NONE
-            outputPixelDensities: [1, 1.5, 2, 3]
-            imgixParams: { fit: "crop", auto: "compress,format" }
-          )
         }
       }
 

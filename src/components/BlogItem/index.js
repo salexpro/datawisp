@@ -9,7 +9,7 @@ import { Placeholder, Ratio } from 'react-bootstrap'
 import { range } from 'lodash'
 
 import RouteURL from '~routes'
-import Icon from '~components/Icon'
+import Icon from '~components/ui/Icon'
 
 import * as s from './BlogItem.module.scss'
 

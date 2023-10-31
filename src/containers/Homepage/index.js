@@ -1,9 +1,9 @@
 import React from 'react'
 
-import Layout from '~components/Layout'
 import SeoDatoCms from '~components/SeoDatoCms'
 import SectionHowItWorks from '~components/SectionHowItWorks'
 import SectionFeatures from '~components/SectionFeatures'
+import Layout from '../Layout'
 
 import SectionHero from './components/SectionHero'
 import SectionIntegrationsPreview from '../../components/SectionIntegrationsPreview'

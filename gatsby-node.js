@@ -5,6 +5,7 @@
  */
 
 const path = require('path')
+const { createRemoteFileNode } = require('gatsby-source-filesystem')
 const RouteURL = require('./src/routes')
 
 exports.onCreateWebpackConfig = ({ actions, getConfig }) => {
@@ -98,4 +99,41 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       component: productTemplate,
     })
   }
+}
+
+exports.createResolvers = ({
+  actions,
+  cache,
+  createNodeId,
+  createResolvers,
+  store,
+  reporter,
+}) => {
+  const { createNode } = actions
+  createResolvers({
+    DatoCmsVideoField: {
+      image: {
+        type: `File`,
+        resolve(source) {
+          // console.log('----SOURCE----')
+          // console.log(source)
+          // console.log('----END SOURCE----')
+
+          const url =
+            source.provider === 'youtube'
+              ? `https://img.youtube.com/vi/${source.providerUid}/maxresdefault.jpg`
+              : source.thumbnailUrl
+
+          return createRemoteFileNode({
+            url,
+            store,
+            cache,
+            createNode,
+            createNodeId,
+            reporter,
+          })
+        },
+      },
+    },
+  })
 }

@@ -104,6 +104,32 @@ const IndexPage = ({ data }) => {
 }
 
 export const query = graphql`
+  fragment Buttons on DatoCmsButton {
+    id
+    link {
+      ... on DatoCmsLinkInternal {
+        url
+        internal {
+          type
+        }
+      }
+      ... on DatoCmsLinkExternal {
+        url
+        internal {
+          type
+        }
+      }
+      ... on DatoCmsLinkAnchor {
+        anchor
+        internal {
+          type
+        }
+      }
+    }
+    label
+    variant
+  }
+
   query Homepage {
     datoCmsHomePage {
       seo {
@@ -135,7 +161,7 @@ export const query = graphql`
           width: 1300
           sizes: "(max-width: 767.98px) calc(100vw - 24px * 2), (max-width: 1023.98px) 682px, (max-width: 1199.98px) 718px, 1030px"
           breakpoints: [327, 655, 682, 718, 982, 1140, 1363, 1435, 1794]
-          placeholder: NONE
+          forceBlurhash: true
           imgixParams: { fit: "crop", auto: "compress,format", q: 100 }
         )
       }
@@ -204,33 +230,13 @@ export const query = graphql`
       featuresList {
         id
         heading
-        text
+        text {
+          value
+        }
         iconName
       }
       featuresButtons {
-        id
-        link {
-          ... on DatoCmsLinkInternal {
-            url
-            internal {
-              type
-            }
-          }
-          ... on DatoCmsLinkExternal {
-            url
-            internal {
-              type
-            }
-          }
-          ... on DatoCmsLinkAnchor {
-            anchor
-            internal {
-              type
-            }
-          }
-        }
-        label
-        variant
+        ...Buttons
       }
       featuresCaption
 

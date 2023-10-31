@@ -7,25 +7,19 @@ const ProductPage = ({ data }) => {
   const {
     heroSectionHeading,
     heroSectionText,
-    heroSectionImage,
-    heroButtonPrimaryText,
-    heroButtonPrimaryLink,
-    heroButtonSecond,
+    heroVideo,
+    heroButtons,
     featuresSectionHeading,
     featuresText,
     featuresSectionFeatures,
+    featuresButtons,
+    featuresCaption,
     integrationsSectionHeading,
     integrationsSectionText,
     integrations,
     functionsSectionHeading,
     functionsSectionDescription,
     functions,
-    bannerSectionHeading,
-    bannerSectionText,
-    bannerSectionButtonText,
-    bannerSectionButtonLink,
-    bannerSectionImage,
-    bannerHide,
     seo,
   } = data.datoCmsProductPage
 
@@ -35,33 +29,25 @@ const ProductPage = ({ data }) => {
       hero={{
         heading: heroSectionHeading,
         text: heroSectionText,
-        image: heroSectionImage,
-        buttonText: heroButtonPrimaryText,
-        buttonLink: heroButtonPrimaryLink,
-        buttonSecond: heroButtonSecond,
-      }}
-      features={{
-        heading: featuresSectionHeading,
-        text: featuresText,
-        items: featuresSectionFeatures,
-      }}
-      integrations={{
-        heading: integrationsSectionHeading,
-        text: integrationsSectionText,
-        integrations,
+        video: heroVideo,
+        buttons: heroButtons,
       }}
       functions={{
         heading: functionsSectionHeading,
         description: functionsSectionDescription,
         functions,
       }}
-      banner={{
-        heading: bannerSectionHeading,
-        text: bannerSectionText,
-        buttonText: bannerSectionButtonText,
-        buttonLink: bannerSectionButtonLink,
-        image: bannerSectionImage,
-        hide: bannerHide,
+      integrations={{
+        heading: integrationsSectionHeading,
+        text: integrationsSectionText,
+        integrations,
+      }}
+      features={{
+        heading: featuresSectionHeading,
+        text: featuresText,
+        items: featuresSectionFeatures,
+        buttons: featuresButtons,
+        caption: featuresCaption,
       }}
     />
   )
@@ -88,26 +74,26 @@ export const query = graphql`
       heroSectionText {
         value
       }
-      heroSectionImage {
+      heroVideo {
         url
-        format
-        gatsbyImageData(
-          width: 816
-          placeholder: NONE
-          sizes: "(max-width: 767.98px) calc(100vw - 24px * 2), (max-width: 1023.98px) calc(100vw - 40px * 2), (max-width: 1439.98px) calc(100vw - 424px - 40px * 2), 816px"
-          breakpoints: [327, 720, 940, 1220, 1440, 1600]
-          imgixParams: { fit: "crop", auto: "compress,format" }
-        )
+        title
+        provider
+        providerUid
+        thumbnailUrl
+        image {
+          childImageSharp {
+            blurHash {
+              base64Image
+            }
+            gatsbyImageData(
+              placeholder: NONE
+              outputPixelDensities: [1, 1.5, 2]
+            )
+          }
+        }
       }
-      heroButtonPrimaryText
-      heroButtonPrimaryLink {
-        url
-        rel
-        target
-      }
-
-      heroButtonSecond {
-        ...LinkExternalData
+      heroButtons {
+        ...Buttons
       }
 
       featuresSectionHeading
@@ -116,8 +102,14 @@ export const query = graphql`
         id
         iconName
         heading
-        text
+        text {
+          value
+        }
       }
+      featuresButtons {
+        ...Buttons
+      }
+      featuresCaption
 
       integrationsSectionHeading
       integrationsSectionText {
@@ -136,23 +128,13 @@ export const query = graphql`
             format
             url
             gatsbyImageData(
-              width: 40
+              width: 32
               placeholder: NONE
               outputPixelDensities: [1, 1.5, 2, 3]
               imgixParams: { fit: "crop", auto: "compress,format" }
             )
           }
           name
-        }
-        image {
-          format
-          url
-          gatsbyImageData(
-            width: 160
-            placeholder: NONE
-            outputPixelDensities: [1, 1.5, 2, 3]
-            imgixParams: { fit: "crop", auto: "compress,format" }
-          )
         }
       }
 
@@ -176,16 +158,6 @@ export const query = graphql`
           )
         }
       }
-
-      bannerSectionHeading
-      bannerSectionText {
-        value
-      }
-      bannerSectionButtonText
-      bannerSectionButtonLink {
-        url
-      }
-      bannerHide
     }
   }
 `

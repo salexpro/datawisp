@@ -1,18 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import cn from 'clsx'
+import { StructuredText } from 'react-datocms'
 
-import Icon from '~components/Icon'
+import Icon from '~components/ui/Icon'
 
 import * as s from './Feature.module.scss'
 
 const Feature = (props) => {
-  const { iconName, heading, text } = props
+  const { iconName, heading, variant, text } = props
 
   return (
-    <div className={s.feature}>
-      <Icon name={iconName} size={48} className={s.icon} />
-      <h3 className="h6">{heading}</h3>
-      <p className={s.text}>{text}</p>
+    <div className={cn(s.feature, { [s[variant]]: variant })}>
+      <Icon name={iconName} size={variant ? 24 : 48} className={s.icon} />
+      <h3 className={variant ? 'h5' : 'h6'}>{heading}</h3>
+      <div className={s.text}>
+        <StructuredText data={text.value} />
+      </div>
     </div>
   )
 }
@@ -20,7 +24,7 @@ const Feature = (props) => {
 Feature.propTypes = {
   iconName: PropTypes.string.isRequired,
   heading: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
+  text: PropTypes.object.isRequired,
 }
 
 export default Feature

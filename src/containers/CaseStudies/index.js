@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import Layout from '~components/Layout'
 import SeoDatoCms from '~components/SeoDatoCms'
+import Layout from '../Layout'
 
 import SectionCaseHero from './components/SectionCaseHero'
 import SectionCases from './components/SectionCases'

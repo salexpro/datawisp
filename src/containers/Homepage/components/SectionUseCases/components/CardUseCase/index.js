@@ -1,7 +1,7 @@
 import React from 'react'
 import cn from 'clsx'
 import { StructuredText } from 'react-datocms'
-import Icon from '~components/Icon'
+import Icon from '~components/ui/Icon'
 
 import * as s from './CardUseCase.module.scss'
 
