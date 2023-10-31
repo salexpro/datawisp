@@ -13,6 +13,9 @@
   margin-top: calc(-1 * var(--header-offset));
 
   @include b-d(md) {
+    $section-offset: 20px;
+
+    --header-offset: #{80px - $section-offset};
     --padding: 48px;
 
     padding-bottom: 48px;
@@ -32,12 +35,27 @@
   &.long {
     --padding: 66px;
 
-    padding-bottom: 16px;
+    padding-bottom: 48px;
+
+    @include b-d(md) {
+      --padding: 40px;
+    }
 
     .featuresWrapper {
-      grid-template-columns: repeat(2, 1fr);
       max-width: 820px;
       margin: 58px auto 0;
+
+      @include b-up(lg) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include b-d(lg) {
+        margin-top: 50px;
+      }
+
+      @include b-d(md) {
+        margin-top: 18px;
+      }
     }
 
     .buttons {
@@ -52,7 +70,11 @@
   text-align: center;
 
   @include b-d(lg) {
-    gap: 27px;
+    gap: 15px;
+  }
+
+  @include b-d(md) {
+    gap: 8px;
   }
 }
 
@@ -67,7 +89,6 @@
 
   @include b-d(md) {
     grid-template-columns: 1fr;
-    gap: 46px;
     margin-top: 40px;
   }
 }

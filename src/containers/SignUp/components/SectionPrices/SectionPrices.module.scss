@@ -8,8 +8,8 @@
 
   @include b-up(lg) {
     padding-top: 80px;
-    margin-top: 80px;
-    margin-bottom: 80px;
+    // margin-top: 80px;
+    // margin-bottom: 80px;
   }
 
   @include b-up(xl) {
@@ -22,8 +22,8 @@
 
   @include b-d(lg) {
     padding-top: 64px;
-    margin-top: 64px;
-    margin-bottom: 64px;
+    // margin-top: 64px;
+    // margin-bottom: 64px;
   }
 
   &__btn {

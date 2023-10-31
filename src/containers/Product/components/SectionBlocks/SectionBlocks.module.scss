@@ -1,13 +1,10 @@
 @import '~styles/mixins';
 
 .wrapper {
-  @include b-up(lg) {
-    padding-top: 64px;
-  }
+  padding-top: 66px;
 
-  @include b-d(lg) {
-    padding-top: 64px;
-    padding-bottom: 64px;
+  @include b-d(md) {
+    padding-top: 40px;
   }
 }
 
@@ -16,6 +13,16 @@
   gap: 17px;
   margin-bottom: 58px;
   text-align: center;
+
+  @include b-d(lg) {
+    gap: 15px;
+    margin-bottom: 50px;
+  }
+
+  @include b-d(md) {
+    gap: 8px;
+    margin-bottom: 34px;
+  }
 }
 
 .swiperWrapper {

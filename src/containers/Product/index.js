@@ -7,7 +7,7 @@ import SectionIntegrations from '~components/SectionIntegrations'
 import SectionFeatures from '~components/SectionFeatures'
 import Layout from '../Layout'
 import SectionHero from './components/SectionHero'
-import SectionFunctions from './components/SectionFunctions'
+import SectionBlocks from './components/SectionBlocks'
 
 const Product = (props) => {
   const { hero, features, integrations, functions, className, seo, ...rest } =
@@ -17,7 +17,7 @@ const Product = (props) => {
     <Layout {...rest} className={className}>
       <SeoDatoCms seo={seo} />
       <SectionHero {...hero} />
-      <SectionFunctions {...functions} />
+      <SectionBlocks {...functions} />
       <SectionIntegrations {...integrations} />
       <SectionFeatures {...features} variant="long" />
     </Layout>

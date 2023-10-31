@@ -5,13 +5,13 @@ import { Button } from 'react-bootstrap'
 
 import Icon from '~components/ui/Icon'
 
-import * as s from './CardFunction.module.scss'
+import * as s from './Card.module.scss'
 
-const CardFunction = (props) => {
+const Card = (props) => {
   const { icon, title, description, videoUrl, image } = props
 
   return (
-    <div className={s.cardFunction}>
+    <div className={s.card}>
       <GatsbyImage alt={title} image={getImage(image)} className={s.image} />
       <div className={s.title}>
         <Icon name={icon} className={s.title__icon} />
@@ -33,7 +33,7 @@ const CardFunction = (props) => {
   )
 }
 
-CardFunction.propTypes = {
+Card.propTypes = {
   icon: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
@@ -41,4 +41,4 @@ CardFunction.propTypes = {
   videoUrl: PropTypes.string.isRequired,
 }
 
-export default CardFunction
+export default Card

@@ -22,6 +22,11 @@
   user-select: none;
   background: $black;
   border-radius: 12px;
+
+  @include b-d(md) {
+    margin-top: 72px;
+    border-radius: 8px;
+  }
 }
 
 .playButton {
@@ -53,6 +58,10 @@
 
   img {
     pointer-events: none;
+
+    @include b-d(md) {
+      width: 64px;
+    }
   }
 }
 
@@ -62,8 +71,9 @@
   transition: transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-// .player {
-// }
+.player {
+  //
+}
 
 .buttonWrapper {
   display: grid;

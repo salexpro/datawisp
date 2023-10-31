@@ -5,11 +5,11 @@ import { Navigation } from 'swiper/modules'
 import { StructuredText } from 'react-datocms'
 import cn from 'clsx'
 
-import CardFunction from './components/CardFunction'
+import Card from './components/Card'
 import SwiperButtons from './components/SwiperButtons'
-import * as s from './SectionFunctions.module.scss'
+import * as s from './SectionBlocks.module.scss'
 
-const SectionFunctions = ({ heading, description, functions }) => {
+const SectionBlocks = ({ heading, description, functions }) => {
   return (
     <section id="functions" className={s.wrapper}>
       <Container className={s.heading}>
@@ -34,7 +34,7 @@ const SectionFunctions = ({ heading, description, functions }) => {
       >
         {functions.map((card) => (
           <SwiperSlide key={card.id}>
-            <CardFunction {...card} />
+            <Card {...card} />
           </SwiperSlide>
         ))}
 
@@ -44,4 +44,4 @@ const SectionFunctions = ({ heading, description, functions }) => {
   )
 }
 
-export default SectionFunctions
+export default SectionBlocks
