@@ -5,7 +5,7 @@ import { Button } from 'react-bootstrap'
 
 import * as s from './ButtonGroup.module.scss'
 
-const ButtonGroup = ({ data, utm, className }) => {
+const ButtonGroup = ({ data, utm, className, ctaId }) => {
   return (
     <div className={cn('btn-group', s.buttongroup, className)}>
       {data.map(({ id, label, link, variant: v }) => {
@@ -14,6 +14,7 @@ const ButtonGroup = ({ data, utm, className }) => {
         const linkProps = isExternal
           ? {
               as: 'a',
+              id: link?.linkId ? `${link.linkId}-${ctaId}` : null,
               href: `${link.url}${utm ? `?${utm}` : ''}`,
               target: '_blank',
             }

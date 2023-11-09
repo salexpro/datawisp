@@ -27,15 +27,9 @@ const Footer = ({ siteTitle, footerPageData, utm }) => {
         }
         navMenuItems {
           __typename
-          ... on DatoCmsLinkContainer {
-            ...LinkContainerData
-          }
-          ... on DatoCmsLinkInternal {
-            ...LinkInternalData
-          }
-          ... on DatoCmsLinkAnchor {
-            ...LinkAnchorData
-          }
+          ...LinkContainerData
+          ...LinkInternalData
+          ...LinkAnchorData
         }
         actionButtonLink {
           ...LinkExternalData
@@ -94,6 +88,11 @@ const Footer = ({ siteTitle, footerPageData, utm }) => {
             <Button
               variant="primary"
               as="a"
+              id={
+                actionButtonLink?.linkId
+                  ? `${actionButtonLink.linkId}-footer`
+                  : null
+              }
               href={`${actionButtonLink?.url}${utm && `?${utm}`}`}
               target={actionButtonLink?.target}
               rel={actionButtonLink?.rel}

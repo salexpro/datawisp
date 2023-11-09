@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
 import StructuredContent from '~components/StructuredContent'
@@ -12,42 +12,42 @@ const Article = (props) => {
   // eslint-disable-next-line react/prop-types
   const { dataCms, pageContext, data, ...rest } = props
 
-  const { postType, originalId } = pageContext
+  // const { postType, originalId } = pageContext
   const {
     datoCmsArticle,
-    datoCmsCaseStudiesPage: { disableCaseStudiesPage },
-    datoCmsBlogPage: { disableBlogPage },
+    // datoCmsCaseStudiesPage: { disableCaseStudiesPage },
+    // datoCmsBlogPage: { disableBlogPage },
   } = data
 
-  const isCaseStudy = postType === 'caseStudy'
-  const isDisabled = isCaseStudy ? disableCaseStudiesPage : disableBlogPage
+  // const isCaseStudy = postType === 'caseStudy'
+  // const isDisabled = isCaseStudy ? disableCaseStudiesPage : disableBlogPage
 
-  const topLevelPage = TOP_LEVEL_PAGE[(+isCaseStudy + 1) * +!isDisabled]
+  // const topLevelPage = TOP_LEVEL_PAGE[(+isCaseStudy + 1) * +!isDisabled]
 
-  /* eslint-disable no-unused-vars */
-  const [relatedCases, setRelatedCases] = useState()
-  const [relatedArticles, setRelatedArticles] = useState()
-  const [requestError, setRequestError] = useState()
-  /* eslint-enable no-unused-vars */
+  // /* eslint-disable no-unused-vars */
+  // const [relatedCases, setRelatedCases] = useState()
+  // const [relatedArticles, setRelatedArticles] = useState()
+  // const [requestError, setRequestError] = useState()
+  // /* eslint-enable no-unused-vars */
 
-  useEffect(() => {
-    import(/* webpackChunkName: "axios-requests" */ './utils').then(
-      ({ updatePageContent }) =>
-        updatePageContent(
-          originalId,
-          isCaseStudy,
-          setRelatedCases,
-          setRelatedArticles,
-          setRequestError
-        )
-    )
-  }, [])
+  // useEffect(() => {
+  //   import(/* webpackChunkName: "axios-requests" */ './utils').then(
+  //     ({ updatePageContent }) =>
+  //       updatePageContent(
+  //         originalId,
+  //         isCaseStudy,
+  //         setRelatedCases,
+  //         setRelatedArticles,
+  //         setRequestError
+  //       )
+  //   )
+  // }, [])
 
   return (
     <Layout {...rest}>
       <StructuredContent
         articleData={datoCmsArticle}
-        topLevelPage={topLevelPage}
+        topLevelPage={TOP_LEVEL_PAGE[1]}
       />
       {/* {isCaseStudy ? ( */}
       {/*  <SectionRelatedCases */}

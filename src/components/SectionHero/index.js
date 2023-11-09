@@ -90,7 +90,7 @@ const SectionHero = (props) => {
             <Button
               variant="primary"
               as="a"
-              id={button.linkId}
+              id={button?.linkId ? `${button.linkId}-hero` : null}
               target={button.target}
               rel={button.rel || null}
               href={`${button.url}${utm ? `?${utm}` : ''}`}

@@ -25,6 +25,9 @@ const Header = ({ siteTitle, headerPageData, utm }) => {
       text
       url
       iconName
+      internal {
+        type
+      }
     }
 
     fragment LinkExternalData on DatoCmsLinkExternal {
@@ -35,6 +38,9 @@ const Header = ({ siteTitle, headerPageData, utm }) => {
       target
       iconName
       linkId
+      internal {
+        type
+      }
     }
 
     fragment LinkAnchorData on DatoCmsLinkAnchor {
@@ -44,6 +50,9 @@ const Header = ({ siteTitle, headerPageData, utm }) => {
       iconName
       ownerPage {
         url
+      }
+      internal {
+        type
       }
     }
 

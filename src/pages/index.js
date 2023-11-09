@@ -105,24 +105,9 @@ export const query = graphql`
   fragment Buttons on DatoCmsButton {
     id
     link {
-      ... on DatoCmsLinkInternal {
-        url
-        internal {
-          type
-        }
-      }
-      ... on DatoCmsLinkExternal {
-        url
-        internal {
-          type
-        }
-      }
-      ... on DatoCmsLinkAnchor {
-        anchor
-        internal {
-          type
-        }
-      }
+      ...LinkInternalData
+      ...LinkExternalData
+      ...LinkAnchorData
     }
     label
     variant
@@ -271,9 +256,9 @@ export const query = graphql`
         url
       }
     }
-    datoCmsCaseStudiesPage {
-      disableCaseStudiesPage
-    }
+    # datoCmsCaseStudiesPage {
+    #   disableCaseStudiesPage
+    # }
   }
 `
 

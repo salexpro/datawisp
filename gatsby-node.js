@@ -48,7 +48,7 @@ const createArticlePages = async ({ actions, graphql, reporter }) => {
       allDatoCmsArticle {
         edges {
           node {
-            postType
+            # postType
             slug
             id
             originalId
@@ -69,18 +69,15 @@ const createArticlePages = async ({ actions, graphql, reporter }) => {
   const articleTemplate = path.resolve(`src/templates/article.js`)
 
   result.data.allDatoCmsArticle.edges.forEach(({ node }) => {
-    const { postType, slug, id, originalId } = node
-    const isCaseStudy = postType === 'caseStudy'
+    const { /* postType, */ slug, id, originalId } = node
 
     createPage({
-      path: isCaseStudy
-        ? `${RouteURL.CASE_STUDIES}/${slug}`
-        : `${RouteURL.BLOG}/${slug}`,
+      path: `${RouteURL.BLOG}/${slug}`,
       component: articleTemplate,
       context: {
         id,
         originalId,
-        postType,
+        // postType,
       },
     })
   })

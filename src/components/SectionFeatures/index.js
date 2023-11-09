@@ -27,7 +27,12 @@ const SectionFeatures = (props) => {
         ))}
       </div>
       {buttons && (
-        <ButtonGroup className={s.buttons} data={buttons} utm={utm} />
+        <ButtonGroup
+          className={s.buttons}
+          data={buttons}
+          utm={utm}
+          ctaId="features"
+        />
       )}
       {caption && <span className={s.caption}>{caption}</span>}
     </Container>
