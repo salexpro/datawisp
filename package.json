@@ -23,7 +23,7 @@
     "bootstrap": "5.3.2",
     "clsx": "^2.0.0",
     "dayjs": "1.11.10",
-    "dotenv-flow": "4.0.0",
+    "dotenv-flow": "4.0.1",
     "eventemitter3": "^5.0.1",
     "gatsby": "5.12.9",
     "gatsby-plugin-image": "3.12.3",
