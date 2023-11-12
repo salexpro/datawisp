@@ -66,8 +66,23 @@
   &.short {
     --padding: 66px;
 
+    @include b-d(md) {
+      --padding: 56px;
+
+      padding-bottom: 56px;
+    }
+
     .featuresWrapper {
       margin-top: 58px;
+
+      @include b-d(lg) {
+        margin-top: 50px;
+      }
+
+      @include b-d(md) {
+        gap: 24px;
+        margin-top: 34px;
+      }
     }
   }
 }

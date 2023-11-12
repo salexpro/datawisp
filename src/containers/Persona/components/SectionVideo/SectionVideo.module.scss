@@ -1,3 +1,5 @@
+@import '~styles/mixins';
+
 .section {
   text-align: center;
 }
@@ -6,6 +8,15 @@
   display: grid;
   gap: 17px;
   margin-bottom: 58px;
+
+  @include b-d(lg) {
+    margin-bottom: 50px;
+  }
+
+  @include b-d(md) {
+    gap: 8px;
+    margin-bottom: 34px;
+  }
 }
 
 .buttons {

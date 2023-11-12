@@ -2,7 +2,7 @@ import React from 'react'
 
 import SeoDatoCms from '~components/SeoDatoCms'
 import SectionFeatures from '~components/SectionFeatures'
-import SectionPersonas from '~containers/Homepage/components/SectionPersonas'
+import SectionPersonas from '~components/SectionPersonas'
 import Layout from '../Layout'
 import SectionHero from './components/SectionHero'
 import SectionVideo from './components/SectionVideo'
