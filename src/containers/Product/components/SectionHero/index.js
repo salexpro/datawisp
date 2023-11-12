@@ -1,15 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
-import { GatsbyImage } from 'gatsby-plugin-image'
-import getImgWithBlurHash from '~utils/getImgWithBlurHash'
 import cn from 'clsx'
 import { Container } from 'react-bootstrap'
 import { StructuredText } from 'react-datocms'
-import ReactPlayer from 'react-player/lazy'
 
+import Player from '~components/Player'
 import ButtonGroup from '~components/ui/ButtonGroup'
-
-import playImg from './img/play.svg'
 
 // import { useCookies } from 'react-cookie'
 
@@ -22,8 +18,6 @@ const SectionHero = (props) => {
   const { heading, text, video, buttons, className, utm, ...rest } = props
 
   // const [cookies] = useCookies([GOOGLE_TAG_KEY])
-
-  const [videoActive, setVideoActive] = useState(null)
 
   return (
     <Container as="section" className={cn(s.sectionHero, className)} {...rest}>
@@ -38,44 +32,7 @@ const SectionHero = (props) => {
         ctaId="hero"
       />
 
-      {video && (
-        <div className={s.video}>
-          {videoActive ? (
-            <ReactPlayer
-              width="100%"
-              height="100%"
-              // height={1030 / 1.7777777778}
-              className={s.player}
-              config={{
-                youtube: {
-                  playerVars: {
-                    controls: 1,
-                    color: 'white',
-                    autoplay: 1,
-                  },
-                },
-              }}
-              url={video.url}
-            />
-          ) : (
-            <>
-              <button
-                type="button"
-                label="Play"
-                className={s.playButton}
-                onClick={() => setVideoActive(true)}
-              >
-                <img src={playImg} alt="Play button" />
-              </button>
-              <GatsbyImage
-                image={getImgWithBlurHash(video.image)}
-                alt={video.title}
-                className={s.cover}
-              />
-            </>
-          )}
-        </div>
-      )}
+      {video && <Player video={video} className={s.player} />}
     </Container>
   )
 }

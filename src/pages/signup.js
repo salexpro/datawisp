@@ -139,18 +139,7 @@ export const query = graphql`
 
     datoCmsLeadGenerationPage {
       seo {
-        title
-        description
-        twitterCard
-        image {
-          fixed(
-            width: 1200
-            height: 630
-            imgixParams: { fit: "crop", auto: "compress,format" }
-          ) {
-            src
-          }
-        }
+        ...SEO
       }
 
       heroSectionHeading

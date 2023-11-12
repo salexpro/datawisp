@@ -1,10 +1,30 @@
+/* stylelint-disable no-descending-specificity */
 @import '~styles/mixins';
 
 .section {
+  &.home {
+    max-width: 1110px;
+  }
+
+  &.more {
+    padding-top: 60px;
+
+    .items {
+      padding-top: 58px;
+    }
+  }
+}
+
+.heading {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  gap: 17px;
+  text-align: center;
+}
+
+.items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 24px;
-  max-width: 1110px;
   padding-top: 48px;
   padding-bottom: 48px;
 
@@ -36,16 +56,16 @@
     margin: 0 40px;
   }
 
-  // &:hover,
-  // &:focus-visible {
-  //   background-color: $gray-100;
-  //   box-shadow: 0 0 0 1px $gray-100;
+  &:hover,
+  &:focus-visible {
+    background-color: $gray-100;
+    box-shadow: 0 0 0 1px $gray-100;
 
-  //   .chevron {
-  //     color: $gray-400;
-  //     transform: translateX(0);
-  //   }
-  // }
+    .chevron {
+      color: $gray-400;
+      transform: translateX(0);
+    }
+  }
 
   &__top {
     display: grid;

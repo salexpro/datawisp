@@ -78,3 +78,5 @@ yarn-error.log
 # For IDEs use global gitignore
 # touch ~/.gitignore_global
 # git config --global core.excludesfile ~/.gitignore_global
+
+/schema.graphql

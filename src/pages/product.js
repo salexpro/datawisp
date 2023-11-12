@@ -57,18 +57,7 @@ export const query = graphql`
   query ProductPage {
     datoCmsProductPage {
       seo {
-        title
-        description
-        twitterCard
-        image {
-          fixed(
-            width: 1200
-            height: 630
-            imgixParams: { fit: "crop", auto: "compress,format" }
-          ) {
-            src
-          }
-        }
+        ...SEO
       }
       heroSectionHeading
       heroSectionText {
@@ -88,6 +77,7 @@ export const query = graphql`
             gatsbyImageData(
               placeholder: NONE
               outputPixelDensities: [1, 1.5, 2]
+              quality: 100
             )
           }
         }

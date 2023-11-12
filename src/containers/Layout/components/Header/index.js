@@ -61,15 +61,9 @@ const Header = ({ siteTitle, headerPageData, utm }) => {
       text
       subLinks {
         __typename
-        ... on DatoCmsLinkInternal {
-          ...LinkInternalData
-        }
-        ... on DatoCmsLinkExternal {
-          ...LinkExternalData
-        }
-        ... on DatoCmsLinkAnchor {
-          ...LinkAnchorData
-        }
+        ...LinkInternalData
+        ...LinkExternalData
+        ...LinkAnchorData
       }
     }
 
@@ -86,15 +80,9 @@ const Header = ({ siteTitle, headerPageData, utm }) => {
         }
         navMenuItems {
           __typename
-          ... on DatoCmsLinkContainer {
-            ...LinkContainerData
-          }
-          ... on DatoCmsLinkInternal {
-            ...LinkInternalData
-          }
-          ... on DatoCmsLinkAnchor {
-            ...LinkAnchorData
-          }
+          ...LinkContainerData
+          ...LinkInternalData
+          ...LinkAnchorData
         }
         actionButtonLink {
           ...LinkExternalData

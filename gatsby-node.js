@@ -83,10 +83,50 @@ const createArticlePages = async ({ actions, graphql, reporter }) => {
   })
 }
 
+const createPersonaPages = async ({ actions, graphql, reporter }) => {
+  const { createPage } = actions
+
+  const result = await graphql(`
+    query AllPersonas {
+      allDatoCmsPersonaPage {
+        edges {
+          node {
+            slug
+            id
+          }
+        }
+      }
+    }
+  `)
+
+  // Handle errors
+  if (result.errors) {
+    reporter.panicOnBuild(
+      `createPersonasPages: Error while running GraphQL query.`
+    )
+    return
+  }
+
+  const personaTemplate = path.resolve(`src/templates/persona.js`)
+
+  result.data.allDatoCmsPersonaPage.edges.forEach(({ node }) => {
+    const { slug, id } = node
+
+    createPage({
+      path: `/${slug}`,
+      component: personaTemplate,
+      context: {
+        id,
+      },
+    })
+  })
+}
+
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
 
   // Articles
+  await createPersonaPages({ actions, graphql, reporter })
   await createArticlePages({ actions, graphql, reporter })
 
   if (process.env.NODE_ENV === `development`) {
@@ -98,7 +138,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
 }
 
-exports.createResolvers = ({
+exports.createResolvers = async ({
   actions,
   cache,
   createNodeId,
@@ -111,7 +151,7 @@ exports.createResolvers = ({
     DatoCmsVideoField: {
       image: {
         type: `File`,
-        resolve(source) {
+        async resolve(source) {
           // console.log('----SOURCE----')
           // console.log(source)
           // console.log('----END SOURCE----')
@@ -121,14 +161,46 @@ exports.createResolvers = ({
               ? `https://img.youtube.com/vi/${source.providerUid}/maxresdefault.jpg`
               : source.thumbnailUrl
 
-          return createRemoteFileNode({
-            url,
-            store,
-            cache,
-            createNode,
-            createNodeId,
-            reporter,
-          })
+          try {
+            const fileNode = await createRemoteFileNode({
+              url,
+              store,
+              cache,
+              createNode,
+              createNodeId,
+              reporter,
+            })
+
+            if (fileNode) {
+              return fileNode
+            }
+          } catch (error) {
+            // Handle the error here, you can log it or do something else
+            console.error(`Error fetching remote file: ${error.message}`)
+          }
+
+          // Fallback to another URL if the first fetch fails
+          try {
+            const fallbackFileNode = await createRemoteFileNode({
+              url: source.thumbnailUrl,
+              store,
+              cache,
+              createNode,
+              createNodeId,
+              reporter,
+            })
+
+            if (fallbackFileNode) {
+              return fallbackFileNode
+            }
+          } catch (fallbackError) {
+            // Handle the fallback error here, log it or handle as needed
+            console.error(
+              `Error fetching fallback remote file: ${fallbackError.message}`
+            )
+          }
+
+          return null // Return null if both attempts fail
         },
       },
     },

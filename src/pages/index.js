@@ -113,21 +113,37 @@ export const query = graphql`
     variant
   }
 
+  fragment SEO on DatoCmsSeoField {
+    title
+    description
+    twitterCard
+    image {
+      fixed(
+        width: 1200
+        height: 630
+        imgixParams: { fit: "crop", auto: "compress,format" }
+      ) {
+        src
+      }
+    }
+  }
+
+  fragment personaItem on DatoCmsPersona {
+    id
+    title
+    description {
+      value
+    }
+    iconName
+    link {
+      url
+    }
+  }
+
   query Homepage {
     datoCmsHomePage {
       seo {
-        title
-        description
-        twitterCard
-        image {
-          fixed(
-            width: 1200
-            height: 630
-            imgixParams: { fit: "crop", auto: "compress,format" }
-          ) {
-            src
-          }
-        }
+        ...SEO
       }
       heroMessage {
         value
@@ -175,15 +191,7 @@ export const query = graphql`
       }
 
       personaItems {
-        id
-        title
-        description {
-          value
-        }
-        iconName
-        link {
-          url
-        }
+        ...personaItem
       }
 
       howItWorksSectionHeading

@@ -37,18 +37,7 @@ export const query = graphql`
   query PricingPage {
     datoCmsPricingPage {
       seo {
-        title
-        description
-        twitterCard
-        image {
-          fixed(
-            width: 1200
-            height: 630
-            imgixParams: { fit: "crop", auto: "compress,format" }
-          ) {
-            src
-          }
-        }
+        ...SEO
       }
 
       heading

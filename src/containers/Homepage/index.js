@@ -29,7 +29,7 @@ const Homepage = (props) => {
       <SeoDatoCms seo={seo} />
       <SectionHero {...hero} popup={popup} />
       <SectionIntegrationsPreview {...integrations} />
-      <SectionPersonas personas={personas} />
+      <SectionPersonas personas={personas} variant="home" />
       <SectionHowItWorks {...howItWorks} />
       <SectionFeatures {...features} />
       <SectionRoadmap {...roadmap} />

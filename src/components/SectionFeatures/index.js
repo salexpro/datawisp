@@ -4,6 +4,7 @@ import { Container } from 'react-bootstrap'
 import cn from 'clsx'
 
 import ButtonGroup from '~components/ui/ButtonGroup'
+import Caption from '~components/ui/Caption'
 import Feature from './components/Feature'
 
 import * as s from './SectionFeatures.module.scss'
@@ -34,7 +35,7 @@ const SectionFeatures = (props) => {
           ctaId="features"
         />
       )}
-      {caption && <span className={s.caption}>{caption}</span>}
+      {caption && <Caption>{caption}</Caption>}
     </Container>
   )
 }

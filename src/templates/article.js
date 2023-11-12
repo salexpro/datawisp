@@ -18,18 +18,7 @@ export const pageQuery = graphql`
 
   fragment ArticleData on DatoCmsArticle {
     seo {
-      title
-      description
-      twitterCard
-      image {
-        fixed(
-          width: 1200
-          height: 630
-          imgixParams: { fit: "crop", auto: "compress,format" }
-        ) {
-          src
-        }
-      }
+      ...SEO
     }
     meta {
       createdAt

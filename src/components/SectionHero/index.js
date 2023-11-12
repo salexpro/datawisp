@@ -8,6 +8,8 @@ import { Button, Container } from 'react-bootstrap'
 import { useCookies } from 'react-cookie'
 
 import ImageFormat from '~components/ImageFormat'
+import Caption from '~components/ui/Caption'
+
 import { GOOGLE_TAG_KEY } from '~constants'
 import { gtagReportConversion } from '~utils/analytics'
 
@@ -99,7 +101,7 @@ const SectionHero = (props) => {
               {button.text}
             </Button>
           </div>
-          <span className={s.caption}>{caption}</span>
+          <Caption>{caption}</Caption>
         </div>
         <ImageFormat
           alt="hero"

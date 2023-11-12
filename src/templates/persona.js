@@ -1,0 +1,78 @@
+import React from 'react'
+
+import Persona from '~containers/Persona'
+import { graphql } from 'gatsby'
+
+const PersonaTemplate = (props) => <Persona {...props} />
+
+export default PersonaTemplate
+
+export const pageQuery = graphql`
+  query Persona($id: String) {
+    datoCmsPersonaPage(id: { eq: $id }) {
+      seo {
+        ...SEO
+      }
+
+      heroHeading
+      heroDescription {
+        value
+      }
+      heroButtons {
+        ...Buttons
+      }
+      heroBg {
+        gatsbyImageData(
+          width: 1920
+          aspectRatio: 2.25
+          placeholder: BLURRED
+          forceBlurhash: true
+          imgixParams: { fit: "crop", auto: "compress,format" }
+        )
+      }
+
+      featuresHeading
+      featuresText
+      featuresList {
+        id
+        heading
+        text {
+          value
+        }
+        iconName
+      }
+
+      videoHeading
+      videoText
+      video {
+        url
+        title
+        provider
+        providerUid
+        thumbnailUrl
+        image {
+          childImageSharp {
+            blurHash {
+              base64Image
+            }
+            gatsbyImageData(
+              placeholder: NONE
+              outputPixelDensities: [1, 1.5, 2]
+              quality: 100
+            )
+          }
+        }
+      }
+      videoButtons {
+        ...Buttons
+      }
+      videoCaption
+
+      moreHeading
+      moreText
+      moreItems {
+        ...personaItem
+      }
+    }
+  }
+`
