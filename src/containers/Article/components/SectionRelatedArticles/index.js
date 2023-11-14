@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import cn from 'clsx'
 import { Container } from 'react-bootstrap'
 import { Link } from 'gatsby'
-import { range } from 'lodash'
+import { range } from 'lodash-es'
 
 import RouteURL from '~routes'
 import BlogItem from '~components/BlogItem'

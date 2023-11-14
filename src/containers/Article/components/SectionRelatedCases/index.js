@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import cn from 'clsx'
 import { Container } from 'react-bootstrap'
 import { Link } from 'gatsby'
-import { range } from 'lodash'
+import { range } from 'lodash-es'
 
 import CardCase from '~components/CardCase'
 import ComingSoonCase from '~components/ComingSoonCase'

@@ -6,7 +6,7 @@ import cn from 'clsx'
 import dayjs from 'dayjs'
 import { Image } from 'react-datocms'
 import { Placeholder, Ratio } from 'react-bootstrap'
-import { range } from 'lodash'
+import { range } from 'lodash-es'
 
 import RouteURL from '~routes'
 import Icon from '~components/ui/Icon'

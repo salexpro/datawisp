@@ -27,7 +27,7 @@ const data = [
         <TryBtn variant="prices" utm={utm} />
       </div>
     ),
-    trialText: 'Free for 60 days. No credit card required',
+    trialText: 'Free for 14 days. No credit card required',
   },
 ]
 

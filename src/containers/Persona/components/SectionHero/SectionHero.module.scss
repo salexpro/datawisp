@@ -42,6 +42,7 @@
 
 .bgImg {
   min-height: 640px;
+  max-height: 853px;
 
   @include b-d(md) {
     min-height: 600px;
@@ -58,15 +59,16 @@
       rgba(0, 0, 0, 0%) 100%
     );
   }
-  // @media screen and (width > 1920px) {
-  //   mask-image: linear-gradient(
-  //     90deg,
-  //     transparent,
-  //     #fff 10%,
-  //     #fff 90%,
-  //     transparent
-  //   );
-  // }
+
+  @media screen and (width > 2560px) {
+    mask-image: linear-gradient(
+      90deg,
+      transparent,
+      #fff 10%,
+      #fff 90%,
+      transparent
+    );
+  }
 }
 
 .buttons {

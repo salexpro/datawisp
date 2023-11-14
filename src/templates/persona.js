@@ -23,11 +23,11 @@ export const pageQuery = graphql`
       }
       heroBg {
         gatsbyImageData(
-          width: 1920
+          width: 2560
           aspectRatio: 2.25
           placeholder: BLURRED
           forceBlurhash: true
-          imgixParams: { fit: "crop", auto: "compress,format" }
+          imgixParams: { fit: "crop", auto: "format" }
         )
       }
 

@@ -53,7 +53,7 @@ module.exports = {
       resolve: `gatsby-source-datocms`,
       options: {
         apiToken: process.env.GATSBY_DATOCMS_API_TOKEN,
-        environment: process.env.GATSBY_DATOCMS_ENVIRONMENT || 'main',
+        environment: process.env.GATSBY_DATOCMS_ENVIRONMENT,
       },
     },
     // 'gatsby-plugin-extract-schema',
