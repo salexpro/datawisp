@@ -55,7 +55,7 @@
     "swiper": "11.0.4"
   },
   "devDependencies": {
-    "@commitlint/cli": "18.4.0",
+    "@commitlint/cli": "18.4.1",
     "@commitlint/config-conventional": "18.4.0",
     "commitizen": "4.3.0",
     "cz-conventional-changelog": "3.3.0",
