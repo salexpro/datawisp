@@ -1,7 +1,14 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 
 import Article from '~containers/Article'
-import { graphql } from 'gatsby'
+import SeoDatoCms from '~components/SeoDatoCms'
+
+export const Head = ({ data }) => {
+  const { seo, meta } = data.datoCmsArticle
+
+  return <SeoDatoCms seo={seo} meta={meta} />
+}
 
 const ArticleTemplate = (props) => <Article {...props} />
 

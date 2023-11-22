@@ -33,7 +33,7 @@ const SectionBanner = (props) => {
       }
     : {
         as: 'a',
-        href: `${buttonLink.url}${utm && `?${utm}`}`,
+        href: `${buttonLink.url}${utm ? `?${utm}` : ''}`,
         target: buttonLink?.target,
         rel: buttonLink?.rel || null,
         id: buttonLink?.linkId ? `${buttonLink.linkId}-cta` : null,

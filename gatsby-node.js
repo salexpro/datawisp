@@ -6,7 +6,6 @@
 
 const path = require('path')
 const { createRemoteFileNode } = require('gatsby-source-filesystem')
-const RouteURL = require('./src/routes')
 
 exports.onCreateWebpackConfig = ({ actions, getConfig }) => {
   actions.setWebpackConfig({
@@ -40,94 +39,8 @@ exports.onCreateWebpackConfig = ({ actions, getConfig }) => {
   actions.replaceWebpackConfig(config)
 }
 
-const createArticlePages = async ({ actions, graphql, reporter }) => {
+exports.createPages = async ({ actions }) => {
   const { createPage } = actions
-
-  const result = await graphql(`
-    query AllArticles {
-      allDatoCmsArticle {
-        edges {
-          node {
-            # postType
-            slug
-            id
-            originalId
-          }
-        }
-      }
-    }
-  `)
-
-  // Handle errors
-  if (result.errors) {
-    reporter.panicOnBuild(
-      `createArticlePages: Error while running GraphQL query.`
-    )
-    return
-  }
-
-  const articleTemplate = path.resolve(`src/templates/article.js`)
-
-  result.data.allDatoCmsArticle.edges.forEach(({ node }) => {
-    const { /* postType, */ slug, id, originalId } = node
-
-    createPage({
-      path: `${RouteURL.BLOG}/${slug}`,
-      component: articleTemplate,
-      context: {
-        id,
-        originalId,
-        // postType,
-      },
-    })
-  })
-}
-
-const createPersonaPages = async ({ actions, graphql, reporter }) => {
-  const { createPage } = actions
-
-  const result = await graphql(`
-    query AllPersonas {
-      allDatoCmsPersonaPage {
-        edges {
-          node {
-            slug
-            id
-          }
-        }
-      }
-    }
-  `)
-
-  // Handle errors
-  if (result.errors) {
-    reporter.panicOnBuild(
-      `createPersonasPages: Error while running GraphQL query.`
-    )
-    return
-  }
-
-  const personaTemplate = path.resolve(`src/templates/persona.js`)
-
-  result.data.allDatoCmsPersonaPage.edges.forEach(({ node }) => {
-    const { slug, id } = node
-
-    createPage({
-      path: `/${slug}`,
-      component: personaTemplate,
-      context: {
-        id,
-      },
-    })
-  })
-}
-
-exports.createPages = async ({ actions, graphql, reporter }) => {
-  const { createPage } = actions
-
-  // Articles
-  await createPersonaPages({ actions, graphql, reporter })
-  await createArticlePages({ actions, graphql, reporter })
 
   if (process.env.NODE_ENV === `development`) {
     const productTemplate = path.resolve(`src/templates/SVGPreview/index.jsx`)

@@ -2,8 +2,15 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import Homepage from '~containers/Homepage'
+import SeoDatoCms from '~components/SeoDatoCms'
 
-const IndexPage = ({ data }) => {
+export const Head = ({ data }) => {
+  const { seo } = data.datoCmsHomePage
+
+  return <SeoDatoCms seo={seo} />
+}
+
+const IndexPage = ({ data, utm }) => {
   const {
     heroMessage,
     heroSectionHeading,
@@ -40,14 +47,13 @@ const IndexPage = ({ data }) => {
     submitButtonText,
     footerText,
     footerLink,
-    seo,
   } = data.datoCmsHomePage
 
   // const caseStudiesPage = data.datoCmsCaseStudiesPage
 
   return (
     <Homepage
-      seo={seo}
+      utm={utm}
       hero={{
         message: heroMessage,
         heading: heroSectionHeading,
@@ -121,9 +127,11 @@ export const query = graphql`
       fixed(
         width: 1200
         height: 630
-        imgixParams: { fit: "crop", auto: "compress,format" }
+        imgixParams: { fit: "crop", auto: "format" }
       ) {
         src
+        width
+        height
       }
     }
   }

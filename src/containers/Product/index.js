@@ -1,26 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import SeoDatoCms from '~components/SeoDatoCms'
 import SectionIntegrations from '~components/SectionIntegrations'
 
 import SectionFeatures from '~components/SectionFeatures'
-import Layout from '../Layout'
 import SectionHero from './components/SectionHero'
 import SectionBlocks from './components/SectionBlocks'
 
 const Product = (props) => {
-  const { hero, features, integrations, functions, className, seo, ...rest } =
-    props
+  const { hero, features, integrations, functions, utm } = props
 
   return (
-    <Layout {...rest} className={className}>
-      <SeoDatoCms seo={seo} />
-      <SectionHero {...hero} />
+    <>
+      <SectionHero {...hero} utm={utm} />
       <SectionBlocks {...functions} />
       <SectionIntegrations {...integrations} />
-      <SectionFeatures {...features} variant="long" />
-    </Layout>
+      <SectionFeatures {...features} utm={utm} variant="long" />
+    </>
   )
 }
 

@@ -18,13 +18,12 @@ module.exports = {
       process.env.CF_PAGES_URL ||
       // Vercel
       process.env.GATSBY_VERCEL_URL ||
-      'datawisp.min.studio',
+      'datawisp.io',
     siteUrl: `https://datawisp.io`,
   },
   plugins: [
     // https://www.gatsbyjs.com/plugins/gatsby-plugin-webpack-bundle-analyser-v2/
     // `gatsby-plugin-webpack-bundle-analyser-v2`,
-    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,

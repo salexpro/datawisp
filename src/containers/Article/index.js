@@ -1,16 +1,13 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
 import StructuredContent from '~components/StructuredContent'
-import Layout from '../Layout'
 
 // import SectionRelatedArticles from './components/SectionRelatedArticles'
 // import SectionRelatedCases from './components/SectionRelatedCases'
 import { TOP_LEVEL_PAGE } from './constants'
 
-const Article = (props) => {
-  // eslint-disable-next-line react/prop-types
-  const { dataCms, pageContext, data, ...rest } = props
+const Article = ({ data }) => {
+  // const { dataCms, pageContext, data } = props
 
   // const { postType, originalId } = pageContext
   const {
@@ -44,32 +41,22 @@ const Article = (props) => {
   // }, [])
 
   return (
-    <Layout {...rest}>
-      <StructuredContent
-        articleData={datoCmsArticle}
-        topLevelPage={TOP_LEVEL_PAGE[1]}
-      />
-      {/* {isCaseStudy ? ( */}
-      {/*  <SectionRelatedCases */}
-      {/*    relatedCases={relatedCases} */}
-      {/*    requestError={requestError} */}
-      {/*  /> */}
-      {/* ) : ( */}
-      {/*  <SectionRelatedArticles */}
-      {/*    relatedArticles={relatedArticles} */}
-      {/*    requestError={requestError} */}
-      {/*  /> */}
-      {/* )} */}
-    </Layout>
+    <StructuredContent
+      articleData={datoCmsArticle}
+      topLevelPage={TOP_LEVEL_PAGE[1]}
+    />
+    // {isCaseStudy ? (
+    //  <SectionRelatedCases
+    //    relatedCases={relatedCases}
+    //    requestError={requestError}
+    //  />
+    // ) : (
+    //  <SectionRelatedArticles
+    //    relatedArticles={relatedArticles}
+    //    requestError={requestError}
+    //  />
+    // )}
   )
-}
-
-Article.defaultProps = {
-  className: undefined,
-}
-
-Article.propTypes = {
-  className: PropTypes.string,
 }
 
 export default Article

@@ -1,8 +1,16 @@
 import React from 'react'
-import About from '~containers/About'
 import { graphql } from 'gatsby'
 
-const AboutPage = ({ data }) => {
+import About from '~containers/About'
+import SeoDatoCms from '~components/SeoDatoCms'
+
+export const Head = ({ data }) => {
+  const { seo } = data.datoCmsAboutPage
+
+  return <SeoDatoCms seo={seo} />
+}
+
+const AboutPage = ({ data, utm }) => {
   const {
     heroSectionHeading,
     heroButtonText,
@@ -18,12 +26,11 @@ const AboutPage = ({ data }) => {
     bannerSectionText,
     bannerSectionButtonText,
     bannerSectionButtonLink,
-    seo,
   } = data.datoCmsAboutPage
 
   return (
     <About
-      seo={seo}
+      utm={utm}
       hero={{
         heading: heroSectionHeading,
         buttonText: heroButtonText,

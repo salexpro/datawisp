@@ -1,7 +1,14 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 
 import Persona from '~containers/Persona'
-import { graphql } from 'gatsby'
+import SeoDatoCms from '~components/SeoDatoCms'
+
+export const Head = ({ data }) => {
+  const { seo } = data.datoCmsPersonaPage
+
+  return <SeoDatoCms seo={seo} />
+}
 
 const PersonaTemplate = (props) => <Persona {...props} />
 

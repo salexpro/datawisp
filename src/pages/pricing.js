@@ -1,7 +1,14 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 
 import Pricing from '~containers/Pricing'
-import { graphql } from 'gatsby'
+import SeoDatoCms from '~components/SeoDatoCms'
+
+export const Head = ({ data }) => {
+  const { seo } = data.datoCmsPricingPage
+
+  return <SeoDatoCms seo={seo} />
+}
 
 const PricingPage = ({ data }) => {
   const {
@@ -15,12 +22,10 @@ const PricingPage = ({ data }) => {
     switchAnnualDiscount,
     pricingPlans,
     plansComparison,
-    seo,
   } = data.datoCmsPricingPage
 
   return (
     <Pricing
-      seo={seo}
       heroSection={{ heading, description, tags, buttonText, buttonLink }}
       switchButton={{
         annual: switchAnnualText,

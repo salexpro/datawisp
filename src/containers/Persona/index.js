@@ -1,15 +1,12 @@
 import React from 'react'
 
-import SeoDatoCms from '~components/SeoDatoCms'
 import SectionFeatures from '~components/SectionFeatures'
 import SectionPersonas from '~components/SectionPersonas'
-import Layout from '../Layout'
 import SectionHero from './components/SectionHero'
 import SectionVideo from './components/SectionVideo'
 
-const Persona = ({ data }) => {
+const Persona = ({ data, utm }) => {
   const {
-    seo,
     heroHeading,
     heroDescription,
     heroButtons,
@@ -28,13 +25,13 @@ const Persona = ({ data }) => {
   } = data.datoCmsPersonaPage
 
   return (
-    <Layout>
-      <SeoDatoCms seo={seo} />
+    <>
       <SectionHero
         heading={heroHeading}
         descr={heroDescription}
         buttons={heroButtons}
         bg={heroBg}
+        utm={utm}
       />
       <SectionFeatures
         heading={featuresHeading}
@@ -48,6 +45,7 @@ const Persona = ({ data }) => {
         video={video}
         buttons={videoButtons}
         caption={videoCaption}
+        utm={utm}
       />
       <SectionPersonas
         heading={moreHeading}
@@ -55,7 +53,7 @@ const Persona = ({ data }) => {
         personas={moreItems}
         variant="more"
       />
-    </Layout>
+    </>
   )
 }
 

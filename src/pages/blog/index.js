@@ -2,6 +2,13 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import Blog from '~containers/Blog'
+import SeoDatoCms from '~components/SeoDatoCms'
+
+export const Head = ({ data }) => {
+  const { seo } = data.datoCmsBlogPage
+
+  return <SeoDatoCms seo={seo} />
+}
 
 const BlogPage = ({ data }) => {
   const { blogSectionHeading, defaultCategoryName, seo } = data.datoCmsBlogPage

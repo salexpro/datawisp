@@ -4,15 +4,17 @@
  * See: https://www.gatsbyjs.com/docs/ssr-apis/
  */
 
+export { wrapPageElement } from '~utils/wrapPageElement'
+
 // Hack, to reorder the helmet components as first in <head> tag
-exports.onPreRenderHTML = ({ getHeadComponents, replaceHeadComponents }) => {
-  /**
-   * @type {any[]} headComponents
-   */
+export const onPreRenderHTML = ({
+  getHeadComponents,
+  replaceHeadComponents,
+}) => {
   const headComponents = getHeadComponents()
 
-  headComponents.sort((a, b) => {
-    if (a.props && a.props['data-react-helmet']) {
+  headComponents.sort((a) => {
+    if (a.props && a.props['data-gatsby-head']) {
       return -1
     }
     return 1

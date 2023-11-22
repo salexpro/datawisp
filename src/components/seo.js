@@ -7,20 +7,11 @@
 
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 
 import ogImage from '~img/og-image.png'
 
-const SEO = ({
-  description,
-  lang,
-  meta,
-  title,
-  image,
-  twitterCard,
-  ogType,
-}) => {
+const SEO = ({ description, title, image, twitterCard, ogType, children }) => {
   const { site } = useStaticQuery(graphql`
     query {
       site {
@@ -33,80 +24,36 @@ const SEO = ({
     }
   `)
 
-  const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
-  const domain = site.siteMetadata?.domain
   const titleTemplate = title ? `${title} – ${defaultTitle}` : defaultTitle
+  const metaDescription = description || site.siteMetadata.description
+  const domain = site.siteMetadata?.domain
 
   const ogImageUrl =
-    image ||
+    image?.src ||
     `${domain.includes('http') ? domain : `https://${domain}`}${ogImage}`
 
   return (
-    <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={titleTemplate}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:locale`,
-          content: `en_EN`,
-        },
-        {
-          property: `og:title`,
-          content: titleTemplate,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: ogType || `website`,
-        },
-        {
-          property: `og:image`,
-          content: ogImageUrl,
-        },
-        {
-          property: `og:width`,
-          content: `1200`,
-        },
-        {
-          property: `og:height`,
-          content: `630`,
-        },
-        {
-          property: `twitter:image`,
-          content: ogImageUrl,
-        },
-        {
-          name: `twitter:card`,
-          content: twitterCard || `summary_large_image`,
-        },
-        {
-          name: `twitter:title`,
-          content: titleTemplate,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-        {
-          name: 'msapplication-TileColor',
-          content: '#ffffff',
-        },
-        {
-          name: 'theme-color',
-          content: '#ffffff',
-        },
-      ].concat(meta)}
-    >
+    <>
+      <html lang="en" />
+      <title>{titleTemplate}</title>
+      <meta name="description" content={metaDescription} />
+      {/* <link rel="alternate" hrefLang="x-default" href={domain} /> */}
+      <meta property="og:locale" content="en_EN" />
+      <meta name="og:title" content={titleTemplate} />
+      <meta name="og:description" content={metaDescription} />
+      <meta name="og:type" content={ogType || 'website'} />
+      <meta name="og:image" content={ogImageUrl} />
+      <meta name="og:width" content={image?.width || '1200'} />
+      <meta name="og:height" content={image?.height || '630'} />
+      <meta name="twitter:image" content={ogImageUrl} />
+      <meta
+        name="twitter:card"
+        content={twitterCard || 'summary_large_image'}
+      />
+      <meta name="twitter:title" content={titleTemplate} />
+      <meta name="twitter:description" content={metaDescription} />
+
       <link
         rel="apple-touch-icon"
         sizes="180x180"
@@ -125,24 +72,31 @@ const SEO = ({
         href="/favicon-16x16.png"
       />
       <link rel="manifest" href="/site.webmanifest" />
-    </Helmet>
+      <meta name="msapplication-TileColor" content="#ffffff" />
+      <meta name="theme-color" content="#ffffff" />
+      {children}
+    </>
   )
 }
 
 SEO.defaultProps = {
-  lang: 'en',
-  meta: [],
-  description: '',
   title: '',
-  image: '',
+  description: '',
+  image: {
+    src: '',
+    height: 0,
+    width: 0,
+  },
 }
 
 SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string,
-  image: PropTypes.string,
+  description: PropTypes.string,
+  image: PropTypes.shape({
+    src: PropTypes.string,
+    height: PropTypes.number,
+    width: PropTypes.number,
+  }),
 }
 
 export default SEO

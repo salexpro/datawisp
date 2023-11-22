@@ -1,13 +1,19 @@
 import React from 'react'
-
-import SignUp from '~containers/SignUp'
 import { graphql } from 'gatsby'
 
-const TryNowPage = ({ data }) => {
+import SignUp from '~containers/SignUp'
+import SeoDatoCms from '~components/SeoDatoCms'
+
+export const Head = ({ data }) => {
+  const { seo } = data.datoCmsLeadGenerationPage
+
+  return <SeoDatoCms seo={seo} />
+}
+
+const TryNowPage = ({ data, utm }) => {
   const { datoCmsHomePage, datoCmsLeadGenerationPage } = data
 
   const {
-    seo,
     heroSectionHeading,
     heroSectionText,
     heroCaption,
@@ -34,7 +40,7 @@ const TryNowPage = ({ data }) => {
 
   return (
     <SignUp
-      seo={seo}
+      utm={utm}
       hero={{
         message: datoCmsHomePage.heroMessage,
         heading: heroSectionHeading,
@@ -137,7 +143,61 @@ export const query = graphql`
       featuresCaption
     }
 
+    datoCmsHeader {
+      logoImage {
+        url
+        width
+        height
+      }
+      logoDesiredHeight
+      logoLink {
+        ...LinkInternalData
+      }
+    }
+
+    datoCmsFooter {
+      logoImage {
+        url
+        width
+        height
+      }
+      logoDesiredHeight
+      logoLink {
+        ...LinkInternalData
+      }
+      socialLinks {
+        id
+        iconName
+        tooltip
+        url
+        hoverColor {
+          hex
+        }
+      }
+      termsConditionsLink {
+        ...LinkExternalData
+      }
+      privacyPolicyLink {
+        ...LinkExternalData
+      }
+    }
+
     datoCmsLeadGenerationPage {
+      actionButtonLink {
+        __typename
+        ...LinkAnchorData
+      }
+
+      actionButtonLinkSecondary {
+        __typename
+        ...LinkExternalData
+      }
+
+      navMenuItems {
+        __typename
+        ...LinkAnchorData
+      }
+
       seo {
         ...SEO
       }
