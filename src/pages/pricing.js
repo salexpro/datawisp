@@ -15,30 +15,78 @@ const PricingPage = ({ data }) => {
     heading,
     description,
     tags,
-    buttonText,
-    buttonLink,
+    heroButtons,
     switchAnnualText,
     switchMonthlyText,
     switchAnnualDiscount,
-    pricingPlans,
-    plansComparison,
   } = data.datoCmsPricingPage
+
+  const plans = data.allDatoCmsPricingPlan.nodes
+  const features = data.allDatoCmsPricingFeaturesCategory.nodes
 
   return (
     <Pricing
-      heroSection={{ heading, description, tags, buttonText, buttonLink }}
+      heroSection={{ heading, description, tags, heroButtons }}
       switchButton={{
         annual: switchAnnualText,
         monthly: switchMonthlyText,
         discount: switchAnnualDiscount,
       }}
-      pricingPlans={pricingPlans}
-      plansComparison={plansComparison}
+      pricingPlans={plans}
+      pricingFeatures={features}
     />
   )
 }
 
 export const query = graphql`
+  fragment PricingFeatures on DatoCmsPricingFeaturesCategoryConnection {
+    nodes {
+      name
+      pricingPage
+      features {
+        id
+        name
+        customValue {
+          value
+          plansAppliedTo {
+            id
+          }
+        }
+        customReplace
+        tooltipText
+        tooltipRelation {
+          id
+        }
+      }
+    }
+  }
+
+  fragment PricingPlan on DatoCmsPricingPlanConnection {
+    nodes {
+      id
+      position
+      tagText
+      isComingSoon
+      title
+      description
+      isSelected
+      priceAnnual
+      periodAnnual
+      priceMonthly
+      periodMonthly
+      currentPriceAnnual
+      previewPriceAnnual
+      currentPriceMonthly
+      previewPriceMonthly
+      featuresList {
+        id
+      }
+      button {
+        ...Buttons
+      }
+    }
+  }
+
   query PricingPage {
     datoCmsPricingPage {
       seo {
@@ -52,46 +100,21 @@ export const query = graphql`
         iconName
         tagText
       }
-      buttonText
-      buttonLink
+      heroButtons {
+        ...Buttons
+      }
 
       switchAnnualText
       switchMonthlyText
       switchAnnualDiscount
+    }
 
-      pricingPlans {
-        id
-        tagText
-        isComingSoon
-        title
-        description
-        isSelected
-        priceAnnual
-        periodAnnual
-        priceMonthly
-        periodMonthly
-        currentPriceAnnual
-        previewPriceAnnual
-        currentPriceMonthly
-        previewPriceMonthly
-        showButton
-        buttonText
-        buttonLink
-      }
+    allDatoCmsPricingFeaturesCategory(sort: { position: ASC }) {
+      ...PricingFeatures
+    }
 
-      plansComparison {
-        id
-        title
-        rows {
-          id
-          title
-          cells {
-            id
-            cellType
-            text
-          }
-        }
-      }
+    allDatoCmsPricingPlan(sort: { position: ASC }) {
+      ...PricingPlan
     }
   }
 `

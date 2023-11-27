@@ -11,7 +11,7 @@
     'imports' minmax(206px, auto)
     'analysis' minmax(190px, auto)
     'storage' 86px
-    'exportsharing' 168px / 1fr;
+    'exportsharing' 1fr;
   justify-items: center;
   height: 100%;
   padding: 24px;
@@ -30,6 +30,7 @@
     grid-area: badge;
     padding: 5px 12px;
     font-size: 14px;
+    font-weight: 500;
     line-height: 1.286;
     color: $primary;
     background-color: $gray-100;
@@ -73,6 +74,7 @@
 
   &__contactUsBtn {
     grid-area: price;
+    grid-template-columns: auto;
     margin-top: 27px;
   }
 

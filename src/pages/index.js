@@ -17,12 +17,12 @@ const IndexPage = ({ data, utm }) => {
     heroSectionText,
     heroSectionImage,
     heroSectionCaption,
-    heroButtonPrimaryText,
-    heroButtonPrimaryLink,
+    heroButtons,
+
     integrationsSectionHeading,
     integrationsList,
-    integrationsSectionButtonText,
-    integrationsSectionButtonLink,
+    integrationsButtons,
+
     personaItems,
     howItWorksSectionHeading,
     howItWorksSectionText,
@@ -59,18 +59,14 @@ const IndexPage = ({ data, utm }) => {
         heading: heroSectionHeading,
         text: heroSectionText,
         caption: heroSectionCaption,
-        button: {
-          ...heroButtonPrimaryLink,
-          text: heroButtonPrimaryText,
-        },
+        buttons: heroButtons,
         image: heroSectionImage,
       }}
       personas={personaItems}
       integrations={{
         heading: integrationsSectionHeading,
         list: integrationsList,
-        buttonText: integrationsSectionButtonText,
-        buttonLink: integrationsSectionButtonLink,
+        buttons: integrationsButtons,
       }}
       howItWorks={{
         heading: howItWorksSectionHeading,
@@ -160,6 +156,9 @@ export const query = graphql`
       heroSectionText {
         value
       }
+      heroButtons {
+        ...Buttons
+      }
       heroSectionCaption
       heroSectionImage {
         format
@@ -169,13 +168,8 @@ export const query = graphql`
           placeholder: NONE
           sizes: "(max-width: 767.98px) calc(100vw - 24px * 2), (max-width: 1023.98px) 682px, (max-width: 1199.98px) 718px, 1030px"
           breakpoints: [327, 655, 682, 718, 982, 1140, 1363, 1435, 1794]
-          imgixParams: { fit: "crop", auto: "compress,format", q: 100 }
+          imgixParams: { fit: "crop", auto: "format" }
         )
-      }
-
-      heroButtonPrimaryText
-      heroButtonPrimaryLink {
-        ...LinkExternalData
       }
 
       integrationsSectionHeading
@@ -193,9 +187,8 @@ export const query = graphql`
         }
         name
       }
-      integrationsSectionButtonText
-      integrationsSectionButtonLink {
-        url
+      integrationsButtons {
+        ...Buttons
       }
 
       personaItems {

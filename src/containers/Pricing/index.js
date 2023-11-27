@@ -7,7 +7,7 @@ const Pricing = ({
   heroSection,
   switchButton,
   pricingPlans,
-  plansComparison,
+  pricingFeatures,
 }) => {
   return (
     <>
@@ -15,7 +15,7 @@ const Pricing = ({
       <PlansComparison
         switchButton={switchButton}
         pricingPlans={pricingPlans}
-        plansComparison={plansComparison}
+        pricingFeatures={pricingFeatures}
       />
     </>
   )

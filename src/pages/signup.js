@@ -1,8 +1,14 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-import SignUp from '~containers/SignUp'
 import SeoDatoCms from '~components/SeoDatoCms'
+import SectionHero from '~components/SectionHero'
+import SectionIntegrationsPreview from '~components/SectionIntegrationsPreview'
+import SectionHowItWorks from '~components/SectionHowItWorks'
+import SectionFeatures from '~components/SectionFeatures'
+import SectionPrices from '~components/SectionPrices'
+import SectionIntegrations from '~components/SectionIntegrations'
+import SectionBanner from '~components/SectionBanner'
 
 export const Head = ({ data }) => {
   const { seo } = data.datoCmsLeadGenerationPage
@@ -10,15 +16,19 @@ export const Head = ({ data }) => {
   return <SeoDatoCms seo={seo} />
 }
 
-const TryNowPage = ({ data, utm }) => {
-  const { datoCmsHomePage, datoCmsLeadGenerationPage } = data
+const SignUpPage = ({ data, utm }) => {
+  const {
+    datoCmsHomePage,
+    datoCmsLeadGenerationPage,
+    allDatoCmsPricingPlan,
+    allDatoCmsPricingFeaturesCategory,
+  } = data
 
   const {
     heroSectionHeading,
     heroSectionText,
     heroCaption,
-    heroButtonLink,
-    heroButtonText,
+    heroButtons,
     heroImage,
 
     howItWorksHeading,
@@ -28,62 +38,94 @@ const TryNowPage = ({ data, utm }) => {
     featuresText,
     featuresButtons,
 
+    pricingHeading,
+    pricingText,
+    pricingButtons,
+    pricingCaption,
+
     integrationsHeading,
     integrationsText,
     integrations,
+
     bannerSectionHeadingSecondary,
     bannerSectionText,
+    bannerButtons,
     bannerSectionNotificationTextSecondary,
-    bannerSectionButtonText,
-    bannerSectionButtonLink,
   } = datoCmsLeadGenerationPage
 
+  const plans = allDatoCmsPricingPlan.nodes
+  const features = allDatoCmsPricingFeaturesCategory.nodes
+
   return (
-    <SignUp
-      utm={utm}
-      hero={{
-        message: datoCmsHomePage.heroMessage,
-        heading: heroSectionHeading,
-        text: heroSectionText,
-        caption: heroCaption,
-        button: {
-          ...heroButtonLink,
-          text: heroButtonText,
-        },
-        image: heroImage,
-      }}
-      howItWorks={{
-        heading: howItWorksHeading,
-        text: howItWorksText,
-        steps: datoCmsHomePage.steps,
-      }}
-      features={{
-        heading: featuresSectionHeading,
-        text: featuresText,
-        items: datoCmsHomePage.featuresList,
-        buttons: featuresButtons,
-        caption: datoCmsHomePage.featuresCaption,
-      }}
-      integrationsPreview={{
-        heading: datoCmsHomePage.integrationsSectionHeading,
-        list: datoCmsHomePage.integrationsList,
-        // subheading: datoCmsHomePage.integrationsSectionSubheading,
-        buttonText: datoCmsHomePage.integrationsSectionButtonText,
-        buttonLink: datoCmsHomePage.integrationsSectionButtonLink,
-      }}
-      integrations={{
-        heading: integrationsHeading,
-        text: integrationsText,
-        integrations,
-      }}
-      banner={{
-        heading: bannerSectionHeadingSecondary,
-        text: bannerSectionText,
-        notificationText: bannerSectionNotificationTextSecondary,
-        buttonText: bannerSectionButtonText,
-        buttonLink: bannerSectionButtonLink,
-      }}
-    />
+    <>
+      <SectionHero
+        {...{
+          message: datoCmsHomePage.heroMessage,
+          heading: heroSectionHeading,
+          text: heroSectionText,
+          caption: heroCaption,
+          buttons: heroButtons,
+          image: heroImage,
+          utm,
+        }}
+      />
+      <SectionIntegrationsPreview
+        {...{
+          heading: datoCmsHomePage.integrationsSectionHeading,
+          list: datoCmsHomePage.integrationsList,
+          buttons: datoCmsHomePage.integrationsButtons,
+        }}
+      />
+      <SectionHowItWorks
+        id="howItWorks"
+        {...{
+          heading: howItWorksHeading,
+          text: howItWorksText,
+          steps: datoCmsHomePage.steps,
+        }}
+      />
+      <SectionFeatures
+        id="features"
+        {...{
+          heading: featuresSectionHeading,
+          text: featuresText,
+          items: datoCmsHomePage.featuresList,
+          buttons: featuresButtons,
+          caption: datoCmsHomePage.featuresCaption,
+          utm,
+        }}
+      />
+      <SectionPrices
+        {...{
+          heading: pricingHeading,
+          text: pricingText,
+          buttons: pricingButtons,
+          caption: pricingCaption,
+          plans,
+          features,
+          utm,
+        }}
+      />
+      <SectionIntegrations
+        id="privacy"
+        variant="signUp"
+        {...{
+          heading: integrationsHeading,
+          text: integrationsText,
+          integrations,
+        }}
+      />
+      <SectionBanner
+        id="bookDemo"
+        {...{
+          heading: bannerSectionHeadingSecondary,
+          text: bannerSectionText,
+          notificationText: bannerSectionNotificationTextSecondary,
+          buttons: bannerButtons,
+          utm,
+        }}
+      />
+    </>
   )
 }
 
@@ -109,9 +151,8 @@ export const query = graphql`
         }
         name
       }
-      integrationsSectionButtonText
-      integrationsSectionButtonLink {
-        url
+      integrationsButtons {
+        ...Buttons
       }
 
       steps {
@@ -206,6 +247,9 @@ export const query = graphql`
       heroSectionText {
         value
       }
+      heroButtons {
+        ...Buttons
+      }
       heroCaption
       heroImage {
         format
@@ -219,11 +263,6 @@ export const query = graphql`
         )
       }
 
-      heroButtonText
-      heroButtonLink {
-        ...LinkExternalData
-      }
-
       howItWorksHeading
       howItWorksText {
         value
@@ -234,6 +273,13 @@ export const query = graphql`
       featuresButtons {
         ...Buttons
       }
+
+      pricingHeading
+      pricingText
+      pricingButtons {
+        ...Buttons
+      }
+      pricingCaption
 
       integrationsHeading
       integrationsText {
@@ -251,20 +297,6 @@ export const query = graphql`
         text {
           value
         }
-        supportsList {
-          icon {
-            alt
-            format
-            url
-            gatsbyImageData(
-              width: 40
-              placeholder: NONE
-              outputPixelDensities: [1, 1.5, 2, 3]
-              imgixParams: { fit: "crop", auto: "compress,format" }
-            )
-          }
-          name
-        }
       }
 
       bannerSectionHeadingSecondary
@@ -274,15 +306,19 @@ export const query = graphql`
       bannerSectionNotificationTextSecondary {
         value
       }
-      bannerSectionButtonText
-      bannerSectionButtonLink {
-        url
-        rel
-        target
-        linkId
+      bannerButtons {
+        ...Buttons
       }
+    }
+
+    allDatoCmsPricingPlan(sort: { position: ASC }) {
+      ...PricingPlan
+    }
+
+    allDatoCmsPricingFeaturesCategory(sort: { position: ASC }) {
+      ...PricingFeatures
     }
   }
 `
 
-export default TryNowPage
+export default SignUpPage

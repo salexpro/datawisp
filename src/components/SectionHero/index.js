@@ -4,16 +4,17 @@ import PropTypes from 'prop-types'
 import cn from 'clsx'
 import { useLocation } from '@reach/router'
 import { StructuredText } from 'react-datocms'
-import { Button, Container } from 'react-bootstrap'
-import { useCookies } from 'react-cookie'
+import { Container } from 'react-bootstrap'
+// import { useCookies } from 'react-cookie'
 
 import ImageFormat from '~components/ImageFormat'
+import ButtonGroup from '~components/ui/ButtonGroup'
 import Caption from '~components/ui/Caption'
 
-import { GOOGLE_TAG_KEY } from '~constants'
-import { gtagReportConversion } from '~utils/analytics'
+// import { GOOGLE_TAG_KEY } from '~constants'
+// import { gtagReportConversion } from '~utils/analytics'
 
-import ModalRequestDemo from '../../containers/Homepage/components/ModalRequestDemo'
+import ModalRequestDemo from '~components/ModalRequestDemo'
 import * as s from './SectionHero.module.scss'
 
 const SectionHero = (props) => {
@@ -23,14 +24,14 @@ const SectionHero = (props) => {
     text,
     image,
     caption,
-    button,
+    buttons,
     popup,
     className,
     utm,
     ...rest
   } = props
 
-  const [cookies] = useCookies([GOOGLE_TAG_KEY])
+  // const [cookies] = useCookies([GOOGLE_TAG_KEY])
   const { hash } = useLocation()
   const isModal = hash === '#request-demo'
 
@@ -66,10 +67,10 @@ const SectionHero = (props) => {
     return () => cancelAnimationFrame(requestRef.current)
   }, [])
 
-  const handeRequestDemo = () => {
-    gtagReportConversion(cookies)
-    // setShowRequestDemoModal(true)
-  }
+  // const handeRequestDemo = () => {
+  //   gtagReportConversion(cookies)
+  //   // setShowRequestDemoModal(true)
+  // }
 
   return (
     <section
@@ -88,20 +89,9 @@ const SectionHero = (props) => {
           <div className={s.lead}>
             <StructuredText data={text.value} />
           </div>
-          <div className={cn('btn-group', s.buttons)}>
-            <Button
-              variant="primary"
-              as="a"
-              id={button?.linkId ? `${button.linkId}-hero` : null}
-              target={button.target}
-              rel={button.rel || null}
-              href={`${button.url}${utm ? `?${utm}` : ''}`}
-              onClick={handeRequestDemo}
-            >
-              {button.text}
-            </Button>
-          </div>
-          <Caption>{caption}</Caption>
+          {buttons && <ButtonGroup data={buttons} utm={utm} ctaId="hero" />}
+
+          {caption && <Caption>{caption}</Caption>}
         </div>
         <ImageFormat
           alt="hero"

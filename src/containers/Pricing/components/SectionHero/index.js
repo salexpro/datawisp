@@ -1,12 +1,13 @@
 import React from 'react'
-import { Container, Button } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 
 import Icon from '~components/ui/Icon'
+import ButtonGroup from '~components/ui/ButtonGroup'
 
 import * as s from './SectionHero.module.scss'
 
 const SectionHero = ({ heroSection }) => {
-  const { heading, description, tags, buttonText, buttonLink } = heroSection
+  const { heading, description, tags, heroButtons } = heroSection
   return (
     <Container className={s.sectionHero}>
       <h1>{heading}</h1>
@@ -23,16 +24,7 @@ const SectionHero = ({ heroSection }) => {
         </div>
       )}
 
-      {buttonText && buttonLink && (
-        <Button
-          href={buttonLink}
-          target="_blank"
-          rel="noreferrer"
-          className={s.button}
-        >
-          {buttonText}
-        </Button>
-      )}
+      <ButtonGroup data={heroButtons} className={s.button} />
     </Container>
   )
 }

@@ -82,12 +82,7 @@
   }
 
   &_cta {
-    z-index: 2;
-    display: grid;
     grid-template-columns: minmax(100px, 200px);
-    row-gap: 12px;
-    justify-content: center;
-    width: 100%;
 
     @include b-d(md) {
       margin-top: -10px;

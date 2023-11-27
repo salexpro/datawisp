@@ -13,19 +13,20 @@ export const Head = ({ data }) => {
 const AboutPage = ({ data, utm }) => {
   const {
     heroSectionHeading,
-    heroButtonText,
-    heroButtonLink,
+    heroButtons,
+
     missionSectionHeading,
     missionSectionText,
     missionImageDesktop,
     missionImageMobile,
+
     foundersSectionHeading,
     foundersSectionText,
     founders,
+
     bannerSectionHeading,
     bannerSectionText,
-    bannerSectionButtonText,
-    bannerSectionButtonLink,
+    bannerButtons,
   } = data.datoCmsAboutPage
 
   return (
@@ -33,8 +34,7 @@ const AboutPage = ({ data, utm }) => {
       utm={utm}
       hero={{
         heading: heroSectionHeading,
-        buttonText: heroButtonText,
-        buttonLink: heroButtonLink,
+        buttons: heroButtons,
       }}
       mission={{
         heading: missionSectionHeading,
@@ -50,8 +50,7 @@ const AboutPage = ({ data, utm }) => {
       banner={{
         heading: bannerSectionHeading,
         text: bannerSectionText,
-        buttonText: bannerSectionButtonText,
-        buttonLink: bannerSectionButtonLink,
+        buttons: bannerButtons,
       }}
     />
   )
@@ -66,8 +65,9 @@ export const query = graphql`
       heroSectionHeading {
         value
       }
-      heroButtonText
-      heroButtonLink
+      heroButtons {
+        ...Buttons
+      }
 
       missionSectionHeading
       missionSectionText {
@@ -78,10 +78,10 @@ export const query = graphql`
         url
         gatsbyImageData(
           width: 943
-          placeholder: BLURRED
+          forceBlurhash: true
           sizes: "(max-width: 1439.98px) calc(100vw - 40px * 2), min(calc(100vw - 40px * 2 - 400px - 64px), 720px)"
           breakpoints: [688, 720, 943, 1032, 1080, 1376, 1440, 1886]
-          imgixParams: { fit: "crop", auto: "compress,format" }
+          imgixParams: { fit: "crop", auto: "format" }
         )
       }
       missionImageMobile {
@@ -89,10 +89,10 @@ export const query = graphql`
         url
         gatsbyImageData(
           width: 720
-          placeholder: BLURRED
+          forceBlurhash: true
           sizes: "(max-width: 767.98px) calc(100vw - 24px * 2), 720px"
           breakpoints: [327, 654, 981, 1140]
-          imgixParams: { fit: "crop", auto: "compress,format" }
+          imgixParams: { fit: "crop", auto: "format" }
         )
       }
 
@@ -107,10 +107,10 @@ export const query = graphql`
         image {
           gatsbyImageData(
             height: 160
-            placeholder: BLURRED
+            forceBlurhash: true
             sizes: "(max-width: 767.98px) 120px, 160px"
             breakpoints: [120, 160, 240, 320, 360]
-            imgixParams: { fit: "crop", auto: "compress,format" }
+            imgixParams: { fit: "crop", auto: "format" }
           )
         }
         text {
@@ -132,9 +132,8 @@ export const query = graphql`
       bannerSectionText {
         value
       }
-      bannerSectionButtonText
-      bannerSectionButtonLink {
-        ...LinkExternalData
+      bannerButtons {
+        ...Buttons
       }
     }
   }

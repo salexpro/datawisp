@@ -1,11 +1,12 @@
+/* eslint-disable no-nested-ternary */
 import React, { useState } from 'react'
-import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
-import { Button, Container } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 import { StructuredText } from 'react-datocms'
 import cn from 'clsx'
 
 import RequestDemoForm from '~components/RequestDemoForm'
+import ButtonGroup from '~components/ui/ButtonGroup'
 
 import * as s from './SectionBanner.module.scss'
 
@@ -13,6 +14,7 @@ const SectionBanner = (props) => {
   const {
     heading,
     text,
+    buttons,
     buttonText,
     buttonLink,
     withForm,
@@ -23,21 +25,6 @@ const SectionBanner = (props) => {
   } = props
 
   const [message, setMessage] = useState({ text: '', isError: false })
-
-  const isExternalLink = buttonLink?.target
-
-  const buttonProps = !isExternalLink
-    ? {
-        as: Link,
-        to: buttonLink.url,
-      }
-    : {
-        as: 'a',
-        href: `${buttonLink.url}${utm ? `?${utm}` : ''}`,
-        target: buttonLink?.target,
-        rel: buttonLink?.rel || null,
-        id: buttonLink?.linkId ? `${buttonLink.linkId}-cta` : null,
-      }
 
   return (
     <Container
@@ -58,13 +45,14 @@ const SectionBanner = (props) => {
             className={s.banner__form}
           />
         ) : (
-          <Button
-            {...buttonProps}
-            variant="secondary"
-            className={s.banner__btn}
-          >
-            {buttonText}
-          </Button>
+          buttons && (
+            <ButtonGroup
+              className={s.banner__btn}
+              data={buttons}
+              utm={utm}
+              ctaId="cta"
+            />
+          )
         )}
         {notificationText && (
           <div
@@ -73,7 +61,11 @@ const SectionBanner = (props) => {
               [s.message]: message?.text,
             })}
           >
-            {message?.text || <StructuredText data={notificationText.value} />}
+            {message?.text || notificationText?.value ? (
+              <StructuredText data={notificationText.value} />
+            ) : (
+              notificationText
+            )}
           </div>
         )}
       </div>

@@ -1,14 +1,15 @@
 import React from 'react'
 import cn from 'clsx'
-import { Button } from 'react-bootstrap'
 
+import ButtonGroup from '~components/ui/ButtonGroup'
 import * as s from './TableHeader.module.scss'
 
-const TableHeader = ({ header, isMobile }) => (
+const TableHeader = ({ data, isMobile }) => (
   <thead>
     <tr>
-      <th> </th>
-      {header.map(
+      {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
+      <th />
+      {data.map(
         ({
           id,
           isSelected,
@@ -19,9 +20,7 @@ const TableHeader = ({ header, isMobile }) => (
           price,
           period,
           discount,
-          showButton,
-          buttonText,
-          buttonLink,
+          button,
         }) => (
           <th
             key={id}
@@ -51,16 +50,8 @@ const TableHeader = ({ header, isMobile }) => (
                 </div>
               )}
 
-              {showButton && (
-                <Button
-                  variant="outline-secondary"
-                  href={buttonLink}
-                  target="_blank"
-                  rel="noreferrer"
-                  className={s.button}
-                >
-                  {buttonText}
-                </Button>
+              {!!button?.length && (
+                <ButtonGroup data={button} className={s.button} />
               )}
 
               {discount && (

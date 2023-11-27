@@ -4,29 +4,22 @@ import cn from 'clsx'
 
 import TableHeader from '../TableHeader'
 import TableBody from '../TableBody'
-import { processMobileTableData } from '../../utils'
+
 import * as s from '../../PlansComparison.module.scss'
 
-const TableMobile = ({ header, plansComparison }) => {
-  const [activeTab, setActiveTab] = useState(() => {
-    const index = header.findIndex((item) => item.isSelected)
-    return index === -1 ? 0 : index
-  })
+const TableMobile = ({ plans, data }) => {
+  const defaultPlan = plans.find(({ isSelected }) => isSelected)
+  const defaultIndex = defaultPlan ? defaultPlan.position - 1 : 0
+
+  const [activeTab, setActiveTab] = useState(defaultIndex)
 
   return (
     <Tabs className={s.tabs} activeKey={activeTab} onSelect={setActiveTab}>
-      {header.map(({ id, title, isSelected }, i) => (
+      {plans.map(({ id, title }, i) => (
         <Tab key={id} eventKey={i} title={title}>
           <table className={cn(s.pricingTable, s.mobile)}>
-            <colgroup>
-              <col />
-              <col className={cn({ [s.selected]: isSelected })} />
-            </colgroup>
-            <TableHeader header={[header[activeTab]]} isMobile />
-            <TableBody
-              tables={processMobileTableData(plansComparison, activeTab)}
-              isSelected={isSelected}
-            />
+            <TableHeader data={[plans[activeTab]]} isMobile />
+            <TableBody plans={[plans[activeTab]]} data={data} />
           </table>
         </Tab>
       ))}

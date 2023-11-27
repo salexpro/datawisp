@@ -26,20 +26,9 @@
   &:hover {
     background-color: $gray-200;
   }
-}
 
-.cell {
-  position: relative;
-  padding: 16px 12px;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1.467;
-  color: $gray-900;
-  text-align: center;
-  letter-spacing: -0.01em;
-
-  &.selected {
-    &::after {
+  &:last-child {
+    .selected::after {
       position: absolute;
       right: -1px;
       bottom: -16px;
@@ -52,6 +41,26 @@
       border-radius: 0 0 8px 8px;
     }
   }
+}
+
+.cell {
+  position: relative;
+  padding: 16px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.467;
+  color: $gray-900;
+  text-align: center;
+  letter-spacing: -0.01em;
+
+  svg {
+    display: inline-block;
+  }
+}
+
+.selected {
+  border-right: 1px solid $indigo;
+  border-left: 1px solid $indigo;
 }
 
 .cellTitle {

@@ -1,16 +1,13 @@
 import React from 'react'
 import cn from 'clsx'
-import { Button, Container } from 'react-bootstrap'
-import { Link } from 'gatsby'
+import { Container } from 'react-bootstrap'
+
 import ImageFormat from '~components/ImageFormat'
+import ButtonGroup from '~components/ui/ButtonGroup'
+
 import * as s from './SectionIntegrationsPreview.module.scss'
 
-const SectionIntegrationsPreview = ({
-  heading,
-  list,
-  buttonText,
-  buttonLink,
-}) => {
+const SectionIntegrationsPreview = ({ heading, list, buttons }) => {
   return (
     <Container as="section" className={s.section}>
       <h2 className={cn('h6', s.section_title)}>{heading}</h2>
@@ -30,11 +27,7 @@ const SectionIntegrationsPreview = ({
         ))}
       </ul>
 
-      <div className={s.section_cta}>
-        <Button as={Link} to={buttonLink.url} variant="outline-secondary">
-          {buttonText}
-        </Button>
-      </div>
+      {buttons && <ButtonGroup className={s.section_cta} data={buttons} />}
     </Container>
   )
 }

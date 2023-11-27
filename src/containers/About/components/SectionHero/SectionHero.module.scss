@@ -30,6 +30,7 @@
 }
 
 .button {
+  justify-content: start;
   margin-top: 48px;
 
   @include b-d(lg) {

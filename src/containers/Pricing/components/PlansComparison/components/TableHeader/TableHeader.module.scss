@@ -92,6 +92,7 @@
 
 .button {
   grid-area: price;
+  grid-template-columns: auto;
   align-self: end;
   margin-bottom: -5px;
 
@@ -141,6 +142,8 @@
 
   &.selected {
     position: relative;
+    border-right: 1px solid $indigo;
+    border-left: 1px solid $indigo;
 
     &::before {
       position: absolute;

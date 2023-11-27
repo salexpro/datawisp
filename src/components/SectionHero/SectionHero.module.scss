@@ -96,14 +96,3 @@
   margin-top: 25px;
   margin-bottom: 42px;
 }
-
-.buttons {
-  justify-self: center;
-  width: 100%;
-  max-width: 240px;
-
-  @include b-d(md) {
-    max-width: 100%;
-    padding: 0 16px;
-  }
-}

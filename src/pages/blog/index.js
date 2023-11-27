@@ -46,7 +46,7 @@ export const query = graphql`
           gatsbyImageData(
             width: 768
             aspectRatio: 1.49
-            placeholder: BLURRED
+            forceBlurhash: true
             sizes: "(max-width: 767.98px) calc(100vw - 24px * 2), (max-width: 1023.98px) calc((100vw - 40px * 2 - 24px) / 2), (max-width: 1439.98px)  calc((100vw - 40px * 2 - 32px * 2) / 3), 392px"
             breakpoints: [327, 460, 784, 981, 1176, 1440]
             imgixParams: { fit: "crop", auto: "compress,format" }

@@ -5,28 +5,11 @@ import TableHeader from '../TableHeader'
 import TableBody from '../TableBody'
 import * as s from '../../PlansComparison.module.scss'
 
-const TableDesktop = ({ header, plansComparison }) => {
-  const selectedColNumbers = header.reduce((acc, { isSelected }, index) => {
-    if (isSelected) acc.push(index)
-    return acc
-  }, [])
-
+const TableDesktop = ({ plans, data }) => {
   return (
     <table className={cn(s.pricingTable, s.desktop)}>
-      <colgroup>
-        <col />
-        {header.map(({ id, isSelected }) => (
-          <col
-            key={`colgroup-${id}`}
-            className={cn({ [s.selected]: isSelected })}
-          />
-        ))}
-      </colgroup>
-      <TableHeader header={header} />
-      <TableBody
-        tables={plansComparison}
-        selectedColNumbers={selectedColNumbers}
-      />
+      <TableHeader data={plans} />
+      <TableBody plans={plans} data={data} />
     </table>
   )
 }

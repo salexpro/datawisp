@@ -8,7 +8,7 @@ import TableDesktop from './components/TableDesktop'
 import TableMobile from './components/TableMobile'
 import * as s from './PlansComparison.module.scss'
 
-const PlansComparison = ({ switchButton, pricingPlans, plansComparison }) => {
+const PlansComparison = ({ switchButton, pricingPlans, pricingFeatures }) => {
   const { annual, monthly, discount } = switchButton
   const headers = processHeaderData(switchButton, pricingPlans)
 
@@ -25,8 +25,8 @@ const PlansComparison = ({ switchButton, pricingPlans, plansComparison }) => {
         className={s.switchButton}
       />
 
-      <TableDesktop header={header} plansComparison={plansComparison} />
-      <TableMobile header={header} plansComparison={plansComparison} />
+      <TableDesktop plans={header} data={pricingFeatures} />
+      <TableMobile plans={header} data={pricingFeatures} />
     </Container>
   )
 }
