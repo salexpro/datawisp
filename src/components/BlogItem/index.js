@@ -23,6 +23,7 @@ const BlogItem = (props) => {
     heroImage,
     slug,
     isPlaceholder,
+    category,
     ...rest
   } = props
   const { description } = seo || {}

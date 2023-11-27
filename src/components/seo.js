@@ -25,7 +25,7 @@ const SEO = ({ description, title, image, twitterCard, ogType, children }) => {
   `)
 
   const defaultTitle = site.siteMetadata?.title
-  const titleTemplate = title ? `${title} – ${defaultTitle}` : defaultTitle
+  const titleTemplate = title || defaultTitle
   const metaDescription = description || site.siteMetadata.description
   const domain = site.siteMetadata?.domain
 

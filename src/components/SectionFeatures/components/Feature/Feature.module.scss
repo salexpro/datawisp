@@ -17,12 +17,6 @@
   &.long {
     gap: 16px;
     padding: 24px 24px 26px;
-
-    &:last-child {
-      @include b-up(md) {
-        grid-column: 1 / 3;
-      }
-    }
   }
 }
 
