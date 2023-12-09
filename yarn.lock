@@ -1441,10 +1441,10 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.55.0.tgz#b721d52060f369aa259cf97392403cb9ce892ec6"
   integrity sha512-qQfo2mxH5yVom1kacMtZZJFVdW+E70mqHMJvVg6WTLo+VBuQJ4TojZlfWBjK0ve5BdEeNAVxOsl/nvNMpJOaJA==
 
-"@fontsource-variable/inter@5.0.15":
-  version "5.0.15"
-  resolved "https://registry.yarnpkg.com/@fontsource-variable/inter/-/inter-5.0.15.tgz#f478ca30aa5ac275a45fe8c600654dc8eb0db279"
-  integrity sha512-CdQPQQgOVxg6ifmbrqYZeUqtQf7p2wPn6EvJ4M+vdNnsmYZgYwPPPQDNlIOU7LCUlSGaN26v6H0uA030WKn61g==
+"@fontsource-variable/inter@5.0.16":
+  version "5.0.16"
+  resolved "https://registry.yarnpkg.com/@fontsource-variable/inter/-/inter-5.0.16.tgz#14ee7fac425222aede9b57795a19532e7b687679"
+  integrity sha512-k+BUNqksTL+AN+o+OV7ILeiE9B5M5X+/jA7LWvCwjbV9ovXTqZyKRhA/x7uYv/ml8WQ0XNLBM7cRFIx4jW0/hg==
 
 "@formspree/core@^3.0.1":
   version "3.0.1"
