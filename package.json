@@ -25,7 +25,7 @@
     "dayjs": "1.11.10",
     "dotenv-flow": "4.0.1",
     "eventemitter3": "^5.0.1",
-    "gatsby": "5.12.11",
+    "gatsby": "5.12.12",
     "gatsby-plugin-image": "3.12.3",
     "gatsby-plugin-mini-css-class-name": "^6.0.0",
     "gatsby-plugin-plausible": "0.0.7",
