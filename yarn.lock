@@ -11115,9 +11115,9 @@ react-fast-marquee@1.6.2:
   integrity sha512-bXUuW1r+Yzd8ZjsPmMDy8WJMubHAZd/7n0W/IzUQHtd0iBfxWohP6hzCFnEHWMCOtC9wxSAq/BiEnig4kdI2Vw==
 
 react-hook-form@^7.40.0:
-  version "7.49.1"
-  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.49.1.tgz#aa2be335e19c3cd05d2401d39cb35a9937636fdb"
-  integrity sha512-MId71bfWmpyvwuWjVTe2b4DRc0jIYOb/B9tlrotEHTuHlQGeX1x2QXfjNe9UtMi6TqhO0bsSdSWgjcUFh2fSww==
+  version "7.49.2"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.49.2.tgz#6fb2742e1308020f26cb1915c7012b6c07b11ade"
+  integrity sha512-TZcnSc17+LPPVpMRIDNVITY6w20deMdNi6iehTFLV1x8SqThXGwu93HjlUVU09pzFgZH7qZOvLMM7UYf2ShAHA==
 
 react-intersection-observer@^9.4.3:
   version "9.5.2"
