@@ -36,6 +36,6 @@ jobs:
           GATSBY_FORM_SPREE_TOKEN: ${{ secrets.FORMSPREE_TOKEN }}
           GATSBY_DATOCMS_ENVIRONMENT: ${{ secrets.DATOCMS_ENVIRONMENT }}
       - name: Percy Test
-        run: yarn percy snapshot ./public
+        run: yarn add -D @percy/cli && yarn percy snapshot ./public
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
