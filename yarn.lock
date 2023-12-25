@@ -7135,10 +7135,10 @@ gatsby-sharp@^1.13.0:
   dependencies:
     sharp "^0.32.6"
 
-gatsby-source-datocms@5.1.2:
-  version "5.1.2"
-  resolved "https://registry.yarnpkg.com/gatsby-source-datocms/-/gatsby-source-datocms-5.1.2.tgz#a3f3df09cfd55d23b116b7b4e19ddc2e38de4152"
-  integrity sha512-rCMd/MvcQI21aylal8czmz8qhqSzxastne9ty3LkwckaOYGZTqqpsAQzg7PrCC2NFG1YnDVFyEjWfkdFHA+oTA==
+gatsby-source-datocms@5.1.4:
+  version "5.1.4"
+  resolved "https://registry.yarnpkg.com/gatsby-source-datocms/-/gatsby-source-datocms-5.1.4.tgz#6cecbc0ba9fef81ad0c2150ef3946de43569fe58"
+  integrity sha512-iH4rYIG4Obwx0yzH1gulzIc3ppvwn+Opq9IDJIzaVuaVIVzZbcckWt8ZSMPQwsju7306Xa7ddbJVoLzp/J1jzw==
   dependencies:
     core-js "^3.2.1"
     datocms-client "^3.5.16"

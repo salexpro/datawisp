@@ -33,7 +33,7 @@
     "gatsby-plugin-sharp": "5.13.0",
     "gatsby-plugin-sitemap": "6.13.0",
     "gatsby-plugin-svgr-svgo": "2.0.0",
-    "gatsby-source-datocms": "5.1.2",
+    "gatsby-source-datocms": "5.1.4",
     "gatsby-source-filesystem": "5.13.0",
     "gatsby-transformer-sharp": "5.13.0",
     "lodash-es": "^4.17.21",
