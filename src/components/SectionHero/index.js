@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 import cn from 'clsx'
-import { useLocation } from '@reach/router'
+import { useLocation } from '@gatsbyjs/reach-router'
 import { StructuredText } from 'react-datocms'
 import { Container } from 'react-bootstrap'
 // import { useCookies } from 'react-cookie'

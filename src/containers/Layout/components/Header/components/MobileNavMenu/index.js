@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import { useLocation } from '@reach/router'
+import { useLocation } from '@gatsbyjs/reach-router'
 import { Offcanvas, Button, Accordion } from 'react-bootstrap'
 import cn from 'clsx'
 

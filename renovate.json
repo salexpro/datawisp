@@ -12,11 +12,17 @@
       "automerge": true
     },
     {
-      "matchPackagePatterns": ["^eslint"],
+      "extends": ["monorepo:gatsby"],
+      "matchPackagePrefixes": ["gatsby"],
+      "groupName": "gatsby packages"
+    },
+    {
+      "matchPackageNames": ["@types/eslint", "babel-eslint"],
+      "matchPackagePrefixes": ["@typescript-eslint/", "eslint"],
       "groupName": "eslint packages"
     },
     {
-      "matchPackagePatterns": ["^stylelint"],
+      "matchPackagePrefixes": ["stylelint"],
       "groupName": "stylelint packages"
     }
   ]

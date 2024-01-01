@@ -1,5 +1,5 @@
 import React from 'react'
-import { useLocation } from '@reach/router'
+import { useLocation } from '@gatsbyjs/reach-router'
 import { Nav } from 'react-bootstrap'
 import { trim } from 'lodash-es'
 import { Link } from 'gatsby'

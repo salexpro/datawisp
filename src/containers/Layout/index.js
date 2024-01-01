@@ -8,7 +8,7 @@
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
-import { useLocation } from '@reach/router'
+import { useLocation } from '@gatsbyjs/reach-router'
 import { LiveChatWidget } from '@livechat/widget-react'
 
 import CookieBanner from '~components/CookieBanner'

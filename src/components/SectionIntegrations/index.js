@@ -4,7 +4,7 @@ import { Container } from 'react-bootstrap'
 import { StructuredText } from 'react-datocms'
 import cn from 'clsx'
 
-import { Link } from '@reach/router'
+import { Link } from '@gatsbyjs/reach-router'
 import IntegrationItem from './components/IntegrationItem'
 import * as s from './SectionIntegrations.module.scss'
 
