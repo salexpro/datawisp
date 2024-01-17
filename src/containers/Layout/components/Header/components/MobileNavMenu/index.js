@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { useLocation } from '@gatsbyjs/reach-router'
-import { Offcanvas, Button, Accordion } from 'react-bootstrap'
+import { Offcanvas, Button, Accordion, Nav } from 'react-bootstrap'
 import cn from 'clsx'
 
 import NavLink from '../../../NavLink'
@@ -33,14 +33,23 @@ const MobileNavMenu = (props) => {
 
       <Offcanvas show={showMenu} placement="top" backdrop={false}>
         <Offcanvas.Body>
-          <Button
-            href={`${btnLink?.url}${utm ? `?${utm}` : ''}`}
-            rel={btnLink?.rel}
-            target={btnLink?.target}
-            variant="primary"
-          >
-            {btnLink?.text}
-          </Button>
+          <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+            <Button
+              href={`${btnLink?.url}${utm ? `?${utm}` : ''}`}
+              rel={btnLink?.rel}
+              target={btnLink?.target}
+              variant="primary"
+            >
+              {btnLink?.text}
+            </Button>
+            <Nav variant="header">
+              <Nav.Item>
+                <Nav.Link href={`${btnLink?.url}${utm ? `?${utm}` : ''}`}>
+                  Log in
+                </Nav.Link>
+              </Nav.Item>
+            </Nav>
+          </div>
 
           <Accordion defaultActiveKey={defaultActiveKey}>
             {navItems.map((link) => {

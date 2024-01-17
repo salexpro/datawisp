@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Container } from 'react-bootstrap'
+import { Button, Container, Nav } from 'react-bootstrap'
 import PropTypes from 'prop-types'
 import { graphql, Link, useStaticQuery } from 'gatsby'
 import cn from 'clsx'
@@ -122,7 +122,7 @@ const Header = ({ siteTitle, headerPageData, utm }) => {
         as: 'a',
         href: `${btnLink.url}${utm ? `?${utm}` : ''}`,
         target: btnLink?.target,
-        rel: btnLink?.rel,
+        rel: btnLink?.rel || null,
         id: btnLink?.linkId ? `${btnLink.linkId}-header` : null,
         onClick: () => gtagReportConversion(cookies),
       }
@@ -148,15 +148,31 @@ const Header = ({ siteTitle, headerPageData, utm }) => {
               className={s.headerWrapper__header__navMenu}
             />
           )}
-          <Button
-            {...buttonProps}
-            variant="primary-header"
-            className={cn(s.headerWrapper__header__btnPrimary, {
-              scrolled: isScrolled,
-            })}
-          >
-            {btnLink?.text}
-          </Button>
+          <div className={s.actions}>
+            <Nav variant="header">
+              <Nav.Item>
+                <Nav.Link
+                  {...{
+                    href: `${btnLink.url}${utm ? `?${utm}` : ''}`,
+                    target: btnLink?.target,
+                    rel: btnLink?.rel || null,
+                    id: `login-header`,
+                  }}
+                >
+                  Log in
+                </Nav.Link>
+              </Nav.Item>
+            </Nav>
+            <Button
+              {...buttonProps}
+              variant="primary-header"
+              className={cn(s.headerWrapper__header__btnPrimary, {
+                scrolled: isScrolled,
+              })}
+            >
+              {btnLink?.text}
+            </Button>
+          </div>
         </Container>
       </header>
 

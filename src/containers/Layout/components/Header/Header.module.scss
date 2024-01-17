@@ -26,12 +26,6 @@
         grid-template-columns: 1fr auto;
         padding-right: 104px;
       }
-
-      &__btnPrimary {
-        @include b-d(md) {
-          display: none;
-        }
-      }
     }
   }
 
@@ -95,5 +89,15 @@
   @include b-d(md) {
     top: 16px;
     right: 24px;
+  }
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
+  @include b-d(md) {
+    display: none;
   }
 }
