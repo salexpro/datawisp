@@ -6,7 +6,7 @@ import ButtonGroup from '~components/ui/ButtonGroup'
 
 import * as s from './SectionHero.module.scss'
 
-const SectionHero = ({ heroSection }) => {
+const SectionHero = ({ heroSection, utm }) => {
   const { heading, description, tags, heroButtons } = heroSection
   return (
     <Container className={s.sectionHero}>
@@ -24,7 +24,7 @@ const SectionHero = ({ heroSection }) => {
         </div>
       )}
 
-      <ButtonGroup data={heroButtons} className={s.button} />
+      <ButtonGroup data={heroButtons} className={s.button} utm={utm} />
     </Container>
   )
 }

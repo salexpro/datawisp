@@ -10,7 +10,7 @@ import BlogItem from '~components/BlogItem'
 import * as s from './BlogSection.module.scss'
 
 const BlogSection = (props) => {
-  const { blogs, className, ...rest } = props
+  const { blogs, className, utm, ...rest } = props
 
   const { hash } = useLocation()
   const filter = hash.replace('#', '')
@@ -22,7 +22,7 @@ const BlogSection = (props) => {
   return (
     <Container {...rest} className={cn(s.blogSection, className)}>
       {filteredBlog?.map(({ id, ...blog }) => (
-        <BlogItem key={id} {...blog} />
+        <BlogItem key={id} {...blog} utm={utm} />
       ))}
     </Container>
   )

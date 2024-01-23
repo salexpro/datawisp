@@ -24,6 +24,7 @@ const BlogItem = (props) => {
     slug,
     isPlaceholder,
     category,
+    utm,
     ...rest
   } = props
   const { description } = seo || {}
@@ -32,7 +33,7 @@ const BlogItem = (props) => {
 
   const createdAtDate = dayjs(createdAt)
 
-  const blogpostLink = `${RouteURL.BLOG}/${slug}`
+  const blogpostLink = `${RouteURL.BLOG}/${slug}${utm ? `?${utm}` : ''}`
 
   if (isPlaceholder)
     return (

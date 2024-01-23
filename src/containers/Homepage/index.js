@@ -23,8 +23,8 @@ const Homepage = (props) => {
   return (
     <>
       <SectionHero {...hero} popup={popup} utm={utm} />
-      <SectionIntegrationsPreview {...integrations} />
-      <SectionPersonas personas={personas} variant="home" />
+      <SectionIntegrationsPreview {...integrations} utm={utm} />
+      <SectionPersonas personas={personas} variant="home" utm={utm} />
       <SectionHowItWorks {...howItWorks} />
       <SectionFeatures {...features} utm={utm} />
       <SectionRoadmap {...roadmap} />

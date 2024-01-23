@@ -76,6 +76,7 @@ const MobileNavMenu = (props) => {
                               className={cn('accordion-subLink', {
                                 active: isActive,
                               })}
+                              utm={utm}
                             />
                           )
                         })}
@@ -86,6 +87,7 @@ const MobileNavMenu = (props) => {
                       {...link}
                       className="accordion-link"
                       onClick={handleShowMenu}
+                      utm={utm}
                     />
                   )}
                 </Accordion.Item>

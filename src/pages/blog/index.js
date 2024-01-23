@@ -10,7 +10,7 @@ export const Head = ({ data }) => {
   return <SeoDatoCms seo={seo} />
 }
 
-const BlogPage = ({ data }) => {
+const BlogPage = ({ data, utm }) => {
   const { blogSectionHeading, defaultCategoryName, seo } = data.datoCmsBlogPage
   const blogs = data.allDatoCmsArticle?.nodes
   const tabs = data.allDatoCmsCategory?.nodes
@@ -23,7 +23,13 @@ const BlogPage = ({ data }) => {
     : tabs
 
   return (
-    <Blog heading={blogSectionHeading} tabs={allTabs} blogs={blogs} seo={seo} />
+    <Blog
+      heading={blogSectionHeading}
+      tabs={allTabs}
+      blogs={blogs}
+      seo={seo}
+      utm={utm}
+    />
   )
 }
 

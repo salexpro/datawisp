@@ -7,7 +7,7 @@ import ButtonGroup from '~components/ui/ButtonGroup'
 
 import * as s from './SectionIntegrationsPreview.module.scss'
 
-const SectionIntegrationsPreview = ({ heading, list, buttons }) => {
+const SectionIntegrationsPreview = ({ heading, list, buttons, utm }) => {
   return (
     <Container as="section" className={s.section}>
       <h2 className={cn('h6', s.section_title)}>{heading}</h2>
@@ -27,7 +27,9 @@ const SectionIntegrationsPreview = ({ heading, list, buttons }) => {
         ))}
       </ul>
 
-      {buttons && <ButtonGroup className={s.section_cta} data={buttons} />}
+      {buttons && (
+        <ButtonGroup className={s.section_cta} data={buttons} utm={utm} />
+      )}
     </Container>
   )
 }

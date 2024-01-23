@@ -6,7 +6,7 @@ import NavLink from '../NavLink'
 import MenuDropdown from '../MenuDropdown'
 
 const NavMenu = (props) => {
-  const { navItems, variant, ...rest } = props
+  const { navItems, variant, utm, ...rest } = props
 
   return (
     <nav {...rest}>
@@ -14,10 +14,10 @@ const NavMenu = (props) => {
         {navItems?.map((link) => {
           return !link?.subLinks ? (
             <Nav.Item key={link.id} as="li">
-              <NavLink {...link} />
+              <NavLink {...link} utm={utm} />
             </Nav.Item>
           ) : (
-            <MenuDropdown key={link.id} {...link} variant={variant} />
+            <MenuDropdown key={link.id} {...link} variant={variant} utm={utm} />
           )
         })}
       </Nav>

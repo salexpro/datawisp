@@ -10,7 +10,7 @@ export const Head = ({ data }) => {
   return <SeoDatoCms seo={seo} />
 }
 
-const PricingPage = ({ data }) => {
+const PricingPage = ({ data, utm }) => {
   const {
     heading,
     description,
@@ -34,6 +34,7 @@ const PricingPage = ({ data }) => {
       }}
       pricingPlans={plans}
       pricingFeatures={features}
+      utm={utm}
     />
   )
 }

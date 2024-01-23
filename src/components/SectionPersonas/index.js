@@ -8,7 +8,7 @@ import Icon from '~components/ui/Icon'
 
 import * as s from './SectionPersonas.module.scss'
 
-const SectionPersonas = ({ heading, text, personas, variant }) => {
+const SectionPersonas = ({ heading, text, personas, variant, utm }) => {
   return (
     <Container as="section" className={cn(s.section, s[variant])}>
       {heading && (
@@ -19,7 +19,11 @@ const SectionPersonas = ({ heading, text, personas, variant }) => {
       )}
       <div className={s.items}>
         {personas.map(({ id, iconName, title, description, link }) => (
-          <Link to={link?.url} className={s.persona} key={id}>
+          <Link
+            to={`${link.url}${utm ? `?${utm}` : ''}`}
+            className={s.persona}
+            key={id}
+          >
             <div className={s.persona__top}>
               <Icon name={iconName} className={s.icon} />
               <h3 className="h5">{title}</h3>

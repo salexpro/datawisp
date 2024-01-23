@@ -6,7 +6,7 @@ import StructuredContent from '~components/StructuredContent'
 // import SectionRelatedCases from './components/SectionRelatedCases'
 import { TOP_LEVEL_PAGE } from './constants'
 
-const Article = ({ data }) => {
+const Article = ({ data, utm }) => {
   // const { dataCms, pageContext, data } = props
 
   // const { postType, originalId } = pageContext
@@ -44,6 +44,7 @@ const Article = ({ data }) => {
     <StructuredContent
       articleData={datoCmsArticle}
       topLevelPage={TOP_LEVEL_PAGE[1]}
+      utm={utm}
     />
     // {isCaseStudy ? (
     //  <SectionRelatedCases

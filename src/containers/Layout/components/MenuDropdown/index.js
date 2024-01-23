@@ -7,7 +7,7 @@ import Icon from '~components/ui/Icon'
 
 import NavLink from '../NavLink'
 
-const MenuDropdown = ({ text, subLinks, variant }) => {
+const MenuDropdown = ({ text, subLinks, variant, utm }) => {
   const { pathname, hash } = useLocation()
   const [activeAnchorLink, setActiveAnchorLink] = useState('')
 
@@ -60,6 +60,7 @@ const MenuDropdown = ({ text, subLinks, variant }) => {
               isSubLink
               onAnchorClick={setActiveAnchorLink}
               className={cn({ active: isSubLinkActive })}
+              utm={utm}
             />
           )
         })}

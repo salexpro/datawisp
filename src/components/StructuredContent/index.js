@@ -14,7 +14,7 @@ import * as s from './StructuredContent.module.scss'
 
 const StructuredContent = (props) => {
   // TODO: update props
-  const { articleData, topLevelPage, ...rest } = props
+  const { articleData, topLevelPage, utm, ...rest } = props
 
   const {
     heading,
@@ -25,7 +25,6 @@ const StructuredContent = (props) => {
     meta,
     category,
     author,
-    seo,
   } = articleData
 
   const { createdAt } = meta
@@ -35,16 +34,24 @@ const StructuredContent = (props) => {
   const breadcrumbs = [
     topLevelPage,
     ...(category
-      ? [{ text: category.name, url: `${topLevelPage.url}#${category.slug}` }]
+      ? [
+          {
+            text: category.name,
+            url: `${topLevelPage.url}${utm ? `?${utm}` : ''}#${category.slug}`,
+          },
+        ]
       : []),
     { text: heading, isActive: true },
   ]
 
   return (
     <Container {...rest}>
-      <SeoDatoCms seo={seo} meta={meta} isArticle />
       <section className={s.article}>
-        <Breadcrumbs className={s.navBlog} breadcrumbs={breadcrumbs} />
+        <Breadcrumbs
+          className={s.navBlog}
+          breadcrumbs={breadcrumbs}
+          utm={utm}
+        />
         {!!heroImage && (
           <GatsbyImage
             alt={heroImage.alt || heroImage.basename}

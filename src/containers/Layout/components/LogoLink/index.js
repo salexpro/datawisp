@@ -6,14 +6,14 @@ import { Link } from 'gatsby'
 import * as s from './LogoLink.module.scss'
 
 const LogoLink = (props) => {
-  const { image, link, siteTitle, height, className, ...rest } = props
+  const { image, link, siteTitle, height, className, utm, ...rest } = props
 
   const { width: imgWidth = 134, height: imgHeight = 24 } = image || {}
 
   return (
     <Link
       {...rest}
-      to={link?.url}
+      to={`${link.url}${utm ? `?${utm}` : ''}`}
       className={cn(s.logoLink, className)}
       title={siteTitle}
       aria-label={link?.text}

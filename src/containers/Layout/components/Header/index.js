@@ -114,13 +114,15 @@ const Header = ({ siteTitle, headerPageData, utm }) => {
   const buttonProps = isAnchorButton
     ? {
         as: Link,
-        to: `${btnLink?.ownerPage?.url}${btnLink?.anchor}`,
+        to: `${btnLink?.ownerPage?.url}${btnLink?.anchor}${
+          utm ? `?${utm}` : ''
+        }`,
         text: btnLink?.text,
         onClick: handleClick,
       }
     : {
         as: 'a',
-        href: `${btnLink.url}${utm ? `?${utm}` : ''}`,
+        href: `${btnLink?.url}${utm ? `?${utm}` : ''}`,
         target: btnLink?.target,
         rel: btnLink?.rel || null,
         id: btnLink?.linkId ? `${btnLink.linkId}-header` : null,
@@ -141,11 +143,13 @@ const Header = ({ siteTitle, headerPageData, utm }) => {
             link={logoLink}
             siteTitle={siteTitle}
             height={logoDesiredHeight}
+            utm={utm}
           />
           {!!navMenuItems && (
             <Menu
               navItems={navMenuItems}
               className={s.headerWrapper__header__navMenu}
+              utm={utm}
             />
           )}
           <div className={s.actions}>

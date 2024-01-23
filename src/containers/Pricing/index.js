@@ -8,10 +8,11 @@ const Pricing = ({
   switchButton,
   pricingPlans,
   pricingFeatures,
+  utm,
 }) => {
   return (
     <>
-      <SectionHero heroSection={heroSection} />
+      <SectionHero heroSection={heroSection} utm={utm} />
       <PlansComparison
         switchButton={switchButton}
         pricingPlans={pricingPlans}

@@ -19,8 +19,9 @@ const NavLink = ({
   isSubLink,
   onClick,
   onAnchorClick,
-  id,
+  linkId,
   internal,
+  utm,
   ...rest
 }) => {
   const { pathname } = useLocation()
@@ -40,12 +41,14 @@ const NavLink = ({
   }
 
   const linkProps = isExternalLink
-    ? { as: 'a', href: url }
+    ? { as: 'a', href: `${url}${utm ? `?${utm}` : ''}` }
     : {
         as: Link,
         activeClassName: 'active',
         partiallyActive: true,
-        to: isAnchorLink ? `${ownerPage.url}${anchor}` : url,
+        to: isAnchorLink
+          ? `${ownerPage.url}${utm ? `?${utm}` : ''}${anchor}`
+          : `${url}${utm ? `?${utm}` : ''}`,
       }
 
   return React.createElement(

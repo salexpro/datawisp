@@ -8,7 +8,7 @@ import { Breadcrumb, Button } from 'react-bootstrap'
 import * as s from './Breadcrumbs.module.scss'
 
 const Breadcrumbs = (props) => {
-  const { className, breadcrumbs, ...rest } = props
+  const { className, breadcrumbs, utm, ...rest } = props
 
   const baseBreadcrumb = breadcrumbs?.[0]
 
@@ -19,7 +19,9 @@ const Breadcrumbs = (props) => {
           <Breadcrumb.Item
             key={index}
             linkAs={Link}
-            linkProps={{ to: url }}
+            linkProps={{
+              to: url?.includes('#') ? url : `${url}${utm ? `?${utm}` : ''}`,
+            }}
             active={isActive}
           >
             {text}
@@ -31,7 +33,11 @@ const Breadcrumbs = (props) => {
           variant="outline-secondary"
           className={s.btn}
           as={Link}
-          to={baseBreadcrumb?.url}
+          to={
+            baseBreadcrumb?.url.includes('#')
+              ? baseBreadcrumb?.url
+              : `${baseBreadcrumb?.url}${utm ? `?${utm}` : ''}`
+          }
         >
           Back
         </Button>

@@ -23,7 +23,7 @@ const ButtonGroup = ({ data, utm, className, ctaId }) => {
             }
           : {
               as: Link,
-              to: link?.url || link?.anchor,
+              to: `${link?.url || link?.anchor}${utm ? `?${utm}` : ''}`,
             }
 
         return (

@@ -78,11 +78,13 @@ const Footer = ({ siteTitle, footerPageData, utm }) => {
             className={s.footerTop__logo}
             siteTitle={siteTitle}
             height={logoDesiredHeight}
+            utm={utm}
           />
           <Menu
             variant="footer"
             navItems={navMenuItems}
             className={s.footerTop__menu}
+            utm={utm}
           />
           {!!actionButtonLink && (
             <Button

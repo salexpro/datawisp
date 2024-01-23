@@ -52,6 +52,7 @@ const Persona = ({ data, utm }) => {
         text={moreText}
         personas={moreItems}
         variant="more"
+        utm={utm}
       />
     </>
   )
