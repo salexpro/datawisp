@@ -71,7 +71,7 @@
     "eslint-plugin-react-hooks": "4.6.0",
     "gatsby-plugin-extract-schema": "^0.2.2",
     "gatsby-plugin-webpack-bundle-analyser-v2": "1.1.32",
-    "husky": "9.0.5",
+    "husky": "9.0.6",
     "nano-staged": "0.8.0",
     "prettier": "3.2.4",
     "stylelint": "^16.0.0",
