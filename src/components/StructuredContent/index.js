@@ -5,8 +5,6 @@ import { Container, Badge } from 'react-bootstrap'
 import { StructuredText } from 'react-datocms'
 import dayjs from 'dayjs'
 
-import SeoDatoCms from '~components/SeoDatoCms'
-
 import Breadcrumbs from './components/Breadcrumbs'
 import { renderBlock } from './utils'
 

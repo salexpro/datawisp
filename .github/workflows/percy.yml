@@ -28,14 +28,14 @@ jobs:
         with:
           node-version: 18
       - name: Install
-        run: npm i
+        run: pnpm i
       - name: Build
-        run: npm run build
+        run: pnpm build
         env:
           GATSBY_DATOCMS_API_TOKEN: ${{ secrets.DATOCMS_API_TOKEN }}
           GATSBY_FORM_SPREE_TOKEN: ${{ secrets.FORMSPREE_TOKEN }}
           GATSBY_DATOCMS_ENVIRONMENT: ${{ secrets.DATOCMS_ENVIRONMENT }}
       - name: Percy Test
-        run: npm i @percy/cli --save-dev && npx percy snapshot ./public
+        run: pnpm i @percy/cli --save-dev && pnpm percy snapshot ./public
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}

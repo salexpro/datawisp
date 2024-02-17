@@ -19,7 +19,7 @@ export const pageQuery = graphql`
     gatsbyImageData(
       placeholder: BLURRED
       forceBlurhash: true
-      imgixParams: { fit: "crop", auto: "compress,format" }
+      imgixParams: { fit: "crop", auto: "format" }
     )
   }
 

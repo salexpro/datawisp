@@ -1,5 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 import React from 'react'
+import 'react-medium-image-zoom/dist/styles.css'
+
 import Card from './components/Card'
 import CardColumns from './components/CardColumns'
 import Image from './components/Image'

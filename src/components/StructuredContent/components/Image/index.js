@@ -1,5 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Zoom from 'react-medium-image-zoom'
+
 import cn from 'clsx'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import * as s from './Image.module.scss'
@@ -19,10 +21,12 @@ const Image = (props) => {
       )}
     >
       <div className={s.image_inner} style={{ maxWidth: width || null }}>
-        <GatsbyImage
-          alt={image.alt || image.basename}
-          image={getImage(image)}
-        />
+        <Zoom>
+          <GatsbyImage
+            alt={image.alt || image.basename}
+            image={getImage(image)}
+          />
+        </Zoom>
 
         {caption && <figcaption>{caption}</figcaption>}
       </div>
