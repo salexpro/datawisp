@@ -11,7 +11,7 @@
     }
   ],
   "dependencies": {
-    "@fontsource-variable/inter": "5.0.16",
+    "@fontsource-variable/inter": "5.0.17",
     "@formspree/react": "^2.4.1",
     "@gatsbyjs/reach-router": "^2.0.1",
     "@gvrs/gatsby-transformer-blurhash": "2.0.0",
