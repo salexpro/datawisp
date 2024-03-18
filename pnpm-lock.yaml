@@ -113,8 +113,8 @@ dependencies:
     specifier: ^7.0.0
     version: 7.1.0(react@18.2.0)
   react-datocms:
-    specifier: 4.2.2
-    version: 4.2.2(graphql@16.8.1)(react-dom@18.2.0)(react@18.2.0)
+    specifier: 5.0.3
+    version: 5.0.3(graphql@16.8.1)(react-dom@18.2.0)(react@18.2.0)
   react-dom:
     specifier: 18.2.0
     version: 18.2.0(react@18.2.0)
@@ -11170,8 +11170,8 @@ packages:
       universal-cookie: 7.1.0
     dev: false
 
-  /react-datocms@4.2.2(graphql@16.8.1)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-GQcmApPZqRAZgxLiOZ8RV94CAWO8/uZL9jhI0C465avNAQymJ+lwkixQ8GOb0EnFLzzRpDuy0uLoJkenIihYtw==}
+  /react-datocms@5.0.3(graphql@16.8.1)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-NzX3jVNuXbrPYzoQVJkhHQ3ldl4fpWylPnC8k723Ncigb3WDKSO7DWEB3ifUp3JJceBe1agKf6HVFYolPZxOjA==}
     engines: {node: '>=8.0.0'}
     peerDependencies:
       react: '>= 16.12.0'
