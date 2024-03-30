@@ -123,7 +123,7 @@ dependencies:
     version: 1.6.4(react-dom@18.2.0)(react@18.2.0)
   react-hook-form:
     specifier: ^7.40.0
-    version: 7.51.1(react@18.2.0)
+    version: 7.51.2(react@18.2.0)
   react-medium-image-zoom:
     specifier: ^5.1.10
     version: 5.1.10(react-dom@18.2.0)(react@18.2.0)
@@ -11272,8 +11272,8 @@ packages:
       react-side-effect: 2.1.2(react@18.2.0)
     dev: false
 
-  /react-hook-form@7.51.1(react@18.2.0):
-    resolution: {integrity: sha512-ifnBjl+kW0ksINHd+8C/Gp6a4eZOdWyvRv0UBaByShwU8JbVx5hTcTWEcd5VdybvmPTATkVVXk9npXArHmo56w==}
+  /react-hook-form@7.51.2(react@18.2.0):
+    resolution: {integrity: sha512-y++lwaWjtzDt/XNnyGDQy6goHskFualmDlf+jzEZvjvz6KWDf7EboL7pUvRCzPTJd0EOPpdekYaQLEvvG6m6HA==}
     engines: {node: '>=12.22.0'}
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18
