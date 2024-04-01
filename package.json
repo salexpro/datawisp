@@ -43,7 +43,7 @@
     "prop-types": "15.8.1",
     "react": "18.2.0",
     "react-bootstrap": "2.10.2",
-    "react-cookie": "^7.0.0",
+    "react-cookie": "^7.1.4",
     "react-datocms": "5.0.3",
     "react-dom": "18.2.0",
     "react-fast-marquee": "1.6.4",
@@ -95,7 +95,7 @@
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "preinstall": "npx only-allow pnpm",
-    "prepare": "husky install",
+    "prepare": "husky",
     "cz": "cz"
   },
   "repository": {

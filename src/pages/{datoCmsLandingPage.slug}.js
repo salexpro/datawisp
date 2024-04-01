@@ -110,8 +110,8 @@ const Landing = ({ data, utm }) => {
 }
 
 export const query = graphql`
-  query LandingPage {
-    datoCmsLandingPage {
+  query LandingPage($id: String) {
+    datoCmsLandingPage(id: { eq: $id }) {
       seo {
         ...SEO
       }
