@@ -3,7 +3,8 @@ import React, { useState, useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 import cn from 'clsx'
 import { useLocation } from '@gatsbyjs/reach-router'
-import { StructuredText } from 'react-datocms'
+import { StructuredText, VideoPlayer } from 'react-datocms'
+
 import { Container } from 'react-bootstrap'
 // import { useCookies } from 'react-cookie'
 
@@ -16,6 +17,14 @@ import Caption from '~components/ui/Caption'
 
 import ModalRequestDemo from '~components/ModalRequestDemo'
 import * as s from './SectionHero.module.scss'
+
+const PLAYER_OPTIONS = {
+  autoPlay: 'muted',
+  loop: true,
+  nohotkeys: true,
+  preload: 'auto',
+  poster: '',
+}
 
 const SectionHero = (props) => {
   const {
@@ -93,12 +102,19 @@ const SectionHero = (props) => {
 
           {caption && <Caption>{caption}</Caption>}
         </div>
-        <ImageFormat
-          alt="hero"
-          file={image}
-          className={s.imgHero}
-          objectFit="contain"
-        />
+        {image &&
+          (image?.video ? (
+            <div className={s.video}>
+              <VideoPlayer data={image.video} {...PLAYER_OPTIONS} />
+            </div>
+          ) : (
+            <ImageFormat
+              alt="hero"
+              file={image}
+              className={s.imgHero}
+              objectFit="contain"
+            />
+          ))}
       </Container>
 
       {popup && (

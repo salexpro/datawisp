@@ -31,9 +31,11 @@
   }
 }
 
-.imgHero {
-  pointer-events: none;
-  user-select: none;
+.imgHero,
+.video {
+  overflow: hidden;
+  // pointer-events: none;
+  // user-select: none;
   border-radius: 12px;
   box-shadow:
     0 1px 3px 0 rgba(0, 0, 0, 2%),
@@ -49,6 +51,20 @@
 
   @include b-d(md) {
     border-radius: 8px;
+  }
+}
+
+.video {
+  aspect-ratio: 1024 / 597;
+  background: #5428ee;
+
+  > mux-player {
+    display: block;
+    height: 100%;
+
+    --media-background-color: #5428ee;
+    --controls-backdrop-color: transparent !important;
+    --controls: none;
   }
 }
 

@@ -170,6 +170,18 @@ export const query = graphql`
           breakpoints: [327, 655, 682, 718, 982, 1140, 1363, 1435, 1794]
           imgixParams: { fit: "crop", auto: "format" }
         )
+        video {
+          muxPlaybackId
+          streamingUrl
+          mp4High: mp4Url(res: high)
+          mp4Med: mp4Url(res: medium)
+          mp4Low: mp4Url(res: low)
+          duration
+          frameRate
+          # thumbJpg: thumbnailUrl(format: jpg)
+          # thumbPng: thumbnailUrl(format: png)
+          # thumbGif: thumbnailUrl(format: gif)
+        }
       }
 
       integrationsSectionHeading
