@@ -9,7 +9,7 @@ import NavLink from '../../../NavLink'
 import BtnAnimatedBurger from '../BtnAnimatedBurger'
 
 const MobileNavMenu = (props) => {
-  const { btnLink, navItems, utm, ...rest } = props
+  const { btnLink, loginLink, navItems, utm, ...rest } = props
   const [showMenu, setShowMenu] = useState(false)
   const [activeAnchorLink, setActiveAnchorLink] = useState('')
 
@@ -44,8 +44,11 @@ const MobileNavMenu = (props) => {
             </Button>
             <Nav variant="header">
               <Nav.Item>
-                <Nav.Link href={`${btnLink?.url}${utm ? `?${utm}` : ''}`}>
-                  Log in
+                <Nav.Link
+                  href={`${loginLink?.url}${utm ? `?${utm}` : ''}`}
+                  target={loginLink?.target}
+                >
+                  {loginLink?.text}
                 </Nav.Link>
               </Nav.Item>
             </Nav>

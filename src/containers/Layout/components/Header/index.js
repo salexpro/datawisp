@@ -87,6 +87,9 @@ const Header = ({ siteTitle, headerPageData, utm }) => {
         actionButtonLink {
           ...LinkExternalData
         }
+        loginLink {
+          ...LinkExternalData
+        }
       }
     }
   `)
@@ -99,6 +102,7 @@ const Header = ({ siteTitle, headerPageData, utm }) => {
     logoLink,
     navMenuItems,
     actionButtonLink: btnLink,
+    loginLink,
   } = data
 
   const handleClick = (e) => {
@@ -157,13 +161,13 @@ const Header = ({ siteTitle, headerPageData, utm }) => {
               <Nav.Item>
                 <Nav.Link
                   {...{
-                    href: `${btnLink.url}${utm ? `?${utm}` : ''}`,
-                    target: btnLink?.target,
-                    rel: btnLink?.rel || null,
+                    href: `${loginLink.url}${utm ? `?${utm}` : ''}`,
+                    target: loginLink?.target,
+                    rel: loginLink?.rel || null,
                     id: `login-header`,
                   }}
                 >
-                  Log in
+                  {loginLink?.text}
                 </Nav.Link>
               </Nav.Item>
             </Nav>
@@ -183,6 +187,7 @@ const Header = ({ siteTitle, headerPageData, utm }) => {
       {!!navMenuItems && (
         <MobileNavMenu
           btnLink={btnLink}
+          loginLink={loginLink}
           navItems={navMenuItems}
           className={s.navMenuMobile}
           utm={utm}

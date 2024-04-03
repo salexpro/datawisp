@@ -8,31 +8,30 @@
 
 .container {
   position: relative;
-  width: 100%;
-  // display: grid;
-  height: 100%;
-
-  @include b-d(md) {
-    row-gap: 64px;
-  }
+  display: grid;
 }
 
 .content {
   display: grid;
   justify-content: center;
-  padding: 73px 0 23px;
-
-  @include b-d(lg) {
-    padding: 113px 0 45px;
-  }
+  padding-top: 30px;
 
   @include b-d(md) {
-    padding-top: 106px;
+    padding-bottom: 20px;
+  }
+
+  &.hasMessage {
+    padding: 70px 0 0;
+
+    @include b-d(md) {
+      padding: 100px 0 20px;
+    }
   }
 }
 
 .imgHero,
 .video {
+  margin-bottom: 40px;
   overflow: hidden;
   // pointer-events: none;
   // user-select: none;
@@ -55,14 +54,16 @@
 }
 
 .video {
-  aspect-ratio: 1024 / 597;
-  background: #5428ee;
+  aspect-ratio: 2048 / 1194;
+  background: #ececec;
 
   > mux-player {
     display: block;
-    height: 100%;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    margin: -2px;
 
-    --media-background-color: #5428ee;
+    --media-background-color: #ececec;
     --controls-backdrop-color: transparent !important;
     --controls: none;
   }
@@ -110,5 +111,4 @@
 .lead {
   max-width: 1028px;
   margin-top: 25px;
-  margin-bottom: 42px;
 }

@@ -116,6 +116,11 @@ export const query = graphql`
         ...SEO
       }
 
+      actionButtonLink {
+        __typename
+        ...LinkExternalData
+      }
+
       heroHeading
       heroText {
         value
@@ -219,6 +224,48 @@ export const query = graphql`
 
     allDatoCmsPricingFeaturesCategory(sort: { position: ASC }) {
       ...PricingFeatures
+    }
+
+    datoCmsHeader {
+      logoImage {
+        url
+        width
+        height
+      }
+      logoDesiredHeight
+      logoLink {
+        ...LinkInternalData
+      }
+      loginLink {
+        ...LinkExternalData
+      }
+    }
+
+    datoCmsFooter {
+      logoImage {
+        url
+        width
+        height
+      }
+      logoDesiredHeight
+      logoLink {
+        ...LinkInternalData
+      }
+      socialLinks {
+        id
+        iconName
+        tooltip
+        url
+        hoverColor {
+          hex
+        }
+      }
+      termsConditionsLink {
+        ...LinkExternalData
+      }
+      privacyPolicyLink {
+        ...LinkExternalData
+      }
     }
   }
 `

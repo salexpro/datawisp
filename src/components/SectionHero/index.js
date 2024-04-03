@@ -24,6 +24,7 @@ const PLAYER_OPTIONS = {
   nohotkeys: true,
   preload: 'auto',
   poster: '',
+  minResolution: '720p',
 }
 
 const SectionHero = (props) => {
@@ -57,7 +58,7 @@ const SectionHero = (props) => {
     const strength = 0.1
 
     const zoomImage = () => {
-      const position = window.scrollY / (sectionRef.current.offsetHeight / 4)
+      const position = window.scrollY / (sectionRef.current.offsetHeight / 5)
 
       const targetScale = Math.min(1, 0.83 + position * (1 - 0.83))
 
@@ -88,7 +89,7 @@ const SectionHero = (props) => {
       ref={sectionRef}
     >
       <Container className={s.container}>
-        <div className={s.content}>
+        <div className={cn(s.content, { [s.hasMessage]: !!message })}>
           {message && (
             <div className={s.message}>
               <StructuredText data={message.value} />
@@ -98,9 +99,6 @@ const SectionHero = (props) => {
           <div className={s.lead}>
             <StructuredText data={text.value} />
           </div>
-          {buttons && <ButtonGroup data={buttons} utm={utm} ctaId="hero" />}
-
-          {caption && <Caption>{caption}</Caption>}
         </div>
         {image &&
           (image?.video ? (
@@ -115,6 +113,9 @@ const SectionHero = (props) => {
               objectFit="contain"
             />
           ))}
+        {buttons && <ButtonGroup data={buttons} utm={utm} ctaId="hero" />}
+
+        {caption && <Caption>{caption}</Caption>}
       </Container>
 
       {popup && (
