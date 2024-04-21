@@ -33,7 +33,7 @@ importers:
         version: 1.3.2(react@18.2.0)
       '@mux/mux-player-react':
         specifier: ^2.4.1
-        version: 2.4.1(@types/react@18.2.73)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        version: 2.5.0(@types/react@18.2.73)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@svgr/webpack':
         specifier: 8.1.0
         version: 8.1.0(typescript@5.4.5)
@@ -1806,8 +1806,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@mux/mux-player-react@2.4.1':
-    resolution: {integrity: sha512-grM6T847fKnzlK786NG1AxhNS+6A78pEPc5zG4yYvKe3ayGNTOpq/Hnm9pDVkOx5/uMI/yCdSsfiNyytYaw8qA==}
+  '@mux/mux-player-react@2.5.0':
+    resolution: {integrity: sha512-HTJ55X+ngrR2tVgvCEc6edihyHGYkB4C8TqPNM+tbHeQqIevvyatJAMlZHZbpFEdOLUeL3I/PwsDQ6FOV7csKw==}
     peerDependencies:
       '@types/react': ^17.0.0 || ^18
       '@types/react-dom': '*'
@@ -1819,14 +1819,14 @@ packages:
       '@types/react-dom':
         optional: true
 
-  '@mux/mux-player@2.4.1':
-    resolution: {integrity: sha512-Lm7KkG/lD1tqqqtL1nacZsCll9JY4gVNGxUw/MPYmgIevYACYtQ/76iaEtaN67DmHYYxep1QUpYEDZPXallkEg==}
+  '@mux/mux-player@2.5.0':
+    resolution: {integrity: sha512-Tps+GsWlUuzJHwZpHHb/47OGKF7MXr6ca2RRL/S/7TRX5Y45qROoZiqZ859AxZW2UPcy7chFR6LROd4X7PSMQQ==}
 
-  '@mux/mux-video@0.17.5':
-    resolution: {integrity: sha512-EMLflDnr/o7XQiWKfwnq9BJmj30kpSszzXwpXE4hmBIgc9JAuF3Hl94qv1kyWQAUhrO5hnnOxwGHgv0FvkJ1GQ==}
+  '@mux/mux-video@0.18.0':
+    resolution: {integrity: sha512-uRheOAEe47k4nadoH/q/5/sfgd1amr6OSesh1yTQPDtAICIy8zCOHyLLOCaJl7vVZxw9/JRQuwO6MwjzjHhdng==}
 
-  '@mux/playback-core@0.22.4':
-    resolution: {integrity: sha512-f/jWcYbFRjXjdFRNq3MK79D1YHTqvwcfchRLYukE384P3cb027dru+bSxMKESrfkhAhnWFy7fdq/llawl7SU9g==}
+  '@mux/playback-core@0.23.0':
+    resolution: {integrity: sha512-7MX5xnJ+rFReVDAWKEwHqnfOyQkX+dzYysrTLAy0L1xJMsIhMhAD+wwvkDC/rRgtha5jHF863GCwrJAHmnxSCA==}
 
   '@nicolo-ribaudo/eslint-scope-5-internals@5.1.1-v1':
     resolution: {integrity: sha512-54/JRvkLIzzDWshCWfuhadfrfZVPiElY8Fcgmg1HroEly/EDSszzhBAsarCux+D/kOslTRquNzuyGSmUSTTHGg==}
@@ -4983,8 +4983,8 @@ packages:
   header-case@2.0.4:
     resolution: {integrity: sha512-H/vuk5TEEVZwrR0lp2zed9OCo1uAILMlx0JEMgC26rzyJJ3N1v6XkwHHXJQdR2doSjcGPM6OKPYoJgf0plJ11Q==}
 
-  hls.js@1.4.14:
-    resolution: {integrity: sha512-UppQjyvPVclg+6t2KY/Rv03h0+bA5u6zwqVoz4LAC/L0fgYmIaCD7ZCrwe8WI1Gv01be1XL0QFsRbSdIHV/Wbw==}
+  hls.js@1.5.8:
+    resolution: {integrity: sha512-hJYMPfLhWO7/7+n4f9pn6bOheCGx0WgvVz7k3ouq3Pp1bja48NN+HeCQu3XCGYzqWQF/wo7Sk6dJAyWVJD8ECA==}
 
   hoist-non-react-statics@3.3.2:
     resolution: {integrity: sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==}
@@ -5791,8 +5791,8 @@ packages:
   meant@1.0.3:
     resolution: {integrity: sha512-88ZRGcNxAq4EH38cQ4D85PM57pikCwS8Z99EWHODxN7KBY+UuPiqzRTtZzS8KTXO/ywSWbdjjJST2Hly/EQxLw==}
 
-  media-chrome@3.1.1:
-    resolution: {integrity: sha512-EqofPNX7Eq1dv9ixuRo51Wv/Wo3P4PIPjY4iM1jGqu/Jyond8BqdigQKdhxPM2rH9SohdUXZvUWS1OJ1xMO6Ww==}
+  media-chrome@3.2.1:
+    resolution: {integrity: sha512-WXWccoeu9bzMsPtTaEd340gzL/amE6LW0o13Dg0RSAwjNhFmuMmsBvRfO7m/GzMYjmOD4R/3Ckvte6jvHAK+mw==}
 
   media-tracks@0.3.0:
     resolution: {integrity: sha512-kicD8eOFwe6nD7jn7iM/0yuLzWuo6abWHURYwY7NhxL1dBif+lt0on4rLTs6VhKwAEE/BjT3wr+0vn1w8SBpag==}
@@ -5982,8 +5982,8 @@ packages:
   mute-stream@0.0.8:
     resolution: {integrity: sha512-nnbWWOkoWyUsTjKrhgD0dcz22mdkSnpYqbEjIm2nhwhuxlSkpywJmBo8h0ZqJdkp73mb90SssHkN4rsRaBAfAA==}
 
-  mux-embed@4.30.0:
-    resolution: {integrity: sha512-XAgAp4CEvsiZL26GbruzeG1g33OWyrzuskDMavXUxDufTxS0/AxAhwoTTRqEzEJS9vnZa/X9R2GV3xRX1XMp2w==}
+  mux-embed@5.2.0:
+    resolution: {integrity: sha512-hF9WDXnUu+5cYA36DfrdEKEpcV26dZvGmx2MAqvCg0kJiH/HcjNCk6QRCGJW0Xoe0Jtp2vAF9RbY6eL0uvZTZA==}
 
   nano-staged@0.8.0:
     resolution: {integrity: sha512-QSEqPGTCJbkHU2yLvfY6huqYPjdBrOaTMKatO1F8nCSrkQGXeKwtCiCnsdxnuMhbg3DTVywKaeWLGCE5oJpq0g==}
@@ -10410,33 +10410,33 @@ snapshots:
   '@msgpackr-extract/msgpackr-extract-win32-x64@3.0.2':
     optional: true
 
-  '@mux/mux-player-react@2.4.1(@types/react@18.2.73)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+  '@mux/mux-player-react@2.5.0(@types/react@18.2.73)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
-      '@mux/mux-player': 2.4.1
-      '@mux/playback-core': 0.22.4
+      '@mux/mux-player': 2.5.0
+      '@mux/playback-core': 0.23.0
       prop-types: 15.8.1
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     optionalDependencies:
       '@types/react': 18.2.73
 
-  '@mux/mux-player@2.4.1':
+  '@mux/mux-player@2.5.0':
     dependencies:
-      '@mux/mux-video': 0.17.5
-      '@mux/playback-core': 0.22.4
-      media-chrome: 3.1.1
+      '@mux/mux-video': 0.18.0
+      '@mux/playback-core': 0.23.0
+      media-chrome: 3.2.1
 
-  '@mux/mux-video@0.17.5':
+  '@mux/mux-video@0.18.0':
     dependencies:
-      '@mux/playback-core': 0.22.4
+      '@mux/playback-core': 0.23.0
       castable-video: 1.0.6
       custom-media-element: 1.2.3
       media-tracks: 0.3.0
 
-  '@mux/playback-core@0.22.4':
+  '@mux/playback-core@0.23.0':
     dependencies:
-      hls.js: 1.4.14
-      mux-embed: 4.30.0
+      hls.js: 1.5.8
+      mux-embed: 5.2.0
 
   '@nicolo-ribaudo/eslint-scope-5-internals@5.1.1-v1':
     dependencies:
@@ -14894,7 +14894,7 @@ snapshots:
       capital-case: 1.0.4
       tslib: 2.6.2
 
-  hls.js@1.4.14: {}
+  hls.js@1.5.8: {}
 
   hoist-non-react-statics@3.3.2:
     dependencies:
@@ -15644,7 +15644,7 @@ snapshots:
 
   meant@1.0.3: {}
 
-  media-chrome@3.1.1: {}
+  media-chrome@3.2.1: {}
 
   media-tracks@0.3.0: {}
 
@@ -15826,7 +15826,7 @@ snapshots:
 
   mute-stream@0.0.8: {}
 
-  mux-embed@4.30.0: {}
+  mux-embed@5.2.0: {}
 
   nano-staged@0.8.0:
     dependencies:
@@ -16640,7 +16640,7 @@ snapshots:
 
   react-datocms@6.0.1(@types/react@18.2.73)(graphql@16.8.1)(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
     dependencies:
-      '@mux/mux-player-react': 2.4.1(@types/react@18.2.73)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@mux/mux-player-react': 2.5.0(@types/react@18.2.73)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       datocms-listen: 0.1.15(graphql@16.8.1)
       datocms-structured-text-generic-html-renderer: 2.1.12
       datocms-structured-text-utils: 2.1.12
