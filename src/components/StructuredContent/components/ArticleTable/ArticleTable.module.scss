@@ -51,7 +51,7 @@ $thumb-bg: #fff;
     width: 100%;
     border-spacing: 0;
     border-collapse: separate;
-    border: 1px solid #e2e2e2;
+    border: 1px solid $gray-300;
     border-radius: 8px;
   }
 
@@ -66,10 +66,10 @@ $thumb-bg: #fff;
   }
 
   td:not(:last-child) {
-    border-right: 1px solid #e2e2e2;
+    border-right: 1px solid $gray-300;
   }
 
   tr:not(:last-child) > td {
-    border-bottom: 1px solid #e2e2e2;
+    border-bottom: 1px solid $gray-300;
   }
 }

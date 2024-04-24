@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 import SeoDatoCms from '~components/SeoDatoCms'
 import SectionHero from '~components/SectionHero'
 import SectionIntegrationsPreview from '~components/SectionIntegrationsPreview'
+import SectionQuote from '~components/SectionQuote'
 import SectionFeatures from '~components/SectionFeatures'
 import SectionPrices from '~components/SectionPrices'
 import SectionIntegrations from '~components/SectionIntegrations'
@@ -26,6 +27,10 @@ const Landing = ({ data, utm }) => {
     integrationsHeading,
     integrationsItems,
     integrationsButtons,
+
+    quoteText,
+    quoteCite,
+    quoteAuthor,
 
     featuresHeading,
     featuresText,
@@ -68,6 +73,15 @@ const Landing = ({ data, utm }) => {
           buttons: integrationsButtons,
         }}
       />
+      {quoteText && (
+        <SectionQuote
+          {...{
+            text: quoteText,
+            cite: quoteCite,
+            author: quoteAuthor,
+          }}
+        />
+      )}
       <SectionFeatures
         {...{
           heading: featuresHeading,
@@ -171,6 +185,10 @@ export const query = graphql`
       integrationsButtons {
         ...Buttons
       }
+
+      quoteText
+      quoteCite
+      quoteAuthor
 
       featuresHeading
       featuresText
