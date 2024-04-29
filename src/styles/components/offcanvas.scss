@@ -3,7 +3,7 @@
     transform 0.3s ease-in-out,
     opacity 0.3s ease-in-out;
 
-  @include b-up(lg) {
+  @include b-up(xl) {
     display: none;
   }
 

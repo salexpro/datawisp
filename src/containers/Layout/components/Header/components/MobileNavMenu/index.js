@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { useLocation } from '@gatsbyjs/reach-router'
 import { Offcanvas, Button, Accordion, Nav } from 'react-bootstrap'
-import cn from 'clsx'
+import cn from 'classnames'
 
 import NavLink from '../../../NavLink'
 

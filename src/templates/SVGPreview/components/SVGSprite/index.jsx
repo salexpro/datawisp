@@ -1,6 +1,7 @@
+/* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import cn from 'clsx'
+import cn from 'classnames'
 import { parse } from 'svg-parser'
 
 import svgSrc from '~components/ui/Icon/icons.svg'

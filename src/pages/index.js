@@ -132,7 +132,7 @@ export const query = graphql`
     }
   }
 
-  fragment personaItem on DatoCmsPersona {
+  fragment PersonaItem on DatoCmsPersona {
     id
     title
     description {
@@ -141,6 +141,30 @@ export const query = graphql`
     iconName
     link {
       url
+    }
+  }
+
+  fragment MediaItem on DatoCmsFileField {
+    format
+    url
+    gatsbyImageData(
+      width: 1300
+      placeholder: NONE
+      sizes: "(max-width: 767.98px) calc(100vw - 24px * 2), (max-width: 1023.98px) 682px, (max-width: 1199.98px) 718px, 1030px"
+      breakpoints: [327, 655, 682, 718, 982, 1140, 1363, 1435, 1794]
+      imgixParams: { fit: "crop", auto: "format" }
+    )
+    video {
+      muxPlaybackId
+      streamingUrl
+      mp4High: mp4Url(res: high)
+      mp4Med: mp4Url(res: medium)
+      mp4Low: mp4Url(res: low)
+      duration
+      frameRate
+      # thumbJpg: thumbnailUrl(format: jpg)
+      # thumbPng: thumbnailUrl(format: png)
+      # thumbGif: thumbnailUrl(format: gif)
     }
   }
 
@@ -161,27 +185,7 @@ export const query = graphql`
       }
       heroSectionCaption
       heroSectionImage {
-        format
-        url
-        gatsbyImageData(
-          width: 1300
-          placeholder: NONE
-          sizes: "(max-width: 767.98px) calc(100vw - 24px * 2), (max-width: 1023.98px) 682px, (max-width: 1199.98px) 718px, 1030px"
-          breakpoints: [327, 655, 682, 718, 982, 1140, 1363, 1435, 1794]
-          imgixParams: { fit: "crop", auto: "format" }
-        )
-        video {
-          muxPlaybackId
-          streamingUrl
-          mp4High: mp4Url(res: high)
-          mp4Med: mp4Url(res: medium)
-          mp4Low: mp4Url(res: low)
-          duration
-          frameRate
-          # thumbJpg: thumbnailUrl(format: jpg)
-          # thumbPng: thumbnailUrl(format: png)
-          # thumbGif: thumbnailUrl(format: gif)
-        }
+        ...MediaItem
       }
 
       integrationsSectionHeading
@@ -204,7 +208,7 @@ export const query = graphql`
       }
 
       personaItems {
-        ...personaItem
+        ...PersonaItem
       }
 
       howItWorksSectionHeading

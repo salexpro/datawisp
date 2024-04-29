@@ -22,7 +22,7 @@
         grid-template-columns: auto 1fr auto;
       }
 
-      @include b-btw(md, lg) {
+      @include b-btw(md, xl) {
         grid-template-columns: 1fr auto;
         padding-right: 104px;
       }
@@ -62,11 +62,11 @@
     }
 
     &__navMenu {
-      @include b-up(lg) {
+      @include b-up(xl) {
         justify-self: end;
       }
 
-      @include b-d(lg) {
+      @include b-d(xl) {
         display: none;
       }
     }
@@ -78,7 +78,7 @@
   top: 24px;
   z-index: $zindex-offcanvas + 5;
 
-  @include b-up(lg) {
+  @include b-up(xl) {
     display: none;
   }
 

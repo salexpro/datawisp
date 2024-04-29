@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import cn from 'clsx'
+import cn from 'classnames'
 import { StructuredText } from 'react-datocms'
 
-import ImageFormat from '~components/ImageFormat'
+import ImageFormat from '~components/ui/ImageFormat'
 
 import * as s from './CardStep.module.scss'
 

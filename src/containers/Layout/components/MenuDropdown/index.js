@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Dropdown } from 'react-bootstrap'
 import { useLocation } from '@gatsbyjs/reach-router'
-import cn from 'clsx'
+import cn from 'classnames'
 
 import Icon from '~components/ui/Icon'
 

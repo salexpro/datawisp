@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Button, Container } from 'react-bootstrap'
 
-import ImageFormat from '~components/ImageFormat'
+import ImageFormat from '~components/ui/ImageFormat'
 import ModalBecomePartner from '../ModalBecomePartner'
 import * as s from './SectionHero.module.scss'
 

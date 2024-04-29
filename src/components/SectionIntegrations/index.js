@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Container } from 'react-bootstrap'
 import { StructuredText } from 'react-datocms'
-import cn from 'clsx'
+import cn from 'classnames'
 
 import { Link } from '@gatsbyjs/reach-router'
 import IntegrationItem from './components/IntegrationItem'

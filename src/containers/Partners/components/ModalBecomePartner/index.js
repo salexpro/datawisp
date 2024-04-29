@@ -2,7 +2,7 @@ import React from 'react'
 import { Button, Form, Modal, Spinner } from 'react-bootstrap'
 import { useForm } from 'react-hook-form'
 import { useForm as useFormSpree } from '@formspree/react'
-import cn from 'clsx'
+import cn from 'classnames'
 
 import { addToastToStack } from '~components/ToastManager'
 import { TOAST_TITLE } from '~constants'

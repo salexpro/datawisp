@@ -1,5 +1,5 @@
 import React from 'react'
-import cn from 'clsx'
+import cn from 'classnames'
 
 import ButtonGroup from '~components/ui/ButtonGroup'
 import * as s from './TableHeader.module.scss'
@@ -50,14 +50,12 @@ const TableHeader = ({ data, isMobile }) => (
                 </div>
               )}
 
-              {!!button?.length && (
-                <ButtonGroup data={button} className={s.button} />
-              )}
+              {button && <ButtonGroup data={[button]} className={s.button} />}
 
-              {discount && (
+              {discount.previousPrice && (
                 <div className={s.previousPrice}>{discount.previousPrice}</div>
               )}
-              {discount && (
+              {discount.currentPrice && (
                 <div className={s.currentPrice}>{discount.currentPrice}</div>
               )}
             </div>

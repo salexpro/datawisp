@@ -1,4 +1,5 @@
 import React from 'react'
+import { Analytics } from '@vercel/analytics/react'
 import Layout from '~containers/Layout'
 
 export const wrapPageElement = ({ element, props }) => {
@@ -23,9 +24,15 @@ export const wrapPageElement = ({ element, props }) => {
         {...props}
       >
         {element}
+        <Analytics />
       </Layout>
     )
   }
 
-  return <Layout {...props}>{element}</Layout>
+  return (
+    <Layout {...props}>
+      {element}
+      <Analytics />
+    </Layout>
+  )
 }

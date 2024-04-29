@@ -1,0 +1,83 @@
+@import '~styles/mixins';
+
+.section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+
+  @include b-d(md) {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+}
+
+.inner {
+  max-width: 1030px;
+  margin: auto;
+
+  h5 {
+    margin-bottom: 1em;
+  }
+
+  h2 {
+    margin-bottom: 1rem;
+    line-height: 1.2;
+
+    @include b-up(md) {
+      text-align: center;
+    }
+
+    + h5 {
+      margin-bottom: 2.5em;
+
+      @include b-d(md) {
+        margin-bottom: 1.6em;
+      }
+    }
+  }
+
+  > p {
+    margin-bottom: 1.2em;
+  }
+
+  /* stylelint-disable-next-line selector-pseudo-class-no-unknown */
+  :global(.gatsby-image-wrapper) {
+    margin-bottom: 2em;
+  }
+
+  ol {
+    padding-left: 0;
+    margin-bottom: 2em;
+    list-style: none;
+    counter-reset: list;
+
+    li {
+      position: relative;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 1em;
+      counter-increment: list;
+
+      @include b-d(md) {
+        align-items: start;
+      }
+
+      &::before {
+        flex: 0 0 2.4em;
+        width: 2.4em;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 2.4em;
+        color: $gray-400;
+        text-align: center;
+        content: counter(list);
+        background: $gray-100;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}

@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Badge } from 'react-bootstrap'
-import cn from 'clsx'
+import cn from 'classnames'
 
 import * as s from './ComingSoonCase.module.scss'
 

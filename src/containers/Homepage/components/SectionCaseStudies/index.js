@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import cn from 'clsx'
+import cn from 'classnames'
 import { Button, Container } from 'react-bootstrap'
 import { Link } from 'gatsby'
 import { Swiper, SwiperSlide } from 'swiper/react'

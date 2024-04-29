@@ -3,7 +3,7 @@ import React from 'react'
 import { useLocation } from '@gatsbyjs/reach-router'
 import PropTypes from 'prop-types'
 import { Container } from 'react-bootstrap'
-import cn from 'clsx'
+import cn from 'classnames'
 
 import BlogItem from '~components/BlogItem'
 

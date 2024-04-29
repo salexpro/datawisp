@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import ReactPlayer from 'react-player/lazy'
 import { GatsbyImage } from 'gatsby-plugin-image'
-import cn from 'clsx'
+import cn from 'classnames'
 
 import getImgWithBlurHash from '~utils/getImgWithBlurHash'
 import playImg from './img/play.svg'

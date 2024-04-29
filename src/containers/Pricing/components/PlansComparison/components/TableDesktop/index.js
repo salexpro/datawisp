@@ -1,5 +1,5 @@
 import React from 'react'
-import cn from 'clsx'
+import cn from 'classnames'
 
 import TableHeader from '../TableHeader'
 import TableBody from '../TableBody'

@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import cn from 'clsx'
+import cn from 'classnames'
 
 import Icon from '~components/ui/Icon'
 

@@ -3,7 +3,8 @@
 
 .feature {
   display: grid;
-  grid-template-rows: auto auto 1fr;
+  align-content: start;
+  // grid-template-rows: auto auto 1fr;
 
   &:not(.long) {
     gap: 20px;

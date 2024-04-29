@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Container } from 'react-bootstrap'
-import cn from 'clsx'
+import cn from 'classnames'
 
 import ButtonGroup from '~components/ui/ButtonGroup'
 import Caption from '~components/ui/Caption'
-import Feature from './components/Feature'
+import Feature from '../Feature'
 
 import * as s from './SectionFeatures.module.scss'
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import cn from 'clsx'
+import cn from 'classnames'
 import { StructuredText } from 'react-datocms'
 
 import Icon from '~components/ui/Icon'
@@ -16,9 +16,11 @@ const Feature = (props) => {
     <div className={cn(s.feature, { [s[variant]]: variant })}>
       <Icon name={iconName} size={isLong ? 24 : 48} className={s.icon} />
       <h3 className={isLong ? 'h5' : 'h6'}>{heading}</h3>
-      <div className={s.text}>
-        <StructuredText data={text.value} />
-      </div>
+      {text && (
+        <div className={s.text}>
+          <StructuredText data={text.value} />
+        </div>
+      )}
     </div>
   )
 }
@@ -26,7 +28,11 @@ const Feature = (props) => {
 Feature.propTypes = {
   iconName: PropTypes.string.isRequired,
   heading: PropTypes.string.isRequired,
-  text: PropTypes.object.isRequired,
+  text: PropTypes.object,
+}
+
+Feature.defaultProps = {
+  text: null,
 }
 
 export default Feature

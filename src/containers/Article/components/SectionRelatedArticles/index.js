@@ -1,7 +1,7 @@
 /* eslint-disable no-nested-ternary */
 import React from 'react'
 import PropTypes from 'prop-types'
-import cn from 'clsx'
+import cn from 'classnames'
 import { Container } from 'react-bootstrap'
 import { Link } from 'gatsby'
 import { range } from 'lodash-es'

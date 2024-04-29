@@ -2,7 +2,7 @@ import React from 'react'
 import { Button, Container, Nav } from 'react-bootstrap'
 import PropTypes from 'prop-types'
 import { graphql, Link, useStaticQuery } from 'gatsby'
-import cn from 'clsx'
+import cn from 'classnames'
 import { useCookies } from 'react-cookie'
 
 import useScrolled from '~hooks/useScrolled'

@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import cn from 'clsx'
+import cn from 'classnames'
 import { Container } from 'react-bootstrap'
 import { StructuredText } from 'react-datocms'
 
-import ImageFormat from '~components/ImageFormat'
+import ImageFormat from '~components/ui/ImageFormat'
 
 import * as s from './SectionMission.module.scss'
 

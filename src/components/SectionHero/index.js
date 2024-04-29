@@ -1,14 +1,13 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React, { useState, useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
-import cn from 'clsx'
+import cn from 'classnames'
 import { useLocation } from '@gatsbyjs/reach-router'
-import { StructuredText, VideoPlayer } from 'react-datocms'
-
+import { StructuredText } from 'react-datocms'
 import { Container } from 'react-bootstrap'
 // import { useCookies } from 'react-cookie'
 
-import ImageFormat from '~components/ImageFormat'
+import MediaItem from '~components/ui/MediaItem'
 import ButtonGroup from '~components/ui/ButtonGroup'
 import Caption from '~components/ui/Caption'
 
@@ -18,19 +17,11 @@ import Caption from '~components/ui/Caption'
 import ModalRequestDemo from '~components/ModalRequestDemo'
 import * as s from './SectionHero.module.scss'
 
-const PLAYER_OPTIONS = {
-  autoPlay: 'muted',
-  loop: true,
-  nohotkeys: true,
-  preload: 'auto',
-  poster: '',
-  minResolution: '720p',
-}
-
 const SectionHero = (props) => {
   const {
     message,
     heading,
+    lead,
     text,
     image,
     caption,
@@ -95,24 +86,24 @@ const SectionHero = (props) => {
               <StructuredText data={message.value} />
             </div>
           )}
-          <h1 className={s.heading}>{heading}</h1>
+
+          {heading?.value ? (
+            <StructuredText data={heading.value} />
+          ) : (
+            <h1>{heading}</h1>
+          )}
+
+          {lead && (
+            <div className={cn('h4', s.lead)}>
+              <StructuredText data={lead.value} />
+            </div>
+          )}
+
           <div className={s.lead}>
             <StructuredText data={text.value} />
           </div>
         </div>
-        {image &&
-          (image?.video ? (
-            <div className={s.video}>
-              <VideoPlayer data={image.video} {...PLAYER_OPTIONS} />
-            </div>
-          ) : (
-            <ImageFormat
-              alt="hero"
-              file={image}
-              className={s.imgHero}
-              objectFit="contain"
-            />
-          ))}
+        {image && <MediaItem data={image} />}
         {buttons && <ButtonGroup data={buttons} utm={utm} ctaId="hero" />}
 
         {caption && <Caption>{caption}</Caption>}

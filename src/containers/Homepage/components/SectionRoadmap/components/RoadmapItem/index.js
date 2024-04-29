@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import cn from 'clsx'
+import cn from 'classnames'
 import { StructuredText } from 'react-datocms'
 
 import * as s from './RoadmapItem.module.scss'

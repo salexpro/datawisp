@@ -1,8 +1,8 @@
 import React from 'react'
-import cn from 'clsx'
+import cn from 'classnames'
 import { Container } from 'react-bootstrap'
 
-import ImageFormat from '~components/ImageFormat'
+import ImageFormat from '~components/ui/ImageFormat'
 import ButtonGroup from '~components/ui/ButtonGroup'
 
 import * as s from './SectionIntegrationsPreview.module.scss'

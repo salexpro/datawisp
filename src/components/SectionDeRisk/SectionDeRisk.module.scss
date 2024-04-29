@@ -1,0 +1,46 @@
+@import '~styles/mixins';
+
+.section {
+  padding-top: 66px;
+  padding-bottom: 24px;
+  margin-top: 64px;
+  text-align: center;
+  border-top: 1px solid $gray-200;
+
+  @include b-d(md) {
+    padding-top: 40px;
+    padding-bottom: 0;
+    margin-top: 30px;
+  }
+
+  p,
+  h5 {
+    max-width: 870px;
+    margin: auto;
+    margin-bottom: 1.2em;
+  }
+
+  h2 {
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    text-align: center;
+
+    + h5 {
+      margin-bottom: 2em;
+
+      @include b-d(md) {
+        margin-bottom: 1.6em;
+      }
+    }
+  }
+
+  p {
+    @include b-d(md) {
+      text-align: left;
+    }
+  }
+}
+
+.buttons {
+  margin-top: 40px;
+}

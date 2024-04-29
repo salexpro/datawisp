@@ -2,7 +2,7 @@ import React from 'react'
 import { Button, Container } from 'react-bootstrap'
 import { StructuredText } from 'react-datocms'
 
-import ImageFormat from '~components/ImageFormat'
+import ImageFormat from '~components/ui/ImageFormat'
 
 import * as s from './SectionPartners.module.scss'
 

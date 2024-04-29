@@ -3,7 +3,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { StructuredText } from 'react-datocms'
 import PropTypes from 'prop-types'
 import { Badge } from 'react-bootstrap'
-import cn from 'clsx'
+import cn from 'classnames'
 
 import Icon from '~components/ui/Icon'
 
@@ -37,6 +37,7 @@ const FounderCard = (props) => {
               target="_blank"
               href={url}
               style={{ color: hoverColor.hex }}
+              aria-label={iconName} // Add aria-label attribute with the value of iconName
             >
               <Icon name={iconName} size={24} />
             </a>

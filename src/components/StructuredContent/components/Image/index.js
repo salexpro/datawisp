@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Zoom from 'react-medium-image-zoom'
 
-import cn from 'clsx'
+import cn from 'classnames'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import * as s from './Image.module.scss'
 

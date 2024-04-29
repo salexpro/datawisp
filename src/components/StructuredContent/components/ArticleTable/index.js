@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import cn from 'clsx'
+import cn from 'classnames'
 import { StructuredText } from 'react-datocms'
 
 import * as s from './ArticleTable.module.scss'
@@ -19,6 +19,7 @@ const ArticleTable = (props) => {
             {rows.map(({ cells }) => (
               <tr>
                 {cells.map(({ cell }) => (
+                  // eslint-disable-next-line jsx-a11y/control-has-associated-label
                   <td>
                     <StructuredText data={cell.value} />
                   </td>

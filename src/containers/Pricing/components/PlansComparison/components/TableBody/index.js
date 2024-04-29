@@ -1,6 +1,6 @@
 /* eslint-disable no-nested-ternary */
 import React from 'react'
-import cn from 'clsx'
+import cn from 'classnames'
 import { FormCheck } from 'react-bootstrap'
 
 import Icon from '~components/ui/Icon'

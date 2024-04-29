@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { Container } from 'react-bootstrap'
 import { StructuredText } from 'react-datocms'
-import cn from 'clsx'
+import cn from 'classnames'
 
 import RequestDemoForm from '~components/RequestDemoForm'
 import ButtonGroup from '~components/ui/ButtonGroup'

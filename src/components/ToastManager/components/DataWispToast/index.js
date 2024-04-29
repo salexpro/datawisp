@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { Toast } from 'react-bootstrap'
-import cn from 'clsx'
+import cn from 'classnames'
 
 import Icon from '~components/ui/Icon'
 

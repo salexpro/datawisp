@@ -78,7 +78,7 @@ export const pageQuery = graphql`
       moreHeading
       moreText
       moreItems {
-        ...personaItem
+        ...PersonaItem
       }
     }
   }
