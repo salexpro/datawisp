@@ -20,7 +20,7 @@
     "@svgr/webpack": "8.1.0",
     "@tmttn/gatsby-plugin-linkedin-insight": "^5.2.0",
     "@vercel/analytics": "^1.2.2",
-    "axios": "1.7.1",
+    "axios": "1.7.2",
     "bootstrap": "5.3.3",
     "classnames": "^2.5.1",
     "dayjs": "1.11.11",
