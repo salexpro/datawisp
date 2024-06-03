@@ -78,7 +78,7 @@ dependencies:
     version: 1.8.0(gatsby@5.13.6)
   gatsby-plugin-sass:
     specifier: 6.13.1
-    version: 6.13.1(gatsby@5.13.6)(sass@1.77.3)(webpack@5.91.0)
+    version: 6.13.1(gatsby@5.13.6)(sass@1.77.4)(webpack@5.91.0)
   gatsby-plugin-sharp:
     specifier: ^5.13.0
     version: 5.13.1(gatsby@5.13.6)(graphql@16.8.1)
@@ -140,8 +140,8 @@ dependencies:
     specifier: ^4.4.5
     version: 4.4.5(react-dom@18.3.1)(react@18.3.1)
   sass:
-    specifier: 1.77.3
-    version: 1.77.3
+    specifier: 1.77.4
+    version: 1.77.4
   svg-parser:
     specifier: 2.0.4
     version: 2.0.4
@@ -8972,7 +8972,7 @@ packages:
       generate-robotstxt: 8.0.3
     dev: false
 
-  /gatsby-plugin-sass@6.13.1(gatsby@5.13.6)(sass@1.77.3)(webpack@5.91.0):
+  /gatsby-plugin-sass@6.13.1(gatsby@5.13.6)(sass@1.77.4)(webpack@5.91.0):
     resolution: {integrity: sha512-pHS1hJhOPMEaC1eLsuXgqskLBUxbpYR1lUb7yxL4jva0PX2HOQTYTczFYtueOWz/7RD0GjrDCHIWOzUIGauRsQ==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
@@ -8982,8 +8982,8 @@ packages:
       '@babel/runtime': 7.23.9
       gatsby: 5.13.6(babel-eslint@10.1.0)(react-dom@18.3.1)(react@18.3.1)(typescript@5.4.5)
       resolve-url-loader: 3.1.5
-      sass: 1.77.3
-      sass-loader: 10.5.2(sass@1.77.3)(webpack@5.91.0)
+      sass: 1.77.4
+      sass-loader: 10.5.2(sass@1.77.4)(webpack@5.91.0)
     transitivePeerDependencies:
       - fibers
       - node-sass
@@ -13169,7 +13169,7 @@ packages:
   /safer-buffer@2.1.2:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
 
-  /sass-loader@10.5.2(sass@1.77.3)(webpack@5.91.0):
+  /sass-loader@10.5.2(sass@1.77.4)(webpack@5.91.0):
     resolution: {integrity: sha512-vMUoSNOUKJILHpcNCCyD23X34gve1TS7Rjd9uXHeKqhvBG39x6XbswFDtpbTElj6XdMFezoWhkh5vtKudf2cgQ==}
     engines: {node: '>= 10.13.0'}
     peerDependencies:
@@ -13188,14 +13188,14 @@ packages:
       klona: 2.0.6
       loader-utils: 2.0.4
       neo-async: 2.6.2
-      sass: 1.77.3
+      sass: 1.77.4
       schema-utils: 3.3.0
       semver: 7.6.2
       webpack: 5.91.0
     dev: false
 
-  /sass@1.77.3:
-    resolution: {integrity: sha512-WJHo+jmFp0dwRuymPmIovuxHaBntcCyja5hCB0yYY9wWrViEp4kF5Cdai98P72v6FzroPuABqu+ddLMbQWmwzA==}
+  /sass@1.77.4:
+    resolution: {integrity: sha512-vcF3Ckow6g939GMA4PeU7b2K/9FALXk2KF9J87txdHzXbUF9XRQRwSxcAs/fGaTnJeBFd7UoV22j3lzMLdM0Pw==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
