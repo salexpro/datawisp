@@ -119,8 +119,8 @@ dependencies:
     specifier: ^7.1.4
     version: 7.1.4(react@18.3.1)
   react-datocms:
-    specifier: 6.0.3
-    version: 6.0.3(graphql@16.8.1)(react-dom@18.3.1)(react@18.3.1)
+    specifier: 6.0.4
+    version: 6.0.4(graphql@16.8.1)(react-dom@18.3.1)(react@18.3.1)
   react-dom:
     specifier: 18.3.1
     version: 18.3.1(react@18.3.1)
@@ -7196,7 +7196,7 @@ packages:
     resolution: {integrity: sha512-Kv5nKlh6yRrdrGvxeJ2e5y2eRUpkUosIW4A2AS38zwSz27zu7ufDwQPi5Jhs3XAlGNetl3bmnGhQsMtkKJnj3w==}
     dependencies:
       no-case: 3.0.4
-      tslib: 2.4.1
+      tslib: 2.6.2
 
   /dot-prop@5.3.0:
     resolution: {integrity: sha512-QM8q3zDe58hqUqjraQOmzZ1LIH9SWQJTlEKCH4kJ2oQvLZk7RbQXvtDM2XEq3fwkV9CCvvH4LA0AV+ogFsBM2Q==}
@@ -11306,7 +11306,7 @@ packages:
     resolution: {integrity: sha512-fgAN3jGAh+RoxUGZHTSOLJIqUc2wmoBwGR4tbpNAKmmovFoWq0OdRkb0VkldReO2a2iBT/OEulG9XSUc10r3zg==}
     dependencies:
       lower-case: 2.0.2
-      tslib: 2.4.1
+      tslib: 2.6.2
 
   /node-abi@3.54.0:
     resolution: {integrity: sha512-p7eGEiQil0YUV3ItH4/tBb781L5impVmmx2E9FRKF7d18XXzp4PGT2tdYMFY6wQqgxD0IwNZOiSJ0/K0fSi/OA==}
@@ -12565,8 +12565,8 @@ packages:
       universal-cookie: 7.1.4
     dev: false
 
-  /react-datocms@6.0.3(graphql@16.8.1)(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-t3SsjCqMnlr9hfcnAFyqwnLezkIJA5Z+9vsRG3e+gu8me59O2sviZHSZBbysl39KWSTjtIgbRkoH0ujBFCp9Kg==}
+  /react-datocms@6.0.4(graphql@16.8.1)(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-uZrSX2AVJwOOP1N1Mp6czPF3cGLaowKBr1Rl8T0tJ54H0M7eb36P8BeFIqfkVDUhRvaRUg7cOva5GmsiJidE5Q==}
     engines: {node: '>=8.0.0'}
     peerDependencies:
       react: '>= 16.12.0'
