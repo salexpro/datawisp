@@ -6,7 +6,7 @@ import SectionHero from '~components/SectionHero'
 import SectionIntegrationsPreview from '~components/SectionIntegrationsPreview'
 import SectionPersonas from '~components/SectionPersonas'
 
-import SectionRoadmap from './components/SectionRoadmap'
+// import SectionRoadmap from './components/SectionRoadmap'
 
 const Homepage = (props) => {
   const {
@@ -16,7 +16,7 @@ const Homepage = (props) => {
     personas,
     howItWorks,
     features,
-    roadmap,
+    // roadmap,
     utm,
   } = props
 
@@ -27,7 +27,7 @@ const Homepage = (props) => {
       <SectionPersonas personas={personas} variant="home" utm={utm} />
       <SectionHowItWorks {...howItWorks} />
       <SectionFeatures {...features} utm={utm} />
-      <SectionRoadmap {...roadmap} />
+      {/* <SectionRoadmap {...roadmap} /> */}
     </>
   )
 }
