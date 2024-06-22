@@ -110,8 +110,8 @@ dependencies:
     specifier: 18.3.1
     version: 18.3.1
   react-bootstrap:
-    specifier: 2.10.2
-    version: 2.10.2(react-dom@18.3.1)(react@18.3.1)
+    specifier: 2.10.3
+    version: 2.10.3(react-dom@18.3.1)(react@18.3.1)
   react-cookie:
     specifier: ^7.1.4
     version: 7.1.4(react@18.3.1)
@@ -2938,6 +2938,13 @@ packages:
     dependencies:
       regenerator-runtime: 0.14.1
 
+  /@babel/runtime@7.24.7:
+    resolution: {integrity: sha512-UwgBRMjJP+xv857DCngvqXI3Iq6J4v0wXmwc6sapg+zyhbwmQX67LUEFrkK5tbyJ30jGuG3ZvWpBiB9LCy1kWw==}
+    engines: {node: '>=6.9.0'}
+    dependencies:
+      regenerator-runtime: 0.14.1
+    dev: false
+
   /@babel/template@7.23.9:
     resolution: {integrity: sha512-+xrD2BWLpvHKNmX2QbpdpsBaWnRxahMwJjO+KZk2JOElj5nSmKezyS1B4u+QbHMTX69t4ukm6hh9lsYQ7GHCKA==}
     engines: {node: '>=6.9.0'}
@@ -3524,7 +3531,7 @@ packages:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
     dependencies:
       graphql: 16.8.1
-      tslib: 2.4.1
+      tslib: 2.6.2
 
   /@graphql-tools/relay-operation-optimizer@6.5.18(graphql@16.8.1):
     resolution: {integrity: sha512-mc5VPyTeV+LwiM+DNvoDQfPqwQYhPV/cl5jOBjTgSniyaq8/86aODfMkrE2OduhQ5E00hqrkuL2Fdrgk0w1QJg==}
@@ -3534,7 +3541,7 @@ packages:
       '@ardatan/relay-compiler': 12.0.0(graphql@16.8.1)
       '@graphql-tools/utils': 9.2.1(graphql@16.8.1)
       graphql: 16.8.1
-      tslib: 2.4.1
+      tslib: 2.6.2
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -3556,7 +3563,7 @@ packages:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
     dependencies:
       graphql: 16.8.1
-      tslib: 2.4.1
+      tslib: 2.6.2
 
   /@graphql-tools/utils@9.2.1(graphql@16.8.1):
     resolution: {integrity: sha512-WUw506Ql6xzmOORlriNrD6Ugx+HjVgYxt9KCXD9mHAak+eaXSwuGGPyE60hy9xaDEoXKBsG7SkG69ybitaVl6A==}
@@ -4379,13 +4386,13 @@ packages:
       react: 18.3.1
     dev: false
 
-  /@restart/ui@1.6.8(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-6ndCv3oZ7r9vuP1Ok9KH55TM1/UkdBnP/fSraW0DFDMbPMzWKhVKeFAIEUCRCSdzayjZDcFYK6xbMlipN9dmMA==}
+  /@restart/ui@1.6.9(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-mUbygUsJcRurjZCt1f77gg4DpheD1D+Sc7J3JjAkysUj7t8m4EBJVOqWC9788Qtbc69cJ+HlJc6jBguKwS8Mcw==}
     peerDependencies:
       react: '>=16.14.0'
       react-dom: '>=16.14.0'
     dependencies:
-      '@babel/runtime': 7.24.6
+      '@babel/runtime': 7.24.7
       '@popperjs/core': 2.11.8
       '@react-aria/ssr': 3.9.2(react@18.3.1)
       '@restart/hooks': 0.4.16(react@18.3.1)
@@ -4847,7 +4854,7 @@ packages:
   /@types/react-transition-group@4.4.10:
     resolution: {integrity: sha512-hT/+s0VQs2ojCX823m60m5f0sL5idt9SO6Tj6Dg+rdphGPIeJbJ6CxvBYkgkGKrYeDjvIpKTR38UzmtHJOGW3Q==}
     dependencies:
-      '@types/react': 18.2.56
+      '@types/react': 18.2.73
     dev: false
 
   /@types/react@18.2.56:
@@ -7378,7 +7385,7 @@ packages:
   /dom-helpers@5.2.1:
     resolution: {integrity: sha512-nRCa7CK3VTrM2NmGkIy4cbK7IZlgBE/PYMn55rrXefr5xXDP0LdtfPnblFDoVdcAfslJ7or6iqAUnx0CCGIWQA==}
     dependencies:
-      '@babel/runtime': 7.24.6
+      '@babel/runtime': 7.24.7
       csstype: 3.1.3
     dev: false
 
@@ -9029,7 +9036,7 @@ packages:
     resolution: {integrity: sha512-w7G6SsQr8T2q+AJ1MxvRNGocCt+wjc22MiRLj2Zi3Ijpjszbr818JxwI4+aPt8WOSHlKT5SYCHICnEvcYPm9gg==}
     engines: {node: '>=18.0.0'}
     dependencies:
-      '@babel/runtime': 7.23.9
+      '@babel/runtime': 7.24.6
       ci-info: 2.0.0
       configstore: 5.0.1
       fastq: 1.17.1
@@ -12774,8 +12781,8 @@ packages:
       minimist: 1.2.8
       strip-json-comments: 2.0.1
 
-  /react-bootstrap@2.10.2(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-UvB7mRqQjivdZNxJNEA2yOQRB7L9N43nBnKc33K47+cH90/ujmnMwatTCwQLu83gLhrzAl8fsa6Lqig/KLghaA==}
+  /react-bootstrap@2.10.3(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-cc1KAaQyj6Gr3AfA0eRRiUMSlRi3brDVcjc/o0E9y9XNW7ISo8TITrq8G8G3QTFe7VIhCiDt38k99AEFoLOolw==}
     peerDependencies:
       '@types/react': '>=16.14.8'
       react: '>=16.14.0'
@@ -12784,9 +12791,9 @@ packages:
       '@types/react':
         optional: true
     dependencies:
-      '@babel/runtime': 7.23.9
+      '@babel/runtime': 7.24.7
       '@restart/hooks': 0.4.16(react@18.3.1)
-      '@restart/ui': 1.6.8(react-dom@18.3.1)(react@18.3.1)
+      '@restart/ui': 1.6.9(react-dom@18.3.1)(react@18.3.1)
       '@types/react-transition-group': 4.4.10
       classnames: 2.5.1
       dom-helpers: 5.2.1
@@ -13691,7 +13698,7 @@ packages:
     resolution: {integrity: sha512-LAOh4z89bGQvl9pFfNF8V146i7o7/CqFPbqzYgP+yYzDIDeS9HaNFtXABamRW+AQzEVODcvE79ljJ+8a9YSdMg==}
     dependencies:
       dot-case: 3.0.4
-      tslib: 2.4.1
+      tslib: 2.6.2
 
   /socket.io-adapter@2.5.4:
     resolution: {integrity: sha512-wDNHGXGewWAjQPt3pyeYBtpWSq9cLE5UW1ZUPL/2eGK9jtse/FpXib7epSTsz0Q0m+6sg6Y4KtcFTlah1bdOVg==}
@@ -14762,8 +14769,8 @@ packages:
     peerDependencies:
       react: '>=15.0.0'
     dependencies:
-      '@babel/runtime': 7.24.6
-      '@types/react': 18.2.56
+      '@babel/runtime': 7.24.7
+      '@types/react': 18.2.73
       invariant: 2.2.4
       react: 18.3.1
       react-lifecycles-compat: 3.0.4
