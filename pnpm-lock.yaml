@@ -220,8 +220,8 @@ devDependencies:
     specifier: 13.1.0
     version: 13.1.0(postcss@8.4.39)(stylelint@16.7.0)
   stylelint-prettier:
-    specifier: 5.0.0
-    version: 5.0.0(prettier@3.3.3)(stylelint@16.7.0)
+    specifier: 5.0.1
+    version: 5.0.1(prettier@3.3.3)(stylelint@16.7.0)
 
 packages:
 
@@ -3447,7 +3447,7 @@ packages:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
     dependencies:
       graphql: 16.9.0
-      tslib: 2.4.1
+      tslib: 2.6.3
 
   /@graphql-tools/relay-operation-optimizer@6.5.18(graphql@16.9.0):
     resolution: {integrity: sha512-mc5VPyTeV+LwiM+DNvoDQfPqwQYhPV/cl5jOBjTgSniyaq8/86aODfMkrE2OduhQ5E00hqrkuL2Fdrgk0w1QJg==}
@@ -3457,7 +3457,7 @@ packages:
       '@ardatan/relay-compiler': 12.0.0(graphql@16.9.0)
       '@graphql-tools/utils': 9.2.1(graphql@16.9.0)
       graphql: 16.9.0
-      tslib: 2.4.1
+      tslib: 2.6.3
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -14086,8 +14086,8 @@ packages:
       stylelint: 16.7.0(typescript@5.5.3)
     dev: true
 
-  /stylelint-prettier@5.0.0(prettier@3.3.3)(stylelint@16.7.0):
-    resolution: {integrity: sha512-RHfSlRJIsaVg5Br94gZVdWlz/rBTyQzZflNE6dXvSxt/GthWMY3gEHsWZEBaVGg7GM+XrtVSp4RznFlB7i0oyw==}
+  /stylelint-prettier@5.0.1(prettier@3.3.3)(stylelint@16.7.0):
+    resolution: {integrity: sha512-blsBcSiCv7ZNmUadZPo9tv/ZHxTDRUbByn/NUp3irH5AozPFnAE7SHM/md/2DMdQizUwfuD9/3kOKB5+4a1/4Q==}
     engines: {node: '>=18.12.0'}
     peerDependencies:
       prettier: '>=3.0.0'
