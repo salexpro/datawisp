@@ -202,8 +202,8 @@ devDependencies:
     specifier: 1.1.32
     version: 1.1.32(gatsby@5.13.7)
   husky:
-    specifier: 9.0.11
-    version: 9.0.11
+    specifier: 9.1.0
+    version: 9.1.0
   nano-staged:
     specifier: 0.8.0
     version: 0.8.0
@@ -10109,8 +10109,8 @@ packages:
     resolution: {integrity: sha512-E0eIbrFWUhwfXJmsbdjRQFQPrl5pTEoKlz163j1mTqqUnU9PgR4AgB8AIITzuB3vLBdxZXyZ9TDIrwB2OASz4g==}
     dev: false
 
-  /husky@9.0.11:
-    resolution: {integrity: sha512-AB6lFlbwwyIqMdHYhwPe+kjOC3Oc5P3nThEoW/AaO2BX3vJDjWPFxYLxokUZOo6RNX20He3AaT8sESs9NJcmEw==}
+  /husky@9.1.0:
+    resolution: {integrity: sha512-8XCjbomYTGdNF2h50dio3T3zghmZ9f/ZNzr99YwSkvDdhEjJGs5qzy8tbFx+SG8yCx2wn9nMVfZxVrr/yT8gNQ==}
     engines: {node: '>=18'}
     hasBin: true
     dev: true
