@@ -143,8 +143,8 @@ dependencies:
     specifier: 2.0.4
     version: 2.0.4
   swiper:
-    specifier: 11.1.6
-    version: 11.1.6
+    specifier: 11.1.7
+    version: 11.1.7
   url-loader:
     specifier: ^4.1.1
     version: 4.1.1(file-loader@6.2.0)(webpack@5.93.0)
@@ -14252,8 +14252,8 @@ packages:
     dependencies:
       tslib: 2.6.3
 
-  /swiper@11.1.6:
-    resolution: {integrity: sha512-4VX3/Ldj0wzE9TOAyFV0t9ecbaU92BbmIeYWEI5IIDt6Nyyr5RqgzZiS0q5G8pALWNCg+KsrStkfH/aMtzclPw==}
+  /swiper@11.1.7:
+    resolution: {integrity: sha512-2EpQvhgKb+DNbi8/i9uRXhddivcMZQxca341t2NZYV1xroCR2p4YtYd3azuqRQ4OEBGcG4nv3aN24O80bMipow==}
     engines: {node: '>= 4.7.0'}
     dev: false
 
