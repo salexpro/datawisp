@@ -143,8 +143,8 @@ dependencies:
     specifier: 2.0.4
     version: 2.0.4
   swiper:
-    specifier: 11.1.8
-    version: 11.1.8
+    specifier: 11.1.9
+    version: 11.1.9
   url-loader:
     specifier: ^4.1.1
     version: 4.1.1(file-loader@6.2.0)(webpack@5.93.0)
@@ -13984,7 +13984,7 @@ packages:
       queue-tick: 1.0.1
       text-decoder: 1.1.0
     optionalDependencies:
-      bare-events: 2.2.0
+      bare-events: 2.4.2
     optional: true
 
   /strict-uri-encode@2.0.0:
@@ -14424,8 +14424,8 @@ packages:
     dependencies:
       tslib: 2.6.3
 
-  /swiper@11.1.8:
-    resolution: {integrity: sha512-sBFp7fA+IfZ/7BMcg8/JSEqDD1qZXBUyliT76yk3zIYVu2fMwFVAghhAJ9vBM5tJUtHW5qcD0pmeEGQs1EK14w==}
+  /swiper@11.1.9:
+    resolution: {integrity: sha512-rflu8zvfGa3x1v/aeSufk4zRJffhOQowyvtJlp46sUBnOqAuk1Rdv5Ldj0AWWBV595iZ+ZMk7VB35ZRtRUomtA==}
     engines: {node: '>= 4.7.0'}
     dev: false
 
