@@ -38,8 +38,8 @@ dependencies:
     specifier: ^1.2.2
     version: 1.3.1(react@18.3.1)
   axios:
-    specifier: 1.7.2
-    version: 1.7.2(debug@4.3.5)
+    specifier: 1.7.3
+    version: 1.7.3(debug@4.3.5)
   bootstrap:
     specifier: 5.3.3
     version: 5.3.3(@popperjs/core@2.11.8)
@@ -5616,8 +5616,8 @@ packages:
     resolution: {integrity: sha512-QbUdXJVTpvUTHU7871ppZkdOLBeGUKBQWHkHrvN2V9IQWGMt61zf3B45BtzjxEJzYuj0JBjBZP/hmYS/R9pmAw==}
     engines: {node: '>=4'}
 
-  /axios@1.7.2(debug@4.3.5):
-    resolution: {integrity: sha512-2A8QhOMrbomlDuiLeK9XibIBzuHeRcqqNOHp0Cyp5EoJ1IFDh+XZH3A6BkXtv0K4gFGCI0Y4BM7B1wOEi0Rmgw==}
+  /axios@1.7.3(debug@4.3.5):
+    resolution: {integrity: sha512-Ar7ND9pU99eJ9GpoGQKhKf58GpUOgnzuaB7ueNQ5BMi0p+LZ5oaEnfF999fAArcTIBwXTCHAmGcHOZJaWPq9Nw==}
     dependencies:
       follow-redirects: 1.15.6(debug@4.3.5)
       form-data: 4.0.0
@@ -6571,7 +6571,7 @@ packages:
     engines: {node: '>=6'}
     dependencies:
       '@types/json-patch': 0.0.30
-      axios: 1.7.2(debug@4.3.5)
+      axios: 1.7.3(debug@4.3.5)
       contentful-sdk-core: 6.11.0
       fast-copy: 2.1.7
       lodash.isplainobject: 4.0.6
@@ -9610,7 +9610,7 @@ packages:
       address: 1.2.2
       anser: 2.1.1
       autoprefixer: 10.4.19(postcss@8.4.39)
-      axios: 1.7.2(debug@4.3.5)
+      axios: 1.7.3(debug@4.3.5)
       babel-jsx-utils: 1.1.0
       babel-loader: 8.3.0(@babel/core@7.24.9)(webpack@5.93.0)
       babel-plugin-add-module-exports: 1.0.4
