@@ -8,8 +8,9 @@ import TableBody from '../TableBody'
 import * as s from '../../PlansComparison.module.scss'
 
 const TableMobile = ({ plans, data }) => {
-  const defaultPlan = plans.find(({ isSelected }) => isSelected)
-  const defaultIndex = defaultPlan ? defaultPlan.position - 1 : 0
+  const defaultPlan = plans.findIndex(({ isSelected }) => isSelected)
+
+  const defaultIndex = defaultPlan !== -1 ? defaultPlan : 0
 
   const [activeTab, setActiveTab] = useState(defaultIndex)
 

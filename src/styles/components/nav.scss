@@ -22,7 +22,7 @@
 
       &::after {
         position: absolute;
-        inset: 0 $nav-link-padding-x 6px $nav-link-padding-x;
+        inset: 0 $nav-link-padding-x 6px;
         content: '';
         transition: box-shadow 0.15s;
       }

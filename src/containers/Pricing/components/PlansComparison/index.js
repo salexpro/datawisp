@@ -12,6 +12,8 @@ const PlansComparison = ({ switchButton, pricingPlans, pricingFeatures }) => {
   const { annual, monthly, discount } = switchButton
   const headers = processHeaderData(switchButton, pricingPlans)
 
+  console.log(headers)
+
   const [selectedPlan, setSelectedPlan] = useState(annual)
   const header = headers[selectedPlan]
 
