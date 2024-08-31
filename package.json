@@ -54,7 +54,7 @@
     "react-transition-group": "^4.4.5",
     "sass": "1.77.8",
     "svg-parser": "2.0.4",
-    "swiper": "11.1.10",
+    "swiper": "11.1.11",
     "url-loader": "^4.1.1",
     "uuid": "^10.0.0"
   },

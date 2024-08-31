@@ -146,8 +146,8 @@ importers:
         specifier: 2.0.4
         version: 2.0.4
       swiper:
-        specifier: 11.1.10
-        version: 11.1.10
+        specifier: 11.1.11
+        version: 11.1.11
       url-loader:
         specifier: ^4.1.1
         version: 4.1.1(file-loader@6.2.0(webpack@5.94.0))(webpack@5.94.0)
@@ -7718,8 +7718,8 @@ packages:
   swap-case@2.0.2:
     resolution: {integrity: sha512-kc6S2YS/2yXbtkSMunBtKdah4VFETZ8Oh6ONSmSd9bRxhqTrtARUCBUiWXH3xVPpvR7tz2CSnkuXVE42EcGnMw==}
 
-  swiper@11.1.10:
-    resolution: {integrity: sha512-pAVM6vCb6bumj2B9aSh67l3wP1j5YR8dPQM1YhQKMpnBc33vs+RpyVz6NZYZl/ZopCBSYbbWK5nvESwbmU0QXQ==}
+  swiper@11.1.11:
+    resolution: {integrity: sha512-077Aw3OrlZpkkBRf/6+44bGh/HZY/vsLEyate2db2KkJgYUIR5TvDgvvhcJtW/puXzw79w5KBc30DauEX6GZYQ==}
     engines: {node: '>= 4.7.0'}
 
   synckit@0.9.1:
@@ -10572,14 +10572,14 @@ snapshots:
   '@graphql-tools/optimize@1.4.0(graphql@16.9.0)':
     dependencies:
       graphql: 16.9.0
-      tslib: 2.4.1
+      tslib: 2.6.3
 
   '@graphql-tools/relay-operation-optimizer@6.5.18(graphql@16.9.0)':
     dependencies:
       '@ardatan/relay-compiler': 12.0.0(graphql@16.9.0)
       '@graphql-tools/utils': 9.2.1(graphql@16.9.0)
       graphql: 16.9.0
-      tslib: 2.4.1
+      tslib: 2.6.3
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -17905,7 +17905,7 @@ snapshots:
     dependencies:
       tslib: 2.4.1
 
-  swiper@11.1.10: {}
+  swiper@11.1.11: {}
 
   synckit@0.9.1:
     dependencies:
