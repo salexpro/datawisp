@@ -2,16 +2,17 @@ import React from 'react'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import PropTypes from 'prop-types'
 import { Button } from 'react-bootstrap'
+import cn from 'classnames'
 
 import Icon from '~components/ui/Icon'
 
 import * as s from './Card.module.scss'
 
 const Card = (props) => {
-  const { icon, title, description, videoUrl, image } = props
+  const { icon, title, description, videoUrl, image, variant } = props
 
   return (
-    <div className={s.card}>
+    <div className={cn(s.card, { [s[variant]]: variant })}>
       <GatsbyImage alt={title} image={getImage(image)} className={s.image} />
       <div className={s.title}>
         <Icon name={icon} className={s.title__icon} />

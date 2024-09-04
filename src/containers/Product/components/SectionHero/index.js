@@ -25,12 +25,7 @@ const SectionHero = (props) => {
       <div className={s.lead}>
         <StructuredText data={text.value} />
       </div>
-      <ButtonGroup
-        className={s.buttons}
-        data={buttons}
-        utm={utm}
-        ctaId="hero"
-      />
+      <ButtonGroup data={buttons} utm={utm} ctaId="hero" />
 
       {video && <Player video={video} className={s.player} />}
     </Container>

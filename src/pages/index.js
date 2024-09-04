@@ -19,22 +19,22 @@ const IndexPage = ({ data, utm }) => {
     heroSectionCaption,
     heroButtons,
 
-    integrationsSectionHeading,
-    integrationsList,
-    integrationsButtons,
+    testimonials,
 
-    personaItems,
-    howItWorksSectionHeading,
-    howItWorksSectionText,
-    steps,
     featuresHeading,
     featuresText,
     featuresList,
     featuresButtons,
     featuresCaption,
-    roadmapSectionHeading,
-    roadmapSectionText,
-    roadmapPhases,
+
+    advantagesHeading,
+    advantagesText,
+    advantagesList,
+
+    faqTitle,
+    faqList,
+    faqButtons,
+
     requestDemoHeading,
     emailInputLabel,
     emailInputPlaceholder,
@@ -49,8 +49,6 @@ const IndexPage = ({ data, utm }) => {
     footerLink,
   } = data.datoCmsHomePage
 
-  // const caseStudiesPage = data.datoCmsCaseStudiesPage
-
   return (
     <Homepage
       utm={utm}
@@ -62,17 +60,7 @@ const IndexPage = ({ data, utm }) => {
         buttons: heroButtons,
         image: heroSectionImage,
       }}
-      personas={personaItems}
-      integrations={{
-        heading: integrationsSectionHeading,
-        list: integrationsList,
-        buttons: integrationsButtons,
-      }}
-      howItWorks={{
-        heading: howItWorksSectionHeading,
-        text: howItWorksSectionText,
-        steps,
-      }}
+      testimonials={testimonials}
       features={{
         heading: featuresHeading,
         text: featuresText,
@@ -80,10 +68,15 @@ const IndexPage = ({ data, utm }) => {
         buttons: featuresButtons,
         caption: featuresCaption,
       }}
-      roadmap={{
-        heading: roadmapSectionHeading,
-        text: roadmapSectionText,
-        phases: roadmapPhases,
+      advantages={{
+        heading: advantagesHeading,
+        text: advantagesText,
+        items: advantagesList,
+      }}
+      faq={{
+        heading: faqTitle,
+        items: faqList,
+        buttons: faqButtons,
       }}
       popup={{
         heading: requestDemoHeading,
@@ -188,49 +181,20 @@ export const query = graphql`
         ...MediaItem
       }
 
-      integrationsSectionHeading
-      integrationsList {
-        icon {
-          alt
-          format
-          url
-          gatsbyImageData(
-            width: 32
-            placeholder: NONE
-            outputPixelDensities: [1, 1.5, 2, 3]
-            imgixParams: { fit: "crop", auto: "compress,format" }
-          )
-        }
-        name
-      }
-      integrationsButtons {
-        ...Buttons
-      }
-
-      personaItems {
-        ...PersonaItem
-      }
-
-      howItWorksSectionHeading
-      howItWorksSectionText {
-        value
-      }
-      steps {
+      testimonials {
         id
-        heading
-        image {
-          format
-          url
+        photo {
           gatsbyImageData(
-            sizes: "(max-width: 767.98px) 300px, 400px"
             placeholder: BLURRED
             forceBlurhash: true
-            imgixParams: { fit: "crop", auto: "compress,format" }
+            width: 128
+            height: 128
+            imgixParams: { fit: "crop", auto: "format" }
           )
         }
-        description {
-          value
-        }
+        text
+        author
+        companyPosition
       }
 
       featuresHeading
@@ -248,21 +212,32 @@ export const query = graphql`
       }
       featuresCaption
 
-      roadmapSectionHeading
-      roadmapSectionText {
-        value
-      }
-      roadmapPhases {
+      advantagesHeading
+      advantagesText
+      advantagesList {
         id
-        variant
+        image {
+          gatsbyImageData(
+            placeholder: BLURRED
+            forceBlurhash: true
+            sizes: "(max-width: 767.98px) calc(100vw - 24px * 2 - 24 * 2), (max-width: 1199.98px) 304px, 344px"
+            breakpoints: [295, 687, 885, 1300]
+            imgixParams: { fit: "crop", auto: "format" }
+          )
+        }
+        icon
         title
-        heading
-        listLeft {
-          value
-        }
-        listRight {
-          value
-        }
+        description
+      }
+
+      faqTitle
+      faqList {
+        id
+        question
+        answer
+      }
+      faqButtons {
+        ...Buttons
       }
 
       requestDemoHeading
@@ -281,9 +256,6 @@ export const query = graphql`
         url
       }
     }
-    # datoCmsCaseStudiesPage {
-    #   disableCaseStudiesPage
-    # }
   }
 `
 

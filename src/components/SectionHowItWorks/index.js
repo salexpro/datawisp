@@ -17,7 +17,7 @@ const SectionHowItWorks = (props) => {
     >
       <Container>
         <div className={s.gridHeading}>
-          <h2 className={s.gridHeading__heading}>{heading}</h2>
+          <h2>{heading}</h2>
           <StructuredText data={text.value} />
         </div>
         <div className={s.sectionHowItWorks__stepsWrapper}>

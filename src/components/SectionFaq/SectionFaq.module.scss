@@ -1,0 +1,39 @@
+/* stylelint-disable no-descending-specificity */
+@import '~styles/mixins';
+
+.faq {
+  padding-bottom: 32px;
+
+  @include b-up(md) {
+    padding-top: 64px;
+  }
+
+  @include b-d(md) {
+    padding-top: 40px;
+  }
+
+  &_heading {
+    text-align: center;
+  }
+
+  &_list {
+    display: grid;
+    row-gap: 16px;
+
+    @include b-up(lg) {
+      margin-top: 58px;
+    }
+
+    @include b-o(md) {
+      margin-top: 50px;
+    }
+
+    @include b-d(md) {
+      margin-top: 34px;
+    }
+  }
+
+  &_buttons {
+    margin-top: 40px;
+  }
+}

@@ -11,14 +11,14 @@ const CardStep = (props) => {
   const { className, heading, step, image, description, ...rest } = props
 
   return (
-    <div {...rest} className={cn(s.cardStep, className)}>
+    <div {...rest} className={className}>
       <h3 className={cn('h6', s.title)}>{heading}</h3>
       <div className={s.imageWrapper}>
         <ImageFormat alt={`Step ${step}`} file={image} />
       </div>
       {description && (
         <div className={s.description}>
-          <StructuredText className={s.text} data={description.value} />
+          <StructuredText data={description.value} />
         </div>
       )}
     </div>

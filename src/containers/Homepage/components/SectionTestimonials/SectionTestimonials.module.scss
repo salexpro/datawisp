@@ -1,0 +1,41 @@
+/* stylelint-disable selector-pseudo-class-no-unknown */
+@import '~styles/mixins';
+
+.section {
+  overflow: hidden;
+  background: var(--bs-primary);
+
+  @include b-up(md) {
+    padding-block: 80px;
+  }
+
+  @include b-up(xl) {
+    margin-top: 90px;
+  }
+
+  @include b-d(xl) {
+    margin-top: 64px;
+  }
+
+  @include b-d(md) {
+    padding-block: 56px 40px;
+  }
+
+  &_inner {
+    max-width: 1110px;
+  }
+
+  @include b-d(md) {
+    :global(.swiper-button-prev) {
+      left: -16px;
+    }
+
+    :global(.swiper-button-next) {
+      right: -16px;
+    }
+  }
+}
+
+.items {
+  overflow: visible;
+}

@@ -17,7 +17,7 @@ const BlogSection = (props) => {
 
   const filteredBlog = filter
     ? blogs?.filter(({ category }) => category?.slug === filter)
-    : blogs
+    : blogs?.filter(({ category }) => category?.slug !== 'case-study') // case-study has its own menu item
 
   return (
     <Container {...rest} className={cn(s.blogSection, className)}>

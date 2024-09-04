@@ -12,7 +12,7 @@ const SectionPersonas = ({ heading, text, personas, variant, utm }) => {
       {heading && (
         <div className={s.heading}>
           <h2>{heading}</h2>
-          <p className={s.text}>{text}</p>
+          <p>{text}</p>
         </div>
       )}
       <PersonasList data={personas} utm={utm} />

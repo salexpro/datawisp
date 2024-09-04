@@ -1,33 +1,34 @@
 import React from 'react'
 
-import SectionHowItWorks from '~components/SectionHowItWorks'
-import SectionFeatures from '~components/SectionFeatures'
 import SectionHero from '~components/SectionHero'
-import SectionIntegrationsPreview from '~components/SectionIntegrationsPreview'
-import SectionPersonas from '~components/SectionPersonas'
+// import SectionHowItWorks from '~components/SectionHowItWorks'
+import SectionFeatures from '~components/SectionFeatures'
+import SectionFaq from '~components/SectionFaq'
+import SectionTestimonials from './components/SectionTestimonials'
+import SectionAdvantages from './components/SectionAdvantages'
 
 // import SectionRoadmap from './components/SectionRoadmap'
 
 const Homepage = (props) => {
   const {
     hero,
+    testimonials,
     popup,
-    integrations,
-    personas,
-    howItWorks,
+    // howItWorks,
     features,
-    // roadmap,
+    advantages,
+    faq,
     utm,
   } = props
 
   return (
     <>
       <SectionHero {...hero} popup={popup} utm={utm} />
-      <SectionIntegrationsPreview {...integrations} utm={utm} />
-      <SectionPersonas personas={personas} variant="home" utm={utm} />
-      <SectionHowItWorks {...howItWorks} />
-      <SectionFeatures {...features} utm={utm} />
-      {/* <SectionRoadmap {...roadmap} /> */}
+      <SectionTestimonials data={testimonials} />
+      {/* <SectionHowItWorks {...howItWorks} /> */}
+      <SectionFeatures variant="row" {...features} utm={utm} />
+      <SectionAdvantages {...advantages} />
+      <SectionFaq {...faq} utm={utm} />
     </>
   )
 }

@@ -5,8 +5,8 @@ import { Navigation } from 'swiper/modules'
 import { StructuredText } from 'react-datocms'
 import cn from 'classnames'
 
-import Card from './components/Card'
-import SwiperButtons from './components/SwiperButtons'
+import SwiperButtons from '~components/SwiperButtons'
+import Card from '~components/Card'
 import * as s from './SectionBlocks.module.scss'
 
 const SectionBlocks = ({ heading, description, functions }) => {

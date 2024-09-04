@@ -1,0 +1,49 @@
+/* stylelint-disable no-descending-specificity */
+@import '~styles/mixins';
+
+.advantages {
+  background-color: #fbf7ff;
+
+  @include b-up(md) {
+    padding-block: 64px 80px;
+  }
+
+  @include b-d(md) {
+    padding-block: 40px 56px;
+  }
+
+  &_heading {
+    display: grid;
+    text-align: center;
+
+    @include b-up(lg) {
+      gap: 17px;
+    }
+
+    @include b-o(md) {
+      gap: 15px;
+    }
+
+    @include b-d(md) {
+      gap: 8px;
+    }
+  }
+
+  &_list {
+    display: grid;
+    gap: 24px;
+
+    @include b-up(lg) {
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 58px;
+    }
+
+    @include b-o(md) {
+      margin-top: 50px;
+    }
+
+    @include b-d(md) {
+      margin-top: 34px;
+    }
+  }
+}

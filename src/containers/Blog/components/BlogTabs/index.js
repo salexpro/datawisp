@@ -1,7 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react'
 import PropTypes from 'prop-types'
-// import { useLocation } from '@gatsbyjs/reach-router'
+import { useLocation } from '@gatsbyjs/reach-router'
 // import { Link } from 'gatsby'
 import {
   Container,
@@ -16,9 +16,12 @@ const BlogTabs = (props) => {
   // const { hash } = useLocation()
   // const activeKey = hash.replace('#', '')
 
+  const { hash } = useLocation()
+  const isCaseStudy = hash.replace('#', '') === 'case-study'
+
   return (
     <Container {...rest} className={className}>
-      <h1 className={s.heading}>{heading}</h1>
+      <h1 className={s.heading}>{isCaseStudy ? 'Case studies' : heading}</h1>
       {/* <nav className="nav-blog-wrapper"> */}
       {/*   <Nav variant="blog" as="ul" activeKey={activeKey}> */}
       {/*     {tabs.map(({ name, slug }) => ( */}

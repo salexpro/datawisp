@@ -21,14 +21,7 @@ const IntegrationItem = (props) => {
   } = props
 
   return (
-    <div
-      {...rest}
-      className={cn(
-        s.integrationItem,
-        { [s.threeColumn]: isThreeColumn },
-        className
-      )}
-    >
+    <div {...rest} className={cn(s.integrationItem, className)}>
       <h3 className={cn('h5', s.heading)}>
         <Icon name={iconName} size={24} />
         {heading}

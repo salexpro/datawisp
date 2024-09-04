@@ -34,7 +34,7 @@ const SectionSolution = ({
   utm,
 }) => {
   return (
-    <section className={s.section}>
+    <section>
       <div className={s.inner}>
         <Container>
           <StructuredText data={heading.value} />

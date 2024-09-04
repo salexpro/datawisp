@@ -1,6 +1,7 @@
 .swiper {
   $this: &;
 
+  position: relative;
   overflow: hidden;
   touch-action: pan-y;
 
@@ -11,6 +12,8 @@
   }
 
   &-pagination {
+    $pagination: &;
+
     &-horizontal {
       display: grid;
       grid-auto-flow: column;
@@ -20,6 +23,12 @@
 
       @include b-up(xl) {
         display: none;
+      }
+    }
+
+    &-clickable {
+      #{$pagination}-bullet {
+        cursor: pointer;
       }
     }
 
@@ -36,8 +45,6 @@
   }
 
   &.features {
-    position: relative;
-
     #{$this}-slide {
       margin-right: 32px;
 
@@ -69,53 +76,11 @@
     }
 
     #{$this}-button {
-      &-prev,
-      &-next {
-        position: absolute;
-        top: calc(50% - 46px);
-        display: grid;
-        align-items: center;
-        justify-content: center;
-        width: 52px;
-        height: 52px;
-        background-color: $white;
-        border: 1px solid $gray-300;
-        border-radius: 50%;
-        box-shadow: 0 6px 44px rgba(0, 0, 0, 10%);
-        transition:
-          visibility 250ms,
-          opacity 250ms,
-          background-color 250ms;
-
-        @include b-d(md) {
-          top: calc(50% - 36px);
-          width: 40px;
-          height: 40px;
-
-          svg {
-            width: 20px;
-            height: 20px;
-          }
-        }
-      }
-
       &-prev {
         left: calc(((100% - 1240px) / 2) - 26px);
 
         @include b-up(xxl) {
           left: 74px;
-        }
-
-        @include b-d(container) {
-          left: 14px;
-        }
-
-        @include b-d(md) {
-          left: 10px;
-        }
-
-        svg {
-          transform: scaleX(-1);
         }
       }
 
@@ -129,24 +94,98 @@
         @include b-d(container) {
           right: calc(100% / 3.2 / 5 + 16px);
         }
+      }
+    }
+  }
 
-        @include b-d(xl) {
-          right: 14px;
+  &.testimonials {
+    #{$this}-pagination {
+      column-gap: 16px;
+      margin-top: 40px;
+
+      @include b-up(md) {
+        display: none;
+      }
+
+      &-bullet {
+        width: 16px;
+        height: 16px;
+        background: rgba($white, 0.6);
+        border-radius: 50%;
+
+        &-active {
+          background: $white;
         }
+      }
+    }
+  }
 
-        @include b-d(md) {
-          right: 10px;
+  &-button {
+    &-prev,
+    &-next {
+      position: absolute;
+      top: calc(50% - 26px);
+      display: grid;
+      align-items: center;
+      justify-content: center;
+      width: 52px;
+      height: 52px;
+      background-color: $white;
+      border: 1px solid $gray-300;
+      border-radius: 50%;
+      box-shadow: 0 6px 44px rgba(0, 0, 0, 10%);
+      transition:
+        visibility 250ms,
+        opacity 250ms,
+        background-color 250ms;
+
+      @include b-d(md) {
+        top: calc(50% - 36px);
+        width: 40px;
+        height: 40px;
+
+        svg {
+          width: 20px;
+          height: 20px;
         }
       }
+    }
 
-      &:disabled {
-        visibility: hidden;
-        opacity: 0;
+    &-prev {
+      left: -16px;
+
+      @include b-d(container) {
+        left: 14px;
       }
 
-      &:hover {
-        background-color: $gray-100;
+      @include b-d(md) {
+        left: 10px;
       }
+
+      svg {
+        transform: scaleX(-1);
+      }
+    }
+
+    &-next {
+      right: -16px;
+
+      @include b-d(xl) {
+        right: 14px;
+      }
+
+      @include b-d(md) {
+        right: 10px;
+      }
+    }
+
+    &:disabled {
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    &:hover {
+      background-color: $gray-100;
     }
   }
 }

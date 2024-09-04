@@ -19,6 +19,25 @@
     gap: 16px;
     padding: 24px 24px 26px;
   }
+
+  &.row {
+    grid-auto-flow: column;
+    gap: 12px 24px;
+    place-items: center start;
+    align-content: center;
+
+    .icon {
+      grid-row: span 2;
+
+      @include b-d(md) {
+        align-self: start;
+      }
+    }
+
+    .text {
+      text-align: left;
+    }
+  }
 }
 
 .icon {

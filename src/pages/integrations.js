@@ -53,6 +53,10 @@ const IntegrationsPage = ({ data, utm }) => {
 
     backedList,
 
+    integrationsSectionHeading,
+    integrationsList,
+    integrationsButtons,
+
     deriskHeading,
     deriskContent,
     deriskButtons,
@@ -66,9 +70,6 @@ const IntegrationsPage = ({ data, utm }) => {
     bannerButtons,
     bannerNotification,
   } = data.datoCmsIntegrationsPage
-
-  const { integrationsSectionHeading, integrationsList, integrationsButtons } =
-    data.datoCmsHomePage
 
   return (
     <>
@@ -290,9 +291,7 @@ export const query = graphql`
         }
         iconName
       }
-    }
 
-    datoCmsHomePage {
       integrationsSectionHeading
       integrationsList {
         icon {

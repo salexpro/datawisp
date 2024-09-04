@@ -17,7 +17,7 @@ const SectionAgitation = ({
     <Container as="section">
       <div className={s.inner}>
         <div className={s.content}>
-          <StructuredText className={s.title} data={title.value} />
+          <StructuredText data={title.value} />
           <h5>{subtitle}</h5>
           <div className={s.features}>
             <h4 className={s.featuresTitle}>{featuresTitle}</h4>

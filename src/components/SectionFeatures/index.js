@@ -20,7 +20,7 @@ const SectionFeatures = (props) => {
     >
       <div className={s.heading}>
         <h2>{heading}</h2>
-        <p className={s.text}>{text}</p>
+        <p>{text}</p>
       </div>
       <div className={s.featuresWrapper}>
         {items.map((item) => (

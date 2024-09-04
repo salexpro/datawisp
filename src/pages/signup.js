@@ -19,6 +19,7 @@ export const Head = ({ data }) => {
 const SignUpPage = ({ data, utm }) => {
   const {
     datoCmsHomePage,
+    datoCmsIntegrationsPage,
     datoCmsLeadGenerationPage,
     allDatoCmsPricingPlan,
     allDatoCmsPricingFeaturesCategory,
@@ -33,6 +34,7 @@ const SignUpPage = ({ data, utm }) => {
 
     howItWorksHeading,
     howItWorksText,
+    steps,
 
     featuresSectionHeading,
     featuresText,
@@ -71,9 +73,9 @@ const SignUpPage = ({ data, utm }) => {
       />
       <SectionIntegrationsPreview
         {...{
-          heading: datoCmsHomePage.integrationsSectionHeading,
-          list: datoCmsHomePage.integrationsList,
-          buttons: datoCmsHomePage.integrationsButtons,
+          heading: datoCmsIntegrationsPage.integrationsSectionHeading,
+          list: datoCmsIntegrationsPage.integrationsList,
+          buttons: datoCmsIntegrationsPage.integrationsButtons,
         }}
       />
       <SectionHowItWorks
@@ -81,7 +83,7 @@ const SignUpPage = ({ data, utm }) => {
         {...{
           heading: howItWorksHeading,
           text: howItWorksText,
-          steps: datoCmsHomePage.steps,
+          steps,
         }}
       />
       <SectionFeatures
@@ -89,7 +91,7 @@ const SignUpPage = ({ data, utm }) => {
         {...{
           heading: featuresSectionHeading,
           text: featuresText,
-          items: datoCmsHomePage.featuresList,
+          items: datoCmsIntegrationsPage.featuresbottomList,
           buttons: featuresButtons,
           caption: datoCmsHomePage.featuresCaption,
           utm,
@@ -136,6 +138,10 @@ export const query = graphql`
         value
       }
 
+      featuresCaption
+    }
+
+    datoCmsIntegrationsPage {
       integrationsSectionHeading
       integrationsList {
         icon {
@@ -155,25 +161,7 @@ export const query = graphql`
         ...Buttons
       }
 
-      steps {
-        id
-        heading
-        image {
-          format
-          url
-          gatsbyImageData(
-            sizes: "(max-width: 767.98px) 300px, 400px"
-            placeholder: BLURRED
-            forceBlurhash: true
-            imgixParams: { fit: "crop", auto: "compress,format" }
-          )
-        }
-        description {
-          value
-        }
-      }
-
-      featuresList {
+      featuresbottomList {
         id
         heading
         text {
@@ -181,7 +169,6 @@ export const query = graphql`
         }
         iconName
       }
-      featuresCaption
     }
 
     datoCmsHeader {
@@ -261,6 +248,24 @@ export const query = graphql`
       howItWorksHeading
       howItWorksText {
         value
+      }
+
+      steps {
+        id
+        heading
+        image {
+          format
+          url
+          gatsbyImageData(
+            sizes: "(max-width: 767.98px) 300px, 400px"
+            placeholder: BLURRED
+            forceBlurhash: true
+            imgixParams: { fit: "crop", auto: "compress,format" }
+          )
+        }
+        description {
+          value
+        }
       }
 
       featuresSectionHeading

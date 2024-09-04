@@ -12,7 +12,7 @@ const SectionVideo = ({ heading, text, video, buttons, caption, utm }) => {
     <Container as="section" className={s.section}>
       <div className={s.heading}>
         <h2>{heading}</h2>
-        <p className={s.text}>{text}</p>
+        <p>{text}</p>
       </div>
       {video && <Player video={video} />}
       {buttons && (
