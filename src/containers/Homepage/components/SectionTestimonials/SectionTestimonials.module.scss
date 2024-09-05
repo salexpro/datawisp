@@ -3,7 +3,7 @@
 
 .section {
   overflow: hidden;
-  background: var(--bs-primary);
+  background: #f6f6f6;
 
   @include b-up(md) {
     padding-block: 80px;

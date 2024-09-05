@@ -1,0 +1,19 @@
+{
+  "redirects": [
+    {
+      "source": "/blog/how-mypeach-unlocked-the-power-of-data-with-datawisp",
+      "destination": "/case-studies/how-mypeach-unlocked-the-power-of-data-with-datawisp",
+      "permanent": true
+    },
+    {
+      "source": "/blog/eating-the-dog-food-how-we-use-data-internally-at-datawisp",
+      "destination": "/case-studies/eating-the-dog-food-how-we-use-data-internally-at-datawisp",
+      "permanent": true
+    },
+    {
+      "source": "/blog/partnering-with-datawisp-on-our-journey-to-grow-users",
+      "destination": "/case-studies/partnering-with-datawisp-on-our-journey-to-grow-users",
+      "permanent": true
+    }
+  ]
+}

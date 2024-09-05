@@ -1,16 +1,5 @@
 @import '~styles/mixins';
 
-.blogItem {
-  display: grid;
-  grid-template-rows: repeat(4, auto) 1fr;
-}
-
-.imgWrapper {
-  overflow: hidden;
-  border-radius: 16px;
-  transform: translateZ(0);
-}
-
 .heading {
   transition: inherit;
 
@@ -19,11 +8,41 @@
   }
 }
 
+.headingPlaceholderGrid {
+  display: grid;
+
+  .heading {
+    margin: 4px 0;
+
+    &:last-child {
+      width: 160px;
+    }
+  }
+}
+
+.blogItem {
+  display: grid;
+  grid-template-rows: repeat(4, auto) 1fr;
+
+  &:has(a:hover, a:focus-visible) {
+    a,
+    .heading {
+      color: $primary;
+    }
+  }
+}
+
+.imgWrapper {
+  overflow: hidden;
+  border-radius: 16px;
+  transform: translateZ(0);
+}
+
 .blogImg {
   transition: transform 0.35s;
 
   &:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
 }
 
@@ -44,18 +63,6 @@
   margin-top: 16px;
   font-size: 15px;
   line-height: 1.4667;
-}
-
-.headingPlaceholderGrid {
-  display: grid;
-
-  .heading {
-    margin: 4px 0;
-
-    &:last-child {
-      width: 160px;
-    }
-  }
 }
 
 .textPlaceholderGrid {
