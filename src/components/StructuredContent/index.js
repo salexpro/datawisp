@@ -12,7 +12,7 @@ import * as s from './StructuredContent.module.scss'
 
 const StructuredContent = (props) => {
   // TODO: update props
-  const { articleData, topLevelPage, utm, ...rest } = props
+  const { articleData, topLevelPage, utm, isCaseStudy, ...rest } = props
 
   const {
     heading,
@@ -31,7 +31,7 @@ const StructuredContent = (props) => {
 
   const breadcrumbs = [
     topLevelPage,
-    ...(category
+    ...(category && !isCaseStudy
       ? [
           {
             text: category.name,

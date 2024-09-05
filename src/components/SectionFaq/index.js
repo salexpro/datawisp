@@ -1,11 +1,10 @@
 import React from 'react'
 import cn from 'classnames'
 import { Accordion, Container } from 'react-bootstrap'
-import ButtonGroup from '~components/ui/ButtonGroup'
 import * as s from './SectionFaq.module.scss'
 
 const SectionFaq = (props) => {
-  const { heading, items, buttons, utm } = props
+  const { heading, items } = props
 
   return (
     <Container as="section" id="faq" className={s.faq}>
@@ -22,15 +21,6 @@ const SectionFaq = (props) => {
           </Accordion.Item>
         ))}
       </Accordion>
-
-      {buttons && (
-        <ButtonGroup
-          className={s.faq_buttons}
-          data={buttons}
-          utm={utm}
-          ctaId="faq"
-        />
-      )}
     </Container>
   )
 }

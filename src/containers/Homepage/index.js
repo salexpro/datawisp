@@ -28,7 +28,7 @@ const Homepage = (props) => {
       {/* <SectionHowItWorks {...howItWorks} /> */}
       <SectionFeatures variant="row" {...features} utm={utm} />
       <SectionAdvantages {...advantages} />
-      <SectionFaq {...faq} utm={utm} />
+      <SectionFaq {...faq} />
     </>
   )
 }

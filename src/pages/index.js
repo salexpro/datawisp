@@ -33,7 +33,6 @@ const IndexPage = ({ data, utm }) => {
 
     faqTitle,
     faqList,
-    faqButtons,
 
     requestDemoHeading,
     emailInputLabel,
@@ -76,7 +75,6 @@ const IndexPage = ({ data, utm }) => {
       faq={{
         heading: faqTitle,
         items: faqList,
-        buttons: faqButtons,
       }}
       popup={{
         heading: requestDemoHeading,
@@ -235,9 +233,6 @@ export const query = graphql`
         id
         question
         answer
-      }
-      faqButtons {
-        ...Buttons
       }
 
       requestDemoHeading

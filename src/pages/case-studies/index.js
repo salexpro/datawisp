@@ -10,8 +10,13 @@ export const Head = ({ data }) => {
   return <SeoDatoCms seo={seo} />
 }
 
-const BlogPage = ({ data, utm }) => {
-  const { blogSectionHeading, defaultCategoryName, seo } = data.datoCmsBlogPage
+const CaseStudyPage = ({ data, utm }) => {
+  const {
+    blogSectionHeading,
+    caseStudyCategoryHeading,
+    defaultCategoryName,
+    seo,
+  } = data.datoCmsBlogPage
   const blogs = data.allDatoCmsArticle?.nodes
   const tabs = data.allDatoCmsCategory?.nodes
 
@@ -24,11 +29,12 @@ const BlogPage = ({ data, utm }) => {
 
   return (
     <Blog
-      heading={blogSectionHeading}
+      heading={caseStudyCategoryHeading || blogSectionHeading}
       tabs={allTabs}
       blogs={blogs}
       seo={seo}
       utm={utm}
+      isCaseStudy
     />
   )
 }
@@ -40,12 +46,13 @@ export const query = graphql`
         ...SEO
       }
       blogSectionHeading
+      caseStudyCategoryHeading
       defaultCategoryName
     }
 
     allDatoCmsArticle(
       sort: { meta: { createdAt: DESC } }
-      filter: { category: { slug: { ne: "case-study" } } }
+      filter: { category: { slug: { eq: "case-study" } } }
     ) {
       nodes {
         id
@@ -84,4 +91,4 @@ export const query = graphql`
   }
 `
 
-export default BlogPage
+export default CaseStudyPage

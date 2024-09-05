@@ -2,11 +2,11 @@
 
 html,
 body {
-  -webkit-overflow-scrolling: touch;
+  scrollbar-color: $primary transparent;
 
   // Mozilla Firefox
   scrollbar-width: thin;
-  scrollbar-color: $primary transparent;
+  -webkit-overflow-scrolling: touch;
 }
 
 body {

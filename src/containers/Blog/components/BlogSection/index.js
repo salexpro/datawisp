@@ -10,19 +10,19 @@ import BlogItem from '~components/BlogItem'
 import * as s from './BlogSection.module.scss'
 
 const BlogSection = (props) => {
-  const { blogs, className, utm, ...rest } = props
+  const { blogs, className, utm, isCaseStudy, ...rest } = props
 
   const { hash } = useLocation()
   const filter = hash.replace('#', '')
 
   const filteredBlog = filter
     ? blogs?.filter(({ category }) => category?.slug === filter)
-    : blogs?.filter(({ category }) => category?.slug !== 'case-study') // case-study has its own menu item
+    : blogs
 
   return (
     <Container {...rest} className={cn(s.blogSection, className)}>
       {filteredBlog?.map(({ id, ...blog }) => (
-        <BlogItem key={id} {...blog} utm={utm} />
+        <BlogItem key={id} {...blog} utm={utm} isCaseStudy={isCaseStudy} />
       ))}
     </Container>
   )
