@@ -1,6 +1,6 @@
 import React from 'react'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-
+import cn from 'classnames'
 import Icon from '~components/ui/Icon'
 
 import * as s from './Testimonial.module.scss'
@@ -16,7 +16,7 @@ const Testimonial = ({ photo, text, author, companyPosition }) => {
 
       <div className={s.testimonial_content}>
         <Icon name="icon-quote" />
-        <p className="h5">{text}</p>
+        <p className={cn('h5', s.testimonial_text)}>{text}</p>
       </div>
 
       <div className={s.testimonial_author}>

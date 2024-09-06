@@ -196,7 +196,9 @@ export const query = graphql`
       }
 
       featuresHeading
-      featuresText
+      featuresText {
+        value
+      }
       featuresList {
         id
         heading
@@ -232,7 +234,9 @@ export const query = graphql`
       faqList {
         id
         question
-        answer
+        answer {
+          value
+        }
       }
 
       requestDemoHeading

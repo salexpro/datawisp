@@ -3,6 +3,7 @@
 .testimonial {
   display: grid;
   row-gap: 20px;
+  height: 100%;
   background: var(--bs-white);
   border-radius: 24px;
   box-shadow:
@@ -13,8 +14,8 @@
 
   @include b-up(md) {
     grid-template:
-      'image content'
-      'image author' / 128px 1fr;
+      'image content' 1fr
+      'image author' auto / 128px 1fr;
     column-gap: 40px;
     align-items: start;
     padding: 40px;
@@ -22,8 +23,8 @@
 
   @include b-d(md) {
     grid-template:
-      'content content'
-      'author image' / 1fr 64px;
+      'content content' 1fr
+      'author image' auto / 1fr 64px;
     column-gap: 16px;
     align-items: center;
     padding: 24px;
@@ -39,6 +40,14 @@
     display: grid;
     grid-area: content;
     row-gap: 8px;
+
+    @include b-d(md) {
+      align-self: start;
+    }
+  }
+
+  &_text {
+    font-weight: 400;
   }
 
   &_author {

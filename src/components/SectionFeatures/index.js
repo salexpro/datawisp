@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Container } from 'react-bootstrap'
+import { StructuredText } from 'react-datocms'
 import cn from 'classnames'
 
 import ButtonGroup from '~components/ui/ButtonGroup'
@@ -20,7 +21,8 @@ const SectionFeatures = (props) => {
     >
       <div className={s.heading}>
         <h2>{heading}</h2>
-        <p>{text}</p>
+
+        {text.value ? <StructuredText data={text.value} /> : <p>{text}</p>}
       </div>
       <div className={s.featuresWrapper}>
         {items.map((item) => (
