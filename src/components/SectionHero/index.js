@@ -73,6 +73,10 @@ const SectionHero = (props) => {
   //   // setShowRequestDemoModal(true)
   // }
 
+  const isMessage = message?.value?.document?.children.some((child) =>
+    child.children.some((subChild) => subChild.value !== '')
+  )
+
   return (
     <section
       {...rest}
@@ -80,8 +84,8 @@ const SectionHero = (props) => {
       ref={sectionRef}
     >
       <Container className={s.container}>
-        <div className={cn(s.content, { [s.hasMessage]: !!message })}>
-          {message && (
+        <div className={cn(s.content, { [s.hasMessage]: isMessage })}>
+          {isMessage && (
             <div className={s.message}>
               <StructuredText data={message.value} />
             </div>
