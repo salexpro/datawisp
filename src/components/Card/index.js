@@ -15,7 +15,7 @@ const Card = (props) => {
     <div className={cn(s.card, { [s[variant]]: variant })}>
       <GatsbyImage alt={title} image={getImage(image)} className={s.image} />
       <div className={s.title}>
-        <Icon name={icon} className={s.title__icon} />
+        {icon && <Icon name={icon} className={s.title__icon} />}
         <h3 className={s.title__header}>{title}</h3>
       </div>
       <p className={s.description}>{description}</p>

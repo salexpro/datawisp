@@ -222,7 +222,7 @@ export const query = graphql`
             forceBlurhash: true
             sizes: "(max-width: 767.98px) calc(100vw - 24px * 2 - 24 * 2), (max-width: 1199.98px) 304px, 344px"
             breakpoints: [295, 687, 885, 1300]
-            imgixParams: { fit: "crop", auto: "format" }
+            imgixParams: { fit: "crop", auto: "format", ar: "7:4" }
           )
         }
         icon
