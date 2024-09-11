@@ -45,7 +45,7 @@ export const query = graphql`
 
     allDatoCmsArticle(
       sort: { meta: { createdAt: DESC } }
-      filter: { category: { slug: { ne: "case-study" } } }
+      filter: { category: { slug: { ne: "case-studies" } } }
     ) {
       nodes {
         id

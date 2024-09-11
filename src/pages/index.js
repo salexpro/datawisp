@@ -236,6 +236,14 @@ export const query = graphql`
         question
         answer {
           value
+          links {
+            __typename
+            slug
+            id: originalId
+            category {
+              slug
+            }
+          }
         }
       }
 
