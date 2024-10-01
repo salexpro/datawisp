@@ -29,7 +29,7 @@ const SectionFeatures = (props) => {
           <Feature key={item.id} {...item} variant={variant} />
         ))}
       </div>
-      {buttons && (
+      {!!buttons?.length && (
         <ButtonGroup
           className={s.buttons}
           data={buttons}

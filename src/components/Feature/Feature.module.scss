@@ -4,9 +4,8 @@
 .feature {
   display: grid;
   align-content: start;
-  // grid-template-rows: auto auto 1fr;
 
-  &:not(.long) {
+  &:not(.long, .product) {
     gap: 20px;
     justify-items: center;
 
@@ -15,9 +14,28 @@
     }
   }
 
-  &.long {
+  &.long,
+  &.product {
     gap: 16px;
     padding: 24px 24px 26px;
+  }
+
+  &.product {
+    @include b-up(xl) {
+      grid-auto-flow: column;
+      gap: 12px 24px;
+    }
+
+    .icon {
+      @include b-up(xl) {
+        grid-row: span 2;
+      }
+
+      @include b-d(xl) {
+        width: 24px;
+        height: 24px;
+      }
+    }
   }
 
   &.row {

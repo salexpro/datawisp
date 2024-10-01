@@ -16,6 +16,10 @@ const ProductPage = ({ data, utm }) => {
     heroSectionText,
     heroVideo,
     heroButtons,
+    howSectionHeading,
+    howSectionDescription,
+    howSectionImage,
+    howSectionImageMobile,
     featuresSectionHeading,
     featuresText,
     featuresSectionFeatures,
@@ -37,6 +41,12 @@ const ProductPage = ({ data, utm }) => {
         text: heroSectionText,
         video: heroVideo,
         buttons: heroButtons,
+      }}
+      how={{
+        heading: howSectionHeading,
+        description: howSectionDescription,
+        image: howSectionImage,
+        imageMobile: howSectionImageMobile,
       }}
       functions={{
         heading: functionsSectionHeading,
@@ -90,6 +100,31 @@ export const query = graphql`
       }
       heroButtons {
         ...Buttons
+      }
+
+      howSectionHeading
+      howSectionDescription {
+        value
+      }
+      howSectionImage {
+        format
+        url
+        gatsbyImageData(
+          placeholder: NONE
+          sizes: "(max-width: 767.98px) calc(100vw - 24px * 2), (max-width: 1319.98px) calc(100vw - 40px * 2), 1240"
+          breakpoints: [295, 687, 885, 1300]
+          imgixParams: { fit: "crop", auto: "format" }
+        )
+      }
+      howSectionImageMobile {
+        format
+        url
+        gatsbyImageData(
+          placeholder: NONE
+          sizes: "calc(100vw - 24px * 2)"
+          breakpoints: [295, 687]
+          imgixParams: { fit: "crop", auto: "format" }
+        )
       }
 
       featuresSectionHeading

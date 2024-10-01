@@ -1,10 +1,22 @@
 @import '~styles/mixins';
 
 .wrapper {
-  padding-top: 66px;
+  background-color: #fbf7ff;
+
+  @include b-up(md) {
+    padding-top: 64px;
+  }
+
+  @include b-up(xl) {
+    padding-bottom: 96px;
+  }
+
+  @include b-btw(md, xl) {
+    padding-bottom: 64px;
+  }
 
   @include b-d(md) {
-    padding-top: 40px;
+    padding-block: 40px;
   }
 }
 
@@ -27,11 +39,12 @@
 
 .swiperWrapper {
   max-width: 1440px;
-  padding: 0 calc((100% - 1240px) / 2) 40px;
-  margin: 0 auto;
+  padding-block: 44px;
+  padding-inline: calc((100% - 1240px) / 2);
+  margin: -44px auto;
 
   @include b-up(xxl) {
-    padding: 0 100px;
+    padding-inline: 100px;
     mask-image: linear-gradient(
       to right,
       transparent 20px,
@@ -42,10 +55,10 @@
   }
 
   @include b-d(container) {
-    padding: 0 40px;
+    padding-inline: 40px;
   }
 
   @include b-d(md) {
-    padding: 0 24px;
+    padding-inline: 24px;
   }
 }
