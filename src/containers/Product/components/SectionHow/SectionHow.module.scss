@@ -1,0 +1,48 @@
+@import '~styles/mixins';
+
+.section {
+  text-align: center;
+
+  @include b-up(md) {
+    padding-top: 64px;
+  }
+
+  @include b-up(xl) {
+    padding-bottom: 80px;
+  }
+
+  @include b-btw(md, xl) {
+    padding-bottom: 64px;
+  }
+
+  @include b-d(md) {
+    padding-block: 40px;
+  }
+}
+
+.heading {
+  display: grid;
+  margin-bottom: 34px;
+
+  @include b-up(md) {
+    row-gap: 16px;
+  }
+
+  @include b-d(md) {
+    row-gap: 8px;
+  }
+}
+
+.pic {
+  &.desktop {
+    @include b-d(md) {
+      display: none;
+    }
+  }
+
+  &.mobile {
+    @include b-up(md) {
+      display: none;
+    }
+  }
+}

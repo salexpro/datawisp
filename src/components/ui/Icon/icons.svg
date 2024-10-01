@@ -325,4 +325,9 @@
         d="m39 44-3.46-3.46m0 0a5 5 0 1 0-7.08-7.08 5 5 0 0 0 7.08 7.07" />
     </g>
   </symbol>
+
+  <symbol id="icon-shield" fill="none" viewBox="0 0 48 48">
+    <path stroke="currentColor" stroke-width="4" d="M24 4 8 12v12c0 12 8 15 16 20 8-5 16-8 16-20V12L24 4Z" />
+    <path fill="currentColor" d="m8 12 16-8v20h16c0 12-8 15-16 20V24H8V12Z" />
+  </symbol>
 </svg>

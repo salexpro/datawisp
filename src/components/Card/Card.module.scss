@@ -26,7 +26,7 @@
   user-select: none;
   background: $white;
   border-radius: 16px;
-  box-shadow: inset 0 0 0 1px $gray-200;
+  box-shadow: 0 6px 44px 0 rgba(0, 0, 0, 10%);
 
   @include b-d(md) {
     padding: 16px;
@@ -34,7 +34,6 @@
 
   &.wide {
     border-radius: 24px;
-    box-shadow: 0 6px 44px 0 rgba(0, 0, 0, 10%);
 
     .title {
       margin-top: 24px;

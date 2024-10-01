@@ -21,7 +21,7 @@
     padding-bottom: 48px;
   }
 
-  &:not(.long) {
+  &:not(.long, .product) {
     .featuresWrapper {
       gap: 48px;
       text-align: center;
@@ -32,7 +32,8 @@
     }
   }
 
-  &.long {
+  &.long,
+  &.product {
     --padding: 66px;
 
     padding-bottom: 48px;
@@ -60,6 +61,32 @@
 
     .buttons {
       margin-top: 48px;
+    }
+  }
+
+  &.product {
+    @include b-up(md) {
+      position: relative;
+      padding-top: 64px;
+
+      &::before {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: min(100%, 1240px);
+        height: 0.5px;
+        content: '';
+        background-color: $gray-300;
+        transform: translateX(-50%);
+      }
+    }
+
+    @include b-up(xl) {
+      margin-top: 80px;
+    }
+
+    @include b-btw(md, xl) {
+      margin-top: 64px;
     }
   }
 
